@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<window id="10469">
+	<defaultcontrol always="true">5010</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<!-- Dummy container for Item Info -->
+		<control type="list" id="5000">
+			<description>info</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<visible>false</visible>
+			<itemlayout height="0">
+          </itemlayout>
+			<focusedlayout height="0">
+          </focusedlayout>
+		</control>
+		<include>Window_Fade_Animation</include>
+		<control type="group">
+			<control type="image">
+				<posx>214</posx>
+				<posy>86</posy>
+				<width>852</width>
+				<height>544</height>
+				<texture srcborder="51" border="34">dialog_bg.png</texture>
+			</control>
+			<control type="group">
+				<posx>224</posx>
+				<posy>96</posy>
+				<animation effect="fade" start="100" end="25" time="200" condition="Window.IsActive(DialogProgress.xml)">Conditional</animation>
+				<control type="label">
+					<posx>52</posx>
+					<posy>45</posy>
+					<width>748</width>
+					<height>40</height>
+					<font>font40b</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$INFO[container(5000).ListItem.TVShowTitle][/B]</label>
+					<textcolor>whiteheidi</textcolor>
+				</control>
+				<control type="label" id="5005">
+					<visible>false</visible>
+					<description>file path label</description>
+					<posx>275</posx>
+					<posy>101</posy>
+					<width>748</width>
+					<height>24</height>
+					<label>$INFO[container(5000).ListItem.pathtoshowinmediaaction]</label>
+					<aligny>center</aligny>
+					<font>font24</font>
+					<textcolor>lightgreyheidi</textcolor>
+					<haspath>true</haspath>
+				</control>
+				<control type="image" id="5015">
+					<posx>56</posx>
+					<posy>124</posy>
+					<width>192</width>
+					<height>284</height>
+					<texture>$INFO[container(5000).ListItem.Thumb]</texture>
+					<aspectratio align="left" aligny="top">scale</aspectratio>
+				</control>
+				<control type="group">
+					<posx>275</posx>
+					<posy>112</posy>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>516</width>
+						<height>40</height>
+						<aligny>center</aligny>
+						<font>font24b</font>
+						<textcolor>whiteheidi</textcolor>
+						<label>$INFO[container(5000).ListItem.Filename,$LOCALIZE[561]: ,]</label>
+					</control>
+					<control type="edit" id="5010">
+						<description>episode season</description>
+						<posx>1</posx>
+						<posy>44</posy>
+						<width>244</width>
+						<height>56</height>
+						<align>center</align>
+						<emptylabel>$LOCALIZE[53002]</emptylabel>
+						<include>Edit_Heidi</include>
+						<onleft>9010</onleft>
+						<onright>5020</onright>
+						<onup>-</onup>
+						<ondown>5030</ondown>
+						<label>-</label>
+						<ontextchange/>
+					</control>
+					<control type="edit" id="5020">
+						<description>episode number</description>
+						<posx>257</posx>
+						<posy>44</posy>
+						<width>244</width>
+						<height>56</height>
+						<align>center</align>
+						<emptylabel>$LOCALIZE[53003]</emptylabel>
+						<include>Edit_Heidi</include>
+						<onleft>5010</onleft>
+						<onright>-</onright>
+						<onup>-</onup>
+						<ondown>5030</ondown>
+						<label>-</label>
+						<ontextchange/>
+					</control>
+					<control type="radiobutton" id="5030">
+						<posx>1</posx>
+						<posy>112</posy>
+						<width>500</width>
+						<height>48</height>
+						<onup>5010</onup>
+						<ondown>9010</ondown>
+						<onright>-</onright>
+						<onleft>9010</onleft>
+						<type>radiobutton</type>
+						<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+						<texturenofocus srcborder="24" border="16">button-on.png</texturenofocus>
+						<textureradioon>graphic-radio-on.png</textureradioon>
+						<textureradiooff>graphic-radio-off.png</textureradiooff>
+						<textcolor>lightgreyheidi</textcolor>
+						<focusedcolor>whiteheidi</focusedcolor>
+						<disabledcolor>lightgreyheidi</disabledcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>42</textoffsetx>
+						<textoffsety>0</textoffsety>
+						<pulseonselect>false</pulseonselect>
+						<radioposx>12</radioposx>
+						<radioposy>12</radioposy>
+						<radiowidth>24</radiowidth>
+						<radioheight>24</radioheight>
+						<font>font20</font>
+						<label>$LOCALIZE[52118]</label>
+					</control>
+					<control type="button" id="9010">
+						<posx>1</posx>
+						<posy>300</posy>
+						<width>500</width>
+						<height>56</height>
+						<include>Button_Heidi</include>
+						<label>[B]$LOCALIZE[20177][/B]</label>
+						<onup>5030</onup>
+						<ondown>-</ondown>
+						<onleft>-</onleft>
+						<onright>9020</onright>
+						<onclick>-</onclick>
+					</control>
+				</control>
+				
+				<!--<control type="button" id="9020">
+					<posx>196</posx>
+					<posy>378</posy>
+					<width>140</width>
+					<height>60</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<focusedcolor>black</focusedcolor>
+					<texturenofocus border="30" diffuse="grey_button.png">browse_menu_dialog_button_focus.png</texturenofocus>
+					<texturefocus border="30" diffuse="masks/10b9f2.png">browse_menu_dialog_button_focus.png</texturefocus>
+					<font>font28b</font>
+					<label>$LOCALIZE[54049]</label>
+					<onup>5030</onup>
+					<ondown>-</ondown>
+					<onleft>9010</onleft>
+					<onright>-</onright>
+					<onclick>-</onclick>
+				</control>-->
+			</control>
+		</control>
+	</controls>
+</window>

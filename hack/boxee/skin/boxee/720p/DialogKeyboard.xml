@@ -1,0 +1,895 @@
+<?xml version="1.0"?>
+<window id="103">
+	<!--visible>!Window.IsVisible(DialogNumeric.xml)</visible-->
+	<defaultcontrol always="true">700</defaultcontrol>
+	<controls>
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Dialog_Popup_Animation</include>
+			<control type="group" id="500">
+				<animation effect="slide" start="0,0" end="0,-28" condition="!Window(10103).Property(3-lines) + Window(10103).Property(4-lines)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-55" condition="!Window(10103).Property(3-lines) + !Window(10103).Property(4-lines)">Conditional</animation>
+				<posx>174</posx>
+				<posy>112</posy>
+				<control type="image">
+					<visible>Window(10103).Property(3-lines) + !Window(10103).Property(4-lines)</visible>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>933</width>
+					<height>495</height>
+					<texture srcborder="51" border="34">dialog_bg.png</texture>
+				</control>
+				<control type="image">
+					<visible>!Window(10103).Property(3-lines) + Window(10103).Property(4-lines)</visible>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>933</width>
+					<height>550</height>
+					<texture srcborder="51" border="34">dialog_bg.png</texture>
+				</control>
+				<control type="image">
+					<visible>!Window(10103).Property(3-lines) + !Window(10103).Property(4-lines)</visible>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>933</width>
+					<height>605</height>
+					<texture srcborder="51" border="34">dialog_bg.png</texture>
+				</control>				
+				<control type="label" id="311">
+					<description>heading label</description>
+					<posx>63</posx>
+					<posy>65</posy>
+					<width>600</width>
+					<height>28</height>
+					<font>font40b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>-</label>
+					<textcolor>whiteheidi</textcolor>
+				</control>
+				<control type="edit" id="310">
+					<description>Edit Text</description>
+					<posx>66</posx>
+					<posy>120</posy>
+					<width>619</width>
+					<height>64</height>
+					<ondown>65</ondown>
+					<onright>302</onright>
+					<label>-</label>
+					<textoffsetx>20</textoffsetx>
+					<include>Edit_Heidi</include>
+				</control>
+				<control type="group" id="399">
+					<renderfocusedlast>true</renderfocusedlast>
+					<posx>66</posx>
+					<posy>222</posy>
+					<control type="group">
+						<control type="button" id="200">
+							<description>http:// button</description>
+							<visible>!Window.IsVisible(DialogNumeric.xml)</visible>
+							<posx>0</posx>
+							<posy>-10</posy>
+							<width>107</width>
+							<height>52</height>
+							<onleft>-</onleft>
+							<onright>65</onright>
+							<onup>310</onup>
+							<ondown>201</ondown>
+							<texturenofocus srcborder="30" border="20" diffuse="colors/color-keyboard.png">keyboard/keyboard-rounded-t-base.png</texturenofocus>
+							<texturefocus srcborder="30" border="20">keyboard/keyboard-rounded-t-active.png</texturefocus>
+							<textureclick srcborder="30" border="20">keyboard/keyboard-rounded-t-active.png</textureclick>
+							<textcolor>whiteheidi</textcolor>
+							<focusedcolor>whiteheidi</focusedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>font26</font>
+							<label>http://</label>
+						</control>
+						<control type="button" id="201">
+							<description>.com button</description>
+							<visible>!Window.IsVisible(DialogNumeric.xml)</visible>
+							<posx>0</posx>
+							<posy>45</posy>
+							<width>107</width>
+							<height>52</height>
+							<onleft>-</onleft>
+							<onright>74</onright>
+							<onup>200</onup>
+							<ondown>202</ondown>
+							<texturenofocus diffuse="colors/color-keyboard.png">keyboard/keyboard-square-base.png</texturenofocus>
+							<texturefocus srcborder="9" border="6">keyboard/keyboard-square-active.png</texturefocus>
+							<textureclick srcborder="9" border="6">keyboard/keyboard-square-active.png</textureclick>
+							<textcolor>whiteheidi</textcolor>
+							<focusedcolor>whiteheidi</focusedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>font26</font>
+							<label>.com</label>
+						</control>
+						<control type="button" id="202">
+							<description>'.' button</description>
+							<posx>0</posx>
+							<posy>100</posy>
+							<onleft>-</onleft>
+							<onright>203</onright>
+							<onup>201</onup>
+							<ondown>204</ondown>
+							<include>Common_Keyboard_Button</include>
+							<label>.</label>
+						</control>
+						<control type="button" id="203">
+							<description>'/' button</description>
+							<posx>55</posx>
+							<posy>100</posy>
+							<onleft>202</onleft>
+							<onright>83</onright>
+							<onup>201</onup>
+							<ondown>205</ondown>
+							<label>/</label>
+							<include>Common_Keyboard_Button</include>
+						</control>
+						<control type="button" id="204">
+							<description>':' button</description>
+							<posx>0</posx>
+							<posy>155</posy>
+							<onleft>-</onleft>
+							<onright>205</onright>
+							<onup>202</onup>
+							<ondown>-</ondown>
+							<include>Bottom_Left_Keyboard_Button</include>
+							<label>:</label>
+						</control>
+						<control type="button" id="205">
+							<description>'@' button</description>
+							<posx>55</posx>
+							<posy>155</posy>
+							<onleft>204</onleft>
+							<onright>303</onright>
+							<onup>203</onup>
+							<ondown>-</ondown>
+							<label>@</label>
+							<align>center</align>
+							<include>Bottom_Right_Keyboard_Button</include>
+						</control>
+					</control>
+					<control type="grouplist">
+						<posx>127</posx>
+						<posy>-10</posy>
+						<width>820</width>
+						<height>300</height>
+						<itemgap>3</itemgap>
+						<orientation>vertical</orientation>
+						<usecontrolcoords>false</usecontrolcoords>
+						<onup>-</onup>
+						<ondown>-</ondown>
+						<onleft>-</onleft>
+						<onright>9000</onright>
+						<renderfocusedlast>false</renderfocusedlast>
+						<control type="group" id="351">
+							<posx>110</posx>
+							<posy>0</posy>
+							<height>52</height>
+							<control type="button" id="65">
+								<description>'A' button</description>
+								<include>Key1Pos</include>
+								<onleft>200</onleft>
+								<onright>66</onright>
+								<onup>310</onup>
+								<ondown>74</ondown>
+								<include>Top_Left_Keyboard_Button</include>
+							</control>
+							<control type="button" id="66">
+								<description>'B' button</description>
+								<include>Key2Pos</include>
+								<onleft>65</onleft>
+								<onright>67</onright>
+								<onup>310</onup>
+								<ondown>75</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="67">
+								<description>'C' button</description>
+								<include>Key3Pos</include>
+								<onleft>66</onleft>
+								<onright>68</onright>
+								<onup>310</onup>
+								<ondown>76</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="68">
+								<description>'D' button</description>
+								<include>Key4Pos</include>
+								<onleft>67</onleft>
+								<onright>69</onright>
+								<onup>310</onup>
+								<ondown>77</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="69">
+								<description>'E' button</description>
+								<include>Key5Pos</include>
+								<onleft>68</onleft>
+								<onright>70</onright>
+								<onup>310</onup>
+								<ondown>78</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="70">
+								<description>'F' button</description>
+								<include>Key6Pos</include>
+								<onleft>69</onleft>
+								<onright>71</onright>
+								<onup>310</onup>
+								<ondown>79</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="71">
+								<description>'G' button</description>
+								<include>Key7Pos</include>
+								<onleft>70</onleft>
+								<onright>72</onright>
+								<onup>310</onup>
+								<ondown>80</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="72">
+								<description>'H' button</description>
+								<include>Key8Pos</include>
+								<onleft>71</onleft>
+								<onright>73</onright>
+								<onup>310</onup>
+								<ondown>81</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="73">
+								<description>'I' button</description>
+								<include>Key9Pos</include>
+								<onleft>72</onleft>
+								<onright>49</onright>
+								<onup>310</onup>
+								<ondown>82</ondown>
+								<include>Top_Right_Keyboard_Button</include>
+							</control>
+						</control>
+						<control type="group" id="352">
+							<posx>110</posx>
+							<posy>45</posy>
+							<height>52</height>
+							<control type="button" id="74">
+								<description>'J' button</description>
+								<include>Key1Pos</include>
+								<onleft>201</onleft>
+								<onright>75</onright>
+								<onup>65</onup>
+								<ondown>83</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="75">
+								<description>'k' button</description>
+								<include>Key2Pos</include>
+								<onleft>74</onleft>
+								<onright>76</onright>
+								<onup>66</onup>
+								<ondown>84</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="76">
+								<description>'l' button</description>
+								<include>Key3Pos</include>
+								<onleft>75</onleft>
+								<onright>77</onright>
+								<onup>67</onup>
+								<ondown>85</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="77">
+								<description>'m' button</description>
+								<include>Key4Pos</include>
+								<onleft>76</onleft>
+								<onright>78</onright>
+								<onup>68</onup>
+								<ondown>86</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="78">
+								<description>'n' button</description>
+								<include>Key5Pos</include>
+								<onleft>77</onleft>
+								<onright>79</onright>
+								<onup>69</onup>
+								<ondown>87</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="79">
+								<description>'o' button</description>
+								<include>Key6Pos</include>
+								<onleft>78</onleft>
+								<onright>80</onright>
+								<onup>70</onup>
+								<ondown>88</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="80">
+								<description>'p' button</description>
+								<include>Key7Pos</include>
+								<onleft>79</onleft>
+								<onright>81</onright>
+								<onup>71</onup>
+								<ondown>89</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="81">
+								<description>'q' button</description>
+								<include>Key8Pos</include>
+								<onleft>80</onleft>
+								<onright>82</onright>
+								<onup>72</onup>
+								<ondown>90</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="82">
+								<description>'r' button</description>
+								<include>Key9Pos</include>
+								<onleft>81</onleft>
+								<onright>52</onright>
+								<onup>73</onup>
+								<ondown>91</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+						</control>
+						<control type="group" id="353">
+							<posx>110</posx>
+							<posy>100</posy>
+							<height>52</height>
+							<control type="button" id="83">
+								<description>'s' button</description>
+								<include>Key1Pos</include>
+								<onleft>203</onleft>
+								<onright>84</onright>
+								<onup>74</onup>
+								<ondown>92</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="84">
+								<description>'t' button</description>
+								<include>Key2Pos</include>
+								<onleft>83</onleft>
+								<onright>85</onright>
+								<onup>75</onup>
+								<ondown>93</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="85">
+								<description>'u' button</description>
+								<include>Key3Pos</include>
+								<onleft>84</onleft>
+								<onright>86</onright>
+								<onup>76</onup>
+								<ondown>94</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="86">
+								<description>'v' button</description>
+								<include>Key4Pos</include>
+								<onleft>85</onleft>
+								<onright>87</onright>
+								<onup>77</onup>
+								<ondown>95</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="87">
+								<description>'w' button</description>
+								<include>Key5Pos</include>
+								<onleft>86</onleft>
+								<onright>88</onright>
+								<onup>78</onup>
+								<ondown>96</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="88">
+								<description>'x' button</description>
+								<include>Key6Pos</include>
+								<onleft>87</onleft>
+								<onright>89</onright>
+								<onup>79</onup>
+								<ondown>97</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="89">
+								<description>'y' button</description>
+								<include>Key7Pos</include>
+								<onleft>88</onleft>
+								<onright>90</onright>
+								<onup>80</onup>
+								<ondown>98</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="90">
+								<description>'z' button</description>
+								<include>Key8Pos</include>
+								<onleft>89</onleft>
+								<onright>91</onright>
+								<onup>81</onup>
+								<ondown>99</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="91">
+								<description>'a1' button</description>
+								<include>Key9Pos</include>
+								<onleft>90</onleft>
+								<onright>55</onright>
+								<onup>82</onup>
+								<ondown>100</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+						</control>
+						<control type="group" id="354">
+							<posx>110</posx>
+							<posy>155</posy>
+							<height>52</height>
+							<control type="button" id="92">
+								<description>'b1' button</description>
+								<include>Key1Pos</include>
+								<onleft>205</onleft>
+								<onright>93</onright>
+								<onup>83</onup>
+								<ondown>101</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="93">
+								<description>'t' button</description>
+								<include>Key2Pos</include>
+								<onleft>92</onleft>
+								<onright>94</onright>
+								<onup>84</onup>
+								<ondown>102</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="94">
+								<description>'u' button</description>
+								<include>Key3Pos</include>
+								<onleft>93</onleft>
+								<onright>95</onright>
+								<onup>85</onup>
+								<ondown>103</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="95">
+								<description>'v' button</description>
+								<include>Key4Pos</include>
+								<onleft>94</onleft>
+								<onright>96</onright>
+								<onup>86</onup>
+								<ondown>104</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="96">
+								<description>'w' button</description>
+								<include>Key5Pos</include>
+								<onleft>95</onleft>
+								<onright>97</onright>
+								<onup>87</onup>
+								<ondown>105</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="97">
+								<description>'x' button</description>
+								<include>Key6Pos</include>
+								<onleft>96</onleft>
+								<onright>98</onright>
+								<onup>88</onup>
+								<ondown>106</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="98">
+								<description>'y' button</description>
+								<include>Key7Pos</include>
+								<onleft>97</onleft>
+								<onright>99</onright>
+								<onup>89</onup>
+								<ondown>107</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="99">
+								<description>'z' button</description>
+								<include>Key8Pos</include>
+								<onleft>98</onleft>
+								<onright>100</onright>
+								<onup>90</onup>
+								<ondown>108</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="100">
+								<description>'a1' button</description>
+								<include>Key9Pos</include>
+								<onleft>99</onleft>
+								<onright>48</onright>
+								<onup>91</onup>
+								<ondown>109</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+						</control>
+						<control type="group" id="355">
+							<posx>110</posx>
+							<posy>152</posy>
+							<height>52</height>
+							<control type="button" id="101">
+								<description>'b1' button</description>
+								<include>Key1Pos</include>
+								<onleft>205</onleft>
+								<onright>93</onright>
+								<onup>83</onup>
+								<ondown>303</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="102">
+								<description>'t' button</description>
+								<include>Key2Pos</include>
+								<onleft>92</onleft>
+								<onright>94</onright>
+								<onup>84</onup>
+								<ondown>304</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="103">
+								<description>'u' button</description>
+								<include>Key3Pos</include>
+								<onleft>93</onleft>
+								<onright>95</onright>
+								<onup>85</onup>
+								<ondown>33</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="104">
+								<description>'v' button</description>
+								<include>Key4Pos</include>
+								<onleft>94</onleft>
+								<onright>96</onright>
+								<onup>86</onup>
+								<ondown>32</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="105">
+								<description>'w' button</description>
+								<include>Key5Pos</include>
+								<onleft>95</onleft>
+								<onright>97</onright>
+								<onup>87</onup>
+								<ondown>32</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="106">
+								<description>'x' button</description>
+								<include>Key6Pos</include>
+								<onleft>96</onleft>
+								<onright>98</onright>
+								<onup>88</onup>
+								<ondown>32</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="107">
+								<description>'y' button</description>
+								<include>Key7Pos</include>
+								<onleft>97</onleft>
+								<onright>99</onright>
+								<onup>89</onup>
+								<ondown>32</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="108">
+								<description>'z' button</description>
+								<include>Key8Pos</include>
+								<onleft>98</onleft>
+								<onright>100</onright>
+								<onup>90</onup>
+								<ondown>8</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+							<control type="button" id="109">
+								<description>'a1' button</description>
+								<include>Key9Pos</include>
+								<onleft>99</onleft>
+								<onright>48</onright>
+								<onup>91</onup>
+								<ondown>8</ondown>
+								<include>Common_Keyboard_Button</include>
+							</control>
+						</control>
+						<control type="group">
+							<posx>110</posx>
+							<posy>208</posy>
+							<height>52</height>
+							<control type="group">
+								<visible>Keyboard.HasCaps</visible>
+								<posx>-12</posx>
+								<posy>-8</posy>
+								<control type="togglebutton" id="303">
+									<description>CAPS LOCK button</description>
+									<posx>12</posx>
+									<posy>8</posy>
+									<width>52</width>
+									<height>52</height>
+									<onleft>205</onleft>
+									<onright>304</onright>
+									<onup>101</onup>
+									<ondown>-</ondown>
+									<texturenofocus diffuse="colors/color-keyboard.png">keyboard/keyboard-rounded-bl-base.png</texturenofocus>
+									<texturefocus srcborder="9" border="6">keyboard/keyboard-rounded-bl-active.png</texturefocus>
+									<textureclick srcborder="9" border="6">keyboard/keyboard-rounded-bl-active.png</textureclick>
+									<alttexturenofocus srcborder="9" border="6">keyboard/keyboard-rounded-bl-on.png</alttexturenofocus>
+									<alttexturefocus srcborder="9" border="6">keyboard/keyboard-rounded-bl-active.png</alttexturefocus>
+									<align>center</align>
+									<aligny>center</aligny>
+									<font>font22b</font>
+									<textcolor>black</textcolor>
+									<focusedcolor>black</focusedcolor>
+								</control>
+								<control type="image">
+									<posx>18</posx>
+									<posy>14</posy>
+									<width>40</width>
+									<height>40</height>
+									<texture>icons/icon_keyboard_caps.png</texture>
+								</control>
+							</control>
+							<control type="togglebutton" id="304">
+								<onleft>303</onleft>
+								<onright>33</onright>
+								<onup>102</onup>
+								<ondown>-</ondown>
+								<posx>55</posx>
+								<posy>0</posy>
+								<width>52</width>
+								<height>52</height>
+								<label>-</label>
+								<altlabel>-</altlabel>
+								<onclick/>
+								<altclick/>
+								<texturenofocus diffuse="colors/color-keyboard.png">keyboard/keyboard-square-base.png</texturenofocus>
+								<texturefocus srcborder="9" border="6">keyboard/keyboard-square-active.png</texturefocus>
+								<textureclick srcborder="9" border="6">keyboard/keyboard-square-active.png</textureclick>
+								<alttexturenofocus srcborder="9" border="6">keyboard/keyboard-square-on.png</alttexturenofocus>
+								<alttexturefocus srcborder="9" border="6">keyboard/keyboard-square-active.png</alttexturefocus>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>font22</font>
+								<textcolor>white</textcolor>
+								<focusedcolor>black</focusedcolor>
+							</control>
+							<control type="label">
+								<posx>55</posx>
+								<posy>0</posy>
+								<width>52</width>
+								<height>52</height>
+								<font>font22</font>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>#</label>
+								<textcolor>whiteheidi</textcolor>								
+							</control>
+							<control type="group">
+								<posx>98</posx>
+								<posy>0</posy>
+								<control type="button" id="33">
+									<description>language button</description>
+									<include>Common_Keyboard_Button</include>
+									<onleft>304</onleft>
+									<onright>32</onright>
+									<onup>103</onup>
+									<ondown>-</ondown>
+									<posx>12</posx>
+									<posy>0</posy>
+									<label>-</label>
+									<onclick>ToggleKeyboard</onclick>
+								</control>
+								<control type="image">
+									<posx>21</posx>
+									<posy>10</posy>
+									<width>34</width>
+									<height>34</height>
+									<texture diffuse="white.png">icons/icon_keyboard_globe.png</texture>
+								</control>
+							</control>
+							<control type="button" id="32">
+								<description>SPACE button</description>
+								<posx>165</posx>
+								<posy>0</posy>
+								<width>217</width>
+								<height>52</height>
+								<textcolor>whiteheidi</textcolor>
+								<focusedcolor>whiteheidi</focusedcolor>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>font28</font>
+								<texturenofocus diffuse="colors/color-keyboard.png">keyboard/keyboard-square-base.png</texturenofocus>
+								<texturefocus srcborder="9" border="6">keyboard/keyboard-square-active.png</texturefocus>
+								<textureclick srcborder="9" border="6">keyboard/keyboard-square-active.png</textureclick>
+								<label>$LOCALIZE[20182]</label>
+								<onleft>33</onleft>
+								<onright>8</onright>
+								<onup>104</onup>
+								<ondown>-</ondown>
+							</control>
+							<control type="group">
+								<control type="button" id="8">
+									<description>BACKSPACE button</description>
+									<width>107</width>
+									<height>52</height>
+									<textcolor>whiteheidi</textcolor>
+									<focusedcolor>whiteheidi</focusedcolor>
+									<align>center</align>
+									<aligny>center</aligny>
+									<font>font28</font>
+									<texturenofocus srcborder="30" border="20" diffuse="colors/color-keyboard.png">keyboard/keyboard-rounded-br-base.png</texturenofocus>
+									<texturefocus srcborder="30" border="20">keyboard/keyboard-rounded-br-active.png</texturefocus>
+									<textureclick srcborder="30" border="20">keyboard/keyboard-rounded-br-active.png</textureclick>
+									<posx>385</posx>
+									<posy>0</posy>
+									<onleft>32</onleft>
+									<onright>48</onright>
+									<onup>105</onup>
+									<ondown>-</ondown>
+								</control>
+								<control type="image">
+									<posx>418</posx>
+									<posy>6</posy>
+									<width>40</width>
+									<height>40</height>
+									<texture diffuse="white.png">icons/icon_keyboard_backspace.png</texture>
+								</control>
+							</control>
+						</control>
+					</control>
+					<control type="group" id="320">
+						<posx>639</posx>
+						<posy>-10</posy>
+						<control type="button" id="49">
+							<description>'1' button</description>
+							<include>Key1Pos</include>
+							<onleft>73</onleft>
+							<onright>50</onright>
+							<onup>302</onup>
+							<ondown>52</ondown>
+							<include>Top_Left_Keyboard_Button</include>
+						</control>
+						<control type="button" id="50">
+							<description>'2' button</description>
+							<include>Key2Pos</include>
+							<onleft>49</onleft>
+							<onright>51</onright>
+							<onup>302</onup>
+							<ondown>53</ondown>
+							<include>Common_Keyboard_Button</include>
+						</control>
+						<control type="button" id="51">
+							<description>'3' button</description>
+							<include>Key3Pos</include>
+							<onleft>50</onleft>
+							<onright>-</onright>
+							<onup>302</onup>
+							<ondown>54</ondown>
+							<include>Top_Right_Keyboard_Button</include>
+						</control>
+					</control>
+					<control type="group" id="321">
+						<posx>639</posx>
+						<posy>45</posy>
+						<control type="button" id="52">
+							<description>'4' button</description>
+							<include>Key1Pos</include>
+							<onleft>82</onleft>
+							<onright>53</onright>
+							<onup>49</onup>
+							<ondown>55</ondown>
+							<include>Common_Keyboard_Button</include>
+						</control>
+						<control type="button" id="53">
+							<description>'5' button</description>
+							<include>Key2Pos</include>
+							<onleft>52</onleft>
+							<onright>54</onright>
+							<onup>50</onup>
+							<ondown>56</ondown>
+							<include>Common_Keyboard_Button</include>
+						</control>
+						<control type="button" id="54">
+							<description>'6' button</description>
+							<include>Key3Pos</include>
+							<onleft>53</onleft>
+							<onright>-</onright>
+							<onup>51</onup>
+							<ondown>57</ondown>
+							<include>Common_Keyboard_Button</include>
+						</control>
+					</control>
+					<control type="group" id="322">
+						<posx>639</posx>
+						<posy>100</posy>
+						<control type="button" id="55">
+							<description>'7' button</description>
+							<include>Key1Pos</include>
+							<onleft>91</onleft>
+							<onright>56</onright>
+							<onup>52</onup>
+							<ondown>-</ondown>
+							<include>Common_Keyboard_Button</include>
+						</control>
+						<control type="button" id="56">
+							<description>'8' button</description>
+							<include>Key2Pos</include>
+							<onleft>55</onleft>
+							<onright>57</onright>
+							<onup>53</onup>
+							<ondown>48</ondown>
+							<include>Common_Keyboard_Button</include>
+						</control>
+						<control type="button" id="57">
+							<description>'9' button</description>
+							<include>Key3Pos</include>
+							<onleft>56</onleft>
+							<onright>-</onright>
+							<onup>54</onup>
+							<ondown>-</ondown>
+							<include>Common_Keyboard_Button</include>
+						</control>
+					</control>
+					<control type="group" id="323">
+						<posx>639</posx>
+						<posy>155</posy>
+						<control type="button" id="58">
+							<description>empty button</description>
+							<include>Key1Pos</include>
+							<onleft>8</onleft>
+							<onright>48</onright>
+							<onup>55</onup>
+							<ondown>-</ondown>
+							<include>Bottom_Left_Keyboard_Button</include>
+						</control>
+						<control type="button" id="48">
+							<description>'0' button</description>
+							<include>Key2Pos</include>
+							<onleft>8</onleft>
+							<onright>-</onright>
+							<onup>56</onup>
+							<ondown>-</ondown>
+							<include>Common_Keyboard_Button</include>
+						</control>
+						<control type="button" id="59">
+							<description>empty button</description>
+							<include>Key3Pos</include>
+							<onleft>48</onleft>
+							<onright>-</onright>
+							<onup>57</onup>
+							<ondown>-</ondown>
+							<include>Bottom_Right_Keyboard_Button</include>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="330">
+					<posx>705</posx>
+					<posy>120</posy>
+					<control type="button" id="302">
+						<description>DONE button</description>
+						<font>font28</font>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>160</width>
+						<height>64</height>
+						<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+						<texturenofocus srcborder="24" border="16">universal/button-unfocused.png</texturenofocus>
+						<textcolor>whiteheidi</textcolor>
+						<focusedcolor>whiteheidi</focusedcolor>
+						<disabledcolor>whiteheidi</disabledcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<onleft>310</onleft>
+						<onright>-</onright>
+						<onup>-</onup>
+						<ondown>320</ondown>						
+						<label>20177</label>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

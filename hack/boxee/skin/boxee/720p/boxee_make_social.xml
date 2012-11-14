@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<window id="10524">
+	<controls>
+		<control type="image">
+			<description>background image overlay</description>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="200" delay="0"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="100" delay="0"/>
+			</animation>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+			<colordiffuse>88FFFFFF</colordiffuse>
+		</control>
+		<control type="group">
+			<visible>boxee.HasInternetConnection</visible>
+			<include>Dialog_Heidi</include>
+			<!-- RIGHT SIDE - BEGIN-->
+			<control type="button" id="250">
+				<include>FacebookConnect_Heidi</include>
+				<posx>474</posx>
+				<posy>66</posy>
+				<onclick>-</onclick>
+				<onup>-</onup>
+				<ondown>251</ondown>
+			</control>
+			<control type="button" id="251">
+				<include>TwitterConnect_Heidi</include>
+				<posx>474</posx>
+				<posy>136</posy>
+				<onclick>-</onclick>
+				<onup>250</onup>
+				<ondown>252</ondown>
+			</control>
+			<control type="button" id="252">
+				<include>TumblrConnect_Heidi</include>
+				<posx>474</posx>
+				<posy>204</posy>
+				<onclick>-</onclick>
+				<onup>251</onup>
+				<ondown>7092</ondown>
+			</control>
+			<control type="button" id="7092">
+				<description>Done</description>
+				<posx>474</posx>
+				<posy>422</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>[B]$LOCALIZE[53425][/B]</label>
+				<onclick>-</onclick>
+				<onup>252</onup>
+				<ondown>-</ondown>
+			</control>
+			<!-- RIGHT SIDE - END-->
+			<!-- LEFT SIDE - BEGIN -->
+			<control type="grouplist">
+				<posx>62</posx>
+				<posy>56</posy>
+				<width>320</width>
+				<height>412</height>
+				<orientation>vertical</orientation>
+				<itemgap>0</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<width>320</width>
+					<height min="0" max="120">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$LOCALIZE[55670][/B]</label>
+					<include>Header_Heidi</include>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<posy>10</posy>
+					<width>320</width>
+					<height min="0" max="268">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[55671]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<include>LargeText_Heidi</include>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<visible>!boxee.HasInternetConnection</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<include>Popup_Title</include>
+				<label>[B]$LOCALIZE[56033][/B]</label>
+			</control>
+			<control type="label">
+				<posy>111</posy>
+				<include>EmptyStateTextProperties</include>
+				<label>$LOCALIZE[56034]</label>
+			</control>
+			<control type="button" id="7192">
+				<posy>421</posy>
+				<include>EmptyStateButton</include>
+				<label>[B]$LOCALIZE[186][/B]</label>
+			</control>
+		</control>
+	</controls>
+</window>

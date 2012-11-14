@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<window type="dialog" id="350">
+	<defaultcontrol always="true">700</defaultcontrol>
+	<controls>
+	</controls>
+</window>

@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<window id="10440">
+	<defaultcontrol>81</defaultcontrol>
+	<controls>
+		<include>Common_Background</include>
+		<control type="group" id="90">
+			<include>FTUDialogNoAnim_Heidi</include>
+			<!-- RIGHT SIDE - BEGIN-->
+			<control type="image">
+				<posx>506</posx>
+				<posy>98</posy>
+				<width>248</width>
+				<height>184</height>
+				<texture>ftu/graphic-calibrate-tv.png</texture>
+			</control>
+			<control type="image">
+				<description>calibrate top-left</description>
+				<visible>Window.CheckIntProperty(setting-state,1))</visible>
+				<posx>530</posx>
+				<posy>124</posy>
+				<width>200</width>
+				<height>120</height>
+				<texture>ftu/graphic-calibrate-tv-1.png</texture>
+			</control>
+			<control type="image">
+				<description>calibrate bottom-right</description>				
+				<visible>Window.CheckIntProperty(setting-state,2))</visible>
+				<posx>530</posx>
+				<posy>124</posy>
+				<width>200</width>
+				<height>120</height>
+				<texture>ftu/graphic-calibrate-tv-2.png</texture>
+			</control>
+			<control type="button" id="250">
+				<visible>Window.CheckIntProperty(setting-state,3))</visible>
+				<description>YES</description>
+				<posx>474</posx>
+				<posy>354</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>[B]$LOCALIZE[107][/B]</label>
+				<onclick>-</onclick>
+				<onup>-</onup>
+				<ondown>251</ondown>
+			</control>
+			<control type="button" id="251">
+				<visible>Window.CheckIntProperty(setting-state,3))</visible>
+				<description>NO</description>
+				<posx>474</posx>
+				<posy>422</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>[B]$LOCALIZE[106][/B]</label>
+				<onclick></onclick>
+				<onup>250</onup>
+				<ondown>-</ondown>
+			</control>
+			<!-- RIGHT SIDE - END -->
+			<!-- LEFT SIDE - BEGIN -->
+			<control type="grouplist">
+				<posx>62</posx>
+				<posy>56</posy>
+				<width>320</width>
+				<height>412</height>
+				<orientation>vertical</orientation>
+				<itemgap>0</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<width>320</width>
+					<height min="0" max="120">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$LOCALIZE[54592][/B]</label>
+					<include>Header_Heidi</include>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<description>calibrate top-left</description>
+					<visible>Window.CheckIntProperty(setting-state,1))</visible>
+					<posy>10</posy>
+					<width>320</width>
+					<height min="0" max="288">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[54591]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<include>LargeText_Heidi</include>
+				</control>
+				<control type="label">
+					<description>calibrate bottom-right</description>				
+					<visible>Window.CheckIntProperty(setting-state,2))</visible>
+					<posy>10</posy>
+					<width>320</width>
+					<height min="0" max="288">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[54590]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<include>LargeText_Heidi</include>
+				</control>
+				<control type="label">
+					<description>calibrate bottom-right</description>
+					<visible>Window.CheckIntProperty(setting-state,3))</visible>
+					<posy>10</posy>
+					<width>320</width>
+					<height min="0" max="288">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[54605]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<include>LargeText_Heidi</include>
+				</control>
+			</control>
+			<!-- LEFT SIDE - END -->
+		</control>
+		<control type="mover" id="8">
+			<description>top left mover</description>
+			<posx>28</posx>
+			<posy>28</posy>
+			<width>208</width>
+			<height>208</height>
+			<texturefocus>ftu/graphic-calibrate-arrow-1-on.png</texturefocus>
+			<texturenofocus>ftu/graphic-calibrate-arrow-1-off.png</texturenofocus>
+		</control>
+		<control type="mover" id="9">
+			<description>right bottom mover</description>
+			<posx>1044</posx>
+			<posy>484</posy>
+			<width>208</width>
+			<height>208</height>
+			<texturefocus>ftu/graphic-calibrate-arrow-2-on.png</texturefocus>
+			<texturenofocus>ftu/graphic-calibrate-arrow-2-off.png</texturenofocus>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<window type="dialog" id="10147">
+	<defaultcontrol always="true">500</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<posx>0</posx>
+		<posy>0</posy>
+		<control type="image" id="8021">
+			<posx>862</posx>
+			<posy>32</posy>
+			<width>222</width>
+			<height>275</height>
+			<texture srcborder="24" border="16">button-on.png</texture>
+		</control>
+		<control type="grouplist" id="500">
+			<height>1000</height>
+			<posx>948</posx>
+			<posy>32</posy>
+			<itemgap>0</itemgap>
+			<usecontrolcoords>true</usecontrolcoords>
+			<control type="list" id="600">
+				<posy>60</posy>
+				<itemgap>0</itemgap>
+				<width>320</width>
+				<height>270</height>
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>-</pagecontrol>
+				<orientation>vertical</orientation>
+				<itemlayout height="40">
+					<control type="label">
+						<posx>106</posx>
+						<posy>2</posy>
+						<width>172</width>
+						<height>44</height>
+						<font>font20b</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>lightgreyheidi</textcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout height="40">
+					<control type="image">
+						<posx>92</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>48</height>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="label">
+						<posx>106</posx>
+						<posy>2</posy>
+						<width>172</width>
+						<height>44</height>
+						<font>font20b</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>whiteheidi</textcolor>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+		<control type="image" id="8020">
+			<include>ViewButton2</include>
+			<texture>actionbuttons/button-action-sort-active.png</texture>
+			<onclick>Dialog.Close(10147)</onclick>
+		</control>
+		<control type="group">
+			<posx>84</posx>
+			<posy>12</posy>
+			<control type="label" id="9001">
+				<posx>0</posx>
+				<posy>36</posy>
+				<width>260</width>
+				<height>44</height>
+				<font>font20b</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[UPPERCASE][B]$LOCALIZE[53560][/B][/UPPERCASE]</label>
+				<textcolor>whiteheidi</textcolor>
+			</control>
+		</control>
+	</controls>
+</window>

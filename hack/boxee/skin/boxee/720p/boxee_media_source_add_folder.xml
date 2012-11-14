@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<window id="10464">
+	<defaultcontrol always="true">42</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Settings_Background</include>
+		<control type="group">
+			<control type="group">
+				<control type="label" id="54">
+					<posx>28</posx>
+					<posy>18</posy>
+					<width>925</width>
+					<font>font40b</font>
+					<align>left</align>
+				</control>
+			</control>
+			<control type="button" id="55">
+				<texturefocus>actionbuttons/button-action-eject-on.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-eject-off.png</texturenofocus>
+				<textureclick>actionbuttons/button-action-eject-on.png</textureclick>
+				<include>ViewButton</include>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<ondown>42</ondown>
+				<onup>-</onup>
+			</control>
+			<control type="group">
+				<posx>32</posx>
+				<posy>96</posy>
+				<width>1220</width>
+				<height>660</height>
+				<control type="group" id="50">
+					<visible>control.isenabled(42)</visible>
+					<control type="fixedlist" id="42">
+						<posx>332</posx>
+						<posy>0</posy>
+						<width>884</width>
+						<height>542</height>
+						<onleft>53</onleft>
+						<onright>-</onright>
+						<onup>55</onup>
+						<ondown>-</ondown>
+						<pagecontrol>-</pagecontrol>
+						<scrolltime>200</scrolltime>
+						<orientation>vertical</orientation>
+						<focusposition>4</focusposition>
+						<itemlayout height="68">
+							<control type="image">
+								<visible>!IsEmpty(ListItem.Property(foldericon))</visible>
+								<include>BrowseLineSmallIconPropertiesUnfocus</include>
+								<texture>icons/icon_$INFO[ListItem.Property(foldericon)].png</texture>
+							</control>
+							<control type="label">
+								<posx>56</posx>
+								<width>420</width>
+								<include>BrowseLongLineLabelProperties</include>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>mediumgreyheidi</textcolor>
+								<selectedcolor>mediumgreyheidi</selectedcolor>
+							</control>
+							<control type="label">
+								<posx>872</posx>
+								<posy>3</posy>
+								<width>360</width>
+								<height>26</height>
+								<font>font16</font>
+								<align>right</align>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Property(scan_status)]</label>
+								<textcolor>mediumgreyheidi</textcolor>
+							</control>
+							<control type="label">
+								<posx>872</posx>
+								<posy>24</posy>
+								<width>360</width>
+								<height>26</height>
+								<font>font16</font>
+								<align>right</align>
+								<aligny>center</aligny>
+								<textcolor>mediumgreyheidi</textcolor>
+								<label>$INFO[ListItem.Label2]</label>
+							</control>
+						</itemlayout>
+						<focusedlayout height="68">
+							<control type="group">
+								<visible>!Control.HasFocus(42)</visible>
+								<control type="image">
+									<visible>!IsEmpty(ListItem.Property(foldericon))</visible>
+									<include>BrowseLineSmallIconPropertiesUnfocus</include>
+									<texture>icons/icon_$INFO[ListItem.Property(foldericon)].png</texture>
+								</control>
+								<control type="label">
+									<posx>56</posx>
+									<width>420</width>
+									<include>BrowseLongLineLabelProperties</include>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>mediumgreyheidi</textcolor>
+									<selectedcolor>mediumgreyheidi</selectedcolor>
+								</control>
+								<control type="label">
+									<posx>872</posx>
+									<posy>3</posy>
+									<width>360</width>
+									<height>26</height>
+									<font>font16</font>
+									<align>right</align>
+									<aligny>center</aligny>
+									<label>$INFO[ListItem.Property(scan_status)]</label>
+									<textcolor>mediumgreyheidi</textcolor>
+								</control>
+								<control type="label">
+									<posx>872</posx>
+									<posy>24</posy>
+									<width>360</width>
+									<height>26</height>
+									<font>font16</font>
+									<align>right</align>
+									<aligny>center</aligny>
+									<textcolor>mediumgreyheidi</textcolor>
+									<label>$INFO[ListItem.Label2]</label>
+								</control>
+							</control>
+							<control type="group">
+								<visible>Control.HasFocus(42)</visible>
+								<control type="image">
+									<width>884</width>
+									<height>56</height>
+									<texture srcborder="24" border="16">button-focused.png</texture>
+								</control>
+								<control type="image">
+									<visible>!IsEmpty(ListItem.Property(foldericon))</visible>
+									<include>BrowseLineSmallIconPropertiesFocus</include>
+									<texture>icons/icon_$INFO[ListItem.Property(foldericon)].png</texture>
+									<colordiffuse>whiteheidi</colordiffuse>
+								</control>
+								<control type="label">
+									<posx>56</posx>
+									<width>420</width>
+									<include>BrowseLongLineLabelProperties</include>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>whiteheidi</textcolor>
+									<selectedcolor>whiteheidi</selectedcolor>
+								</control>
+								<control type="label">
+									<posx>872</posx>
+									<posy>3</posy>
+									<width>360</width>
+									<height>26</height>
+									<font>font16</font>
+									<align>right</align>
+									<aligny>center</aligny>
+									<label>$INFO[ListItem.Property(scan_status)]</label>
+									<textcolor>whiteheidi</textcolor>
+								</control>
+								<control type="label">
+									<posx>872</posx>
+									<posy>24</posy>
+									<width>360</width>
+									<height>26</height>
+									<font>font16</font>
+									<align>right</align>
+									<aligny>center</aligny>
+									<textcolor>whiteheidi</textcolor>
+									<label>$INFO[ListItem.Label2]</label>
+								</control>
+							</control>
+						</focusedlayout>
+					</control>
+					<!--<control type="scrollbar" id="60">
+						<visible>Control.IsVisible(56)</visible>
+						<posx>888</posx>
+						<posy>2</posy>
+						<width>12</width>
+						<height>466</height>
+						<include>ScrollBarCommonProperties</include>
+					</control>-->
+				</control>
+				<control type="button" id="53">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>304</width>
+					<height>56</height>
+					<onup>55</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>42</onright>
+					<label>[B]$LOCALIZE[51870][/B]</label>
+					<include>Button_Heidi</include>
+					<onclick>ActivateWindow(10462)</onclick>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

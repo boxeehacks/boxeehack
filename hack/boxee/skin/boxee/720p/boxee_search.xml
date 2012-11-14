@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<window type="dialog" id="10408">
+	<defaultcontrol always="true">310</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="image">
+			<visible>Window.IsVisible(10423)</visible>
+			<animation type="WindowOpen">
+				<effect type="fade" start="80" end="100" time="100" tween="cubic" easing="inout"/>
+				<effect type="zoom" start="74,98,1132,384" end="32,32,1132,656"  time="200" center="640,187" tween="cubic" easing="inout"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" tween="cubic" easing="inout"/>
+				<effect type="zoom" start="32,32,1132,656" end="74,98,1132,384"  time="100" center="640,187" tween="cubic" easing="inout"/>
+			</animation>
+			<posx>74</posx>
+			<posy>32</posy>
+			<width>1132</width>
+			<height>656</height>
+			<texture srcborder="51" border="34">dialog_bg.png</texture>
+		</control>
+		
+		<control type="group">
+			<animation effect="slide" start="0,0" end="0,-66" time="220" delay="15" tween="cubic" easing="inout">WindowOpen</animation>
+			<animation effect="slide" start="0,-66" end="0,0" time="180" tween="cubic" easing="inout">WindowClose</animation>
+			<control type="edit" id="310">
+				<onleft>-</onleft>
+				<ondown>4100</ondown>
+				<onright>350</onright>
+				<posx>451</posx>
+				<posy>123</posy>
+				<width>385</width>
+				<height>56</height>
+				<texturefocus srcborder="24" border="16">text-field-focused.png</texturefocus>
+				<texturenofocus srcborder="24" border="16">text-field-unfocused.png</texturenofocus>
+				<font>font28b</font>
+				<textcolor>mediumgreyheidi</textcolor>
+				<focusedcolor>mediumgreyheidi</focusedcolor>
+				<disabledcolor>mediumgreyheidi</disabledcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>48</textoffsetx>
+				<emptylabel>$LOCALIZE[90400]</emptylabel>
+				<emptycolor>mediumgreyheidi</emptycolor>	
+			</control>
+			<control type="multiimage" id="320">
+                <visible>window(10408).property(loading)</visible>
+                <animation effect="fade" time="200">VisibleChange</animation>
+                <posx>563</posx>
+				<posy>349</posy>
+				<width>153</width>
+				<height>153</height>
+				<imagepath>loading</imagepath>
+				<timeperimage>12</timeperimage>
+				<fadetime>4</fadetime>
+				<pauseatend>0</pauseatend>
+				<randomize>false</randomize>
+				<loop>yes</loop>
+				<aspectratio>keep</aspectratio>
+            </control>
+            <control type="image">
+				<posx>466</posx>
+				<posy>138</posy>
+				<width>28</width>
+				<height>28</height>
+				<texture>mainmenu/graphic-icon-search.png</texture>
+				<colordiffuse>mediumgreyheidi</colordiffuse>
+			</control>
+			<control type="image">
+				<posx>96</posx>
+				<posy>186</posy>
+				<width>1092</width>
+				<height>24</height>
+				<height>24</height>
+				<texture>mainmenu/graphic-divider-top.png</texture>
+			</control>
+		</control>
+		<control type="group">
+			<posx>0</posx>
+			<posy>26</posy>
+			<control type="group" id="4000">
+				<posx>0</posx>
+				<posy>130</posy>
+				<control type="button" id="300">
+					<visible>false</visible>
+					<include>Search_Keyboard_Button</include>
+					<description>Done button</description>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<posx>220</posx>
+					<posy>0</posy>
+					<label>54058</label>
+				</control>
+				<!-- Search Suggestions  -->
+				<control type="fixedlist" id="4100">
+					<animation effect="fade" start="100" end="50" time="200" condition="Window(10408).property(loading)">Conditional</animation>
+					<animation effect="fade" start="100" end="50" time="200" condition="Window.IsActive(DialogProgress.xml)">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">WindowClose</animation>
+					<focusposition>0</focusposition>
+					<posx>208</posx>
+					<posy>0</posy>
+					<width>900</width>
+					<height>480</height>
+					<onleft>-</onleft>
+					<onright>350</onright>
+					<onup>310</onup>
+					<ondown>5000</ondown>
+					<scrolltime>200</scrolltime>
+					<pagecontrol>4101</pagecontrol>
+					<orientation>vertical</orientation>
+					<itemlayout height="60">
+                        <control type="image">
+                            <posx>15</posx>
+                            <posy>15</posy>
+                            <width>25</width>
+                            <height>25</height>
+                            <texture>$INFO[ListItem.Property(icon)]</texture>
+                        </control>
+						<control type="label">
+							<posx>67</posx>
+							<posy>-1</posy>
+							<width>767</width>
+							<height>56</height>
+							<font>font26</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(highlightedLabel)]$INFO[ListItem.Year, (,)]</label>
+							<textcolor>lightgreyheidi</textcolor>
+							<selectedcolor>lightgreyheidi</selectedcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout height="60">
+                        <control type="image">
+                            <posx>15</posx>
+                            <posy>15</posy>
+                            <width>25</width>
+                            <height>25</height>
+                            <texture>$INFO[ListItem.Property(icon)]</texture>
+                        </control>
+						<control type="label">
+							<visible>!Control.HasFocus(4100)</visible>
+							<posx>67</posx>
+							<posy>-1</posy>
+              				<width>767</width>
+							<height>56</height>
+							<font>font26</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Property(highlightedLabel)]$INFO[ListItem.Year, (,)]</label>
+							<textcolor>lightgreyheidi</textcolor>
+							<selectedcolor>lightgreyheidi</selectedcolor>
+						</control>
+						<control type="group">
+							<visible>Control.HasFocus(4100)</visible>
+							<control type="image">
+								<posx>47</posx>
+								<width>807</width>
+								<height>56</height>
+								<texture srcborder="24" border="16">button-focused.png</texture>
+							</control>
+							<control type="label">
+								<posx>67</posx>
+								<posy>-1</posy>
+                				<width>767</width>
+								<height>56</height>
+								<font>font26</font>
+								<align>left</align>
+								<aligny>center</aligny>
+								<label>[COLOR whiteheidi]$INFO[ListItem.Property(highlightedLabel)]$INFO[ListItem.Year, (,)][/COLOR]</label>
+								<textcolor>whiteheidi</textcolor>
+								<selectedcolor>whiteheidi</selectedcolor>
+							</control>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

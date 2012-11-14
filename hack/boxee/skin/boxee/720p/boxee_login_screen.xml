@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<window id="29">
+	<defaultcontrol always="true">62</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Background</include>
+		<control type="group">
+			<include>BoxeeLogoLogin</include>
+			<control type="group" id="7000">
+				<!-- control type="group" id="9900" -->
+					<!-- visible>!Control.IsVisible(8000)</visible -->
+					<posy>224</posy>
+					<posx>-142</posx>
+					<control type="fixedlist" id="62">
+						<animation type="Conditional" condition="stringcompare(Container(62).NumItems,3)">
+							<effect type="slide" start="0" end="142" time="0" delay="0"/>
+						</animation>
+						<animation type="Conditional" condition="stringcompare(Container(62).NumItems,2)">
+							<effect type="slide" start="0" end="284" time="0" delay="0"/>
+						</animation>
+						<animation type="Conditional" condition="stringcompare(Container(62).NumItems,1)">
+							<effect type="slide" start="0" end="426" time="0" delay="0"/>
+						</animation>
+						<posx>236</posx>
+						<posy>0</posy>
+						<width>1100</width>
+						<height>400</height>
+						<onleft>-</onleft>
+						<onright>-</onright>
+						<onup>9010</onup>
+						<ondown>61</ondown>
+						<pagecontrol>-</pagecontrol>
+						<orientation>horizontal</orientation>
+						<focusposition>1</focusposition>
+						<itemlayout width="284" height="400">
+							<control type="group">
+								<control type="image">
+									<visible>!IsEmpty(ListItem.Thumb)</visible>
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>240</width>
+									<height>240</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
+									<texture blend="true">$INFO[ListItem.Thumb]</texture>
+									<bordertexture srcborder="24" border="16">thumbnail-bg-unfocused.png</bordertexture>
+									<bordersize>8</bordersize>
+								</control>
+
+								<control type="image">
+									<visible>IsEmpty(ListItem.Thumb)</visible>
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>240</width>
+									<height>240</height>
+									<aspectratio scalediffuse="false">scale</aspectratio>
+									<texture>default_user.png</texture>
+									<bordertexture srcborder="24" border="16">thumbnail-bg-unfocused.png</bordertexture>
+									<bordersize>8</bordersize>
+								</control>
+
+								<control type="label">
+									<posx>120</posx>
+									<posy>249</posy>
+									<width>210</width>
+									<height>28</height>
+									<label>[B]$INFO[ListItem.label][/B]</label>
+									<font>font28b</font>
+									<align>center</align>
+									<aligny>center</aligny>
+									<textcolor>FFB3B8BB</textcolor>
+								</control>
+							</control>
+						</itemlayout>
+						<focusedlayout width="284" height="400">
+							<control type="group">
+								<control type="group">
+									<visible>!Control.HasFocus(62)</visible>
+									<control type="image">
+										<visible>!IsEmpty(ListItem.Thumb)</visible>
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>240</width>
+										<height>240</height>
+										<aspectratio scalediffuse="false">scale</aspectratio>
+										<texture blend="true">$INFO[ListItem.Thumb]</texture>
+										<bordertexture srcborder="24" border="16">thumbnail-bg-unfocused.png</bordertexture>
+										<bordersize>8</bordersize>
+									</control>
+	
+									<control type="image">
+										<visible>IsEmpty(ListItem.Thumb)</visible>
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>240</width>
+										<height>240</height>
+										<aspectratio scalediffuse="false">scale</aspectratio>
+										<texture>default_user.png</texture>
+										<bordertexture srcborder="24" border="16">thumbnail-bg-unfocused.png</bordertexture>
+										<bordersize>8</bordersize>
+									</control>
+
+									<control type="label">
+										<posx>120</posx>
+										<posy>249</posy>
+										<width>210</width>
+										<height>28</height>
+										<label>[B]$INFO[ListItem.label][/B]</label>
+										<font>font28b</font>
+										<align>center</align>
+										<aligny>center</aligny>
+										<textcolor>FFB3B8BB</textcolor>
+									</control>
+								</control>
+								<control type="group">
+									<visible>Control.HasFocus(62)</visible>
+
+									<control type="image">
+										<visible>!IsEmpty(ListItem.Thumb)</visible>
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>240</width>
+										<height>240</height>
+										<aspectratio scalediffuse="false">scale</aspectratio>
+										<fadetime>200</fadetime>
+										<texture blend="true">$INFO[ListItem.Thumb]</texture>
+										<bordertexture srcborder="24" border="16">thumbnail-bg-focused.png</bordertexture>
+										<bordersize>8</bordersize>
+									</control>
+
+									<control type="image">
+										<visible>IsEmpty(ListItem.Thumb)</visible>
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>240</width>
+										<height>240</height>
+										<aspectratio scalediffuse="false">scale</aspectratio>
+										<fadetime>200</fadetime>
+										<texture>default_user.png</texture>
+										<bordertexture srcborder="24" border="16">thumbnail-bg-focused.png</bordertexture>
+										<bordersize>8</bordersize>
+									</control>
+
+									<control type="label">
+										<posx>120</posx>
+										<posy>249</posy>
+										<width>210</width>
+										<height>28</height>
+										<label>[B]$INFO[ListItem.label][/B]</label>
+										<font>font28b</font>
+										<align>center</align>
+										<aligny>center</aligny>
+										<textcolor>FFB3B8BB</textcolor>
+										<scroll>false</scroll>
+									</control>
+								</control>
+								<control type="image">
+									<visible>!Control.HasFocus(61)</visible>
+									<posx>88</posx>
+									<posy>308</posy>
+									<width>64</width>
+									<height>64</height>
+									<texture>actionbuttons/button-action-settings-unfocused.png</texture>
+								</control>
+								<control type="image">
+									<visible>Control.HasFocus(61)</visible>
+									<posx>88</posx>
+									<posy>308</posy>
+									<width>64</width>
+									<height>64</height>
+									<texture>actionbuttons/button-action-settings-focused.png</texture>
+								</control>
+							</control>
+						</focusedlayout>
+					</control>
+					<control type="button" id="61">
+						<description>edit button</description>
+						<posx>120</posx>
+						<posy>210</posy>
+						<width>1040</width>
+						<height>60</height>
+						<onup>62</onup>
+						<ondown>-</ondown>
+						<onright>62</onright>
+						<onleft>62</onleft>
+						<onclick>-</onclick>
+						<texturenofocus>-</texturenofocus>
+						<texturefocus>-</texturefocus>
+						<textureclick>-</textureclick>
+					</control>
+					<!-- control type="button" id="60">
+						<posx>120</posx>
+						<posy>210</posy>
+						<width>1040</width>
+						<height>60</height>
+						<onup>52</onup>
+						<ondown>-</ondown>
+						<onright>52</onright>
+						<onleft>52</onleft>
+						<texturenofocus>-</texturenofocus>
+						<texturefocus>-</texturefocus>
+						<textureclick>-</textureclick>
+					</control -->
+				<!-- /control -->
+			</control>
+			<control type="group" id="9010">
+				<posx>1032</posx>
+				<posy>32</posy>
+				<control type="button" id="9011">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>64</width>
+					<height>64</height>
+					<texturefocus>actionbuttons/button-action-plus-focused.png</texturefocus>
+					<texturenofocus>actionbuttons/button-action-plus-unfocused.png</texturenofocus>
+					<onclick>-</onclick>
+					<onup>-</onup>
+					<ondown>7000</ondown>
+					<onleft>7000</onleft>
+					<onright>9013</onright>
+				</control>
+				<control type="button" id="9013">
+					<posx>76</posx>
+					<posy>0</posy>
+					<width>64</width>
+					<height>64</height>
+					<texturefocus>actionbuttons/button-action-wifi-focused.png</texturefocus>
+					<texturenofocus>actionbuttons/button-action-wifi-unfocused.png</texturenofocus>
+					<onclick>ActivateWindow(NetworkSettings)</onclick>
+					<onup>-</onup>
+					<ondown>7000</ondown>
+					<onleft>9011</onleft>
+					<onright>9014</onright>
+				</control>
+				<control type="button" id="9014">
+					<posx>152</posx>
+					<posy>0</posy>
+					<width>64</width>
+					<height>64</height>
+					<texturefocus>actionbuttons/button-action-shutdown-focused.png</texturefocus>
+					<texturenofocus>actionbuttons/button-action-shutdown-unfocused.png</texturenofocus>
+					<onclick>XBMC.ShutDown()</onclick>
+					<onup>-</onup>
+					<ondown>7000</ondown>
+					<onleft>9013</onleft>
+					<onright>-</onright>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

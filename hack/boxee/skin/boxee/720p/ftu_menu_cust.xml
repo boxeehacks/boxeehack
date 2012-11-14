@@ -1,0 +1,119 @@
+﻿<?xml version="1.0"?>
+<window type="dialog" id="10147">
+	<defaultcontrol always="true">220</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Background</include>
+		<control type="group">
+			<posx>330</posx>
+			<posy>80</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>620</width>
+				<height>560</height>
+				<texture border="20">browse_menu_dialog_background.png</texture>
+				<colordiffuse>FF212121</colordiffuse>
+			</control>
+			<control type="group">
+				<control type="label" id="120">
+					<posx>40</posx>
+					<posy>30</posy>
+					<width>540</width>
+					<height>80</height>
+					<font>font40b</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>51569</label>
+					<textcolor>white</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label" id="130">
+					<posx>60</posx>
+					<posy>97</posy>
+					<width>500</width>
+					<height>90</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font26</font>
+					<label>51570</label>
+					<wrapmultiline>true</wrapmultiline>
+				</control>				
+				<control type="group" id="200">
+					<posx>120</posx>
+					<posy>200</posy>
+					<control type="button" id="220">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>380</width>
+						<height>70</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<focusedcolor>black</focusedcolor>
+						<texturenofocus border="16" diffuse="masks/464646.png">button_8_pixel.png</texturenofocus>
+						<texturefocus border="16" diffuse="masks/10b9f2.png">button_8_pixel.png</texturefocus>
+						<textureclick border="16" diffuse="masks/f1f1f1.png">-</textureclick>
+						<font>font26</font>
+						<label>$LOCALIZE[51566]</label>
+						<onup>-</onup>
+						<ondown>210</ondown>
+						<onleft>-</onleft>
+						<onright>-</onright>
+					</control>
+					<control type="button" id="210">
+						<posx>0</posx>
+						<posy>80</posy>
+						<width>380</width>
+						<height>70</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<focusedcolor>black</focusedcolor>
+						<texturenofocus border="16" diffuse="masks/464646.png">button_8_pixel.png</texturenofocus>
+						<texturefocus border="16" diffuse="masks/10b9f2.png">button_8_pixel.png</texturefocus>
+						<textureclick border="16" diffuse="masks/f1f1f1.png">-</textureclick>
+						<font>font26</font>
+						<label>$LOCALIZE[51565]</label>
+						<onup>220</onup>
+						<ondown>230</ondown>
+						<onleft>-</onleft>
+						<onright>-</onright>
+					</control>
+					<control type="button" id="230">
+						<posx>0</posx>
+						<posy>160</posy>
+						<width>380</width>
+						<height>70</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<focusedcolor>black</focusedcolor>
+						<texturenofocus border="16" diffuse="masks/464646.png">button_8_pixel.png</texturenofocus>
+						<texturefocus border="16" diffuse="masks/10b9f2.png">button_8_pixel.png</texturefocus>
+						<textureclick border="16" diffuse="masks/f1f1f1.png">-</textureclick>
+						<font>font26</font>
+						<usealttexture>Control.IsVisible(90)</usealttexture>
+						<label>$LOCALIZE[51567]</label>
+						<onup>210</onup>
+						<ondown>-</ondown>
+						<onleft>-</onleft>
+						<onright>-</onright>
+					</control>
+				</control>
+				<control type="label">
+					<posx>60</posx>
+					<posy>450</posy>
+					<width>500</width>
+					<height>90</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font24</font>
+					<label>51568</label>
+					<textcolor>grey</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

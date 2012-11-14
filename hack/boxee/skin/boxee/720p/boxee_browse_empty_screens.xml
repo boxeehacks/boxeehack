@@ -1,0 +1,983 @@
+<?xml version="1.0"?>
+<includes>
+	<include name="EmptyStateGroupPosition">
+		<posx>240</posx>
+		<posy>104</posy>
+	</include>
+	<include name="EmptyStateBackground">
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>800</width>
+			<height>456</height>
+			<texture border="20">browse_menu_dialog_background.png</texture>
+			<colordiffuse>FF212121</colordiffuse>
+		</control>
+	</include>
+	<include name="EmptyStateButton">
+		<posx>65</posx>
+		<width>416</width>
+		<height>56</height>
+		<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+		<texturenofocus srcborder="24" border="16">universal/button-unfocused.png</texturenofocus>
+		<font>font24b</font>
+		<textcolor>lightgreyheidi</textcolor>
+		<focusedcolor>whiteheidi</focusedcolor>
+		<disabledcolor>lightgreyheidi</disabledcolor>
+		<align>center</align>
+		<aligny>center</aligny>
+	</include>
+	<include name="EmptyStateIconProperties">
+		<height>50</height>
+		<width>50</width>
+		<posx>30</posx>
+		<posy>25</posy>
+	</include>
+	<include name="MediaSourcesEmptyStateIconProperties">
+		<height>50</height>
+		<width>50</width>
+		<posx>30</posx>
+		<posy>60</posy>
+	</include>
+	<!--<include name="EmptyStateTitleProperties">
+		<posx>62</posx>
+		<posy>52</posy>
+		<width>439</width>
+		<height>100</height>
+		<align>left</align>
+		<aligny>top</aligny>
+		<font>font40bls</font>
+		<textcolor>whiteheidi</textcolor>
+	</include>-->
+	<include name="EmptyStateTextProperties">
+		<posx>64</posx>
+		<width>406</width>
+		<height>200</height>
+		<align>left</align>
+		<aligny>top</aligny>
+		<font>font22ls</font>
+		<textcolor>lightgreyheidi</textcolor>
+		<wrapmultiline>true</wrapmultiline>
+	</include>
+	<include name="MediaSourcesEmptyStateTitleProperties">
+		<posx>107</posx>
+		<posy>60</posy>
+		<width>950</width>
+		<height>150</height>
+		<align>left</align>
+		<aligny>top</aligny>
+		<font>font40b</font>
+		<textcolor>white</textcolor>
+	</include>
+	<include name="BrowseWatchLaterEmptyList">
+		<control type="group">
+			<visible>true + Window.Property(empty)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<control type="label" id="7094">
+				<posx>300</posx>
+				<posy>128</posy>
+				<width>890</width>
+				<height>52</height>
+				<font>font30</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>lightgreyheidi</textcolor>
+				<label>$LOCALIZE[56062]</label>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseFriendsEmptyList">
+		<control type="group">
+			<visible>true + Window.Property(empty)+ !Window.Property(paired)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<control type="label" id="7094">
+				<posx>35</posx>
+				<posy>128</posy>
+				<width>890</width>
+				<height>52</height>
+				<font>font30</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>lightgreyheidi</textcolor>
+				<label>$LOCALIZE[56062]</label>
+			</control>
+		</control>
+		<control type="group">
+			<visible>true + Window.Property(empty) + Window.Property(paired)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<control type="image">
+				<posx>544</posx>
+				<posy>151</posy>
+				<width>192</width>
+				<height>140</height>
+				<aspectratio>keep</aspectratio>
+				<texture>graphic-friends-fetching.png</texture>
+			</control>
+			<control type="label">
+				<posx>200</posx>
+				<posy>310</posy>
+				<width>934</width>
+				<height>64</height>
+				<include>Header_Heidi</include>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>[B]$LOCALIZE[56080][/B]</label>
+			</control>
+			<control type="label">
+				<posx>64</posx>
+				<posy>370</posy>
+				<width>1122</width>
+				<height>78</height>
+				<font>font30</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>lightgreyheidi</textcolor>
+				<label>$LOCALIZE[56081]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="group">
+				<posx>366</posx>
+				<control type="button" id="7092">
+					<posy>498</posy>
+					<include>EmptyStateButton</include>
+					<label>[B]$LOCALIZE[56085][/B]</label>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>ActivateWindow(Home)</onclick>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseShowsEmptyList">
+		<control type="image">
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<description>background image overlay</description>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="200" delay="0"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="100" delay="0"/>
+			</animation>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+			<colordiffuse>88FFFFFF</colordiffuse>
+		</control>
+        <control type="group">
+        	<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+        	<visible>true + !Window.Property(loading)</visible>
+    		<visible>!window(10480).property(is-category-local)</visible>
+            <visible>!boxee.HasInternetConnection</visible>
+            <include>Popup_Heidi</include>
+            <control type="label">
+                    <include>Popup_Title</include>
+                    <label>[B]$LOCALIZE[56033][/B]</label>
+            </control>
+            <control type="label">
+                    <posy>111</posy>
+                    <include>EmptyStateTextProperties</include>
+                    <label>$LOCALIZE[56034]</label>
+            </control>
+            <control type="button" id="7193">
+				<posy>421</posy>
+				<include>EmptyStateButton</include>
+				<label>[B]$LOCALIZE[57606][/B]</label>
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onclick>ActivateWindow(10480,boxeeui://shows/?category=local)</onclick>
+			</control>
+        </control>
+		<control type="group">
+			<visible>true + window(10480).property(is-category-favorites)</visible>
+			<visible>boxee.HasInternetConnection</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<include>Popup_Title</include>
+				<label>[B]$LOCALIZE[56012][/B]</label>
+			</control>
+			<control type="label">
+				<posy>111</posy>
+				<include>EmptyStateTextProperties</include>
+				<label>$LOCALIZE[56013]</label>
+			</control>
+			<control type="button" id="7191">
+				<posy>421</posy>
+				<include>EmptyStateButton</include>
+				<label>[B]$LOCALIZE[222][/B]</label>
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onclick>ActivateWindow(10480,boxeeui://shows/?category=all)</onclick>
+			</control>
+		</control>
+		<control type="group">
+			<visible>true + window(10480).property(is-category-local)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>boxee.HasInternetConnection</visible>
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<include>Popup_Title</include>
+				<label>[B]$LOCALIZE[56023][/B]</label>
+			</control>
+			<control type="label">
+				<posy>111</posy>
+				<include>EmptyStateTextProperties</include>
+				<label>$LOCALIZE[56024][CR][CR]$LOCALIZE[56025]</label>
+			</control>
+			<control type="group" id="7090">
+				<control type="button" id="7092">
+					<posy>353</posy>
+					<include>EmptyStateButton</include>
+					<label>[B]$LOCALIZE[56017][/B]</label>
+					<onup>-</onup>
+					<ondown>7091</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>ActivateWindow(10460)</onclick>
+				</control>
+				<control type="button" id="7091">
+					<posy>421</posy>
+					<include>EmptyStateButton</include>
+					<label>[B]$LOCALIZE[222][/B]</label>
+					<onup>7092</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>ActivateWindow(10480,boxeeui://shows/?category=all)</onclick>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<visible>true + window(10480).property(is-category-default)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>boxee.HasInternetConnection</visible>
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<include>Popup_Title</include>
+				<label>[B]$LOCALIZE[56019][/B]</label>
+			</control>
+			<control type="label">
+				<posy>111</posy>
+				<include>EmptyStateTextProperties</include>
+				<label>$LOCALIZE[56020]</label>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseMoviesEmptyList">
+		<control type="image">
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>true + !Window.Property(FilteredOut)</visible>
+			<visible>true + window(10481).property(is-category-default) + !boxee.HasInternetConnection</visible>
+			<description>background image overlay</description>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="200" delay="0"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="100" delay="0"/>
+			</animation>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+			<colordiffuse>88FFFFFF</colordiffuse>
+		</control>
+		<control type="group">
+			<visible>Window.Property(FilteredOut)</visible>
+			<control type="label">
+				<posx>300</posx>
+				<posy>128</posy>
+				<width>890</width>
+				<height>52</height>
+				<font>font30</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>lightgreyheidi</textcolor>
+				<label>[B]$LOCALIZE[56040][/B]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+		</control>
+		<control type="group">
+			<visible>true + window(10481).property(is-category-local)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml) + !Window.Property(FilteredOut)</visible>
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<include>Popup_Title</include>
+				<label>[B]$LOCALIZE[56023][/B]</label>
+			</control>
+			<control type="label">
+				<posy>111</posy>
+				<include>EmptyStateTextProperties</include>
+				<label>$LOCALIZE[56024][CR][CR]$LOCALIZE[56025]</label>
+			</control>
+			<control type="group" id="7090">
+				<control type="button" id="7092">
+					<posy>353</posy>
+					<include>EmptyStateButton</include>
+					<label>[B]$LOCALIZE[56017][/B]</label>
+					<onup>-</onup>
+					<ondown>7091</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>ActivateWindow(10460)</onclick>
+				</control>
+				<control type="button" id="7091">
+					<posy>421</posy>
+					<include>EmptyStateButton</include>
+					<label>[B]$LOCALIZE[222][/B]</label>
+					<onup>7092</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>ActivateWindow(10481,boxeeui://movies/?category=all)</onclick>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<visible>true + window(10481).property(is-category-default)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<visible>!boxee.HasInternetConnection</visible>
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<include>Popup_Title</include>
+				<label>[B]$LOCALIZE[56019][/B]</label>
+			</control>
+			<control type="label">
+				<posy>111</posy>
+				<include>EmptyStateTextProperties</include>
+				<label>$LOCALIZE[56034]</label>
+			</control>
+		</control>
+        <control type="group">
+          <visible>true + window(10481).property(is-category-default)</visible>
+          <visible>true + Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+          <visible>true + !Window.Property(loading)</visible>
+          <visible>boxee.HasInternetConnection</visible>
+          <control type="label" id="7092">
+            <posx>300</posx>
+            <posy>128</posy>
+            <width>890</width>
+            <height>52</height>
+            <font>font30</font>
+            <align>left</align>
+            <aligny>center</aligny>
+            <textcolor>lightgreyheidi</textcolor>
+            <label>$LOCALIZE[56062]</label>
+          </control>
+      </control>
+	</include>
+	<include name="BrowseEpisodeEmptyList">
+		<control type="label">
+			<visible>true + !Window.Property(loading)</visible>
+            <visible>Window.Property(empty)</visible>
+			<posx>300</posx>
+			<posy>128</posy>
+			<width>890</width>
+			<height>52</height>
+			<font>font30</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>lightgreyheidi</textcolor>
+			<label>$LOCALIZE[56036]</label>
+		</control>
+	</include>
+	<include name="BrowseTrailersEmptyList">
+		<control type="image">
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<description>background image overlay</description>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="200" delay="0"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="100" delay="0"/>
+			</animation>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+			<colordiffuse>88FFFFFF</colordiffuse>
+		</control>
+		
+		<control type="group">
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>boxee.HasInternetConnection</visible>
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<include>Popup_Title</include>
+				<label>[B]$LOCALIZE[56019][/B]</label>
+			</control>
+			<control type="label">
+				<posy>111</posy>
+				<include>EmptyStateTextProperties</include>
+				<label>$LOCALIZE[56042]</label>
+			</control>
+		</control>
+		<control type="group">
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>!boxee.HasInternetConnection</visible>
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<include>Popup_Title</include>
+				<label>[B]$LOCALIZE[56033][/B]</label>
+			</control>
+			<control type="label">
+				<posy>111</posy>
+				<include>EmptyStateTextProperties</include>
+				<label>$LOCALIZE[56041]</label>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseLocalEmptyList">
+		<control type="group">
+			<visible>true + Window.Property(is-browse-root)</visible>
+			<control type="image">
+				<visible>true + Window.Property(empty)</visible>
+				<visible>true + !Window.Property(loading)</visible>
+				<description>background image overlay</description>
+				<animation type="WindowOpen">
+					<effect type="fade" start="0" end="100" time="200" delay="0"/>
+				</animation>
+				<animation type="WindowClose">
+					<effect type="fade" start="100" end="0" time="100" delay="0"/>
+				</animation>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<texture>black.png</texture>
+				<colordiffuse>88FFFFFF</colordiffuse>
+			</control>
+			<control type="group">
+				<visible>true + !Window.Property(loading)</visible>
+				<visible>true + Window.Property(empty)</visible>
+				<include>Popup_Heidi</include>
+				<control type="label">
+					<include>Popup_Title</include>
+					<label>[B]$LOCALIZE[56070][/B]</label>
+				</control>
+				<control type="label">
+					<posy>111</posy>
+					<include>EmptyStateTextProperties</include>
+					<label>$LOCALIZE[56071]</label>
+				</control>
+				<control type="group" id="7000">
+					<control type="button" id="7092">
+						<posy>349</posy>
+						<include>EmptyStateButton</include>
+						<label>[B]$LOCALIZE[56017][/B]</label>
+						<onup>-</onup>
+						<ondown>7091</ondown>
+						<onleft>-</onleft>
+						<onright>-</onright>
+						<onclick>ActivateWindow(10460)</onclick>
+					</control>
+					<control type="button" id="7091">
+						<posy>421</posy>
+						<include>EmptyStateButton</include>
+						<label>[B]$LOCALIZE[222][/B]</label>
+						<onup>7092</onup>
+						<ondown>-</ondown>
+						<onleft>-</onleft>
+						<onright>-</onright>
+						<onclick>ActivateWindow(10479,boxeeui://files/?path=network://protocols)</onclick>
+					</control>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<visible>true + !Window.Property(is-browse-root)</visible>
+			<visible>true + Window.Property(empty)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<control type="label" id="7094">
+				<posx>300</posx>
+				<posy>128</posy>
+				<width>890</width>
+				<height>52</height>
+				<font>font30</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>lightgreyheidi</textcolor>
+				<label>$LOCALIZE[56062]</label>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseAppsEmptyList">
+		<control type="image">
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<description>background image overlay</description>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="200" delay="0"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="100" delay="0"/>
+			</animation>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+			<colordiffuse>88FFFFFF</colordiffuse>
+		</control>
+		<control type="group">
+			<description>empty favorites</description>
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<visible>boxee.HasInternetConnection</visible>
+			<visible>true + !window.property(installed-apps)</visible>
+			<visible>true + !window.property(repositories-flag)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<control type="label">
+				<posx>300</posx>
+				<posy>128</posy>
+				<width>890</width>
+				<height>252</height>
+				<font>font30</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<textcolor>lightgreyheidi</textcolor>
+				<label>$LOCALIZE[56062]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+		</control>
+		<control type="group">
+			<description>empty favorites</description>
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<visible>boxee.HasInternetConnection</visible>
+			<visible>true + window.property(installed-apps)</visible>
+			<visible>true + !window.property(repositories-flag)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<control type="label">
+				<posx>300</posx>
+				<posy>128</posy>
+				<width>890</width>
+				<height>252</height>
+				<font>font30</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<textcolor>lightgreyheidi</textcolor>
+				<label>$LOCALIZE[56006]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+		</control>
+		<control type="group">
+			<description>no internet</description>
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<visible>!boxee.HasInternetConnection</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>true + !window.property(repositories-flag)</visible>
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<include>Popup_Title</include>
+				<label>[B]$LOCALIZE[56033][/B]</label>
+			</control>
+			<control type="label">
+				<posy>111</posy>
+				<include>EmptyStateTextProperties</include>
+				<label>$LOCALIZE[56034]</label>
+			</control>
+			<control type="button" id="7092">
+				<posy>421</posy>
+				<include>EmptyStateButton</include>
+				<label>[B]$LOCALIZE[222][/B]</label>
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onclick>ActivateWindow(10423)</onclick>
+			</control>
+		</control>
+		<control type="group">
+			<description>empty repository</description>
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<visible>boxee.HasInternetConnection</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>true + window.property(repositories-flag)</visible>
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<include>Popup_Title</include>
+				<label>[B]$LOCALIZE[53274][/B]</label>
+			</control>
+			<control type="label" id="7094">
+				<posy>111</posy>
+				<include>EmptyStateTextProperties</include>
+				<label>$LOCALIZE[56039]</label>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseRecentlyPlayedEmptyList">
+		<control type="image">
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<description>background image overlay</description>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="200" delay="0"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="100" delay="0"/>
+			</animation>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+			<colordiffuse>88FFFFFF</colordiffuse>
+		</control>
+		
+		<control type="group">
+			<visible>boxee.HasInternetConnection</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<include>Popup_Title</include>
+				<label>[B]$LOCALIZE[56007][/B]</label>
+			</control>
+			<control type="label">
+				<posy>111</posy>
+				<include>EmptyStateTextProperties</include>
+				<label>$LOCALIZE[56008]</label>
+			</control>
+		</control>
+		<control type="group">
+			<visible>!boxee.HasInternetConnection</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<include>Popup_Title</include>
+				<label>[B]$LOCALIZE[56033][/B]</label>
+			</control>
+			<control type="label">
+				<posy>111</posy>
+				<include>EmptyStateTextProperties</include>
+				<label>$LOCALIZE[56034]</label>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseMusicEmptyList">
+		<control type="image">
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<description>background image overlay</description>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="200" delay="0"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="100" delay="0"/>
+			</animation>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+			<colordiffuse>88FFFFFF</colordiffuse>
+		</control>
+		
+		<control type="label">
+			<visible>Window.Property(empty) + Window.Property(search-set)</visible>
+			<visible>boxee.HasInternetConnection</visible>
+			<posx>54</posx>
+			<posy>160</posy>
+			<width>1102</width>
+			<height>80</height>
+			<align>left</align>
+			<aligny>top</aligny>
+			<font>font22b</font>
+			<label>$LOCALIZE[51929]</label>
+			<wrapmultiline>true</wrapmultiline>
+		</control>
+		<control type="label">
+			<visible>Window.Property(empty) + Window.Property(search-set)</visible>
+			<visible>boxee.OfflineMode</visible>
+			<posx>54</posx>
+			<posy>160</posy>
+			<width>1102</width>
+			<height>80</height>
+			<align>left</align>
+			<aligny>top</aligny>
+			<font>font22b</font>
+			<label>$LOCALIZE[51927]</label>
+			<wrapmultiline>true</wrapmultiline>
+		</control>
+		<control type="group">
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml) + !Window.Property(loading) + !Window.Property(search-set)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<include>Popup_Title</include>
+				<label>[B]$LOCALIZE[56070][/B]</label>
+			</control>
+			<control type="label">
+				<posy>111</posy>
+				<include>EmptyStateTextProperties</include>
+				<label>$LOCALIZE[56071]</label>
+			</control>
+			<control type="group" id="7000">
+				<control type="button" id="7092">
+					<posy>349</posy>
+					<include>EmptyStateButton</include>
+					<label>[B]$LOCALIZE[56017][/B]</label>
+					<onup>-</onup>
+					<ondown>7091</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>ActivateWindow(10460)</onclick>
+				</control>
+				<control type="button" id="7091">
+					<posy>421</posy>
+					<include>EmptyStateButton</include>
+					<label>[B]$LOCALIZE[222][/B]</label>
+					<onup>7092</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>ActivateWindow(10479,boxeeui://files/?path=network://protocols/)</onclick>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="BrowsePhotosEmptyList">
+		<control type="group">
+			<visible>true + Window.Property(is-base-path)</visible>
+			<control type="image">
+				<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+				<visible>true + !Window.Property(loading)</visible>
+				<description>background image overlay</description>
+				<animation type="WindowOpen">
+					<effect type="fade" start="0" end="100" time="200" delay="0"/>
+				</animation>
+				<animation type="WindowClose">
+					<effect type="fade" start="100" end="0" time="100" delay="0"/>
+				</animation>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<texture>black.png</texture>
+				<colordiffuse>88FFFFFF</colordiffuse>
+			</control>
+			<control type="label">
+				<visible>Window.Property(empty) + Window.Property(search-set)</visible>
+				<visible>boxee.HasInternetConnection</visible>
+				<posx>54</posx>
+				<posy>160</posy>
+				<width>1102</width>
+				<height>80</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<font>font22b</font>
+				<label>$LOCALIZE[51929]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="label">
+				<visible>Window.Property(empty) + Window.Property(search-set)</visible>
+				<visible>boxee.OfflineMode</visible>
+				<posx>54</posx>
+				<posy>160</posy>
+				<width>1102</width>
+				<height>80</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<font>font22b</font>
+				<label>$LOCALIZE[51927]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="group">
+				<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml) + !Window.Property(loading) + !Window.Property(search-set)</visible>
+				<visible>true + !Window.Property(loading)</visible>
+				<include>Popup_Heidi</include>
+				<control type="label">
+					<include>Popup_Title</include>
+					<label>[B]$LOCALIZE[56070][/B]</label>
+				</control>
+				<control type="label">
+					<posy>111</posy>
+					<include>EmptyStateTextProperties</include>
+					<label>$LOCALIZE[56071]</label>
+				</control>
+				<control type="group" id="7000">
+					<control type="button" id="7092">
+						<posy>349</posy>
+						<include>EmptyStateButton</include>
+						<label>[B]$LOCALIZE[56017][/B]</label>
+						<onup>-</onup>
+						<ondown>7091</ondown>
+						<onleft>-</onleft>
+						<onright>-</onright>
+						<onclick>ActivateWindow(10460)</onclick>
+					</control>
+					<control type="button" id="7091">
+						<posy>421</posy>
+						<include>EmptyStateButton</include>
+						<label>[B]$LOCALIZE[222][/B]</label>
+						<onup>7092</onup>
+						<ondown>-</ondown>
+						<onleft>-</onleft>
+						<onright>-</onright>
+						<onclick>ActivateWindow(10479,boxeeui://files/?path=network://protocols/)</onclick>
+					</control>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<visible>!Window.Property(is-base-path) + Window.Property(empty) + !Window.Property(loading)</visible>
+			<control type="label" id="7094">
+				<posx>300</posx>
+				<posy>128</posy>
+				<width>890</width>
+				<height>52</height>
+				<font>font30</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>lightgreyheidi</textcolor>
+				<label>$LOCALIZE[56062]</label>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseRepositoriesEmptyList">
+		<control type="image">
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<description>background image overlay</description>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="200" delay="0"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="100" delay="0"/>
+			</animation>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+			<colordiffuse>88FFFFFF</colordiffuse>
+		</control>
+		
+		<control type="group">
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<visible>boxee.HasInternetConnection</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<include>Popup_Title</include>
+				<label>[B]$LOCALIZE[56026][/B]</label>
+			</control>
+			<control type="label">
+				<posy>111</posy>
+				<include>EmptyStateTextProperties</include>
+				<label>$LOCALIZE[56027][CR][CR]$LOCALIZE[56031]</label>
+			</control>
+			<control type="group" id="7090">
+				<control type="button" id="7091">
+					<posy>353</posy>
+					<include>EmptyStateButton</include>
+					<label>[B]$LOCALIZE[222][/B]</label>
+					<onup>-</onup>
+					<ondown>7092</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>ActivateWindow(10482,boxeeui://apps/?category=all)</onclick>
+				</control>
+				<control type="button" id="7092">
+					<posy>421</posy>
+					<include>EmptyStateButton</include>
+					<label>[B]$LOCALIZE[56028][/B]</label>
+					<onup>7091</onup>
+					<ondown>131</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<!-- Removed. Creates a bug.
+					<onclick>ActivateWindow(10460)</onclick>
+					End changes. -->
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<visible>!boxee.HasInternetConnection</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<include>Popup_Title</include>
+				<label>[B]$LOCALIZE[56033][/B]</label>
+			</control>
+			<control type="label">
+				<posy>111</posy>
+				<include>EmptyStateTextProperties</include>
+				<label>$LOCALIZE[56034]</label>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseMediaSourcesEmptyList">
+		<control type="image">
+			<visible>Window.Property(empty) + !Window.IsActive(boxee_search.xml)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<description>background image overlay</description>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="200" delay="0"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="100" delay="0"/>
+			</animation>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+			<colordiffuse>88FFFFFF</colordiffuse>
+		</control>
+		
+		<control type="group">
+			<posy>-98</posy>
+			<control type="group">
+				<visible>!control.isenabled(56)</visible>
+				<visible>boxee.HasInternetConnection</visible>
+				<visible>true + !Window.Property(loading)</visible>
+				<include>Popup_Heidi</include>
+				<control type="label">
+					<include>Popup_Title</include>
+					<label>[B]$LOCALIZE[56029][/B]</label>
+				</control>
+				<control type="label">
+					<posy>111</posy>
+					<include>EmptyStateTextProperties</include>
+					<label>$LOCALIZE[56030]</label>
+				</control>
+			</control>
+			<control type="group">
+				<visible>!control.isenabled(56)</visible>
+				<visible>!boxee.HasInternetConnection</visible>
+				<visible>true + !Window.Property(loading)</visible>
+				<include>Popup_Heidi</include>
+				<control type="label">
+					<include>Popup_Title</include>
+					<label>[B]$LOCALIZE[56033][/B]</label>
+				</control>
+				<control type="label">
+					<posy>111</posy>
+					<include>EmptyStateTextProperties</include>
+					<label>$LOCALIZE[56034]</label>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

@@ -1,0 +1,13 @@
+<skin>
+  <defaultresolution>720p</defaultresolution>
+  <defaultresolutionwide>720p</defaultresolutionwide>
+  <version>2.1</version>
+  
+  <!-- amount to zoom skin to remove overscan compensation -->
+  <zoom>1</zoom>
+  
+  <credits>
+    <skinname>Boxee Skin NG</skinname>
+    <name>-</name>
+  </credits>
+</skin>

@@ -1,0 +1,4799 @@
+<?xml version="1.0"?>
+<includes>
+	<include name="BrowseThumbViewList">
+		<include>Common_Background_Browse</include>
+		<control type="group" id="501">
+			<control type="panel" id="50">
+				<enable>true + !Window.Property(empty)</enable>
+				<visible>true + !Window.Property(loading)</visible>
+				<preloaditems>2</preloaditems>
+				<posx>291</posx>
+				<posy>127</posy>
+				<width>1104</width>
+				<height>560</height>
+				<onleft>500</onleft>
+				<onright>7000</onright>
+				<onup>8050</onup>
+				<ondown>-</ondown>
+				<scrolltimemin>200</scrolltimemin>
+				<scrolltime>350</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<itemlayout height="280" width="160">
+					<include>BrowsePortraitThumbUnfocus</include>
+					<include>BrowsePortraitLabelUnfocus</include>
+				</itemlayout>
+				<focusedlayout height="280" width="160">
+					<control type="group">
+						<visible>!Control.HasFocus(50)</visible>
+						<include>BrowsePortraitThumbUnfocus</include>
+						<include>BrowsePortraitLabelUnfocus</include>
+					</control>
+					<control type="group">
+						<visible>Control.HasFocus(50)</visible>
+						<include>BrowsePortraitThumbFocus</include>
+						<include>BrowsePortraitLabelFocus</include>
+					</control>
+				</focusedlayout>
+			</control>
+			<include>BrowseThumbsFade</include>
+		</control>
+		<!--<control type="image">
+			<posx>0</posx>
+			<posy>680</posy>
+			<width>1280</width>
+			<height>56</height>
+			<texture>browse/bottom-dropshadow.png</texture>
+		</control>-->
+		<include>ScrollLetter</include>
+		<!--<control type="scrollbar" id="60">
+			<visible>true + !stringcompare(Window.Property(sort-label),a-z) + !stringcompare(Window.Property(sort-label),z-a)</visible>
+			<visible>Control.IsVisible(50)</visible>
+			<visible>true + !Control.IsVisible(7001)</visible>
+			<posx>843</posx>
+			<posy>142</posy>
+			<width>12</width>
+			<height>560</height>
+			<include>ScrollBarCommonProperties</include>
+		</control>-->
+	</include>
+	<include name="BrowseMenuLevel1">
+		<control type="group" id="500">
+			<control type="image">
+				<visible>Control.HasFocus(48) | Control.HasFocus(49)</visible>
+				<animation type="Visible">
+					<effect type="fade" start="0" end="100" time="350" delay="350" reversible="false" />
+				</animation>
+				<animation type="Hidden">
+					<effect type="fade" start="100" end="0" time="350" reversible="false" />
+				</animation>
+				<posx>10</posx>
+				<posy>29</posy>
+				<width>12</width>
+				<height>20</height>
+				<texture>graphic-arrow-left.png</texture>
+			</control>
+			<include>BrowseMenuLevel2</include>
+			<control type="group">
+				<visible>true + stringcompare(skin.string(activemenulevel),1)</visible>
+				<animation type="Visible">
+					<effect type="fade" start="0" end="100" time="350" delay="350" reversible="false" />
+				</animation>
+				<animation type="Hidden">
+					<effect type="fade" start="100" end="0" time="350" reversible="false" />
+				</animation>
+				<control type="label">
+					<visible>Control.HasFocus(47)</visible>
+					<posx>62</posx>
+					<posy>24</posy>
+					<width>192</width>
+					<height>40</height>
+					<font>font21b</font>
+					<textcolor>boxeegreenheidi</textcolor>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$INFO[skin.string(BrowseMenuLevel1Label)]</label>
+				</control>
+				<control type="label">
+					<visible>!Control.HasFocus(47)</visible>
+					<posx>62</posx>
+					<posy>24</posy>
+					<width>192</width>
+					<height>40</height>
+					<font>font21b</font>
+					<textcolor>mediumgreyheidi</textcolor>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$INFO[skin.string(BrowseMenuLevel1Label)]</label>
+				</control>
+				<control type="fixedlist" id="47">
+					<posx>32</posx>
+					<posy>128</posy>
+					<width>232</width>
+					<height>620</height>
+					<onup>8050</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>501</onright>
+					<orientation>vertical</orientation>
+					<scrolltime tween="sine" easing="out">200</scrolltime>
+					<focusposition>2</focusposition>
+					<itemlayout width="232" height="60">
+						<control type="image">
+							<visible>ListItem.IsSelected</visible>
+							<posx>16</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>48</height>
+							<texture srcborder="24" border="16">button-on.png</texture>
+						</control>
+						<control type="label">
+							<posx>32</posx>
+							<posy>0</posy>
+							<width>168</width>
+							<height>48</height>
+							<font>font24b</font>
+							<!--<textcolor>28B3B8BB</textcolor>-->
+							<textcolor>mediumgreyheidi</textcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+						</control>
+						<control type="image">
+							<visible>true + ListItem.Property(isseparator)</visible>
+							<posx>0</posx>
+							<posy>20</posy>
+							<width>232</width>
+							<height>33</height>
+							<texture>browse/graphic-divider-horz-232.png</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="232" height="60">
+						<control type="image">
+							<visible>ListItem.IsSelected</visible>
+							<posx>16</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>48</height>
+							<texture srcborder="24" border="16">button-on.png</texture>
+						</control>
+						<control type="image">
+							<visible>Control.HasFocus(47)</visible>
+							<posx>16</posx>
+							<posy>0</posy>
+							<width>200</width>
+							<height>48</height>
+							<texture srcborder="24" border="16">button-focused.png</texture>
+						</control>
+						<control type="label">
+							<visible>!Control.HasFocus(47)</visible>
+							<posx>32</posx>
+							<posy>0</posy>
+							<width>168</width>
+							<height>48</height>
+							<font>font24b</font>
+							<!--<textcolor>28B3B8BB</textcolor>-->
+							<textcolor>mediumgreyheidi</textcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+						</control>
+						<control type="label">
+							<visible>Control.HasFocus(47)</visible>
+							<posx>32</posx>
+							<posy>0</posy>
+							<width>168</width>
+							<height>48</height>
+							<font>font24b</font>
+							<textcolor>whiteheidi</textcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+							<scroll>true</scroll>
+						</control>
+						<control type="group">
+							<visible>Control.HasFocus(47)</visible>
+							<include>BrowseMenuSubFolderArrowFocused</include>
+						</control>
+					</focusedlayout>
+				</control>	
+			</control>
+		</control>
+	</include>
+	<include name="BrowseMenuLevel2">
+		<include>BrowseMenuLevel3</include>
+		<control type="group">
+			<visible>true + stringcompare(skin.string(activemenulevel),2)</visible>
+			<animation type="Visible">
+				<effect type="fade" start="0" end="100" time="350" delay="350" reversible="false" />
+			</animation>
+			<animation type="Hidden">
+				<effect type="fade" start="100" end="0" time="350" reversible="false" />
+			</animation>
+			<control type="label">
+				<visible>Control.HasFocus(48)</visible>
+				<posx>62</posx>
+				<posy>24</posy>
+				<width>192</width>
+				<height>40</height>
+				<font>font21b</font>
+				<textcolor>boxeegreenheidi</textcolor>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$INFO[skin.string(BrowseMenuLevel2Label)]</label>
+			</control>
+			<control type="label">
+				<visible>!Control.HasFocus(48)</visible>
+				<posx>62</posx>
+				<posy>24</posy>
+				<width>192</width>
+				<height>40</height>
+				<font>font21b</font>
+				<textcolor>mediumgreyheidi</textcolor>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$INFO[skin.string(BrowseMenuLevel2Label)]</label>
+			</control>
+			<control type="fixedlist" id="48">
+				<posx>32</posx>
+				<posy>128</posy>
+				<width>232</width>
+				<height>620</height>
+				<onup>8050</onup>
+				<ondown>-</ondown>
+				<onleft>Skin.Reset(BrowseMenuLevel2)</onleft>
+				<onleft>SetFocus(47)</onleft>
+				<onright>501</onright>
+				<orientation>vertical</orientation>
+				<scrolltime tween="sine" easing="out">200</scrolltime>
+				<focusposition>2</focusposition>
+				<itemlayout width="232" height="60">
+					<control type="image">
+						<visible>ListItem.IsSelected</visible>
+						<posx>16</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>48</height>
+						<texture srcborder="24" border="16">button-on.png</texture>
+					</control>
+					<control type="label">
+						<posx>32</posx>
+						<posy>0</posy>
+						<width>168</width>
+						<height>48</height>
+						<font>font24b</font>
+						<!--<textcolor>28B3B8BB</textcolor>-->
+						<textcolor>mediumgreyheidi</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+					</control>
+					<control type="image">
+						<visible>true + ListItem.Property(isseparator)</visible>
+						<posx>0</posx>
+						<posy>20</posy>
+						<width>232</width>
+						<height>33</height>
+						<texture>browse/graphic-divider-horz-232.png</texture>
+					</control>
+				</itemlayout>
+				<focusedlayout width="232" height="60">
+					<control type="image">
+						<visible>ListItem.IsSelected</visible>
+						<posx>16</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>48</height>
+						<texture srcborder="24" border="16">button-on.png</texture>
+					</control>
+					<control type="image">
+						<visible>Control.HasFocus(48)</visible>
+						<posx>16</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>48</height>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="label">
+						<visible>!Control.HasFocus(48)</visible>
+						<posx>32</posx>
+						<posy>0</posy>
+						<width>168</width>
+						<height>48</height>
+						<font>font24b</font>
+						<!--<textcolor>28B3B8BB</textcolor>-->
+						<textcolor>mediumgreyheidi</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+					</control>
+					<control type="label">
+						<visible>Control.HasFocus(48)</visible>
+						<posx>32</posx>
+						<posy>0</posy>
+						<width>168</width>
+						<height>48</height>
+						<font>font24b</font>
+						<textcolor>whiteheidi</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<scroll>true</scroll>
+					</control>
+					<control type="group">
+						<visible>Control.HasFocus(48)</visible>
+						<include>BrowseMenuSubFolderArrowFocused</include>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseMenuLevel3">
+		<control type="group">
+			<visible>true + stringcompare(skin.string(activemenulevel),3)</visible>
+			<animation type="Visible">
+				<effect type="fade" start="0" end="100" time="350" delay="350" reversible="false" />
+			</animation>
+			<animation type="Hidden">
+				<effect type="fade" start="100" end="0" time="350" reversible="false" />
+			</animation>
+			<control type="label">
+				<visible>Control.HasFocus(49)</visible>
+				<posx>62</posx>
+				<posy>24</posy>
+				<width>192</width>
+				<height>40</height>
+				<font>font21b</font>
+				<textcolor>boxeegreenheidi</textcolor>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$INFO[skin.string(BrowseMenuLevel3Label)]</label>
+			</control>
+			<control type="label">
+				<visible>!Control.HasFocus(49)</visible>
+				<posx>62</posx>
+				<posy>24</posy>
+				<width>192</width>
+				<height>40</height>
+				<font>font21b</font>
+				<textcolor>mediumgreyheidi</textcolor>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$INFO[skin.string(BrowseMenuLevel3Label)]</label>
+			</control>
+			<control type="fixedlist" id="49">
+				<posx>32</posx>
+				<posy>128</posy>
+				<width>232</width>
+				<height>620</height>
+				<onup>8050</onup>
+				<ondown>-</ondown>
+				<onleft>Skin.Reset(BrowseMenuLevel3)</onleft>
+				<onleft>SetFocus(48)</onleft>
+				<onright>501</onright>
+				<orientation>vertical</orientation>
+				<scrolltime tween="sine" easing="out">200</scrolltime>
+				<focusposition>2</focusposition>
+				<itemlayout width="232" height="60">
+					<control type="image">
+						<visible>ListItem.IsSelected</visible>
+						<posx>16</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>48</height>
+						<texture srcborder="24" border="16">button-on.png</texture>
+					</control>
+					<control type="label">
+						<posx>32</posx>
+						<posy>0</posy>
+						<width>168</width>
+						<height>48</height>
+						<font>font24b</font>
+						<!--<textcolor>28B3B8BB</textcolor>-->
+						<textcolor>mediumgreyheidi</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+					</control>
+					<control type="image">
+						<visible>true + ListItem.Property(isseparator)</visible>
+						<posx>0</posx>
+						<posy>20</posy>
+						<width>232</width>
+						<height>33</height>
+						<texture>browse/graphic-divider-horz-232.png</texture>
+					</control>
+				</itemlayout>
+				<focusedlayout width="232" height="60">
+					<control type="image">
+						<visible>ListItem.IsSelected</visible>
+						<posx>16</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>48</height>
+						<texture srcborder="24" border="16">button-on.png</texture>
+					</control>
+					<control type="image">
+						<visible>Control.HasFocus(49)</visible>
+						<posx>16</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>48</height>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="label">
+						<visible>!Control.HasFocus(49)</visible>
+						<posx>32</posx>
+						<posy>0</posy>
+						<width>168</width>
+						<height>48</height>
+						<font>font24b</font>
+						<!--<textcolor>28B3B8BB</textcolor>-->
+						<textcolor>mediumgreyheidi</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+					</control>
+					<control type="label">
+						<visible>Control.HasFocus(49)</visible>
+						<posx>32</posx>
+						<posy>0</posy>
+						<width>168</width>
+						<height>48</height>
+						<font>font24b</font>
+						<textcolor>whiteheidi</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<scroll>true</scroll>
+					</control>
+					<control type="group">
+						<visible>Control.HasFocus(49)</visible>
+						<include>BrowseMenuSubFolderArrowFocused</include>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>	
+	</include>
+	<include name="BrowseThumbViewListBrowser">
+		<control type="group" id="7001">
+			<visible>Control.IsVisible(50)</visible>
+			<description>OSD (upper + lower)</description>
+			<include>TopGradient</include>
+			<control type="group">
+				<description>upper OSD</description>
+				<posx>32</posx>
+				<posy>32</posy>
+				<description>upper OSD - NO thumb</description>
+				<control type="group">
+					<control type="button" id="9203">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texturefocus>browser/button-action-history-on.png</texturefocus>
+						<texturenofocus>browser/button-action-history-off.png</texturenofocus>
+						<textureclick>browser/button-action-history-on.png</textureclick>
+						<onup>-</onup>
+						<ondown>50</ondown>
+						<onleft>-</onleft>
+						<onright>19201</onright>
+					</control>
+					<control type="image">
+						<visible>!container(5000).ListItem.property(browserHasPrevUrl)</visible>
+						<posx>76</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture>browser/button-action-nav-back-off.png</texture>
+					</control>
+					<control type="button" id="19201">
+						<visible>!container(5000).ListItem.property(browserfullscreen)</visible>
+						<enable>container(5000).ListItem.property(browserHasPrevUrl)</enable>
+						<visible>container(5000).ListItem.property(browserHasPrevUrl)</visible>
+						<posx>76</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<onclick>BrowserBack</onclick>
+						<texturefocus>browser/button-action-nav-back-on.png</texturefocus>
+						<texturenofocus>browser/button-action-nav-back-off.png</texturenofocus>
+						<textureclick>browser/button-action-nav-back-on.png</textureclick>
+						<onup>-</onup>
+						<ondown>50</ondown>
+						<onleft>9203</onleft>
+						<onright>19202</onright>
+					</control>
+					<control type="image">
+						<visible>!Control.IsEnabled(19201)</visible>
+						<posx>76</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture diffuse="masks/mask-action-button.png">browser/button-action-disabled-overlay.png</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="image">
+						<visible>!container(5000).ListItem.property(browserHasNextUrl)</visible>
+						<posx>152</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture flipx="true">browser/button-action-nav-back-off.png</texture>
+					</control>
+					<control type="button" id="19202">
+						<visible>!container(5000).ListItem.property(browserfullscreen)</visible>
+						<enable>container(5000).ListItem.property(browserHasNextUrl)</enable>
+						<visible>container(5000).ListItem.property(browserHasNextUrl)</visible>
+						<posx>152</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<onclick>BrowserForward</onclick>
+						<texturefocus flipx="true">browser/button-action-nav-back-on.png</texturefocus>
+						<texturenofocus flipx="true">browser/button-action-nav-back-off.png</texturenofocus>
+						<textureclick flipx="true">browser/button-action-nav-back-on.png</textureclick>
+						<onup>-</onup>
+						<ondown>50</ondown>
+						<onleft>19201</onleft>
+						<onright>19004</onright>
+					</control>
+					<control type="image">
+						<visible>!Control.IsEnabled(19202)</visible>
+						<posx>152</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture diffuse="masks/mask-action-button.png">browser/button-action-disabled-overlay.png</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="edit" id="19004">
+						<visible>true</visible>
+						<posx>228</posx>
+						<posy>0</posy>
+						<width>760</width>
+						<height>64</height>
+						<font>font30</font>
+						<ondown>50</ondown>
+						<onright>19028</onright>
+						<onleft>19202</onleft>
+						<textcolor>black</textcolor>
+						<focusedcolor>black</focusedcolor>
+						<selectedcolor>black</selectedcolor>
+						<selectedbackcolor>blue</selectedbackcolor>
+						<emptylabel>$LOCALIZE[55400]</emptylabel>
+						<emptycolor>opaquegrey</emptycolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>16</textoffsetx>
+						<texturenofocus srcborder="24" border="16">text-field-unfocused.png</texturenofocus>
+						<texturefocus srcborder="24" border="16">text-field-focused.png</texturefocus>
+					</control>
+					<control type="image" id="19009">
+						<visible>false</visible>
+						<posx>980</posx>
+						<posy>5</posy>
+						<width>45</width>
+						<height>45</height>
+						<texture>ap-lock.png</texture>
+						<colordiffuse>DDBBBBBB</colordiffuse>
+					</control>
+					<control type="button" id="19028">
+						<enable>false</enable>
+						<posx>1000</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texturefocus>browser/button-action-bookmarks-on.png</texturefocus>
+						<texturenofocus>browser/button-action-bookmarks-off.png</texturenofocus>
+						<textureclick>browser/button-action-bookmarks-on.png</textureclick>
+						<onup>-</onup>
+						<ondown>50</ondown>
+						<onleft>19004</onleft>
+						<onright>8010</onright>
+					</control>
+					<control type="image">
+						<posx>1000</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture diffuse="masks/mask-action-button.png">browser/button-action-disabled-overlay.png</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="group" id="8010">
+						<control type="button" id="8011">
+							<enable>true + !Window.Property(empty)</enable>
+							<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+							<texturenofocus srcborder="24" border="16">button-unfocused.png</texturenofocus>
+							<font>font24b</font>
+							<textcolor>whiteheidi</textcolor>
+							<focusedcolor>whiteheidi</focusedcolor>
+							<disabledcolor>lightgreyheidi</disabledcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>[B]$LOCALIZE[21435][/B]</label>
+							<onleft>19028</onleft>
+							<onright>8012</onright>
+							<ondown>50</ondown>
+							<onup>-</onup>
+							<posx>1076</posx>
+							<posy>0</posy>
+							<width>140</width>
+							<height>64</height>
+						</control>
+						<control type="button" id="8012">
+							<visible>true + !Window.Property(empty)</visible>
+							<enable>true + !Window.Property(empty)</enable>
+							<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+							<texturenofocus srcborder="48" border="32">browser/button-action-bg-destructive.png</texturenofocus>
+							<font>font24b</font>
+							<textcolor>whiteheidi</textcolor>
+							<focusedcolor>whiteheidi</focusedcolor>
+							<disabledcolor>lightgreyheidi</disabledcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>[B]$LOCALIZE[52106][/B]</label>
+							<onleft>8010</onleft>
+							<onright>-</onright>
+							<ondown>50</ondown>
+							<onup>-</onup>
+							<posx>1076</posx>
+							<posy>0</posy>
+							<width>140</width>
+							<height>64</height>
+						</control>
+					</control>
+					<control type="image">
+						<visible>!Control.IsEnabled(8011) | !Control.IsEnabled(8012)</visible>
+						<posx>1076</posx>
+						<posy>0</posy>
+						<width>140</width>
+						<height>64</height>
+						<texture diffuse="masks/mask-action-button-long.png">browser/button-action-disabled-overlay.png</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+				</control>
+			</control>
+		</control>
+		<control type="panel" id="50">
+			<enable>true + !Window.Property(empty)</enable>
+			<preloaditems>2</preloaditems>
+			<posx>94</posx>
+			<posy>160</posy>
+			<width>1280</width>
+			<height>528</height>
+			<onleft>-</onleft>
+			<onright>-</onright>
+			<onup>7001</onup>
+			<ondown>-</ondown>
+			<scrolltime>400</scrolltime>
+			<pagecontrol>60</pagecontrol>
+			<orientation>vertical</orientation>
+			<itemlayout height="166" width="277">
+				<include>BrowsePortraitThumbUnfocusBrowser</include>
+			</itemlayout>
+			<focusedlayout height="166" width="277">
+				<control type="group">
+					<visible>!Control.HasFocus(50)</visible>
+					<include>BrowsePortraitThumbUnfocusBrowser</include>
+				</control>
+				<control type="group">
+					<visible>Control.HasFocus(50)</visible>
+					<include>BrowsePortraitThumbFocusBrowser</include>
+				</control>
+			</focusedlayout>
+		</control>
+		<control type="group" id="9060">
+			<control type="label">
+				<posx>240</posx>
+				<posy>655</posy>
+				<width>800</width>
+				<height>30</height>
+				<font>font20b</font>
+				<align>center</align>
+				<aligny>top</aligny>
+				<textcolor>whiteheidi</textcolor>
+				<label>[B]$INFO[container(50).ListItem.Label][/B]</label>
+			</control>
+			<control type="label">
+				<posx>240</posx>
+				<posy>679</posy>
+				<width>800</width>
+				<height>30</height>
+				<font>font16</font>
+				<align>center</align>
+				<aligny>top</aligny>
+				<textcolor>mediumgreyheidi</textcolor>
+				<label>$INFO[container(50).ListItem.Label2]</label>
+			</control>
+			<control type="label">
+				<visible>true + Window.Property(empty)</visible>			
+				<posx>240</posx>
+				<posy>655</posy>
+				<width>800</width>
+				<height>30</height>
+				<font>font20b</font>
+				<align>center</align>
+				<aligny>top</aligny>
+				<textcolor>whiteheidi</textcolor>
+				<label>[B]$LOCALIZE[52104][/B]</label>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseThumbViewTVShow">
+		<include>BrowseThumbViewList</include>
+		<!--<control type="group">
+			<visible>!Container.OnNext + !Container.OnPrevious</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>true + !container(50).scrolling</visible>
+			<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout" delay="50">Visible</animation>
+			<control type="grouplist">
+				<visible>Control.IsVisible(50)</visible>
+				<posx>875</posx>
+				<posy>148</posy>
+				<width>360</width>
+				<height>500</height>
+				<itemgap>10</itemgap>
+				<orientation>vertical</orientation>
+				<usecontrolcoords>false</usecontrolcoords>
+				<control type="label">
+					<width>356</width>
+					<height>500</height>
+					<font>font24</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>white</textcolor>
+					<label>[COLOR white][B]$INFO[container(50).ListItem.Label,,[CR][CR]][/B][/COLOR][COLOR grey]$INFO[container(50).ListItem.property(cast),$LOCALIZE[54042]  ,[CR][CR]][/COLOR][COLOR grey]$INFO[container(50).ListItem.property(description)][/COLOR]</label>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+			</control>
+		</control>-->
+	</include>
+	<include name="BrowseThumbViewMovie">
+		<include>BrowseThumbViewList</include>
+		<!--<control type="group">
+			<visible>!Container.OnNext + !Container.OnPrevious</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>true + !container(50).scrolling</visible>
+			<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout" delay="50">Visible</animation>
+			<control type="grouplist">
+				<visible>Control.IsVisible(50)</visible>
+				<posx>875</posx>
+				<posy>148</posy>
+				<width>360</width>
+				<height>485</height>
+				<itemgap>18</itemgap>
+				<orientation>vertical</orientation>
+				<usecontrolcoords>false</usecontrolcoords>
+				<control type="image">
+					<width>166</width>
+					<height>27</height>
+					<texture>icon_rating_star_$INFO[container(50).ListItem.Property(videorating)].png</texture>
+					<aspectratio align="right">keep</aspectratio>
+				</control>
+				<control type="label">
+					<width>356</width>
+					<height>458</height>
+					<font>font24</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>white</textcolor>
+					<label>[COLOR white][B]$INFO[container(50).ListItem.Label]$INFO[container(50).ListItem.Year, (,)[CR]][/B][/COLOR]$INFO[formattime(container(50).ListItem.Duration min),, $LOCALIZE[55002]	 ]$INFO[container(50).ListItem.MPAA,$LOCALIZE[563]	,][CR][COLOR grey]$INFO[container(50).ListItem.Director,[CR]$LOCALIZE[20339]  ,[CR]]$INFO[container(50).ListItem.property(cast),$LOCALIZE[54042]  ,[CR]]$INFO[container(50).ListItem.property(description),[CR]][/COLOR]</label>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+			</control>
+		</control>-->
+	</include>
+	<include name="BrowseLineViewList">
+		<control type="group" id="501">
+			<control type="fixedlist" id="51">
+				<enable>true + !Window.Property(empty)</enable>
+				<visible>true + !Window.Property(loading)</visible>
+				<preloaditems>2</preloaditems>
+				<posx>280</posx>
+				<posy>124</posy>
+				<width>484</width>
+				<height>590</height>
+				<onleft>500</onleft>
+				<onright>7100</onright>
+				<onup>8050</onup>
+				<ondown>-</ondown>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<focusposition>5</focusposition>
+				<itemlayout height="60">
+					<control type="label">
+						<visible>Window.IsVisible(10481)</visible>
+						<visible>ListItem.Property(watched)</visible>
+						<include>BrowseShortLineLabelProperties</include>
+						<info>ListItem.Label</info>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+					<control type="label">BrowseShortLineLabelProperties
+						<visible>Window.IsVisible(10481)</visible>
+						<visible>!ListItem.Property(watched)</visible>
+						<include>BrowseShortLineLabelProperties</include>
+						<info>ListItem.Label</info>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>Window.IsVisible(10480)</visible>
+						<include>BrowseShortLineLabelProperties</include>
+						<info>ListItem.Label</info>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>true + !Window.IsVisible(10480) + !Window.IsVisible(10481)</visible>
+						<include>BrowseShortLineLabelProperties</include>
+						<info>ListItem.Label</info>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(watched)</visible>
+						<posx>448</posx>
+						<posy>20</posy>
+						<width>20</width>
+						<height>20</height>
+						<texture>browse/graphic-thumbnail-watched-check.png</texture>
+						<aspectratio>scale</aspectratio>
+						<fadetime>200</fadetime>
+					</control>
+				</itemlayout>
+				<focusedlayout height="60">
+					<control type="image">
+						<visible>Control.HasFocus(51)</visible>
+						<posx>0</posx>
+						<posy>4</posy>
+						<width>484</width>
+						<height>52</height>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="group">
+						<visible>!Control.HasFocus(51)</visible>
+						<control type="label">
+							<visible>Window.IsVisible(10481)</visible>
+							<visible>ListItem.Property(watched)</visible>
+							<include>BrowseShortLineLabelProperties</include>
+							<info>ListItem.Label</info>
+							<textcolor>mediumgreyheidi</textcolor>
+							<selectedcolor>mediumgreyheidi</selectedcolor>
+						</control>
+						<control type="label">
+							<visible>Window.IsVisible(10481)</visible>
+							<visible>!ListItem.Property(watched)</visible>
+							<include>BrowseShortLineLabelProperties</include>
+							<info>ListItem.Label</info>
+							<textcolor>mediumgreyheidi</textcolor>
+							<selectedcolor>mediumgreyheidi</selectedcolor>
+						</control>
+					</control>
+					<control type="group">
+						<visible>!Control.HasFocus(51)</visible>
+						<visible>Window.IsVisible(10480)</visible>
+						<control type="label">
+							<visible>Window.IsVisible(10480)</visible>
+							<visible>!ListItem.Property(watched)</visible>
+							<include>BrowseShortLineLabelProperties</include>
+							<info>ListItem.Label</info>
+							<textcolor>mediumgreyheidi</textcolor>
+							<selectedcolor>mediumgreyheidi</selectedcolor>
+						</control>
+					</control>
+					<control type="label">
+						<visible>Control.HasFocus(51)</visible>
+						<include>BrowseShortLineLabelProperties</include>
+						<info>ListItem.Label</info>
+						<textcolor>whiteheidi</textcolor>
+						<selectedcolor>whiteheidi</selectedcolor>
+						<scroll>true</scroll>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(watched)</visible>
+						<posx>448</posx>
+						<posy>20</posy>
+						<width>20</width>
+						<height>20</height>
+						<texture>browse/graphic-thumbnail-watched-check.png</texture>
+						<aspectratio>scale</aspectratio>
+						<fadetime>200</fadetime>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+		<include>BrowseLineFade</include>
+		<!--<control type="scrollbar" id="60">
+			<visible>true + !stringcompare(Window.Property(sort-label),a-z) + !stringcompare(Window.Property(sort-label),z-a)</visible>
+			<visible>Control.IsVisible(51)</visible>
+			<visible>true + !Control.IsVisible(7101)</visible>
+			<posx>530</posx>
+			<posy>142</posy>
+			<width>12</width>
+			<height>560</height>
+			<include>ScrollBarCommonProperties</include>
+		</control>-->
+	</include>
+	<include name="BrowseLineViewListBrowser">
+		<control type="group" id="7002">
+			<visible>Control.IsVisible(51)</visible>
+			<description>OSD (upper + lower)</description>
+			<include>TopGradient</include>
+			<control type="group">
+				<description>upper OSD</description>
+				<posx>32</posx>
+				<posy>32</posy>
+				<description>upper OSD - NO thumb</description>
+				<control type="group">
+					<control type="button" id="29203">
+						<enable>false</enable>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texturefocus>browser/button-action-history-on.png</texturefocus>
+						<texturenofocus>browser/button-action-history-off.png</texturenofocus>
+						<textureclick>browser/button-action-history-on.png</textureclick>
+						<onup>-</onup>
+						<ondown>51</ondown>
+						<onleft>-</onleft>
+						<onright>29201</onright>
+					</control>
+					<control type="image">
+						<visible>!container(5000).ListItem.property(browserHasPrevUrl)</visible>
+						<posx>76</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture>browser/button-action-nav-back-off.png</texture>
+					</control>
+					<control type="button" id="29201">
+						<visible>!container(5000).ListItem.property(browserfullscreen)</visible>
+						<enable>container(5000).ListItem.property(browserHasPrevUrl)</enable>
+						<visible>container(5000).ListItem.property(browserHasPrevUrl)</visible>
+						<posx>76</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<onclick>BrowserBack</onclick>
+						<texturefocus>browser/button-action-nav-back-on.png</texturefocus>
+						<texturenofocus>browser/button-action-nav-back-off.png</texturenofocus>
+						<textureclick>browser/button-action-nav-back-on.png</textureclick>
+						<onup>-</onup>
+						<ondown>51</ondown>
+						<onleft>29203</onleft>
+						<onright>29202</onright>
+					</control>
+					<control type="image">
+						<visible>!Control.IsEnabled(29201)</visible>
+						<posx>76</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture diffuse="masks/mask-action-button.png">browser/button-action-disabled-overlay.png</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="image">
+						<visible>!container(5000).ListItem.property(browserHasNextUrl)</visible>
+						<posx>152</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture flipx="true">browser/button-action-nav-back-off.png</texture>
+					</control>
+					<control type="group">
+					<control type="button" id="29202">
+						<visible>!container(5000).ListItem.property(browserfullscreen)</visible>
+						<enable>container(5000).ListItem.property(browserHasNextUrl)</enable>
+						<visible>container(5000).ListItem.property(browserHasNextUrl)</visible>
+						<posx>152</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<onclick>BrowserForward</onclick>
+						<texturefocus flipx="true">browser/button-action-nav-back-on.png</texturefocus>
+						<texturenofocus flipx="true">browser/button-action-nav-back-off.png</texturenofocus>
+						<textureclick flipx="true">browser/button-action-nav-back-on.png</textureclick>
+						<onup>-</onup>
+						<ondown>51</ondown>
+						<onleft>29201</onleft>
+						<onright>29004</onright>
+					</control>
+					</control>
+					<control type="image">
+						<visible>!Control.IsEnabled(29202)</visible>
+						<posx>152</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture diffuse="masks/mask-action-button.png">browser/button-action-disabled-overlay.png</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="edit" id="29004">
+						<visible>true</visible>
+						<posx>228</posx>
+						<posy>0</posy>
+						<width>760</width>
+						<height>64</height>
+						<font>font30</font>
+						<ondown>51</ondown>
+						<onright>29028</onright>
+						<onleft>29202</onleft>
+						<textcolor>black</textcolor>
+						<focusedcolor>black</focusedcolor>
+						<selectedcolor>black</selectedcolor>
+						<selectedbackcolor>blue</selectedbackcolor>
+						<emptylabel>$LOCALIZE[55400]</emptylabel>
+						<emptycolor>opaquegrey</emptycolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>16</textoffsetx>
+						<texturenofocus srcborder="24" border="16">text-field-unfocused.png</texturenofocus>
+						<texturefocus srcborder="24" border="16">text-field-focused.png</texturefocus>
+					</control>
+					<control type="image" id="29009">
+						<visible>false</visible>
+						<posx>980</posx>
+						<posy>5</posy>
+						<width>45</width>
+						<height>45</height>
+						<texture>ap-lock.png</texture>
+						<colordiffuse>DDBBBBBB</colordiffuse>
+					</control>
+					<control type="button" id="29028">
+						<posx>1000</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texturefocus>browser/button-action-bookmarks-on.png</texturefocus>
+						<texturenofocus>browser/button-action-bookmarks-off.png</texturenofocus>
+						<textureclick>browser/button-action-bookmarks-on.png</textureclick>
+						<onup>-</onup>
+						<ondown>51</ondown>
+						<onleft>29004</onleft>
+						<onright>8013</onright>
+					</control>
+					<control type="button" id="8013">
+						<description>Clear all history</description>
+						<enable>true + !Control.IsEmpty(51)</enable>
+						<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+						<texturenofocus srcborder="24" border="16">button-unfocused.png</texturenofocus>
+						<font>font24b</font>
+						<textcolor>whiteheidi</textcolor>
+						<focusedcolor>whiteheidi</focusedcolor>
+						<disabledcolor>lightgreyheidi</disabledcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[B]$LOCALIZE[192][/B]</label>
+						<onleft>29028</onleft>
+						<onright>-</onright>
+						<ondown>51</ondown>
+						<onup>-</onup>
+						<posx>1076</posx>
+						<posy>0</posy>
+						<width>140</width>
+						<height>64</height>
+					</control>
+					<control type="image">
+						<visible>!Control.IsEnabled(8013)</visible>
+						<posx>1076</posx>
+						<posy>0</posy>
+						<width>140</width>
+						<height>64</height>
+						<texture diffuse="masks/mask-action-button.png">browser/button-action-disabled-overlay.png</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+				</control>
+			</control>
+		</control>
+		<control type="fixedlist" id="51">
+			<enable>true + !Window.Property(empty)</enable>
+			<preloaditems>2</preloaditems>
+			<posx>32</posx>
+			<posy>135</posy>
+			<width>1220</width>
+			<height>560</height>
+			<onleft>-</onleft>
+			<onright>8050</onright>
+			<onup>7002</onup>
+			<ondown>8013</ondown>
+			<scrolltime>200</scrolltime>
+			<pagecontrol>60</pagecontrol>
+			<orientation>vertical</orientation>
+			<focusposition>6</focusposition>
+			<itemlayout height="64">
+				<control type="image">
+					<visible>!ListItem.Property(isseparator)</visible>
+					<posx>18</posx>
+					<posy>28</posy>
+					<width>8</width>
+					<height>8</height>
+					<texture>browser/graphic-bullet.png</texture>
+					<colordiffuse>mediumgreyheidi</colordiffuse>
+				</control>
+				<control type="label">
+					<visible>ListItem.Property(isseparator)</visible>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1100</width>
+					<height>64</height>
+					<font>font24b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>[UPPERCASE][B]$INFO[ListItem.Label][/B][/UPPERCASE]</label>
+					<textcolor>lightgreyheidi</textcolor>
+					<selectedcolor>lightgreyheidi</selectedcolor>
+				</control>
+				<control type="label">
+					<visible>!ListItem.Property(isseparator)</visible>
+					<include>BrowseShortLineLabelPropertiesBrowser</include>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>mediumgreyheidi</textcolor>
+					<selectedcolor>mediumgreyheidi</selectedcolor>
+				</control>
+			</itemlayout>
+			<focusedlayout height="64">
+				<control type="group">
+					<visible>Control.HasFocus(51)</visible>
+					<control type="image">
+						<include>BrowserLongLineFocusBrowser</include>
+					</control>
+					<control type="image">
+						<visible>!ListItem.Property(isseparator)</visible>
+						<posx>18</posx>
+						<posy>28</posy>
+						<width>8</width>
+						<height>8</height>
+						<texture>browser/graphic-bullet.png</texture>
+					</control>
+					<control type="label">
+						<include>BrowseShortLineLabelPropertiesBrowser</include>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>whiteheidi</textcolor>
+						<selectedcolor>whiteheidi</selectedcolor>
+						<scroll>true</scroll>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!Control.HasFocus(51)</visible>
+					<control type="image">
+						<visible>!ListItem.Property(isseparator)</visible>
+						<posx>18</posx>
+						<posy>28</posy>
+						<width>8</width>
+						<height>8</height>
+						<texture>browser/graphic-bullet.png</texture>
+						<colordiffuse>mediumgreyheidi</colordiffuse>
+					</control>
+					<control type="label">
+						<visible>!Control.HasFocus(51)</visible>
+						<include>BrowseShortLineLabelPropertiesBrowser</include>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+				</control>
+			</focusedlayout>
+		</control>
+	</include>
+	<include name="BrowseLineViewTVShow">
+		<include>BrowseLineViewList</include>
+		<control type="image">
+			<visible>Control.IsVisible(51)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>true + !Window.Property(empty)</visible>
+			<posx>783</posx>
+			<posy>118</posy>
+			<width>24</width>
+			<height>556</height>
+			<texture>browse/graphic-divider-vert.png</texture>
+		</control>
+		<control type="group">
+			<!--<visible>!Container.OnNext + !Container.OnPrevious</visible>-->
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>true + !Window.Property(empty)</visible>
+			<!--<visible>true + !container(51).scrolling</visible>-->
+			<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout" delay="50">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" delay="250" reversible="false" condition="container(51).scrolling">Conditional</animation>
+			<control type="image">
+				<visible>true + !Window.Property(loading)</visible>
+				<visible>Control.IsVisible(51)</visible>
+				<visible>!Control.IsEmpty(51)</visible>
+				<visible>!IsEmpty(Container(51).ListItem.Thumb)</visible>
+				<posx>821</posx>
+				<posy>124</posy>
+				<width>207</width>
+				<height>298</height>
+				<texture fallback="browse/thumbnail-default-show.png" blend="false">$INFO[Container(51).ListItem.Thumb]</texture>
+				<bordertexture srcborder="21" border="14">browse/bg-dropshadow-2.png</bordertexture>
+				<bordersize>7</bordersize>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<fadetime>200</fadetime>
+			</control><control type="image">
+				<visible>true + !Window.Property(loading)</visible>
+				<visible>Control.IsVisible(51)</visible>
+				<visible>!Control.IsEmpty(51)</visible>
+				<visible>IsEmpty(Container(51).ListItem.Thumb)</visible>
+				<posx>821</posx>
+				<posy>124</posy>
+				<width>207</width>
+				<height>298</height>
+				<texture blend="false">browse/thumbnail-default-show.png</texture>
+				<bordertexture srcborder="21" border="14">browse/bg-dropshadow-2.png</bordertexture>
+				<bordersize>7</bordersize>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="grouplist">
+				<visible>Control.IsVisible(51)</visible>
+				<posx>827</posx>
+				<posy>427</posy>
+				<width>430</width>
+				<height>555</height>
+				<itemgap>24</itemgap>
+				<orientation>vertical</orientation>
+				<usecontrolcoords>false</usecontrolcoords>
+				<!-- control type="label">
+					<visible>Control.IsVisible(51)</visible>
+					<visible>true + !IsEmpty(Container(51).ListItem.Label)</visible>
+					<width>425</width>
+					<height min="0" max="30">0</height>
+					<font>font20ls</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>whiteheidi</textcolor>
+					<label>$INFO[container(51).ListItem.Label]</label>
+					<wrapmultiline>false</wrapmultiline>
+				</control -->
+				<control type="label">
+					<visible>Control.IsVisible(51)</visible>
+					<visible>!IsEmpty(Container(51).ListItem.MPAA) + !IsEmpty(Container(51).ListItem.Year)</visible>
+					<width>425</width>
+					<height min="0" max="30">0</height>
+					<font>font20ls</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>whiteheidi</textcolor>
+					<label>$INFO[container(51).ListItem.MPAA,$LOCALIZE[563] , · ]$INFO[container(51).ListItem.Year,,]</label>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<visible>Control.IsVisible(51)</visible>
+					<visible>IsEmpty(Container(51).ListItem.MPAA) + !IsEmpty(Container(51).ListItem.Year)</visible>
+					<width>425</width>
+					<height min="0" max="30">0</height>
+					<font>font20ls</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>whiteheidi</textcolor>
+					<label>$INFO[container(51).ListItem.Year,,]</label>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<visible>Control.IsVisible(51)</visible>
+					<visible>!IsEmpty(Container(51).ListItem.MPAA) + IsEmpty(Container(51).ListItem.Year)</visible>
+					<width>425</width>
+					<height min="0" max="30">0</height>
+					<font>font20ls</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>whiteheidi</textcolor>
+					<label>$INFO[container(51).ListItem.MPAA,$LOCALIZE[563] ,]</label>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<visible>Control.IsVisible(51)</visible>
+					<visible>true + !IsEmpty(Container(51).ListItem.property(description))</visible>
+					<width>425</width>
+					<height min="0" max="220">auto</height>
+					<font>font20ls</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>whiteheidi</textcolor>
+					<label>$INFO[container(51).ListItem.property(description),,]</label>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+			</control>
+		</control>
+		<include>ScrollLetter</include>
+	</include>
+	<include name="BrowseLineViewMovie">
+		<include>BrowseLineViewList</include>
+		<control type="image">
+			<visible>Control.IsVisible(51)</visible>
+     		<visible>!Control.IsEmpty(51)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>true + !Window.Property(empty)</visible>
+			<posx>783</posx>
+			<posy>118</posy>
+			<width>24</width>
+			<height>556</height>
+			<texture>browse/graphic-divider-vert.png</texture>
+		</control>
+		<control type="group">
+			<!--<visible>!Container.OnNext + !Container.OnPrevious</visible>-->
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>true + !Window.Property(empty)</visible>
+			<!--<visible>true + !container(51).scrolling</visible>-->
+			<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout" delay="50">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" delay="250" reversible="false" condition="container(51).scrolling">Conditional</animation>
+			<control type="image">
+				<visible>true + !Window.Property(loading)</visible>
+				<visible>Control.IsVisible(51)</visible>
+				<visible>!Control.IsEmpty(51)</visible>
+				<visible>!IsEmpty(Container(51).ListItem.Thumb)</visible>
+				<posx>821</posx>
+				<posy>124</posy>
+				<width>207</width>
+				<height>298</height>
+				<texture fallback="browse/thumbnail-default-movie.png" blend="false">$INFO[Container(51).ListItem.Thumb]</texture>
+				<bordertexture srcborder="21" border="14">browse/bg-dropshadow-2.png</bordertexture>
+				<bordersize>7</bordersize>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="image">
+				<visible>true + !Window.Property(loading)</visible>
+				<visible>Control.IsVisible(51)</visible>
+				<visible>!Control.IsEmpty(51)</visible>
+				<visible>IsEmpty(Container(51).ListItem.Thumb)</visible>
+				<posx>821</posx>
+				<posy>124</posy>
+				<width>207</width>
+				<height>298</height>
+				<texture blend="false">browse/thumbnail-default-movie.png</texture>
+				<bordertexture srcborder="21" border="14">browse/bg-dropshadow-2.png</bordertexture>
+				<bordersize>7</bordersize>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<fadetime>200</fadetime>
+			</control>
+			<!--<control type="image">
+				<visible>Container(51).ListItem.Property(watched)</visible>
+				<posx>871</posx>
+				<posy>354</posy>
+				<width>20</width>
+				<height>20</height>
+				<texture>browse/graphic-thumbnail-watched-check.png</texture>
+				<aspectratio>scale</aspectratio>
+				<fadetime>200</fadetime>
+			</control>-->
+			<control type="label">
+				<visible>Control.IsVisible(51)</visible>								
+				<posx>827</posx>
+				<posy>427</posy>
+				<width>425</width>
+				<height>555</height>
+				<font>font20ls</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<textcolor>whiteheidi</textcolor>
+				<label>$INFO[formattime(container(51).ListItem.Duration min),, $LOCALIZE[55002] · ]$INFO[container(51).ListItem.MPAA,$LOCALIZE[563] , · ]$INFO[container(51).ListItem.Year,,]</label>
+				<wrapmultiline>false</wrapmultiline>
+			</control>
+			<control type="grouplist">
+				<visible>true + !Window.Property(loading)</visible>
+				<visible>!Control.IsEmpty(51)</visible>
+				<visible>Control.IsVisible(51)</visible>	
+				<posx>827</posx>
+				<posy>452</posy>
+				<width>304</width>
+				<height>450</height>
+				<orientation>horizontal</orientation>
+				<itemgap>9</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<!-- ROTTEN TOMATOES -->
+				<control type="grouplist">
+					<visible>Container(51).ListItem.Property(rt-has-critics-info)</visible>
+					<orientation>horizontal</orientation>
+					<itemgap>0</itemgap>
+					<usecontrolcoords>true</usecontrolcoords>
+					<control type="image">
+						<visible>IntegerGreaterThan(Container(51).ListItem.Property(rt-critics-score),60)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>40</width>
+						<height>40</height>
+						<texture>browse/graphic-rotten-good.png</texture>
+					</control>
+					<control type="image">
+						<visible>!IntegerGreaterThan(Container(51).ListItem.Property(rt-critics-score),60)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>40</width>
+						<height>40</height>
+						<texture>browse/graphic-rotten-bad.png</texture>
+					</control>
+					<control type="label">
+						<posy>2</posy>
+						<width min="0" max="100">auto</width>
+						<height min="0" max="40">auto</height>
+						<align>left</align>
+						<aligny>top</aligny>
+						<font>font26b</font>
+						<textcolor>lightgreyheidi</textcolor>
+						<label>[UPPERCASE][B]$INFO[Container(51).ListItem.Property(rt-critics-score)][/UPPERCASE][/B]</label>
+					</control>
+					<control type="label">
+						<posy>7</posy>
+						<width min="0" max="100">auto</width>
+						<height min="0" max="40">auto</height>
+						<align>left</align>
+						<aligny>top</aligny>
+						<font>font20</font>
+						<textcolor>lightgreyheidi</textcolor>
+						<label>%</label>
+					</control>
+				</control>
+				<control type="grouplist">
+					<visible>!stringcompare(Container(51).ListItem.Property(videorating),0)</visible>
+					<orientation>horizontal</orientation>
+					<itemgap>0</itemgap>
+					<usecontrolcoords>true</usecontrolcoords>
+					<control type="image">
+						<posx>0</posx>
+						<posy>7</posy>
+						<width>48</width>
+						<height>28</height>
+						<texture>browse/graphic-imdb.png</texture>
+					</control>
+					<control type="label">
+						<posy>2</posy>
+						<width min="0" max="100">auto</width>
+						<height min="0" max="40">auto</height>
+						<align>left</align>
+						<aligny>top</aligny>
+						<font>font26b</font>
+						<textcolor>lightgreyheidi</textcolor>
+						<label>[UPPERCASE][B]$INFO[Container(51).ListItem.Property(videorating)][/UPPERCASE][/B]</label>
+					</control>
+				</control>
+			</control>
+			<control type="label">
+				<animation effect="slide" start="0,0" end="0,-39" time="0" condition="!Container(51).ListItem.Property(rt-has-critics-info) + stringcompare(Container(51).ListItem.Property(videorating),0)">Conditional</animation>
+				<visible>Control.IsVisible(51)</visible>								
+				<posx>827</posx>
+				<posy>491</posy>
+				<width>425</width>
+				<height>180</height>
+				<font>font20ls</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<textcolor>whiteheidi</textcolor>
+				<label>$INFO[container(51).ListItem.property(description),,]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+		</control>
+		<include>ScrollLetter</include>
+	</include>
+	<include name="BrowseBrowserHistoryView">
+		<include>BrowseLineViewListBrowser</include>
+	</include>
+	<include name="BrowseEpisodesView">
+		<include>Common_Background_Browse_episodes</include>
+		<control type="label">
+			<!--<animation effect="fade" start="80" end="100" time="200" tween="cubic" easing="inout" reversible="true">Visible></animation>-->
+			<visible>Control.HasFocus(6020) | ControlGroup(8050).HasFocus | Control.HasFocus(8006)</visible>
+			<posx>62</posx>
+			<posy>24</posy>
+			<width>192</width>
+			<height>40</height>
+			<font>font21b</font>
+			<textcolor>boxeegreenheidi</textcolor>
+			<align>left</align>
+			<aligny>top</aligny>
+			<label>[UPPERCASE][B]$LOCALIZE[90451][/B][/UPPERCASE]</label>
+		</control>
+		<control type="label">
+			<visible>!Control.HasFocus(6020) + !ControlGroup(8050).HasFocus + !Control.HasFocus(8006)</visible>
+			<posx>62</posx>
+			<posy>24</posy>
+			<width>192</width>
+			<height>40</height>
+			<font>font21b</font>
+			<textcolor>mediumgreyheidi</textcolor>
+			<align>left</align>
+			<aligny>top</aligny>
+			<label>[UPPERCASE][B]$LOCALIZE[90451][/B][/UPPERCASE]</label>
+		</control>
+		<control type="group" id="8050">
+			<control type="image">
+				<visible>ControlGroup(8050).HasFocus</visible>
+				<posx>48</posx>
+				<posy>128</posy>
+				<width>200</width>
+				<height>48</height>
+				<texture srcborder="24" border="16">button-focused.png</texture>
+			</control>
+			<control type="group" id="8000">
+				<posx>63</posx>
+				<posy>139</posy>
+				<!-- Add to favorites -->
+				<control type="button" id="8004">
+					<width>25</width>
+					<height>25</height>
+					<visible>true + !Window.Property(is-favorite)</visible>
+					<texturefocus>mediaaction/icon-favorite-add-on.png</texturefocus>
+					<texturenofocus>mediaaction/icon-favorite-add-off.png</texturenofocus>
+					<font>font24b</font>
+					<textoffsetx>30</textoffsetx>
+					<textcolor>mediumgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<disabledcolor>mediumgreyheidi</disabledcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>[B]$LOCALIZE[53729][/B]</label>
+					<onleft>-</onleft>
+					<onright>52</onright>
+					<ondown>8006</ondown>
+					<onup>-</onup>
+					<onclick>Container.SetViewMode(50)</onclick>
+					<onclick>SetVisible(8005)</onclick>
+					<onclick>SetFocus(8005)</onclick>
+				</control>
+				<!-- Remove from favorites -->
+				<control type="button" id="8005">
+					<width>25</width>
+					<height>25</height>
+					<visible>Window.Property(is-favorite)</visible>
+					<texturefocus>mediaaction/icon-favorite-remove-on.png</texturefocus>
+					<texturenofocus>mediaaction/icon-favorite-remove-off.png</texturenofocus>
+					<font>font24b</font>
+					<textoffsetx>30</textoffsetx>
+					<textcolor>mediumgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<disabledcolor>mediumgreyheidi</disabledcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>[B]$LOCALIZE[53730][/B]</label>
+					<onleft>-</onleft>
+					<onright>52</onright>
+					<ondown>8006</ondown>
+					<onup>-</onup>
+					<onclick>Container.SetViewMode(51)</onclick>
+					<onclick>SetVisible(8004)</onclick>
+					<onclick>SetFocus(8004)</onclick>
+				</control>
+			</control>
+		</control>
+		<control type="image">
+			<posx>32</posx>
+			<posy>205</posy>
+			<width>232</width>
+			<height>33</height>
+			<texture>browse/graphic-divider-horz-232.png</texture>
+		</control>
+		<!-- Overview -->
+		<control type="button" id="8006">
+			<visible>!IsEmpty(Container(5000).ListItem.PlotOutline)</visible>
+			<posx>47</posx>
+			<posy>233</posy>
+			<width>200</width>
+			<height>48</height>
+			<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<align>left</align>
+			<aligny>center</aligny>
+			<font>font24b</font>
+			<textoffsetx>16</textoffsetx>
+			<textcolor>mediumgreyheidi</textcolor>
+			<focusedcolor>whiteheidi</focusedcolor>
+			<disabledcolor>mediumgreyheidi</disabledcolor>
+			<label>[B]$LOCALIZE[90452][/B]</label>
+			<onleft>-</onleft>
+			<onright>52</onright>
+			<ondown>6020</ondown>
+			<onup>8050</onup>
+			<onclick>Skin.SetString(EpisodeViewMode,Overview)</onclick>
+		</control>
+		<control type="fixedlist" id="6020">
+			<animation effect="slide" start="0,0" end="0,-67" time="0" condition="IsEmpty(Container(5000).ListItem.PlotOutline)">Conditional</animation>
+			<posx>35</posx>
+			<posy>300</posy>
+			<width>364</width>
+			<height>392</height>
+			<onleft>-</onleft>
+			<onright>52</onright>
+			<onup>8006</onup>
+			<ondown>-</ondown>
+			<scrolltime>200</scrolltime>
+			<pagecontrol>60</pagecontrol>
+			<orientation>vertical</orientation>
+			<itemlayout width="364" height="60">
+				<control type="image">
+					<visible>ListItem.IsSelected</visible>
+					<visible>stringcompare(skin.string(EpisodeViewMode),Episodes)</visible>
+					<posx>12</posx>
+					<posy>0</posy>
+					<width>200</width>
+					<height>48</height>
+					<texture srcborder="24" border="16">button-on.png</texture>
+				</control>
+				<control type="label">
+					<posx>29</posx>
+					<posy>-1</posy>
+					<width>200</width>
+					<height>48</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font24b</font>
+					<textcolor>mediumgreyheidi</textcolor>
+					<label>[B]$INFO[ListItem.Label][/B]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout width="364" height="60">
+				<control type="group">	
+					<visible>Control.HasFocus(6020)</visible>
+					<control type="image">
+						<visible>ListItem.IsSelected</visible>
+						<visible>stringcompare(skin.string(EpisodeViewMode),Episodes)</visible>
+						<posx>12</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>48</height>
+						<texture srcborder="24" border="16">button-on.png</texture>
+					</control>
+					<control type="image">
+						<posx>12</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>48</height>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="label">
+						<visible>stringcompare(skin.string(EpisodeViewMode),Episodes)</visible>
+						<posx>29</posx>
+						<posy>-1</posy>
+						<width>200</width>
+						<height>48</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>font24b</font>
+						<textcolor>whiteheidi</textcolor>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+					</control>
+					<control type="label">
+						<visible>!stringcompare(skin.string(EpisodeViewMode),Episodes)</visible>
+						<posx>29</posx>
+						<posy>-1</posy>
+						<width>200</width>
+						<height>48</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>font24b</font>
+						<textcolor>mediumgreyheidi</textcolor>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+					</control>
+				</control>
+				<control type="group">	
+					<visible>!Control.HasFocus(6020)</visible>
+					<control type="image">
+						<visible>ListItem.IsSelected</visible>
+						<visible>stringcompare(skin.string(EpisodeViewMode),Episodes)</visible>
+						<posx>12</posx>
+						<posy>0</posy>
+						<width>200</width>
+						<height>48</height>
+						<texture srcborder="24" border="16">button-on.png</texture>
+					</control>
+					<control type="label">
+						<posx>29</posx>
+						<posy>-1</posy>
+						<width>200</width>
+						<height>48</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>font24b</font>
+						<textcolor>mediumgreyheidi</textcolor>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+					</control>
+				</control>
+			</focusedlayout>
+		</control>
+		<!-- EPISODES -->
+		<control type="group">
+			<visible>stringcompare(skin.string(EpisodeViewMode),Episodes)</visible>
+			<control type="label">
+				<visible>!Control.HasFocus(52)</visible>
+				<posx>302</posx>
+				<posy>26</posy>
+				<width>230</width>
+				<height>20</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<font>font20b</font>
+				<textcolor>mediumgreyheidi</textcolor>
+				<label>[UPPERCASE][B]$INFO[Window.Property(item-summary-count)][/B][/UPPERCASE]</label>
+				<wrapmultiline>false</wrapmultiline>
+			</control>
+			<control type="label">
+				<visible>Control.HasFocus(52)</visible>
+				<posx>302</posx>
+				<posy>26</posy>
+				<width>230</width>
+				<height>20</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<font>font20b</font>
+				<textcolor>boxeegreenheidi</textcolor>
+				<label>[UPPERCASE][B]$INFO[Window.Property(item-summary-count)][/B][/UPPERCASE]</label>
+				<wrapmultiline>false</wrapmultiline>
+			</control>
+			<control type="fixedlist" id="52">
+				<visible>true</visible>
+				<preloaditems>2</preloaditems>
+				<posx>281</posx>
+				<posy>72</posy>
+				<width>970</width>
+				<height>636</height>
+				<onleft>6020</onleft>
+				<onright>8014</onright>
+				<onup>8014</onup>
+				<ondown>-</ondown>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<focusposition>6</focusposition>
+				<itemlayout height="115">
+					<control type="group">
+						<visible>!ListItem.Property(isseparator)</visible>
+						<control type="image">
+							<visible>!IsEmpty(ListItem.Thumb)</visible>
+							<posx>8</posx>
+							<posy>8</posy>
+							<width>154</width>
+							<height>94</height>
+							<texture fallback="browse/thumbnail-default-episode.png" blend="false">$INFO[ListItem.Thumb]</texture>
+							<bordertexture srcborder="21" border="14">browse/bg-dropshadow-2.png</bordertexture>
+							<bordersize>7</bordersize>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="image">
+							<visible>IsEmpty(ListItem.Thumb)</visible>
+							<posx>8</posx>
+							<posy>8</posy>
+							<width>154</width>
+							<height>94</height>
+							<texture fallback="browse/thumbnail-default-episode.png" blend="false">browse/thumbnail-default-episode.png</texture>
+							<bordertexture srcborder="21" border="14">browse/bg-dropshadow-2.png</bordertexture>
+							<bordersize>7</bordersize>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
+						<!-- control type="image">
+							<visible>ListItem.Property(watched)</visible>
+							<posx>20</posx>
+							<posy>14</posy>
+							<width>93</width>
+							<height>53</height>
+							<texture>browse/thumbnail-watched-episode-scanlines.png</texture>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control -->
+						<control type="image">
+							<visible>ListItem.Property(watched)</visible>
+							<posx>132</posx>
+							<posy>72</posy>
+							<width>18</width>
+							<height>18</height>
+							<texture>browse/graphic-thumbnail-watched-check.png</texture>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="label">
+							<posx>174</posx>
+							<posy>16</posy>
+							<width>764</width>
+							<height>52</height>
+							<font>font32</font>
+							<align>left</align>
+							<aligny>top</aligny>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+							<textcolor>lightgreyheidi</textcolor>
+							<selectedcolor>lightgreyheidi</selectedcolor>
+							<scroll>false</scroll>
+						</control>
+						<control type="label">
+							<visible>!IsEmpty(ListItem.Episode)</visible>
+							<posx>174</posx>
+							<posy>56</posy>
+							<width>570</width>
+							<height>52</height>
+							<font>font24</font>
+							<align>left</align>
+							<aligny>top</aligny>
+							<label>$INFO[ListItem.Episode,Episode ,]$INFO[ListItem.Property(releasedate), · Aired ,]</label>
+							<textcolor>mediumgreyheidi</textcolor>
+							<selectedcolor>mediumgreyheidi</selectedcolor>
+						</control>
+						<control type="label">
+							<visible>IsEmpty(ListItem.Episode)</visible>
+							<posx>174</posx>
+							<posy>56</posy>
+							<width>570</width>
+							<height>52</height>
+							<font>font24</font>
+							<align>left</align>
+							<aligny>top</aligny>
+							<label>$INFO[ListItem.Property(releasedate),Aired ,]</label>
+							<textcolor>mediumgreyheidi</textcolor>
+							<selectedcolor>mediumgreyheidi</selectedcolor>
+						</control>
+					</control>
+					<control type="group">
+						<visible>ListItem.Property(isseparator)</visible>
+						<control type="label">
+							<posx>19</posx>
+							<posy>48</posy>
+							<width>570</width>
+							<height>52</height>
+							<font>font26</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+							<textcolor>whiteheidi</textcolor>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout height="115">
+					<control type="image">
+						<visible>Control.HasFocus(52)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>966</width>
+						<height>110</height>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="image">
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<posx>8</posx>
+						<posy>8</posy>
+						<width>154</width>
+						<height>94</height>
+						<texture fallback="browse/thumbnail-default-episode.png" blend="false">$INFO[ListItem.Thumb]</texture>
+						<bordertexture srcborder="21" border="14">browse/bg-dropshadow-2.png</bordertexture>
+						<bordersize>7</bordersize>
+						<aspectratio>scale</aspectratio>
+						<fadetime>200</fadetime>
+					</control>
+					<control type="image">
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<posx>8</posx>
+						<posy>8</posy>
+						<width>154</width>
+						<height>94</height>
+						<texture fallback="browse/thumbnail-default-episode.png" blend="false">browse/thumbnail-default-episode.png</texture>
+						<bordertexture srcborder="21" border="14">browse/bg-dropshadow-2.png</bordertexture>
+						<bordersize>7</bordersize>
+						<aspectratio>scale</aspectratio>
+						<fadetime>200</fadetime>
+					</control>
+					<!-- control type="image">
+						<visible>ListItem.Property(watched)</visible>
+						<posx>20</posx>
+						<posy>14</posy>
+						<width>93</width>
+						<height>53</height>
+						<texture>browse/thumbnail-watched-episode-scanlines.png</texture>
+						<aspectratio>scale</aspectratio>
+						<fadetime>200</fadetime>
+					</control -->
+					<control type="image">
+						<visible>ListItem.Property(watched)</visible>
+						<posx>132</posx>
+						<posy>72</posy>
+						<width>18</width>
+						<height>18</height>
+						<texture>browse/graphic-thumbnail-watched-check.png</texture>
+						<aspectratio>scale</aspectratio>
+						<fadetime>200</fadetime>
+					</control>
+					<control type="label">
+						<visible>Control.HasFocus(52)</visible>
+						<posx>174</posx>
+						<posy>16</posy>
+						<width>764</width>
+						<height>52</height>
+						<font>font32</font>
+						<align>left</align>
+						<aligny>top</aligny>
+ 						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>whiteheidi</textcolor>
+						<selectedcolor>whiteheidi</selectedcolor>
+						<scroll>true</scroll>
+						<scrollspeed>70</scrollspeed>
+					</control>
+					<control type="label">
+						<visible>!Control.HasFocus(52)</visible>
+						<posx>174</posx>
+						<posy>16</posy>
+						<width>764</width>
+						<height>52</height>
+						<font>font32</font>
+						<align>left</align>
+						<aligny>top</aligny>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>lightgreyheidi</textcolor>
+						<selectedcolor>lightgreyheidi</selectedcolor>
+						<scroll>false</scroll>
+					</control>
+					<control type="label">
+						<visible>!IsEmpty(ListItem.Episode)</visible>
+						<posx>174</posx>
+						<posy>56</posy>
+						<width>570</width>
+						<height>52</height>
+						<font>font24</font>
+						<align>left</align>
+						<aligny>top</aligny>
+						<label>$INFO[ListItem.Episode,Episode ,]$INFO[ListItem.Property(releasedate), · Aired ,]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>IsEmpty(ListItem.Episode)</visible>
+						<posx>174</posx>
+						<posy>56</posy>
+						<width>570</width>
+						<height>52</height>
+						<font>font24</font>
+						<align>left</align>
+						<aligny>top</aligny>
+						<label>$INFO[ListItem.Property(releasedate),Aired ,]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="image">
+				<posx>264</posx>
+				<posy>68</posy>
+				<width>1016</width>
+				<height>68</height>
+				<texture>background/background-mask-episodes.png</texture>
+			</control>
+		</control>
+		<!-- SHARED -->
+		<control type="label">
+			<posx>302</posx>
+			<posy>48</posy>
+			<width>960</width>
+			<height>100</height>
+			<font>font40bls</font>
+			<align>left</align>
+			<aligny>top</aligny>
+			<textcolor>whiteheidi</textcolor>
+			<wrapmultiline>false</wrapmultiline>
+			<label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+		</control>
+		<!-- OVERVIEW -->
+		<control type="group">
+			<visible>stringcompare(skin.string(EpisodeViewMode),Overview)</visible>
+			<control type="label">
+				<posx>302</posx>
+				<posy>26</posy>
+				<width>230</width>
+				<height>20</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<font>font20b</font>
+				<textcolor>mediumgreyheidi</textcolor>
+				<label>[UPPERCASE][B]$LOCALIZE[90452][/B][/UPPERCASE]</label>
+				<wrapmultiline>false</wrapmultiline>
+			</control>
+			<control type="image">
+				<visible>!IsEmpty(Container(5000).ListItem.Thumb)</visible>
+				<posx>295</posx>
+				<posy>122</posy>
+				<width>204</width>
+				<height>296</height>
+				<bordertexture srcborder="21" border="14">browse/bg-dropshadow-2.png</bordertexture>
+				<bordersize>7</bordersize>
+				<texture fallback="browse/thumbnail-default-movie.png" blend="false">$INFO[Container(5000).ListItem.Thumb]</texture>
+				<aspectratio>scale</aspectratio>
+			</control>
+			<control type="image">
+				<visible>IsEmpty(Container(5000).ListItem.Thumb)</visible>
+				<posx>295</posx>
+				<posy>122</posy>
+				<width>204</width>
+				<height>296</height>
+				<bordertexture srcborder="21" border="14">browse/bg-dropshadow-2.png</bordertexture>
+				<bordersize>7</bordersize>
+				<texture fallback="browse/thumbnail-default-movie.png" blend="false">browse/thumbnail-default-movie.png</texture>
+				<aspectratio>scale</aspectratio>
+			</control>
+			<control type="grouplist">
+				<posx>520</posx>
+				<posy>121</posy>
+				<width>720</width>
+				<orientation>vertical</orientation>
+				<itemgap>10</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<visible>!IsEmpty(Container(5000).ListItem.Year)</visible>
+					<posy>0</posy>
+					<width>324</width>
+					<height min="0" max="40">auto</height>
+					<font>font24b</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$INFO[Container(5000).ListItem.Year,,]$INFO[Container(5000).ListItem.MPAA, · $LOCALIZE[563] ,]</label>
+					<textcolor>whiteheidi</textcolor>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<visible>IsEmpty(Container(5000).ListItem.Year) + <visible>!IsEmpty(Container(5000).ListItem.MPAA)</visible></visible>
+					<posy>0</posy>
+					<width>324</width>
+					<height min="0" max="40">auto</height>
+					<font>font24b</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$INFO[Container(5000).ListItem.Year,,]$INFO[Container(5000).ListItem.MPAA, · $LOCALIZE[563] ,]</label>
+					<textcolor>whiteheidi</textcolor>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<width>700</width>
+					<height min="0" max="250">auto</height>
+					<font>font24bex</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$INFO[Container(5000).ListItem.PlotOutline]</label>
+					<textcolor>lightgreyheidi</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<!-- Director -->
+				<control type="label">
+					<visible>!IsEmpty(Container(5000).ListItem.Director)</visible>
+					<width>700</width>
+					<height min="0" max="20">auto</height>
+					<font>font24bex</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[20339]$INFO[Container(5000).ListItem.Director, ,]</label>
+					<textcolor>lightgreyheidi</textcolor>
+				</control>
+				<!-- Cast -->
+				<control type="label">
+					<visible>!IsEmpty(Container(5000).ListItem.property(cast))</visible>
+					<width>700</width>
+					<height min="0" max="100">auto</height>
+					<font>font24bex</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[54042]$INFO[Container(5000).ListItem.property(cast), ,]</label>
+					<textcolor>lightgreyheidi</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+					<!--<wrapmultiline>true</wrapmultiline> MAKES LABEL DISAPPEAR-->
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseRepositoriesLineViewList">
+		<include>Common_Background_Browse</include>
+		<control type="group">
+			<control type="label" id="9019">
+				<include>PageTitlePropertiesFocused</include>
+				<label>[B]$LOCALIZE[53274][/B]</label>
+			</control>
+			<control type="label">
+				<visible>true + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+				<include>PageSubtitlePropertiesFocused</include>
+				<label>$INFO[Container.NumItems,, $LOCALIZE[90050]]</label>
+			</control>
+			<control type="label">
+				<visible>true + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+				<include>PageSubtitlePropertiesFocused</include>
+				<label>$INFO[Window.Property(item-summary-count)]</label>
+			</control>
+		</control>
+		<control type="group" id="501">
+			<control type="fixedlist" id="56">
+				<enable>true + !Window.Property(empty)</enable>
+				<preloaditems>2</preloaditems>
+				<posx>280</posx>
+				<posy>124</posy>
+				<width>990</width>
+				<height>550</height>
+				<onleft>500</onleft>
+				<onright>7100</onright>
+				<onup>8050</onup>
+				<ondown>-</ondown>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<focusposition>5</focusposition>
+				<itemlayout height="60">
+					<control type="image">
+						<include>BrowseShortLineUnfocus</include>
+					</control>
+					<control type="label">
+						<include>BrowseFullLineLabelProperties</include>
+						<info>ListItem.Label</info>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout height="60">
+					<control type="image">
+						<visible>Control.HasFocus(56)</visible>
+						<include>BrowseShortLineFocus</include>
+					</control>
+					<control type="label">
+						<scroll>false</scroll>
+						<visible>Control.HasFocus(56)</visible>
+						<include>BrowseFullLineLabelProperties</include>
+						<info>ListItem.Label</info>
+						<textcolor>whiteheidi</textcolor>
+						<selectedcolor>whiteheidi</selectedcolor>
+					</control>
+					<control type="label">
+						<scroll>false</scroll>
+						<visible>!Control.HasFocus(56)</visible>
+						<include>BrowseFullLineLabelProperties</include>
+						<info>ListItem.Label</info>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseApplicationThumbView">
+		<include>Common_Background_Browse</include>
+		<control type="group" id="501">
+			<control type="panel" id="55">
+				<enable>true + !Window.Property(empty)</enable>
+				<visible>true + !Window.Property(loading)</visible>
+				<preloaditems>2</preloaditems>
+				<posx>291</posx>
+				<posy>123</posy>
+				<width>980</width>
+				<height>597</height>
+				<onleft>500</onleft>
+				<onright>7000</onright>
+				<onup>8050</onup>
+				<ondown>-</ondown>
+				<scrolltimemin>300</scrolltimemin>
+				<scrolltime>500</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<itemlayout width="193" height="236">
+					<include>BrowseSquareThumbUnfocusApps</include>
+					<include>BrowseSquareLabelUnfocusApps</include>
+				</itemlayout>
+				<focusedlayout width="193" height="236">
+					<control type="group">
+						<visible>!Control.HasFocus(55)</visible>
+						<include>BrowseSquareThumbUnfocusApps</include>
+						<include>BrowseSquareLabelUnfocusApps</include>
+					</control>
+					<control type="group">
+						<visible>Control.HasFocus(55)</visible>
+						<include>BrowseSquareThumbFocusApps</include>
+						<include>BrowseSquareLabelFocusApps</include>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+		<!-- include>BrowseThumbsFade</include -->
+	</include>
+	<include name="BrowseQueueView">
+		<include>Common_Background_Browse</include>
+		<include>LogoTitleAndItemCountMovies</include>
+		<control type="group" id="501">
+			<control type="panel" id="52">
+				<enable>true + !Window.Property(is-category-movie)</enable>
+				<visible>true + !Window.Property(is-category-movie)</visible>
+				<preloaditems>2</preloaditems>
+				<posx>288</posx>
+				<posy>123</posy>
+				<width>980</width>
+				<height>597</height>
+				<onleft>500</onleft>
+				<onright>9015</onright>
+				<onup>9015</onup>
+				<ondown>-</ondown>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>-</pagecontrol>
+				<orientation>vertical</orientation>
+				<focusposition>2</focusposition>
+				<itemlayout width="323" height="251">
+					<control type="image">
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<posx>4</posx>
+						<posy>3</posy>
+						<width>308</width>
+						<height>180</height>
+						<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
+						<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+						<bordersize>8</bordersize>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="image">
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<posx>4</posx>
+						<posy>3</posy>
+						<width>308</width>
+						<height>180</height>
+						<texture fallback="browse/thumbnail-default-landscape.png" blend="false">browse/thumbnail-default-landscape.png</texture>
+						<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+						<bordersize>8</bordersize>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>182</posy>
+						<width>314</width>
+						<height>60</height>
+						<label>[B]$INFO[ListItem.label][/B]</label>
+						<font>font20bls</font>
+						<align>left</align>
+						<aligny>top</aligny>
+						<textcolor>mediumgreyheidi</textcolor>
+						<fadetime>200</fadetime>
+						<wrapmultiline>true</wrapmultiline>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(watched)</visible>
+						<posx>278</posx>
+						<posy>149</posy>
+						<width>20</width>
+						<height>20</height>
+						<texture>browse/graphic-thumbnail-watched-check.png</texture>
+						<aspectratio>scale</aspectratio>
+						<fadetime>200</fadetime>
+					</control>
+				</itemlayout>
+				<focusedlayout width="323" height="251">
+					<control type="group">
+						<visible>!Control.HasFocus(52)</visible>
+						<control type="image">
+							<visible>!IsEmpty(ListItem.Thumb)</visible>
+							<posx>4</posx>
+							<posy>3</posy>
+							<width>308</width>
+							<height>180</height>
+							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
+							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="image">
+							<visible>IsEmpty(ListItem.Thumb)</visible>
+							<posx>4</posx>
+							<posy>3</posy>
+							<width>308</width>
+							<height>180</height>
+							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">browse/thumbnail-default-landscape.png</texture>
+							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="label">
+							<posx>10</posx>
+							<posy>182</posy>
+							<width>314</width>
+							<height>60</height>
+							<label>[B]$INFO[ListItem.label][/B]</label>
+							<font>font20bls</font>
+							<align>left</align>
+							<aligny>top</aligny>
+							<textcolor>mediumgreyheidi</textcolor>
+							<fadetime>200</fadetime>
+							<wrapmultiline>true</wrapmultiline>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(watched)</visible>
+							<posx>278</posx>
+							<posy>149</posy>
+							<width>20</width>
+							<height>20</height>
+							<texture>browse/graphic-thumbnail-watched-check.png</texture>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
+					</control>
+					<control type="group">
+						<visible>Control.HasFocus(52)</visible>
+						<control type="image">
+							<visible>!IsEmpty(ListItem.Thumb)</visible>
+							<posx>4</posx>
+							<posy>3</posy>
+							<width>308</width>
+							<height>180</height>
+							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
+							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="image">
+							<visible>IsEmpty(ListItem.Thumb)</visible>
+							<posx>4</posx>
+							<posy>3</posy>
+							<width>308</width>
+							<height>180</height>
+							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">browse/thumbnail-default-landscape.png</texture>
+							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="label">
+							<posx>10</posx>
+							<posy>182</posy>
+							<width>314</width>
+							<height>60</height>
+							<label>[B]$INFO[ListItem.label][/B]</label>
+							<font>font20bls</font>
+							<align>left</align>
+							<aligny>top</aligny>
+							<textcolor>whiteheidi</textcolor>
+							<fadetime>200</fadetime>
+							<wrapmultiline>true</wrapmultiline>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(watched)</visible>
+							<posx>278</posx>
+							<posy>149</posy>
+							<width>20</width>
+							<height>20</height>
+							<texture>browse/graphic-thumbnail-watched-check.png</texture>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="panel" id="51">
+				<enable>true + Window.Property(is-category-movie)</enable>
+				<visible>true + Window.Property(is-category-movie)</visible>
+				<preloaditems>2</preloaditems>
+				<posx>291</posx>
+				<posy>127</posy>
+				<width>1104</width>
+				<height>560</height>
+				<onleft>500</onleft>
+				<onright>9015</onright>
+				<onup>9015</onup>
+				<ondown>-</ondown>
+				<scrolltimemin>200</scrolltimemin>
+				<scrolltime>350</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<itemlayout height="280" width="160">
+					<include>BrowsePortraitThumbUnfocus</include>
+					<include>BrowsePortraitLabelUnfocus</include>
+				</itemlayout>
+				<focusedlayout height="280" width="160">
+					<control type="group">
+						<visible>!Control.HasFocus(51)</visible>
+						<include>BrowsePortraitThumbUnfocus</include>
+						<include>BrowsePortraitLabelUnfocus</include>
+					</control>
+					<control type="group">
+						<visible>Control.HasFocus(51)</visible>
+						<include>BrowsePortraitThumbFocus</include>
+						<include>BrowsePortraitLabelFocus</include>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseFeedView">
+		<control type="group" id="501">
+			<control type="panel" id="52">
+				<preloaditems>2</preloaditems>
+				<posx>26</posx>
+				<posy>123</posy>
+				<width>1244</width>
+				<height>597</height>
+				<onleft>49</onleft>
+				<onright>9015</onright>
+				<onup>9015</onup>
+				<ondown>-</ondown>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>-</pagecontrol>
+				<orientation>vertical</orientation>
+				<focusposition>2</focusposition>
+				<itemlayout width="308" height="251">
+					<control type="image">
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<posx>4</posx>
+						<posy>3</posy>
+						<width>296</width>
+						<height>180</height>
+						<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
+						<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+						<bordersize>8</bordersize>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="image">
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<posx>4</posx>
+						<posy>3</posy>
+						<width>296</width>
+						<height>180</height>
+						<texture fallback="browse/thumbnail-default-landscape.png" blend="false">browse/thumbnail-default-landscape.png</texture>
+						<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+						<bordersize>8</bordersize>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(watched)</visible>
+						<posx>259</posx>
+						<posy>142</posy>
+						<width>28</width>
+						<height>28</height>
+						<texture>browse/graphic-thumbnail-watched-check.png</texture>
+						<aspectratio>scale</aspectratio>
+						<fadetime>200</fadetime>
+					</control>
+					<!--<control type="image">
+						<posx>12</posx>
+						<posy>139</posy>
+						<width>280</width>
+						<height>36</height>
+						<texture>colors/color-black.png</texture>
+						<colordiffuse>D9FFFFFF</colordiffuse>
+					</control>
+					<control type="largeimage">
+						<posx>12</posx>
+						<posy>139</posy>
+						<width>36</width>
+						<height>36</height>
+						<info>ListItem.Property(user_thumb)</info>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="label">
+						<posx>55</posx>
+						<posy>138</posy>
+						<width>250</width>
+						<height>36</height>
+						<font>font20b</font>
+						<textcolor>lightgreyheidi</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.property(user_name)]</label>
+					</control>
+					<control type="largeimage">
+						<posx>262</posx>
+						<posy>147</posy>
+						<width>20</width>
+						<height>20</height>
+						<texture blend="true" align="center" aligny="center" diffuse="universal/graphic-circle-30px.png">http://s3.boxee.tv/feedsrc/v2/$INFO[ListItem.Property(feedsource-lower)].png</texture>
+						<aspectratio scalediffuse="true">scale</aspectratio>
+					</control>-->
+					<control type="label">
+						<posx>10</posx>
+						<posy>182</posy>
+						<width>288</width>
+						<height>60</height>
+						<label>[B]$INFO[ListItem.label][/B]</label>
+						<font>font20bls</font>
+						<align>left</align>
+						<aligny>top</aligny>
+						<textcolor>mediumgreyheidi</textcolor>
+						<fadetime>200</fadetime>
+						<wrapmultiline>true</wrapmultiline>
+					</control>
+				</itemlayout>
+				<focusedlayout width="308" height="251">
+					<control type="image">
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<posx>4</posx>
+						<posy>3</posy>
+						<width>296</width>
+						<height>180</height>
+						<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
+						<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+						<bordersize>8</bordersize>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="image">
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<posx>4</posx>
+						<posy>3</posy>
+						<width>296</width>
+						<height>180</height>
+						<texture fallback="browse/thumbnail-default-landscape.png" blend="false">browse/thumbnail-default-landscape.png</texture>
+						<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+						<bordersize>8</bordersize>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="group">
+						<animation effect="zoom" start="100,0" end="100,100" time="230" center="0,175" reversible="false">Focus</animation>
+						<control type="image">
+							<posx>12</posx>
+							<posy>139</posy>
+							<width>280</width>
+							<height>36</height>
+							<texture>colors/color-black.png</texture>
+							<colordiffuse>D9FFFFFF</colordiffuse>
+						</control>
+						<control type="group">
+							<animation effect="fade" start="0" end="100" time="230" delay="100" reversible="false">Focus</animation>
+							<control type="largeimage">
+								<visible>!IsEmpty(ListItem.Property(user_thumb))</visible>
+								<posx>12</posx>
+								<posy>139</posy>
+								<width>36</width>
+								<height>36</height>
+								<texture fallback="http://s3.boxee.tv/thumb/200x200/default.png">$INFO[ListItem.Property(user_thumb)]</texture>
+								<aspectratio>scale</aspectratio>
+							</control>
+							<control type="image">
+								<visible>IsEmpty(ListItem.Property(user_thumb))</visible>
+								<posx>12</posx>
+								<posy>139</posy>
+								<width>36</width>
+								<height>36</height>
+								<texture fallback="browse/thumbnail-default-friend-avatar.png">browse/thumbnail-default-friend-avatar.png</texture>
+								<aspectratio>scale</aspectratio>
+							</control>
+							<control type="label">
+								<posx>55</posx>
+								<posy>138</posy>
+								<width>200</width>
+								<height>36</height>
+								<font>font20b</font>
+								<textcolor>lightgreyheidi</textcolor>
+								<align>left</align>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.property(user_name)]</label>
+							</control>
+							<control type="largeimage">
+								<posx>262</posx>
+								<posy>147</posy>
+								<width>20</width>
+								<height>20</height>
+								<texture blend="true" align="center" aligny="center" diffuse="universal/graphic-circle-30px.png">http://s3.boxee.tv/feedsrc/v3/$INFO[ListItem.Property(feedsource-lower)].png</texture>
+								<aspectratio scalediffuse="true">scale</aspectratio>
+							</control>
+						</control>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>182</posy>
+						<width>288</width>
+						<height>60</height>
+						<label>[B]$INFO[ListItem.label][/B]</label>
+						<font>font20bls</font>
+						<align>left</align>
+						<aligny>top</aligny>
+						<textcolor>whiteheidi</textcolor>
+						<fadetime>200</fadetime>
+						<wrapmultiline>true</wrapmultiline>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseSimpleAppView">
+		<control type="group" id="501">
+			<control type="panel" id="52">
+				<preloaditems>2</preloaditems>
+				<posx>26</posx>
+				<posy>120</posy>
+				<width>1244</width>
+				<height>620</height>
+				<onleft>49</onleft>
+				<onright>9015</onright>
+				<onup>9015</onup>
+				<ondown>-</ondown>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>-</pagecontrol>
+				<orientation>vertical</orientation>
+				<focusposition>2</focusposition>
+				<itemlayout width="308" height="251">
+					<control type="image">
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<posx>4</posx>
+						<posy>3</posy>
+						<width>296</width>
+						<height>180</height>
+						<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
+						<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+						<bordersize>8</bordersize>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="image">
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<posx>4</posx>
+						<posy>3</posy>
+						<width>296</width>
+						<height>180</height>
+						<texture fallback="browse/thumbnail-default-landscape.png" blend="false">browse/thumbnail-default-landscape.png</texture>
+						<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+						<bordersize>8</bordersize>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>182</posy>
+						<width>314</width>
+						<height>60</height>
+						<label>[B]$INFO[ListItem.label][/B]</label>
+						<font>font20bls</font>
+						<align>left</align>
+						<aligny>top</aligny>
+						<textcolor>mediumgreyheidi</textcolor>
+						<fadetime>200</fadetime>
+						<wrapmultiline>true</wrapmultiline>
+					</control>
+				</itemlayout>
+				<focusedlayout width="308" height="251">
+					<control type="image">
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<posx>4</posx>
+						<posy>3</posy>
+						<width>296</width>
+						<height>180</height>
+						<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
+						<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+						<bordersize>8</bordersize>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="image">
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<posx>4</posx>
+						<posy>3</posy>
+						<width>296</width>
+						<height>180</height>
+						<texture fallback="browse/thumbnail-default-landscape.png" blend="false">browse/thumbnail-default-landscape.png</texture>
+						<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+						<bordersize>8</bordersize>
+						<aspectratio>scale</aspectratio>
+					</control>
+					<control type="label">
+						<posx>10</posx>
+						<posy>182</posy>
+						<width>314</width>
+						<height>60</height>
+						<label>[B]$INFO[ListItem.label][/B]</label>
+						<font>font20bls</font>
+						<align>left</align>
+						<aligny>top</aligny>
+						<textcolor>whiteheidi</textcolor>
+						<fadetime>200</fadetime>
+						<wrapmultiline>true</wrapmultiline>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseMusicLineViewList">
+		<control type="fixedlist" id="54">
+			<enable>true + !Window.Property(empty)</enable>
+			<preloaditems>2</preloaditems>
+			<posx>29</posx>
+			<posy>140</posy>
+			<width>600</width>
+			<height>580</height>
+			<onleft>-</onleft>
+			<onright>8050</onright>
+			<onup>8050</onup>
+			<ondown>-</ondown>
+			<scrolltime>200</scrolltime>
+			<pagecontrol>60</pagecontrol>
+			<orientation>vertical</orientation>
+			<focusposition>6</focusposition>
+			<itemlayout height="52">
+				<control type="image">
+					<include>BrowseLongLineUnfocus</include>
+				</control>
+				<control type="label">
+					<include>BrowseLongLineLabelProperties</include>
+					<label>$INFO[ListItem.Artist]$INFO[ListItem.Album,	]</label>
+					<textcolor>white</textcolor>
+					<selectedcolor>white</selectedcolor>
+				</control>
+			</itemlayout>
+			<focusedlayout height="52">
+				<control type="image">
+					<visible>Control.HasFocus(54)</visible>
+					<include>BrowseLongLineFocus</include>
+				</control>
+				<control type="image">
+					<visible>!Control.HasFocus(54)</visible>
+					<include>BrowseLongLineUnfocus</include>
+				</control>
+				<control type="label">
+					<visible>!Control.HasFocus(54)</visible>
+					<include>BrowseLongLineLabelProperties</include>
+					<label>$INFO[ListItem.Artist]$INFO[ListItem.Album,	]</label>
+					<textcolor>white</textcolor>
+					<selectedcolor>white</selectedcolor>
+				</control>
+				<control type="label">
+					<visible>Control.HasFocus(54)</visible>
+					<include>BrowseLongLineLabelProperties</include>
+					<label>$INFO[ListItem.Artist]$INFO[ListItem.Album,	]</label>
+					<textcolor>black</textcolor>
+					<selectedcolor>black</selectedcolor>
+					<scroll>true</scroll>
+				</control>
+			</focusedlayout>
+		</control>
+		<include>BrowseThumbsFade</include>
+	</include>
+	<include name="BrowseMusicLineView">
+		<include>BrowseMusicLineViewList</include>
+		<control type="group">
+			<posx>682</posx>
+			<posy>140</posy>
+			<visible>!Container.OnNext + !Container.OnPrevious</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<animation effect="fade" start="0" end="100" time="200" delay="100">WindowOpen</animation>
+			<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout" delay="50">Visible</animation>
+			<visible>Control.IsVisible(54)</visible>
+			<control type="image">
+				<visible>!IsEmpty(Container(54).ListItem.Thumb)</visible>
+				<include>BrowseThumbAnimationUnfocus</include>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>320</width>
+				<height>320</height>
+				<texture blend="false">$INFO[Container(54).ListItem.Thumb]</texture>
+				<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+				<bordersize>10</bordersize>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="image">
+				<visible>IsEmpty(Container(54).ListItem.Thumb)</visible>
+				<include>BrowseThumbAnimationUnfocus</include>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>320</width>
+				<height>320</height>
+				<texture blend="false">default_music.png</texture>
+				<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+				<bordersize>10</bordersize>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<fadetime>200</fadetime>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseMusicThumbView">
+		<!--
+		All albums	   -	 Window.Property(albums-or-artists)=0
+		All artists		-	  Window.Property(albums-or-artists)=1
+		Albums of an artists	 -	   Window.Property(albums-or-artists)=2
+		-->
+		<control type="group" id="501">
+			<control type="panel" id="53">
+				<enable>true + !Window.Property(empty)</enable>
+				<visible>stringcompare(Window.Property(albums-or-artists),1)</visible>
+				<preloaditems>2</preloaditems>
+				<posx>296</posx>
+				<posy>123</posy>
+				<width>960</width>
+				<height>597</height>
+				<onleft>500</onleft>
+				<onright>8050</onright>
+				<onup>8050</onup>
+				<ondown>-</ondown>
+				<scrolltime>400</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<itemlayout width="192" height="236">
+					<include>BrowseMusicThumbUnfocus</include>
+					<include>BrowseSquareLabelUnfocus</include>
+				</itemlayout>
+				<focusedlayout width="192" height="236">
+					<control type="group">
+						<visible>!Control.HasFocus(53)</visible>
+						<include>BrowseMusicThumbUnfocus</include>
+						<include>BrowseSquareLabelUnfocus</include>
+					</control>
+					<control type="group">
+						<visible>Control.HasFocus(53)</visible>
+						<include>BrowseMusicThumbFocus</include>
+						<include>BrowseSquareLabelFocus</include>
+					</control>
+				</focusedlayout>
+			</control>
+			<!--<control type="scrollbar" id="60">
+				<visible>Control.IsVisible(53)</visible>
+				<visible>stringcompare(Window.Property(albums-or-artists),1)</visible>
+				<posx>1229</posx>
+				<posy>148</posy>
+				<width>12</width>
+				<height>502</height>
+				<include>ScrollBarCommonProperties</include>
+			</control>-->
+			<control type="panel" id="53">
+				<enable>true + !Window.Property(empty)</enable>
+				<visible>stringcompare(Window.Property(albums-or-artists),0)</visible>
+				<preloaditems>2</preloaditems>
+				<posx>296</posx>
+				<posy>123</posy>
+				<width>960</width>
+				<height>597</height>
+				<onleft>500</onleft>
+				<onright>8050</onright>
+				<onup>8050</onup>
+				<ondown>-</ondown>
+				<scrolltime>400</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<itemlayout width="192" height="236">
+					<include>BrowseMusicThumbUnfocus</include>
+					<control type="label">
+						<posx>9</posx>
+						<posy>182</posy>
+						<width>140</width>
+						<height>60</height>
+						<label>[B]$INFO[ListItem.label][/B]</label>
+						<font>font20bls</font>
+						<align>left</align>
+						<aligny>top</aligny>
+						<textcolor>mediumgreyheidi</textcolor>
+						<fadetime>200</fadetime>
+						<wrapmultiline>false</wrapmultiline>
+					</control>
+					<control type="label">
+						<posx>9</posx>
+						<posy>208</posy>
+						<width>140</width>
+						<height>60</height>
+						<label>[B]$INFO[ListItem.Artist][/B]</label>
+						<font>font14</font>
+						<align>left</align>
+						<aligny>top</aligny>
+						<textcolor>mediumgreyheidi</textcolor>
+						<fadetime>200</fadetime>
+						<wrapmultiline>false</wrapmultiline>
+					</control>
+				</itemlayout>
+				<focusedlayout width="192" height="236">
+					<control type="group">
+						<visible>!Control.HasFocus(53)</visible>
+						<include>BrowseMusicThumbUnfocus</include>
+						<control type="label">
+							<posx>9</posx>
+							<posy>182</posy>
+							<width>140</width>
+							<height>60</height>
+							<label>[B]$INFO[ListItem.label][/B]</label>
+							<font>font20bls</font>
+							<align>left</align>
+							<aligny>top</aligny>
+							<textcolor>mediumgreyheidi</textcolor>
+							<fadetime>200</fadetime>
+							<wrapmultiline>false</wrapmultiline>
+						</control>
+						<control type="label">
+							<posx>9</posx>
+							<posy>208</posy>
+							<width>140</width>
+							<height>60</height>
+							<label>[B]$INFO[ListItem.Artist][/B]</label>
+							<font>font14</font>
+							<align>left</align>
+							<aligny>top</aligny>
+							<textcolor>mediumgreyheidi</textcolor>
+							<fadetime>200</fadetime>
+							<wrapmultiline>false</wrapmultiline>
+						</control>
+					</control>
+					<control type="group">
+						<visible>Control.HasFocus(53)</visible>
+						<include>BrowseMusicThumbFocus</include>
+						<control type="label">
+							<posx>9</posx>
+							<posy>182</posy>
+							<width>140</width>
+							<height>60</height>
+							<label>[B]$INFO[ListItem.label][/B]</label>
+							<font>font20bls</font>
+							<align>left</align>
+							<aligny>top</aligny>
+							<textcolor>whiteheidi</textcolor>
+							<fadetime>200</fadetime>
+							<wrapmultiline>false</wrapmultiline>
+						</control>
+						<control type="label">
+							<posx>9</posx>
+							<posy>208</posy>
+							<width>140</width>
+							<height>60</height>
+							<label>[B]$INFO[ListItem.Artist][/B]</label>
+							<font>font14</font>
+							<align>left</align>
+							<aligny>top</aligny>
+							<textcolor>whiteheidi</textcolor>
+							<fadetime>200</fadetime>
+							<wrapmultiline>false</wrapmultiline>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+			<!--<control type="scrollbar" id="60">
+				<visible>Control.IsVisible(53)</visible>
+				<visible>stringcompare(Window.Property(albums-or-artists),0)</visible>
+				<posx>1229</posx>
+				<posy>148</posy>
+				<width>12</width>
+				<height>530</height>
+				<include>ScrollBarCommonProperties</include>
+			</control>-->
+			<control type="panel" id="53">
+				<enable>true + !Window.Property(empty)</enable>
+				<visible>stringcompare(Window.Property(albums-or-artists),2)</visible>
+				<preloaditems>2</preloaditems>
+				<posx>296</posx>
+				<posy>123</posy>
+				<width>960</width>
+				<height>597</height>
+				<onleft>500</onleft>
+				<onright>8050</onright>
+				<onup>8050</onup>
+				<ondown>-</ondown>
+				<scrolltime>400</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<focusposition>2</focusposition>
+				<itemlayout width="192" height="236">
+					<include>BrowseMusicThumbUnfocus</include>
+					<include>BrowseSquareLabelUnfocus</include>
+				</itemlayout>
+				<focusedlayout width="192" height="236">
+					<control type="group">
+						<visible>!Control.HasFocus(53)</visible>
+						<include>BrowseMusicThumbUnfocus</include>
+						<include>BrowseSquareLabelUnfocus</include>
+					</control>
+					<control type="group">
+						<visible>Control.HasFocus(53)</visible>
+						<include>BrowseMusicThumbFocus</include>
+						<include>BrowseSquareLabelFocus</include>
+					</control>
+				</focusedlayout>
+			</control>
+			<!--<control type="scrollbar" id="60">
+				<visible>Control.IsVisible(53)</visible>
+				<visible>stringcompare(Window.Property(albums-or-artists),2)</visible>
+				<posx>640</posx>
+				<posy>142</posy>
+				<width>12</width>
+				<height>560</height>
+				<include>ScrollBarCommonProperties</include>
+			</control>-->
+			<!--<control type="group">
+				<posx>682</posx>
+				<posy>140</posy>
+				<visible>!Container.OnNext + !Container.OnPrevious</visible>
+				<visible>true + !Window.Property(loading)</visible>
+				<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout" delay="50">Visible</animation>
+				<visible>Control.IsVisible(53)</visible>
+				<visible>stringcompare(Window.Property(albums-or-artists),2)</visible>
+				<control type="image">
+					<visible>!IsEmpty(Container(53).ListItem.Thumb)</visible>
+					<include>BrowseThumbAnimationUnfocus</include>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>320</width>
+					<height>320</height>
+					<texture blend="false">$INFO[Container(53).ListItem.Thumb]</texture>
+					<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+					<bordersize>10</bordersize>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<fadetime>200</fadetime>
+				</control>
+				<control type="image">
+					<visible>IsEmpty(Container(53).ListItem.Thumb)</visible>
+					<include>BrowseThumbAnimationUnfocus</include>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>320</width>
+					<height>320</height>
+					<texture blend="false">default_music.png</texture>
+					<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+					<bordersize>10</bordersize>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<fadetime>200</fadetime>
+				</control>
+				<control type="label">
+					<posx>10</posx>
+					<posy>340</posy>
+					<width>568</width>
+					<height>100</height>
+					<font>font22</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>white</textcolor>
+					<label>[B]$INFO[container(53).ListItem.Album]$INFO[container(53).ListItem.Year, (,)][/B][CR]$INFO[container(53).ListItem.Artist][CR][CR]$INFO[container(53).ListItem.Genre]</label>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+			</control>-->
+		</control>
+		<!-- include>BrowseThumbsFade</include -->
+	</include>
+	<include name="BrowseTracksLineView">
+		<control type="group" id="9000">
+			<animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">Hidden</animation>
+			<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout">Visible</animation>
+			<visible>Control.HasFocus(50) | Control.HasFocus(51) | Control.HasFocus(55) | Control.HasFocus(59) | Control.HasFocus(53) | ControlGroup(8050).HasFocus</visible>
+			<control type="label" id="9019">
+				<include>PageTitlePropertiesFocused</include>
+				<visible>!IsEmpty(container(59).ListItem.Artist)</visible>
+				<label>[B]$INFO[container(59).ListItem.Album][/B]</label>
+			</control>
+			<control type="label">
+				<visible>!IsEmpty(container(59).ListItem.Album)</visible>
+				<include>PageSubtitlePropertiesFocused</include>
+				<label>[B]$INFO[container(59).ListItem.Artist][/B]</label>
+			</control>
+		</control>
+		<control type="group" id="9000">
+			<animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">Hidden</animation>
+			<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout">Visible</animation>
+			<visible>!Control.HasFocus(50) + !Control.HasFocus(51) + !Control.HasFocus(55) + !Control.HasFocus(59) + !Control.HasFocus(53) + !ControlGroup(8050).HasFocus</visible>
+			<control type="label" id="9019">
+				<include>PageTitlePropertiesUnfocused</include>
+				<visible>!IsEmpty(container(59).ListItem.Artist)</visible>
+				<label>$INFO[container(59).ListItem.Album]</label>
+			</control>
+			<control type="label">
+				<visible>!IsEmpty(container(59).ListItem.Album)</visible>
+				<include>PageSubtitlePropertiesUnfocused</include>
+				<label>[B]$INFO[container(59).ListItem.Artist][/B]</label>
+			</control>
+		</control>
+		<control type="group" id="501">
+			<control type="fixedlist" id="59">
+				<enable>true + !Window.Property(empty)</enable>
+				<preloaditems>2</preloaditems>
+				<posx>280</posx>
+				<posy>124</posy>
+				<width>484</width>
+				<height>590</height>
+				<onleft>500</onleft>
+				<onright>8050</onright>
+				<onup>8050</onup>
+				<ondown>-</ondown>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<focusposition>5</focusposition>
+				<itemlayout height="60">
+					<control type="label">
+						<include>BrowseShortLineLabelProperties</include>
+						<label>$INFO[ListItem.TrackNumber,,. ]$INFO[ListItem.Label]</label>
+						<textcolor>lightgreyheidi</textcolor>
+						<selectedcolor>lightgreyheidi</selectedcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout height="60">
+					<control type="image">
+						<visible>Control.HasFocus(59)</visible>
+						<posx>0</posx>
+						<posy>4</posy>
+						<width>484</width>
+						<height>52</height>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="label">
+						<visible>!Control.HasFocus(59)</visible>
+						<include>BrowseShortLineLabelProperties</include>
+						<label>$INFO[ListItem.TrackNumber,,. ]$INFO[ListItem.Label]</label>
+						<textcolor>lightgreyheidi</textcolor>
+						<selectedcolor>lightgreyheidi</selectedcolor>
+						<scroll>true</scroll>
+					</control>
+					<control type="label">
+						<visible>Control.HasFocus(59)</visible>
+						<include>BrowseShortLineLabelProperties</include>
+						<label>$INFO[ListItem.TrackNumber,,. ]$INFO[ListItem.Label]</label>
+						<textcolor>whiteheidi</textcolor>
+						<selectedcolor>whiteheidi</selectedcolor>
+						<scroll>true</scroll>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+		<control type="image">
+			<visible>Control.IsVisible(59)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>true + !Window.Property(empty)</visible>
+			<posx>783</posx>
+			<posy>118</posy>
+			<width>24</width>
+			<height>556</height>
+			<texture>browse/graphic-divider-vert.png</texture>
+		</control>
+		<control type="group">
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>true + !Window.Property(empty)</visible>
+			<visible>true + !container(59).scrolling</visible>
+			<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout" delay="50">Visible</animation>
+			<control type="image">
+				<visible>true + !Window.Property(loading)</visible>
+				<visible>Control.IsVisible(59)</visible>
+				<visible>!Control.IsEmpty(59)</visible>
+				<visible>!IsEmpty(Container(59).ListItem.Thumb)</visible>
+				<posx>820</posx>
+				<posy>120</posy>
+				<width>434</width>
+				<height>434</height>
+				<bordertexture srcborder="21" border="14">browse/bg-dropshadow-2.png</bordertexture>
+				<bordersize>7</bordersize>
+				<fadetime>200</fadetime>
+				<aspectratio>scale</aspectratio>
+				<texture blend="false">$INFO[Container(59).ListItem.Thumb]</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="image">
+				<visible>true + !Window.Property(loading)</visible>
+				<visible>Control.IsVisible(59)</visible>
+				<visible>!Control.IsEmpty(59)</visible>
+				<visible>IsEmpty(Container(59).ListItem.Thumb)</visible>
+				<posx>820</posx>
+				<posy>120</posy>
+				<width>434</width>
+				<height>434</height>
+				<bordertexture srcborder="21" border="14">browse/bg-dropshadow-2.png</bordertexture>
+				<bordersize>7</bordersize>
+				<fadetime>200</fadetime>
+				<aspectratio>scale</aspectratio>
+				<texture blend="false">browse/thumbnail-default-music.png</texture>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="grouplist">
+				<visible>Control.IsVisible(59)</visible>
+				<posx>828</posx>
+				<posy>557</posy>
+				<width>424</width>
+				<height>485</height>
+				<itemgap>8</itemgap>
+				<orientation>vertical</orientation>
+				<usecontrolcoords>false</usecontrolcoords>
+				<control type="label">
+					<width>418</width>
+					<height>25</height>
+					<font>font26b</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>whiteheidi</textcolor>
+					<label>[B]$INFO[Container(59).ListItem.Album,,[CR]][/B]</label>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<width>418</width>
+					<height>25</height>
+					<font>font20b</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>lightgreyheidi</textcolor>
+					<label>[B]$INFO[Container(59).ListItem.Artist,$LOCALIZE[52160] ,[CR]][/B]</label>
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<width>418</width>
+					<height>20</height>
+					<font>font20b</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>lightgreyheidi</textcolor>
+					<label>$LOCALIZE[54035]:$INFO[Container(59).ListItem.Year, ,]</label>
+					<!--Label should display exact release date-->
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+				<control type="label">
+					<width>418</width>
+					<height>20</height>
+					<font>font20b</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>lightgreyheidi</textcolor>
+					<label>$INFO[Container(59).NumItems,, $LOCALIZE[182],,[CR]]</label>
+					<!--Label should also return the album's duration-->
+					<wrapmultiline>false</wrapmultiline>
+				</control>
+			</control>
+		</control>
+		<include>BrowseLineFade</include>
+	</include>
+	<include name="BrowseLocalLineView">
+		<include>Common_Background_Browse</include>
+		<include>LogoTitleAndItemCountFiles</include>
+		<control type="group" id="501">
+			<control type="fixedlist" id="59">
+				<preloaditems>2</preloaditems>
+				<posx>280</posx>
+				<posy>128</posy>
+				<width>1000</width>
+				<height>590</height>
+				<onleft>500</onleft>
+				<onright>8050</onright>
+				<onup>8050</onup>
+				<ondown>-</ondown>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<focusposition>6</focusposition>
+				<itemlayout height="60">
+					<control type="image">
+						<visible>!ListItem.Property(isfolder) + !ListItem.Property(IsPhotos) + !ListItem.Property(IsMusic) + !ListItem.Property(IsVideo) + !ListItem.Property(IsSD) + !ListItem.Property(IsUSB) + !ListItem.Property(IsNetwork)</visible>
+						<include>BrowseLineSmallIconPropertiesUnfocus</include>
+						<texture>icons/icon_browse_menu_file.png</texture>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(isfolder) + !ListItem.Property(IsPhotos) + !ListItem.Property(IsMusic) + !ListItem.Property(IsVideo) + !ListItem.Property(IsSD) + !ListItem.Property(IsUSB) + !ListItem.Property(IsNetwork) + !ListItem.Property(isSeparator)</visible>
+						<include>BrowseLineSmallIconPropertiesUnfocus</include>
+						<texture>icons/icon_folder.png</texture>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(IsPhotos)</visible>
+						<include>BrowseLineSmallIconPropertiesUnfocus</include>
+						<texture>icons/icon_browse_menu_photos.png</texture>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(IsMusic)</visible>
+						<include>BrowseLineSmallIconPropertiesUnfocus</include>
+						<texture>icons/icon_browse_menu_music.png</texture>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(videolauncher)</visible>
+						<include>BrowseLineSmallIconPropertiesUnfocus</include>
+						<texture>icons/icon_browse_menu_video.png</texture>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(IsVideo) + !ListItem.Property(videolauncher) + !ListItem.Property(showslauncher)</visible>
+						<include>BrowseLineSmallIconPropertiesUnfocus</include>
+						<texture>icons/icon_browse_menu_clip.png</texture>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(showslauncher)</visible>
+						<include>BrowseLineSmallIconPropertiesUnfocus</include>
+						<texture>icons/icon_browse_menu_shows.png</texture>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(IsSD)</visible>
+						<include>BrowseLineSmallIconPropertiesUnfocus</include>
+						<texture>icons/icon_browse_menu_sd.png</texture>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(IsUSB)</visible>
+						<include>BrowseLineSmallIconPropertiesUnfocus</include>
+						<texture>icons/icon_browse_menu_usb.png</texture>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(IsNetwork)</visible>
+						<include>BrowseLineSmallIconPropertiesUnfocus</include>
+						<texture>icons/icon_browse_menu_network.png</texture>
+					</control>
+					<control type="label">
+						<visible>!ListItem.Property(isseparator) + IsEmpty(ListItem.Size)</visible>
+						<include>BrowseLongLineLabelProperties</include>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>!ListItem.Property(isseparator) + !IsEmpty(ListItem.Size)</visible>
+						<include>BrowseLongLineLabelWithSizeProperties</include>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>ListItem.Property(isseparator)</visible>
+						<posx>16</posx>
+						<posy>0</posy>
+						<width>400</width>
+						<height>52</height>
+						<font>font30b</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+					</control>
+					<control type="label">
+						<posx>930</posx>
+						<posy>0</posy>
+						<width>130</width>
+						<height>52</height>
+						<font>font24</font>
+						<align>right</align>
+						<aligny>center</aligny>
+						<textcolor>mediumgreyheidi</textcolor>
+						<label>$INFO[ListItem.Size]</label>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(watched)</visible>
+						<posx>790</posx>
+						<posy>16</posy>
+						<width>20</width>
+						<height>20</height>
+						<texture>browse/graphic-thumbnail-watched-check.png</texture>
+						<aspectratio>scale</aspectratio>
+						<fadetime>200</fadetime>
+					</control>
+				</itemlayout>
+				<focusedlayout height="60">
+					<control type="group">
+						<visible>!Control.HasFocus(59)</visible>
+						<control type="image">
+							<visible>!ListItem.Property(isfolder) + !ListItem.Property(IsPhotos) + !ListItem.Property(IsMusic) + !ListItem.Property(IsVideo) + !ListItem.Property(IsSD) + !ListItem.Property(IsUSB) + !ListItem.Property(IsNetwork)</visible>
+							<include>BrowseLineSmallIconPropertiesUnfocus</include>
+							<texture>icons/icon_browse_menu_file.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(isfolder) + !ListItem.Property(IsPhotos) + !ListItem.Property(IsMusic) + !ListItem.Property(IsVideo) + !ListItem.Property(IsSD) + !ListItem.Property(IsUSB) + !ListItem.Property(IsNetwork)</visible>
+							<include>BrowseLineSmallIconPropertiesUnfocus</include>
+							<texture>icons/icon_folder.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(IsPhotos)</visible>
+							<include>BrowseLineSmallIconPropertiesUnfocus</include>
+							<texture>icons/icon_browse_menu_photos.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(IsMusic)</visible>
+							<include>BrowseLineSmallIconPropertiesUnfocus</include>
+							<texture>icons/icon_browse_menu_music.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(IsVideo) + !ListItem.Property(videolauncher) + !ListItem.Property(showslauncher)</visible>
+							<include>BrowseLineSmallIconPropertiesUnfocus</include>
+							<texture>icons/icon_browse_menu_clip.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(videolauncher)</visible>
+							<include>BrowseLineSmallIconPropertiesUnfocus</include>
+							<texture>icons/icon_browse_menu_video.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(showslauncher)</visible>
+							<include>BrowseLineSmallIconPropertiesUnfocus</include>
+							<texture>icons/icon_browse_menu_shows.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(IsSD)</visible>
+							<include>BrowseLineSmallIconPropertiesUnfocus</include>
+							<texture>icons/icon_browse_menu_sd.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(IsUSB)</visible>
+							<include>BrowseLineSmallIconPropertiesUnfocus</include>
+							<texture>icons/icon_browse_menu_usb.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(IsNetwork)</visible>
+							<include>BrowseLineSmallIconPropertiesUnfocus</include>
+							<texture>icons/icon_browse_menu_network.png</texture>
+						</control>
+						<control type="label">
+							<visible>!ListItem.Property(isseparator) + IsEmpty(ListItem.Size)</visible>
+							<include>BrowseLongLineLabelProperties</include>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>mediumgreyheidi</textcolor>
+							<selectedcolor>mediumgreyheidi</selectedcolor>
+						</control>
+						<control type="label">
+							<visible>!ListItem.Property(isseparator) + !IsEmpty(ListItem.Size)</visible>
+							<include>BrowseLongLineLabelWithSizeProperties</include>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>mediumgreyheidi</textcolor>
+							<selectedcolor>mediumgreyheidi</selectedcolor>
+						</control>
+						<control type="label">
+							<visible>ListItem.Property(isseparator)</visible>
+							<posx>16</posx>
+							<posy>0</posy>
+							<width>530</width>
+							<height>52</height>
+							<font>font30b</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>mediumgreyheidi</textcolor>
+							<selectedcolor>mediumgreyheidi</selectedcolor>
+						</control>
+						<control type="label">
+							<posx>930</posx>
+							<posy>0</posy>
+							<width>130</width>
+							<height>52</height>
+							<font>font24</font>
+							<align>right</align>
+							<aligny>center</aligny>
+							<textcolor>mediumgreyheidi</textcolor>
+							<label>$INFO[ListItem.Size]</label>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(watched)</visible>
+							<posx>790</posx>
+							<posy>16</posy>
+							<width>20</width>
+							<height>20</height>
+							<texture>browse/graphic-thumbnail-watched-check.png</texture>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
+					</control>
+					<control type="group">
+						<visible>Control.HasFocus(59)</visible>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>968</width>
+							<height>52</height>
+							<texture srcborder="24" border="16">button-focused.png</texture>
+						</control>
+						<control type="image">
+							<visible>!ListItem.Property(isfolder) + !ListItem.Property(IsPhotos) + !ListItem.Property(IsVideo) + !ListItem.Property(IsMusic) + !ListItem.Property(IsSD) + !ListItem.Property(IsUSB) + !ListItem.Property(IsNetwork)</visible>
+							<include>BrowseLineSmallIconPropertiesFocus</include>
+							<texture>icons/icon_browse_menu_file.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(isfolder) + !ListItem.Property(IsPhotos) + !ListItem.Property(IsVideo) + !ListItem.Property(IsMusic) + !ListItem.Property(IsSD) + !ListItem.Property(IsUSB) + !ListItem.Property(IsNetwork)</visible>
+							<include>BrowseLineSmallIconPropertiesFocus</include>
+							<texture>icons/icon_folder.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(IsPhotos)</visible>
+							<include>BrowseLineSmallIconPropertiesFocus</include>
+							<texture>icons/icon_browse_menu_photos.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(IsMusic)</visible>
+							<include>BrowseLineSmallIconPropertiesFocus</include>
+							<texture>icons/icon_browse_menu_music.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(IsVideo) + !ListItem.Property(videolauncher) + !ListItem.Property(showslauncher)</visible>
+							<include>BrowseLineSmallIconPropertiesFocus</include>
+							<texture>icons/icon_browse_menu_clip.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(videolauncher)</visible>
+							<include>BrowseLineSmallIconPropertiesFocus</include>
+							<texture>icons/icon_browse_menu_video.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(showslauncher)</visible>
+							<include>BrowseLineSmallIconPropertiesFocus</include>
+							<texture>icons/icon_browse_menu_shows.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(IsSD)</visible>
+							<include>BrowseLineSmallIconPropertiesFocus</include>
+							<texture>icons/icon_browse_menu_sd.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(IsUSB)</visible>
+							<include>BrowseLineSmallIconPropertiesFocus</include>
+							<texture>icons/icon_browse_menu_usb.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(IsNetwork)</visible>
+							<include>BrowseLineSmallIconPropertiesFocus</include>
+							<texture>icons/icon_browse_menu_network.png</texture>
+						</control>
+						<control type="label">
+							<visible>true + IsEmpty(ListItem.Size)</visible>
+							<include>BrowseLongLineLabelProperties</include>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>whiteheidi</textcolor>
+							<selectedcolor>whiteheidi</selectedcolor>
+							<scroll>true</scroll>
+						</control>
+						<control type="label">
+							<visible>true + !IsEmpty(ListItem.Size)</visible>
+							<include>BrowseLongLineLabelWithSizeProperties</include>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>whiteheidi</textcolor>
+							<selectedcolor>whiteheidi</selectedcolor>
+							<scroll>true</scroll>
+						</control>
+						<control type="label">
+							<posx>930</posx>
+							<posy>0</posy>
+							<width>130</width>
+							<height>52</height>
+							<font>font24</font>
+							<align>right</align>
+							<aligny>center</aligny>
+							<textcolor>whiteheidi</textcolor>
+							<label>$INFO[ListItem.Size]</label>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(watched)</visible>
+							<posx>790</posx>
+							<posy>16</posy>
+							<width>20</width>
+							<height>20</height>
+							<texture>browse/graphic-thumbnail-watched-check.png</texture>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+		<include>BrowseLineFade</include>
+	</include>
+	<include name="BrowsePhotosThumbView">
+		<control type="group" id="501">
+			<control type="panel" id="53">
+				<enable>true + !Window.Property(empty)</enable>
+				<preloaditems>2</preloaditems>
+				<posx>296</posx>
+				<posy>123</posy>
+				<width>960</width>
+				<height>597</height>
+				<onleft>500</onleft>
+				<onright>8050</onright>
+				<onup>8050</onup>
+				<ondown>-</ondown>
+				<scrolltime>400</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<itemlayout width="192" height="236">
+					<include>BrowsePhotoThumbUnfocus</include>
+					<control type="group">
+						<visible>ListItem.Property(IsPictureFolder) | ListItem.Property(IsFolder)</visible>
+						<include>BrowseSquareLabelUnfocus</include>
+					</control>
+				</itemlayout>
+				<focusedlayout width="192" height="236">
+					<control type="group">
+						<visible>!Control.HasFocus(53)</visible>
+						<include>BrowsePhotoThumbUnfocus</include>
+						<control type="group">
+							<visible>ListItem.Property(IsPictureFolder) | ListItem.Property(IsFolder)</visible>
+							<include>BrowseSquareLabelUnfocus</include>
+						</control>
+					</control>
+					<control type="group">
+						<visible>Control.HasFocus(53)</visible>
+						<include>BrowsePhotoThumbFocus</include>
+						<control type="group">
+							<visible>ListItem.Property(IsPictureFolder) | ListItem.Property(IsFolder)</visible>
+							<include>BrowseSquareLabelFocus</include>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+			<!--<control type="scrollbar" id="60">
+				<visible>Control.IsVisible(53)</visible>
+				<posx>1229</posx>
+				<posy>148</posy>
+				<width>12</width>
+				<height>502</height>
+				<include>ScrollBarCommonProperties</include>
+			</control>-->
+		</control>
+		<include>BrowseThumbsFade</include>
+	</include>
+	<include name="BrowseHistoryView">
+		<control type="fixedlist" id="52">
+			<enable>true + !Window.Property(empty)</enable>
+			<preloaditems>2</preloaditems>
+			<posx>32</posx>
+			<posy>135</posy>
+			<width>1220</width>
+			<height>560</height>
+			<onleft>-</onleft>
+			<onright>-</onright>
+			<onup>9015</onup>
+			<ondown>-</ondown>
+			<scrolltime>200</scrolltime>
+			<pagecontrol>60</pagecontrol>
+			<orientation>vertical</orientation>
+			<focusposition>6</focusposition>
+			<itemlayout height="64">
+				<control type="image">
+					<visible>!ListItem.Property(isseparator)</visible>
+					<posx>18</posx>
+					<posy>28</posy>
+					<width>8</width>
+					<height>8</height>
+					<texture>browser/graphic-bullet.png</texture>
+					<colordiffuse>mediumgreyheidi</colordiffuse>
+				</control>
+				<control type="label">
+					<visible>ListItem.Property(isseparator)</visible>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1100</width>
+					<height>64</height>
+					<font>font24b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>[UPPERCASE][B]$INFO[ListItem.Label][/B][/UPPERCASE]</label>
+					<textcolor>lightgreyheidi</textcolor>
+					<selectedcolor>lightgreyheidi</selectedcolor>
+				</control>
+				<control type="label">
+					<visible>ListItem.Property(IsTVShow)</visible>
+					<include>BrowseShortLineLabelPropertiesBrowser</include>
+					<label>[B]$INFO[ListItem.TVShowTitle,,][/B]$INFO[ListItem.Season, - $LOCALIZE[20373] , · ]$INFO[ListItem.Episode,$LOCALIZE[20359] ]$INFO[ListItem.Property(provider), ]</label>
+					<textcolor>mediumgreyheidi</textcolor>
+					<selectedcolor>mediumgreyheidi</selectedcolor>
+				</control>
+				<control type="label">
+					<visible>ListItem.Property(IsMovie)</visible>
+					<include>BrowseShortLineLabelPropertiesBrowser</include>
+					<label>[B]$INFO[ListItem.Label][/B]$INFO[ListItem.Property(provider), ]</label>
+					<textcolor>mediumgreyheidi</textcolor>
+					<selectedcolor>mediumgreyheidi</selectedcolor>
+				</control>
+				<control type="label">
+					<visible>IsEmpty(ListItem.Property(isMusicFolder)) + [ListItem.Property(IsMusic) | stringcompare(ListItem.Property(MediaType),music)] + !IsEmpty(ListItem.Artist) + !IsEmpty(ListItem.Album)</visible>
+					<include>BrowseShortLineLabelPropertiesBrowser</include>
+					<label>[B]$INFO[ListItem.Artist][/B]$INFO[ListItem.Album, - ]</label>
+					<textcolor>mediumgreyheidi</textcolor>
+					<selectedcolor>mediumgreyheidi</selectedcolor>
+				</control>
+				<control type="label">
+					<visible>IsEmpty(ListItem.Property(isMusicFolder)) + [ListItem.Property(IsMusic) | stringcompare(ListItem.Property(MediaType),music)] + [IsEmpty(ListItem.Artist) | IsEmpty(ListItem.Album)]</visible>
+					<include>BrowseShortLineLabelPropertiesBrowser</include>
+					<label>[B]$INFO[ListItem.Label][/B]</label>
+					<textcolor>mediumgreyheidi</textcolor>
+					<selectedcolor>mediumgreyheidi</selectedcolor>
+				</control>
+				<control type="label">
+					<visible>ListItem.Property(isMusicFolder)</visible>
+					<include>BrowseShortLineLabelPropertiesBrowser</include>
+					<label>[B]$INFO[ListItem.Label][/B]</label>
+					<textcolor>mediumgreyheidi</textcolor>
+					<selectedcolor>mediumgreyheidi</selectedcolor>
+				</control>
+				<control type="label">
+					<visible>!ListItem.Property(IsMovie) + !ListItem.Property(IsTVShow) + !ListItem.Property(IsMusic) + !ListItem.Property(isseparator) + !stringcompare(ListItem.Property(MediaType),music) + !ListItem.Property(isMusicFolder)</visible>
+					<include>BrowseShortLineLabelPropertiesBrowser</include>
+					<label>[B]$INFO[ListItem.Label][/B]</label>
+					<textcolor>mediumgreyheidi</textcolor>
+					<selectedcolor>mediumgreyheidi</selectedcolor>
+				</control>
+			</itemlayout>
+			<focusedlayout height="64">
+				<control type="image">
+					<visible>Control.HasFocus(52)</visible>
+					<include>BrowserLongLineFocusBrowser</include>
+				</control>
+				<control type="group">
+					<visible>Control.HasFocus(52)</visible>
+					<control type="image">
+						<visible>!ListItem.Property(isseparator)</visible>
+						<posx>18</posx>
+						<posy>28</posy>
+						<width>8</width>
+						<height>8</height>
+						<texture>browser/graphic-bullet.png</texture>
+					</control>
+					<control type="label">
+						<visible>ListItem.Property(IsTVShow)</visible>
+						<include>BrowseShortLineLabelPropertiesBrowser</include>
+						<label>[B]$INFO[ListItem.TVShowTitle,,][/B]$INFO[ListItem.Season, - $LOCALIZE[20373] , · ]$INFO[ListItem.Episode,$LOCALIZE[20359] ]$INFO[ListItem.Property(provider), ]</label>
+						<textcolor>whiteheidi</textcolor>
+						<selectedcolor>whiteheidi</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>ListItem.Property(IsMovie)</visible>
+						<include>BrowseShortLineLabelPropertiesBrowser</include>
+						<label>[B]$INFO[ListItem.Label][/B]$INFO[ListItem.Property(provider), ]</label>
+						<textcolor>whiteheidi</textcolor>
+						<selectedcolor>whiteheidi</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>IsEmpty(ListItem.Property(isMusicFolder)) + [ListItem.Property(IsMusic) | stringcompare(ListItem.Property(MediaType),music)] + !IsEmpty(ListItem.Artist) + !IsEmpty(ListItem.Album)</visible>
+						<include>BrowseShortLineLabelPropertiesBrowser</include>
+						<label>[B]$INFO[ListItem.Artist][/B]$INFO[ListItem.Album, - ]</label>
+						<textcolor>whiteheidi</textcolor>
+						<selectedcolor>whiteheidi</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>IsEmpty(ListItem.Property(isMusicFolder)) + [ListItem.Property(IsMusic) | stringcompare(ListItem.Property(MediaType),music)] + [IsEmpty(ListItem.Artist) | IsEmpty(ListItem.Album)]</visible>
+						<include>BrowseShortLineLabelPropertiesBrowser</include>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>whiteheidi</textcolor>
+						<selectedcolor>whiteheidi</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>ListItem.Property(isMusicFolder)</visible>
+						<include>BrowseShortLineLabelPropertiesBrowser</include>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>whiteheidi</textcolor>
+						<selectedcolor>whiteheidi</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>!ListItem.Property(IsMovie) + !ListItem.Property(IsTVShow) + !ListItem.Property(IsMusic) + !stringcompare(ListItem.Property(MediaType),music) + !ListItem.Property(isMusicFolder)</visible>
+						<include>BrowseShortLineLabelPropertiesBrowser</include>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>whiteheidi</textcolor>
+						<selectedcolor>whiteheidi</selectedcolor>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!Control.HasFocus(52)</visible>
+					<control type="image">
+						<visible>!ListItem.Property(isseparator)</visible>
+						<posx>18</posx>
+						<posy>28</posy>
+						<width>8</width>
+						<height>8</height>
+						<texture>browser/graphic-bullet.png</texture>
+						<colordiffuse>mediumgreyheidi</colordiffuse>
+					</control>
+					<control type="label">
+						<visible>ListItem.Property(IsTVShow)</visible>
+						<include>BrowseShortLineLabelPropertiesBrowser</include>
+						<label>[B]$INFO[ListItem.TVShowTitle,,][/B]$INFO[ListItem.Season, - $LOCALIZE[20373] , · ]$INFO[ListItem.Episode,$LOCALIZE[20359] ]$INFO[ListItem.Property(provider), ]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>ListItem.Property(IsMovie)</visible>
+						<include>BrowseShortLineLabelPropertiesBrowser</include>
+						<label>[B]$INFO[ListItem.Label][/B]$INFO[ListItem.Property(provider), ]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>IsEmpty(ListItem.Property(isMusicFolder)) + [ListItem.Property(IsMusic) | stringcompare(ListItem.Property(MediaType),music)] + !IsEmpty(ListItem.Artist) + !IsEmpty(ListItem.Album)</visible>
+						<include>BrowseShortLineLabelPropertiesBrowser</include>
+						<label>[B]$INFO[ListItem.Artist][/B]$INFO[ListItem.Album, - ]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>IsEmpty(ListItem.Property(isMusicFolder)) + [ListItem.Property(IsMusic) | stringcompare(ListItem.Property(MediaType),music)] + [IsEmpty(ListItem.Artist) | IsEmpty(ListItem.Album)]</visible>
+						<include>BrowseShortLineLabelPropertiesBrowser</include>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>ListItem.Property(isMusicFolder)</visible>
+						<include>BrowseShortLineLabelPropertiesBrowser</include>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>!ListItem.Property(IsMovie) + !ListItem.Property(IsTVShow) + !ListItem.Property(IsMusic) + !stringcompare(ListItem.Property(MediaType),music) + !ListItem.Property(isMusicFolder)</visible>
+						<include>BrowseShortLineLabelPropertiesBrowser</include>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<selectedcolor>mediumgreyheidi</selectedcolor>
+					</control>
+				</control>
+			</focusedlayout>
+		</control>
+
+		<include>FullBrowseLineFade</include>
+
+		<!--<control type="fixedlist" id="52">
+			<preloaditems>2</preloaditems>
+			<posx>29</posx>
+			<posy>140</posy>
+			<width>600</width>
+			<height>580</height>
+			<onleft>-</onleft>
+			<onright>9015</onright>
+			<onup>9015</onup>
+			<ondown>-</ondown>
+			<scrolltime>200</scrolltime>
+			<pagecontrol>60</pagecontrol>
+			<orientation>vertical</orientation>
+			<focusposition>2</focusposition>
+			<itemlayout height="160">
+				<control type="image">
+					<posx>0</posx>
+					<posy>93</posy>
+					<width>600</width>
+					<height>112</height>
+					<texture>home_line_horizontal_left.png</texture>
+				</control>
+				<control type="image">
+					<visible>!IsEmpty(ListItem.Thumb)</visible>
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>160</width>
+					<height>120</height>
+					<texture blend="false">$INFO[ListItem.Thumb]</texture>
+					<bordersize>10</bordersize>
+					<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<control type="image">
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+					<visible>ListItem.Property(IsVideo)</visible>
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>160</width>
+					<height>120</height>
+					<texture blend="false">default_video.png</texture>
+					<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+					<bordersize>10</bordersize>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<control type="image">
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+					<visible>ListItem.Property(IsMusic)</visible>
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>160</width>
+					<height>120</height>
+					<texture blend="false">default_music.png</texture>
+					<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+					<bordersize>10</bordersize>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<control type="image">
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+					<visible>!ListItem.Property(IsMusic) + !ListItem.Property(IsVideo)</visible>
+					<visible>true + !Window.Property(empty)</visible>
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>160</width>
+					<height>120</height>
+					<texture blend="false">default_general.png</texture>
+					<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+					<bordersize>10</bordersize>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<control type="label">
+					<visible>ListItem.Property(IsTVShow)</visible>
+					<include>BrowseFeedLabelLineTop</include>
+					<label>[B]$INFO[ListItem.TVShowTitle,,[CR]][/B]$INFO[ListItem.Season,$LOCALIZE[20373] ,$COMMA  ]$INFO[ListItem.Episode,$LOCALIZE[20359] ]$INFO[ListItem.Property(provider),[CR]]</label>
+					<font>font24</font>
+					<textcolor>grey</textcolor>
+					<selectedcolor>grey</selectedcolor>
+				</control>
+				<control type="label">
+					<visible>ListItem.Property(IsMovie)</visible>
+					<include>BrowseFeedLabelLineTop</include>
+					<label>[B]$INFO[ListItem.Label][/B]$INFO[ListItem.Property(provider),[CR]]</label>
+					<font>font24</font>
+					<textcolor>grey</textcolor>
+					<selectedcolor>grey</selectedcolor>
+				</control>
+				<control type="label">
+					<visible>ListItem.Property(IsMusic)</visible>
+					<include>BrowseFeedLabelLineTop</include>
+					<label>[B]$INFO[ListItem.Artist][/B][CR]$INFO[ListItem.Album]</label>
+					<font>font24</font>
+					<textcolor>grey</textcolor>
+					<selectedcolor>grey</selectedcolor>
+				</control>
+				<control type="label">
+					<visible>!ListItem.Property(IsMovie) + !ListItem.Property(IsTVShow) + !ListItem.Property(IsMusic)</visible>
+					<include>BrowseFeedLabelLineTop</include>
+					<!--
+					<label>[B]$INFO[ListItem.Label][/B]$INFO[ListItem.Property(provider),[CR]]</label>
+					--*>
+					<label>$INFO[ListItem.Label]</label>
+					<font>font24</font>
+					<textcolor>grey</textcolor>
+					<selectedcolor>grey</selectedcolor>
+				</control>
+				<control type="label">
+					<include>BrowseFeedLabelLineCenter</include>
+					<label>$INFO[ListItem.Property(provider)]</label>
+					<font>font24</font>
+					<textcolor>grey</textcolor>
+					<selectedcolor>grey</selectedcolor>
+				</control>
+				<control type="label">
+					<include>BrowseHistoryLabelLineBottom</include>
+					<label>$INFO[ListItem.Property(addToHistoryDesc)]</label>
+					<font>font24</font>
+					<textcolor>grey</textcolor>
+					<selectedcolor>grey</selectedcolor>
+				</control>
+			</itemlayout>
+			<focusedlayout height="160">
+				<control type="image">
+					<posx>0</posx>
+					<posy>93</posy>
+					<width>600</width>
+					<height>112</height>
+					<texture>home_line_horizontal_left.png</texture>
+				</control>
+				<control type="image">
+					<visible>!IsEmpty(ListItem.Thumb)</visible>
+					<visible>Control.HasFocus(52)</visible>
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>160</width>
+					<height>120</height>
+					<texture blend="false">$INFO[ListItem.Thumb]</texture>
+					<bordersize>10</bordersize>
+					<bordertexture srcborder="20" border="12">masks/thumb_border_focus.png</bordertexture>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<control type="image">
+					<visible>!IsEmpty(ListItem.Thumb)</visible>
+					<visible>!Control.HasFocus(52)</visible>
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>160</width>
+					<height>120</height>
+					<texture blend="false">$INFO[ListItem.Thumb]</texture>
+					<bordersize>10</bordersize>
+					<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<control type="image">
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+					<visible>ListItem.Property(IsVideo)</visible>
+					<visible>Control.HasFocus(52)</visible>
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>160</width>
+					<height>120</height>
+					<texture blend="false">default_video.png</texture>
+					<bordertexture srcborder="20" border="12">masks/thumb_border_focus.png</bordertexture>
+					<bordersize>10</bordersize>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<control type="image">
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+					<visible>ListItem.Property(IsVideo)</visible>
+					<visible>!Control.HasFocus(52)</visible>
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>160</width>
+					<height>120</height>
+					<texture blend="false">default_video.png</texture>
+					<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+					<bordersize>10</bordersize>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<control type="image">
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+					<visible>ListItem.Property(IsMusic)</visible>
+					<visible>Control.HasFocus(52)</visible>
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>160</width>
+					<height>120</height>
+					<texture blend="false">default_music.png</texture>
+					<bordertexture srcborder="20" border="12">masks/thumb_border_focus.png</bordertexture>
+					<bordersize>10</bordersize>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<control type="image">
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+					<visible>ListItem.Property(IsMusic)</visible>
+					<visible>!Control.HasFocus(52)</visible>
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>160</width>
+					<height>120</height>
+					<texture blend="false">default_music.png</texture>
+					<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+					<bordersize>10</bordersize>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<control type="image">
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+					<visible>!ListItem.Property(IsMusic) + !ListItem.Property(IsVideo)</visible>
+					<visible>true + !Window.Property(empty)</visible>
+					<visible>Control.HasFocus(52)</visible>
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>160</width>
+					<height>120</height>
+					<texture blend="false">default_general.png</texture>
+					<bordertexture srcborder="20" border="12">masks/thumb_border_focus.png</bordertexture>
+					<bordersize>10</bordersize>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<control type="image">
+					<visible>IsEmpty(ListItem.Thumb)</visible>
+					<visible>!ListItem.Property(IsMusic) + !ListItem.Property(IsVideo)</visible>
+					<visible>true + !Window.Property(empty)</visible>
+					<visible>!Control.HasFocus(52)</visible>
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>160</width>
+					<height>120</height>
+					<texture blend="false">default_general.png</texture>
+					<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+					<bordersize>10</bordersize>
+					<aspectratio>scale</aspectratio>
+				</control>
+				<control type="group">
+					<visible>!Control.HasFocus(52)</visible>
+					<control type="label">
+						<visible>ListItem.Property(IsTVShow)</visible>
+						<include>BrowseFeedLabelLineTop</include>
+						<label>[B]$INFO[ListItem.TVShowTitle,,[CR]][/B]$INFO[ListItem.Season,$LOCALIZE[20373] ,$COMMA  ]$INFO[ListItem.Episode,$LOCALIZE[20359] ]$INFO[ListItem.Property(provider),[CR]]</label>
+						<font>font24</font>
+						<textcolor>grey</textcolor>
+						<selectedcolor>grey</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>ListItem.Property(IsMovie)</visible>
+						<include>BrowseFeedLabelLineTop</include>
+						<label>[B]$INFO[ListItem.Label][/B]$INFO[ListItem.Property(provider),[CR]]</label>
+						<font>font24</font>
+						<textcolor>grey</textcolor>
+						<selectedcolor>grey</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>ListItem.Property(IsMusic)</visible>
+						<include>BrowseFeedLabelLineTop</include>
+						<label>[B]$INFO[ListItem.Artist][/B][CR]$INFO[ListItem.Album]</label>
+						<font>font24</font>
+						<textcolor>grey</textcolor>
+						<selectedcolor>grey</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>!ListItem.Property(IsMovie) + !ListItem.Property(IsTVShow) + !ListItem.Property(IsMusic)</visible>
+						<include>BrowseFeedLabelLineTop</include>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font24</font>
+						<textcolor>grey</textcolor>
+						<selectedcolor>grey</selectedcolor>
+					</control>
+					<control type="label">
+						<include>BrowseFeedLabelLineCenter</include>
+						<label>$INFO[ListItem.Property(provider)]</label>
+						<font>font24</font>
+						<textcolor>grey</textcolor>
+						<selectedcolor>grey</selectedcolor>
+					</control>
+					<control type="label">
+						<include>BrowseHistoryLabelLineBottom</include>
+						<label>$INFO[ListItem.Property(addToHistoryDesc)]</label>
+						<font>font24</font>
+						<textcolor>grey</textcolor>
+						<selectedcolor>grey</selectedcolor>
+					</control>
+				</control>
+				<control type="group">
+					<visible>Control.HasFocus(52)</visible>
+					<control type="label">
+						<visible>ListItem.Property(IsTVShow)</visible>
+						<include>BrowseFeedLabelLineTop</include>
+						<label>[B]$INFO[ListItem.TVShowTitle,,[CR]][/B]$INFO[ListItem.Season,$LOCALIZE[20373] ,$COMMA  ]$INFO[ListItem.Episode,$LOCALIZE[20359] ]$INFO[ListItem.Property(provider),[CR]]</label>
+						<font>font24</font>
+						<textcolor>white</textcolor>
+						<selectedcolor>white</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>ListItem.Property(IsMovie)</visible>
+						<include>BrowseFeedLabelLineTop</include>
+						<label>[B]$INFO[ListItem.Label][/B]$INFO[ListItem.Property(provider),[CR]]</label>
+						<font>font24</font>
+						<textcolor>white</textcolor>
+						<selectedcolor>white</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>ListItem.Property(IsMusic)</visible>
+						<include>BrowseFeedLabelLineTop</include>
+						<label>[B]$INFO[ListItem.Artist][/B][CR]$INFO[ListItem.Album]</label>
+						<font>font24</font>
+						<textcolor>white</textcolor>
+						<selectedcolor>white</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>!ListItem.Property(IsMovie) + !ListItem.Property(IsTVShow) + !ListItem.Property(IsMusic)</visible>
+						<include>BrowseFeedLabelLineTop</include>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font24</font>
+						<textcolor>white</textcolor>
+						<selectedcolor>white</selectedcolor>
+					</control>
+					<control type="label">
+						<include>BrowseFeedLabelLineCenter</include>
+						<label>$INFO[ListItem.Property(provider)]</label>
+						<font>font24</font>
+						<textcolor>white</textcolor>
+						<selectedcolor>white</selectedcolor>
+					</control>
+					<control type="label">
+						<include>BrowseHistoryLabelLineBottom</include>
+						<label>$INFO[ListItem.Property(addToHistoryDesc)]</label>
+						<font>font24</font>
+						<textcolor>white</textcolor>
+						<selectedcolor>white</selectedcolor>
+					</control>
+				</control>
+			</focusedlayout>
+		</control>-->
+		<!--<control type="scrollbar" id="60">
+			<visible>Control.IsVisible(52)</visible>
+			<posx>640</posx>
+			<posy>142</posy>
+			<width>12</width>
+			<height>560</height>
+			<include>ScrollBarCommonProperties</include>
+		</control>-->
+		<!--<control type="group">
+			<visible>!Container.OnNext + !Container.OnPrevious</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout" delay="50">Visible</animation>
+			<control type="image">
+				<visible>!IsEmpty(Container(52).ListItem.Thumb)</visible>
+				<include>BrowseThumbAnimationUnfocus</include>
+				<posx>682</posx>
+				<posy>140</posy>
+				<width>450</width>
+				<height>253</height>
+				<texture blend="false">$INFO[Container(52).ListItem.Thumb]</texture>
+				<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+				<bordersize>10</bordersize>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="image">
+				<visible>Container(52).ListItem.Property(IsVideo)</visible>
+				<visible>IsEmpty(Container(52).ListItem.Thumb)</visible>
+				<include>BrowseThumbAnimationUnfocus</include>
+				<posx>682</posx>
+				<posy>140</posy>
+				<width>450</width>
+				<height>253</height>
+				<texture blend="false">default_video.png</texture>
+				<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+				<bordersize>10</bordersize>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="image">
+				<visible>Container(52).ListItem.Property(IsMusic)</visible>
+				<visible>IsEmpty(Container(52).ListItem.Thumb)</visible>
+				<include>BrowseThumbAnimationUnfocus</include>
+				<posx>682</posx>
+				<posy>140</posy>
+				<width>450</width>
+				<height>253</height>
+				<texture blend="false">default_music.png</texture>
+				<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+				<bordersize>10</bordersize>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="image">
+				<visible>!Container(52).ListItem.Property(IsVideo) + !Container(52).ListItem.Property(IsMusic)</visible>
+				<visible>IsEmpty(Container(52).ListItem.Thumb)</visible>
+				<visible>true + !Window.Property(empty)</visible>
+				<include>BrowseThumbAnimationUnfocus</include>
+				<posx>682</posx>
+				<posy>140</posy>
+				<width>450</width>
+				<height>253</height>
+				<texture blend="false">default_general.png</texture>
+				<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+				<bordersize>10</bordersize>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="label">
+				<visible>Container(52).ListItem.Property(IsTVShow)</visible>
+				<posx>692</posx>
+				<posy>406</posy>
+				<width>560</width>
+				<height>300</height>
+				<font>font22</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<textcolor>white</textcolor>
+				<label>[B]$INFO[container(52).ListItem.TVShowTitle,,[CR]]$INFO[container(52).ListItem.Season,$LOCALIZE[20373] ,$COMMA  ]$INFO[container(52).ListItem.Episode,$LOCALIZE[20359] ,	 ]$INFO[container(52).ListItem.Label,","][/B][CR]$INFO[container(52).ListItem.Property(releasedate),,	 ]$INFO[formattime(container(52).ListItem.Duration min),, $LOCALIZE[55002]	  ]$INFO[container(52).ListItem.MPAA,$LOCALIZE[563]	 ,][CR][CR][COLOR grey]$INFO[container(52).ListItem.Property(description)][/COLOR]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="label">
+				<visible>Container(52).ListItem.Property(IsMovie)</visible>
+				<posx>692</posx>
+				<posy>406</posy>
+				<width>560</width>
+				<height>300</height>
+				<font>font22</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<textcolor>white</textcolor>
+				<label>[COLOR white][B]$INFO[container(52).ListItem.Label]$INFO[container(52).ListItem.Year, (,)[CR]][/B][/COLOR]$INFO[formattime(container(52).ListItem.Duration min),, $LOCALIZE[55002]	 ]$INFO[container(52).ListItem.MPAA,$LOCALIZE[563]	,][CR][COLOR grey]$INFO[container(52).ListItem.Director,[CR][COLOR white]$LOCALIZE[20339][/COLOR]  ,[CR]]$INFO[container(52).ListItem.property(cast),[COLOR white]$LOCALIZE[54042][/COLOR]	,[CR]]$INFO[container(52).ListItem.property(description),[CR]][/COLOR]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="label">
+				<visible>Container(52).ListItem.Property(IsMusic)</visible>
+				<posx>692</posx>
+				<posy>406</posy>
+				<width>560</width>
+				<height>300</height>
+				<font>font22</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<textcolor>white</textcolor>
+				<label>[COLOR white][B]$INFO[container(52).ListItem.Artist,,	][/B]$INFO[container(52).ListItem.Album][/COLOR][CR]$INFO[container(52).ListItem.Year,$LOCALIZE[54043]	,	 ]$INFO[container(52).ListItem.MPAA,$LOCALIZE[563]	,][CR][CR][COLOR grey]$INFO[container(52).ListItem.property(description)][/COLOR]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="label">
+				<visible>!Container(52).ListItem.Property(IsMovie) + !Container(52).ListItem.Property(IsTVShow) + !Container(52).ListItem.Property(IsMusic)</visible>
+				<posx>692</posx>
+				<posy>406</posy>
+				<width>560</width>
+				<height>300</height>
+				<font>font22</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<textcolor>white</textcolor>
+				<label>[COLOR white][B]$INFO[container(52).ListItem.Label][CR][/COLOR]$INFO[container(52).ListItem.Date,,	 ]$INFO[formattime(container(52).ListItem.Duration min),,min	][B]$INFO[container(52).ListItem.property(provider),[CR]][/B][CR][CR][COLOR grey]$INFO[container(52).ListItem.property(description)][/COLOR]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+		</control>-->
+	</include>
+	<include name="BrowseBrowserFavoritesView">
+		<include>BrowseBackgroundViewBrowser</include>
+		<include>BrowseThumbViewListBrowser</include>
+	</include>
+	<include name="BrowseByLetterBGProperties">
+		<width>60</width>
+		<height>720</height>
+		<texture>browse/graphic-az-bg.png</texture>
+	</include>
+	<include name="BrowseByLetterThumbs">
+		<control type="group" id="8051">
+			<include>MoviesActionMenu</include>
+			<control type="group" id="7001">
+				<visible>Control.IsVisible(50)</visible>
+				<visible>true + integergreaterthan(Container(50).NumItems,5)</visible>
+				<visible>true + stringcompare(Window.Property(sort-label),a-z) | stringcompare(Window.Property(sort-label),z-a)</visible>
+				<visible>window.property(is-category-local) | window.property(is-category-favorites)</visible>
+				<visible>true + !Window.Property(loading)</visible>
+				<visible>true + !Window.Property(empty)</visible>
+				<enable>window.property(is-category-local) | window.property(is-category-favorites)</enable>
+				<control type="image">
+					<visible>Control.HasFocus(7000)</visible>
+					<include>BrowseByLetterBGProperties</include>
+					<posx>1280</posx>
+					<posy>0</posy>
+				</control>
+				<control type="image">
+					<width>44</width>
+					<height>64</height>
+					<texture>browse/graphic-az-tab.png</texture>
+					<posx>1252</posx>
+					<posy>352</posy>
+				</control>
+				<control type="list" id="7000">
+					<visible allowhiddenfocus="true">true</visible>
+					<posx>1309</posx>
+					<posy>21</posy>
+					<onup>8050</onup>
+					<onright>8050</onright>
+					<onleft>9050</onleft>
+					<orientation>vertical</orientation>
+					<height>720</height>
+					<itemlayout height="24" width="50">
+						<control type="label">
+							<visible>!ListItem.Property(isseparator) + !stringcompare(ListItem.Label,Container(50).ListItem.SortLetter)</visible>
+							<width>44</width>
+							<posx>1</posx>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+							<textcolor>mediumgreyheidi</textcolor>
+							<font>font22b</font>
+							<align>center</align>
+						</control>
+						<control type="label">
+							<visible>!ListItem.Property(isseparator) + stringcompare(ListItem.Label,Container(50).ListItem.SortLetter) + Control.HasFocus(7000)</visible>
+							<width>44</width>
+							<posx>1</posx>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+							<textcolor>mediumgreyheidi</textcolor>
+							<font>font22b</font>
+							<align>center</align>
+						</control>
+						<control type="label">
+							<visible>!ListItem.Property(isseparator) + ListItem.isselected + stringcompare(ListItem.Label,Container(50).ListItem.SortLetter) + Control.HasFocus(7000)</visible>
+							<width>44</width>
+							<posx>1</posx>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+							<textcolor>mediumgreyheidi</textcolor>
+							<font>font22b</font>
+							<align>center</align>
+						</control>
+						<control type="label">
+							<visible>ListItem.Property(isseparator)</visible>
+							<width>44</width>
+							<posx>1</posx>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+							<textcolor>FF2A2A2A</textcolor>
+							<font>font22b</font>
+							<align>center</align>
+						</control>
+					</itemlayout>
+					<focusedlayout height="24" width="50">
+						<control type="image">
+							<height>44</height>
+							<width>44</width>
+							<posx>-21</posx>
+							<posy>-6</posy>
+							<texture srcborder="24" border="16">button-focused.png</texture>
+						</control>
+						<control type="label">
+							<width>44</width>
+							<height>44</height>
+							<posx>1</posx>
+							<posy>-6</posy>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+							<textcolor>whiteheidi</textcolor>
+							<font>font22b</font>
+							<align>center</align>
+							<aligny>center</aligny>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseByLetterList">
+		<control type="group" id="7101">
+			<visible>!Control.IsVisible(50)</visible>
+			<visible>true + integergreaterthan(Container(51).NumItems,5)</visible>
+			<visible>true + stringcompare(Window.Property(sort-label),a-z) | stringcompare(Window.Property(sort-label),z-a)</visible>
+			<visible>window.property(is-category-local) | window.property(is-category-favorites)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>true + !Window.Property(empty)</visible>
+			<control type="image">
+				<visible>Control.HasFocus(7100)</visible>
+				<include>BrowseByLetterBGProperties</include>
+				<posx>1280</posx>
+				<posy>0</posy>
+			</control>
+			<control type="image">
+				<width>44</width>
+				<height>64</height>
+				<texture>browse/graphic-az-tab.png</texture>
+				<posx>1252</posx>
+				<posy>352</posy>
+			</control>
+			<control type="list" id="7100">
+				<visible allowhiddenfocus="true">true</visible>
+				<posx>1309</posx>
+				<posy>21</posy>
+				<onup>8050</onup>
+				<onright>8050</onright>
+				<onleft>9050</onleft>
+				<orientation>vertical</orientation>
+				<height>720</height>
+				<itemlayout height="24" width="50">
+					<control type="label">
+						<visible>!ListItem.Property(isseparator) + !stringcompare(ListItem.Label,Container(51).ListItem.SortLetter)</visible>
+						<width>44</width>
+						<posx>1</posx>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<font>font22b</font>
+						<align>center</align>
+					</control>
+					<control type="label">
+						<visible>!ListItem.Property(isseparator) + stringcompare(ListItem.Label,Container(51).ListItem.SortLetter) + Control.HasFocus(7100)</visible>
+						<width>44</width>
+						<posx>1</posx>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<font>font22b</font>
+						<align>center</align>
+					</control>
+					<control type="label">
+						<visible>!ListItem.Property(isseparator) + ListItem.isselected + stringcompare(ListItem.Label,Container(51).ListItem.SortLetter) + Control.HasFocus(7100)</visible>
+						<width>44</width>
+						<posx>1</posx>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<font>font22b</font>
+						<align>center</align>
+					</control>
+					<control type="label">
+						<visible>ListItem.Property(isseparator)</visible>
+						<width>44</width>
+						<posx>1</posx>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>FF2A2A2A</textcolor>
+						<font>font22b</font>
+						<align>center</align>
+					</control>
+				</itemlayout>
+				<focusedlayout height="24" width="50">
+					<control type="image">
+						<height>44</height>
+						<width>44</width>
+						<posx>-21</posx>
+						<posy>-6</posy>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="label">
+						<width>44</width>
+						<height>44</height>
+						<posx>1</posx>
+						<posy>-6</posy>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>whiteheidi</textcolor>
+						<font>font22b</font>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseByLetterAppsThumbs">
+		<control type="group">
+			<visible>Control.IsVisible(55)</visible>
+			<visible>true + integergreaterthan(Container(55).NumItems,10)</visible>
+			<visible>true + stringcompare(Window.Property(sort-label),a-z) | stringcompare(Window.Property(sort-label),z-a)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>true + !Window.Property(empty)</visible>
+			<control type="image">
+				<visible>Control.HasFocus(7000)</visible>
+				<include>BrowseByLetterBGProperties</include>
+				<posx>1280</posx>
+				<posy>0</posy>
+			</control>
+			<control type="image">
+				<width>44</width>
+				<height>64</height>
+				<texture>browse/graphic-az-tab.png</texture>
+				<posx>1252</posx>
+				<posy>352</posy>
+			</control>
+			<control type="list" id="7000">
+				<visible allowhiddenfocus="true">true</visible>
+				<posx>1309</posx>
+				<posy>21</posy>
+				<onup>8050</onup>
+				<onright>8050</onright>
+				<onleft>9050</onleft>
+				<orientation>vertical</orientation>
+				<height>720</height>
+				<itemlayout height="24" width="50">
+					<control type="label">
+						<visible>!ListItem.Property(isseparator) + !stringcompare(ListItem.Label,Container(55).ListItem.SortLetter)</visible>
+						<width>44</width>
+						<posx>1</posx>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<font>font22b</font>
+						<align>center</align>
+					</control>
+					<control type="label">
+						<visible>!ListItem.Property(isseparator) + stringcompare(ListItem.Label,Container(55).ListItem.SortLetter) + Control.HasFocus(7000)</visible>
+						<width>44</width>
+						<posx>1</posx>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<font>font22b</font>
+						<align>center</align>
+					</control>
+					<control type="label">
+						<visible>!ListItem.Property(isseparator) + ListItem.isselected + stringcompare(ListItem.Label,Container(55).ListItem.SortLetter) + Control.HasFocus(7000)</visible>
+						<width>44</width>
+						<posx>1</posx>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<font>font22b</font>
+						<align>center</align>
+					</control>
+					<control type="label">
+						<visible>ListItem.Property(isseparator)</visible>
+						<width>44</width>
+						<posx>1</posx>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>FF2A2A2A</textcolor>
+						<font>font22b</font>
+						<align>center</align>
+					</control>
+				</itemlayout>
+				<focusedlayout height="24" width="50">
+					<control type="image">
+						<height>44</height>
+						<width>44</width>
+						<posx>-21</posx>
+						<posy>-6</posy>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="label">
+						<width>44</width>
+						<height>44</height>
+						<posx>1</posx>
+						<posy>-6</posy>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textcolor>whiteheidi</textcolor>
+						<font>font22b</font>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+	<include name="ScrollLetter">
+		<control type="group">
+			<posx>708</posx>
+			<posy>322</posy>
+			<visible>Container(50).Scrolling + !Window.Property(loading) + !Window.IsActive(DialogProgress.xml)</visible>
+			<visible>true + stringcompare(Window.Property(sort-label),a-z) | stringcompare(Window.Property(sort-label),z-a)</visible>
+			<animation effect="fade" start="0" end="100" time="200" delay="250" reversible="false">Visible</animation>
+			<control type="image">
+				<width>128</width>
+				<height>128</height>
+				<texture>nomedia_background.png</texture>
+			</control>
+			<control type="label">
+				<width>128</width>
+				<height>128</height>
+				<posx>0</posx>
+				<posy>-1</posy>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[Container(50).ListItem.SortLetter]</label>
+				<font>font80b</font>
+			</control>
+		</control>
+		<control type="group">
+			<posx>927</posx>
+			<posy>322</posy>
+			<visible>Container(51).Scrolling + !Window.Property(loading) + !Window.IsActive(DialogProgress.xml)</visible>
+			<animation effect="fade" start="0" end="100" time="200" delay="250" reversible="false">Visible</animation>
+			<visible>true + stringcompare(Window.Property(sort-label),a-z) | stringcompare(Window.Property(sort-label),z-a)</visible>
+			<control type="image">
+				<width>128</width>
+				<height>128</height>
+				<texture>nomedia_background.png</texture>
+			</control>
+			<control type="label">
+				<width>128</width>
+				<height>128</height>
+				<posx>0</posx>
+				<posy>-1</posy>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[Container(51).ListItem.SortLetter]</label>
+				<font>font80b</font>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseWindowIconLocation">
+		<posx>876</posx>
+		<posy>654</posy>
+		<width>385</width>
+		<height>48</height>
+	</include>
+	<include name="BrowseBackgroundViewBrowser">
+		<control type="panel" id="52">
+			<enable>false</enable>
+			<preloaditems>2</preloaditems>
+			<posx>94</posx>
+			<posy>160</posy>
+			<width>1280</width>
+			<height>575</height>
+			<onleft>-</onleft>
+			<onright>7000</onright>
+			<onup>8002</onup>
+			<ondown>8010</ondown>
+			<scrolltime>400</scrolltime>
+			<orientation>vertical</orientation>
+			<itemlayout height="166" width="277">
+				<include>BrowsePortraitThumbEmptyBrowser</include>
+			</itemlayout>
+			<focusedlayout height="166" width="277">
+				<control type="group">
+					<visible>!Control.HasFocus(50)</visible>
+					<include>BrowsePortraitThumbEmptyBrowser</include>
+				</control>
+				<control type="group">
+					<visible>Control.HasFocus(50)</visible>
+					<include>BrowsePortraitThumbFocusBrowser</include>
+				</control>
+			</focusedlayout>
+			<content>
+				<item>
+					<label>54894</label>
+				</item>
+				<item>
+					<label>54894</label>
+				</item>
+				<item>
+					<label>54894</label>
+				</item>
+				<item>
+					<label>54894</label>
+				</item>
+				<item>
+					<label>54894</label>
+				</item>
+				<item>
+					<label>54894</label>
+				</item>
+				<item>
+					<label>54894</label>
+				</item>
+				<item>
+					<label>54894</label>
+				</item>
+				<item>
+					<label>54894</label>
+				</item>
+				<item>
+					<label>54894</label>
+				</item>
+				<item>
+					<label>54894</label>
+				</item>
+				<item>
+					<label>54894</label>
+				</item>
+			</content>
+		</control>
+	</include>
+	<include name="BrowseLineViewTrailers">
+		<include>BrowseLineViewListTrailers</include>
+	</include>
+	<include name="BrowseLineViewListTrailers">
+		<include>BrowseLineViewList</include>
+		<control type="group">
+			<!--<visible>!Container.OnNext + !Container.OnPrevious</visible>-->
+			<visible>true + !Window.Property(loading)</visible>
+			<visible>true + !Window.Property(empty)</visible>
+			<!--<visible>true + !container(51).scrolling</visible>-->
+			<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout" delay="50">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout" delay="250" reversible="false" condition="container(51).scrolling">Conditional</animation>
+			<control type="image">
+				<visible>true + !Window.Property(loading)</visible>
+				<visible>Control.IsVisible(51)</visible>
+				<visible>!Control.IsEmpty(51)</visible>
+				<visible>!IsEmpty(Container(51).ListItem.Thumb)</visible>
+				<posx>821</posx>
+				<posy>124</posy>
+				<width>207</width>
+				<height>298</height>
+				<texture fallback="browse/thumbnail-default-movie.png" blend="false">$INFO[Container(51).ListItem.Thumb]</texture>
+				<bordertexture srcborder="21" border="14">browse/bg-dropshadow-2.png</bordertexture>
+				<bordersize>7</bordersize>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="image">
+				<visible>true + !Window.Property(loading)</visible>
+				<visible>Control.IsVisible(51)</visible>
+				<visible>!Control.IsEmpty(51)</visible>
+				<visible>IsEmpty(Container(51).ListItem.Thumb)</visible>
+				<posx>821</posx>
+				<posy>124</posy>
+				<width>207</width>
+				<height>298</height>
+				<texture blend="false">browse/thumbnail-default-movie.png</texture>
+				<bordertexture srcborder="21" border="14">browse/bg-dropshadow-2.png</bordertexture>
+				<bordersize>7</bordersize>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<fadetime>200</fadetime>
+			</control>
+			<!--<control type="image">
+				<visible>Container(51).ListItem.Property(watched)</visible>
+				<posx>871</posx>
+				<posy>354</posy>
+				<width>20</width>
+				<height>20</height>
+				<texture>browse/graphic-thumbnail-watched-check.png</texture>
+				<aspectratio>scale</aspectratio>
+				<fadetime>200</fadetime>
+			</control>-->
+			<control type="label">
+				<visible>Control.IsVisible(51)</visible>								
+				<posx>827</posx>
+				<posy>427</posy>
+				<width>330</width>
+				<height>555</height>
+				<font>font20ls</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<textcolor>whiteheidi</textcolor>
+				<label>$INFO[formattime(container(51).ListItem.Duration min),, $LOCALIZE[55002] · ]$INFO[container(51).ListItem.MPAA,$LOCALIZE[563] , · ]$INFO[container(51).ListItem.Year,,]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="grouplist">
+				<visible>true + !Window.Property(loading)</visible>
+				<visible>!Control.IsEmpty(51)</visible>
+				<visible>Control.IsVisible(51)</visible>	
+				<posx>827</posx>
+				<posy>452</posy>
+				<width>304</width>
+				<height>450</height>
+				<orientation>horizontal</orientation>
+				<itemgap>9</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<!-- ROTTEN TOMATOES -->
+				<control type="grouplist">
+					<visible>Container(51).ListItem.Property(rt-has-critics-info)</visible>
+					<orientation>horizontal</orientation>
+					<itemgap>0</itemgap>
+					<usecontrolcoords>true</usecontrolcoords>
+					<control type="image">
+						<visible>IntegerGreaterThan(Container(51).ListItem.Property(rt-critics-score),60)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>40</width>
+						<height>40</height>
+						<texture>browse/graphic-rotten-good.png</texture>
+					</control>
+					<control type="image">
+						<visible>!IntegerGreaterThan(Container(51).ListItem.Property(rt-critics-score),60)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>40</width>
+						<height>40</height>
+						<texture>browse/graphic-rotten-bad.png</texture>
+					</control>
+					<control type="label">
+						<posy>2</posy>
+						<width min="0" max="100">auto</width>
+						<height min="0" max="40">auto</height>
+						<align>left</align>
+						<aligny>top</aligny>
+						<font>font26b</font>
+						<textcolor>lightgreyheidi</textcolor>
+						<label>[UPPERCASE][B]$INFO[Container(51).ListItem.Property(rt-critics-score)][/UPPERCASE][/B]</label>
+					</control>
+					<control type="label">
+						<posy>7</posy>
+						<width min="0" max="100">auto</width>
+						<height min="0" max="40">auto</height>
+						<align>left</align>
+						<aligny>top</aligny>
+						<font>font20</font>
+						<textcolor>lightgreyheidi</textcolor>
+						<label>%</label>
+					</control>
+				</control>
+				<control type="grouplist">
+					<visible>!stringcompare(Container(51).ListItem.Property(videorating),0)</visible>
+					<orientation>horizontal</orientation>
+					<itemgap>0</itemgap>
+					<usecontrolcoords>true</usecontrolcoords>
+					<control type="image">
+						<posx>0</posx>
+						<posy>7</posy>
+						<width>48</width>
+						<height>28</height>
+						<texture>browse/graphic-imdb.png</texture>
+					</control>
+					<control type="label">
+						<posy>2</posy>
+						<width min="0" max="100">auto</width>
+						<height min="0" max="40">auto</height>
+						<align>left</align>
+						<aligny>top</aligny>
+						<font>font26b</font>
+						<textcolor>lightgreyheidi</textcolor>
+						<label>[UPPERCASE][B]$INFO[Container(51).ListItem.Property(videorating)][/UPPERCASE][/B]</label>
+					</control>
+				</control>
+			</control>
+			<control type="label">
+				<animation effect="slide" start="0,0" end="0,-39" time="0" condition="!Container(51).ListItem.Property(rt-has-critics-info) + stringcompare(Container(51).ListItem.Property(videorating),0)">Conditional</animation>
+				<visible>Control.IsVisible(51)</visible>								
+				<posx>827</posx>
+				<posy>491</posy>
+				<width>330</width>
+				<height>180</height>
+				<font>font20ls</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<textcolor>whiteheidi</textcolor>
+				<label>$INFO[container(51).ListItem.property(description),,]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+		</control>
+		<include>ScrollLetter</include>
+	</include>
+	<include name="BrowseThumbViewTrailers">
+		<include>BrowseThumbViewList</include>
+	</include>
+</includes>

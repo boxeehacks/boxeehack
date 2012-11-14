@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<window id="2002">
+	<defaultcontrol>10</defaultcontrol>
+	<controls>
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Popup_Heidi</include>
+			<control type="label" id="1">
+				<description>heading label</description>
+				<include>Popup_Title</include>
+				<label>-</label>
+			</control>
+			<control type="grouplist">
+				<include>Popup_OK_Body_Properties</include>
+				<orientation>vertical</orientation>
+				<itemgap>20</itemgap>
+				<usecontrolcoords>false</usecontrolcoords>
+				<control type="label" id="2">
+					<description>dialog line 1</description>
+					<width>415</width>
+					<height min="0" max="100">auto</height>
+					<label>-</label>
+					<aligny>top</aligny>
+					<font>font26ls</font>
+					<textcolor>lightgreyheidi</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label" id="3">
+					<description>dialog line 2</description>
+					<width>415</width>
+					<height min="0" max="100">auto</height>
+					<label>-</label>
+					<aligny>top</aligny>
+					<font>font26</font>
+					<textcolor>boxeegreenheidi</textcolor>
+				</control>
+				<control type="label" id="4">
+					<description>dialog line 3</description>
+					<width>415</width>
+					<height min="0" max="100">auto</height>
+					<label>-</label>
+					<aligny>top</aligny>
+					<font>font26</font>
+					<textcolor>lightgreyheidi</textcolor>
+				</control>
+			</control>
+			<control type="button" id="10">
+				<posx>66</posx>
+				<posy>422</posy>
+				<width>416</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>[B]$LOCALIZE[186][/B]</label>
+				<!--OK-->
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onclick>-</onclick>
+			</control>
+		</control>
+	</controls>
+</window>

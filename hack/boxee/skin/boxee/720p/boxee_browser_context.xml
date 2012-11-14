@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<window id="362">
+	<defaultcontrol always="true">9004</defaultcontrol>
+	<includes>
+		<include name="browsertest">
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>100</width>
+				<height>100</height>
+				<texture>black.png</texture>
+			</control>
+		</include>
+	</includes>
+	<controls>
+		<control type="list" id="5000">
+			<description>info</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<visible>false</visible>
+			<itemlayout height="0">
+			</itemlayout>
+			<focusedlayout height="0">
+			</focusedlayout>
+		</control>
+		<control type="group" id="7600">
+			<visible>window(10362).property(browser-page-load-failed)</visible>
+			<include>Common_Background</include>
+			<control type="label">
+				<posx>20</posx>
+				<posy>326</posy>
+				<width>1280</width>
+				<height>36</height>
+				<font>font46b</font>
+				<textcolor>lightgreyheidi</textcolor>
+				<label>[B]$LOCALIZE[55414][/B]</label>
+				<align>center</align>
+			</control>
+			<control type="label" id="7601">
+				<posx>0</posx>
+				<posy>388</posy>
+				<width>1280</width>
+				<height>36</height>
+				<font>font32b</font>
+				<textcolor>mediumgreyheidi</textcolor>
+				<label>$LOCALIZE[54893]</label>
+				<align>center</align>
+			</control>
+		</control>
+		<control type="group" id="7000">
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>132</height>
+				<texture>browser/graphic-browser-bg.png</texture>
+			</control>
+			<description>OSD (upper + lower)</description>
+			<include>TopGradient</include>
+			<control type="group">
+				<description>upper OSD</description>
+				<posx>32</posx>
+				<posy>32</posy>
+				<description>upper OSD - NO thumb</description>
+				<control type="group">
+					<control type="button" id="9029">
+						<visible>false</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>56</width>
+						<height>56</height>
+						<texturefocus>icons/icon_browser_osd_exit_on.png</texturefocus>
+						<texturenofocus>icons/icon_browser_osd_exit_off.png</texturenofocus>
+						<textureclick>icons/icon_browser_osd_exit_on.png</textureclick>
+						<onup>-</onup>
+						<ondown>50</ondown>
+						<onleft>-</onleft>
+						<onright>9203</onright>
+					</control>
+					<control type="button" id="9203">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texturefocus>browser/button-action-history-on.png</texturefocus>
+						<texturenofocus>browser/button-action-history-off.png</texturenofocus>
+						<textureclick>browser/button-action-history-on.png</textureclick>
+						<onup>-</onup>
+						<ondown>50</ondown>
+						<onleft>9029</onleft>
+						<onright>9201</onright>
+					</control>
+					<control type="image">
+						<visible>!container(5000).ListItem.property(browserHasPrevUrl)</visible>
+						<posx>76</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture>browser/button-action-nav-back-off.png</texture>
+					</control>
+					<control type="button" id="9201">
+						<visible>!container(5000).ListItem.property(browserfullscreen)</visible>
+						<enable>container(5000).ListItem.property(browserHasPrevUrl)</enable>
+						<visible>container(5000).ListItem.property(browserHasPrevUrl)</visible>
+						<posx>76</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<onclick>BrowserBack</onclick>
+						<texturefocus>browser/button-action-nav-back-on.png</texturefocus>
+						<texturenofocus>browser/button-action-nav-back-off.png</texturenofocus>
+						<textureclick>browser/button-action-nav-back-on.png</textureclick>
+						<onup>-</onup>
+						<ondown>50</ondown>
+						<onleft>9203</onleft>
+						<onright>9202</onright>
+					</control>
+					<control type="image">
+						<visible>!Control.IsEnabled(9201)</visible>
+						<posx>76</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture diffuse="masks/mask-action-button.png">browser/button-action-disabled-overlay.png</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="image">
+						<visible>!container(5000).ListItem.property(browserHasNextUrl)</visible>
+						<posx>152</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture flipx="true">browser/button-action-nav-back-off.png</texture>
+					</control>
+					<control type="group">
+					<control type="button" id="9202">
+						<visible>!container(5000).ListItem.property(browserfullscreen)</visible>
+						<enable>container(5000).ListItem.property(browserHasNextUrl)</enable>
+						<visible>container(5000).ListItem.property(browserHasNextUrl)</visible>
+						<posx>152</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<onclick>BrowserForward</onclick>
+						<texturefocus flipx="true">browser/button-action-nav-back-on.png</texturefocus>
+						<texturenofocus flipx="true">browser/button-action-nav-back-off.png</texturenofocus>
+						<textureclick flipx="true">browser/button-action-nav-back-on.png</textureclick>
+						<onup>-</onup>
+						<ondown>50</ondown>
+						<onleft>9201</onleft>
+						<onright>9004</onright>
+					</control>
+					</control>
+					<control type="image">
+						<visible>!Control.IsEnabled(9202)</visible>
+						<posx>152</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture diffuse="masks/mask-action-button.png">browser/button-action-disabled-overlay.png</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="edit" id="9004">
+						<visible>true</visible>
+						<posx>228</posx>
+						<posy>0</posy>
+						<width>760</width>
+						<height>64</height>
+						<font>font30</font>
+						<ondown>50</ondown>
+						<onright>9028</onright>
+						<onleft>9202</onleft>
+						<textcolor>black</textcolor>
+						<focusedcolor>black</focusedcolor>
+						<selectedcolor>black</selectedcolor>
+						<selectedbackcolor>blue</selectedbackcolor>
+						<emptylabel>$LOCALIZE[55400]</emptylabel>
+						<emptycolor>opaquegrey</emptycolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>16</textoffsetx>
+						<texturenofocus srcborder="24" border="16">text-field-unfocused.png</texturenofocus>
+						<texturefocus srcborder="24" border="16">text-field-focused.png</texturefocus>
+					</control>
+					<control type="image" id="9009">
+						<visible>false</visible>
+						<posx>980</posx>
+						<posy>5</posy>
+						<width>45</width>
+						<height>45</height>
+						<texture>ap-lock.png</texture>
+						<colordiffuse>DDBBBBBB</colordiffuse>
+					</control>
+					<!--
+					<control type="button" id="9024">
+						<visible>!Player.PageIsLoading</visible>
+						<texturefocus diffuse="masks/10b9f2.png">icons/icon_browser_reload.png</texturefocus>
+						<texturenofocus diffuse="masks/f1f1f1.png">icons/icon_browser_reload.png</texturenofocus>
+						<textureclick diffuse="masks/f1f1f1.png">icons/icon_browser_reload.png</textureclick>
+						<onleft>9004</onleft>
+						<onright>9026</onright>
+						<ondown>9029</ondown>
+						<onup>-</onup>
+						<posx>972</posx>
+						<posy>7</posy>
+						<width>56</width>
+						<height>56</height>
+					</control>
+					<control type="button" id="9026">
+						<visible>Player.PageIsLoading</visible>
+						<texturefocus diffuse="masks/10b9f2.png">icons/icon_browser_stop.png</texturefocus>
+						<texturenofocus diffuse="masks/f1f1f1.png">icons/icon_browser_stop.png</texturenofocus>
+						<textureclick diffuse="masks/f1f1f1.png">icons/icon_browser_stop.png</textureclick>
+						<onleft>9004</onleft>
+						<onright>9028</onright>
+						<ondown>9029</ondown>
+						<onup>-</onup>
+						<posx>972</posx>
+						<posy>7</posy>
+						<width>56</width>
+						<height>56</height>
+					</control>
+					-->
+					<control type="button" id="9028">
+						<posx>1000</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texturefocus>browser/button-action-bookmarks-on.png</texturefocus>
+						<texturenofocus>browser/button-action-bookmarks-off.png</texturenofocus>
+						<textureclick>browser/button-action-bookmarks-on.png</textureclick>
+						<onup>-</onup>
+						<ondown>50</ondown>
+						<onleft>9004</onleft>
+						<onright>9007</onright>
+					</control>
+					<control type="button" id="9007">
+                        <enable>true + !Player.PageIsLoading + !window(10362).property(browser-page-load-failed)</enable>
+						<enable>!Container(5000).ListItem.Property(disable-recommend)</enable>
+						<texturefocus>browser/button-action-favorite-share-on.png</texturefocus>
+						<texturenofocus>browser/button-action-favorite-share-off.png</texturenofocus>
+						<textureclick>browser/button-action-favorite-share-on.png</textureclick>
+						<onleft>9028</onleft>
+						<onright>9025</onright>
+						<ondown>50</ondown>
+						<onup>-</onup>
+						<posx>1076</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+					</control>
+					<control type="image">
+						<visible>!Control.IsEnabled(9007)</visible>
+						<posx>1076</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture diffuse="masks/mask-action-button.png">browser/button-action-disabled-overlay.png</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="group">
+						<enable>true + !Player.PageIsLoading + !window(10362).property(is-favorite)</enable>
+						<control type="button" id="9025">
+							<enable>!Player.PageIsLoading</enable>
+                            <visible>!window(10362).property(browser-page-load-failed)</visible>
+							<visible>true + !window(10362).property(is-favorite)</visible>
+							<texturefocus>browser/button-action-favorite-add-on.png</texturefocus>
+							<texturenofocus>browser/button-action-favorite-add-off.png</texturenofocus>
+							<textureclick>browser/button-action-favorite-add-on.png</textureclick>
+							<onleft>9007</onleft>
+							<onright>9027</onright>
+							<ondown>50</ondown>
+							<onup>-</onup>
+							<posx>1152</posx>
+							<posy>0</posy>
+							<width>64</width>
+							<height>64</height>
+						</control>
+						<control type="button" id="9027">
+                            <visible>!window(10362).property(browser-page-load-failed)</visible>
+							<enable>!Player.PageIsLoading</enable>
+							<visible>true + window(10362).property(is-favorite)</visible>
+							<texturefocus>browser/button-action-favorite-remove-on.png</texturefocus>
+							<texturenofocus>browser/button-action-favorite-remove-off.png</texturenofocus>
+							<textureclick>browser/button-action-favorite-remove-on.png</textureclick>
+							<onleft>9025</onleft>
+							<onright>-</onright>
+							<ondown>50</ondown>
+							<onup>-</onup>
+							<posx>1152</posx>
+							<posy>0</posy>
+							<width>64</width>
+							<height>64</height>
+						</control>
+					</control>
+					<control type="image">
+						<visible>!Control.IsEnabled(9025) | !Control.IsEnabled(9025)</visible>
+						<posx>1152</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture diffuse="masks/mask-action-button.png">browser/button-action-disabled-overlay.png</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+				</control>
+			</control>
+		</control>
+		<control type="group" id="7500">
+			<description>Home Screen</description>
+			<include>Common_Background</include>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>132</height>
+				<texture>browser/graphic-browser-bg.png</texture>
+			</control>
+			<control type="group">
+				<control type="group" id="9050">
+					<include>BrowseBrowserFavoritesView</include>
+					<include>BrowseBrowserHistoryView</include>
+				</control>
+				<include>BrowseLoadingAnimation</include>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<window id="10495">
+	<defaultcontrol always="true">9050</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<control type="group">
+			<animation effect="slide" start="0,0" end="-60,0" time="200" condition="Control.HasFocus(7000) | Control.HasFocus(7100)">Conditional</animation>
+			<control type="group" id="9050">
+				<include>BrowseThumbViewTrailers</include>
+				<include>BrowseLineViewTrailers</include>
+			</control>
+      		<include>LogoTitleAndItemCountTrailers</include>
+			<include>BrowseByLetterThumbs</include>
+			<include>BrowseByLetterList</include>
+			<include>BrowseTrailersEmptyList</include>
+			<include>BrowseLoadingAnimation</include>
+		</control>
+		<!-- include>Window_Transition</include -->
+	</controls>
+</window>

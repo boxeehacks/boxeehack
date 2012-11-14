@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<window type="dialog" id="10504">
+	<defaultcontrol always="true">9050</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+	</controls>
+</window>

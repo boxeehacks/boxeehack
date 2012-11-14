@@ -1,0 +1,682 @@
+<?xml version="1.0"?>
+<window id="505">
+	<defaultcontrol always="false">50</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+ 		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+            <colordiffuse>C8FFFFFF</colordiffuse>					
+		</control>	
+			
+		<include>OSD_Clock</include>
+		
+		<!--****************************************
+			****************** EPG *****************
+			****************************************-->
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>32</width>
+			<height>720</height>
+			<texture>graphic-scanline-48.png</texture>
+		</control>
+			
+		<control type="group">
+			<animation effect="fade" start="100" end="30" time="200" condition="Control.HasFocus(47)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="38,0" time="200" condition="Control.HasFocus(47)" reversible="true">Conditional</animation>									
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>32</width>
+				<height>720</height>
+				<texture>colors/color-black.png</texture>
+				<colordiffuse>77FFFFFF</colordiffuse>
+			</control>
+			<!-- NAVIGATION -->
+			<control type="image">
+				<posx>32</posx>
+				<posy>0</posy>
+				<width>512</width>
+				<height>720</height>
+				<texture>colors/color-black.png</texture>
+				<colordiffuse>99FFFFFF</colordiffuse>
+			</control>
+			<control type="list" id="50">
+				<posx>32</posx>
+				<posy>72</posy>
+				<width>512</width>
+				<height>648</height>
+				<orientation>vertical</orientation>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<onleft>47</onleft>
+				<onright>-</onright>
+				<itemlayout width="512" height="152">
+					<control type="image">
+						<visible>ListItem.Property(IsActive)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>512</width>
+						<height>152</height>
+						<texture>colors/color-black.png</texture>
+					</control>
+					<control type="image">
+						<visible>!ListItem.Property(issubitem) + !ListItem.IsFirst</visible>
+						<posx>-4</posx>
+						<posy>-8</posy>
+						<width>516</width>
+						<height>16</height>
+						<texture>livetv/graphic-divider-768.png</texture>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(issubitem)</visible>
+						<posx>130</posx>
+						<posy>-8</posy>
+						<width>368</width>
+						<height>16</height>
+						<texture>livetv/graphic-divider-588.png</texture>
+					</control>
+					<!-- CHANNELS -->
+					<control type="group">
+						<visible>!ListItem.Property(isactive) + !ListItem.Property(issubitem)</visible>
+						<control type="label">
+							<posx>16</posx>
+							<posy>21</posy>
+							<width>108</width>
+							<height>20</height>
+							<textcolor>mediumgreyheidi</textcolor>
+							<font>font20b</font>
+							<label>[B]$INFO[ListItem.Property(ChannelName)][/B]</label>
+						</control>
+						<control type="label">
+							<visible>!IsEmpty(ListItem.Property(ChannelName))</visible>						
+							<posx>16</posx>
+							<posy>45</posy>
+							<width>84</width>
+							<height>20</height>
+							<textcolor>mediumgreyheidi</textcolor>
+							<font>font20b</font>
+							<label>[B]$INFO[ListItem.Property(ChannelNumber)][/B]</label>
+						</control>
+						<control type="label">
+							<visible>IsEmpty(ListItem.Property(ChannelName))</visible>						
+							<posx>16</posx>
+							<posy>21</posy>
+							<width>84</width>
+							<height>20</height>
+							<textcolor>mediumgreyheidi</textcolor>
+							<font>font20b</font>
+							<label>[B]$INFO[ListItem.Property(ChannelNumber)][/B]</label>
+						</control>						
+					</control>
+					<control type="group">
+						<visible>ListItem.Property(isactive) + !ListItem.Property(issubitem)</visible>
+						<control type="label">
+							<posx>16</posx>
+							<posy>21</posy>
+							<width>108</width>
+							<height>20</height>
+							<textcolor>boxeegreenheidi</textcolor>
+							<font>font20b</font>
+							<label>[B]$INFO[ListItem.Property(ChannelName)][/B]</label>
+						</control>
+						<control type="label">
+							<visible>!IsEmpty(ListItem.Property(ChannelName))</visible>						
+							<posx>16</posx>
+							<posy>45</posy>
+							<width>84</width>
+							<height>20</height>
+							<textcolor>boxeegreenheidi</textcolor>
+							<font>font20b</font>
+							<label>[B]$INFO[ListItem.Property(ChannelNumber)][/B]</label>
+						</control>
+						<control type="label">
+							<visible>IsEmpty(ListItem.Property(ChannelName))</visible>						
+							<posx>16</posx>
+							<posy>21</posy>
+							<width>84</width>
+							<height>20</height>
+							<textcolor>boxeegreenheidi</textcolor>
+							<font>font20b</font>
+							<label>[B]$INFO[ListItem.Property(ChannelNumber)][/B]</label>
+						</control>						
+					</control>
+					<!-- SHOWS -->
+					<control type="image">
+						<visible>ListItem.Property(isactive)</visible>
+						<posx>130</posx>
+						<posy>12</posy>
+						<width>368</width>
+						<height>128</height>
+						<texture srcborder="24" border="16">button-on.png</texture>
+					</control>
+					<control type="label">
+						<visible>ListItem.Property(HasEpg)</visible>
+						<posx>144</posx>
+						<posy>18</posy>
+						<width>338</width>
+						<height>20</height>
+						<textcolor>whiteheidi</textcolor>
+						<font>font28b</font>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+					</control>
+					<control type="label">
+						<visible>!ListItem.Property(HasEpg)</visible>
+						<posx>144</posx>
+						<posy>18</posy>
+						<width>338</width>
+						<height>20</height>
+						<textcolor>mediumgreyheidi</textcolor>
+						<font>font28b</font>
+						<label>[B]$LOCALIZE[58097][B]</label>
+					</control>					
+					<control type="label">										
+						<posx>145</posx>
+						<posy>54</posy>
+						<width>308</width>
+						<height>20</height>
+						<textcolor>mediumgreyheidi</textcolor>
+						<font>font20b</font>
+						<label>[B]$INFO[ListItem.Property(starttime)]$INFO[ListItem.Property(endtime), - ,][/B]</label>
+					</control>
+					<!-- NEW -->
+					<control type="image">
+						<visible>ListItem.Property(isnew)</visible>
+						<posx>448</posx>
+						<posy>62</posy>
+						<width>36</width>
+						<height>16</height>
+						<texture diffuse="colors/color-grey.png">livetv/icon-new.png</texture>
+					</control>
+					<!-- SOCIAL INFO -->
+					<!-- Friends are watching this show -->
+					<control type="group">
+						<visible>ListItem.Property(friendswatching) + IsEmpty(ListItem.Property(userthumb-1)) + IsEmpty(ListItem.Property(userthumb-2))</visible>
+						<control type="label">
+							<posx>146</posx>
+							<posy>86</posy>
+							<width>220</width>
+							<height>60</height>
+							<textcolor>mediumgreyheidi</textcolor>
+							<font>font16</font>
+							<label>$INFO[ListItem.Property(watching-label)]</label>
+							<wrapmultiline>true</wrapmultiline>
+						</control>
+					</control>
+										
+					<control type="group">
+						<visible>ListItem.Property(friendswatching) + !IsEmpty(ListItem.Property(userthumb-1)) + IsEmpty(ListItem.Property(userthumb-2))</visible>
+						<control type="largeimage">
+							<posx>146</posx>
+							<posy>92</posy>
+							<width>32</width>
+							<height>32</height>
+							<texture>$INFO[ListItem.Property(userthumb-1)]</texture>
+						</control>
+						<control type="label">
+							<posx>185</posx>
+							<posy>86</posy>
+							<width>220</width>
+							<height>60</height>
+							<textcolor>mediumgreyheidi</textcolor>
+							<font>font16</font>
+							<label>$INFO[ListItem.Property(watching-label)]</label>
+							<wrapmultiline>true</wrapmultiline>
+						</control>
+					</control>
+										
+					<control type="group">
+						<visible>ListItem.Property(friendswatching) + !IsEmpty(ListItem.Property(userthumb-1)) + !IsEmpty(ListItem.Property(userthumb-2))</visible>
+						<control type="largeimage">
+							<posx>146</posx>
+							<posy>92</posy>
+							<width>32</width>
+							<height>32</height>
+							<texture>$INFO[ListItem.Property(userthumb-1)]</texture>
+						</control>
+						<control type="largeimage">
+							<posx>182</posx>
+							<posy>92</posy>
+							<width>32</width>
+							<height>32</height>
+							<texture>$INFO[ListItem.Property(userthumb-2)]</texture>
+						</control>
+						<control type="label">
+							<posx>222</posx>
+							<posy>86</posy>
+							<width>220</width>
+							<height>60</height>
+							<textcolor>mediumgreyheidi</textcolor>
+							<font>font16</font>
+							<label>$INFO[ListItem.Property(watching-label)]</label>
+							<wrapmultiline>true</wrapmultiline>
+						</control>
+					</control>					
+					
+					<!-- Others are watching this show -->
+					<control type="group">
+						<visible>ListItem.Property(otherswatching)</visible>
+						<control type="label">
+							<posx>144</posx>
+							<posy>86</posy>
+							<width>220</width>
+							<height>60</height>
+							<textcolor>lightgreyheidi</textcolor>
+							<font>font16</font>
+							<label>$INFO[ListItem.Property(watching-label)]</label>
+							<wrapmultiline>true</wrapmultiline>
+						</control>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(isactive) + [ [ListItem.Property(isnow) + ListItem.Property(HasEpg) ] | !ListItem.Property(HasEpg) ]</visible>				
+						<posx>448</posx>
+						<posy>100</posy>
+						<width>35</width>
+						<height>26</height>
+						<texture diffuse="colors/color-green.png">livetv/icon-tune-in.png</texture>						
+					</control>		
+				</itemlayout>
+				<focusedlayout width="512" height="152">
+					<control type="image">
+						<visible>ListItem.Property(IsActive)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>512</width>
+						<height>152</height>
+						<texture>colors/color-black.png</texture>
+					</control>										
+					<control type="image">
+						<visible>!ListItem.Property(issubitem) + !ListItem.IsFirst</visible>
+						<posx>-4</posx>
+						<posy>-8</posy>
+						<width>516</width>
+						<height>16</height>
+						<texture>livetv/graphic-divider-768.png</texture>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(issubitem)</visible>
+						<posx>130</posx>
+						<posy>-8</posy>
+						<width>368</width>
+						<height>16</height>
+						<texture>livetv/graphic-divider-588.png</texture>
+					</control>
+					<!-- CHANNELS -->
+					<control type="group">
+						<visible>!ListItem.Property(isactive) + !ListItem.Property(issubitem)</visible>
+						<control type="label">
+							<posx>16</posx>
+							<posy>21</posy>
+							<width>108</width>
+							<height>20</height>
+							<textcolor>mediumgreyheidi</textcolor>
+							<font>font20b</font>
+							<label>[B]$INFO[ListItem.Property(ChannelName)][/B]</label>
+						</control>
+						<control type="label">
+							<visible>!IsEmpty(ListItem.Property(ChannelName))</visible>												
+							<posx>16</posx>
+							<posy>45</posy>
+							<width>84</width>
+							<height>20</height>
+							<textcolor>mediumgreyheidi</textcolor>
+							<font>font20b</font>
+							<label>[B]$INFO[ListItem.Property(ChannelNumber)][/B]</label>
+						</control>
+						<control type="label">
+							<visible>IsEmpty(ListItem.Property(ChannelName))</visible>												
+							<posx>16</posx>
+							<posy>21</posy>
+							<width>84</width>
+							<height>20</height>
+							<textcolor>mediumgreyheidi</textcolor>
+							<font>font20b</font>
+							<label>[B]$INFO[ListItem.Property(ChannelNumber)][/B]</label>
+						</control>						
+					</control>
+					<control type="group">
+						<visible>ListItem.Property(isactive) + !ListItem.Property(issubitem)</visible>
+						<control type="label">
+							<posx>16</posx>
+							<posy>21</posy>
+							<width>108</width>
+							<height>20</height>
+							<textcolor>boxeegreenheidi</textcolor>
+							<font>font20b</font>
+							<label>[B]$INFO[ListItem.Property(ChannelName)][/B]</label>
+						</control>
+						<control type="label">
+							<visible>!IsEmpty(ListItem.Property(ChannelName))</visible>						
+							<posx>16</posx>
+							<posy>45</posy>
+							<width>84</width>
+							<height>20</height>
+							<textcolor>boxeegreenheidi</textcolor>
+							<font>font20b</font>
+							<label>[B]$INFO[ListItem.Property(ChannelNumber)][/B]</label>
+						</control>
+						<control type="label">
+							<visible>IsEmpty(ListItem.Property(ChannelName))</visible>						
+							<posx>16</posx>
+							<posy>21</posy>
+							<width>84</width>
+							<height>20</height>
+							<textcolor>boxeegreenheidi</textcolor>
+							<font>font20b</font>
+							<label>[B]$INFO[ListItem.Property(ChannelNumber)][/B]</label>
+						</control>						
+					</control>					
+					<!-- SHOWS -->
+					<control type="image">
+						<visible>ListItem.Property(isactive)</visible>
+						<posx>130</posx>
+						<posy>12</posy>
+						<width>368</width>
+						<height>128</height>
+						<texture srcborder="24" border="16">button-on.png</texture>
+					</control>									
+					<control type="group">
+						<visible>Control.HasFocus(50)</visible>
+						<control type="image">
+							<posx>130</posx>
+							<posy>12</posy>
+							<width>368</width>
+							<height>128</height>
+							<texture srcborder="24" border="16">button-focused.png</texture>
+						</control>
+						<control type="label">
+							<visible>ListItem.Property(HasEpg)</visible>						
+							<posx>144</posx>
+							<posy>18</posy>
+							<width>338</width>
+							<height>20</height>
+							<textcolor>whiteheidi</textcolor>
+							<font>font28b</font>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+						</control>
+						<control type="label">
+							<visible>!ListItem.Property(HasEpg)</visible>
+							<posx>144</posx>
+							<posy>18</posy>
+							<width>338</width>
+							<height>20</height>
+							<textcolor>whiteheidi</textcolor>
+							<font>font28b</font>
+							<label>[B]$LOCALIZE[58097][B]</label>
+						</control>							
+						<control type="label">
+							<posx>145</posx>
+							<posy>54</posy>
+							<width>308</width>
+							<height>20</height>
+							<textcolor>lightgreyheidi</textcolor>
+							<font>font20b</font>
+							<label>[B]$INFO[ListItem.Property(starttime)]$INFO[ListItem.Property(endtime), - ,][/B]</label>
+						</control>
+					</control>
+					<control type="group">
+						<visible>!Control.HasFocus(50)</visible>
+						<control type="label">
+							<posx>144</posx>
+							<posy>18</posy>
+							<width>308</width>
+							<height>20</height>
+							<textcolor>whiteheidi</textcolor>
+							<font>font28b</font>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+						</control>
+						<control type="label">
+							<posx>145</posx>
+							<posy>54</posy>
+							<width>308</width>
+							<height>20</height>
+							<textcolor>mediumgreyheidi</textcolor>
+							<font>font20b</font>
+							<label>[B]$INFO[ListItem.Property(starttime)]$INFO[ListItem.Property(endtime), - ,][/B]</label>
+						</control>
+					</control>
+					<!-- NEW -->
+					<control type="image">
+						<visible>ListItem.Property(isnew)</visible>
+						<posx>448</posx>
+						<posy>62</posy>
+						<width>36</width>
+						<height>16</height>
+						<texture>livetv/icon-new.png</texture>
+					</control>		
+					<!-- SOCIAL INFO -->
+					<!-- Friends are watching this show -->
+					<control type="group">
+						<visible>ListItem.Property(friendswatching) + IsEmpty(ListItem.Property(userthumb-1)) + IsEmpty(ListItem.Property(userthumb-2))</visible>
+						<control type="label">
+							<posx>146</posx>
+							<posy>86</posy>
+							<width>220</width>
+							<height>60</height>
+							<textcolor>mediumgreyheidi</textcolor>
+							<font>font16</font>
+							<label>$INFO[ListItem.Property(watching-label)]</label>
+							<wrapmultiline>true</wrapmultiline>
+						</control>
+					</control>
+										
+					<control type="group">
+						<visible>ListItem.Property(friendswatching) + !IsEmpty(ListItem.Property(userthumb-1)) + IsEmpty(ListItem.Property(userthumb-2))</visible>
+						<control type="largeimage">
+							<posx>146</posx>
+							<posy>92</posy>
+							<width>32</width>
+							<height>32</height>
+							<texture>$INFO[ListItem.Property(userthumb-1)]</texture>
+						</control>
+						<control type="label">
+							<posx>185</posx>
+							<posy>86</posy>
+							<width>220</width>
+							<height>60</height>
+							<textcolor>mediumgreyheidi</textcolor>
+							<font>font16</font>
+							<label>$INFO[ListItem.Property(watching-label)]</label>
+							<wrapmultiline>true</wrapmultiline>
+						</control>
+					</control>
+										
+					<control type="group">
+						<visible>ListItem.Property(friendswatching) + !IsEmpty(ListItem.Property(userthumb-1)) + !IsEmpty(ListItem.Property(userthumb-2))</visible>
+						<control type="largeimage">
+							<posx>146</posx>
+							<posy>92</posy>
+							<width>32</width>
+							<height>32</height>
+							<texture>$INFO[ListItem.Property(userthumb-1)]</texture>
+						</control>
+						<control type="largeimage">
+							<posx>182</posx>
+							<posy>92</posy>
+							<width>32</width>
+							<height>32</height>
+							<texture>$INFO[ListItem.Property(userthumb-2)]</texture>
+						</control>
+						<control type="label">
+							<posx>222</posx>
+							<posy>86</posy>
+							<width>220</width>
+							<height>60</height>
+							<textcolor>mediumgreyheidi</textcolor>
+							<font>font16</font>
+							<label>$INFO[ListItem.Property(watching-label)]</label>
+							<wrapmultiline>true</wrapmultiline>
+						</control>
+					</control>
+					
+					<control type="image">
+						<visible>ListItem.Property(isactive) + [ [ListItem.Property(isnow) + ListItem.Property(HasEpg) ] | !ListItem.Property(HasEpg) ]</visible>				
+						<posx>448</posx>
+						<posy>100</posy>
+						<width>35</width>
+						<height>26</height>
+						<texture diffuse="colors/color-green.png">livetv/icon-tune-in.png</texture>						
+					</control>		
+					
+					<control type="image">
+						<visible>!ListItem.Property(isnow) + ListItem.Property(hasepg)</visible>
+						<posx>451</posx>
+						<posy>98</posy>
+						<width>30</width>
+						<height>30</height>
+						<texture>livetv/icon-info-large.png</texture>						
+					</control>	
+														
+				</focusedlayout>
+			</control>
+			<!-- TIME SLOTS -->
+			<control type="image">
+				<posx>0</posx>
+				<posy>26</posy>
+				<width>32</width>
+				<height>32</height>
+				<texture>livetv/graphic-arrow-left.png</texture>
+			</control>
+			<control type="image">
+				<visible>Window(10518).Property(HasNext)</visible>
+				<posx>499</posx>
+				<posy>26</posy>
+				<width>32</width>
+				<height>32</height>
+				<texture flipx="true">livetv/graphic-arrow-left.png</texture>
+			</control>				
+			<control type="label" id="49">
+				<posx>48</posx>
+				<posy>24</posy>
+				<width>300</width>
+				<height>40</height>
+				<textcolor>boxeegreenheidi</textcolor>
+				<font>font26b</font>
+				<label>-</label>
+			</control>
+			<control type="image">
+				<posx>32</posx>
+				<posy>64</posy>
+				<width>512</width>
+				<height>16</height>
+				<texture>livetv/graphic-divider-768.png</texture>
+			</control>
+		</control>
+		
+		<!--****************************************
+			************** ACTION MENU *************
+			****************************************-->
+		<control type="group">
+			<animation effect="slide" start="0,0" end="96,0" time="200" condition="Control.HasFocus(47)" reversible="true">Conditional</animation>
+			<control type="image">
+				<posx>-96</posx>
+				<posy>0</posy>
+				<width>70</width>
+				<height>720</height>
+				<texture>black.png</texture>
+			</control>
+			<control type="list" id="47">
+				<visible allowhiddenfocus="true">true</visible>
+				<posx>-82</posx>
+				<posy>33</posy>
+				<width>207</width>
+				<height>650</height>
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<onleft>-</onleft>
+				<onright>50</onright>
+				<orientation>vertical</orientation>
+				<pagecontrol>-</pagecontrol>
+				<scrolltime tween="sine" easing="out">200</scrolltime>
+				<itemlayout width="207" height="48">
+					<control type="image">
+						<posx>4</posx>
+						<posy>4</posy>
+						<width>44</width>
+						<height>44</height>
+						<texture>$INFO[ListItem.ActualIcon]</texture>
+					</control>
+				</itemlayout>
+				<focusedlayout width="207" height="48">
+					<control type="group">
+						<visible>Control.HasFocus(47)</visible>
+						<control type="button" id="461">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>207</width>
+							<height>52</height>
+							<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+							<texturenofocus srcborder="24" border="16">-</texturenofocus>
+						</control>
+						<control type="image">
+							<posx>4</posx>
+							<posy>4</posy>
+							<width>44</width>
+							<height>44</height>
+							<texture>$INFO[ListItem.ActualIcon]</texture>
+						</control>
+						<control type="label">
+							<posx>51</posx>
+							<posy>11</posy>
+							<width>296</width>
+							<height>80</height>
+							<font>font20b</font>
+							<aligny>top</aligny>
+							<align>left</align>
+							<wrapmultiline>true</wrapmultiline>
+							<textcolor>whiteheidi</textcolor>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+						</control>
+					</control>
+					<control type="group">
+						<visible>!Control.HasFocus(47)</visible>
+						<control type="button" id="461">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>52</width>
+							<height>52</height>
+							<texturefocus srcborder="24" border="16">button-on.png</texturefocus>
+							<texturenofocus srcborder="24" border="16">button-on.png</texturenofocus>
+						</control>
+						<control type="image">
+							<posx>4</posx>
+							<posy>4</posy>
+							<width>44</width>
+							<height>44</height>
+							<texture>$INFO[ListItem.ActualIcon]</texture>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>
+					<item>
+						<controlid>12</controlid>
+						<label>90311</label>
+						<label2>-</label2>
+						<icon>livetv/icon-channels.png</icon>
+						<onclick>-</onclick>
+					</item>
+					<item>
+						<visible>Dvb.SharingEnabled</visible>
+						<controlid>13</controlid>
+						<label>90312</label>
+						<label2>-</label2>
+						<icon>livetv/icon-sharing-disabled.png</icon>
+						<onclick>-</onclick>
+					</item>	
+					<item>
+						<visible>!Dvb.SharingEnabled</visible>
+						<controlid>14</controlid>
+						<label>90313</label>
+						<label2>-</label2>
+						<icon>livetv/icon-sharing-enabled.png</icon>
+						<onclick>-</onclick>
+					</item>									
+				</content>
+			</control>
+		</control>
+	</controls>
+</window>

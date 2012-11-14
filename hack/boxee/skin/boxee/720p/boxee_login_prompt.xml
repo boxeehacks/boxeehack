@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<window id="10498">
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	<controls>
+		<control type="group">
+			<!-- animation effect="fade" time="1000">WindowOpen</animation -->		
+			<include>Common_Background</include>
+		</control>
+	</controls>
+</window>

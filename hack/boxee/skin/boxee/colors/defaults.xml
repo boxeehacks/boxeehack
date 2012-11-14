@@ -1,0 +1,26 @@
+<colors>
+	<color name="black">F3212121</color>
+	<color name="grey">80F8F8F8</color>
+	<color name="gray">80F8F8F8</color>
+	<color name="lightgrey">40F8F8F8</color>
+	<color name="white">FFEFEFEF</color>
+	<color name="offwhite">F3F1F1F1</color>
+	<color name="blue">F310B9F2</color>
+	<color name="green">F38EC643</color>
+	<color name="yellow">F3ECDB12</color>
+	<color name="red">F3DA543A</color>
+	<color name="disabled">30F8F8F8</color>
+	<color name="title">F3F6BB1C</color>
+	<color name="darkgrey">F3171717</color>
+	<color name="medgrey">F3999999</color>
+	<color name="offline">FFFAA502</color>
+	<color name="opaquegrey">FF919191</color>
+	<color name="dialogbg">FF212121</color>
+	
+	<color name="whiteheidi">FFEFEFEF</color>
+	<color name="lightgreyheidi">FFB3B8BB</color>
+	<color name="mediumgreyheidi">FF6A7279</color>
+	<color name="boxeegreenheidi">FF8CC544</color>
+	<color name="activeblueheidi">FF2BB6EA</color>
+	<color name="errorredheidi">FFD8544E</color>
+</colors>

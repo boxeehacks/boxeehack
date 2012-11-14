@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<window type="dialog" id="430">
+	<defaultcontrol always="true">240</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+        <!-- Dummy container for Item Info -->
+        <control type="list" id="5000">
+            <description>info</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>0</width>
+            <height>0</height>
+            <visible>false</visible>
+            <itemlayout height="0">
+            </itemlayout>
+            <focusedlayout height="0">
+            </focusedlayout>
+        </control>		
+		<control type="group" id="6000">
+		    <posx>160</posx>
+            <posy>162</posy>
+            <include>PaymentDialogBG</include>            
+            <control type="label" id="6210">
+                <posx>30</posx>
+                <posy>10</posy>
+                <width>600</width>
+                <height>80</height>
+                <font>font28b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>$LOCALIZE[55120]</label>
+                <textcolor>white</textcolor>
+            </control>
+            <control type="label" id="6211">
+                <posx>30</posx>
+                <posy>60</posy>
+                <width>650</width>
+                <height>120</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>-</label>
+                <textcolor>white</textcolor>
+            </control>
+            <control type="image">
+                <posx>30</posx>
+                <posy>180</posy>
+                <width>745</width>
+                <height>85</height>
+                <texture border="10">white.png</texture>
+            </control>            
+            <control type="textbox" id="6220">
+                <posx>35</posx>
+                <posy>180</posy>
+                <width>600</width>
+                <height>80</height>
+                <font>font22</font>
+                <align>left</align>
+                <aligny>top</aligny>
+                <textcolor>black</textcolor>
+                <label>-</label>
+                <wrapmultiline>true</wrapmultiline>
+                <pagecontrol>6221</pagecontrol>
+           </control>
+           <control type="scrollbar" id="6221">
+                <posx>750</posx>
+                <posy>180</posy>
+                <width>28</width>
+                <height>90</height>
+                <texturesliderbackground border="14">scrollbar_bg.png</texturesliderbackground>
+                <textureslidernib>scrollbar_vertical_nib.png</textureslidernib>
+                <textureslidernibfocus>scrollbar_vertical_nib_on.png</textureslidernibfocus>
+                <texturesliderbar>-</texturesliderbar>
+                <texturesliderbarfocus>-</texturesliderbarfocus>
+                <orientation>vertical</orientation>
+                <showonepage>false</showonepage>
+                <ondown>6222</ondown>
+            </control>
+            <control type="radiobutton" id="6222">
+                <posx>30</posx>
+                <posy>270</posy>
+                <width>375</width>
+                <height>40</height>
+                <onup>6221</onup>
+                <ondown>6230</ondown>
+                <onright>-</onright>
+                <onleft>-</onleft>
+                <onclick>-</onclick>
+                <font>font20b</font>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <focusedcolor>white</focusedcolor>
+                <disabledcolor>disabled</disabledcolor>
+                <textoffsetx>40</textoffsetx>
+                <texturenofocus>-</texturenofocus>
+                <texturefocus border="15">button_option_menu_on.png</texturefocus>
+                <textureradiofocus>icons/icon_checkbox_full.png</textureradiofocus>
+                <textureradionofocus>icons/icon_checkbox_empty.png</textureradionofocus>
+                <pulseonselect>false</pulseonselect>
+                <radioposx>10</radioposx>
+                <radioposy>10</radioposy>
+                <radiowidth>20</radiowidth>
+                <radioheight>20</radioheight>
+                <label>$LOCALIZE[55122]</label>
+            </control>            
+            <control type="group" id="6230">        
+                <control type="button" id="6231">
+                    <!-- Accept button -->
+                    <posx>20</posx>
+                    <posy>310</posy>
+                    <width>250</width>
+                    <height>110</height>
+                    <onleft>-</onleft>
+                    <onright>6232</onright>
+                    <onup>6222</onup>
+                    <ondown>-</ondown>
+                    <font>font28b</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <label>$LOCALIZE[55125]</label>
+                    <textcolor>white</textcolor>
+                    <focusedcolor>black</focusedcolor>
+                    <textoffsetx>35</textoffsetx>
+                    <texturenofocus>-</texturenofocus>
+                    <texturefocus border="39">button_action_menu_source_on.png</texturefocus>
+                    <textureclick border="39">button_action_menu_source.png</textureclick>
+                </control>
+                <control type="button" id="6232">
+                    <!-- Decline button -->            
+                    <posx>300</posx>
+                    <posy>310</posy>
+                    <width>250</width>
+                    <height>110</height>
+                    <onleft>6231</onleft>
+                    <onright>-</onright>
+                    <onup>6221</onup>
+                    <ondown>-</ondown>
+                    <font>font28b</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <label>$LOCALIZE[55126]</label>
+                    <textcolor>white</textcolor>
+                    <focusedcolor>black</focusedcolor>
+                    <textoffsetx>35</textoffsetx>
+                    <texturenofocus>-</texturenofocus>
+                    <texturefocus border="39">button_action_menu_source_on.png</texturefocus>
+                    <textureclick border="39">button_action_menu_source.png</textureclick>
+                </control>
+            </control>
+            <!-- include>PaymentBackButton</include -->
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<window id="356">
+	<controls>
+		<!-- Dummy container for Picture Info -->
+		<control type="list" id="5000">
+			<description>info</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<visible>false</visible>
+			<itemlayout height="0">
+			</itemlayout>
+			<focusedlayout height="0">
+			</focusedlayout>
+		</control>
+		<include>TopGradient</include>
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="fade" time="200" delay="0"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" time="200" delay="0"/>
+			</animation>
+			<animation effect="fade" time="200" start="100" end="0" condition="Control.IsVisible(9200)">Conditional</animation>
+			<posx>0</posx>
+			<posy>0</posy>
+			<control type="list" id="9000">
+				<posx>1150</posx>
+				<posy>10</posy>
+				<width>600</width>
+				<height>100</height>
+				<onup>-</onup>
+				<onright>-</onright>
+				<onleft>-</onleft>
+				<ondown>9100</ondown>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>-</pagecontrol>
+				<orientation>horizontal</orientation>
+				<itemlayout width="56" height="44">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>44</width>
+						<height>44</height>
+						<colordiffuse>offwhite</colordiffuse>
+						<texture>$INFO[ListItem.Thumb]</texture>
+					</control>
+				</itemlayout>
+				<focusedlayout width="56" height="44">
+					<control type="image">
+						<visible>!Control.HasFocus(9000)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>44</width>
+						<height>44</height>
+						<colordiffuse>offwhite</colordiffuse>
+						<texture>$INFO[ListItem.Thumb]</texture>
+					</control>
+					<control type="image">
+						<visible>Control.HasFocus(9000)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>44</width>
+						<height>44</height>
+						<colordiffuse>blue</colordiffuse>
+						<texture>$INFO[ListItem.Thumb]</texture>
+					</control>
+				</focusedlayout>
+				<content>
+					<item>
+						<controlid>9007</controlid>
+						<visible>slideshow.canshare</visible>
+						<visible>!boxee.OfflineMode</visible>
+						<onclick>-</onclick>
+						<thumb>icons/icon_osd_share.png</thumb>
+						<label>54052</label>
+					</item>
+				</content>
+			</control>
+		</control>
+		<include>BottomGradient</include>
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="fade" time="200" delay="0"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" time="200" delay="0"/>
+			</animation>
+			<animation effect="fade" time="200" start="100" end="0" condition="Control.IsVisible(9200)">Conditional</animation>
+			<posx>0</posx>
+			<posy>620</posy>
+			<!-- Image A/B -->
+			<control type="label">
+				<posx>1252</posx>
+				<posy>42</posy>
+				<width>240</width>
+				<height>30</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<font>font28b</font>
+				<textcolor>white</textcolor>
+				<label>[B]$INFO[slideshow.slideindex][B]</label>
+			</control>
+			<!-- OSD lower buttons -->
+			<include>BottomGradient</include>
+			<control type="grouplist" id="9100">
+				<posx>32</posx>
+				<posy>4</posy>
+				<width>600</width>
+				<height>64</height>
+				<itemgap>0</itemgap>
+				<onup>-</onup>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>false</usecontrolcoords>
+				<!-- Play/Pause -->
+				<control type="group" id="9124">
+					<visible>!stringcompare(slideshow.slideindex,1/1)</visible>
+					<width>64</width>
+					<height>64</height>
+					<control type="button" id="9111">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<label>-</label>
+						<texturenofocus>buttons/button-osd-pause-off.png</texturenofocus>
+						<texturefocus>buttons/button-osd-pause-on.png</texturefocus>
+						<onclick>-</onclick>
+						<onup>-</onup>
+						<ondown>-</ondown>
+						<onleft>-</onleft>
+						<onright>9123</onright>
+					</control>
+					<control type="button" id="9112">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<label>-</label>
+						<texturenofocus>buttons/button-osd-play-off.png</texturenofocus>
+						<texturefocus>buttons/button-osd-play-on.png</texturefocus>
+						<onclick>-</onclick>
+						<onup>-</onup>
+						<ondown>-</ondown>
+						<onleft>-</onleft>
+						<onright>9123</onright>
+					</control>
+				</control>
+				<!-- Backward -->
+				<control type="group" id="9123">
+					<visible>!stringcompare(slideshow.slideindex,1/1)</visible>
+					<width>54</width>
+					<height>54</height>
+					<control type="button" id="9101">
+						<posx>12</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texturenofocus>buttons/button-osd-previous-off.png</texturenofocus>
+						<texturefocus>buttons/button-osd-previous-on.png</texturefocus>
+						<onclick>-</onclick>
+						<onup>-</onup>
+						<ondown>-</ondown>
+						<onleft>9124</onleft>
+						<onright>9125</onright>
+					</control>
+				</control>
+				<!-- Forward -->
+				<control type="group" id="9125">
+					<visible>!stringcompare(slideshow.slideindex,1/1)</visible>
+					<width>64</width>
+					<height>64</height>
+					<control type="button" id="9104">
+						<posx>34</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texturenofocus>buttons/button-osd-next-off.png</texturenofocus>
+						<texturefocus>buttons/button-osd-next-on.png</texturefocus>
+						<onclick>-</onclick>
+						<onup>-</onup>
+						<ondown>-</ondown>
+						<onleft>9101</onleft>
+						<onright>9127</onright>
+					</control>
+				</control>
+				<!-- Rotate -->
+				<control type="group" id="9127">
+					<width>64</width>
+					<height>64</height>
+					<control type="button" id="9106">
+						<posx>46</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texturenofocus>buttons/button-osd-rotate-off.png</texturenofocus>
+						<texturefocus>buttons/button-osd-rotate-on.png</texturefocus>
+						<onclick>-</onclick>
+						<onup>-</onup>
+						<ondown>-</ondown>
+						<onleft>9125</onleft>
+						<onright>-</onright>
+					</control>
+				</control>
+			</control>
+		</control>
+		<control type="group" id="9200">
+			<description>zoom control</description>
+			<animation effect="fade" time="200" start="0" end="100" condition="Control.IsVisible(9200)">Conditional</animation>
+			<visible>false</visible>
+			<posx>30</posx>
+			<posy>641</posy>
+			<control type="group">
+				<control type="group" id="9210">
+					<posx>0</posx>
+					<posy>0</posy>
+					<control type="button" id="9211">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>54</width>
+						<height>54</height>
+						<label>-</label>
+						<texturenofocus>icons/icon_osd_zoom_out_off.png</texturenofocus>
+						<texturefocus>icons/icon_osd_zoom_out_on.png</texturefocus>
+						<onclick>-</onclick>
+						<onup>9201</onup>
+						<ondown>9202</ondown>
+						<onleft>9203</onleft>
+						<onright>9212</onright>
+					</control>
+					<control type="button" id="9212">
+						<posx>65</posx>
+						<posy>0</posy>
+						<width>54</width>
+						<height>54</height>
+						<label>-</label>
+						<texturenofocus>icons/icon_osd_zoom_in_off.png</texturenofocus>
+						<texturefocus>icons/icon_osd_zoom_in_on.png</texturefocus>
+						<onclick>-</onclick>
+						<onup>9201</onup>
+						<ondown>9202</ondown>
+						<onleft>9211</onleft>
+						<onright>9213</onright>
+					</control>
+					<control type="togglebutton" id="9213">
+						<posx>130</posx>
+						<posy>0</posy>
+						<width>54</width>
+						<height>54</height>
+						<label>-</label>
+						<texturenofocus>icons/icon_osd_pan_off.png</texturenofocus>
+						<texturefocus>icons/icon_osd_pan_on.png</texturefocus>
+						<alttexturenofocus>icons/icon_osd_pan_focus.png</alttexturenofocus>
+						<alttexturefocus>icons/icon_osd_pan_focus.png</alttexturefocus>
+						<textureclick diffuse="masks/868d89.png">-</textureclick>
+						<onup>-</onup>
+						<ondown>-</ondown>
+						<onleft>9212</onleft>
+						<onright>-</onright>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

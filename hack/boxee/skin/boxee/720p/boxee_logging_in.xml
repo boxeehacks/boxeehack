@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+<window id="255">
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	<controls>
+		<control type="group">
+			<animation effect="fade" time="1000">WindowOpen</animation>		
+			<include>Common_Background</include>
+		</control>
+		<control type="multiimage">
+			<posx>563</posx>
+			<posy>269</posy>
+			<width>153</width>
+			<height>153</height>
+			<imagepath>loading</imagepath>
+			<timeperimage>12</timeperimage>
+			<fadetime>4</fadetime>
+			<pauseatend>0</pauseatend>
+			<randomize>false</randomize>
+			<loop>yes</loop>
+			<aspectratio>keep</aspectratio>
+		</control>            		
+	</controls>
+</window>

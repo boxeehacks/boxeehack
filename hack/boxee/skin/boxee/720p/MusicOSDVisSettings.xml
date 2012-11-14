@@ -1,0 +1,119 @@
+﻿<?xml version="1.0"?>
+<window id="121">
+	<defaultcontrol>2</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<include>Window_Fade_Animation</include>
+			<posx>20</posx>
+			<posy>20</posy>
+			<width>400</width>
+			<height>400</height>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>400</width>
+				<height>400</height>
+				<texture border="20">menu_dialog_background.png</texture>
+				<colordiffuse>F3212121</colordiffuse>
+			</control>
+			<control type="group">
+				<control type="label" id="2">
+					<posx>26</posx>
+					<posy>20</posy>
+					<width>350</width>
+					<height>28</height>
+					<label>5</label>
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>font28b</font>
+					<textcolor>white</textcolor>
+				</control>
+				<control type="label" id="3">
+					<description>No Presets Label</description>
+					<posx>26</posx>
+					<posy>60</posy>
+					<width>350</width>
+					<height>22</height>
+					<font>font22</font>
+					<aligny>center</aligny>
+					<align>left</align>
+					<label>13390</label>
+					<textcolor>white</textcolor>
+				</control>
+				<control type="group">
+					<posx>26</posx>
+					<posy>60</posy>
+					<control type="grouplist" id="5">
+						<description>control area</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>348</width>
+						<height>330</height>
+						<itemgap>0</itemgap>
+						<pagecontrol>90</pagecontrol>
+						<onleft>-</onleft>
+						<onright>-</onright>
+						<onup>-</onup>
+						<ondown>-</ondown>
+					</control>
+					<control type="button" id="7">
+						<description>Default Button</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<height>40</height>
+						<font>font22</font>
+						<textcolor>white</textcolor>
+						<textcolor2>white</textcolor2>
+						<focusedcolor>white</focusedcolor>
+						<focusedcolor2>white</focusedcolor2>
+						<disabledcolor>disabled</disabledcolor>
+						<textoffsetx>20</textoffsetx>
+						<texturenofocus border="15">button_settings_line_divider.png</texturenofocus>
+						<texturefocus border="15">button_option_menu_on.png</texturefocus>
+						<pulseonselect>false</pulseonselect>
+					</control>
+					<control type="radiobutton" id="8">
+						<description>Default RadioButton</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<height>40</height>
+						<font>font22</font>
+						<textcolor>white</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<disabledcolor>disabled</disabledcolor>
+						<textoffsetx>20</textoffsetx>
+						<texturenofocus border="15">button_settings_line_divider.png</texturenofocus>
+						<texturefocus border="15">button_option_menu_on.png</texturefocus>
+						<textureradiofocus>icons/icon_checkbox_full.png</textureradiofocus>
+						<textureradionofocus>icons/icon_checkbox_empty.png</textureradionofocus>
+						<pulseonselect>false</pulseonselect>
+						<radioposy>10</radioposy>
+						<radiowidth>20</radiowidth>
+						<radioheight>20</radioheight>
+					</control>
+					<control type="spincontrolex" id="9">
+						<description>Default SpinControlex</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<height>40</height>
+						<font>font22</font>
+						<textcolor>white</textcolor>
+						<focusedcolor>white</focusedcolor>
+						<disabledcolor>disabled</disabledcolor>
+						<textoffsetx>20</textoffsetx>
+						<aligny>center</aligny>
+						<texturenofocus border="15">button_settings_line_divider.png</texturenofocus>
+						<texturefocus border="15">button_option_menu_on.png</texturefocus>
+						<textureup diffuse="nofocus.png">icons/icon_settings_arrow_up.png</textureup>
+						<texturedown diffuse="nofocus.png">icons/icon_settings_arrow_down.png</texturedown>
+						<textureupfocus diffuse="green.png">icons/icon_settings_arrow_up.png</textureupfocus>
+						<texturedownfocus diffuse="green.png">icons/icon_settings_arrow_down.png</texturedownfocus>
+						<reverse>yes</reverse>
+						<pulseonselect>false</pulseonselect>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

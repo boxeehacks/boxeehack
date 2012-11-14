@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<window id="10440">
+	<defaultcontrol always="true">1</defaultcontrol>
+	<controls>
+		<include>Common_Background</include>
+		<control type="group">
+			<include>FTUDialog_Heidi</include>
+			<!-- RIGHT SIDE - BEGIN-->
+			<control type="image">
+				<posx>518</posx>
+				<posy>92</posy>
+				<width>215</width>
+				<height>210</height>
+				<texture>ftu/graphic-ftu-tip-airplay.png</texture>
+				<aspectratio>scale</aspectratio>
+			</control>
+			<control type="button" id="1">
+				<description>Next</description>
+				<posx>474</posx>
+				<posy>422</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>[B]$LOCALIZE[209][/B]</label>
+			</control>
+			<!-- RIGHT SIDE - END -->
+			<!-- LEFT SIDE - BEGIN -->
+			<control type="grouplist">
+				<posx>62</posx>
+				<posy>56</posy>
+				<width>330</width>
+				<height>412</height>
+				<orientation>vertical</orientation>
+				<itemgap>0</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<width>330</width>
+					<height min="0" max="120">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$LOCALIZE[55200][/B]</label>
+					<include>Header_Heidi</include>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<posy>10</posy>
+					<width>330</width>
+					<height min="0" max="288">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[55210]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<include>LargeText_Heidi</include>
+				</control>
+			</control>
+			<!-- LEFT SIDE - END -->
+		</control>
+	</controls>
+</window>

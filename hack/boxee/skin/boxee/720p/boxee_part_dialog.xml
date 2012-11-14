@@ -1,0 +1,117 @@
+﻿<?xml version="1.0"?>
+<window id="10477">
+	<defaultcontrol>10</defaultcontrol>
+	<controls>
+		<control type="group">
+			<posx>10</posx>
+			<posy>12</posy>
+			<control type="group">
+				<animation effect="fade" time="200">WindowOpen</animation>
+				<animation effect="fade" time="200">WindowClose</animation>
+				<control type="image">
+					<posx>3</posx>
+					<posy>3</posy>
+					<width>147</width>
+					<height>147</height>
+					<texture>black.png</texture>
+				</control>
+				<control type="image">
+					<visible>!Control.HasFocus(10)</visible>
+					<posx>22</posx>
+					<posy>28</posy>
+					<width>24</width>
+					<height>24</height>
+					<colordiffuse>80FFFFFF</colordiffuse>
+					<texture>icons/icon_shortcut_move.png</texture>
+				</control>
+				<control type="image">
+					<visible>Control.HasFocus(10)</visible>
+					<posx>22</posx>
+					<posy>28</posy>
+					<width>24</width>
+					<height>24</height>
+					<texture>icons/icon_shortcut_move.png</texture>
+				</control>
+				<control type="image">
+					<visible>Control.IsVisible(20) + !Control.HasFocus(20)</visible>
+					<posx>22</posx>
+					<posy>68</posy>
+					<width>24</width>
+					<height>24</height>
+					<colordiffuse>80FFFFFF</colordiffuse>
+					<texture>icons/icon_shortcut_remove.png</texture>
+				</control>
+				<control type="image">
+					<visible>Control.IsVisible(20) + Control.HasFocus(20)</visible>
+					<posx>22</posx>
+					<posy>68</posy>
+					<width>24</width>
+					<height>24</height>
+					<texture>icons/icon_shortcut_remove.png</texture>
+				</control>
+				<control type="button" id="10">
+					<posx>7</posx>
+					<posy>10</posy>
+					<width>140</width>
+					<height>60</height>
+					<onup>-</onup>
+					<ondown>20</ondown>
+					<onright>Dialog.Close(477)</onright>
+					<onleft>Dialog.Close(477)</onleft>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus border="26">button_option_on.png</texturefocus>
+					<textureclick border="26">button_option_click.png</textureclick>
+					<onclick>-</onclick>
+					<label>[B]$LOCALIZE[116][/B]</label>
+					<aligny>center</aligny>
+					<textoffsetx>42</textoffsetx>
+					<textcolor>grey</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<font>font16b</font>
+				</control>
+				<!-- Remove shortcut -->
+				<control type="button" id="20">
+					<posx>7</posx>
+					<posy>50</posy>
+					<width>140</width>
+					<height>60</height>
+					<onup>10</onup>
+					<ondown>-</ondown>
+					<onright>Dialog.Close(477)</onright>
+					<onleft>Dialog.Close(477)</onleft>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus border="26">button_option_on.png</texturefocus>
+					<textureclick border="26">button_option_click.png</textureclick>
+					<onclick>-</onclick>
+					<label>[B]$LOCALIZE[1210][/B]</label>
+					<aligny>center</aligny>
+					<textoffsetx>42</textoffsetx>
+					<textcolor>grey</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<font>font16b</font>
+				</control>
+				<control type="button" id="30">
+					<visible>false</visible>
+					<posx>15</posx>
+					<posy>130</posy>
+					<width>40</width>
+					<height>40</height>
+					<onup>20</onup>
+					<ondown>-</ondown>
+					<onright>-</onright>
+					<onleft>-</onleft>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus>-</texturefocus>
+					<textureclick>-</textureclick>
+					<label>[B]$LOCALIZE[222][/B]</label>
+					<aligny>center</aligny>
+					<textoffsetx>40</textoffsetx>
+					<textcolor>grey</textcolor>
+					<focusedcolor>green</focusedcolor>
+					<font>font18b</font>
+					<onclick>Dialog.Close</onclick>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

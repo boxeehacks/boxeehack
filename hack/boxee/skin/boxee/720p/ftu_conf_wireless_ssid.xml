@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<window id="10440">
+	<defaultcontrol always="true">51</defaultcontrol>
+	<controls>
+		<include>Common_Background</include>
+		<control type="group">
+			<include>FTUDialogNoAnim_Heidi</include>
+			<!-- RIGHT SIDE - BEGIN-->
+			<control type="label">
+				<posx>474</posx>
+				<posy>66</posy>
+				<width>312</width>
+				<height>108</height>
+				<align>center</align>
+				<aligny>top</aligny>
+				<font>font24bls</font>
+				<textcolor>whiteheidi</textcolor>
+				<label>$LOCALIZE[54584]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="edit" id="51">
+				<posx>474</posx>
+				<posy>120</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Edit_Heidi</include>
+				<onup>-</onup>
+				<ondown>250</ondown>
+			</control>
+			<control type="button" id="250">
+				<description>Next</description>
+				<enable>true + !Control.IsEmpty(51)</enable>
+				<posx>474</posx>
+				<posy>422</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>[B]$LOCALIZE[54655][/B]</label>
+				<onclick></onclick>
+				<onup>51</onup>
+				<ondown>-</ondown>
+			</control>
+			<!-- RIGHT SIDE - END -->
+			<!-- LEFT SIDE - BEGIN -->
+			<control type="grouplist">
+				<posx>62</posx>
+				<posy>56</posy>
+				<width>320</width>
+				<height>412</height>
+				<orientation>vertical</orientation>
+				<itemgap>0</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<width>320</width>
+					<height min="0" max="120">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$LOCALIZE[54553][/B]</label>
+					<include>Header_Heidi</include>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<posy>10</posy>
+					<width>320</width>
+					<height min="0" max="288">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[54554]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<include>LargeText_Heidi</include>
+				</control>
+			</control>
+			<!-- LEFT SIDE - END -->
+		</control>
+	</controls>
+</window>

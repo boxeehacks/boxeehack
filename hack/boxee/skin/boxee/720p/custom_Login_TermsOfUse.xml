@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<window type="dialog">
+	<defaultcontrol always="true">8701</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Background</include>
+		<!--<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>login/tempmock10.png</texture>
+		</control>-->
+		<include>BoxeeLogo</include>
+		<control type="group" id="7000">
+		<include>DialogNoAnim_Heidi</include>
+			<!-- RIGHT SIDE - BEGIN-->
+			<control type="group" id="8700">
+				<visible>!Control.HasFocus(8801) + !Control.HasFocus(8901)</visible>
+				<control type="button" id="8701">
+					<posx>474</posx>
+					<posy>162</posy>
+					<width>312</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]Terms of Use[/B]</label>
+					<!-- Terms of Use -->
+					<onup>9003</onup>
+					<ondown>8702</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>Control.SetFocus(8801)</onclick>
+				</control>
+				
+				<control type="button" id="8702">
+					<posx>474</posx>
+					<posy>230</posy>
+					<width>312</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]Privacy Policy[/B]</label>
+					<!-- Privacy Policy -->
+					<onup>8701</onup>
+					<ondown>8703</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>Control.SetFocus(8901)</onclick>
+				</control>
+				
+				<control type="button" id="8703">
+					<posx>474</posx>
+					<posy>422</posy>
+					<width>312</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]Accept[/B]</label>
+					<!-- Next -->
+					<onup>8702</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>ActivateWindow(4585)</onclick>
+				</control>
+			</control>
+			
+			<control type="group" id="8800">
+				<control type="image">
+					<posx>474</posx>
+					<posy>66</posy>
+					<width>312</width>
+					<height>411</height>
+					<texture srcborder="24" border="16">text-field-no-stroke.png</texture>
+					<colordiffuse>FFEEEEEE</colordiffuse>
+				</control>
+				<control type="label">
+					<posx>485</posx>
+					<posy>80</posy>
+					<width>271</width>
+					<height>15</height>
+					<font>14b</font>
+					<textcolor>FF000000</textcolor>
+					<label>[B]Terms of Use[/B]</label>
+				</control>
+				<control type="textbox" id="8802">
+					<posx>485</posx>
+					<posy>107</posy>
+					<width>271</width>
+					<height>358</height>
+					<font>font12</font>
+					<textcolor>FF000000</textcolor>
+					<pulseonselect></pulseonselect>
+					<pagecontrol>8801</pagecontrol>
+					<autoscroll>false</autoscroll>
+					<label>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque neque erat, scelerisque et venenatis ac, ullamcorper et purus. Etiam ligula nunc, porttitor ut varius a, mollis sollicitudin est. Mauris in diam quam. Quisque porttitor ornare justo quis mollis. Fusce eget nisl ac neque luctus ullamcorper eu eget neque. Integer in nulla eu nisi suscipit porta. Morbi lacinia laoreet mi, ut semper nibh fringilla sit amet. Quisque suscipit, lorem non euismod consequat, libero augue posuere lectus, sit amet pellentesque eros dui et magna. Vestibulum odio lectus, placerat vitae convallis id, rhoncus quis turpis. Proin ornare ipsum in ante iaculis sit amet pellentesque ante eleifend. Cras lorem quam, adipiscing mollis pulvinar vel, aliquam vitae nisl. Nulla dolor neque, commodo ac pharetra rutrum, lacinia vitae metus. Nunc sed risus vitae nunc cursus tristique. Proin non eros a urna mollis congue quis a quam. Quisque pharetra auctor erat, non posuere neque eleifend at. Sed feugiat tempus metus, vulputate luctus lectus porta sit amet. Sed elit urna, varius ac tristique quis, suscipit non justo. Sed id risus in sem lacinia imperdiet. Nulla sit amet tincidunt nulla. Ut tristique interdum congue.
+					
+					In lacus nisl, euismod sit amet egestas a, porta at metus. Sed eget posuere diam. Proin dapibus pulvinar dolor, eget dictum est tincidunt at. Proin lacinia, est ut dapibus dictum, libero ipsum consectetur dui, ac molestie libero justo sit amet sem. Proin ultrices, sapien aliquam consequat tincidunt, magna felis sollicitudin sem, vel scelerisque nisi lacus vel augue. Ut ac eros risus. In hac habitasse platea dictumst. Pellentesque commodo auctor tortor, porttitor feugiat magna mollis ac. Quisque ut ante pellentesque nunc vulputate feugiat at id dui. In elementum malesuada magna in accumsan. Vivamus ac ante ut mi mattis volutpat nec tempus sem. Morbi blandit suscipit convallis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti.
+					
+					Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum quis ligula vel ipsum posuere porttitor. Curabitur non ligula est. Donec sed fermentum mauris. Duis nec orci vel libero feugiat suscipit. Aenean dictum vulputate sapien, in blandit erat feugiat ac. Mauris rutrum ligula eget tellus convallis eget lobortis odio egestas. Duis sodales fermentum lorem vel pellentesque. Aenean eu augue sit amet dolor ultricies sodales. Ut vel metus non neque rhoncus sodales feugiat vitae nisi.
+					
+					Aliquam sem mi, egestas nec iaculis vulputate, placerat in lacus. Donec posuere vestibulum fermentum. Sed et pulvinar sapien. Nulla imperdiet ante vitae diam malesuada porta. Vestibulum scelerisque dignissim lacus quis blandit. Donec libero lectus, imperdiet nec mollis id, consequat eu dolor. Sed dignissim quam nec tortor semper a consectetur felis fermentum. Proin viverra turpis in mauris pretium pulvinar. Mauris commodo rutrum tortor a ultricies. Maecenas non nibh est. Quisque a mauris mauris. Sed nunc lacus, accumsan in pharetra at, ultricies sit amet sem.
+					
+					In vitae urna a ipsum egestas scelerisque nec in ante. Etiam tristique nulla sed erat sodales eget malesuada dolor malesuada. Donec tempus condimentum arcu, eget molestie ipsum posuere id. Duis non quam mauris. Vestibulum tincidunt nisi sit amet mi gravida dignissim. Sed nec ligula eget enim rutrum sagittis. Vestibulum condimentum, nulla vel tincidunt eleifend, massa magna posuere enim, ac cursus sapien elit lobortis leo. Vivamus fermentum vestibulum purus viverra mollis. Etiam eleifend porta tortor, eget scelerisque dolor tincidunt at. Mauris euismod adipiscing lacinia.</label>
+					</control>
+				<control type="scrollbar" id="8801">
+					<posx>767</posx>
+					<posy>77</posy>
+					<width>10</width>
+					<height>390</height>
+					<visible>true</visible>
+					<texturesliderbackground srcborder="0,9,0,9" border="0,6,0,6">graphic-scrollbar-bg.png</texturesliderbackground>
+					<texturesliderbar srcborder="0,9,0,9" border="0,6,0,6">graphic-scrollbar-slider.png</texturesliderbar>
+					<texturesliderbarfocus srcborder="0,9,0,9" border="0,6,0,6">graphic-scrollbar-slider.png</texturesliderbarfocus>
+					<orientation>vertical</orientation>
+					<showonepage>false</showonepage>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+				</control>
+				<visible>Control.HasFocus(8801)</visible>
+			</control>
+			
+			<control type="group" id="8900">
+				<control type="image">
+					<posx>474</posx>
+					<posy>66</posy>
+					<width>312</width>
+					<height>411</height>
+					<texture srcborder="24" border="16">text-field-no-stroke.png</texture>
+					<colordiffuse>FFEEEEEE</colordiffuse>
+				</control>
+				<control type="label">
+					<posx>485</posx>
+					<posy>80</posy>
+					<width>271</width>
+					<height>15</height>
+					<font>14b</font>
+					<textcolor>FF000000</textcolor>
+					<label>[B]Privacy Policy[/B]</label>
+				</control>
+				<control type="textbox" id="8902">
+					<posx>485</posx>
+					<posy>107</posy>
+					<width>271</width>
+					<height>358</height>
+					<font>font12</font>
+					<textcolor>FF000000</textcolor>
+					<pulseonselect></pulseonselect>
+					<pagecontrol>8901</pagecontrol>
+					<autoscroll>false</autoscroll>
+					<label>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque neque erat, scelerisque et venenatis ac, ullamcorper et purus. Etiam ligula nunc, porttitor ut varius a, mollis sollicitudin est. Mauris in diam quam. Quisque porttitor ornare justo quis mollis. Fusce eget nisl ac neque luctus ullamcorper eu eget neque. Integer in nulla eu nisi suscipit porta. Morbi lacinia laoreet mi, ut semper nibh fringilla sit amet. Quisque suscipit, lorem non euismod consequat, libero augue posuere lectus, sit amet pellentesque eros dui et magna. Vestibulum odio lectus, placerat vitae convallis id, rhoncus quis turpis. Proin ornare ipsum in ante iaculis sit amet pellentesque ante eleifend. Cras lorem quam, adipiscing mollis pulvinar vel, aliquam vitae nisl. Nulla dolor neque, commodo ac pharetra rutrum, lacinia vitae metus. Nunc sed risus vitae nunc cursus tristique. Proin non eros a urna mollis congue quis a quam. Quisque pharetra auctor erat, non posuere neque eleifend at. Sed feugiat tempus metus, vulputate luctus lectus porta sit amet. Sed elit urna, varius ac tristique quis, suscipit non justo. Sed id risus in sem lacinia imperdiet. Nulla sit amet tincidunt nulla. Ut tristique interdum congue.
+					
+					In lacus nisl, euismod sit amet egestas a, porta at metus. Sed eget posuere diam. Proin dapibus pulvinar dolor, eget dictum est tincidunt at. Proin lacinia, est ut dapibus dictum, libero ipsum consectetur dui, ac molestie libero justo sit amet sem. Proin ultrices, sapien aliquam consequat tincidunt, magna felis sollicitudin sem, vel scelerisque nisi lacus vel augue. Ut ac eros risus. In hac habitasse platea dictumst. Pellentesque commodo auctor tortor, porttitor feugiat magna mollis ac. Quisque ut ante pellentesque nunc vulputate feugiat at id dui. In elementum malesuada magna in accumsan. Vivamus ac ante ut mi mattis volutpat nec tempus sem. Morbi blandit suscipit convallis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse potenti.
+					
+					Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum quis ligula vel ipsum posuere porttitor. Curabitur non ligula est. Donec sed fermentum mauris. Duis nec orci vel libero feugiat suscipit. Aenean dictum vulputate sapien, in blandit erat feugiat ac. Mauris rutrum ligula eget tellus convallis eget lobortis odio egestas. Duis sodales fermentum lorem vel pellentesque. Aenean eu augue sit amet dolor ultricies sodales. Ut vel metus non neque rhoncus sodales feugiat vitae nisi.
+					
+					Aliquam sem mi, egestas nec iaculis vulputate, placerat in lacus. Donec posuere vestibulum fermentum. Sed et pulvinar sapien. Nulla imperdiet ante vitae diam malesuada porta. Vestibulum scelerisque dignissim lacus quis blandit. Donec libero lectus, imperdiet nec mollis id, consequat eu dolor. Sed dignissim quam nec tortor semper a consectetur felis fermentum. Proin viverra turpis in mauris pretium pulvinar. Mauris commodo rutrum tortor a ultricies. Maecenas non nibh est. Quisque a mauris mauris. Sed nunc lacus, accumsan in pharetra at, ultricies sit amet sem.
+					
+					In vitae urna a ipsum egestas scelerisque nec in ante. Etiam tristique nulla sed erat sodales eget malesuada dolor malesuada. Donec tempus condimentum arcu, eget molestie ipsum posuere id. Duis non quam mauris. Vestibulum tincidunt nisi sit amet mi gravida dignissim. Sed nec ligula eget enim rutrum sagittis. Vestibulum condimentum, nulla vel tincidunt eleifend, massa magna posuere enim, ac cursus sapien elit lobortis leo. Vivamus fermentum vestibulum purus viverra mollis. Etiam eleifend porta tortor, eget scelerisque dolor tincidunt at. Mauris euismod adipiscing lacinia.</label>
+					</control>
+				<control type="scrollbar" id="8901">
+					<posx>767</posx>
+					<posy>77</posy>
+					<width>10</width>
+					<height>390</height>
+					<visible>true</visible>
+					<texturesliderbackground srcborder="0,9,0,9" border="0,6,0,6">graphic-scrollbar-bg.png</texturesliderbackground>
+					<texturesliderbar srcborder="0,9,0,9" border="0,6,0,6">graphic-scrollbar-slider.png</texturesliderbar>
+					<texturesliderbarfocus srcborder="0,9,0,9" border="0,6,0,6">graphic-scrollbar-slider.png</texturesliderbarfocus>
+					<orientation>vertical</orientation>
+					<showonepage>false</showonepage>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+				</control>
+				<visible>Control.HasFocus(8901)</visible>
+			</control>
+			<!-- RIGHT SIDE - END-->
+			<!-- LEFT SIDE - BEGIN -->
+			<control type="image">
+				<posx>66</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>82</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>98</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_circle.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>114</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>130</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="label">
+				<description>Header</description>
+				<posx>63</posx>
+				<posy>97</posy>
+				<width>320</width>
+				<height>200</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>Legal Stuff…[CR]Boringgg</label>
+				<include>Header_Heidi</include>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			
+			<control type="label">
+				<posx>64</posx>
+				<posy>203</posy>
+				<width>336</width>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>To finish setting up your Boxee account, you'll need to accept our Terms of Use and Privacy Policy.</label>
+				<wrapmultiline>true</wrapmultiline>
+				<include>LargeText_Heidi</include>
+			</control>
+			<!-- LEFT SIDE - END -->
+		</control>
+		
+		<control type="group" id="9000">
+			<posx>1032</posx>
+			<posy>32</posy>
+			<control type="button" id="9003">
+				<posx>76</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>64</height>
+				<texturefocus>actionbuttons/button-action-wifi-focused.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-wifi-unfocused.png</texturenofocus>
+				<onclick>ActivateWindow(NetworkSettings)</onclick>
+				<onup>-</onup>
+				<ondown>7000</ondown>
+				<onright>9004</onright>
+			</control>
+			<control type="button" id="9004">
+				<posx>152</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>64</height>
+				<texturefocus>actionbuttons/button-action-shutdown-focused.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-shutdown-unfocused.png</texturenofocus>
+				<onclick>XBMC.ShutDown()</onclick>
+				<onup>-</onup>
+				<ondown>7000</ondown>
+				<onleft>9003</onleft>
+				<onright>-</onright>
+			</control>
+		</control>
+		
+		<!-- Back Button (Sans Animation) -->
+		<control type="group">
+			<control type="image">
+				<posx>32</posx>
+				<posy>652</posy>
+				<width>36</width>
+				<height>36</height>
+				<texture>graphic-back-button.png</texture>
+			</control>
+			<control type="label" id="8610">
+				<description>Back</description>
+				<posx>75</posx>
+				<posy>653</posy>
+				<height>36</height>
+				<width>300</width>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>FFEFEFEF</textcolor>
+				<font>font21b</font>
+				<label>[UPPERCASE]Back[/UPPERCASE]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+		</control>
+		
+	</controls>
+</window>

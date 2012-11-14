@@ -1,0 +1,41 @@
+﻿<?xml version="1.0"?>
+<window id="104">
+	<defaultcontrol>1</defaultcontrol>
+        <colorbufferactive>false</colorbufferactive>
+	<controls>
+		<control type="group">
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="600" delay="600"/>
+			</animation>
+			<posx>920</posx>
+			<posy>25</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>336</width>
+				<height>80</height>
+				<texture diffuse="colors/color-grey.png" srcborder="30" border="20">kaidialog/kai-dialog.png</texture>
+			</control>
+			<control type="progress" id="1">
+				<posx>72</posx>
+				<posy>30</posy>
+				<width>236</width>
+				<height>20</height>
+				<info>Player.Volume</info>
+				<texturebg>osd/osd-volume-bg.png</texturebg>
+				<lefttexture srcborder="15,0,0,0" border="10,0,0,0">osd/osd-volume-bar-left.png</lefttexture>
+				<midtexture>osd/osd-volume-bar-center.png</midtexture>
+				<righttexture srcborder="0,0,15,0" border="0,0,10,0">osd/osd-volume-bar-right.png</righttexture>
+				<overlaytexture>-</overlaytexture>
+			</control>
+			<control type="image">
+				<description>speaker image</description>
+				<posx>24</posx>
+				<posy>22</posy>
+				<width>36</width>
+				<height>36</height>
+				<texture>osd/osd-volume-icon.png</texture>
+			</control>
+		</control>
+	</controls>
+</window>

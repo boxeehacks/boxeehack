@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<window id="10361">
+	<defaultcontrol always="true">27</defaultcontrol>
+	<controls>
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Popup_Heidi</include>
+			<control type="group">
+                <visible>!player.islivetv</visible>
+				<control type="label">
+					<posx>64</posx>
+					<posy>55</posy>
+					<width>300</width>
+					<height>40</height>
+					<font>font40b</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>whiteheidi</textcolor>
+					<label>[B]$LOCALIZE[90213][/B]</label>
+				</control>
+				<control type="label" id="21">
+					<description>message</description>
+					<posx>64</posx>
+					<posy>106</posy>
+					<width>420</width>
+					<height>130</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>font26ls</font>
+					<textcolor>lightgreyheidi</textcolor>
+					<label>$LOCALIZE[54770]</label>
+					<wrapmultiline>true</wrapmultiline>				
+				</control>
+			</control>
+			<control type="group">
+                <visible>player.islivetv</visible>
+				<control type="label">
+					<posx>64</posx>
+					<posy>55</posy>
+					<width>300</width>
+					<height>40</height>
+					<font>font40b</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>whiteheidi</textcolor>
+					<label>[B]$LOCALIZE[90316][/B]</label>
+				</control>
+				<control type="label" id="21">
+					<description>message</description>
+					<posx>64</posx>
+					<posy>106</posy>
+					<width>420</width>
+					<height>130</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>font26ls</font>
+					<textcolor>lightgreyheidi</textcolor>
+					<label>$LOCALIZE[90317]</label>
+					<wrapmultiline>true</wrapmultiline>				
+				</control>
+			</control>			
+			<control type="radiobutton" id="20">
+                <visible>!player.isbrowser</visible>
+				<posx>64</posx>
+				<posy>283</posy>
+				<width>420</width>
+				<height>48</height>
+				<onup>-</onup>
+				<ondown>25</ondown>
+				<onright>-</onright>
+				<onleft>-</onleft>
+				<include>RadioButton_Heidi</include>
+				<label>54771</label>
+			</control>
+			<control type="group" id="25">		
+				<control type="button" id="26">
+					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="Player.IsBrowser">Conditional</animation>
+					<posx>64</posx>
+					<posy>364</posy>
+					<width>420</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[54775][/B]</label>
+					<!-- stay -->
+					<onup>20</onup>
+					<ondown>27</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>-</onclick>
+				</control>
+				<control type="button" id="27">
+					<animation effect="slide" start="0,0" end="0,-68" time="0" condition="Player.IsBrowser">Conditional</animation>
+					<posx>64</posx>
+					<posy>432</posy>
+					<width>420</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[54776][/B]</label>
+					<!-- leave -->
+					<onup>26</onup>
+					<ondown>28</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>-</onclick>
+				</control>
+				<control type="button" id="28">
+					<visible>player.isbrowser</visible>
+					<posx>64</posx>
+					<posy>432</posy>
+					<width>420</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[54777][/B]</label>
+					<!-- Go to browser -->
+					<onup>27</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>BrowserFullScreen(false)</onclick>
+					<onclick>close</onclick>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

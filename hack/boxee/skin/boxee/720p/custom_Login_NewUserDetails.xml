@@ -1,0 +1,373 @@
+<?xml version="1.0"?>
+<window type="dialog">
+	<defaultcontrol always="true">8801</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Background</include>
+		<!--<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>login/tempmock7.png</texture>
+		</control>-->
+		<include>BoxeeLogo</include>
+		<control type="group" id="7000">
+		<include>DialogNoAnim_Heidi</include>
+			<control type="group" id="8800">
+				<visible>!Control.HasFocus(8900) + !Control.HasFocus(9000) + !Control.HasFocus(9100) + !Control.HasFocus(9200)</visible>
+				<!-- RIGHT SIDE - BEGIN-->
+				<control type="label">
+					<posx>473</posx>
+					<posy>64</posy>
+					<width>312</width>
+					<height>20</height>
+					<label>Gender</label>
+					<!--<label>Gender</label>-->
+					<font>font20b</font>
+					<textcolor>lightgreyheidi</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+				
+				<!-- GENDER TOGGLE -->
+				<control type="togglebutton" id="8801">
+					<posx>474</posx>
+					<posy>90</posy>
+					<width>312</width>
+					<height>56</height>
+					<include>ToggleButton_Heidi</include>
+					<align>left</align>
+					<textoffsetx>14</textoffsetx>
+					<label>$INFO[Window.Property(chosen-gender)]</label>
+					<onup>9003</onup>
+					<ondown>8802</ondown>
+					<onclick>Control.SetFocus(8900)</onclick>
+				</control>
+				<control type="image">
+					<visible>Control.HasFocus(8801)</visible>
+					<posx>751</posx>
+					<posy>106</posy>
+					<width>24</width>
+					<height>24</height>
+					<texture>graphic-more-focused.png</texture>
+				</control>
+				<control type="image">
+					<visible>!Control.HasFocus(8801)</visible>
+					<posx>751</posx>
+					<posy>106</posy>
+					<width>24</width>
+					<height>24</height>
+					<texture>graphic-more-unfocused.png</texture>
+				</control>
+				
+				<control type="label">
+					<posx>473</posx>
+					<posy>156</posy>
+					<width>312</width>
+					<height>20</height>
+					<label>Birthday</label>
+					<!--<label>Birthday</label>-->
+					<font>font20b</font>
+					<textcolor>lightgreyheidi</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+				
+				<!-- MONTH TOGGLE -->
+				<control type="togglebutton" id="8802">
+					<posx>474</posx>
+					<posy>182</posy>
+					<width>312</width>
+					<height>56</height>
+					<include>ToggleButton_Heidi</include>
+					<align>left</align>
+					<textoffsetx>14</textoffsetx>
+					<label>$INFO[Window.Property(chosen-gender)]</label>
+					<onup>8801</onup>
+					<ondown>8803</ondown>
+				</control>
+				<control type="image">
+					<visible>Control.HasFocus(8802)</visible>
+					<posx>751</posx>
+					<posy>198</posy>
+					<width>24</width>
+					<height>24</height>
+					<texture>graphic-more-focused.png</texture>
+				</control>
+				<control type="image">
+					<visible>!Control.HasFocus(8802)</visible>
+					<posx>751</posx>
+					<posy>198</posy>
+					<width>24</width>
+					<height>24</height>
+					<texture>graphic-more-unfocused.png</texture>
+				</control>
+				
+				<!-- DAY TOGGLE -->
+				<control type="togglebutton" id="8803">
+					<posx>474</posx>
+					<posy>249</posy>
+					<width>148</width>
+					<height>56</height>
+					<include>ToggleButton_Heidi</include>
+					<align>left</align>
+					<textoffsetx>14</textoffsetx>
+					<label>$INFO[Window.Property(chosen-gender)]</label>
+					<onup>8802</onup>
+					<ondown>8804</ondown>
+				</control>
+				<control type="image">
+					<visible>Control.HasFocus(8803)</visible>
+					<posx>587</posx>
+					<posy>265</posy>
+					<width>24</width>
+					<height>24</height>
+					<texture>graphic-more-focused.png</texture>
+				</control>
+				<control type="image">
+					<visible>!Control.HasFocus(8803)</visible>
+					<posx>587</posx>
+					<posy>265</posy>
+					<width>24</width>
+					<height>24</height>
+					<texture>graphic-more-unfocused.png</texture>
+				</control>
+				
+				<!-- YEAR TOGGLE -->
+				<control type="togglebutton" id="8804">
+					<posx>638</posx>
+					<posy>249</posy>
+					<width>148</width>
+					<height>56</height>
+					<include>ToggleButton_Heidi</include>
+					<align>left</align>
+					<textoffsetx>14</textoffsetx>
+					<label>$INFO[Window.Property(chosen-gender)]</label>
+					<onup>8803</onup>
+					<ondown>8805</ondown>
+				</control>
+				<control type="image">
+					<visible>Control.HasFocus(8804)</visible>
+					<posx>751</posx>
+					<posy>265</posy>
+					<width>24</width>
+					<height>24</height>
+					<texture>graphic-more-focused.png</texture>
+				</control>
+				<control type="image">
+					<visible>!Control.HasFocus(8804)</visible>
+					<posx>751</posx>
+					<posy>265</posy>
+					<width>24</width>
+					<height>24</height>
+					<texture>graphic-more-unfocused.png</texture>
+				</control>
+				
+				<control type="button" id="8805">
+					<posx>474</posx>
+					<posy>354</posy>
+					<width>312</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]Submit[/B]</label>
+					<!-- Submit -->
+					<onup>8804</onup>
+					<ondown>8806</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>-</onclick>
+				</control>
+				
+				<control type="button" id="8806">
+					<posx>474</posx>
+					<posy>422</posy>
+					<width>312</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]Skip[/B]</label>
+					<!-- Next -->
+					<onup>8805</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>-</onclick>
+				</control>
+				<!-- RIGHT SIDE - END-->
+			</control>
+			
+			<control type="list" id="8900">
+				<visible>Control.HasFocus(8900)</visible>
+				<posx>474</posx>
+				<posy>64</posy>
+				<width>312</width>
+				<height>800</height>
+				<itemlayout width="312" height="56">
+					<control type="label">
+						<posx>156</posx>
+						<posy>0</posy>
+						<width>310</width>
+						<height>56</height>
+						<font>font24b</font>
+						<textcolor>FFB3B8BB</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>Testing</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="312" height="56">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>312</width>
+						<height>56</height>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="label">
+						<posx>156</posx>
+						<posy>0</posy>
+						<font>font24b</font>
+						<textcolor>FFEFEFEF</textcolor>
+						<width>312</width>
+						<height>56</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>Testing</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item>
+					  <label>My First Item</label>
+					</item>
+					<item>
+						<label>Female</label>
+					</item>
+					<item>
+						<label>Rather not say...</label>
+					</item>
+				</content>
+			</control>
+			
+			<!-- LEFT SIDE - BEGIN -->
+			<control type="image">
+				<posx>66</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>82</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_circle.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>98</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>114</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>130</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="label">
+				<description>Header</description>
+				<posx>63</posx>
+				<posy>97</posy>
+				<width>320</width>
+				<height>200</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>Additional Information</label>
+				<include>Header_Heidi</include>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			
+			<control type="label">
+				<posx>64</posx>
+				<posy>203</posy>
+				<width>336</width>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam ultrices mauris!</label>
+				<wrapmultiline>true</wrapmultiline>
+				<include>LargeText_Heidi</include>
+			</control>
+			<!-- LEFT SIDE - END -->
+		</control>
+		
+		<control type="group" id="9000">
+			<posx>1032</posx>
+			<posy>32</posy>
+			<control type="button" id="9003">
+				<posx>76</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>64</height>
+				<texturefocus>actionbuttons/button-action-wifi-focused.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-wifi-unfocused.png</texturenofocus>
+				<onclick>ActivateWindow(NetworkSettings)</onclick>
+				<onup>-</onup>
+				<ondown>7000</ondown>
+				<onright>9004</onright>
+			</control>
+			<control type="button" id="9004">
+				<posx>152</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>64</height>
+				<texturefocus>actionbuttons/button-action-shutdown-focused.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-shutdown-unfocused.png</texturenofocus>
+				<onclick>XBMC.ShutDown()</onclick>
+				<onup>-</onup>
+				<ondown>7000</ondown>
+				<onleft>9003</onleft>
+				<onright>-</onright>
+			</control>
+		</control>
+		
+		<!-- Back Button (Sans Animation) -->
+		<control type="group">
+			<control type="image">
+				<posx>32</posx>
+				<posy>652</posy>
+				<width>36</width>
+				<height>36</height>
+				<texture>graphic-back-button.png</texture>
+			</control>
+			<control type="label" id="8610">
+				<description>Back</description>
+				<posx>75</posx>
+				<posy>653</posy>
+				<height>36</height>
+				<width>300</width>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>FFEFEFEF</textcolor>
+				<font>font21b</font>
+				<label>[UPPERCASE]Back[/UPPERCASE]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+		</control>
+		
+	</controls>
+</window>

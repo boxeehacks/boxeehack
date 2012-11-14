@@ -1,0 +1,65 @@
+<window id="2008">
+	<defaultcontrol>450</defaultcontrol>
+	<controls>
+		<control type="image">
+			<posx>875</posx>
+			<posy>0</posy>
+			<width>400</width>
+			<height>105</height>
+			<colordiffuse>55FFFFFF</colordiffuse>
+			<texture>grey.png</texture>
+		</control>
+		<control type="image">
+			<posx>880</posx>
+			<posy>0</posy>
+			<width>400</width>
+			<height>100</height>
+			<colordiffuse>AAFFFFFF</colordiffuse>
+			<texture>black.png</texture>
+		</control>
+		<control type="list" id="450">
+			<posx>900</posx>
+			<posy>20</posy>
+			<width>330</width>
+			<height>80</height>
+			<onleft>450</onleft>
+			<onright>450</onright>
+			<onup>450</onup>
+			<ondown>450</ondown>
+			<orientation>horizontal</orientation>
+			<focusposition>2</focusposition>
+			<viewtype label="535">list</viewtype>
+			<scrolltime>200</scrolltime>
+			<itemlayout width="30">
+				<control type="image">
+					<posx>0</posx>
+					<posy>5</posy>
+					<width>40</width>
+					<height>40</height>
+					<info>ListItem.Icon</info>
+					<texture>button-cd-nofocus.png</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout width="40">
+				<control type="image">
+					<posx>5</posx>
+					<posy>5</posy>
+					<width>40</width>
+					<height>40</height>
+					<info>ListItem.Icon</info>
+					<texture>button-cd-focus.png</texture>
+					<animation effect="zoom" end="0,0,50,50" time="150">focus</animation>
+				</control>
+				<control type="label">
+					<posx>25</posx>
+					<posy>48</posy>
+					<width>60</width>
+					<height>22</height>
+					<font>font10</font>
+					<align>center</align>
+					<info>ListItem.Label</info>
+				</control>
+			</focusedlayout>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<window id="10440">
+	<defaultcontrol always="true">250</defaultcontrol>
+	<controls>		
+		<include>Common_Background</include>
+		<control type="group">
+			<include>FTUDialog_Heidi</include>
+			<!-- LEFT SIDE - BEGIN -->
+			<control type="grouplist">
+				<posx>62</posx>
+				<posy>52</posy>
+				<width>320</width>
+				<height>412</height>
+				<orientation>vertical</orientation>
+				<itemgap>0</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<width>320</width>
+					<height min="0" max="120">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[54598]</label>
+					<include>Header_Heidi</include>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="image">
+					<width>288</width>
+					<height>60</height>
+					<texture>ftu/graphic-welcome-boxee-logotype.png</texture>
+				</control>
+				<control type="label">
+					<posy>20</posy>
+					<width>320</width>
+					<height min="0" max="288">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[54611]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<include>LargeText_Heidi</include>
+				</control>
+			</control>
+			<!-- LEFT SIDE - END -->
+			<!-- RIGHT SIDE - BEGIN -->
+			<control type="image">
+				<visible>true + stringcompare(skin.string(IsDlink),1)</visible>
+				<posx>582</posx>
+				<posy>102</posy>
+				<width>192</width>
+				<height>268</height>
+				<texture>ftu/graphic-remote-get-started-dlink.png</texture>
+			</control>
+			<control type="image">
+				<visible>true + stringcompare(skin.string(IsDlink),0)</visible>
+				<posx>582</posx>
+				<posy>102</posy>
+				<width>192</width>
+				<height>268</height>
+				<texture>ftu/graphic-remote-get-started-iomega.png</texture>
+			</control>
+			<control type="button" id="250">
+				<posx>474</posx>
+				<posy>422</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>[B]$LOCALIZE[54612][/B]</label>
+			</control>
+			<!-- RIGHT SIDE - END -->
+		</control>
+	</controls>
+</window>

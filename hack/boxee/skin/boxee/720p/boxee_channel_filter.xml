@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<window type="dialog" id="10147">
+	<defaultcontrol always="true">500</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group" id="7500">
+			<posx>953</posx>
+			<posy>32</posy>
+			<itemgap>0</itemgap>
+			<usecontrolcoords>false</usecontrolcoords>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>292</width>
+				<height>656</height>
+				<texture srcborder="24" border="16">button-on.png</texture>
+			</control>
+			<control type="label" id="7510">
+				<description>dialog title - Channel Filter</description>
+				<posx>27</posx>
+				<posy>10</posy>
+				<width>260</width>
+				<height>44</height>
+				<font>font20b</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[B][UPPERCASE]$LOCALIZE[53580][/UPPERCASE][/B]</label>
+				<textcolor>white</textcolor>
+			</control>
+			<control type="group" id="7520">
+				<description>channel section</description>
+				<visible>!Control.IsEmpty(7025)</visible>
+				<posx>0</posx>
+				<posy>10</posy>
+				<!--<control type="image">
+					<posx>0</posx>
+					<posy>46</posy>
+					<width>268</width>
+					<height>36</height>
+					<colordiffuse>FF212121</colordiffuse>
+					<texture>white.png</texture>
+				</control>
+				<control type="image">
+					<animation effect="slide" start="0,0" end="0,88" time="0" condition="stringcompare(Container(7025).NumItems,1)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,153" time="0" condition="stringcompare(Container(7025).NumItems,2)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,218" time="0" condition="stringcompare(Container(7025).NumItems,3)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,283" time="0" condition="stringcompare(Container(7025).NumItems,4)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,348" time="0" condition="stringcompare(Container(7025).NumItems,5)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,413" time="0" condition="stringcompare(Container(7025).NumItems,6)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,478" time="0" condition="stringcompare(Container(7025).NumItems,7)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,543" time="0" condition="stringcompare(Container(7025).NumItems,8)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,608" time="0" condition="stringcompare(Container(7025).NumItems,9)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,628" time="0" condition="integergreaterthan(Container(7025).NumItems,9)">Conditional</animation>
+					<posx>0</posx>
+					<posy>0</posy>
+					<posy>36</posy>
+					<width>260</width>
+					<height>46</height>
+					<colordiffuse>FF212121</colordiffuse>
+					<texture srcborder="30" border="20">button_16_pixel_B.png</texture>
+				</control>-->
+				<control type="fixedlist" id="7025">
+					<description>premium list</description>
+					<preloaditems>2</preloaditems>
+					<posx>12</posx>
+					<!-- posy>82</posy -->
+					<posy>46</posy>
+					<width>260</width>
+					<height>580</height>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onup>-</onup>
+					<ondown>7035</ondown>
+					<scrolltime>200</scrolltime>
+					<pagecontrol>60</pagecontrol>
+					<orientation>vertical</orientation>
+					<focusposition>6</focusposition>
+					<itemlayout width="260" height="84">
+						<include>ChannelFilterItemLayout</include>
+						<control type="group">
+							<visible>ListItem.Property(isseparator)</visible>
+							<!--<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>260</width>
+								<height>65</height>
+								<colordiffuse>FF212121</colordiffuse>
+								<texture>white.png</texture>
+							</control>-->
+							<control type="label">
+								<posx>15</posx>
+								<posy>52</posy>
+								<width>140</width>
+								<height>28</height>
+								<font>font18b</font>
+								<align>left</align>
+								<aligny>center</aligny>
+								<label>[UPPERCASE][B]$INFO[ListItem.Label][/B][/UPPERCASE]</label>
+								<textcolor>lightgreyheidi</textcolor>
+							</control>
+						</control>
+					</itemlayout>
+					<focusedlayout width="260" height="84">
+						<control type="group">
+							<visible>!Control.HasFocus(7025)</visible>
+							<include>ChannelFilterFocusLayoutNotFocus</include>
+						</control>
+						<control type="group">
+							<visible>Control.HasFocus(7025)</visible>
+							<include>ChannelFilterFocusLayoutFocus</include>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<control type="image">
+				<posx>233</posx>
+				<posy>5</posy>
+				<width>54</width>
+				<height>54</height>
+				<texture>icons/icon_filter.png</texture>
+			</control>
+		</control>
+	</controls>
+</window>

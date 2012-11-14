@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<window id="10484">
+	<defaultcontrol always="true">9050</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+    <include>Common_Background_Browse</include>
+		<control type="group">
+			<control type="group" id="9050">
+				<include>BrowseMusicThumbView</include>
+				<!--<include>BrowseMusicLineView</include>-->
+			</control>
+      <include>LogoTitleAndItemCountMusic</include>
+			<include>MusicActionMenu</include>
+			<include>BrowseMusicEmptyList</include>
+			<include>BrowseLoadingAnimation</include>
+		</control>
+	</controls>
+</window>

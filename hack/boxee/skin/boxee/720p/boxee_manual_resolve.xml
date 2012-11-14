@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<window id="10469">
+	<defaultcontrol always="true">5010</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<!-- Dummy container for Item Info -->
+		<control type="list" id="5000">
+			<description>info</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<visible>false</visible>
+			<itemlayout height="0">
+      		</itemlayout>
+	  		<focusedlayout height="0">
+      		</focusedlayout>
+		</control>
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Dialog_Popup_Animation</include>
+			<control type="image">
+				<posx>214</posx>
+				<posy>86</posy>
+				<width>852</width>
+				<height>544</height>
+				<texture srcborder="51" border="34">dialog_bg.png</texture>
+			</control>
+			<control type="group">
+				<visible>!Window.IsVisible(boxee_manual_resolve_movie.xml)</visible>
+				<visible>!Window.IsVisible(boxee_manual_resolve_episode.xml)</visible>
+				<posx>224</posx>
+				<posy>96</posy>
+				<animation effect="fade" start="100" end="25" time="200" condition="Window.IsActive(DialogProgress.xml)">Conditional</animation>
+				<control type="label">
+					<posx>52</posx>
+					<posy>45</posy>
+					<width>748</width>
+					<height>40</height>
+					<font>font40b</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$LOCALIZE[52117][/B]</label>
+					<textcolor>whiteheidi</textcolor>
+				</control>
+				<control type="label" id="5005">
+					<description>file path label</description>
+					<posx>55</posx>
+					<posy>101</posy>
+					<width>748</width>
+					<height>24</height>
+					<label>$INFO[container(5000).ListItem.pathtoshowinmediaaction]</label>
+					<aligny>center</aligny>
+					<font>font20b</font>
+					<textcolor>boxeegreenheidi</textcolor>
+					<haspath>true</haspath>
+				</control>
+				<control type="edit" id="5010">
+					<posx>55</posx>
+					<posy>148</posy>
+					<width>548</width>
+					<height>64</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textoffsetx>14</textoffsetx>
+					<include>Edit_Heidi</include>
+					<onleft>-</onleft>
+					<onright>5020</onright>
+					<onup>-</onup>
+					<ondown>5025</ondown>
+					<label>-</label>
+					<ontextchange/>
+				</control>
+				<control type="button" id="5020">
+					<posx>615</posx>
+					<posy>148</posy>
+					<width>160</width>
+					<height>64</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[137][/B]</label>
+					<onup>-</onup>
+					<ondown>5025</ondown>
+					<onleft>5010</onleft>
+					<onright>-</onright>
+				</control>
+				<control type="button" id="5025">
+					<visible>!Control.IsVisible(5030)</visible>
+					<posx>56</posx>
+					<posy>404</posy>
+					<width>720</width>
+					<height>64</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[52119][/B]</label>
+					<onup>5010</onup>
+					<ondown>5030</ondown>
+					<onleft>5010</onleft>
+					<onright>-</onright>
+					<onclick>-</onclick>
+				</control>
+				<control type="fixedlist" id="5030">
+					<description>suggestion list of tv show names</description>
+					<posx>55</posx>
+					<posy>224</posy>
+					<width>720</width>
+					<height>280</height>
+					<onleft>-</onleft>
+					<onright>5020</onright>
+					<onup>5010</onup>
+					<ondown>-</ondown>
+					<scrolltime>200</scrolltime>
+					<pagecontrol>60</pagecontrol>
+					<orientation>vertical</orientation>
+					<focusposition>3</focusposition>
+					<itemlayout height="56">
+						<control type="label">
+							<posx>16</posx>
+							<posy>-1</posy>
+							<width>688</width>
+							<height>56</height>
+							<font>font28</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<info>ListItem.Label</info>
+							<textcolor>mediumgreyheidi</textcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout height="56">
+						<control type="image">
+							<visible>Control.HasFocus(5030)</visible>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>720</width>
+							<height>56</height>
+							<texture srcborder="24" border="16">button-focused.png</texture>
+						</control>
+						<control type="label">
+							<visible>!Control.HasFocus(5030)</visible>
+							<posx>16</posx>
+							<posy>-1</posy>
+							<width>688</width>
+							<height>56</height>
+							<font>font28</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>mediumgreyheidi</textcolor>
+							<scrollonfocus>true</scrollonfocus>
+						</control>
+						<control type="label">
+							<visible>Control.HasFocus(5030)</visible>
+							<posx>16</posx>
+							<posy>-1</posy>
+							<width>688</width>
+							<height>56</height>
+							<font>font28</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>whiteheidi</textcolor>
+							<scrollonfocus>true</scrollonfocus>
+						</control>
+					</focusedlayout>
+				</control>
+				<!--<control type="scrollbar" id="60">
+					<posx>1000</posx>
+					<posy>186</posy>
+					<width>12</width>
+					<height>275</height>
+					<include>ScrollBarCommonProperties</include>
+				</control>-->
+			</control>
+		</control>
+	</controls>
+</window>

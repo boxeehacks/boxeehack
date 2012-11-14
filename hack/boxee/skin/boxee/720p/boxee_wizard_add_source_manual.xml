@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<window type="dialog" id="10456">
+	<defaultcontrol always="true">9001</defaultcontrol>
+	<controls>
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Dialog_Popup_Animation</include>
+			<posx>332</posx>
+			<posy>144</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>616</width>
+				<height>432</height>
+				<texture srcborder="51" border="34">dialog_bg.png</texture>
+			</control>
+			<control type="edit" id="9001">
+				<posx>56</posx>
+				<posy>56</posy>
+				<width>504</width>
+				<height>64</height>
+				<include>Edit_Heidi</include>
+				<emptylabel>$LOCALIZE[51894]</emptylabel>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>-</onup>
+				<ondown>9002</ondown>
+			</control>
+			<control type="edit" id="9002">
+				<description>Username</description>
+				<posx>56</posx>
+				<posy>136</posy>
+				<width>504</width>
+				<height>64</height>
+				<include>Edit_Heidi</include>
+				<emptylabel>$LOCALIZE[20142]</emptylabel>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>9001</onup>
+				<ondown>9003</ondown>
+			</control>
+			<control type="edit" id="9003">
+				<description>Password</description>
+				<posx>56</posx>
+				<posy>216</posy>
+				<width>504</width>
+				<height>64</height>
+				<include>Edit_Heidi</include>
+				<emptylabel>$LOCALIZE[15052]</emptylabel>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>9002</onup>
+				<ondown>9004</ondown>
+			</control>
+			<control type="button" id="9004">
+				<posx>56</posx>
+				<posy>320</posy>
+				<width>246</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>$LOCALIZE[186]</label>
+				<!--OK-->
+				<onup>9003</onup>
+				<ondown>-</ondown>
+				<onleft>9005</onleft>
+				<onright>9005</onright>
+				<onclick>-</onclick>
+			</control>
+				<control type="button" id="9005">
+				<posx>314</posx>
+				<posy>320</posy>
+				<width>246</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>$LOCALIZE[222]</label>
+				<!--Cancel-->
+				<onup>9003</onup>
+				<ondown>-</ondown>
+				<onleft>9004</onleft>
+				<onright>9004</onright>
+				<onclick>-</onclick>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<window type="dialog" id="432">
+    <defaultcontrol always="true">240</defaultcontrol>
+    <allowoverlay>no</allowoverlay>
+    <controls>
+        <control type="group" id="6000">
+            <posx>160</posx>
+            <posy>162</posy>
+            <include>PaymentDialogBG</include>            
+            <control type="label" id="6310">
+                <posx>30</posx>
+                <posy>10</posy>
+                <width>600</width>
+                <height>80</height>
+                <font>font28b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>$LOCALIZE[55130]</label>
+                <textcolor>white</textcolor>
+            </control>
+            <control type="edit" id="6320">
+                <description>Password</description>
+                <posx>30</posx>
+                <posy>90</posy>
+                <width>570</width>
+                <height>40</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <focusedcolor>darkgrey</focusedcolor>
+                <textoffsetx>14</textoffsetx>
+                <texturenofocus border="20">search_text_box.png</texturenofocus>
+                <texturefocus border="20">search_text_box_on.png</texturefocus>
+                <textureclick border="20">search_text_box_click.png</textureclick>
+                <password>true</password>
+                <onleft>-</onleft>
+                <onright>-</onright>
+                <onup>-</onup>
+                <ondown>6230</ondown>
+            </control>
+            <!-- control type="radiobutton" id="6321">
+                <posx>32</posx>
+                <posy>140</posy>
+                <width>195</width>
+                <height>40</height>
+                <onup>6320</onup>
+                <ondown>6230</ondown>
+                <onright>-</onright>
+                <onleft>-</onleft>
+                <onclick>-</onclick>
+                <font>font20b</font>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <focusedcolor>white</focusedcolor>
+                <disabledcolor>disabled</disabledcolor>
+                <textoffsetx>40</textoffsetx>
+                <texturenofocus>-</texturenofocus>
+                <texturefocus border="15">button_option_menu_on.png</texturefocus>
+                <textureradiofocus>icons/icon_checkbox_full.png</textureradiofocus>
+                <textureradionofocus>icons/icon_checkbox_empty.png</textureradionofocus>
+                <pulseonselect>false</pulseonselect>
+                <radioposx>10</radioposx>
+                <radioposy>10</radioposy>
+                <radiowidth>20</radiowidth>
+                <radioheight>20</radioheight>
+                <label>$LOCALIZE[55133]</label>
+            </control -->
+            <control type="group" id="6230">                                 
+                <control type="button" id="6331">
+                    <!-- GoTo button -->
+                    <posx>20</posx>
+                    <posy>310</posy>
+                    <width>250</width>
+                    <height>110</height>
+                    <onleft>-</onleft>
+                    <onright>-</onright>
+                    <onup>6320</onup>
+                    <ondown>-</ondown>
+                    <font>font28b</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <label>$LOCALIZE[55134]</label>
+                    <textcolor>white</textcolor>
+                    <focusedcolor>black</focusedcolor>
+                    <textoffsetx>35</textoffsetx>
+                    <texturenofocus>-</texturenofocus>
+                    <texturefocus border="39">button_action_menu_source_on.png</texturefocus>
+                    <textureclick border="39">button_action_menu_source.png</textureclick>
+                </control>
+            </control>            
+        </control>
+    </controls>
+</window>

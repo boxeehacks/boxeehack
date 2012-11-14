@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<window id="10481">
+	<onunload>Skin.Reset(BrowseMenuLevel3)</onunload>
+	<onunload>Skin.Reset(BrowseMenuLevel2)</onunload>
+	<defaultcontrol always="true">9050</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<!--<include>Common_Background</include>-->
+		<control type="group">
+			<animation effect="slide" start="0,0" end="-60,0" time="200" condition="Control.HasFocus(7000) | Control.HasFocus(7100)">Conditional</animation>
+			<control type="group" id="9050">
+				<include>BrowseThumbViewMovie</include>
+				<include>BrowseLineViewMovie</include>
+			</control>
+      		<include>LogoTitleAndItemCountMovies</include>
+			<include>BrowseByLetterThumbs</include>
+			<include>BrowseByLetterList</include>
+			<include>BrowseMoviesEmptyList</include>
+			<include>BrowseLoadingAnimation</include>
+		</control>
+		<!-- include>Window_Transition</include -->
+	</controls>
+</window>

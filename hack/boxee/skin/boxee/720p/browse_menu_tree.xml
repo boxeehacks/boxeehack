@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<menu>
+	<!-- home section -->
+	<row id="row_home">
+		<button id="home_feed">
+			<label>54021</label>
+			<command>boxeeui://feed/</command>
+		</button>
+		<button id="home_queue">
+			<label>54038</label>
+			<command>boxeeui://queue/</command>
+		</button>
+		<button id="home_history">
+			<label>54022</label>
+			<command>boxeeui://history/</command>
+		</button>
+	</row>
+	
+	
+	<!-- movies section -->
+	<row id="row_movies" index="1">
+		<button id="movies_all">
+			<label>53509</label>
+			<command>boxeeui://movies/</command>
+			<parameter key="category" value="all"/>
+		</button>
+		<button id="movies_genres">
+			<label>53561</label>
+			<clickable>false</clickable>
+			<command>boxeeui://movies/</command>
+			<parameter key="category" value="all"/>
+			<child>row_movies_genres</child>
+		</button>
+		<button id="movies_providers">
+			<label>54075</label>
+			<clickable>false</clickable>
+			<parameter key="category" value="store"/>
+			<child>row_movies_providers</child>
+		</button>
+		<button id="movies_local">
+			<label>744</label>
+			<command>boxeeui://movies/</command>
+			<parameter key="category" value="local"/>
+			<child>row_movies_filter_local</child>
+		</button>
+		<button id="movies_trailers">
+			<label>1053</label>
+			<command>boxeeui://trailers/</command>
+			<parameter key="category" value="LIBRARY" />
+			<parameter key="section" value="LIBRARY" />
+			<child>row_movies_trailers</child>
+		</button>
+	</row>
+	<row id="row_movies_genres">
+		<path>boxee://movies/genres</path>
+	</row>
+	<row id="row_movies_local_genres">
+		<path>boxee://movies/local/genres</path>
+	</row>
+	<row id="row_movies_local_sources">
+		<path>boxee://movies/local/sources</path>
+	</row>
+	<row id="row_movies_providers">
+		<path>boxee://movies/providers</path>
+	</row>
+	<row id="row_movies_trailers">
+		<path>boxee://movies/trailers</path>
+	</row>
+	
+	<row id="row_movies_filter_local">
+		<button id="movies_filter_all">
+			<label>53509</label>
+		</button>
+		<button id="movies_local_genres">
+			<label>53561</label>
+			<clickable>false</clickable>
+			<child>row_movies_local_genres</child>
+		</button>
+		<button id="movies_local_sources">
+			<label>52044</label>
+			<clickable>false</clickable>
+			<child>row_movies_local_sources</child>
+		</button>
+		<button id="movies_filter_unwatched">
+			<label>16101</label>
+			<parameter key="unwatched" value="true"/>
+		</button>
+	</row>	
+	
+	<!-- tv shows section -->
+	<row id="row_shows" index="1">
+		<button id="shows_all">
+			<label>53509</label>
+			<command>boxeeui://shows/</command>
+			<parameter key="category" value="all"/>
+		</button>
+		<button id="shows_favorite">
+			<label>52111</label>
+			<command>boxeeui://shows/</command>
+			<parameter key="category" value="favorite"/>
+		</button>
+		<button id="shows_genres">
+			<label>53561</label>
+			<clickable>false</clickable>
+			<parameter key="category" value="all"/>
+			<child>row_shows_genres</child>
+		</button>
+		<button id="shows_providers">
+			<label>54075</label>
+			<clickable>false</clickable>
+			<parameter key="category" value="store"/>
+			<child>row_shows_providers</child>
+		</button>
+		<button id="shows_local">
+			<label>744</label>
+			<command>boxeeui://shows/</command>
+			<parameter key="category" value="local"/>
+			<child>row_shows_filter_local</child>
+		</button>
+	</row>
+	
+	<row id="row_shows_genres">
+		<path>boxee://shows/genres</path>
+	</row>
+	<row id="row_shows_local_genres">
+		<path>boxee://shows/local/genres</path>
+	</row>
+	<row id="row_shows_providers">
+		<path>boxee://shows/providers</path>
+	</row>
+	
+	<row id="row_shows_filter_local">
+		<button id="shows_filter_all">
+			<label>53509</label>
+		</button>
+		<button id="shows_local_genres">
+			<label>53561</label>
+			<clickable>false</clickable>
+			<child>row_shows_local_genres</child>
+		</button>
+	</row>
+	
+	<!-- apps section -->
+	<row id="row_apps" index="1">
+		<button id="apps_all">
+			<label>53509</label>
+			<command>boxeeui://apps/</command>
+			<parameter key="category" value="all"/>
+		</button>
+		<button id="apps_favorite">
+			<label>52111</label>
+			<command>boxeeui://apps/</command>
+			<parameter key="category" value="favorite"/>
+		</button>
+        <button id="apps_featured">
+            <label>54063</label>
+            <command>boxeeui://apps/</command>
+            <parameter key="categoryfilter" value="99"/>
+            <parameter key="category" value="featured"/>
+        </button>
+		<button id="apps_categories">
+			<label>53827</label>
+			<command>boxeeui://apps/</command>
+			<clickable>false</clickable>
+			<parameter key="category" value="all"/>
+			<child>row_apps_type</child>
+		</button>		
+	  	<button id="apps_repositories">
+	  		<label>53274</label>
+	  		<command>boxeeui://repositories/</command>
+	  	</button>
+	</row>
+	
+    <row id="row_apps_type">
+      <path>boxee://apps/categories</path>
+    </row>
+	
+	<!-- files section -->
+	<row id="row_files" index="1">
+		<button id="files_shows">
+			<label>53912</label>
+			<command>boxeeui://shows/</command>
+			<parameter key="category" value="local"/>
+		</button>
+		<button id="files_movies">
+			<label>53913</label>
+			<command>boxeeui://movies/</command>
+			<parameter key="category" value="local"/>
+		</button>
+		<button id="files_music">
+			<label>2</label>
+			<command>boxeeui://music/</command>
+			<child>row_music</child>
+		</button>
+		<button id="files_photos">
+			<label>1</label>
+			<command>boxeeui://photos/</command>
+		</button>
+		<button id="files_browse">
+			<label>1024</label>
+			<command>boxeeui://files/</command>
+			<parameter key="path" value="sources://all" />
+		</button>
+	</row>
+	<row id="row_music">
+		<button id="music_albums">
+			<label>132</label>
+			<command>boxeeui://music/</command>
+			<parameter key="category" value="albums"/>
+		</button>
+		<button id="music_artists">
+			<label>133</label>
+			<command>boxeeui://music/</command>
+			<parameter key="category" value="artists"/>
+		</button>
+	</row>
+</menu>

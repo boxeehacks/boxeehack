@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<window id="10421">
+	<defaultcontrol always="true">5010</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<!-- Dummy container for Item Info -->
+        <control type="list" id="5000">
+            <description>info</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>0</width>
+            <height>0</height>
+            <visible>false</visible>
+            <itemlayout height="0">
+          </itemlayout>
+            <focusedlayout height="0">
+          </focusedlayout>
+        </control>
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Dialog_Popup_Close_Animation</include>
+			<control type="image">
+				<posx>30</posx>
+				<posy>152</posy>
+				<width>1220</width>
+				<height>460</height>
+				<texture border="20">menu_dialog_background.png</texture>
+				<colordiffuse>FF212121</colordiffuse>
+			</control>
+			<control type="group">
+				<visible>!Window.IsVisible(boxee_manual_resolve_album.xml)</visible>
+				<posx>30</posx>
+				<posy>152</posy>
+				<animation effect="fade" start="100" end="25" time="200" condition="Window.IsActive(DialogProgress.xml)">Conditional</animation>
+				<control type="label">
+					<posx>36</posx>
+					<posy>36</posy>
+					<width>840</width>
+					<height>32</height>
+					<font>font32b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$LOCALIZE[52176]</label>
+					<textcolor>white</textcolor>
+				</control>
+				<control type="label" id="5005">
+					<description>file path label</description>
+					<posx>36</posx>
+					<posy>78</posy>
+					<width>1150</width>
+					<height>24</height>
+					<label>$INFO[container(5000).ListItem.pathtoshowinmediaaction]</label>
+					<aligny>center</aligny>
+					<font>font20b</font>
+					<textcolor>white</textcolor>
+					<haspath>true</haspath>
+				</control>
+				<control type="edit" id="5010">
+					<posx>36</posx>
+					<posy>112</posy>
+					<width>978</width>
+					<height>40</height>
+					<font>font24b</font>
+					<textcolor>white</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textoffsetx>14</textoffsetx>
+					<texturenofocus border="20">search_text_box.png</texturenofocus>
+					<texturefocus border="20">search_text_box_focus.png</texturefocus>
+					<textureclick border="20">search_text_box_click.png</textureclick>				
+					<onleft>-</onleft>
+					<onright>5020</onright>
+					<onup>-</onup>
+					<ondown>5030</ondown>
+					<label>-</label>
+					<ontextchange/>
+				</control>
+				<control type="button" id="5020">
+					<posx>1024</posx>
+					<posy>104</posy>
+					<width>160</width>
+					<height>56</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>grey</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<texturenofocus border="27">-</texturenofocus>
+					<texturefocus border="27">button_action_menu_source_on.png</texturefocus>
+					<textureclick border="27">button_action_menu_source_click.png</textureclick>
+					<font>font22b</font>
+					<label>$LOCALIZE[137]</label>
+					<onup>-</onup>
+					<ondown>5025</ondown>
+					<onleft>5010</onleft>
+					<onright>-</onright>
+					<onclick>-</onclick>
+				</control>
+				<control type="list" id="5030">
+					<visible>true</visible>
+					<description>suggestion list of album names</description>
+					<posx>20</posx>
+					<posy>156</posy>
+					<width>1000</width>
+					<height>275</height>
+					<onleft>-</onleft>
+					<onright>5020</onright>
+					<onup>5010</onup>
+					<ondown>-</ondown>
+					<scrolltime>200</scrolltime>
+					<pagecontrol>60</pagecontrol>
+					<orientation>vertical</orientation>
+					<focusposition>6</focusposition>
+					<offsety>5</offsety>
+					<itemlayout height="40">
+						<control type="label">
+							<posx>36</posx>
+							<posy>0</posy>
+							<width>1000</width>
+							<height>40</height>
+							<font>font22</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.albumartist,, ]  /  $INFO[ListItem.Label,, ]  $INFO[ListItem.Year]</label>
+							<textcolor>grey</textcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout height="40">
+						<control type="image">
+							<visible>Control.HasFocus(5030)</visible>
+							<posx>0</posx>
+							<posy>-19</posy>
+							<width>1010</width>
+							<height>78</height>
+							<texture border="39">line_view_on.png</texture>
+						</control>
+						<control type="label">
+							<visible>!Control.HasFocus(5030)</visible>
+							<posx>36</posx>
+							<posy>0</posy>
+							<width>1000</width>
+							<height>40</height>
+							<font>font22</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.albumartist,, ]  /  $INFO[ListItem.Label,, ]  $INFO[ListItem.Year]</label>
+							<textcolor>grey</textcolor>
+	                        <scrollonfocus>true</scrollonfocus>
+						</control>
+						<control type="label">
+							<visible>Control.HasFocus(5030)</visible>
+							<posx>36</posx>
+							<posy>0</posy>
+							<width>1000</width>
+							<height>40</height>
+							<font>font22b</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.albumartist,, ]  /  $INFO[ListItem.Label,, ]  $INFO[ListItem.Year]</label>
+							<textcolor>white</textcolor>
+							<scrollonfocus>true</scrollonfocus>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

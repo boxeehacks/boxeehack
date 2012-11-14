@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<window id="10491">
+	<defaultcontrol always="true">9050</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+    <include>Common_Background_Browse</include>
+		<control type="group">
+			<control type="group" id="9050">
+				<include>BrowsePhotosThumbView</include>
+			</control>
+      <include>LogoTitleAndItemCountPhotos</include>
+			<include>PhotosActionMenu</include>
+			<include>BrowsePhotosEmptyList</include>
+			<include>BrowseLoadingAnimation</include>
+		</control>
+	</controls>
+</window>

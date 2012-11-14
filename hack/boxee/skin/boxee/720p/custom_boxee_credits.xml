@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<window type="dialog" id="58">
+	<defaultcontrol always="true">-</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Settings_Background</include>
+		<!--<control type="group" id="9000">
+			<include>BrowseListsAnimation</include>
+			<include>BoxeeLogo</include>
+			<control type="label">
+				<posx>120</posx>
+				<posy>14</posy>
+				<width>960</width>
+				<font>font48</font>
+				<align>left</align>
+				<label>[B]$LOCALIZE[5][/B]</label>
+			</control>
+			<control type="label">
+				<posx>120</posx>
+				<posy>70</posy>
+				<width>960</width>
+				<font>font24</font>
+				<align>left</align>
+				<label>$LOCALIZE[470]</label>
+			</control>
+		</control>-->
+		<control type="group">
+			<posx>29</posx>
+			<posy>49</posy>
+			<width>1220</width>
+			<height>660</height>
+			<control type="group">
+				<control type="image">
+					<posx>20</posx>
+					<posy>-20</posy>
+					<width>300</width>
+					<height>73</height>
+					<texture>XBMC_logo_small.png</texture>
+				</control>
+				<control type="label">
+					<posx>340</posx>
+					<posy>-13</posy>
+					<width>850</width>
+					<height>100</height>
+					<label>51938</label>
+					<font>font26b</font>
+					<wrapmultiline>true</wrapmultiline>
+					<textcolor>white</textcolor>
+				</control>
+				<control type="textbox">
+					<posx>0</posx>
+					<posy>80</posy>
+					<width>590</width>
+					<height>530</height>
+					<font>font18</font>
+					<textcolor>white</textcolor>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>51939</label>
+					<autoscroll delay="1000" time="3000" repeat="10000">false</autoscroll>
+				</control>
+				<control type="textbox">
+					<posx>600</posx>
+					<posy>80</posy>
+					<width>590</width>
+					<height>530</height>
+					<font>font18</font>
+					<textcolor>white</textcolor>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>51940</label>
+					<autoscroll delay="1000" time="3000" repeat="10000">false</autoscroll>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

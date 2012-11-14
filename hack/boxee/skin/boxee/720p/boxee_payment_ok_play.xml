@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<window type="dialog" id="435">
+    <defaultcontrol always="true">240</defaultcontrol>
+    <allowoverlay>no</allowoverlay>
+    <controls>
+        <control type="group" id="6500">
+            <posx>160</posx>
+            <posy>162</posy>
+            <include>PaymentDialogBG</include>            
+            <control type="label" id="6510">
+                <posx>385</posx>
+                <posy>120</posy>
+                <width>600</width>
+                <height>80</height>
+                <font>font28b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>$LOCALIZE[55160]</label>
+                <textcolor>white</textcolor>
+            </control>
+            <control type="group" id="6530">        
+                <control type="button" id="6531">
+                    <!-- Watch now -->
+                    <posx>360</posx>
+                    <posy>200</posy>
+                    <width>280</width>
+                    <height>80</height>
+                    <onleft>-</onleft>
+                    <onright>-</onright>
+                    <onup>-</onup>
+                    <ondown>-</ondown>
+                    <font>font28b</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <label>$LOCALIZE[55161]</label>
+                    <textcolor>white</textcolor>
+                    <focusedcolor>black</focusedcolor>
+                    <textoffsetx>35</textoffsetx>
+                    <texturenofocus>-</texturenofocus>
+                    <texturefocus border="39">button_action_menu_source_on.png</texturefocus>
+                    <textureclick border="39">button_action_menu_source.png</textureclick>
+                </control>
+            </control>
+            <!-- include>PaymentBackButton</include -->
+        </control>
+    </controls>
+</window>

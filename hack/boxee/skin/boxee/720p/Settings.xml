@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<window id="4">
+	<defaultcontrol always="true">52</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Settings_Background</include>
+		<control type="group" id="9000">
+			<control type="label" id="9019">
+				<posx>28</posx>
+				<posy>18</posy>
+				<width>925</width>
+				<font>font40b</font>
+				<align>left</align>
+				<label>[B]$LOCALIZE[5][/B]</label>
+			</control>
+		</control>
+		<control type="group">
+			<control type="panel" id="52">
+				<posx>219</posx>
+				<posy>124</posy>
+				<width>1000</width>
+				<height>500</height>
+				<onup>-</onup>
+				<onright>-</onright>
+				<onleft>-</onleft>
+				<ondown>53</ondown>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>-</pagecontrol>
+				<orientation>vertical</orientation>
+				<itemlayout width="210" height="240">
+					<control type="image">
+						<posx>45</posx>
+						<posy>6</posy>
+						<width>120</width>
+						<height>120</height>
+						<colordiffuse>mediumgreyheidi</colordiffuse>
+						<texture>$INFO[ListItem.Thumb]</texture>
+					</control>
+					<control type="label">
+						<posx>109</posx>
+						<posy>137</posy>
+						<width>210</width>
+						<height>100</height>
+						<font>font24b</font>
+						<align>center</align>
+						<aligny>top</aligny>
+						<label>[UPPERCASE][B]$INFO[ListItem.Label][/B][/UPPERCASE]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<wrapmultiline>true</wrapmultiline>
+					</control>
+				</itemlayout>
+				<focusedlayout width="210" height="240">
+					<control type="image">
+						<posx>37</posx>
+						<posy>0</posy>
+						<width>136</width>
+						<height>132</height>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="image">
+						<visible>!Control.HasFocus(52)</visible>
+						<posx>45</posx>
+						<posy>6</posy>
+						<width>120</width>
+						<height>120</height>
+						<colordiffuse>mediumgreyheidi</colordiffuse>
+						<texture>$INFO[ListItem.Thumb]</texture>
+					</control>
+					<control type="image">
+						<visible>Control.HasFocus(52)</visible>
+						<posx>45</posx>
+						<posy>6</posy>
+						<width>120</width>
+						<height>120</height>
+						<colordiffuse>whiteheidi</colordiffuse>
+						<texture>$INFO[ListItem.Thumb]</texture>
+					</control>
+					<control type="label">
+						<visible>!Control.HasFocus(52)</visible>
+						<posx>109</posx>
+						<posy>137</posy>
+						<width>210</width>
+						<height>100</height>
+						<font>font24b</font>
+						<align>center</align>
+						<aligny>top</aligny>
+						<label>[UPPERCASE][B]$INFO[ListItem.Label][/B][/UPPERCASE]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+						<wrapmultiline>true</wrapmultiline>
+					</control>
+					<control type="label">
+						<visible>Control.HasFocus(52)</visible>
+						<posx>109</posx>
+						<posy>137</posy>
+						<width>210</width>
+						<height>100</height>
+						<font>font24b</font>
+						<align>center</align>
+						<aligny>top</aligny>
+						<label>[UPPERCASE][B]$INFO[ListItem.Label][/B][/UPPERCASE]</label>
+						<textcolor>whiteheidi</textcolor>
+						<wrapmultiline>true</wrapmultiline>
+					</control>
+				</focusedlayout>
+				<content>
+					<item>
+						<label>10019</label>
+						<label2>52025</label2>
+						<onclick>ActivateWindow(AppearanceSettings)</onclick>
+						<thumb>icons/icon-settings-general.png</thumb>
+					</item>
+					<item>
+						<label>51551</label>
+						<label2>52021</label2>
+						<onclick>ActivateWindow(MyMediaSettings)</onclick>
+						<thumb>icons/icon-settings-media.png</thumb>
+					</item>
+					<item>
+						<label>51550</label>
+						<label2>52027</label2>
+						<onclick>ActivateWindow(10460)</onclick>
+						<thumb>icons/icon-settings-file-sources.png</thumb>
+					</item>
+					<item>
+						<label>705</label>
+						<label2>52024</label2>
+						<onclick>ActivateWindow(NetworkSettings)</onclick>
+						<thumb>icons/icon-settings-network.png</thumb>
+					</item>
+					<item>
+						<visible>DVB.IsTunerReady</visible>				
+						<label>58000</label>
+						<onclick>ActivateWindow(LiveTVSettings)</onclick>
+						<thumb>icons/icon-settings-live-tv.png</thumb>
+					</item>
+					<item>
+						<label>10013</label>
+						<label2>801</label2>
+						<onclick>ActivateWindow(ParentalSettings)</onclick>
+						<thumb>icons/icon-settings-parental-controls.png</thumb>
+					</item>
+					<item>
+						<label>10016</label>
+						<label2>52026</label2>
+						<onclick>ActivateWindow(SystemSettings)</onclick>
+						<thumb>icons/icon-settings-system.png</thumb>
+					</item>
+				</content>
+			</control>
+			<control type="group">
+				<posx>37</posx>
+				<posy>619</posy>
+				<control type="image">
+					<visible>Control.HasFocus(53)</visible>
+					<posx>-10</posx>
+					<posy>-9</posy>
+					<width>66</width>
+					<height>66</height>
+					<texture srcborder="24" border="16">button-focused.png</texture>
+				</control>
+				<control type="button" id="53">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>48</width>
+					<height>48</height>
+					<onleft>-</onleft>
+					<onright>54</onright>
+					<onup>52</onup>
+					<ondown>-</ondown>
+					<font>font18b</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<label>[UPPERCASE][B]$LOCALIZE[51552][/B][/UPPERCASE]</label>
+					<textcolor>mediumgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<textoffsety>58</textoffsety>
+					<texturenofocus diffuse="colors/color-grey.png">icons/icon-settings-about.png</texturenofocus>
+					<texturefocus diffuse="colors/color-white.png">icons/icon-settings-about.png</texturefocus>
+					<onclick>ActivateWindow(58)</onclick>
+				</control>
+			</control>		
+			<control type="group">
+				<posx>1197</posx>
+				<posy>619</posy>
+				<control type="image">
+					<visible>Control.HasFocus(54)</visible>
+					<posx>-10</posx>
+					<posy>-9</posy>
+					<width>66</width>
+					<height>66</height>
+					<texture srcborder="24" border="16">button-focused.png</texture>
+				</control>
+				<control type="button" id="54">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>48</width>
+					<height>48</height>
+					<onleft>53</onleft>
+					<onright>-</onright>
+					<onup>52</onup>
+					<ondown>-</ondown>
+					<font>font18b</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<label>[UPPERCASE][B]$LOCALIZE[51553][/B][/UPPERCASE]</label>
+					<textcolor>mediumgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<textoffsety>58</textoffsety>
+					<texturenofocus diffuse="colors/color-grey.png">icons/icon-settings-legal.png</texturenofocus>
+					<texturefocus diffuse="colors/color-white.png">icons/icon-settings-legal.png</texturefocus>
+					<onclick>-</onclick>
+				</control>
+			</control>			
+		</control>
+	</controls>
+</window>

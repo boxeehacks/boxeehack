@@ -1,0 +1,559 @@
+<?xml version="1.0"?>
+<window id="505">
+	<defaultcontrol always="false">50</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+
+		<!-- Show black background when it is not tuned or no signal -->
+		<control type="image">
+			<visible>!Dvb.IsTuned</visible>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+		</control>		
+
+		<!-- video of thats being broadcasted -->
+		<control type="videowindow">
+			<visible>Dvb.IsTuned + Dvb.IsSignalOk</visible>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+		</control>
+
+		<!-- No signal -->			
+		<control type="image">
+			<visible>[ Dvb.IsTuned + !Dvb.IsSignalOk ] | Dvb.IsTuningFailed</visible>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+		</control>
+
+		<control type="image">
+			<visible>[ Dvb.IsTuned + !Dvb.IsSignalOk ] | Dvb.IsTuningFailed</visible>								
+			<posx>510</posx>
+			<posy>225</posy>
+			<texture>livetv/graphic-no-signal.png</texture>
+		</control>
+
+		<control type="label">
+			<visible>[ Dvb.IsTuned + !Dvb.IsSignalOk ] | Dvb.IsTuningFailed</visible>															
+			<posx>300</posx>
+			<posy>420</posy>
+			<width>700</width>
+			<label>58051</label>
+			<font>font40b</font>
+			<align>center</align>
+			<textcolor>mediumgreyheidi</textcolor>
+		</control>
+
+		<!-- OSD -->
+		<control type="group" id="30">	
+
+			<control type="group">
+				<visible>!Control.IsVisible(50)</visible>
+				<include>TopGradient</include>			
+				<include>BottomGradient</include>
+			</control>
+
+			<visible>false</visible>	
+
+			<!-- upper left info: show name, channel name, rating -->
+			<control type="label">
+				<visible>Dvb.HasEpg</visible>
+				<posx>24</posx>
+				<posy>16</posy>
+				<width>1066</width>
+				<label>[B]$INFO[Dvb.ShowTitle][/B]</label>
+				<font>font46</font>
+				<align>left</align>
+				<textcolor>whiteheidi</textcolor>
+			</control>
+
+			<!-- information, in case we have show info -->
+			<control type="grouplist">
+				<visible>Dvb.HasEpg</visible>								
+				<posx>24</posx>
+				<posy>76</posy>			
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>			
+				<control type="label">
+					<visible>DVB.ShowIsNew</visible>																				
+					<width max="200">auto</width>
+					<label>[B]$LOCALIZE[58033][/B]</label>
+					<font>font26b</font>
+					<align>left</align>
+					<textcolor>darkgreyheidi</textcolor>
+				</control>						
+				<control type="label">
+					<visible>DVB.ShowIsNew + [ !IsEmpty(DVB.ShowSeason) | !IsEmpty(DVB.ShowEpisode) ]</visible>																				
+					<width max="200">auto</width>
+					<label>[B]·[/B]</label>
+					<font>font26b</font>
+					<align>left</align>
+					<textcolor>darkgreyheidi</textcolor>
+				</control>
+				<control type="label">
+					<visible>!IsEmpty(DVB.ShowSeason)</visible>																				
+					<width max="200">auto</width>
+					<label>[B]Season $INFO[DVB.ShowSeason], [/B]</label>
+					<font>font26b</font>
+					<align>left</align>
+					<textcolor>darkgreyheidi</textcolor>
+				</control>
+				<control type="label">
+					<visible>!IsEmpty(DVB.ShowEpisode)</visible>																								
+					<width max="400">auto</width>
+					<label>[B]Episode $INFO[Dvb.ShowEpisode][/B]</label>
+					<font>font26b</font>
+					<align>left</align>
+					<textcolor>darkgreyheidi</textcolor>
+				</control>
+				<control type="label">
+					<visible>!IsEmpty(DVB.ShowEpisodeTitle) + [ !IsEmpty(DVB.ShowSeason) | !IsEmpty(DVB.ShowEpisode) |  [ IsEmpty(DVB.ShowSeason) + IsEmpty(DVB.ShowEpisode) + Dvb.ShowIsNew ] ]</visible>																				
+					<width max="200">auto</width>
+					<label>[B]·[/B]</label>
+					<font>font26b</font>
+					<align>left</align>
+					<textcolor>darkgreyheidi</textcolor>
+				</control>				
+				<control type="label">	
+					<visible>!IsEmpty(DVB.ShowEpisodeTitle)</visible>												
+					<width max="700">auto</width>
+					<height>20</height>
+					<textcolor>darkgreyheidi</textcolor>
+					<font>font26b</font>
+					<label>[B]$INFO[DVB.ShowEpisodeTitle][/B]</label>
+				</control>		
+			</control>
+
+			<!-- information, in case we have show info (show as 3rd line) -->
+			<control type="grouplist">
+				<visible>Dvb.HasEpg + [ DVB.ShowIsNew | !IsEmpty(DVB.ShowSeason) | !IsEmpty(DVB.ShowEpisode) | !IsEmpty(DVB.ShowEpisodeTitle) ]</visible>								
+				<posx>24</posx>
+				<posy>112</posy>			
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>									
+				<control type="label">
+					<visible>!IsEmpty(Dvb.ChannelNumber)</visible>																				
+					<width max="200">auto</width>
+					<label>[B]$INFO[Dvb.ChannelNumber] [/B]</label>
+					<font>font26b</font>
+					<align>left</align>
+					<textcolor>darkgreyheidi</textcolor>
+				</control>
+				<control type="label">
+					<width max="400">auto</width>
+					<label>[B]$INFO[Dvb.ChannelCallSign][/B]</label>
+					<font>font26b</font>
+					<align>left</align>
+					<textcolor>darkgreyheidi</textcolor>
+				</control>
+				<control type="label">										
+					<width max="300">auto</width>
+					<height>20</height>
+					<textcolor>darkgreyheidi</textcolor>
+					<font>font26b</font>
+					<align>left</align>					
+					<label>[B]· $INFO[dvb.showstarttime] - $INFO[dvb.showendtime][/B]</label>
+				</control>				
+				<control type="label">
+					<visible>!IsEmpty(Dvb.ShowRating)</visible>										
+					<width max="100">500</width>
+					<label>[B]· $INFO[Dvb.ShowRating][/B]</label>
+					<font>font26b</font>
+					<align>left</align>
+					<textcolor>darkgreyheidi</textcolor>
+				</control>				
+			</control>
+
+			<!-- information, in case we have show info but not season/episode/new (show as 3rd line) -->
+			<control type="grouplist">
+				<visible>Dvb.HasEpg + !DVB.ShowIsNew + IsEmpty(DVB.ShowSeason) + IsEmpty(DVB.ShowEpisode) + IsEmpty(DVB.ShowEpisodeTitle)</visible>								
+				<posx>24</posx>
+				<posy>76</posy>			
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>									
+				<control type="label">
+					<visible>!IsEmpty(Dvb.ChannelNumber)</visible>																				
+					<width max="200">auto</width>
+					<label>[B]$INFO[Dvb.ChannelNumber] [/B]</label>
+					<font>font26b</font>
+					<align>left</align>
+					<textcolor>darkgreyheidi</textcolor>
+				</control>
+				<control type="label">
+					<width max="400">auto</width>
+					<label>[B]$INFO[Dvb.ChannelCallSign][/B]</label>
+					<font>font26b</font>
+					<align>left</align>
+					<textcolor>darkgreyheidi</textcolor>
+				</control>
+				<control type="label">										
+					<width max="300">auto</width>
+					<height>20</height>
+					<textcolor>darkgreyheidi</textcolor>
+					<font>font26b</font>
+					<label>[B]· $INFO[dvb.showstarttime] - $INFO[dvb.showendtime][/B]</label>
+				</control>				
+				<control type="label">
+					<visible>!IsEmpty(Dvb.ShowRating)</visible>										
+					<width max="100">500</width>
+					<label>[B]· $INFO[Dvb.ShowRating][/B]</label>
+					<font>font26b</font>
+					<align>left</align>
+					<textcolor>darkgreyheidi</textcolor>
+				</control>				
+			</control>
+
+			<!-- information, in case we have only channel name /number -->
+			<control type="grouplist">
+				<visible>!Dvb.HasEpg</visible>								
+				<posx>24</posx>
+				<posy>24</posy>			
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>									
+				<control type="label">
+					<visible>!IsEmpty(Dvb.ChannelNumber)</visible>																				
+					<width max="200">auto</width>
+					<label>[B]$INFO[Dvb.ChannelNumber] [/B]</label>
+					<font>font26b</font>
+					<align>left</align>
+					<textcolor>darkgreyheidi</textcolor>
+				</control>
+				<control type="label">
+					<width max="400">auto</width>
+					<label>[B]$INFO[Dvb.ChannelCallSign][/B]</label>
+					<font>font26b</font>
+					<align>left</align>
+					<textcolor>darkgreyheidi</textcolor>
+				</control>		
+			</control>
+
+			<include>OSD_Clock</include>
+
+			<!-- social without osd -->
+			<control type="grouplist">
+				<visible>!Control.IsVisible(40)</visible>
+				<posx>500</posx>
+				<posy>625</posy>
+				<orientation>horizontal</orientation>
+				<align>right</align>
+				<width>740</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<visible>!IsEmpty(DVB.FriendLabel)</visible>
+					<posy>-10</posy>
+					<width min="0" max="420">auto</width>
+					<height>80</height>
+					<textcolor>whiteheidi</textcolor>
+					<font>font26</font>
+					<label>$INFO[DVB.FriendLabel]</label>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="largeimage">
+					<visible>!IsEmpty(DVB.FriendThumb2)</visible>
+					<width>54</width>
+					<height>54</height>
+					<texture>$INFO[DVB.FriendThumb2]</texture>
+				</control>
+				<control type="largeimage">
+					<visible>!IsEmpty(DVB.FriendThumb1)</visible>
+					<width>54</width>
+					<height>54</height>
+					<texture>$INFO[DVB.FriendThumb1]</texture>
+				</control>
+			</control>		
+		</control>
+
+		<control type="group" id="40">					
+			<visible>false</visible>
+			<posx>0</posx>
+			<posy>580</posy>
+
+			<control type="list" id="9150">
+				<posx>32</posx>
+				<posy>0</posy>
+				<width>600</width>
+				<height>100</height>
+				<onup>9000</onup>
+				<onright>9011</onright>
+				<onleft>9100</onleft>
+				<ondown>8100</ondown>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>-</pagecontrol>
+				<orientation>horizontal</orientation>
+				<itemlayout width="80" height="54">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture>$INFO[ListItem.Thumb]-off.png</texture>
+					</control>
+				</itemlayout>
+				<focusedlayout width="80" height="54">
+					<control type="image">
+						<visible>!Control.HasFocus(9150)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture>$INFO[ListItem.Thumb]-off.png</texture>
+					</control>
+					<control type="image">
+						<visible>Control.HasFocus(9150)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>64</width>
+						<height>64</height>
+						<texture>$INFO[ListItem.Thumb]-on.png</texture>
+					</control>
+				</focusedlayout>
+				<content>
+					<item>
+						<controlid>9001</controlid>
+						<onclick>-</onclick>
+						<thumb>buttons/button-osd-guide</thumb>
+						<label>58056</label>
+					</item>					
+					<item>
+						<controlid>9002</controlid>
+						<visible>Dvb.HasEPG</visible>
+						<onclick>-</onclick>
+						<thumb>buttons/button-osd-info</thumb>
+						<label>53710</label>
+					</item>
+					<item>
+						<controlid>9003</controlid>
+						<visible>!boxee.OfflineMode + Dvb.HasEPG</visible>
+						<onclick>-</onclick>
+						<thumb>buttons/button-osd-share</thumb>
+						<label>54052</label>
+					</item>
+				</content>
+			</control>
+
+			<!-- social with osd -->
+			<control type="grouplist">
+				<posx>500</posx>
+				<posy>14</posy>
+				<orientation>horizontal</orientation>
+				<align>right</align>
+				<width>740</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<visible>!IsEmpty(DVB.FriendLabel)</visible>
+					<posy>-10</posy>
+					<width min="0" max="420">auto</width>
+					<height>80</height>
+					<textcolor>whiteheidi</textcolor>
+					<font>font26</font>
+					<label>$INFO[DVB.FriendLabel]</label>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="largeimage">
+					<visible>!IsEmpty(DVB.FriendThumb2)</visible>
+					<width>54</width>
+					<height>54</height>
+					<texture>$INFO[DVB.FriendThumb2]</texture>
+				</control>
+				<control type="largeimage">
+					<visible>!IsEmpty(DVB.FriendThumb1)</visible>
+					<width>54</width>
+					<height>54</height>
+					<texture>$INFO[DVB.FriendThumb1]</texture>
+				</control>
+			</control>
+			<!-- Show progress (if we have EPG) -->
+			<control type="group">
+				<visible>Dvb.HasEpg</visible>										
+				<posx>0</posx>
+				<posy>96</posy>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1280</width>
+					<height>44</height>
+					<texture>black.png</texture>
+				</control>
+				<control type="progress">
+					<posx>132</posx>
+					<posy>0</posy>
+					<width>1016</width>
+					<height>44</height>
+					<info>Dvb.ShowProgress</info>
+					<texturebg>osd/osd-progressbar.png</texturebg>
+					<lefttexture>-</lefttexture>
+					<midtexture>osd/osd-progressbar-played.png</midtexture>
+					<righttexture>-</righttexture>
+					<overlaytexture>-</overlaytexture>
+				</control>					
+				<control type="label">
+					<posx>0</posx>
+					<posy>1</posy>
+					<width>132</width>
+					<height>44</height>
+					<font>font28b</font>
+					<textcolor>whiteheidi</textcolor>
+					<label>[B]$INFO[Dvb.ShowStartTime][/B]</label>
+					<aligny>center</aligny>
+					<align>center</align>
+				</control>				
+				<control type="label">
+					<posx>1148</posx>
+					<posy>1</posy>
+					<width>132</width>
+					<height>44</height>
+					<font>font28b</font>
+					<textcolor>whiteheidi</textcolor>
+					<label>[B]$INFO[Dvb.ShowEndTime][/B]</label>
+					<aligny>center</aligny>
+					<align>center</align>
+				</control>
+			</control>
+		</control>
+
+		<control type="group" id="50">	
+			<visible>false</visible>
+			<posx>0</posx>
+			<posy>0</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<texture>black.png</texture>
+				<colordiffuse>C8FFFFFF</colordiffuse>
+			</control>			
+			<control type="group">
+				<posx>281</posx>
+				<posy>109</posy>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>710</width>
+					<height>491</height>
+					<texture srcborder="51" border="34">dialog_bg.png</texture>
+				</control>
+				<control type="label">
+					<posx>64</posx>
+					<posy>45</posy>
+					<width>570</width>
+					<label>[B]$INFO[Dvb.ShowTitle][/B]</label>
+					<font>font40</font>
+					<align>left</align>
+					<textcolor>white</textcolor>
+				</control>
+				<control type="grouplist">
+					<posx>64</posx>
+					<posy>96</posy>			
+					<orientation>horizontal</orientation>
+					<usecontrolcoords>true</usecontrolcoords>			
+					<control type="label">
+						<width max="300">auto</width>
+						<font>font22b</font>
+						<textcolor>darkgreyheidi</textcolor>
+						<label>$INFO[Dvb.ShowStartTime] - $INFO[Dvb.ShowEndTime]</label>
+						<align>left</align>
+					</control>		
+					<control type="label">
+						<visible>DVB.ShowIsNew</visible>
+						<width max="200">auto</width>
+						<label>[B]· $LOCALIZE[58033][/B]</label>
+						<font>font22b</font>
+						<align>left</align>
+						<textcolor>darkgreyheidi</textcolor>
+					</control>						
+				</control>
+				<control type="image">
+					<posx>10</posx>
+					<posy>140</posy>
+					<width>690</width>
+					<height>33</height>
+					<texture>feather_divider.png</texture>
+				</control>
+
+				<control type="grouplist">
+					<posx>64</posx>
+					<posy>162</posy>			
+					<orientation>vertical</orientation>
+					<usecontrolcoords>true</usecontrolcoords>			
+					<control type="label">
+						<width>570</width>
+						<height max="200">auto</height>
+						<font>font22b</font>
+						<textcolor>whiteheidi</textcolor>
+						<label>[B]$INFO[Dvb.ShowEpisodeTitle][CR][CR][/B]</label>
+						<align>left</align>
+					</control>		
+
+					<control type="label">
+						<width>570</width>
+						<height max="300">auto</height>						
+						<label>$INFO[Dvb.ShowSynopsis]</label>
+						<font>font22</font>
+						<align>left</align>
+						<textcolor>darkgreyheidi</textcolor>
+						<wrapmultiline>true</wrapmultiline>
+					</control>
+				</control>
+			</control>
+		</control>
+
+		<!-- codec infos -->
+		<control type="group">
+			<animation effect="fade" time="200">VisibleChange</animation>
+			<posx>36</posx>
+			<posy>36</posy>
+			<control type="image" id="9">
+				<visible>false</visible>								
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1208</width>
+				<height>163</height>
+				<texture border="20">menu_dialog_background.png</texture>
+				<colordiffuse>F3212121</colordiffuse>
+			</control>
+			<control type="label" id="10">
+				<visible>false</visible>															
+				<description>row 1 label</description>
+				<posx>25</posx>
+				<posy>10</posy>
+				<width>1158</width>
+				<label>-</label>
+				<font>font18b</font>
+				<align>left</align>
+			</control>
+			<control type="label" id="11">
+				<visible>false</visible>															
+				<description>row 2 label</description>
+				<posx>25</posx>
+				<posy>45</posy>
+				<width>1158</width>
+				<label>-</label>
+				<font>font18b</font>
+				<align>left</align>
+			</control>
+			<control type="label" id="12">
+				<visible>false</visible>																						
+				<description>row 3 label</description>
+				<posx>25</posx>
+				<posy>80</posy>
+				<width>1158</width>
+				<label>-</label>
+				<font>font18b</font>
+				<align>left</align>
+			</control>		
+		</control>		
+
+	</controls>
+</window>

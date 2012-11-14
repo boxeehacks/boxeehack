@@ -1,0 +1,40 @@
+<window id="136">
+	<animation effect="fade" time="100">WindowOpen</animation>
+	<animation effect="fade" time="200">WindowClose</animation>
+	<coordinates>
+		<system>1</system>
+		<posx>525</posx>
+		<posy>330</posy>
+	</coordinates>
+	<controls>
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>230</width>
+			<height>60</height>
+			<colordiffuse>55FFFFFF</colordiffuse>
+			<texture>grey.png</texture>
+		</control>
+		<control type="image">
+			<description>background image</description>
+			<posx>5</posx>
+			<posy>5</posy>
+			<width>220</width>
+			<height>50</height>
+			<colordiffuse>88FFFFFF</colordiffuse>
+			<texture>black.png</texture>
+		</control>
+		<control type="label">
+			<description>Busy label2</description>
+			<posx>010</posx>
+			<posy>5</posy>
+			<width>200</width>
+			<height>50</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<label>$LOCALIZE[20186]</label>
+			<font>font13</font>
+		</control>
+	</controls>
+</window>

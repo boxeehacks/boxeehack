@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<window id="10479">
+	<defaultcontrol always="true">9060</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+    <include>Common_Background_Browse</include>
+		<control type="group">
+			<control type="group" id="9060">
+				<include>BrowseTracksLineView</include>
+			</control>
+			<include>BrowseLoadingAnimation</include>
+		</control>
+	</controls>
+</window>

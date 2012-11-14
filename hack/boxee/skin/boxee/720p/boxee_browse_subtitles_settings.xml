@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<window type="dialog">
+	<defaultcontrol always="true">51</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<!-- Dummy container for Item Info -->
+			<control type="list" id="5000">
+				<description>info</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>0</width>
+				<height>0</height>
+				<visible>false</visible>
+				<itemlayout height="0">
+				</itemlayout>
+				<focusedlayout height="0">
+				</focusedlayout>
+			</control>
+			<animation type="WindowOpen">
+				<effect type="fade" end="100" time="200"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" end="0" time="200"/>
+			</animation>
+			<control type="group">
+				<posx>166</posx>
+				<posy>126</posy>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>948</width>
+					<height>412</height>
+					<texture srcborder="51" border="34">background/window-bg-transparent.png</texture>
+				</control>
+				<!-- BROWSE SUBTITLES -->
+				<control type="label">
+					<posx>68</posx>
+					<posy>30</posy>
+					<width>844</width>
+					<height>20</height>
+					<align>center</align>
+					<aligny>top</aligny>
+					<font>font24b</font>
+					<textcolor>whiteheidi</textcolor>
+					<label>[B][UPPERCASE]$LOCALIZE[293][/B][/UPPERCASE]</label>
+				</control>
+				<control type="button" id="51">
+					<description>Browse locally...</description>
+					<posx>42</posx>
+					<posy>70</posy>
+					<width>860</width>
+					<height>56</height>
+					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<font>font24b</font>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<disabledcolor>lightgreyheidi</disabledcolor>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$LOCALIZE[90216]</label>
+					<onup>-</onup>
+					<ondown>52</ondown>
+				</control>
+				<control type="group" id="52">
+					<control type="button" id="9008">
+						<description>Browse online...</description>
+						<visible>!IsEmpty(container(5000).ListItem.TVShowTitle) + !IsEmpty(container(5000).ListItem.FileNameAndPath) + !container(5000).ListItem.property(IsInternetStream) + !container(5000).ListItem.property(DontShowSubtitles)</visible>
+						<posx>42</posx>
+						<posy>126</posy>
+						<width>860</width>
+						<height>56</height>
+						<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<font>font24b</font>
+						<textcolor>lightgreyheidi</textcolor>
+						<focusedcolor>whiteheidi</focusedcolor>
+						<disabledcolor>lightgreyheidi</disabledcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[90217]</label>
+						<onclick>RunScript(special://xbmc/scripts/OpenSubtitles/default.py, [TV]$INFO[container(5000).ListItem.Season] $INFO[container(5000).ListItem.Episode] $INFO[container(5000).ListItem.TVshowtitle][/TV][PATH]$INFO[container(5000).ListItem.filenameandpath][/PATH])</onclick>
+						<onclick>Dialog.Close(10520)</onclick>
+						<onup>51</onup>
+						<ondown>-</ondown>
+					</control>
+					<control type="button" id="9009">
+						<description>Browse online...</description>
+						<visible>!IsEmpty(container(5000).ListItem.Title) + IsEmpty(container(5000).ListItem.TVShowTitle)  + !IsEmpty(container(5000).ListItem.FileNameAndPath) + !container(5000).ListItem.property(IsInternetStream) + !container(5000).ListItem.property(IsTrailer) + !container(5000).ListItem.property(DontShowSubtitles)</visible>
+						<posx>42</posx>
+						<posy>126</posy>
+						<width>860</width>
+						<height>56</height>
+						<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<font>font24b</font>
+						<textcolor>lightgreyheidi</textcolor>
+						<focusedcolor>whiteheidi</focusedcolor>
+						<disabledcolor>lightgreyheidi</disabledcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[90217]</label>
+						<onclick>RunScript(special://xbmc/scripts/OpenSubtitles/default.py, [MOVIE]$INFO[container(5000).ListItem.title][/MOVIE][PATH]$INFO[container(5000).ListItem.filenameandpath][/PATH])</onclick>
+						<onclick>Dialog.Close(10520)</onclick>
+						<onup>51</onup>
+						<ondown>-</ondown>
+					</control>
+					<control type="button" id="9010">
+						<description>Browse online...</description>
+						<visible>IsEmpty(container(5000).ListItem.Title) + IsEmpty(container(5000).ListItem.TVShowTitle) + !IsEmpty(container(5000).ListItem.FileNameAndPath) + !container(5000).ListItem.property(IsInternetStream) + !container(5000).ListItem.property(IsTrailer) + !container(5000).ListItem.property(DontShowSubtitles)</visible>
+						<posx>42</posx>
+						<posy>126</posy>
+						<width>860</width>
+						<height>56</height>
+						<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<font>font24b</font>
+						<textcolor>lightgreyheidi</textcolor>
+						<focusedcolor>whiteheidi</focusedcolor>
+						<disabledcolor>lightgreyheidi</disabledcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[90217]</label>
+						<onclick>RunScript(special://xbmc/scripts/OpenSubtitles/default.py, [PATH]$INFO[container(5000).ListItem.filenameandpath][/PATH])</onclick>
+						<onclick>Dialog.Close(10520)</onclick>
+						<onup>51</onup>
+						<ondown>-</ondown>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

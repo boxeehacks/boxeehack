@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<window id="4579" type="dialog">
+	<defaultcontrol always="true">8602</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Background</include>
+		<include>BoxeeLogoLogin</include>
+		<control type="group" id="7000">
+		<include>FTUDialog_Heidi</include>
+			<!-- RIGHT SIDE - BEGIN-->
+			<control type="edit" id="8602">
+				<description>Password</description>
+				<posx>474</posx>
+				<posy>66</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Edit_Heidi</include>
+				<align>left</align>
+				<textoffsetx>14</textoffsetx>
+				<emptylabel>$LOCALIZE[15052]</emptylabel>
+				<emptycolor>opaquegrey</emptycolor>
+				<password>true</password>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>-</onup>
+				<onprev>8601</onprev>
+				<ondown>8603</ondown>
+				<onnext>8603</onnext>
+			</control>
+			<control type="radiobutton" id="8603">
+				<posx>474</posx>
+				<posy>134</posy>
+				<width>312</width>
+				<height>48</height>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>8602</onup>
+				<onprev>8602</onprev>
+				<ondown>8607</ondown>
+				<onnext>8607</onnext>
+				<label>$LOCALIZE[51893]</label>
+				<!--Remember Password-->
+				<include>RadioButton_Heidi</include>
+			</control>
+			<control type="radiobutton" id="8607">
+				<posx>474</posx>
+				<posy>194</posy>
+				<width>312</width>
+				<height>48</height>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>8603</onup>
+				<onprev>8603</onprev>
+				<ondown>8604</ondown>
+				<onnext>8604</onnext>
+				<label>$LOCALIZE[54691]</label>
+				<!--show Password-->
+				<include>RadioButton_Heidi</include>
+			</control>
+			<control type="button" id="8604">
+				<posx>474</posx>
+				<posy>374</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>$LOCALIZE[51050]</label>
+				<!--Login-->
+				<onup>8607</onup>
+				<ondown>8606</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onclick>-</onclick>
+			</control>
+			<control type="button" id="8606">
+				<posx>474</posx>
+				<posy>442</posy>
+				<width>312</width>
+				<height>36</height>
+				<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<font>font20b</font>
+				<textcolor>lightgreyheidi</textcolor>
+				<focusedcolor>whiteheidi</focusedcolor>
+				<disabledcolor>lightgreyheidi</disabledcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$LOCALIZE[53409]</label>
+				<!--Remove User-->
+				<onup>8604</onup>
+				<ondown>-</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onclick>-</onclick>
+			</control>
+			<!-- RIGHT SIDE - END -->
+			
+			<!-- LEFT SIDE - BEGIN -->
+			<control type="image">
+				<posx>110</posx>
+				<posy>66</posy>
+				<width>224</width>
+				<height>224</height>
+				<texture srcborder="24" border="16">thumbnail-bg-focused.png</texture>
+			</control>
+			<control type="largeimage" id="8650">
+				<posx>110</posx>
+				<posy>66</posy>
+				<width>224</width>
+				<height>224</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture blend="true">-</texture>
+			</control>
+			
+			<control type="label" id="8610">
+				<description>Username</description>
+				<posx>85</posx>
+				<posy>304</posy>
+				<height>200</height>
+				<width>270</width>
+				<align>center</align>
+				<aligny>top</aligny>
+				<textcolor>white</textcolor>
+				<font>font40bls</font>
+				<label>-</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<!-- LEFT SIDE - END -->
+		</control>
+		
+		<control type="group" id="9000">
+			<include>OnDialogOpen_HideItem</include>
+			<posx>1032</posx>
+			<posy>32</posy>
+			<control type="button" id="9001">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>64</height>
+				<texturefocus>actionbuttons/button-action-plus-focused.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-plus-unfocused.png</texturenofocus>
+				<onclick>-</onclick>
+				<onup>-</onup>
+				<ondown>7000</ondown>
+				<onleft>7000</onleft>
+				<onright>9003</onright>
+			</control>
+			<control type="button" id="9003">
+				<posx>76</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>64</height>
+				<texturefocus>actionbuttons/button-action-wifi-focused.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-wifi-unfocused.png</texturenofocus>
+				<onclick>ActivateWindow(NetworkSettings)</onclick>
+				<onup>-</onup>
+				<ondown>7000</ondown>
+				<onright>9004</onright>
+			</control>
+			<control type="button" id="9004">
+				<posx>152</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>64</height>
+				<texturefocus>actionbuttons/button-action-shutdown-focused.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-shutdown-unfocused.png</texturenofocus>
+				<onclick>XBMC.ShutDown()</onclick>
+				<onup>-</onup>
+				<ondown>7000</ondown>
+				<onleft>9003</onleft>
+				<onright>-</onright>
+			</control>
+		</control>
+		
+	</controls>
+</window>

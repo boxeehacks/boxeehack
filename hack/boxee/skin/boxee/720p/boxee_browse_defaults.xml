@@ -1,0 +1,2568 @@
+<?xml version="1.0"?>
+<includes>
+	<include name="BrowseLoadingAnimation">
+		<control type="group">
+			<visible>Window.Property(loading) + !Window.IsActive(DialogProgress.xml)</visible>
+			<animation effect="fade" time="500">VisibleChange</animation>
+			<control type="multiimage">
+				<posx>690</posx>
+				<posy>284</posy>
+				<width>154</width>
+				<height>154</height>
+				<imagepath>loading</imagepath>
+				<timeperimage>12</timeperimage>
+				<fadetime>4</fadetime>
+				<pauseatend>0</pauseatend>
+				<randomize>false</randomize>
+				<loop>yes</loop>
+				<aspectratio>keep</aspectratio>
+			</control>
+		</control>
+	</include>
+	<include name="FullScreenLoadingAnimation">
+		<control type="group">
+			<visible>Window.Property(loading)</visible>
+			<!--<animation effect="fade" time="100">VisibleChange</animation>-->
+			<control type="multiimage">
+				<posx>563</posx>
+				<posy>283</posy>
+				<width>154</width>
+				<height>154</height>
+				<imagepath>loading</imagepath>
+				<timeperimage>12</timeperimage>
+				<fadetime>4</fadetime>
+				<pauseatend>0</pauseatend>
+				<randomize>false</randomize>
+				<loop>yes</loop>
+				<aspectratio>keep</aspectratio>
+			</control>
+		</control>
+	</include>
+	<include name="BoxeeLogo">
+		<control type="button">
+			<posx>28</posx>
+			<posy>24</posy>
+			<width>36</width>
+			<height>36</height>
+			<visible>boxee.HasInternetConnection + !boxee.newversionforce</visible>
+			<texturefocus>icons/boxee-online.png</texturefocus>
+			<texturenofocus>icons/boxee-online.png</texturenofocus>
+			<onclick>XBMC.ReloadSkin()</onclick>
+		</control>
+		<control type="button" id="2410">
+			<posx>28</posx>
+			<posy>24</posy>
+			<width>36</width>
+			<height>36</height>
+			<ondown>7000</ondown>
+			<visible>boxee.HasInternetConnection + boxee.newversionforce</visible>
+			<texturefocus diffuse="masks/10b9f2.png">icons/boxee-update.png</texturefocus>
+			<texturenofocus>icons/boxee-update.png</texturenofocus>
+		</control>
+		<control type="button">
+			<posx>28</posx>
+			<posy>24</posy>
+			<width>36</width>
+			<height>36</height>
+			<visible>!boxee.HasInternetConnection</visible>
+			<texturefocus>icons/boxee-offline.png</texturefocus>
+			<texturenofocus>icons/boxee-offline.png</texturenofocus>
+			<onclick>XBMC.ReloadSkin()</onclick>
+		</control>
+	</include>
+	<include name="BoxeeLogoLogin">
+		<control type="button">
+			<posx>32</posx>
+			<posy>32</posy>
+			<width>48</width>
+			<height>48</height>
+			<visible>boxee.HasInternetConnection + !boxee.newversionforce</visible>
+			<texturefocus>icons/boxee-online.png</texturefocus>
+			<texturenofocus>icons/boxee-online.png</texturenofocus>
+			<onclick>XBMC.ReloadSkin()</onclick>
+		</control>
+		<control type="button">
+			<posx>32</posx>
+			<posy>32</posy>
+			<width>48</width>
+			<height>48</height>
+			<visible>boxee.HasInternetConnection + boxee.newversionforce</visible>
+			<texturefocus>icons/boxee-update.png.png</texturefocus>
+			<texturenofocus>icons/boxee-update.png.png</texturenofocus>
+			<onclick>XBMC.ReloadSkin()</onclick>
+		</control>
+		<control type="button">
+			<posx>32</posx>
+			<posy>32</posy>
+			<width>48</width>
+			<height>48</height>
+			<visible>!boxee.HasInternetConnection</visible>
+			<texturefocus>icons/boxee-offline.png</texturefocus>
+			<texturenofocus>icons/boxee-offline.png</texturenofocus>
+			<onclick>XBMC.ReloadSkin()</onclick>
+		</control>
+	</include>
+	<include name="PageTitleProperties">
+		<posx>119</posx>
+		<posy>18</posy>
+		<width>925</width>
+		<font>font40b</font>
+		<align>left</align>
+	</include>
+	<include name="PageTitlePropertiesFocused">
+		<posx>297</posx>
+		<posy>46</posy>
+		<width>925</width>
+		<font>font40b</font>
+		<textcolor>whiteheidi</textcolor>
+		<align>left</align>
+	</include>
+	<include name="PageTitlePropertiesUnfocused">
+		<posx>297</posx>
+		<posy>46</posy>
+		<width>925</width>
+		<font>font40b</font>
+		<textcolor>mediumgreyheidi</textcolor>
+		<align>left</align>
+	</include>
+	<include name="PageSubtitleProperties">
+		<visible>true + !Window.Property(empty)</visible>
+		<posx>75</posx>
+		<posy>21</posy>
+		<width>925</width>
+		<font>font30b</font>
+		<align>left</align>
+		<textcolor>whiteheidi</textcolor>
+	</include>
+	<include name="PageSubtitlePropertiesFocused">
+		<visible>true + !Window.Property(empty)</visible>
+		<posx>297</posx>
+		<posy>25</posy>
+		<width>925</width>
+		<font>font21b</font>
+		<textcolor>boxeegreenheidi</textcolor>
+		<align>left</align>
+	</include>
+	<include name="PageSubtitlePropertiesUnfocused">
+		<visible>true + !Window.Property(empty)</visible>
+		<posx>297</posx>
+		<posy>25</posy>
+		<width>925</width>
+		<font>font21b</font>
+		<textcolor>mediumgreyheidi</textcolor>
+		<align>left</align>
+	</include>
+	<include name="PageSubtitlePropertiesBrowser">
+		<posx>120</posx>
+		<posy>67</posy>
+		<width>925</width>
+		<font>font24</font>
+		<align>left</align>
+	</include>
+	<include name="PageTitle">
+		<control type="label">
+			<visible>true + !IsEmpty(Window.Property(user-name)) + !Window.Property(empty)</visible>
+			<include>PageSubtitleProperties</include>
+			<label>[B]$INFO[Window.Property(user-name)][/B]</label>
+		</control>
+	</include>
+  <include name="PageTitleFocused">
+    <control type="label" id="9019">
+      <!--<visible>!Window.Property(Empty) + !Window.Property(loading)</visible>-->
+      <visible>!Window.Property(Empty) + !Window.Property(loading)</visible>
+      <include>PageTitlePropertiesFocused</include>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + !IsEmpty(Window.Property(user-name)) + !Window.Property(empty)</visible>
+      <include>PageSubtitlePropertiesFocused</include>
+      <label>$INFO[Window.Property(user-name)]</label>
+    </control>
+    <control type="label">
+      <!--<visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty) + !Window.Property(loading)</visible>-->
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <include>PageSubtitlePropertiesFocused</include>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <include>PageSubtitlePropertiesFocused</include>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+  </include>
+  <include name="PageTitleUnfocused">
+    <control type="label" id="9019">
+      <!--<visible>!Window.Property(Empty) + !Window.Property(loading)</visible>-->
+      <visible>!Window.Property(Empty) + !Window.Property(loading)</visible>
+      <include>PageTitlePropertiesUnfocused</include>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + !IsEmpty(Window.Property(user-name)) + !Window.Property(empty)</visible>
+      <include>PageSubtitlePropertiesUnfocused</include>
+      <label>$INFO[Window.Property(user-name)]</label>
+    </control>
+    <control type="label">
+      <!--<visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty) + !Window.Property(loading)</visible>-->
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <include>PageSubtitlePropertiesUnfocused</include>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <include>PageSubtitlePropertiesUnfocused</include>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+  </include>
+  <include name="LogoTitleAndItemCount">
+    <control type="group" id="9000">
+      <include>BoxeeLogo</include>
+      <include>PageTitle</include>
+    </control>
+  </include>
+
+  <include name="PageTitleFocusedMovies">
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>622</width>
+      <font>font40b</font>
+      <textcolor>whiteheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <visible>false + true + !Window.Property(empty) + window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>622</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty) + window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>622</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading) + !window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>690</width>
+      <font>font40b</font>
+      <textcolor>whiteheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <visible>false + true + !Window.Property(empty) + !window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>690</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty) + !window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>690</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+  </include>
+  <include name="PageTitleUnfocusedMovies">
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>622</width>
+      <font>font40b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <visible>true + !Window.Property(empty) + window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>622</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty) + window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>622</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading) + !window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>690</width>
+      <font>font40b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <visible>true + !Window.Property(empty) + !window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>690</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty) + !window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>690</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+  </include>
+  <include name="LogoTitleAndItemCountMovies">
+    <control type="group" id="9000">
+      <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">Hidden</animation>
+      <animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout">Visible</animation>
+      <visible>Control.HasFocus(50) | Control.HasFocus(51) | Control.HasFocus(52) | Control.HasFocus(55) | Control.HasFocus(59) | Control.HasFocus(53) | ControlGroup(8050).HasFocus</visible>
+      <include>PageTitleFocusedMovies</include>
+    </control>
+    <control type="group" id="9000">
+      <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">Hidden</animation>
+      <animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout">Visible</animation>
+      <visible>!Control.HasFocus(50) + !Control.HasFocus(51) + !Control.HasFocus(52) + !Control.HasFocus(55) + !Control.HasFocus(59) + !Control.HasFocus(53) + !ControlGroup(8050).HasFocus</visible>
+      <include>PageTitleUnfocusedMovies</include>
+    </control>
+  </include>
+  <include name="PageTitleFocusedTVShows">
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>622</width>
+      <font>font40b</font>
+      <textcolor>whiteheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <visible>false + true + !Window.Property(empty) + window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>622</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty) + window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>622</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading) + !window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>690</width>
+      <font>font40b</font>
+      <textcolor>whiteheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <visible>false + true + !Window.Property(empty) + !window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>690</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty) + !window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>690</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+  </include>
+  <include name="PageTitleUnfocusedTVShows">
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>622</width>
+      <font>font40b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <visible>true + !Window.Property(empty) + window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>622</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty) + window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>622</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading) + !window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>690</width>
+      <font>font40b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <visible>true + !Window.Property(empty) + !window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>690</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty) + !window.property(is-category-local)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>690</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+  </include>
+  <include name="LogoTitleAndItemCountTVShows">
+    <control type="group" id="9000">
+      <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">Hidden</animation>
+      <animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout">Visible</animation>
+      <visible>Control.HasFocus(50) | Control.HasFocus(51) | Control.HasFocus(52) | Control.HasFocus(55) | Control.HasFocus(59) | Control.HasFocus(53) | ControlGroup(8050).HasFocus</visible>
+      <include>PageTitleFocusedTVShows</include>
+    </control>
+    <control type="group" id="9000">
+      <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">Hidden</animation>
+      <animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout">Visible</animation>
+      <visible>!Control.HasFocus(50) + !Control.HasFocus(51) + !Control.HasFocus(52) + !Control.HasFocus(55) + !Control.HasFocus(59) + !Control.HasFocus(53) + !ControlGroup(8050).HasFocus</visible>
+      <include>PageTitleUnfocusedTVShows</include>
+    </control>
+  </include>
+  <include name="PageTitleFocusedApps">
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>852</width>
+      <font>font40b</font>
+      <textcolor>whiteheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <visible>false + true + !Window.Property(empty)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>852</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>852</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+  </include>
+  <include name="PageTitleUnfocusedApps">
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>852</width>
+      <font>font40b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <visible>true + !Window.Property(empty)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>852</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>852</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+  </include>
+  <include name="LogoTitleAndItemCountApps">
+    <control type="group" id="9000">
+      <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">Hidden</animation>
+      <animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout">Visible</animation>
+      <visible>Control.HasFocus(50) | Control.HasFocus(51) | Control.HasFocus(52) | Control.HasFocus(55) | Control.HasFocus(59) | Control.HasFocus(53) | ControlGroup(8050).HasFocus</visible>
+      <include>PageTitleFocusedApps</include>
+    </control>
+    <control type="group" id="9000">
+      <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">Hidden</animation>
+      <animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout">Visible</animation>
+      <visible>!Control.HasFocus(50) + !Control.HasFocus(51) + !Control.HasFocus(52) + !Control.HasFocus(55) + !Control.HasFocus(59) + !Control.HasFocus(53) + !ControlGroup(8050).HasFocus</visible>
+      <include>PageTitleUnfocusedApps</include>
+    </control>
+  </include>
+  <include name="PageTitleFocusedFiles">
+    <control type="label">
+      <visible>!Window.Property(Empty) + Control.IsVisible(131)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>772</width>
+      <font>font40b</font>
+      <textcolor>whiteheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count))</visible>
+      <visible>false + true + !Window.Property(empty) + Control.IsVisible(131)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>772</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty) + Control.IsVisible(131)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>772</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>!Window.Property(Empty) + !Control.IsVisible(131)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>852</width>
+      <font>font40b</font>
+      <textcolor>whiteheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count))</visible>
+      <visible>false + true + !Window.Property(empty) + !Control.IsVisible(131)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>852</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty) + !Control.IsVisible(131)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>852</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+  </include>
+  <include name="PageTitleUnfocusedFiles">
+    <control type="label">
+      <visible>!Window.Property(Empty) + Control.IsVisible(131)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>772</width>
+      <font>font40b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count))</visible>
+      <visible>true + !Window.Property(empty) + Control.IsVisible(131)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>772</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty) + Control.IsVisible(131)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>772</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>!Window.Property(Empty) + !Control.IsVisible(131)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>852</width>
+      <font>font40b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count))</visible>
+      <visible>true + !Window.Property(empty) + !Control.IsVisible(131)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>852</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+  </include>
+  <include name="LogoTitleAndItemCountFiles">
+    <control type="group" id="9000">
+      <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">Hidden</animation>
+      <animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout">Visible</animation>
+      <visible>Control.HasFocus(50) | Control.HasFocus(51) | Control.HasFocus(52) | Control.HasFocus(55) | Control.HasFocus(59) | Control.HasFocus(53) | ControlGroup(8050).HasFocus</visible>
+      <include>PageTitleFocusedFiles</include>
+    </control>
+    <control type="group" id="9000">
+      <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">Hidden</animation>
+      <animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout">Visible</animation>
+      <visible>!Control.HasFocus(50) + !Control.HasFocus(51) + !Control.HasFocus(52) + !Control.HasFocus(55) + !Control.HasFocus(59) + !Control.HasFocus(53) + !ControlGroup(8050).HasFocus</visible>
+      <include>PageTitleUnfocusedFiles</include>
+    </control>
+  </include>
+  <include name="PageTitleFocusedMusic">
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>852</width>
+      <font>font40b</font>
+      <textcolor>whiteheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <visible>false + true + !Window.Property(empty)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>852</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>852</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+  </include>
+  <include name="PageTitleUnfocusedMusic">
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>852</width>
+      <font>font40b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <visible>true + !Window.Property(empty)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>852</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>852</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+  </include>
+  <include name="LogoTitleAndItemCountMusic">
+    <control type="group" id="9000">
+      <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">Hidden</animation>
+      <animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout">Visible</animation>
+      <visible>Control.HasFocus(50) | Control.HasFocus(51) | Control.HasFocus(52) | Control.HasFocus(55) | Control.HasFocus(59) | Control.HasFocus(53) | ControlGroup(8050).HasFocus</visible>
+      <include>PageTitleFocusedMusic</include>
+    </control>
+    <control type="group" id="9000">
+      <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">Hidden</animation>
+      <animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout">Visible</animation>
+      <visible>!Control.HasFocus(50) + !Control.HasFocus(51) + !Control.HasFocus(52) + !Control.HasFocus(55) + !Control.HasFocus(59) + !Control.HasFocus(53) + !ControlGroup(8050).HasFocus</visible>
+      <include>PageTitleUnfocusedMusic</include>
+    </control>
+  </include>
+  <include name="PageTitleFocusedPhotos">
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>852</width>
+      <font>font40b</font>
+      <textcolor>whiteheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <visible>false + true + !Window.Property(empty)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>852</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>852</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+  </include>
+  <include name="PageTitleUnfocusedPhotos">
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>852</width>
+      <font>font40b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <visible>true + !Window.Property(empty)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>852</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>852</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+  </include>
+  <include name="LogoTitleAndItemCountPhotos">
+    <control type="group" id="9000">
+      <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">Hidden</animation>
+      <animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout">Visible</animation>
+      <visible>Control.HasFocus(50) | Control.HasFocus(51) | Control.HasFocus(52) | Control.HasFocus(55) | Control.HasFocus(59) | Control.HasFocus(53) | ControlGroup(8050).HasFocus</visible>
+      <include>PageTitleFocusedPhotos</include>
+    </control>
+    <control type="group" id="9000">
+      <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">Hidden</animation>
+      <animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout">Visible</animation>
+      <visible>!Control.HasFocus(50) + !Control.HasFocus(51) + !Control.HasFocus(52) + !Control.HasFocus(55) + !Control.HasFocus(59) + !Control.HasFocus(53) + !ControlGroup(8050).HasFocus</visible>
+      <include>PageTitleUnfocusedPhotos</include>
+    </control>
+  </include>
+  <include name="PageTitleFocusedTrailers">
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>772</width>
+      <font>font40b</font>
+      <textcolor>whiteheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <visible>false + true + !Window.Property(empty)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>772</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>772</width>
+      <font>font21b</font>
+      <textcolor>boxeegreenheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+  </include>
+  <include name="PageTitleUnfocusedTrailers">
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>772</width>
+      <font>font40b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
+      <visible>true + !Window.Property(empty)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>772</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Container.NumItems,, $LOCALIZE[90050]][/UPPERCASE][/B]</label>
+    </control>
+    <control type="label">
+      <visible>true + IsEmpty(Window.Property(user-name)) + !IsEmpty(Window.Property(item-summary-count)) + !Window.Property(Empty)</visible>
+      <visible>true + !Window.Property(empty)</visible>
+      <posx>297</posx>
+      <posy>25</posy>
+      <width>772</width>
+      <font>font21b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+    </control>
+  </include>
+  <include name="LogoTitleAndItemCountTrailers">
+    <control type="group" id="9000">
+      <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">Hidden</animation>
+      <animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout">Visible</animation>
+      <visible>Control.HasFocus(50) | Control.HasFocus(51) | Control.HasFocus(52) | Control.HasFocus(55) | Control.HasFocus(59) | Control.HasFocus(53) | ControlGroup(8050).HasFocus</visible>
+      <include>PageTitleFocusedTrailers</include>
+    </control>
+    <control type="group" id="9000">
+      <animation effect="fade" start="100" end="0" time="200" tween="cubic" easing="inout">Hidden</animation>
+      <animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout">Visible</animation>
+      <visible>!Control.HasFocus(50) + !Control.HasFocus(51) + !Control.HasFocus(52) + !Control.HasFocus(55) + !Control.HasFocus(59) + !Control.HasFocus(53) + !ControlGroup(8050).HasFocus</visible>
+      <include>PageTitleUnfocusedTailers</include>
+    </control>
+  </include>
+	<include name="BrowserLogoAndTitles">
+		<control type="group">
+			<include>BoxeeLogo</include>
+			<control type="label">
+				<include>PageTitleProperties</include>
+				<label>$LOCALIZE[52108]</label>
+			</control>
+			<control type="label">
+				<include>PageSubtitleProperties</include>
+				<label>$LOCALIZE[52111]</label>
+			</control>
+		</control>
+	</include>
+	<include name="ViewButton">
+		<posx>1181</posx>
+		<posy>32</posy>
+		<width>64</width>
+		<height>64</height>
+	</include>
+	<include name="ViewButton2">
+		<posx>1102</posx>
+		<posy>32</posy>
+		<width>64</width>
+		<height>64</height>
+	</include>
+	<include name="ViewButton3">
+		<posx>1022</posx>
+		<posy>32</posy>
+		<width>64</width>
+		<height>64</height>
+	</include>
+	<include name="ViewButton4">
+		<posx>942</posx>
+		<posy>32</posy>
+		<width>64</width>
+		<height>64</height>
+	</include>
+	<!--<include name="AppsSwitchViews">
+		<control type="group" id="8000">
+			<visible>true + !Window.Property(Empty)</visible>
+			<!-- set view mode to thumbnails --*>
+			<control type="button" id="8001">
+				<visible>Window.Property(show-thumbnails)</visible>
+				<texturefocus>actionbuttons/button-action-grid-on.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-grid-off.png</texturenofocus>
+				<textureclick>actionbuttons/button-action-grid-off.png</textureclick>
+				<include>ViewButton</include>
+				<onleft>8014</onleft>
+				<onright>-</onright>
+				<ondown>9050</ondown>
+				<onup>-</onup>
+				<onclick>Container.SetViewMode(55)</onclick>
+				<onclick>SetVisible(8002)</onclick>
+				<onclick>SetFocus(8002)</onclick>
+			</control>
+			<!-- set view mode to list --*>
+			<control type="button" id="8002">
+				<visible>true + !Window.Property(show-thumbnails)</visible>
+				<texturefocus>actionbuttons/button-action-list-on.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-list-off.png</texturenofocus>
+				<textureclick>actionbuttons/button-action-list-off.png</textureclick>
+				<include>ViewButton</include>
+				<onleft>8014</onleft>
+				<onright>-</onright>
+				<ondown>9050</ondown>
+				<onup>-</onup>
+				<onclick>Container.SetViewMode(56)</onclick>
+				<onclick>SetVisible(8001)</onclick>
+				<onclick>SetFocus(8001)</onclick>
+			</control>
+		</control>
+	</include>-->
+	<include name="SwitchViews">
+		<control type="group" id="8000">
+			<visible>true + !Window.Property(Empty)</visible>
+			<!-- set view mode to thumbnails -->
+			<control type="button" id="8001">
+				<visible>Window.Property(show-thumbnails)</visible>
+				<texturefocus>icons/icon_action_thumbs_on.png</texturefocus>
+				<texturenofocus>icons/icon_action_thumbs_off.png</texturenofocus>
+				<textureclick>icons/icon_action_thumbs_off.png</textureclick>
+				<include>ViewButton</include>
+				<onleft>8014</onleft>
+				<onright>-</onright>
+				<ondown>9050</ondown>
+				<onup>-</onup>
+				<onclick>Container.SetViewMode(50)</onclick>
+				<onclick>SetVisible(8002)</onclick>
+				<onclick>SetFocus(8002)</onclick>
+			</control>
+			<!-- set view mode to list -->
+			<control type="button" id="8002">
+				<visible>true + !Window.Property(show-thumbnails)</visible>
+				<texturefocus>icons/icon_action_list_on.png</texturefocus>
+				<texturenofocus>icons/icon_action_list_off.png</texturenofocus>
+				<textureclick>icons/icon_action_list_off.png</textureclick>
+				<include>ViewButton</include>
+				<onleft>8014</onleft>
+				<onright>-</onright>
+				<ondown>9050</ondown>
+				<onup>-</onup>
+				<onclick>Container.SetViewMode(51)</onclick>
+				<onclick>SetVisible(8001)</onclick>
+				<onclick>SetFocus(8001)</onclick>
+			</control>
+		</control>
+	</include>
+	<include name="LibrarySwitchViews">
+		<control type="group" id="8000">
+			<visible>true + !Window.Property(Empty)</visible>
+			<!-- set view mode to thumbnails -->
+			<control type="button" id="8001">
+				<visible>Window.Property(show-thumbnails)</visible>
+				<texturefocus>actionbuttons/button-action-grid-on.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-grid-off.png</texturenofocus>
+				<textureclick>actionbuttons/button-action-grid-off.png</textureclick>
+				<include>ViewButton2</include>
+				<onleft>8014</onleft>
+				<onright>8024</onright>
+				<ondown>9050</ondown>
+				<onup>-</onup>
+				<onclick>Container.SetViewMode(50)</onclick>
+				<onclick>SetVisible(8002)</onclick>
+				<onclick>SetFocus(8002)</onclick>
+			</control>
+			<!-- set view mode to list -->
+			<control type="button" id="8002">
+				<visible>true + !Window.Property(show-thumbnails)</visible>
+				<texturefocus>actionbuttons/button-action-list-on.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-list-off.png</texturenofocus>
+				<textureclick>actionbuttons/button-action-list-off.png</textureclick>
+				<include>ViewButton2</include>
+				<onleft>8014</onleft>
+				<onright>8024</onright>
+				<ondown>9050</ondown>
+				<onup>-</onup>
+				<onclick>Container.SetViewMode(51)</onclick>
+				<onclick>SetVisible(8001)</onclick>
+				<onclick>SetFocus(8001)</onclick>
+			</control>
+		</control>
+	</include>
+	<include name="BrowserSwitchViews">
+		<control type="group" id="8000">
+			<!-- set view mode to favorites -->
+			<control type="button" id="8001">
+				<posx>1090</posx>
+				<posy>57</posy>
+				<width>163</width>
+				<height>28</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<focusedcolor>black</focusedcolor>
+				<texturenofocus border="16" diffuse="masks/464646.png">button_8_pixel.png</texturenofocus>
+				<texturefocus border="16" diffuse="masks/10b9f2.png">button_8_pixel.png</texturefocus>
+				<textureclick border="16" diffuse="masks/f1f1f1.png">button_8_pixel.png</textureclick>
+				<font>font26</font>
+				<label>$LOCALIZE[52111]</label>
+				<onup>-</onup>
+				<ondown>51</ondown>
+				<onleft>51</onleft>
+				<onright>-</onright>
+				<onclick>-</onclick>
+			</control>
+			<!-- set view mode to history -->
+			<control type="button" id="8002">
+				<posx>1090</posx>
+				<posy>57</posy>
+				<width>163</width>
+				<height>28</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<focusedcolor>black</focusedcolor>
+				<texturenofocus border="16" diffuse="masks/464646.png">button_8_pixel.png</texturenofocus>
+				<texturefocus border="16" diffuse="masks/10b9f2.png">button_8_pixel.png</texturefocus>
+				<textureclick border="16" diffuse="masks/f1f1f1.png">button_8_pixel.png</textureclick>
+				<font>font26</font>
+				<label>$LOCALIZE[52109]</label>
+				<onup>-</onup>
+				<ondown>50</ondown>
+				<onleft>50</onleft>
+				<onright>-</onright>
+				<onclick>-</onclick>
+			</control>
+		</control>
+	</include>
+	<include name="BrowseFeedLabelLineTop">
+		<posx>180</posx>
+		<posy>7</posy>
+		<width>400</width>
+		<height>70</height>
+		<align>left</align>
+		<aligny>top</aligny>
+		<wrapmultiline>true</wrapmultiline>
+	</include>
+	<include name="BrowseFeedLabelLineCenter">
+		<posx>180</posx>
+		<posy>73</posy>
+		<width>400</width>
+		<height>28</height>
+		<font>font22</font>
+		<align>left</align>
+		<aligny>center</aligny>
+	</include>
+	<include name="BrowseFeedLabelLineBottom">
+		<posx>214</posx>
+		<posy>105</posy>
+		<width>400</width>
+		<height>28</height>
+		<font>font22</font>
+		<align>left</align>
+		<aligny>center</aligny>
+	</include>
+	<include name="BrowseHistoryLabelLineBottom">
+		<posx>180</posx>
+		<posy>106</posy>
+		<width>400</width>
+		<height>28</height>
+		<font>font22</font>
+		<align>left</align>
+		<aligny>center</aligny>
+	</include>
+	<include name="SortDropDown">
+		<control type="togglebutton" id="8014">
+			<visible>true + !window.property(is-category-favorites) + !window.property(hide-sort-dropdown)</visible>
+			<include>ViewButton3</include>
+			<onright>8000</onright>
+			<onleft>8004</onleft>
+			<ondown>9050</ondown>
+			<font>font18b</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>white</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<textoffsetx>14</textoffsetx>
+			<texturefocus>actionbuttons/button-action-sort-on.png</texturefocus>
+			<texturenofocus>actionbuttons/button-action-sort-off.png</texturenofocus>
+			<textureclick>actionbuttons/button-action-sort-off.png</textureclick>
+			<alttexturenofocus>actionbuttons/button-action-sort-on.png</alttexturenofocus>
+			<alttexturefocus>actionbuttons/button-action-sort-on.png</alttexturefocus>
+		</control>
+	</include>
+	<include name="BrowseChannelFilter">
+		<control type="button" id="8024">
+			<visible>true + !Window.IsActive(boxee_browse_trailers.xml) + !window.property(hide-filter-dropdown)</visible>
+			<include>ViewButton</include>
+			<onright>7000</onright>
+			<onleft>8000</onleft>
+			<ondown>9050</ondown>
+			<font>font18b</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>white</textcolor>
+			<focusedcolor>white</focusedcolor>
+			<textoffsetx>14</textoffsetx>
+			<texturefocus>actionbuttons/button-action-channels-on.png</texturefocus>
+			<texturenofocus>actionbuttons/button-action-channels-off.png</texturenofocus>
+			<textureclick>actionbuttons/button-action-channels-off.png</textureclick>
+			<alttexturenofocus>actionbuttons/button-action-channels-on.png</alttexturenofocus>
+			<alttexturefocus>actionbuttons/button-action-channels-on.png</alttexturefocus>
+		</control>
+	</include>
+	<include name="BrowseThumbAnimationUnfocus">
+		<!--<animation effect="fade" end="80" time="0" condition="true">Conditional</animation>-->
+	</include>
+	<include name="BrowseThumbAnimationFocus">
+		<animation type="Focus">
+			<!--<effect type="fade" start="80" end="100" time="100" delay="0"/>-->
+			<!--<effect type="zoom" start="100,100" end="103,103" time="200" delay="0" center="auto" tween="cubic" easing="out"/>-->
+		</animation>
+	</include>
+	<include name="BrowseThumbAnimationSquareFocus">
+		<animation type="Focus">
+			<!--<effect type="fade" start="80" end="100" time="50" delay="0"/>-->
+			<!--<effect type="zoom" start="100,100" end="104,104" time="200" delay="0" center="119,123" tween="cubic" easing="out"/>-->
+		</animation>
+	</include>
+	<include name="BrowsePortraitLabelUnfocus">
+		<control type="label">
+			<posx>9</posx>
+			<posy>225</posy>
+			<width>140</width>
+			<height>60</height>
+			<label>[B]$INFO[ListItem.label][/B]</label>
+			<font>font20bls</font>
+			<align>left</align>
+			<aligny>top</aligny>
+			<textcolor>mediumgreyheidi</textcolor>
+			<wrapmultiline>true</wrapmultiline>
+		</control>
+	</include>
+	<include name="BrowsePortraitLabelUnfocusBrowser">
+		<control type="label">
+			<visible>IsEmpty(ListItem.Thumb)</visible>
+			<posx>34</posx>
+			<posy>34</posy>
+			<width>250</width>
+			<height>80</height>
+			<label>$INFO[ListItem.label]</label>
+			<font>font18b</font>
+			<align>left</align>
+			<aligny>top</aligny>
+			<textcolor>offwhite</textcolor>
+			<wrapmultiline>true</wrapmultiline>
+		</control>
+	</include>
+	<include name="BrowsePortraitLabelFocus">
+		<control type="label">
+			<posx>9</posx>
+			<posy>225</posy>
+			<width>140</width>
+			<height>60</height>
+			<label>[B]$INFO[ListItem.label][/B]</label>
+			<font>font20bls</font>
+			<align>left</align>
+			<aligny>top</aligny>
+			<textcolor>whiteheidi</textcolor>
+			<wrapmultiline>true</wrapmultiline>
+		</control>
+	</include>
+	<include name="ScrollBarCommonProperties">
+		<texturesliderbackground srcborder="8" border="6">scrollbar_bg.png</texturesliderbackground>
+		<textureslidernib>-</textureslidernib>
+		<textureslidernibfocus>-</textureslidernibfocus>
+		<texturesliderbar diffuse="nofocus.png" srcborder="8" border="6">scrollbar_slider.png</texturesliderbar>
+		<texturesliderbarfocus diffuse="nofocus.png" srcborder="8" border="6">scrollbar_slider.png</texturesliderbarfocus>
+		<orientation>vertical</orientation>
+		<showonepage>false</showonepage>
+	</include>
+	<include name="BrowsePortraitLabelFocusBrowser">
+		<control type="label">
+			<animation type="Focus">
+				<!--<effect type="fade" start="80" end="100" time="100" delay="0"/>
+				<effect type="zoom" start="100,100" end="108,108" time="200" delay="0" center="103,136" tween="cubic" easing="out"/>-->
+			</animation>
+			<visible>IsEmpty(ListItem.Thumb)</visible>
+			<posx>34</posx>
+			<posy>34</posy>
+			<width>250</width>
+			<height>170</height>
+			<label>$INFO[ListItem.label]</label>
+			<font>font18b</font>
+			<align>left</align>
+			<aligny>top</aligny>
+			<textcolor>white</textcolor>
+			<wrapmultiline>true</wrapmultiline>
+		</control>
+	</include>
+	<include name="BrowsePortraitThumbUnfocus">
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>156</width>
+			<height>224</height>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+			<bordersize>8</bordersize>
+			<texture fallback="browse/thumbnail-default-show.png" blend="false">$INFO[ListItem.Thumb]</texture>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>156</width>
+			<height>224</height>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+			<bordersize>8</bordersize>
+			<texture fallback="browse/thumbnail-default-movie.png" blend="false">$INFO[ListItem.Thumb]</texture>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>156</width>
+			<height>224</height>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+			<bordersize>8</bordersize>
+			<texture blend="false">browse/thumbnail-default-show.png</texture>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>156</width>
+			<height>224</height>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+			<bordersize>8</bordersize>
+			<texture blend="false">browse/thumbnail-default-movie.png</texture>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>ListItem.Property(watched)</visible>
+			<posx>123</posx>
+			<posy>191</posy>
+			<width>20</width>
+			<height>20</height>
+			<texture>browse/graphic-thumbnail-watched-check.png</texture>
+			<aspectratio>scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<!--<control type="image">
+			<visible>ListItem.Property(watched)</visible>
+			<posx>9</posx>
+			<posy>9</posy>
+			<width>140</width>
+			<height>208</height>
+			<texture>browse/thumbnail-movie-watched-grid-scanlines.png</texture>
+			<aspectratio>scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>ListItem.Property(watched)</visible>
+			<posx>139</posx>
+			<posy>201</posy>
+			<width>20</width>
+			<height>20</height>
+			<texture>browse/graphic-thumbnail-watched-check.png</texture>
+			<aspectratio>scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>-->
+	</include>
+	<include name="BrowsePortraitThumbUnfocusBrowser">
+		<control type="image">
+		  <visible>!IsEmpty(ListItem.Thumb)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>260</width>
+			<height>152</height>
+			<texture blend="false">$INFO[ListItem.Thumb]</texture>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+			<bordersize>8</bordersize>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+      <visible>IsEmpty(ListItem.Thumb)</visible>
+      <posx>1</posx>
+      <posy>1</posy>
+      <width>260</width>
+      <height>152</height>
+      <texture srcborder="30" border="20">browser/default_portrait_bookmark.png</texture>
+      <bordersize>8</bordersize>
+      <aspectratio scalediffuse="false">scale</aspectratio>
+      <fadetime>200</fadetime>
+    </control>
+		<control type="image">
+			<visible>Window.Property(remove-favorites)</visible>
+			<posx>9</posx>
+			<posy>9</posy>
+			<width>244</width>
+			<height>136</height>
+			<texture blend="false">black.png</texture>
+			<colordiffuse>9AFFFFFF</colordiffuse>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>Window.Property(remove-favorites)</visible>
+			<posx>99</posx>
+			<posy>45</posy>
+			<width>64</width>
+			<height>64</height>
+			<texture>browser/button-action-favorite-edit-off.png</texture>
+		</control>
+	</include>
+	<include name="BrowsePortraitThumbEmptyBrowser">
+		<control type="image">
+			<posx>3</posx>
+			<posy>3</posy>
+			<width>256</width>
+			<height>148</height>
+			<texture srcborder="18" border="12" blend="true">browser/browser-bookmark-thumbnail-bg.png</texture>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb)</visible>
+			<posx>99</posx>
+			<posy>45</posy>
+			<width>64</width>
+			<height>64</height>
+			<texture>icons/graphic-bookmark-star.png</texture>
+			<colordiffuse>lightgreyheidi</colordiffuse>
+			<fadetime>200</fadetime>
+		</control>
+	</include>
+	<include name="BrowsePortraitThumbFocus">
+		<!--<control type="image">
+			<include>BrowseThumbAnimationFocus</include>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>156</width>
+			<height>224</height>
+			<texture srcborder="30" border="20">browse/thumbnail-bg-on.png</texture>
+			<fadetime>200</fadetime>
+		</control>-->
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>156</width>
+			<height>224</height>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+			<bordersize>8</bordersize>
+			<texture fallback="browse/thumbnail-default-show.png" blend="false">$INFO[ListItem.Thumb]</texture>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>156</width>
+			<height>224</height>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+			<bordersize>8</bordersize>
+			<texture fallback="browse/thumbnail-default-movie.png" blend="false">$INFO[ListItem.Thumb]</texture>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>156</width>
+			<height>224</height>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+			<bordersize>8</bordersize>
+			<texture scalediffuse="false">browse/thumbnail-default-show.png</texture>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>156</width>
+			<height>224</height>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+			<bordersize>8</bordersize>
+			<texture scalediffuse="false">browse/thumbnail-default-movie.png</texture>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>ListItem.Property(watched)</visible>
+			<posx>123</posx>
+			<posy>191</posy>
+			<width>20</width>
+			<height>20</height>
+			<texture>browse/graphic-thumbnail-watched-check.png</texture>
+			<aspectratio>scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<!--<control type="image">
+			<visible>ListItem.Property(watched)</visible>
+			<posx>9</posx>
+			<posy>9</posy>
+			<width>140</width>
+			<height>208</height>
+			<texture>browse/thumbnail-movie-watched-grid-scanlines.png</texture>
+			<aspectratio>scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>ListItem.Property(watched)</visible>
+			<posx>139</posx>
+			<posy>201</posy>
+			<width>28</width>
+			<height>28</height>
+			<texture>browse/graphic-thumbnail-watched-check.png</texture>
+			<aspectratio>scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>-->
+	</include>
+	<include name="BrowsePortraitThumbFocusBrowser">
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>260</width>
+			<height>152</height>
+			<texture blend="false">$INFO[ListItem.Thumb]</texture>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+			<bordersize>8</bordersize>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+		  <visible>IsEmpty(ListItem.Thumb)</visible>
+      <posx>3</posx>
+      <posy>3</posy>
+      <width>256</width>
+      <height>148</height>
+      <texture srcborder="18" border="12" blend="true">browser/default_portrait_bookmark.png</texture>
+      <bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+      <bordersize>8</bordersize>
+      <aspectratio scalediffuse="false">scale</aspectratio>
+      <fadetime>200</fadetime>
+    </control>
+		<control type="image">
+			<visible>Window.Property(remove-favorites)</visible>
+			<posx>9</posx>
+			<posy>9</posy>
+			<width>244</width>
+			<height>136</height>
+			<texture blend="false">black.png</texture>
+			<colordiffuse>9AFFFFFF</colordiffuse>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>Window.Property(remove-favorites)</visible>
+			<posx>99</posx>
+			<posy>45</posy>
+			<width>64</width>
+			<height>64</height>
+			<texture scalediffuse="false">browser/button-action-favorite-edit-active.png</texture>
+		</control>
+	</include>
+	<include name="BrowseShortLineLabelProperties">
+		<posx>16</posx>
+		<posy>3</posy>
+		<width>420</width>
+		<height>52</height>
+		<font>font30b</font>
+		<align>left</align>
+		<aligny>center</aligny>
+	</include>
+	<include name="BrowseFullLineLabelProperties">
+		<posx>16</posx>
+		<posy>3</posy>
+		<width>890</width>
+		<height>52</height>
+		<font>font30b</font>
+		<align>left</align>
+		<aligny>center</aligny>
+	</include>
+	<include name="BrowseShortLineLabelPropertiesBrowser">
+		<posx>38</posx>
+		<posy>16</posy>
+		<width>1100</width>
+		<height>32</height>
+		<font>font24b</font>
+		<align>left</align>
+		<aligny>center</aligny>
+	</include>
+	<include name="BrowserLongLineLabelProperties">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>452</width>
+		<height>52</height>
+		<font>font30</font>
+		<align>left</align>
+		<aligny>center</aligny>
+	</include>
+	<!--<include name="BrowseShortLineUnfocus">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>968</width>
+		<height>52</height>
+		<texture>browse_line_feather.png</texture>
+	</include>-->
+	<include name="BrowseShortLineFocus">
+		<posx>0</posx>
+		<posy>4</posy>
+		<width>968</width>
+		<height>52</height>
+		<texture srcborder="24" border="16">button-focused.png</texture>
+	</include>
+	<!--<include name="BrowserLongLineUnfocus">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1000</width>
+		<height>52</height>
+		<texture>browse_line_feather.png</texture>
+	</include>
+	<include name="BrowserLongLineFocus">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1000</width>
+		<height>52</height>
+		<texture srcborder="20" border="12" diffuse="masks/10b9f2.png">button_8_pixel.png</texture>
+	</include>-->
+	<include name="BrowserLongLineFocusBrowser">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1216</width>
+		<height>64</height>
+		<texture srcborder="24" border="16">button-focused.png</texture>
+	</include>
+	<include name="BrowseLongLineLabelProperties">
+		<posx>56</posx>
+		<posy>0</posy>
+		<width>890</width>
+		<height>52</height>
+		<font>font30</font>
+		<align>left</align>
+		<aligny>center</aligny>
+	</include>
+	<include name="BrowseLongLineLabelWithSizeProperties">
+		<posx>56</posx>
+		<posy>0</posy>
+		<width>720</width>
+		<height>52</height>
+		<font>font30</font>
+		<align>left</align>
+		<aligny>center</aligny>
+	</include>
+	<include name="BrowseLongLineUnfocus">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>600</width>
+		<height>52</height>
+		<texture>browse_line_feather.png</texture>
+	</include>
+	<include name="BrowseLongLineFocus">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>600</width>
+		<height>52</height>
+		<texture srcborder="20" border="12" diffuse="masks/10b9f2.png">button_8_pixel.png</texture>
+	</include>
+	<include name="BrowseLineSmallIconPropertiesUnfocus">
+		<posx>16</posx>
+		<posy>14</posy>
+		<width>24</width>
+		<height>24</height>
+		<colordiffuse>mediumgreyheidi</colordiffuse>
+	</include>
+	<include name="BrowseLineSmallIconPropertiesFocus">
+		<posx>16</posx>
+		<posy>14</posy>
+		<width>24</width>
+		<height>24</height>
+		<colordiffuse>whiteheidi</colordiffuse>
+	</include>
+	<include name="BrowseSquareThumbUnfocusPropertiesApps">
+		<posx>1</posx>
+		<posy>1</posy>
+		<width>184</width>
+		<height>184</height>
+		<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+		<bordersize>8</bordersize>
+		<fadetime>200</fadetime>
+		<aspectratio>scale</aspectratio>
+	</include>
+	<include name="BrowseSquareThumbFocusPropertiesApps">
+		<posx>1</posx>
+		<posy>1</posy>
+		<width>184</width>
+		<height>184</height>
+		<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+		<bordersize>8</bordersize>
+		<fadetime>200</fadetime>
+		<aspectratio>scale</aspectratio>
+	</include>
+	<include name="BrowseSquareThumbUnfocusProperties">
+		<posx>1</posx>
+		<posy>1</posy>
+		<width>180</width>
+		<height>180</height>
+		<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+		<bordersize>8</bordersize>
+		<fadetime>200</fadetime>
+		<aspectratio>scale</aspectratio>
+	</include>
+	<include name="BrowseSquareThumbProperties">
+		<posx>2</posx>
+		<posy>2</posy>
+		<width>178</width>
+		<height>178</height>
+		<bordertexture srcborder="21" border="14">browse/bg-dropshadow-2.png</bordertexture>
+		<bordersize>7</bordersize>
+		<fadetime>200</fadetime>
+		<aspectratio>scale</aspectratio>
+	</include>
+	<include name="BrowseSquareThumbFocusProperties">
+		<posx>1</posx>
+		<posy>1</posy>
+		<width>180</width>
+		<height>180</height>
+		<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+		<bordersize>8</bordersize>
+		<fadetime>200</fadetime>
+		<aspectratio>scale</aspectratio>
+	</include>
+	<include name="BrowseSquareThumbPropertiesLogin">
+		<posx>4</posx>
+		<posy>8</posy>
+		<width>240</width>
+		<height>240</height>
+		<bordersize>10</bordersize>
+		<aspectratio scalediffuse="false">scale</aspectratio>
+		<fadetime>200</fadetime>
+	</include>
+	<include name="BrowseSquareThumbUnfocusLogin">
+		<control type="image">
+			<include>BrowseThumbAnimationSquareFocus</include>
+			<include>BrowseSquareThumbPropertiesLogin</include>
+			<texture>white.png</texture>
+			<colordiffuse>FF2D2D2D</colordiffuse>
+		</control>
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseThumbAnimationUnfocus</include>
+			<include>BrowseSquareThumbPropertiesLogin</include>
+			<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+			<texture blend="false">$INFO[ListItem.Thumb]</texture>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseThumbAnimationUnfocus</include>
+			<include>BrowseSquareThumbPropertiesLogin</include>
+			<bordertexture srcborder="20" border="12">masks/thumb_border.png</bordertexture>
+			<texture>default_general.png</texture>
+		</control>
+	</include>
+	<include name="BrowseSquareThumbUnfocus">
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbUnfocusProperties</include>
+			<texture blend="false">$INFO[ListItem.Thumb]</texture>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbUnfocusProperties</include>
+			<texture blend="false">default_general.png</texture>
+		</control>
+	</include>
+	<include name="BrowseSquareThumbUnfocusApps">
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbUnfocusPropertiesApps</include>
+			<texture fallback="browse/thumbnail-default-app.png" blend="false">$INFO[ListItem.Thumb]</texture>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbUnfocusPropertiesApps</include>
+			<texture fallback="browse/thumbnail-default-app.png" blend="false">browse/thumbnail-default-app.png</texture>
+		</control>
+	</include>
+	<include name="BrowseSquareThumbFocusApps">
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbFocusPropertiesApps</include>
+			<texture fallback="browse/thumbnail-default-app.png" blend="false">$INFO[ListItem.Thumb]</texture>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbFocusPropertiesApps</include>
+			<texture fallback="browse/thumbnail-default-app.png" blend="false">browse/thumbnail-default-app.png</texture>
+		</control>
+	</include>
+	<include name="BrowseSquareThumbFocus">
+		<!--<control type="image">
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>184</width>
+			<height>184</height>
+			<texture srcborder="30" border="20">browse/thumbnail-bg-on.png</texture>
+			<fadetime>200</fadetime>
+		</control>-->
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbFocusProperties</include>
+			<texture blend="false">$INFO[ListItem.Thumb]</texture>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbFocusProperties</include>
+			<texture blend="false">default_general.png</texture>
+		</control>
+	</include>
+	<include name="BrowseSquareThumbFocusLogin">
+		<control type="image">
+			<include>BrowseThumbAnimationSquareFocus</include>
+			<posx>4</posx>
+			<posy>230</posy>
+			<width>240</width>
+			<height>45</height>
+			<texture srcborder="20" border="12">masks/thumb_border_bottom.png</texture>
+		</control>
+		<control type="image">
+			<include>BrowseThumbAnimationSquareFocus</include>
+			<include>BrowseSquareThumbPropertiesLogin</include>
+			<texture>white.png</texture>
+			<colordiffuse>FF2D2D2D</colordiffuse>
+		</control>
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseThumbAnimationSquareFocus</include>
+			<include>BrowseSquareThumbPropertiesLogin</include>
+			<bordertexture srcborder="20" border="12">masks/thumb_border_focus.png</bordertexture>
+			<texture>$INFO[ListItem.Thumb]</texture>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseThumbAnimationSquareFocus</include>
+			<include>BrowseSquareThumbPropertiesLogin</include>
+			<bordertexture srcborder="20" border="12">masks/thumb_border_focus.png</bordertexture>
+			<texture>default_general.png</texture>
+		</control>
+	</include>
+	<include name="BrowseSquareLabelUnfocusApps">
+		<control type="label">
+			<posx>9</posx>
+			<posy>183</posy>
+			<width>140</width>
+			<height>60</height>
+			<label>[B]$INFO[ListItem.label][/B]</label>
+			<font>font20bls</font>
+			<align>left</align>
+			<aligny>top</aligny>
+			<textcolor>mediumgreyheidi</textcolor>
+			<fadetime>200</fadetime>
+			<wrapmultiline>true</wrapmultiline>
+		</control>
+	</include>
+	<include name="BrowseSquareLabelUnfocus">
+		<control type="label">
+			<posx>9</posx>
+			<posy>181</posy>
+			<width>140</width>
+			<height>60</height>
+			<label>[B]$INFO[ListItem.label][/B]</label>
+			<font>font20bls</font>
+			<align>left</align>
+			<aligny>top</aligny>
+			<textcolor>mediumgreyheidi</textcolor>
+			<fadetime>200</fadetime>
+			<wrapmultiline>true</wrapmultiline>
+		</control>
+	</include>
+	<include name="SortAndViewsActionMenu">
+		<control type="group" id="8050">
+			<visible>true + !Window.Property(empty)</visible>
+			<include>SwitchViews</include>
+			<include>SortDropDown</include>
+		</control>
+	</include>
+	<include name="TVShowsActionMenu">
+		<control type="group" id="8050">
+			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(50) + !Control.HasFocus(51) + !ControlGroup(8050).HasFocus">Conditional</animation>
+			<control type="group">
+				<visible>true + !Window.Property(empty)</visible>
+				<include>RescanButtonTVShows</include>
+				<include>SortDropDown</include>
+				<include>LibrarySwitchViews</include>
+			</control>
+			<control type="group">
+				<include>BrowseChannelFilter</include>
+			</control>
+		</control>
+	</include>
+	<include name="AppsActionMenu">
+		<control type="group" id="8050">
+			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(55) + !Control.HasFocus(56) + !ControlGroup(8050).HasFocus">Conditional</animation>
+			<visible>true + !Window.Property(empty)</visible>
+			<control type="togglebutton" id="8014">
+				<include>ViewButton</include>
+				<onright>8000</onright>
+				<onleft>9050</onleft>
+				<ondown>9050</ondown>
+				<font>font18b</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<textoffsetx>14</textoffsetx>
+				<texturefocus>actionbuttons/button-action-sort-on.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-sort-off.png</texturenofocus>
+				<textureclick>actionbuttons/button-action-sort-off.png</textureclick>
+				<alttexturenofocus>actionbuttons/button-action-sort-on.png</alttexturenofocus>
+				<alttexturefocus>actionbuttons/button-action-sort-on.png</alttexturefocus>
+			</control>
+			<!--<include>AppsSwitchViews</include>-->
+		</control>
+	</include>
+	<include name="RepositoriesActionMenu">
+		<control type="group" id="8050">
+			<visible>true + !Window.Property(empty)</visible>
+			<control type="group" id="8000">
+				<!-- Remove Repositories -->
+				<control type="togglebutton" id="130">
+					<description>remove repositories button</description>
+					<include>ViewButton2</include>
+					<onleft>9050</onleft>
+					<onright>120</onright>
+					<onup>-</onup>
+					<ondown>9050</ondown>
+					<texturenofocus>actionbuttons/button-action-minus-off.png</texturenofocus>
+					<texturefocus>actionbuttons/button-action-minus-on.png</texturefocus>
+					<alttexturenofocus>actionbuttons/button-action-minus-active.png</alttexturenofocus>
+					<alttexturefocus>actionbuttons/button-action-minus-on.png</alttexturefocus>
+				</control>
+				<!-- Add Repositories -->
+				<control type="button" id="120">
+					<texturefocus>actionbuttons/button-action-plus-on.png</texturefocus>
+					<texturenofocus>actionbuttons/button-action-plus-off.png</texturenofocus>
+					<include>ViewButton</include>
+					<onleft>130</onleft>
+					<onright>-</onright>
+					<ondown>9050</ondown>
+					<onup>-</onup>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="LocalActionMenu">
+		<control type="group" id="8050">
+			<visible>true + !Window.Property(empty)</visible>
+			<control type="button" id="132">
+				<texturefocus>actionbuttons/button-action-eject-on.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-eject-off.png</texturenofocus>
+				<textureclick>actionbuttons/button-action-eject-on.png</textureclick>
+				<include>ViewButton</include>
+				<onleft>9050</onleft>
+				<onright>8014</onright>
+				<ondown>9050</ondown>
+				<onup>-</onup>
+			</control>
+			<control type="group" id="8000">
+				<control type="button" id="133">
+					<texturefocus>actionbuttons/button-action-eject-on.png</texturefocus>
+					<texturenofocus>actionbuttons/button-action-eject-off.png</texturenofocus>
+					<textureclick>actionbuttons/button-action-eject-on.png</textureclick>
+					<include>ViewButton3</include>
+					<onleft>9050</onleft>
+					<onright>130</onright>
+					<ondown>9050</ondown>
+					<onup>-</onup>
+				</control>
+				<control type="button" id="130">
+					<animation effect="slide" start="0,0" end="79,0" time="0" condition="!Control.IsVisible(8014)">Conditional</animation>
+					<texturefocus>actionbuttons/button-action-plus-on.png</texturefocus>
+					<texturenofocus>actionbuttons/button-action-plus-off.png</texturenofocus>
+					<textureclick>actionbuttons/button-action-plus-on.png</textureclick>
+					<include>ViewButton2</include>
+					<onleft>133</onleft>
+					<onright>131</onright>
+					<ondown>9050</ondown>
+					<onup>-</onup>
+				</control>
+				<control type="button" id="131">
+					<animation effect="slide" start="0,0" end="79,0" time="0" condition="!Control.IsVisible(8014)">Conditional</animation>
+					<texturefocus>actionbuttons/button-action-scan-on.png</texturefocus>
+					<texturenofocus>actionbuttons/button-action-scan-off.png</texturenofocus>
+					<textureclick>actionbuttons/button-action-scan-on.png</textureclick>
+					<include>ViewButton2</include>
+					<onleft>130</onleft>
+					<onright>8014</onright>
+					<ondown>9050</ondown>
+					<onup>-</onup>
+				</control>
+			</control>
+			<control type="togglebutton" id="8014">
+				<include>ViewButton</include>
+				<onright>-</onright>
+				<onleft>8000</onleft>
+				<ondown>9050</ondown>
+				<font>font18b</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<textoffsetx>14</textoffsetx>
+				<texturefocus>actionbuttons/button-action-sort-on.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-sort-off.png</texturenofocus>
+				<textureclick>actionbuttons/button-action-sort-off.png</textureclick>
+				<alttexturenofocus>actionbuttons/button-action-sort-on.png</alttexturenofocus>
+				<alttexturefocus>actionbuttons/button-action-sort-on.png</alttexturefocus>
+			</control>		
+		</control>
+	</include>
+	<include name="MusicActionMenu">
+		<control type="group" id="8050">
+			<visible>true + !Window.Property(empty)</visible>
+			<control type="togglebutton" id="8014">
+				<!--<animation effect="slide" start="0,0" end="79,0" time="0" condition="!Control.IsVisible(8000) + !Control.IsVisible(8001)">Conditional</animation>-->
+				<include>ViewButton</include>
+				<onright>8000</onright>
+				<onleft>9050</onleft>
+				<ondown>9050</ondown>
+				<font>font18b</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<textoffsetx>14</textoffsetx>
+				<texturefocus>actionbuttons/button-action-sort-on.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-sort-off.png</texturenofocus>
+				<textureclick>actionbuttons/button-action-sort-off.png</textureclick>
+				<alttexturenofocus>actionbuttons/button-action-sort-on.png</alttexturenofocus>
+				<alttexturefocus>actionbuttons/button-action-sort-on.png</alttexturefocus>
+			</control>
+			<!--<control type="group" id="8000">
+				<visible>true + !Window.Property(Empty)</visible>
+				<visible>!stringcompare(Window.Property(albums-or-artists),2)</visible>
+				<!-- set view mode to thumbnails --*>
+				<control type="button" id="8001">
+					<visible>Window.Property(show-thumbnails)</visible>
+					<texturefocus>actionbuttons/button-action-grid-on.png</texturefocus>
+					<texturenofocus>actionbuttons/button-action-grid-off.png</texturenofocus>
+					<textureclick>actionbuttons/button-action-grid-on.png</textureclick>
+					<include>ViewButton</include>	
+					<onleft>8014</onleft>
+					<onright>9050</onright>
+					<ondown>9050</ondown>
+					<onup>-</onup>
+					<onclick>Container.SetViewMode(53)</onclick>
+					<onclick>SetVisible(8002)</onclick>
+					<onclick>SetFocus(8002)</onclick>
+				</control>
+				<!-- set view mode to list --*>
+				<control type="button" id="8002">
+					<visible>true + !Window.Property(show-thumbnails)</visible>
+					<texturefocus>actionbuttons/button-action-list-on.png</texturefocus>
+					<texturenofocus>actionbuttons/button-action-list-off.png</texturenofocus>
+					<textureclick>actionbuttons/button-action-list-off.png</textureclick>
+					<include>ViewButton</include>
+					<onleft>8014</onleft>
+					<onright>9050</onright>
+					<ondown>9050</ondown>
+					<onup>-</onup>
+					<onclick>Container.SetViewMode(54)</onclick>
+					<onclick>SetVisible(8001)</onclick>
+					<onclick>SetFocus(8001)</onclick>
+				</control>
+			</control>-->			
+		</control>
+	</include>
+	<include name="TVEpisodesActionMenu">
+		<control type="group" id="8051">
+			<visible>stringcompare(skin.string(EpisodeViewMode),Episodes)</visible>
+			<visible>true + !Window.Property(loading)</visible>
+			<control type="togglebutton" id="8014">
+				<include>ViewButton</include>
+				<onright>-</onright>
+				<onleft>-</onleft>
+				<ondown>52</ondown>
+				<font>font18b</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<textoffsetx>14</textoffsetx>
+				<texturefocus>actionbuttons/button-action-sort-on.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-sort-off.png</texturenofocus>
+				<textureclick>actionbuttons/button-action-sort-off.png</textureclick>
+				<alttexturenofocus>actionbuttons/button-action-sort-on.png</alttexturenofocus>
+				<alttexturefocus>actionbuttons/button-action-sort-on.png</alttexturefocus>
+			</control>
+			<!--<control type="group" id="8000">
+				 Add to favorites 
+				<control type="button" id="8004">
+					<visible>true + !Window.Property(is-favorite)</visible>
+					<texturefocus>icons/icon_action_favorite_off_on.png</texturefocus>
+					<texturenofocus>icons/icon_action_favorite_off_off.png</texturenofocus>
+					<include>ViewButton2</include>
+					<onleft>8014</onleft>
+					<onright>8024</onright>
+					<ondown>9050</ondown>
+					<onup>-</onup>
+					<onclick>Container.SetViewMode(50)</onclick>
+					<onclick>SetVisible(8005)</onclick>
+					<onclick>SetFocus(8005)</onclick>
+				</control>
+				 Remove from favorites 
+				<control type="button" id="8005">
+					<visible>Window.Property(is-favorite)</visible>
+					<texturefocus>icons/icon_action_favorite_on_on.png</texturefocus>
+					<texturenofocus>icons/icon_action_favorite_on_off.png</texturenofocus>
+					<include>ViewButton2</include>
+					<onleft>8014</onleft>
+					<onright>8024</onright>
+					<ondown>9050</ondown>
+					<onup>-</onup>
+					<onclick>Container.SetViewMode(51)</onclick>
+					<onclick>SetVisible(8004)</onclick>
+					<onclick>SetFocus(8004)</onclick>
+				</control>
+			</control>
+			<control type="group">
+				<visible>true + !Window.Property(loading)</visible>
+				<include>BrowseChannelFilter</include>
+			</control>-->
+		</control>
+	</include>
+	<include name="PhotosActionMenu">
+		<control type="group" id="8050">
+			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(53) + !ControlGroup(8050).HasFocus">Conditional</animation>
+			<visible>true + !Window.Property(empty)</visible>
+			<control type="togglebutton" id="8014">
+				<include>ViewButton</include>
+				<onright>-</onright>
+				<onleft>9050</onleft>
+				<ondown>9050</ondown>
+				<font>font18b</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<textoffsetx>14</textoffsetx>
+				<texturefocus>actionbuttons/button-action-sort-on.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-sort-off.png</texturenofocus>
+				<textureclick>actionbuttons/button-action-sort-off.png</textureclick>
+				<alttexturenofocus>actionbuttons/button-action-sort-on.png</alttexturenofocus>
+				<alttexturefocus>actionbuttons/button-action-sort-on.png</alttexturefocus>
+			</control>		
+		</control>
+	</include>
+	<include name="MoviesActionMenu">
+		<control type="group" id="8050">
+			<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="inout" condition="!Control.HasFocus(50) + !Control.HasFocus(51) + !ControlGroup(8050).HasFocus">Conditional</animation>
+      <animation effect="slide" start="0,0" end="80,0" time="0" condition="!Control.IsVisible(8024)">Conditional</animation>
+			<control type="group">
+				<visible>true + !Window.Property(empty)</visible>
+				<include>RescanButtonMovies</include>
+				<include>SortDropDown</include>
+				<include>LibrarySwitchViews</include>
+			</control>
+			<control type="group">
+				<include>BrowseChannelFilter</include>
+			</control>
+		</control>
+	</include>
+	<!--<include name="BrowserActionMenu">
+		<control type="group" id="8050">
+			<visible>true + !Window.Property(loading)</visible>
+			<control type="button" id="8013">
+				<visible>true + !Window.Property(empty)</visible>
+				<description>Clear all history</description>
+				<enable>true + !Control.IsEmpty(52)</enable>
+				<texturefocus>icons/icon_action_clear_history_on.png</texturefocus>
+				<texturenofocus>icons/icon_action_clear_history_off.png</texturenofocus>
+				<textureclick>icons/icon_action_clear_history_off.png</textureclick>
+				<include>ViewButton</include>
+				<onleft>51</onleft>
+				<onright>-</onright>
+				<ondown>51</ondown>
+				<onup>-</onup>
+			</control>	
+		</control>
+	</include>-->
+	<include name="BrowseSquareLabelFocusApps">
+		<control type="label">
+			<posx>9</posx>
+			<posy>183</posy>
+			<width>140</width>
+			<height>60</height>
+			<label>[B]$INFO[ListItem.label][/B]</label>
+			<font>font20bls</font>
+			<align>left</align>
+			<aligny>top</aligny>
+			<textcolor>whiteheidi</textcolor>
+			<fadetime>200</fadetime>
+			<wrapmultiline>true</wrapmultiline>
+		</control>
+	</include>
+	<include name="BrowseSquareLabelFocus">
+		<control type="label">
+			<posx>9</posx>
+			<posy>181</posy>
+			<width>140</width>
+			<height>60</height>
+			<label>[B]$INFO[ListItem.label][/B]</label>
+			<font>font20bls</font>
+			<align>left</align>
+			<aligny>top</aligny>
+			<textcolor>whiteheidi</textcolor>
+			<fadetime>200</fadetime>
+			<wrapmultiline>true</wrapmultiline>
+		</control>
+	</include>
+	<include name="BrowseMusicThumbUnfocus">
+		<!--<control type="image">
+			<posx>3</posx>
+			<posy>3</posy>
+			<width>176</width>
+			<height>176</height>
+			<texture srcborder="30" border="20">browse/thumbnail-bg-off.png</texture>
+			<fadetime>200</fadetime>
+		</control>-->
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbUnfocusProperties</include>
+			<texture fallback="browse/thumbnail-default-music.png" blend="false">$INFO[ListItem.Thumb]</texture>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbUnfocusProperties</include>
+			<texture fallback="browse/thumbnail-default-music.png" blend="false">browse/thumbnail-default-music.png</texture>
+		</control>
+	</include>
+	<include name="BrowseMusicThumbFocus">
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbFocusProperties</include>
+			<texture fallback="browse/thumbnail-default-music.png" blend="false">$INFO[ListItem.Thumb]</texture>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbFocusProperties</include>
+			<texture fallback="browse/thumbnail-default-music.png" blend="false">browse/thumbnail-default-music.png</texture>
+		</control>
+	</include>
+	<include name="BrowseSquareThumbMusicAlbumFocus">
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbFocusProperties</include>
+			<texture fallback="browse/thumbnail-default-music.png" blend="false">$INFO[ListItem.Thumb]</texture>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbFocusProperties</include>
+			<texture fallback="browse/thumbnail-default-music.png" blend="false">browse/thumbnail-default-music.png</texture>
+		</control>
+	</include>
+	<include name="BrowseSquareLabelMusicAlbumUnfocus">
+		<control type="label">
+			<posx>14</posx>
+			<posy>244</posy>
+			<width>210</width>
+			<height>24</height>
+			<label>$INFO[ListItem.Artist]</label>
+			<font>font24b</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>white</textcolor>
+		</control>
+		<control type="label">
+			<posx>14</posx>
+			<posy>273</posy>
+			<width>210</width>
+			<height>20</height>
+			<label>$INFO[ListItem.Album]</label>
+			<font>font20</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>white</textcolor>
+		</control>
+	</include>
+	<include name="BrowseSquareLabelMusicAlbumFocus">
+		<control type="label">
+			<posx>14</posx>
+			<posy>244</posy>
+			<width>210</width>
+			<height>24</height>
+			<label>$INFO[ListItem.Artist]</label>
+			<font>font24b</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>black</textcolor>
+			<scroll>true</scroll>
+		</control>
+		<control type="label">
+			<posx>14</posx>
+			<posy>273</posy>
+			<width>210</width>
+			<height>20</height>
+			<label>$INFO[ListItem.Album]</label>
+			<font>font20</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>black</textcolor>
+			<scroll>true</scroll>
+		</control>
+	</include>
+	<include name="BrowsePhotoThumbUnfocus">
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbUnfocusProperties</include>
+			<texture fallback="browse/thumbnail-default-photo.png" blend="false">$INFO[ListItem.Thumb]</texture>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbUnfocusProperties</include>
+			<texture fallback="browse/thumbnail-default-photo.png" blend="false">browse/thumbnail-default-photo.png</texture>
+		</control>
+	</include>
+	<include name="BrowsePhotoThumbFocus">
+		<!--<control type="image">
+			<include>BrowseThumbAnimationSquareFocus</include>
+			<visible>ListItem.Property(IsPictureFolder) | ListItem.Property(IsFolder)</visible>
+			<posx>4</posx>
+			<posy>230</posy>
+			<width>230</width>
+			<height>41</height>
+			<texture srcborder="20" border="12">masks/thumb_border_bottom.png</texture>
+		</control>-->
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbFocusProperties</include>
+			<texture fallback="browse/thumbnail-default-photo.png" blend="false">$INFO[ListItem.Thumb]</texture>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb)</visible>
+			<include>BrowseSquareThumbFocusProperties</include>
+			<texture fallback="browse/thumbnail-default-photo.png" blend="false">browse/thumbnail-default-photo.png</texture>
+		</control>
+	</include>
+	<include name="RescanButtonMovies">
+		<control type="button" id="8004">
+			<visible>true + [[Window.IsVisible(10481) + window(10481).property(is-category-local)] | [Window.IsVisible(10480) + window(10480).property(is-category-local)]]</visible>
+			<include>RescanButtonProperties</include>
+		</control>
+	</include>
+	<include name="RescanButtonTVShows">
+		<control type="button" id="8004">
+			<visible>true + !Window.Property(empty)</visible>
+			<visible>true + Window.IsVisible(10480) + window(10480).property(is-category-local)</visible>
+			<include>RescanButtonProperties</include>
+		</control>
+	</include>
+	<include name="RescanButtonProperties">
+		<texturefocus>actionbuttons/button-action-scan-on.png</texturefocus>
+		<texturenofocus>actionbuttons/button-action-scan-off.png</texturenofocus>
+		<textureclick>actionbuttons/button-action-scan-off.png</textureclick>
+		<include>ViewButton4</include>
+		<onleft>9050</onleft>
+		<onright>8014</onright>
+		<ondown>9050</ondown>
+		<onup>-</onup>
+	</include>
+	<include name="ChannelFilterItemLayout">
+		<control type="group">
+			<visible>!ListItem.Property(isseparator)</visible>
+			<control type="largeimage">
+				<visible>!IsEmpty(ListItem.Property(channelthumb))</visible>
+				<posx>92</posx>
+				<posy>12</posy>
+				<width>150</width>
+				<height>60</height>
+				<aspectratio>scale</aspectratio>
+				<texture fallback="browse/thumbnail-default-channel.png" diffuse="masks/mask-channel-logo.png">$INFO[ListItem.Property(channelthumb)]</texture>
+			</control>
+			<control type="image">
+				<visible>IsEmpty(ListItem.Property(channelthumb))</visible>
+				<posx>92</posx>
+				<posy>12</posy>
+				<width>150</width>
+				<height>60</height>
+				<colordiffuse>33F8F8F8</colordiffuse>
+				<texture fallback="browse/thumbnail-default-channel.png" diffuse="masks/mask-channel-logo.png">white.png</texture>
+			</control>
+		</control>
+		<control type="label">
+			<visible>IsEmpty(ListItem.Property(channelthumb)) + !ListItem.Property(isseparator)</visible>
+			<posx>90</posx>
+			<posy>0</posy>
+			<width>150</width>
+			<height>64</height>
+			<font>font26</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<label>$INFO[ListItem.Label]</label>
+			<textcolor>white</textcolor>
+		</control>
+		<control type="image">
+			<visible>!ListItem.Property(isseparator)</visible>
+			<posx>38</posx>
+			<posy>24</posy>
+			<width>36</width>
+			<height>36</height>
+			<texture>graphic-check-empty-54px.png</texture>
+		</control>
+		<control type="image">
+			<visible>ListItem.IsSelected + !ListItem.Property(isseparator)</visible>
+			<posx>38</posx>
+			<posy>24</posy>
+			<width>36</width>
+			<height>36</height>
+			<texture>graphic-check-54px.png</texture>
+		</control>
+	</include>
+	<include name="ChannelFilterFocusLayoutFocus">
+		<control type="group">
+			<control type="image">
+				<posx>15</posx>
+				<posy>0</posy>
+				<width>240</width>
+				<height>84</height>
+				<texture srcborder="24" border="16">button-focused.png</texture>
+			</control>
+			<control type="largeimage">
+				<visible>!IsEmpty(ListItem.Property(channelthumb))</visible>
+				<posx>92</posx>
+				<posy>12</posy>
+				<width>150</width>
+				<height>60</height>
+				<aspectratio>scale</aspectratio>
+				<texture fallback="browse/thumbnail-default-channel.png" diffuse="masks/mask-channel-logo.png">$INFO[ListItem.Property(channelthumb)]</texture>
+			</control>
+			<control type="image">
+				<visible>IsEmpty(ListItem.Property(channelthumb))</visible>
+				<posx>92</posx>
+				<posy>12</posy>
+				<width>150</width>
+				<height>60</height>
+				<aspectratio>scale</aspectratio>
+				<texture fallback="browse/thumbnail-default-channel.png" diffuse="masks/mask-channel-logo.png">white.png</texture>
+			</control>
+		</control>
+		<control type="label">
+			<visible>IsEmpty(ListItem.Property(channelthumb))</visible>
+			<posx>90</posx>
+			<posy>0</posy>
+			<width>150</width>
+			<height>64</height>
+			<font>font26</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<label>$INFO[ListItem.Label]</label>
+			<textcolor>white</textcolor>
+		</control>
+		<control type="image">
+			<visible>!ListItem.Property(isseparator)</visible>
+			<posx>38</posx>
+			<posy>24</posy>
+			<width>36</width>
+			<height>36</height>
+			<texture>graphic-check-empty-54px.png</texture>
+		</control>
+		<control type="image">
+			<visible>ListItem.IsSelected + !ListItem.Property(isseparator)</visible>
+			<posx>38</posx>
+			<posy>24</posy>
+			<width>36</width>
+			<height>36</height>
+			<texture>graphic-check-54px.png</texture>
+		</control>
+	</include>
+	<include name="ChannelFilterFocusLayoutNotFocus">
+		<control type="group">
+			<visible>!ListItem.Property(isseparator)</visible>
+			<control type="largeimage">
+				<visible>!IsEmpty(ListItem.Property(channelthumb))</visible>
+				<posx>92</posx>
+				<posy>12</posy>
+				<width>150</width>
+				<height>60</height>
+				<aspectratio>scale</aspectratio>
+				<texture fallback="browse/thumbnail-default-channel.png" diffuse="masks/mask-channel-logo.png">$INFO[ListItem.Property(channelthumb)]</texture>
+			</control>
+			<control type="image">
+				<visible>IsEmpty(ListItem.Property(channelthumb))</visible>
+				<posx>92</posx>
+				<posy>12</posy>
+				<width>150</width>
+				<height>60</height>
+				<colordiffuse>33F8F8F8</colordiffuse>
+				<texture fallback="browse/thumbnail-default-channel.png" diffuse="masks/mask-channel-logo.png">white.png</texture>
+			</control>
+		</control>
+		<control type="label">
+			<visible>IsEmpty(ListItem.Property(channelthumb)) + !ListItem.Property(isseparator)</visible>
+			<posx>90</posx>
+			<posy>0</posy>
+			<width>150</width>
+			<height>64</height>
+			<font>font26</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<label>$INFO[ListItem.Label]</label>
+			<textcolor>white</textcolor>
+		</control>
+		<control type="image">
+			<visible>!ListItem.Property(isseparator)</visible>
+			<posx>38</posx>
+			<posy>24</posy>
+			<width>36</width>
+			<height>36</height>
+			<texture>graphic-check-empty-54px.png</texture>
+		</control>
+		<control type="image">
+			<visible>ListItem.IsSelected + !ListItem.Property(isseparator)</visible>
+			<posx>38</posx>
+			<posy>24</posy>
+			<width>36</width>
+			<height>36</height>
+			<texture>graphic-check-54px.png</texture>
+		</control>
+	</include>
+</includes>

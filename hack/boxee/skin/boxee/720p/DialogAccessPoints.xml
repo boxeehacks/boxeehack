@@ -1,0 +1,133 @@
+<window id="10041">
+	<defaultcontrol>3</defaultcontrol>
+	<controls>
+		<!-- include>Dialog_Popup_Background</include -->
+		<control type="group">
+			<include>Dialog_Popup_Animation</include>
+			<posx>415</posx>
+			<posy>86</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>448</width>
+				<height>544</height>
+				<texture srcborder="51" border="34">dialog_bg.png</texture>
+			</control>
+			<control type="label" id="1">
+				<description>heading label</description>
+				<posx>25</posx>
+				<posy>60</posy>
+				<height>28</height>
+				<width>400</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>whiteheidi</textcolor>
+				<font>font26b</font>
+				<label>$LOCALIZE[54585]</label>
+			</control>
+			<control type="list" id="3">
+				<animation effect="fade" start="100" end="0" time="200" condition="Window.IsActive(DialogProgress.xml)">Conditional</animation>
+				<focusposition>3</focusposition>
+				<posx>15</posx>
+				<posy>94</posy>
+				<width>420</width>
+				<height>366</height>
+				<onright>-</onright>
+				<ondown>255</ondown>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="54">
+					<control type="label">
+						<visible>!IsEmpty(ListItem.Icon) | !IsEmpty(ListItem.ActualIcon)</visible>
+						<posx>212</posx>
+						<posy>0</posy>
+						<width>202</width>
+						<height>48</height>
+						<font>font24b</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>mediumgreyheidi</textcolor>
+					</control>
+					<control type="label">
+						<visible>IsEmpty(ListItem.Icon) + IsEmpty(ListItem.ActualIcon)</visible>
+						<posx>206</posx>
+						<posy>0</posy>
+						<width>246</width>
+						<height>48</height>
+						<font>font24b</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>mediumgreyheidi</textcolor>
+					</control>
+					<control type="image">
+						<posx>64</posx>
+						<posy>8</posy>
+						<width>36</width>
+						<height>36</height>
+						<colordiffuse>mediumgreyheidi</colordiffuse>
+						<info>ListItem.Icon</info>
+					</control>
+					<control type="image">
+						<posx>324</posx>
+						<posy>10</posy>
+						<width>32</width>
+						<height>32</height>
+						<colordiffuse>mediumgreyheidi</colordiffuse>
+						<info>ListItem.ActualIcon</info>
+					</control>
+				</itemlayout>
+				<focusedlayout height="54">
+					<control type="image">
+						<posx>54</posx>
+						<posy>0</posy>
+						<width>312</width>
+						<height>48</height>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="label">
+						<visible>!IsEmpty(ListItem.Icon) | !IsEmpty(ListItem.ActualIcon)</visible>
+						<posx>212</posx>
+						<posy>0</posy>
+						<width>202</width>
+						<height>48</height>
+						<font>font24b</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>whiteheidi</textcolor>
+						<scroll>true</scroll>
+					</control>
+					<control type="label">
+						<visible>IsEmpty(ListItem.Icon) + IsEmpty(ListItem.ActualIcon)</visible>
+						<posx>206</posx>
+						<posy>0</posy>
+						<width>248</width>
+						<height>48</height>
+						<font>font24b</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>whiteheidi</textcolor>
+						<scroll>true</scroll>
+					</control>
+					<control type="image">
+						<posx>64</posx>
+						<posy>8</posy>
+						<width>36</width>
+						<height>36</height>
+						<info>ListItem.Icon</info>
+					</control>
+					<control type="image">
+						<posx>324</posx>
+						<posy>10</posy>
+						<width>32</width>
+						<height>32</height>
+						<info>ListItem.ActualIcon</info>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>

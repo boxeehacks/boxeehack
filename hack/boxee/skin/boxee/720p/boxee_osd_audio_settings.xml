@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<window type="dialog">
+	<defaultcontrol always="true">30</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="fade" end="100" time="200"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" end="0" time="200"/>
+			</animation>
+			<control type="group">
+				<posx>166</posx>
+				<posy>126</posy>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>948</width>
+					<height>412</height>
+					<texture srcborder="51" border="34">background/window-bg-transparent.png</texture>
+				</control>
+				<!-- SUBTITLES -->
+				<control type="label">
+					<visible>Control.HasFocus(30)</visible>
+					<posx>132</posx>
+					<posy>30</posy>
+					<width>232</width>
+					<height>20</height>
+					<align>center</align>
+					<aligny>top</aligny>
+					<font>font24b</font>
+					<textcolor>whiteheidi</textcolor>
+					<label>[B][UPPERCASE]$LOCALIZE[574][/B][/UPPERCASE]</label>
+				</control>
+				<control type="label">
+					<visible>!Control.HasFocus(30)</visible>
+					<posx>132</posx>
+					<posy>30</posy>
+					<width>232</width>
+					<height>20</height>
+					<align>center</align>
+					<aligny>top</aligny>
+					<font>font24b</font>
+					<textcolor>mediumgreyheidi</textcolor>
+					<label>[B][UPPERCASE]$LOCALIZE[574][/B][/UPPERCASE]</label>
+				</control>
+				<control type="list" id="30">
+					<posx>42</posx>
+					<posy>70</posy>
+					<width>408</width>
+					<height>280</height>
+					<orientation>vertical</orientation>
+					<onleft>-</onleft>
+					<onup>-</onup>
+					<onright>31</onright>
+					<ondown>-</ondown>
+					<itemlayout height="56">
+						<control type="image">
+							<visible>ListItem.Property(IsSelected)</visible>
+							<posx>15</posx>
+							<posy>16</posy>
+							<width>24</width>
+							<height>24</height>
+							<texture>universal/graphic-radio-dot.png</texture>
+						</control>
+						<control type="label">
+							<posx>54</posx>
+							<posy>0</posy>
+							<width>339</width>
+							<height>56</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>font24</font>
+							<textcolor>mediumgreyheidi</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="56">
+						<control type="image">
+							<visible>Control.HasFocus(30)</visible>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>408</width>
+							<height>56</height>
+							<texture srcborder="26" border="16">button-focused.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(IsSelected)</visible>
+							<posx>15</posx>
+							<posy>16</posy>
+							<width>24</width>
+							<height>24</height>
+							<texture>universal/graphic-radio-dot.png</texture>
+						</control>
+						<control type="label">
+							<visible>Control.HasFocus(30)</visible>
+							<posx>54</posx>
+							<posy>0</posy>
+							<width>339</width>
+							<height>56</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>font24</font>
+							<textcolor>whiteheidi</textcolor>
+							<scrollonfocus>true</scrollonfocus> 
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<visible>!Control.HasFocus(30)</visible>
+							<posx>54</posx>
+							<posy>0</posy>
+							<width>339</width>
+							<height>56</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>font24</font>
+							<textcolor>mediumgreyheidi</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</focusedlayout>
+				</control>
+				<control type="image">
+					<posx>444</posx>
+					<posy>18</posy>
+					<width>60</width>
+					<height>376</height>
+					<texture>graphic_divider_vert.png</texture>
+				</control>
+				<!-- AUDIO -->
+				<control type="label">
+					<visible>Control.HasFocus(31)</visible>
+					<posx>588</posx>
+					<posy>30</posy>
+					<width>232</width>
+					<height>20</height>
+					<align>center</align>
+					<aligny>top</aligny>
+					<font>font24b</font>
+					<textcolor>whiteheidi</textcolor>
+					<label>[B][UPPERCASE]$LOCALIZE[772][/B][/UPPERCASE]</label>
+				</control>
+				<control type="label">
+					<visible>!Control.HasFocus(31)</visible>
+					<posx>588</posx>
+					<posy>30</posy>
+					<width>232</width>
+					<height>20</height>
+					<align>center</align>
+					<aligny>top</aligny>
+					<font>font24b</font>
+					<textcolor>mediumgreyheidi</textcolor>
+					<label>[B][UPPERCASE]$LOCALIZE[772][/B][/UPPERCASE]</label>
+				</control>
+				<control type="list" id="31">
+					<posx>498</posx>
+					<posy>70</posy>
+					<width>408</width>
+					<height>280</height>
+					<orientation>vertical</orientation>
+					<onleft>30</onleft>
+					<onup>-</onup>
+					<onright>-</onright>
+					<ondown>-</ondown>
+					<itemlayout height="56">
+						<control type="image">
+							<visible>ListItem.Property(IsSelected)</visible>
+							<posx>15</posx>
+							<posy>16</posy>
+							<width>24</width>
+							<height>24</height>
+							<texture>universal/graphic-radio-dot.png</texture>
+						</control>
+						<control type="label">
+							<posx>54</posx>
+							<posy>0</posy>
+							<width>339</width>
+							<height>56</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>font24</font>
+							<textcolor>mediumgreyheidi</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="56">
+						<control type="image">
+							<visible>Control.HasFocus(31)</visible>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>408</width>
+							<height>56</height>
+							<texture srcborder="26" border="16">button-focused.png</texture>
+						</control>
+						<control type="image">
+							<visible>ListItem.Property(IsSelected)</visible>
+							<posx>15</posx>
+							<posy>16</posy>
+							<width>24</width>
+							<height>24</height>
+							<texture>universal/graphic-radio-dot.png</texture>
+						</control>
+						<control type="label">
+							<visible>Control.HasFocus(31)</visible>
+							<posx>54</posx>
+							<posy>0</posy>
+							<width>339</width>
+							<height>56</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>font24</font>
+							<textcolor>whiteheidi</textcolor>
+							<scrollonfocus>true</scrollonfocus> 
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<visible>!Control.HasFocus(31)</visible>
+							<posx>54</posx>
+							<posy>0</posy>
+							<width>339</width>
+							<height>56</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>font24</font>
+							<textcolor>mediumgreyheidi</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,84 @@
+<window id="10420">
+	<defaultcontrol>3</defaultcontrol>
+	<controls>
+		<!-- include>Dialog_Popup_Background</include -->
+		<control type="group">
+			<include>Dialog_Popup_Animation</include>
+			<posx>430</posx>
+			<posy>102</posy>
+			<control type="image">
+				<posx>8</posx>
+				<posy>8</posy>
+				<width>402</width>
+				<height>496</height>
+				<texture srcborder="51">dialog_bg_3.png</texture>
+			</control>
+			<control type="label" id="1">
+				<description>heading label</description>
+				<posx>54</posx>
+				<posy>60</posy>
+				<height>28</height>
+				<width>312</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>whiteheidi</textcolor>
+				<font>font26b</font>
+				<label>$LOCALIZE[54688]</label>
+			</control>
+			<control type="list" id="3">
+				<animation effect="fade" start="100" end="0" time="200" condition="Window.IsActive(DialogProgress.xml)">Conditional</animation>
+				<focusposition>3</focusposition>
+				<posx>0</posx>
+				<posy>94</posy>
+				<width>420</width>
+				<height>366</height>
+				<onright>-</onright>
+				<ondown>255</ondown>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="54">
+					<control type="label">
+						<posx>212</posx>
+						<posy>0</posy>
+						<width>280</width>
+						<height>48</height>
+						<font>font24b</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>mediumgreyheidi</textcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout height="54">
+					<control type="image">
+						<posx>54</posx>
+						<posy>0</posy>
+						<width>312</width>
+						<height>48</height>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="label">
+						<posx>212</posx>
+						<posy>0</posy>
+						<width>280</width>
+						<height>48</height>
+						<font>font24b</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>whiteheidi</textcolor>
+						<scroll>true</scroll>
+					</control>
+				</focusedlayout>
+			</control>
+			<!--<control type="scrollbar" id="60">
+				<visible>false</visible>
+				<posx>762</posx>
+				<posy>104</posy>
+				<width>12</width>
+				<height>252</height>
+				<include>ScrollBarCommonProperties</include>
+			</control>-->
+		</control>
+	</controls>
+</window>

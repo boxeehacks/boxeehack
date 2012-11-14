@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<window id="10420">
+	<defaultcontrol always="true">9010</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<!-- Dummy container for Item Info -->
+		<control type="list" id="5000">
+            <description>info</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>0</width>
+            <height>0</height>
+            <visible>false</visible>
+            <itemlayout height="0">
+          </itemlayout>
+            <focusedlayout height="0">
+          </focusedlayout>
+        </control>
+		<include>Dialog_Popup_Background</include>
+		<include>Window_Fade_Animation</include>
+		<control type="group">
+			<posx>30</posx>
+			<posy>152</posy>
+			<animation effect="fade" start="100" end="25" time="200" condition="Window.IsActive(DialogProgress.xml)">Conditional</animation>
+			<control type="label" id="5005">
+				<visible>false</visible>
+				<description>file path label</description>
+				<posx>36</posx>
+				<posy>78</posy>
+				<width>1150</width>
+				<height>24</height>
+				<label>$INFO[container(5000).ListItem.pathtoshowinmediaaction]</label>
+				<aligny>center</aligny>
+				<font>font24</font>
+				<textcolor>white</textcolor>
+				<haspath>true</haspath>
+			</control>
+			<control type="image" id="5015">
+				<posx>26</posx>
+				<posy>26</posy>
+				<width>302</width>
+				<height>350</height>
+				<texture>$INFO[container(5000).ListItem.Thumb]</texture>
+				<aspectratio aligny="top">keep</aspectratio>
+				<bordertexture border="12">masks/thumb_background.png</bordertexture>
+				<bordersize>12</bordersize>
+			</control>
+			<control type="grouplist">
+				<posx>344</posx>
+				<posy>36</posy>
+				<width>840</width>
+				<height>430</height>
+				<itemgap>10</itemgap>
+				<orientation>vertical</orientation>
+				<usecontrolcoords>false</usecontrolcoords>
+				<control type="label">
+					<width>840</width>
+					<height>32</height>
+					<font>font32b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[container(5000).ListItem.Label]</label>
+					<textcolor>white</textcolor>
+				</control>
+				<control type="label">
+					<visible>!IsEmpty(container(5000).ListItem.Year)</visible>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>840</width>
+					<height>22</height>
+					<font>font20b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<label>$INFO[container(5000).ListItem.Year,[COLOR grey]$LOCALIZE[54043][/COLOR] ,]</label>
+				</control>
+				<control type="label">
+					<visible>!IsEmpty(container(5000).ListItem.albumartist)</visible>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>840</width>
+					<height>22</height>
+					<font>font20b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<label>$INFO[container(5000).ListItem.albumartist,[COLOR grey]$LOCALIZE[566][/COLOR] ,]</label>
+				</control>
+				<control type="label">
+					<visible>!IsEmpty(container(5000).ListItem.Genre)</visible>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>840</width>
+					<height>22</height>
+					<font>font20b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<label>$INFO[container(5000).ListItem.Genre,[COLOR grey]$LOCALIZE[515][/COLOR] ,]</label>
+				</control>
+				<control type="label">
+					<visible>!IsEmpty(container(5000).ListItem.Comment)</visible>
+					<width>840</width>
+					<height>200</height>
+					<font>font22</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>white</textcolor>
+					<label>$INFO[container(5000).ListItem.Comment]</label>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+			</control>
+			<control type="button" id="9010">
+				<posx>36</posx>
+				<posy>378</posy>
+				<width>140</width>
+				<height>56</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>grey</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturenofocus border="27">-</texturenofocus>
+				<texturefocus border="27">button_action_menu_source_on.png</texturefocus>
+				<textureclick border="27">button_action_menu_source_click.png</textureclick>
+				<font>font22b</font>
+				<label>$LOCALIZE[20177]</label>
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<onleft>-</onleft>
+				<onright>9020</onright>
+				<onclick>-</onclick>
+			</control>
+			<control type="button" id="9020">
+				<posx>176</posx>
+				<posy>378</posy>
+				<width>140</width>
+				<height>56</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>grey</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturenofocus border="27">-</texturenofocus>
+				<texturefocus border="27">button_action_menu_source_on.png</texturefocus>
+				<textureclick border="27">button_action_menu_source_click.png</textureclick>
+				<font>font22b</font>
+				<label>$LOCALIZE[54049]</label>
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<onleft>9010</onleft>
+				<onright>9030</onright>
+				<onclick>-</onclick>
+			</control>
+		</control>
+	</controls>
+</window>

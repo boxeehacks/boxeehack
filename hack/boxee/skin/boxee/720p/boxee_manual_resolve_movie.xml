@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<window id="10469">
+	<defaultcontrol always="true">9010</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<!-- Dummy container for Item Info -->
+		<control type="list" id="5000">
+            <description>info</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>0</width>
+            <height>0</height>
+            <visible>false</visible>
+            <itemlayout height="0">
+          </itemlayout>
+            <focusedlayout height="0">
+          </focusedlayout>
+        </control>
+		<include>Window_Fade_Animation</include>
+		<control type="group">
+			<control type="image">
+				<posx>214</posx>
+				<posy>86</posy>
+				<width>852</width>
+				<height>544</height>
+				<texture srcborder="51" border="34">dialog_bg.png</texture>
+			</control>
+			<control type="group">
+				<visible>!Window.IsVisible(boxee_manual_resolve_add_files.xml)</visible>
+				<posx>224</posx>
+				<posy>96</posy>
+				<animation effect="fade" start="100" end="25" time="200" condition="Window.IsActive(DialogProgress.xml)">Conditional</animation>
+				<control type="label">
+					<posx>52</posx>
+					<posy>45</posy>
+					<width>748</width>
+					<height>40</height>
+					<font>font40b</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$INFO[container(5000).ListItem.Label][/B]</label>
+					<textcolor>whiteheidi</textcolor>
+				</control>
+				<control type="image" id="5015">
+					<posx>56</posx>
+					<posy>124</posy>
+					<width>192</width>
+					<height>284</height>
+					<texture>$INFO[container(5000).ListItem.Thumb]</texture>
+					<aspectratio align="left" aligny="top">scale</aspectratio>
+				</control>
+				<control type="grouplist">
+					<posx>275</posx>
+					<posy>124</posy>
+					<width>840</width>
+					<height>430</height>
+					<itemgap>8</itemgap>
+					<orientation>vertical</orientation>
+					<usecontrolcoords>true</usecontrolcoords>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>516</width>
+						<height min="0" max="16">auto</height>
+						<aligny>center</aligny>
+						<font>font24b</font>
+						<textcolor>whiteheidi</textcolor>
+						<label>$INFO[container(5000).ListItem.Filename,$LOCALIZE[561]: ,]</label>
+					</control>
+					<control type="label">
+						<visible>!IsEmpty(container(5000).ListItem.MPAA) | !IsEmpty(container(5000).ListItem.Duration) | !IsEmpty(container(5000).ListItem.Year)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>516</width>
+						<height min="0" max="30">auto</height>
+						<font>font22b</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>whiteheidi</textcolor>
+						<label>$INFO[formattime(container(5000).ListItem.Duration min),,min]$INFO[container(5000).ListItem.Year, · ,]$INFO[container(5000).ListItem.MPAA, · $LOCALIZE[563] ,]</label>
+					</control>
+					<control type="label">
+						<visible>!IsEmpty(container(5000).ListItem.Plot)</visible>
+						<width>516</width>
+						<height min="0" max="150">auto</height>
+						<font>font22</font>
+						<align>left</align>
+						<aligny>top</aligny>
+						<textcolor>lightgreyheidi</textcolor>
+						<label>$INFO[container(5000).ListItem.Plot]</label>
+						<wrapmultiline>true</wrapmultiline>
+					</control>
+					<control type="label">
+						<visible>!IsEmpty(container(5000).ListItem.Director)</visible>
+						<posx>0</posx>
+						<posy>10</posy>
+						<width>840</width>
+						<height min="0" max="12">auto</height>
+						<font>font22</font>
+						<align>top</align>
+						<aligny>center</aligny>
+						<textcolor>lightgreyheidi</textcolor>
+						<label>$INFO[container(5000).ListItem.Director,$LOCALIZE[20339] ,]</label>
+					</control>
+					<control type="label">
+						<visible>!IsEmpty(container(5000).ListItem.Cast)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>840</width>
+						<height min="0" max="40">auto</height>
+						<font>font22</font>
+						<align>left</align>
+						<aligny>top</aligny>
+						<textcolor>lightgreyheidi</textcolor>
+						<label>$INFO[container(5000).ListItem.Cast,$LOCALIZE[206] ,]</label>
+					</control>
+				</control>
+				<control type="button" id="9010">
+					<posx>276</posx>
+					<posy>412</posy>
+					<width>244</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[20177][/B]</label>
+					<onup>5030</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>9030</onright>
+					<onclick>-</onclick>
+				</control>
+				<control type="button" id="9030">
+					<description>multipart button for movie</description>
+					<posx>532</posx>
+					<posy>412</posy>
+					<width>244</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[52115][/B]</label>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<onleft>9010</onleft>
+					<onright>-</onright>
+					<onclick>-</onclick>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

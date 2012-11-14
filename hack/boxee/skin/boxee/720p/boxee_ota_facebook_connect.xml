@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<window type="dialog">
+	<defaultcontrol always="true">1</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<include>DialogNoAnim_Heidi</include>
+			
+			<!-- left side -->		
+			<control type="image">
+				<posx>66</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>82</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>98</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>114</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_circle.png</texture>
+			</control>
+			
+			<control type="label">
+				<description>Header</description>
+				<posx>63</posx>
+				<posy>125</posy>
+				<width>305</width>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$LOCALIZE[53462]</label>
+				<wrapmultiline>true</wrapmultiline>
+				<include>Header_Heidi</include>
+			</control>
+			
+			<control type="label" id="3">
+				<posx>64</posx>
+				<posy>169</posy>
+				<width>306</width>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$LOCALIZE[58040]</label>
+				<wrapmultiline>true</wrapmultiline>
+				<include>LargeText_Heidi</include>
+			</control>
+			
+			<!-- right side -->
+			<control type="group" id="50">
+				<control type="button" id="1">
+					<ondown>2</ondown>				
+					<onup>-</onup>
+					<posx>474</posx>
+					<posy>210</posy>
+					<include>FacebookConnect_Heidi</include>
+				</control>
+				
+				<control type="button" id="4">
+					<visible>false</visible>
+					<ondown>2</ondown>					
+					<onup>-</onup>
+					<posx>474</posx>
+					<posy>210</posy>
+					<include>Button_Heidi</include>
+					<label>$LOCALIZE[58059]</label>
+					<width>312</width>
+					<height>56</height>
+				</control>
+			</control>
+			
+			<control type="button" id="2">
+				<posx>474</posx>
+				<posy>278</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>[B]$LOCALIZE[58042][/B]</label>
+				<onclick>-</onclick>
+				<onup>50</onup>
+				<ondown>-</ondown>
+			</control>
+		</control>	
+	</controls>
+</window>

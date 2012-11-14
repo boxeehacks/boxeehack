@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<window id="10479">
+	<onunload>Skin.Reset(BrowseMenuLevel3)</onunload>
+	<onunload>Skin.Reset(BrowseMenuLevel2)</onunload>
+	<defaultcontrol always="true">9050</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<control type="group">
+			<control type="group" id="9050">
+				<include>BrowseLocalLineView</include>
+			</control>
+			<include>BrowseLocalEmptyList</include>
+			<include>LocalActionMenu</include>
+		</control>
+	</controls>
+</window>

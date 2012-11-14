@@ -1,0 +1,67 @@
+<window id="11">
+	<defaultcontrol>8</defaultcontrol>
+	<controls>
+		<include>Common_Background</include>
+		<control type="mover" id="8">
+			<description>top left mover</description>
+			<posx>28</posx>
+			<posy>28</posy>
+			<width>208</width>
+			<height>208</height>
+			<texturefocus>ftu/graphic-calibrate-arrow-1-on.png</texturefocus>
+			<texturenofocus>ftu/graphic-calibrate-arrow-1-off.png</texturenofocus>
+		</control>
+		<control type="mover" id="9">
+			<description>right bottom mover</description>
+			<posx>1044</posx>
+			<posy>484</posy>
+			<width>208</width>
+			<height>208</height>
+			<texturefocus>ftu/graphic-calibrate-arrow-2-on.png</texturefocus>
+			<texturenofocus>ftu/graphic-calibrate-arrow-2-off.png</texturenofocus>
+		</control>
+		<control type="mover" id="10">
+			<description>subtitle position mover</description>
+			<posx>200</posx>
+			<posy>500</posy>
+			<texturefocus>calibrate-subtitles-focus.png</texturefocus>
+			<texturenofocus>calibrate-subtitles.png</texturenofocus>
+		</control>
+		<control type="resize" id="11">
+			<description>pixel aspect ratio box</description>
+			<posx>0</posx>
+			<posy>270</posy>
+			<width>288</width>
+			<height>288</height>
+			<texturefocus>calibrate-pixelratio-focus.png</texturefocus>
+			<texturenofocus>calibrate-pixelratio.png</texturenofocus>
+		</control>
+		<!-- control type="image" id="1">
+			<description>rectangle image</description>
+			<posx>0</posx>
+			<posy>310</posy>
+			<width>1280</width>
+			<height>100</height>
+			<colordiffuse>CCFFFFFF</colordiffuse>
+			<texture>black.png</texture>
+		</control -->
+		<!-- control type="label" id="2">
+			<description>coordinates label</description>
+			<posx>20</posx>
+			<posy>40</posy>
+			<width>1240</width>
+			<label>-</label>
+			<align>center</align>
+			<font>font23b</font>
+		</control -->
+		<control type="label" id="3">
+			<description>help information</description>
+			<posx>20</posx>
+			<posy>85</posy>
+			<width>1240</width>
+			<label>-</label>
+			<align>center</align>
+			<font>font23b</font>
+		</control>
+	</controls>
+</window>

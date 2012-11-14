@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<window id="10523">
+	<controls>
+		<control type="image">
+			<description>background image overlay</description>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="200" delay="0"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="100" delay="0"/>
+			</animation>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+			<colordiffuse>88FFFFFF</colordiffuse>
+		</control>
+		<control type="group">
+			<visible>boxee.HasInternetConnection</visible>
+			<include>Dialog_Heidi</include>
+			<!-- RIGHT SIDE - BEGIN-->
+			<control type="image">
+				<posx>452</posx>
+				<posy>40</posy>
+				<width>340</width>
+				<height>348</height>
+				<texture>browse/graphic-watch-later-screenshot.png</texture>
+			</control>
+			<control type="button" id="7092">
+				<description>Get Started</description>
+				<posx>474</posx>
+				<posy>422</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>[B]$LOCALIZE[56046][/B]</label>
+				<onclick></onclick>
+				<onup>250</onup>
+				<ondown>-</ondown>
+			</control>
+			<!-- RIGHT SIDE - END-->
+			<!-- LEFT SIDE - BEGIN -->
+			<control type="grouplist">
+				<posx>52</posx>
+				<posy>56</posy>
+				<width>330</width>
+				<height>436</height>
+				<orientation>vertical</orientation>
+				<itemgap>0</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<width>330</width>
+					<height min="0" max="60">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$LOCALIZE[51416][/B]</label>
+					<include>Header_Heidi</include>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<posy>10</posy>
+					<width>330</width>
+					<height min="0" max="328">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[56043]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<include>LargeText_Heidi</include>
+				</control>
+				<control type="label">
+					<posy>10</posy>
+					<width>330</width>
+					<height min="0" max="40">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[56044,,][COLOR boxeegreenheidi] $LOCALIZE[56045][/COLOR]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<font>font20b</font>
+					<textcolor>lightgreyheidi</textcolor>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<description>case of offline mode</description>
+			<visible>!Window.IsActive(boxee_search.xml)</visible>
+			<visible>!boxee.HasInternetConnection</visible>
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<include>Popup_Title</include>
+				<label>[B]$LOCALIZE[56033][/B]</label>
+			</control>
+			<control type="label">
+				<posy>111</posy>
+				<include>EmptyStateTextProperties</include>
+				<label>$LOCALIZE[56034]</label>
+			</control>
+			<control type="button" id="7192">
+				<posy>421</posy>
+				<include>EmptyStateButton</include>
+				<label>[B]$LOCALIZE[186][/B]</label>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<window id="2005">
+	<defaultcontrol>-</defaultcontrol>
+	<controls>
+		<!-- buffering dialog -->
+		<control type="group" id="24">
+			<visible>!Window.IsVisible(boxee_video_context.xml) + !Window.IsVisible(boxee_seek_bar.xml)</visible>
+			<posx>0</posx>
+			<posy>620</posy>
+			<control type="progress" id="24">
+				<posy>70</posy>
+				<description>player buffering to start/continue play</description>					
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>30</height>
+				<info>Player.CacheLevel</info>
+				<texturebg border="8">progress/browser_progress_background.png</texturebg>
+				<lefttexture border="0,8,0,8">progress/browser_progress_loaded_center.png</lefttexture>
+				<midtexture>progress/browser_progress_loaded_center.png</midtexture>
+				<righttexture border="0,8,0,8">progress/browser_progress_loaded_center.png</righttexture>
+				<overlaytexture>-</overlaytexture>
+			</control>			
+		</control>
+		<!-- codec infos -->
+		<control type="group">
+			<animation effect="fade" time="200">VisibleChange</animation>
+			<posx>100</posx>
+			<posy>126</posy>
+			<control type="image" id="0">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1100</width>
+				<height>300</height>
+				<texture srcborder="51" border="34">background/window-bg-transparent.png</texture>
+			</control>
+			<control type="label" id="10">
+				<description>row 1 label</description>
+				<posx>35</posx>
+				<posy>42</posy>
+				<width>1000</width>
+				<label>-</label>
+				<textcolor>mediumgreyheidi</textcolor>
+				<font>font18b</font>
+				<align>left</align>
+			</control>
+			<control type="label" id="11">
+				<description>row 2 label</description>
+				<posx>35</posx>
+				<posy>107</posy>
+				<width>1000</width>
+				<label>-</label>
+				<font>font18b</font>
+				<textcolor>mediumgreyheidi</textcolor>
+				<align>left</align>
+			</control>
+			<control type="label" id="12">
+				<description>row 3 label</description>
+				<posx>35</posx>
+				<posy>152</posy>
+				<width>1000</width>
+				<label>-</label>
+				<font>font18b</font>
+				<textcolor>mediumgreyheidi</textcolor>
+				<align>left</align>
+			</control>
+		</control>
+		<control type="image" id="9003">
+			<visible>player.ShowAudioCodecLogo</visible>
+			<animation effect="fade" start="0" end="100" time="1000">VisibleChange</animation>
+			<posx>1050</posx>
+			<posy>16</posy>
+			<texture>icons/logo-$INFO[videoplayer.audiocodec].png</texture>
+		</control>
+	</controls>
+</window>

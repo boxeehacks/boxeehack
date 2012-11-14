@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<window type="dialog" id="360">
+	<defaultcontrol always="true">500</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="fade" end="100" time="200"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" end="0" time="200"/>
+			</animation>
+			<control type="group">
+				<posx>286</posx>
+				<posy>90</posy>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>708</width>
+					<height>544</height>
+					<texture srcborder="51" border="34">background/window-bg-transparent.png</texture>
+				</control>
+				<control type="fixedlist" id="500">
+					<posx>66</posx>
+					<posy>66</posy>
+					<width>720</width>
+					<height>412</height>
+					<onleft>Dialog.Close(406)</onleft>
+					<onright>Dialog.Close(406)</onright>
+					<onup>100</onup>
+					<ondown>100</ondown>
+					<scrolltime>200</scrolltime>
+					<pagecontrol>60</pagecontrol>
+					<orientation>vertical</orientation>
+					<itemlayout height="56">
+						<control type="label">
+							<visible>IsEmpty(ListItem.Thumb)</visible>
+							<posx>19</posx>
+							<posy>-1</posy>
+							<width>576</width>
+							<height>56</height>
+							<font>font28b</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>lightgreyheidi</textcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout height="56">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>576</width>
+							<height>56</height>
+							<texture srcborder="24" border="16">button-focused.png</texture>
+						</control>
+						<control type="label">
+							<visible>IsEmpty(ListItem.Thumb)</visible>
+							<posx>19</posx>
+							<posy>-1</posy>
+							<width>576</width>
+							<height>56</height>
+							<font>font28b</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>whiteheidi</textcolor>
+							<scroll>true</scroll>
+							<scrollout>true</scrollout>
+                            <scrollspeed>100</scrollspeed>
+                            <pauseatend>100</pauseatend>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

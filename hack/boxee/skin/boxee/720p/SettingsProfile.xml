@@ -1,0 +1,134 @@
+<window id="34">
+	<defaultcontrol>2</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<control type="label">
+				<description>Title label</description>
+				<posx>120</posx>
+				<posy>125</posy>
+				<width>600</width>
+				<height>60</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>green</textcolor>
+				<label>13200</label>
+				<font>font16b</font>
+			</control>
+			<control type="label">
+				<description>Last loaded</description>
+				<posx>120</posx>
+				<posy>175</posy>
+				<width>1040</width>
+				<align>left</align>
+				<textcolor>green</textcolor>
+				<label>Current Loaded Profile - $INFO[system.profilename]</label>
+				<font>font13</font>
+			</control>
+			<control type="panel" id="2">
+				<posx>25</posx>
+				<posy>220</posy>
+				<width>1230</width>
+				<height>376</height>
+				<onleft>51</onleft>
+				<onright>51</onright>
+				<onup>9000</onup>
+				<ondown>60</ondown>
+				<viewtype label="">list</viewtype>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<orientation>horizontal</orientation>
+				<itemlayout height="94" width="615">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>613</width>
+						<height>92</height>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<texture>list-nofocus.png</texture>
+					</control>
+					<control type="image">
+						<posx>15</posx>
+						<posy>5</posy>
+						<width>82</width>
+						<height>82</height>
+						<info>ListItem.Icon</info>
+					</control>
+					<control type="label">
+						<posx>105</posx>
+						<posy>5</posy>
+						<width>500</width>
+						<height>35</height>
+						<font>font13</font>
+						<aligny>center</aligny>
+						<selectedcolor>green</selectedcolor>
+						<align>left</align>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="label">
+						<posx>105</posx>
+						<posy>45</posy>
+						<width>500</width>
+						<height>35</height>
+						<font>font13</font>
+						<aligny>center</aligny>
+						<selectedcolor>green</selectedcolor>
+						<textcolor>white</textcolor>
+						<align>left</align>
+						<label>$INFO[ListItem.Label2,Last Login - ]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="94" width="615">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>613</width>
+						<height>92</height>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<visible>!Control.HasFocus(2)</visible>
+						<texture>list-nofocus.png</texture>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>613</width>
+						<height>92</height>
+						<colordiffuse>AAFFFFFF</colordiffuse>
+						<visible>Control.HasFocus(2)</visible>
+						<texture>list-focus.png</texture>
+					</control>
+					<control type="image">
+						<posx>15</posx>
+						<posy>5</posy>
+						<width>82</width>
+						<height>82</height>
+						<info>ListItem.Icon</info>
+					</control>
+					<control type="label">
+						<posx>105</posx>
+						<posy>5</posy>
+						<width>500</width>
+						<height>35</height>
+						<font>font13</font>
+						<aligny>center</aligny>
+						<selectedcolor>green</selectedcolor>
+						<align>left</align>
+						<info>ListItem.Label</info>
+					</control>
+					<control type="label">
+						<posx>105</posx>
+						<posy>45</posy>
+						<width>500</width>
+						<height>35</height>
+						<font>font13</font>
+						<aligny>center</aligny>
+						<selectedcolor>green</selectedcolor>
+						<textcolor>white</textcolor>
+						<align>left</align>
+						<label>$INFO[ListItem.Label2,Last Login - ]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>

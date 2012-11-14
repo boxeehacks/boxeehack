@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<window id="10480">
+	<onunload>Skin.Reset(BrowseMenuLevel3)</onunload>
+	<onunload>Skin.Reset(BrowseMenuLevel2)</onunload>
+	<defaultcontrol always="true">9050</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<control type="group">
+			<animation effect="slide" start="0,0" end="-60,0" time="200" condition="Control.HasFocus(7000) | Control.HasFocus(7100)">Conditional</animation>
+			<control type="group" id="9050">
+				<include>BrowseThumbViewTVShow</include>
+				<include>BrowseLineViewTVShow</include>
+			</control>
+			<control type="image">
+				<visible>Window.IsActive(10480) + Control.IsVisible(50)</visible>
+				<posx>0</posx>
+				<posy>680</posy>
+				<width>1280</width>
+				<height>56</height>
+				<texture>browse/bottom-dropshadow.png</texture>
+			</control>
+      		<include>LogoTitleAndItemCountTVShows</include>
+			<include>BrowseByLetterThumbs</include>
+			<include>BrowseByLetterList</include>
+			<!--<include>TVShowsActionMenu</include>-->			
+			<include>BrowseShowsEmptyList</include>
+			<include>BrowseLoadingAnimation</include>
+		</control>
+		<!-- include>Window_Transition</include -->
+	</controls>
+</window>

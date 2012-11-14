@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<window id="10469">
+	<defaultcontrol always="true">5020</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<!-- Dummy container for Item Info -->
+		<control type="list" id="5000">
+            <description>info</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>0</width>
+            <height>0</height>
+            <visible>false</visible>
+            <itemlayout height="0">
+          </itemlayout>
+            <focusedlayout height="0">
+          </focusedlayout>
+        </control>
+		<include>Window_Fade_Animation</include>
+		<control type="image">
+			<posx>22</posx>
+			<posy>86</posy>
+			<width>1236</width>
+			<height>544</height>
+			<texture srcborder="51" border="34">dialog_bg.png</texture>
+		</control>
+		<control type="image">
+			<posx>617</posx>
+			<posy>260</posy>
+			<width>40</width>
+			<height>203</height>
+			<texture>graphic_divider_vert.png</texture>
+		</control>
+		<control type="group">
+			<posx>32</posx>
+			<posy>96</posy>
+			<animation effect="fade" start="100" end="25" time="200" condition="Window.IsActive(DialogProgress.xml)">Conditional</animation>
+			<control type="label">
+				<posx>56</posx>
+				<posy>45</posy>
+				<width>748</width>
+				<height>40</height>
+				<font>font40b</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>[B]$LOCALIZE[52115][/B]</label>
+				<textcolor>whiteheidi</textcolor>
+			</control>
+			<control type="label" id="5005">
+				<description>file path label</description>
+				<posx>56</posx>
+				<posy>101</posy>
+				<width>748</width>
+				<height>24</height>
+				<label>$INFO[container(5000).ListItem.pathtoshowinmediaaction]</label>
+				<aligny>center</aligny>
+				<font>font20b</font>
+				<textcolor>boxeegreenheidi</textcolor>
+				<haspath>true</haspath>
+			</control>
+			<control type="group">
+				<animation effect="fade" start="100" end="25" time="200" condition="window.CheckIntProperty(manage-set,1)">Conditional</animation>
+				<control type="label">
+					<posx>77</posx>
+					<posy>160</posy>
+					<width>300</width>
+					<height>22</height>
+					<label>[B]$LOCALIZE[51010][/B]</label>
+					<font>font20b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+				</control>
+				<control type="fixedlist" id="5020">
+					<enable>!window.CheckIntProperty(manage-set,1)</enable>
+					<description>parts list</description>
+					<posx>56</posx>
+					<posy>198</posy>
+					<width>540</width>
+					<height>190</height>
+					<onleft>-</onleft>
+					<onright>5010</onright>
+					<onup>1000</onup>
+					<ondown>9010</ondown>
+					<scrolltime>200</scrolltime>
+					<pagecontrol>60</pagecontrol>
+					<orientation>vertical</orientation>
+					<focusposition>6</focusposition>
+					<offsety>5</offsety>
+					<itemlayout height="56">
+						<control type="label">
+							<posx>21</posx>
+							<posy>-1</posy>
+							<width>462</width>
+							<height>56</height>
+							<font>font22b</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<info>ListItem.Label</info>
+							<textcolor>mediumgreyheidi</textcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout height="56">
+						<control type="image">
+							<visible>Control.HasFocus(5020)</visible>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>504</width>
+							<height>56</height>
+							<texture srcborder="24" border="16">button-focused.png</texture>
+						</control>
+						<control type="label">
+							<visible>!Control.HasFocus(5020)</visible>
+							<posx>21</posx>
+							<posy>-1</posy>
+							<width>462</width>
+							<height>56</height>
+							<font>font22b</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>mediumgreyheidi</textcolor>
+						</control>
+						<control type="label">
+							<visible>Control.HasFocus(5020)</visible>
+							<posx>21</posx>
+							<posy>-1</posy>
+							<width>462</width>
+							<height>56</height>
+							<font>font22b</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>whiteheidi</textcolor>
+							<scroll>true</scroll>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<control type="group">
+				<control type="label">
+					<posx>677</posx>
+					<posy>160</posy>
+					<width>300</width>
+					<height>22</height>
+					<label>[B]$LOCALIZE[52115][/B]</label>
+					<font>font20b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+				</control>
+				<control type="fixedlist" id="5010">
+					<description>file list</description>
+					<posx>656</posx>
+					<posy>198</posy>
+					<width>540</width>
+					<height>190</height>
+					<onleft>5020</onleft>
+					<onright>-</onright>
+					<onup>1000</onup>
+					<ondown>9010</ondown>
+					<scrolltime>200</scrolltime>
+					<pagecontrol>60</pagecontrol>
+					<orientation>vertical</orientation>
+					<focusposition>6</focusposition>
+					<offsety>5</offsety>
+					<itemlayout height="56">
+						<control type="label">
+							<posx>21</posx>
+							<posy>-1</posy>
+							<width>462</width>
+							<height>56</height>
+							<font>font22b</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[B]$INFO[ListItem.Label2,, ][/B]$INFO[ListItem.Label]</label>
+							<textcolor>mediumgreyheidi</textcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout height="56">
+						<control type="image">
+							<visible>Control.HasFocus(5010) + !window.CheckIntProperty(manage-set,1)</visible>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>504</width>
+							<height>56</height>
+							<texture srcborder="24" border="16">button-focused.png</texture>
+						</control>
+						<control type="image">
+							<visible>Control.HasFocus(5010) + window.CheckIntProperty(manage-set,1)</visible>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>504</width>
+							<height>56</height>
+							<texture srcborder="24" border="16">button-on.png</texture>
+						</control>
+						<control type="label">
+							<visible>!Control.HasFocus(5010)</visible>
+							<posx>21</posx>
+							<posy>-1</posy>
+							<width>462</width>
+							<height>56</height>
+							<font>font22b</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[B]$INFO[ListItem.Label2,, ][/B]$INFO[ListItem.Label]</label>
+							<textcolor>mediumgreyheidi</textcolor>
+						</control>
+						<control type="label">
+							<visible>Control.HasFocus(5010)</visible>
+							<posx>21</posx>
+							<posy>-1</posy>
+							<width>462</width>
+							<height>56</height>
+							<font>font22b</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[B]$INFO[ListItem.Label2,, ][/B]$INFO[ListItem.Label]</label>
+							<textcolor>whiteheidi</textcolor>
+							<scroll>true</scroll>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<control type="button" id="9010">
+				<enable>!window.CheckIntProperty(manage-set,1)</enable>
+				<posx>632</posx>
+				<posy>412</posy>
+				<width>528</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>[B]$LOCALIZE[20177][/B]</label>
+				<onup>5020</onup>
+				<ondown>-</ondown>
+				<onleft>9020</onleft>
+				<onright>-</onright>
+				<onclick>-</onclick>
+			</control>
+			<control type="button" id="9020">
+				<enable>!window.CheckIntProperty(manage-set,1)</enable>
+				<posx>56</posx>
+				<posy>412</posy>
+				<width>528</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>[B]$LOCALIZE[54049][/B]</label>
+				<onup>5020</onup>
+				<ondown>-</ondown>
+				<onleft>-</onleft>
+				<onright>9010</onright>
+				<onclick>-</onclick>
+			</control>
+		</control>
+	</controls>
+</window>

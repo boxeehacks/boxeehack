@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<window type="dialog">
+	<defaultcontrol always="true">80</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<!--<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>tempmock4.png</texture>
+		</control>-->
+
+		<control type="group">
+			<include>DialogNoAnim_Heidi</include>
+			
+			<!-- left side -->
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>852</width>
+				<height>544</height>
+				<texture srcborder="51" border="34">dialog_bg.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>66</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>82</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_circle.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>98</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>114</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="label">
+				<description>Header</description>
+				<posx>63</posx>
+				<posy>125</posy>
+				<width>400</width>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>58011</label>
+				<include>Header_Heidi</include>
+			</control>
+			
+			<control type="label">
+				<posx>64</posx>
+				<posy>153</posy>
+				<width>310</width>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>58012</label>
+				<wrapmultiline>true</wrapmultiline>
+				<include>LargeText_Heidi</include>
+			</control>
+			
+			<!-- right side -->
+			<control type="label">
+				<posx>463</posx>
+				<posy>59</posy>
+				<width>336</width>
+				<align>center</align>
+				<aligny>top</aligny>
+				<label>58013</label>
+				<wrapmultiline>true</wrapmultiline>
+				<font>font24b</font>
+				<textcolor>FFEFEFEF</textcolor>
+			</control>
+			
+			<control type="image">
+				<posx>618</posx>
+				<posy>117</posy>
+				<width>24</width>
+				<height>16</height>
+				<texture>graphic-arrow.png</texture>
+			</control>
+			
+			<control type="list" id="80">
+				<posx>474</posx>
+				<posy>149</posy>
+				<width>800</width>
+				<height>300</height>
+				<visible>true</visible>
+				<orientation>vertical</orientation>
+				<scrolltime>200</scrolltime>
+				
+				<itemlayout width="320" height="48">
+					
+					<control type="label">
+					<posx>158</posx>
+					<width>300</width>
+					<height>48</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font22</font>
+					<textcolor>FFB3B8BB</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					</control>
+					
+				</itemlayout>
+				
+				<focusedlayout width="320" height="48">
+					
+					<control type="image">
+					<posx>0</posx>
+					<posy>2</posy>
+					<width>312</width>
+					<height>48</height>
+					<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+										
+					<control type="label">
+					<posx>158</posx>
+					<width>300</width>
+					<height>48</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font22</font>
+					<textcolor>white</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					</control>
+
+				</focusedlayout>
+			</control>
+			
+			<control type="image">
+				<posx>618</posx>
+				<posy>456</posy>
+				<width>24</width>
+				<height>16</height>
+				<texture flipy="true">graphic-arrow.png</texture>
+			</control>
+			
+		</control>	
+		
+	</controls>
+</window>

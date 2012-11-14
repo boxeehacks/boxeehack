@@ -1,0 +1,135 @@
+<window type="dialog" id="134">
+	<defaultcontrol always="true">450</defaultcontrol>
+	<coordinates>
+		<system>1</system>
+		<posx>240</posx>
+		<posy>135</posy>
+	</coordinates>
+	<include>dialogeffect</include>
+	<controls>
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>800</width>
+			<height>500</height>
+			<colordiffuse>55FFFFFF</colordiffuse>
+			<texture>grey.png</texture>
+		</control>
+		<control type="image">
+			<description>background image</description>
+			<posx>5</posx>
+			<posy>5</posy>
+			<width>790</width>
+			<height>490</height>
+			<colordiffuse>88FFFFFF</colordiffuse>
+			<texture>black.png</texture>
+		</control>
+		<control type="label" id="1">
+			<description>heading label</description>
+			<posx>20</posx>
+			<posy>10</posy>
+			<width>420</width>
+			<align>left</align>
+			<font>font16</font>
+			<label>53155</label>
+			<textcolor>green</textcolor>
+		</control>
+		<control type="spincontrol" id="60">
+			<description>Next page button</description>
+			<posx>740</posx>
+			<posy>20</posy>
+			<subtype>page</subtype>
+			<font>font13</font>
+			<align>right</align>
+			<textcolor>green</textcolor>
+			<textureup>scroll-up.png</textureup>
+			<texturedown>scroll-down.png</texturedown>
+			<textureupfocus>scroll-up-focus-green.png</textureupfocus>
+			<texturedownfocus>scroll-down-focus-green.png</texturedownfocus>
+			<onleft>450</onleft>
+			<onright>450</onright>
+			<ondown>450</ondown>
+			<onup>450</onup>
+			<showonepage>false</showonepage>
+		</control>
+		<control type="list" id="450">
+			<posx>15</posx>
+			<posy>50</posy>
+			<width>770</width>
+			<height>423</height>
+			<onleft>450</onleft>
+			<onright>60</onright>
+			<onup>450</onup>
+			<ondown>450</ondown>
+			<pagecontrol>60</pagecontrol>
+			<scrolltime>200</scrolltime>
+			<itemlayout height="47">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>770</width>
+					<height>45</height>
+					<colordiffuse>AAFFFFFF</colordiffuse>
+					<texture>list-nofocus.png</texture>
+				</control>
+				<control type="image">
+					<posx>15</posx>
+					<posy>5</posy>
+					<width>35</width>
+					<height>35</height>
+					<info>ListItem.Icon</info>
+				</control>
+				<control type="label">
+					<posx>65</posx>
+					<posy>5</posy>
+					<width>700</width>
+					<height>35</height>
+					<font>font13</font>
+					<aligny>center</aligny>
+					<selectedcolor>green</selectedcolor>
+					<align>left</align>
+					<info>ListItem.Label</info>
+				</control>
+			</itemlayout>
+			<focusedlayout height="47">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>770</width>
+					<height>45</height>
+					<colordiffuse>AAFFFFFF</colordiffuse>
+					<visible>!Control.HasFocus(450)</visible>
+					<texture>list-nofocus.png</texture>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>770</width>
+					<height>45</height>
+					<colordiffuse>AAFFFFFF</colordiffuse>
+					<visible>Control.HasFocus(450)</visible>
+					<texture>list-focus2.png</texture>
+				</control>
+				<control type="image">
+					<posx>15</posx>
+					<posy>5</posy>
+					<width>35</width>
+					<height>35</height>
+					<info>ListItem.Icon</info>
+				</control>
+				<control type="label">
+					<posx>65</posx>
+					<posy>5</posy>
+					<width>700</width>
+					<height>35</height>
+					<font>font13</font>
+					<aligny>center</aligny>
+					<selectedcolor>green</selectedcolor>
+					<align>left</align>
+					<info>ListItem.Label</info>
+				</control>
+			</focusedlayout>
+		</control>
+	</controls>
+</window>

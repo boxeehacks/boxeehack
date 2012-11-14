@@ -1,0 +1,93 @@
+﻿<?xml version="1.0"?>
+<window id="10440">
+	<defaultcontrol always="true">240</defaultcontrol>
+	<controls>
+		<include>Common_Background</include>
+		<control type="group">
+	    <posx>326</posx>
+	    <posy>50</posy>
+	    <control type="image">
+		    <posx>0</posx>
+		    <posy>0</posy>
+		    <width>628</width>
+		    <height>643</height>
+		    <texture border="30">browse_menu_dialog_background.png</texture>
+				<colordiffuse>FF212121</colordiffuse>
+      </control>
+    <control type="label">
+        <posx>0</posx>
+        <posy>50</posy>
+        <width>628</width>
+        <height>90</height>
+        <font>font32b</font>
+        <align>center</align>
+        <aligny>center</aligny>
+        <textcolor>white</textcolor>
+        <label>$LOCALIZE[54851]</label>
+    </control>    
+    <control type="label">
+        <posx>156</posx>
+        <posy>150</posy>
+        <width>300</width>
+        <height>90</height>
+        <font>font24b</font>
+        <align>left</align>
+        <aligny>center</aligny>
+        <textcolor>white</textcolor>
+        <label>$LOCALIZE[54852]</label>
+    </control>        
+        <control type="list" id="240">
+        <posx>146</posx>
+        <posy>230</posy>
+        <width>340</width>
+        <height>360</height>
+        <onleft>-</onleft>
+        <onright>-</onright>
+        <onup>-</onup>
+        <ondown>-</ondown>
+        <scrolltime>200</scrolltime>
+        <orientation>vertical</orientation>
+        <itemlayout height="58">
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>340</width>
+                <height>70</height>
+                <texture border="10">button_action_menu_source.png</texture>
+            </control> 
+            <control type="label">
+                <posx>170</posx>
+                <posy>22</posy>
+                <width>320</width>
+                <height>25</height>
+                <font>font24b</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <info>ListItem.Label</info>
+                <textcolor>white</textcolor>
+            </control>
+        </itemlayout>
+        <focusedlayout height="58">
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>340</width>
+                <height>70</height>
+                <texture border="10">button_action_menu_source_on.png</texture>
+            </control> 
+            <control type="label">
+                <posx>170</posx>
+                <posy>22</posy>
+                <width>320</width>
+                <height>25</height>
+                <font>font24b</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <info>ListItem.Label</info>
+                <textcolor>black</textcolor>
+            </control>
+        </focusedlayout>
+    </control>
+    </control>
+    </controls>
+</window>

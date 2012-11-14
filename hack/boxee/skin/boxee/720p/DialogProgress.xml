@@ -1,0 +1,39 @@
+﻿<?xml version="1.0"?>
+<window id="101">
+	<colorbufferactive>false</colorbufferactive>
+	<include>Window_OpenClose_Animation</include>
+	<controls>
+		<control type="group">
+			<visible>!Player.Caching</visible>
+			<control type="multiimage">
+				<animation effect="fade" time="100">VisibleChange</animation>
+				<include>Loading_Animation</include>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Player.Caching</visible>
+			<animation effect="fade" time="200">VisibleChange</animation>
+			<control type="image">
+				<description>Main Menu Feed Translucent Overlay</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<texture>black.png</texture>
+			</control>
+			<control type="group">
+				<posx>36</posx>
+				<posy>620</posy>
+				<!--control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1208</width>
+					<height>64</height>
+					<texture border="20">menu_dialog_background.png</texture>
+					<colordiffuse>F3212121</colordiffuse>
+				</control-->
+				<include>OSD_Progress</include>
+			</control>
+		</control>
+	</controls>
+</window>

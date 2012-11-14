@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<window id="10466">
+	<defaultcontrol>9050</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>Common_Background</include>
+		<control type="group" id="9001">
+			<control type="label" id="9019">
+				<posx>35</posx>
+				<posy>44</posy>
+				<width>925</width>
+				<font>font40b</font>
+				<textcolor>whiteheidi</textcolor>
+				<align>left</align>
+				<label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+			</control>
+			<control type="label">
+				<visible>true + !Window.Property(empty)</visible>
+				<posx>35</posx>
+				<posy>25</posy>
+				<width>925</width>
+				<font>font21b</font>
+				<textcolor>boxeegreenheidi</textcolor>
+				<align>left</align>
+				<label>[B][UPPERCASE]$INFO[Window.Property(item-summary-count)][/UPPERCASE][/B]</label>
+			</control>
+		</control>
+		<control type="group" id="9050">
+			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsActive(boxee_search.xml)">Conditional</animation>
+			<include>BrowseSimpleAppView</include>
+		</control>
+	</controls>
+</window>

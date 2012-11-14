@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<window id="107">
+	<colorbufferactive>false</colorbufferactive>
+	<controls>
+		<control type="group">
+			<animation effect="fade" time="200" tween="cubic" easing="inout">WindowOpen</animation>
+			<animation effect="fade" time="1000" tween="cubic" easing="inout">WindowClose</animation>
+			<posx>870</posx>
+			<posy>24</posy>
+			<control type="image" id="403">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>384</width>
+				<height>80</height>
+				<texture srcborder="30" border="20">kaidialog/kai-dialog.png</texture>
+			</control>
+			<control type="image" id="400">
+				<posx>23</posx>
+				<posy>23</posy>
+				<width>32</width>
+				<height>32</height>
+				<texture>icons/icon_star.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label" id="401">
+				<visible>false</visible>
+				<label>-</label>
+			</control>
+			<control type="label" id="402">
+				<visible>false</visible>
+				<label>-</label>
+			</control>
+			<control type="label">
+				<posx>66</posx>
+				<posy>7</posy>
+				<width>306</width>
+				<height>65</height>
+				<font>font20bls</font>
+				<textcolor>white</textcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[B]$INFO[control.GetLabel(401)][/B] $INFO[control.GetLabel(402)]</label>
+				<scroll>false</scroll>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+		</control>
+	</controls>
+</window>

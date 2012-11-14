@@ -1,0 +1,340 @@
+<?xml version="1.0"?>
+<browse_menu>
+
+	<!-- ------------- -->
+	<!-- MOVIE SECTION -->
+	<!-- ------------- -->
+
+	<!-- library movies -->
+	<menu id="mn_library_movies" level="1" title="342">
+		<button id="bt_library_movies_all">
+			<label>57601</label>
+			<command>boxeeui://movies/?category=all</command>
+		</button>
+		<button id="bt_library_movies_genres">
+			<label>135</label>
+			<clickable>false</clickable>
+			<child>mn_library_movies_genres</child>
+		</button>
+		<button id="bt_library_movies_providers">
+			<label>54075</label>
+			<clickable>false</clickable>
+			<child>mn_library_movies_providers</child>
+		</button>
+		<!-- button id="bt_library_movies_trailers">
+			<label>1053</label>
+			<clickable>false</clickable>
+			<child>mn_library_movies_trailers</child>
+		</button -->
+		<button id="bt_separator"/>
+		<button id="bt_library_movies_trailers">
+			<label>1053</label>
+			<command>boxeeui://movies/?category=trailers</command>
+			<menu>mn_library_movies_trailers</menu>
+		</button>
+		<button id="bt_library_local_movies">
+			<label>54026</label>
+			<command>boxeeui://movies/?category=local</command>
+			<menu>mn_local_movies</menu>
+		</button>
+	</menu>
+	<menu id="mn_library_movies_genres" title="135">
+		<path>browsemenu://movies/genres/?type=all</path>
+		<parent>mn_library_movies</parent>
+	</menu>
+	<!-- menu id="mn_library_movies_trailers" title="1053">
+		<path>browsemenu://movies/trailers</path>
+		<parent>mn_library_movies</parent>
+	</menu -->
+	<menu id="mn_library_movies_providers" title="54075">
+		<path>browsemenu://movies/providers</path>
+		<parent>mn_library_movies</parent>
+	</menu>
+
+	<!-- local movies -->
+	<menu id="mn_local_movies" level="1" title="342">
+		<!-- parent>mn_library_movies</parent -->
+		<button id="bt_local_movies_all">
+			<label>54026</label>
+			<command>boxeeui://movies/?category=local</command>
+		</button>
+		<button id="bt_local_movies_genres">
+			<label>135</label>
+			<clickable>false</clickable>
+			<child>mn_local_movies_genres</child>
+		</button>
+		<button id="bt_local_movies_sources">
+			<label>52044</label>
+			<clickable>false</clickable>
+			<child>mn_local_movies_sources</child>
+		</button>
+		<button id="bt_local_movies_unwatched">
+			<label>16101</label>
+			<command>boxeeui://movies/?category=local&unwatched=true</command>
+		</button>
+		<button id="bt_separator"/>
+		<button id="bt_local_library_movies_all">
+			<label>57601</label>
+			<command>boxeeui://movies/?category=all</command>
+			<menu>mn_library_movies</menu>
+		</button>
+	</menu>
+	<menu id="mn_local_movies_genres" title="135">
+		<path>browsemenu://movies/genres/?type=local</path>
+		<parent>mn_local_movies</parent>
+	</menu>
+	<menu id="mn_local_movies_sources" title="52044">
+		<path>browsemenu://movies/sources</path>
+		<parent>mn_local_movies</parent>
+	</menu>
+
+	<!-- trailers movies -->
+	<menu id="mn_library_movies_trailers" level="1" title="1053">
+		<path>browsemenu://movies/trailers</path>
+		<button id="bt_separator"/>
+		<button id="bt_trailers_library_movies">
+			<label>57601</label>
+			<command>boxeeui://movies/?category=all</command>
+			<menu>mn_library_movies</menu>
+		</button>
+		<button id="bt_trailers_local_movies">
+			<label>54026</label>
+			<command>boxeeui://movies/?category=local</command>
+			<menu>mn_local_movies</menu>
+		</button>
+	</menu>
+
+	<!-- -------------- -->
+	<!-- TvShow SECTION -->
+	<!-- -------------- -->
+
+	<!-- library shows -->
+	<menu id="mn_library_shows" level="1" title="1051">
+		<button id="bt_library_shows_all">
+			<label>57605</label>
+			<command>boxeeui://shows/?category=all</command>
+		</button>
+		<button id="bt_library_shows_genres">
+			<label>53561</label>
+			<clickable>false</clickable>
+			<child>mn_library_shows_genres</child>
+		</button>
+		<button id="bt_library_shows_providers">
+			<label>54075</label>
+			<clickable>false</clickable>
+			<child>mn_library_shows_providers</child>
+		</button>
+		<button id="bt_separator"/>
+		<button id="bt_library_shows_favorite">
+			<label>52111</label>
+			<command>boxeeui://shows/?category=favorite</command>
+			<menu>mn_favorites_shows</menu>
+		</button>
+		<button id="bt_library_shows_local">
+			<label>57606</label>
+			<command>boxeeui://shows/?category=local</command>
+			<menu>mn_local_shows</menu>
+		</button>		
+	</menu>
+	<menu id="mn_library_shows_genres" title="53561">
+		<path>browsemenu://shows/genres/?type=all</path>
+		<parent>mn_library_shows</parent>
+	</menu>
+	<menu id="mn_library_shows_providers" title="54075">
+		<path>browsemenu://shows/providers</path>
+		<parent>mn_library_shows</parent>
+	</menu>
+
+	<!-- local shows -->
+	<menu id="mn_local_shows" level="1" title="1051">
+		<button id="bt_local_shows_all">
+			<label>57606</label>
+			<command>boxeeui://shows/?category=local</command>
+		</button>
+		<button id="bt_local_shows_genres">
+			<label>135</label>
+			<clickable>false</clickable>
+			<child>mn_local_shows_genres</child>
+		</button>
+		<button id="bt_separator"/>
+		<button id="bt_local_shows_favorite">
+			<label>52111</label>
+			<command>boxeeui://shows/?category=favorite</command>
+			<menu>mn_favorites_shows</menu>
+		</button>
+		<button id="bt_local_shows_library">
+			<label>57605</label>
+			<command>boxeeui://shows/?category=all</command>
+			<menu>mn_library_shows</menu>
+		</button>
+	</menu>
+	<menu id="mn_local_shows_genres" title="53561">
+		<path>browsemenu://shows/genres?type=local</path>
+		<parent>mn_local_shows</parent>
+	</menu>
+
+	<!-- favorites shows -->
+	<menu id="mn_favorites_shows" level="1" title="1051">
+		<button id="bt_favorite_shows">
+			<label>52111</label>
+			<command>boxeeui://shows/?category=favorite</command>
+		</button>
+		<button id="bt_separator"/>
+		<button id="bt_favorite_shows_local">
+			<label>57606</label>
+			<command>boxeeui://shows/?category=local</command>
+			<menu>mn_local_shows</menu>
+		</button>
+		<button id="bt_favorite_shows_library">
+			<label>57605</label>
+			<command>boxeeui://shows/?category=all</command>
+			<menu>mn_library_shows</menu>
+		</button>
+	</menu>
+
+	<!-- ------------- -->
+	<!-- MUSIC SECTION -->
+	<!-- ------------- -->
+
+	<menu id="mn_local_music_categories" title="2">
+		<parent>mn_local_files</parent>
+		<button id="bt_music_by_artist">
+			<label>557</label>
+			<command>boxeeui://music/?category=artists</command>
+			<window>10484</window>
+		</button>
+		<button id="bt_music_by_album">
+			<label>558</label>
+			<command>boxeeui://music/?category=albums</command>
+			<window>10484</window>
+		</button>
+	</menu>
+
+	<!-- ------------ -->
+	<!-- APPS SECTION -->
+	<!-- ------------ -->
+
+	<!-- library apps -->
+	<menu id="mn_library_apps" level="1" title="53914">
+		<button id="bt_apps_all">
+			<label>53509</label>
+			<command>boxeeui://apps/?category=all</command>
+		</button>
+		<button id="bt_apps_favorite">
+			<label>52111</label>
+			<command>boxeeui://apps/?category=favorite</command>
+		</button>
+		<button id="bt_apps_featured">
+			<label>54063</label>
+			<command>boxeeui://apps/?category=featured&categoryfilter=99</command>
+		</button>
+		<button id="bt_apps_categories">
+			<label>53827</label>
+			<clickable>false</clickable>
+			<child>mn_library_apps_categories</child>
+		</button>
+		<button id="bt_separator"/>
+		<button id="bt_apps_repositories">
+			<label>53274</label>
+			<command>boxeeui://apps/?category=repos</command>
+			<window>10486</window>
+		</button>
+	</menu>
+	<menu id="mn_library_apps_categories" title="53827">
+		<path>browsemenu://apps/categories/?type=all</path>
+		<window>10482</window>
+		<parent>mn_library_apps</parent>
+	</menu>
+
+	<!-- ------------------ -->
+	<!-- REPOSITORY SECTION -->
+	<!-- ------------------ -->
+
+	<!-- repository -->
+	<menu id="mn_library_repository_apps" level="1" title="53914">
+		<button id="bt_apps_all">
+			<label>53509</label>
+			<command>boxeeui://apps/?category=all</command>
+			<window>10482</window>
+		</button>
+		<button id="bt_apps_favorite">
+			<label>52111</label>
+			<command>boxeeui://apps/?category=favorite</command>
+			<window>10482</window>
+		</button>
+		<button id="bt_apps_featured">
+			<label>54063</label>
+			<command>boxeeui://apps/?category=featured&categoryfilter=99</command>
+			<window>10482</window>
+		</button>
+		<button id="bt_apps_categories">
+			<label>53827</label>
+			<clickable>false</clickable>
+			<child>mn_library_apps_categories</child>
+		</button>
+		<button id="bt_separator"/>
+		<button id="bt_apps_repositories">
+			<label>53274</label>
+			<command>boxeeui://apps/?category=repos</command>
+		</button>
+	</menu>
+
+	<!-- ------------- -->
+	<!-- FILES SECTION -->
+	<!-- ------------- -->
+
+	<!-- local file -->
+	<menu id="mn_local_files" level="1" title="53915">
+		<button id="bt_browse_all">
+			<label>1024</label>
+			<command>boxeeui://files/?path=network://protocols</command>
+			<window>10479</window>
+		</button>
+		<button id="bt_network_all">
+			<label>51406</label>
+			<command>boxeeui://files/?path=sources://all</command>
+			<window>10479</window>
+		</button>
+		<button id="bt_separator"/>
+		<button id="shows_local">
+			<label>53912</label>
+			<command>boxeeui://shows/?category=local</command>
+			<window>10480</window>
+		</button>
+		<button id="movies_local">
+			<label>53913</label>
+			<command>boxeeui://movies/?category=local</command>
+			<window>10481</window>
+		</button>
+		<button id="bt_music">
+			<label>2</label>
+			<clickable>false</clickable>
+			<child>mn_local_music_categories</child>
+		</button>
+		<button id="bt_photos_all">
+			<label>1</label>
+			<command>boxeeui://photos/</command>
+			<window>10491</window>
+		</button>
+	</menu>
+
+	<!-- ----------- -->
+	<!-- WATCH LATER -->
+	<!-- ----------- -->
+
+	<menu id="mn_watch_later" level="1" title="53910">
+		<button id="bt_watch_later_clips">
+			<label>33016</label>
+			<command>boxeeui://queue/?type=clip</command>
+		</button>
+		<button id="bt_watch_later_tvshows">
+			<label>53912</label>
+			<command>boxeeui://queue/?type=tv_show</command>
+		</button>
+		<button id="bt_watch_later_movies">
+			<label>53913</label>
+			<command>boxeeui://queue/?type=movie</command>
+		</button>
+	</menu>
+
+</browse_menu>

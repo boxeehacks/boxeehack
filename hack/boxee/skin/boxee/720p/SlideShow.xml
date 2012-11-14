@@ -1,0 +1,57 @@
+﻿<?xml version="1.0"?>
+<window id="2007">
+    <dynamiccontents>true</dynamiccontents>
+	<controls>
+		<control type="group">
+			<visible>Slideshow.ShowInfo</visible>
+			<posx>36</posx>
+			<posy>36</posy>
+			<control type="image">
+				<visible>!IsEmpty(slideshow.label)</visible>
+				<visible>IsEmpty(slideshow.description)</visible>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1208</width>
+				<height>64</height>
+				<texture border="20">browse_menu_dialog_background.png</texture>
+				<colordiffuse>C0212121</colordiffuse>
+			</control>
+			<control type="image">
+				<visible>!IsEmpty(slideshow.label)</visible>
+				<visible>!IsEmpty(slideshow.description)</visible>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1208</width>
+				<height>192</height>
+				<texture border="20">browse_menu_dialog_background.png</texture>
+				<colordiffuse>C0212121</colordiffuse>
+			</control>
+			<control type="label">
+				<posx>14</posx>
+				<posy>16</posy>
+				<width>1180</width>
+				<height>32</height>
+				<font>font32b</font>
+				<textcolor>offwhite</textcolor>
+				<label>$INFO[slideshow.label]</label>
+				<aligny>center</aligny>
+				<align>left</align>
+				<scroll>false</scroll>
+			</control>
+			<control type="label">
+				<posx>14</posx>
+				<posy>56</posy>
+				<width>1180</width>
+				<height>120</height>
+				<font>font24</font>
+				<textcolor>offwhite</textcolor>
+				<label>$INFO[slideshow.description]</label>
+				<aligny>top</aligny>
+				<align>left</align>
+				<scroll>false</scroll>
+				<label>$INFO[slideshow.description]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+		</control>
+	</controls>
+</window>

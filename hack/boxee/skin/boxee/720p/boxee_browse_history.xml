@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<window id="10490">
+	<defaultcontrol always="true">-</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>Common_Background</include>
+		<control type="group" id="9001">
+			<control type="label" id="9019">
+				<posx>35</posx>
+				<posy>44</posy>
+				<width>925</width>
+				<font>font40b</font>
+				<textcolor>whiteheidi</textcolor>
+				<align>left</align>
+				<label>[B]$LOCALIZE[51112][/B]</label>
+			</control>
+			<control type="label">
+				<visible>true + !Window.Property(empty)</visible>
+				<posx>35</posx>
+				<posy>25</posy>
+				<width>925</width>
+				<font>font21b</font>
+				<textcolor>boxeegreenheidi</textcolor>
+				<align>left</align>
+				<label>[UPPERCASE][B]$INFO[Container.NumItems,, $LOCALIZE[90050]][/B][/UPPERCASE]</label>
+			</control>
+			<!-- Clear all history -->
+			<control type="button" id="9015">
+				<description>Clear all history</description>
+				<visible>true + !Window.Property(empty)</visible>
+				<posx>1105</posx>
+				<posy>32</posy>
+				<width>140</width>
+				<height>64</height>
+				<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+				<texturenofocus srcborder="24" border="16">button-unfocused.png</texturenofocus>
+				<font>font24b</font>
+				<textcolor>lightgreyheidi</textcolor>
+				<focusedcolor>whiteheidi</focusedcolor>
+				<disabledcolor>lightgreyheidi</disabledcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>[B]$LOCALIZE[192][/B]</label>
+				<onleft>9090</onleft>
+				<onright>-</onright>
+				<ondown>9090</ondown>
+				<onup>-</onup>
+			</control>				
+		</control>
+		<control type="group">
+			<control type="group" id="9090">
+				<include>BrowseHistoryView</include>
+				<!-- include>BrowseRecentlyPlayedEmptyList</include -->
+			</control>
+			<include>BrowseLoadingAnimation</include>
+		</control>
+		<!-- include>Window_Transition</include -->
+	</controls>
+</window>

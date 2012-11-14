@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<window id="4589" type="dialog">
+	<defaultcontrol always="true">3333</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="list" id="5000">
+            <description>info</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>0</width>
+            <height>0</height>
+            <visible>false</visible>
+            <itemlayout height="0">
+			</itemlayout>
+            <focusedlayout height="0">
+			</focusedlayout>
+        </control>
+
+ 		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+            <colordiffuse>88FFFFFF</colordiffuse>					
+		</control>	
+
+        <control type="group">
+        	<posx>281</posx>
+        	<posy>109</posy>
+        	<control type="image">
+        		<posx>0</posx>
+        		<posy>0</posy>
+        		<width>710</width>
+        		<height>491</height>
+        		<texture srcborder="51" border="34">dialog_bg.png</texture>
+        	</control>       
+        	<control type="label">
+				<posx>64</posx>
+				<posy>47</posy>
+				<width>588</width>
+				<height>20</height>
+				<font>font20b</font>
+				<textcolor>boxeegreenheidi</textcolor>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>[B]Coming up at $INFO[Container(5000).ListItem.Property(StartTime)] on $INFO[Container(5000).ListItem.Property(ChannelName)][/B]</label>
+			</control>
+			<control type="label">
+				<posx>64</posx>
+				<posy>67</posy>
+				<width>570</width>
+				<label>[B]$INFO[Container(5000).ListItem.Property(show-title)][/B]</label>
+				<font>font40</font>
+				<align>left</align>
+				<textcolor>white</textcolor>
+			</control>
+			<control type="grouplist">
+				<posx>64</posx>
+				<posy>116</posy>			
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>			
+				<control type="label">
+					<width max="300">auto</width>
+					<font>font22b</font>
+					<textcolor>darkgreyheidi</textcolor>
+					<label>$INFO[Container(5000).ListItem.Property(StartTime)] - $INFO[Container(5000).ListItem.Property(EndTime)]</label>
+					<align>left</align>
+				</control>		
+				<control type="label">
+					<visible>Container(5000).ListItem.Property(IsNew)</visible>																				
+					<width max="200">auto</width>
+					<label>[B]· $LOCALIZE[58033][/B]</label>
+					<font>font22b</font>
+					<align>left</align>
+					<textcolor>darkgreyheidi</textcolor>
+				</control>						
+			 </control>
+			 <control type="image">
+                <posx>10</posx>
+                <posy>160</posy>
+                <width>690</width>
+                <height>33</height>
+                <texture>feather_divider.png</texture>
+            </control>             
+			<control type="grouplist">
+				<posx>64</posx>
+				<posy>184</posy>			
+				<orientation>vertical</orientation>
+				<usecontrolcoords>true</usecontrolcoords>			
+				<control type="label">
+					<width>570</width>
+					<height max="200">auto</height>
+					<font>font22b</font>
+					<textcolor>whiteheidi</textcolor>
+					<label>[B]$INFO[Container(5000).ListItem.Property(episode-title)][/B]</label>
+					<align>left</align>
+				</control>		
+				                
+				<control type="label">
+					<width>570</width>
+					<height max="290">auto</height>						
+					<label>[B]$INFO[Container(5000).ListItem.Property(show-synopsis)][/B]</label>
+					<font>font22</font>
+					<align>left</align>
+					<textcolor>darkgreyheidi</textcolor>
+    				<wrapmultiline>true</wrapmultiline>					
+				</control>
+			</control>
+        </control>					
+   	</controls>
+</window>

@@ -1,0 +1,33 @@
+﻿<window id="106">
+	<defaultcontrol>1000</defaultcontrol>
+	<include>Window_OpenClose_Animation</include>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	<controls>
+		<control type="image" id="999">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>360</width>
+			<texture border="20">menu_dialog_background.png</texture>
+			<colordiffuse>FF212121</colordiffuse>
+		</control>
+		<control type="button" id="1000">
+			<description>button template</description>
+			<posx>10</posx>
+			<posy>0</posy>
+			<width>340</width>
+			<height>72</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>font26</font>
+			<textcolor>white</textcolor>
+			<focusedcolor>black</focusedcolor>
+			<texturefocus border="30">button_action_menu_source_on.png</texturefocus>
+			<texturenofocus>-</texturenofocus>
+		</control>
+	</controls>
+</window>

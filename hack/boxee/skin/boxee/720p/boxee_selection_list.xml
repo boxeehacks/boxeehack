@@ -1,0 +1,101 @@
+﻿<?xml version="1.0"?>
+<window id="10425">
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<!-- When on top of action dialog -->
+		<control type="group">
+			<visible>true</visible>
+			<posx>530</posx>
+			<posy>245</posy>
+			<control type="image">		
+				<description>dialog background</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>400</width>
+				<height>258</height>
+				<texture border="20">menu_dialog_background.png</texture>
+				<colordiffuse>FF212121</colordiffuse>
+			</control>
+			<control type="label" id="9001">		
+				<posx>0</posx>
+				<posy>10</posy>
+				<width>400</width>
+				<height>22</height>
+				<font>font22</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>grey</textcolor>
+			</control>
+			<control type="fixedlist" id="11">
+				<posx>0</posx>
+				<posy>30</posy>
+				<width>400</width>
+				<height>258</height>
+				<onleft>-</onleft>
+				<onup>3</onup>				
+				<onright>-</onright>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<itemgap>10</itemgap>
+				<itemlayout width="400" height="86">
+					<control type="image">
+						<posx>0</posx>
+						<posy>14</posy>
+						<width>400</width>
+						<height>72</height>
+						<colordiffuse>FF464646</colordiffuse>
+						<texture border="30">action_menu_button.png</texture>
+					</control>
+					<control type="label">
+						<posx>14</posx>
+						<posy>14</posy>
+						<width>276</width>
+						<height>72</height>
+						<font>font32b</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>grey</textcolor>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(is-hd)</visible>
+						<posx>324</posx>
+						<posy>22</posy>
+						<width>56</width>
+						<height>56</height>
+						<texture diffuse="grey.png">icons/boxee-icon-HD.png</texture>
+					</control>											
+				</itemlayout>
+				<focusedlayout width="400" height="86">
+					<control type="image">
+						<posx>0</posx>
+						<posy>14</posy>
+						<width>400</width>
+						<height>72</height>
+						<colordiffuse>FF10B9F2</colordiffuse>
+						<texture border="30">action_menu_button.png</texture>
+					</control>
+					<control type="label">
+						<posx>14</posx>
+						<posy>14</posy>
+						<width>276</width>
+						<height>72</height>
+						<font>font32b</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="image">
+						<visible>ListItem.Property(is-hd)</visible>
+						<posx>324</posx>
+						<posy>22</posy>
+						<width>56</width>
+						<height>56</height>
+						<texture diffuse="black.png">icons/boxee-icon-HD.png</texture>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>

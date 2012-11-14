@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<window id="10440">
+	<defaultcontrol always="true">300</defaultcontrol>
+	<controls>
+		<include>Common_Background</include>
+		<control type="group">
+			<include>FTUDialogNoAnim_Heidi</include>
+			<!-- RIGHT SIDE - BEGIN-->
+			<control type="image">
+				<posx>550</posx>
+				<posy>72</posy>
+				<width>160</width>
+				<height>80</height>
+				<texture>ftu/graphic-ftu-ethernet.png</texture>
+			</control>
+			<control type="label" id="310">
+				<description>no internet</description>
+				<posx>466</posx>
+				<posy>176</posy>
+				<width>340</width>
+				<height>118</height>
+				<aligny>top</aligny>
+				<font>font24bls</font>
+				<textcolor>errorredheidi</textcolor>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="button" id="300">
+				<posx>474</posx>
+				<posy>310</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<onup>300</onup>
+				<ondown>400</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onclick>-</onclick>
+				<label>[B]$LOCALIZE[54640][/B]</label>
+			</control>
+			<control type="button" id="400">
+				<posx>474</posx>
+				<posy>378</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<onup>300</onup>
+				<ondown>500</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onclick>-</onclick>
+				<label>-</label>
+			</control>
+			<control type="button" id="500">
+				<posx>474</posx>
+				<posy>446</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<onup>400</onup>
+				<ondown>500</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onclick>-</onclick>
+				<label>[B]$LOCALIZE[514][/B]</label>
+			</control>
+			<!-- RIGHT SIDE - END -->
+			<!-- LEFT SIDE - BEGIN -->
+			<control type="grouplist">
+				<posx>62</posx>
+				<posy>56</posy>
+				<width>320</width>
+				<height>412</height>
+				<orientation>vertical</orientation>
+				<itemgap>0</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<width>320</width>
+					<height min="0" max="120">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$LOCALIZE[54589][/B]</label>
+					<include>Header_Heidi</include>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<posy>10</posy>
+					<width>320</width>
+					<height min="0" max="288">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[54588]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<include>LargeText_Heidi</include>
+				</control>
+			</control>
+			<!-- LEFT SIDE - END -->
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<window id="4589" type="dialog">
+	<defaultcontrol always="true">3333</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+ 		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+            <colordiffuse>C8FFFFFF</colordiffuse>					
+		</control>	
+			
+        <control type="group">
+        	<posx>215</posx>
+        	<posy>119</posy>
+        	<control type="image">
+        		<posx>0</posx>
+        		<posy>0</posy>
+        		<width>850</width>
+        		<height>291</height>
+        		<texture srcborder="51" border="34">dialog_bg.png</texture>
+        	</control>
+        	
+        	<!-- Scanning -->
+        	<control type="group" id="50">
+        	    <visible>true</visible>        	
+	    		<control type="label" id="51">
+	    			<posx>62</posx>
+	    			<posy>50</posy>
+	    			<width>588</width>
+	    			<height>20</height>
+	    			<font>font40b</font>
+	    			<textcolor>white</textcolor>
+	    			<align>left</align>
+	    			<aligny>top</aligny>
+	    			<label>[B]$LOCALIZE[58001][/B]</label>
+	    		</control>
+	    		<control type="label">
+	    			<posx>62</posx>
+	    			<posy>104</posy>
+	    			<width>760</width>
+	    			<height>20</height>
+	    			<font>font24b</font>
+	    			<textcolor>mediumgreyheidi</textcolor>
+	    			<align>left</align>
+	    			<aligny>top</aligny>
+	    			<label>[B]$LOCALIZE[58076][/B]</label>
+	    		</control>    	
+				<control type="progress" id="52">
+					<posx>64</posx>
+					<posy>162</posy>
+					<width>720</width>
+					<height>64</height>
+					<visible>true</visible>
+					<reveal>false</reveal>
+					<texturebg srcborder="48,0,48,0" border="32,0,32,0">livetv/graphic-scanning-progress-bg.png</texturebg>
+					<lefttexture srcborder="48,0,0,0" border="32,0,0,0">livetv/graphic-scanning-progress-left.png</lefttexture>
+					<midtexture>livetv/graphic-scanning-progress-center.png</midtexture>
+					<righttexture srcborder="0,0,48,0" border="0,0,32,0">livetv/graphic-scanning-progress-right.png</righttexture>
+					<overlaytexture>-</overlaytexture>
+					<info>DVB.ScanProgress</info>
+				</control>    				
+			</control>
+			
+        	<!-- Scanning Complete OK -->
+        	<control type="group" id="60">
+        	    <visible>false</visible>        	
+	    		<control type="label">
+	    			<posx>62</posx>
+	    			<posy>50</posy>
+	    			<width>588</width>
+	    			<height>20</height>
+	    			<font>font40b</font>
+	    			<textcolor>white</textcolor>
+	    			<align>left</align>
+	    			<aligny>top</aligny>
+	    			<label>[B]$LOCALIZE[58002][/B]</label>
+	    		</control>
+	    		<control type="label" id="61">
+	    			<posx>62</posx>
+	    			<posy>104</posy>
+	    			<width>760</width>
+	    			<height>20</height>
+	    			<font>font24b</font>
+	    			<textcolor>mediumgreyheidi</textcolor>
+	    			<align>left</align>
+	    			<aligny>top</aligny>
+	    			<label>[B]$LOCALIZE[58003][/B]</label>
+	    		</control>    	
+				<control type="button" id="62">
+					<posx>64</posx>
+					<posy>162</posy>
+					<width>720</width>
+					<height>60</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[58077][/B]</label>			
+				</control>    				
+			</control>			
+			
+			<!-- Scanning Complete no channels -->
+        	<control type="group" id="70">
+        	    <visible>false</visible>        	
+	    		<control type="label">
+	    			<posx>62</posx>
+	    			<posy>50</posy>
+	    			<width>588</width>
+	    			<height>20</height>
+	    			<font>font40b</font>
+	    			<textcolor>white</textcolor>
+	    			<align>left</align>
+	    			<aligny>top</aligny>
+	    			<label>[B]$LOCALIZE[58002][/B]</label>
+	    		</control>
+	    		<control type="label">
+	    			<posx>62</posx>
+	    			<posy>104</posy>
+	    			<width>760</width>
+	    			<height>20</height>
+	    			<font>font24b</font>
+	    			<textcolor>mediumgreyheidi</textcolor>
+	    			<align>left</align>
+	    			<aligny>top</aligny>
+	    			<label>$LOCALIZE[58078]</label>
+	    		</control>    	
+				<control type="button" id="71">
+					<posx>64</posx>
+					<posy>162</posy>
+					<width>720</width>
+					<height>60</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[54640][/B]</label>			
+				</control>    				
+			</control>
+						
+			<!-- Cancel scanning? -->
+        	<control type="group" id="80">
+        	    <visible>false</visible>        	
+	    		<control type="label">
+	    			<posx>62</posx>
+	    			<posy>50</posy>
+	    			<width>588</width>
+	    			<height>20</height>
+	    			<font>font40b</font>
+	    			<textcolor>white</textcolor>
+	    			<align>left</align>
+	    			<aligny>top</aligny>
+	    			<label>[B]$LOCALIZE[58079][/B]</label>
+	    		</control>
+	    		<control type="label">
+	    			<posx>62</posx>
+	    			<posy>104</posy>
+	    			<width>760</width>
+	    			<height>20</height>
+	    			<font>font24b</font>
+	    			<textcolor>mediumgreyheidi</textcolor>
+	    			<align>left</align>
+	    			<aligny>top</aligny>
+	    			<label>$LOCALIZE[58080]</label>
+	    		</control>    	
+				<control type="button" id="81">
+					<posx>64</posx>
+					<posy>162</posy>
+					<width>720</width>
+					<height>60</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[58084][/B]</label>			
+				</control>    				
+			</control>
+			
+			<!-- No Internet -->
+        	<control type="group" id="90">
+        	    <visible>false</visible>        	
+	    		<control type="label">
+	    			<posx>62</posx>
+	    			<posy>50</posy>
+	    			<width>588</width>
+	    			<height>20</height>
+	    			<font>font40b</font>
+	    			<textcolor>white</textcolor>
+	    			<align>left</align>
+	    			<aligny>top</aligny>
+	    			<label>[B]$LOCALIZE[58081][/B]</label>
+	    		</control>
+	    		<control type="label">
+	    			<posx>62</posx>
+	    			<posy>104</posy>
+	    			<width>760</width>
+	    			<height>20</height>
+	    			<font>font24b</font>
+	    			<textcolor>mediumgreyheidi</textcolor>
+	    			<align>left</align>
+	    			<aligny>top</aligny>
+	    			<label>$LOCALIZE[58082]</label>
+	    		</control>    	
+				<control type="button" id="91">
+					<posx>64</posx>
+					<posy>162</posy>
+					<width>720</width>
+					<height>60</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[58083][/B]</label>			
+				</control>    				
+			</control>			
+        </control>        
+   	</controls>
+</window>

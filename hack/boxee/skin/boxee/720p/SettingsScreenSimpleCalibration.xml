@@ -1,0 +1,366 @@
+﻿<?xml version="1.0"?>
+<window id="11" type="dialog">
+	<defaultcontrol>201</defaultcontrol>
+	<controls>
+		<include>Common_Settings_Background</include>
+		<control type="group">
+			<posx>214</posx>
+			<posy>88</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>852</width>
+				<height>544</height>
+				<texture srcborder="51" border="34">dialog_bg.png</texture>
+			</control>
+			<control type="image">
+				<posx>406</posx>
+				<posy>102</posy>
+				<width>40</width>
+				<height>300</height>
+				<texture>graphic_divider_vert.png</texture>
+			</control>
+			<control type="label">
+				<posx>62</posx>
+				<posy>33</posy>
+				<width>800</width>
+				<height>26</height>
+				<font>font40</font>
+				<aligny>top</aligny>
+				<textcolor>white</textcolor>
+				<align>left</align>
+				<label>[B]$LOCALIZE[50008][/B]</label>
+			</control>
+		</control>
+		<control type="group">
+			<posx>100</posx>
+			<posy>0</posy>
+			<width>1220</width>
+			<height>660</height>
+			<control type="group" id="9000">
+				<control type="button" id="302">
+					<posx>549</posx>
+					<posy>508</posy>
+					<width>352</width>
+					<height>56</height>
+					<onup>100</onup>
+					<onleft>301</onleft>
+					<onright>-</onright>
+					<label>50009</label>
+					<include>Button_Heidi</include>
+				</control>
+				<control type="group" id="200">
+					<posx>30</posx>
+					<posy>218</posy>
+					<control type="label">
+						<posx>148</posx>
+						<posy>-35</posy>
+						<width>200</width>
+						<height>26</height>
+						<font>font26</font>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<align>left</align>
+						<label>[B]$LOCALIZE[50010][/B]</label>
+					</control>
+				<control type="togglebutton" id="201">
+					<posx>150</posx>
+					<posy>0</posy>
+					<width>336</width>
+					<height>52</height>
+					<onup>8000</onup>
+					<ondown>202</ondown>
+					<onleft>-</onleft>
+					<onright>100</onright>
+					<label>231</label>
+					<font>font26b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<textoffsetx>51</textoffsetx>
+					<texturenofocus>buttons/display-unfocused-off.png</texturenofocus>
+					<texturefocus>buttons/display-focused-off.png</texturefocus>
+					<textureclick>buttons/display-focused-off.png</textureclick>
+					<alttexturenofocus>buttons/display-unfocused-on.png</alttexturenofocus>
+					<alttexturefocus>buttons/display-focused-on.png</alttexturefocus>
+				</control>
+				<control type="togglebutton" id="202">
+					<posx>150</posx>
+					<posy>50</posy>
+					<width>336</width>
+					<height>52</height>
+					<onup>201</onup>
+					<ondown>203</ondown>
+					<onleft>-</onleft>
+					<onright>100</onright>
+					<label>3%</label>
+					<font>font26b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<textoffsetx>51</textoffsetx>
+					<texturenofocus>buttons/display-unfocused-off.png</texturenofocus>
+					<texturefocus>buttons/display-focused-off.png</texturefocus>
+					<textureclick>buttons/display-focused-off.png</textureclick>
+					<alttexturenofocus>buttons/display-unfocused-on.png</alttexturenofocus>
+					<alttexturefocus>buttons/display-focused-on.png</alttexturefocus>
+				</control>
+				<control type="togglebutton" id="203">
+					<posx>150</posx>
+					<posy>100</posy>
+					<width>336</width>
+					<height>52</height>
+					<onup>202</onup>
+					<ondown>204</ondown>
+					<onleft>-</onleft>
+					<onright>100</onright>
+					<label>4%</label>
+					<font>font26b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<textoffsetx>51</textoffsetx>
+					<texturenofocus>buttons/display-unfocused-off.png</texturenofocus>
+					<texturefocus>buttons/display-focused-off.png</texturefocus>
+					<textureclick>buttons/display-focused-off.png</textureclick>
+					<alttexturenofocus>buttons/display-unfocused-on.png</alttexturenofocus>
+					<alttexturefocus>buttons/display-focused-on.png</alttexturefocus>
+				</control>
+				<control type="togglebutton" id="204">
+					<posx>150</posx>
+					<posy>150</posy>
+					<width>336</width>
+					<height>52</height>
+					<onup>203</onup>
+					<ondown>205</ondown>
+					<onleft>-</onleft>
+					<onright>100</onright>
+					<label>5%</label>
+					<font>font26b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<textoffsetx>51</textoffsetx>
+					<texturenofocus>buttons/display-unfocused-off.png</texturenofocus>
+					<texturefocus>buttons/display-focused-off.png</texturefocus>
+					<textureclick>buttons/display-focused-off.png</textureclick>
+					<alttexturenofocus>buttons/display-unfocused-on.png</alttexturenofocus>
+					<alttexturefocus>buttons/display-focused-on.png</alttexturefocus>
+			</control>
+			<control type="togglebutton" id="205">
+					<posx>150</posx>
+					<posy>200</posy>
+					<width>336</width>
+					<height>52</height>
+					<onup>204</onup>
+					<ondown>206</ondown>
+					<onleft>-</onleft>
+					<onright>100</onright>
+					<label>6%</label>
+					<font>font26b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<textoffsetx>51</textoffsetx>
+					<texturenofocus>buttons/display-unfocused-off.png</texturenofocus>
+					<texturefocus>buttons/display-focused-off.png</texturefocus>
+					<textureclick>buttons/display-focused-off.png</textureclick>
+					<alttexturenofocus>buttons/display-unfocused-on.png</alttexturenofocus>
+					<alttexturefocus>buttons/display-focused-on.png</alttexturefocus>
+			</control>
+			<control type="togglebutton" id="206">
+					<posx>150</posx>
+					<posy>250</posy>
+					<width>336</width>
+					<height>52</height>
+					<onup>205</onup>
+					<ondown>301</ondown>
+					<onleft>-</onleft>
+					<onright>100</onright>
+					<label>636</label>
+					<font>font26b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<textoffsetx>51</textoffsetx>
+					<texturenofocus>buttons/display-unfocused-off.png</texturenofocus>
+					<texturefocus>buttons/display-focused-off.png</texturefocus>
+					<textureclick>buttons/display-focused-off.png</textureclick>
+					<alttexturenofocus>buttons/display-unfocused-on.png</alttexturenofocus>
+					<alttexturefocus>buttons/display-focused-on.png</alttexturefocus>
+			</control>
+		</control>
+		<control type="group" id="100">
+			<posx>384</posx>
+			<posy>218</posy>
+			<control type="label">
+				<posx>180</posx>
+				<posy>-48</posy>
+				<width>336</width>
+				<height>52</height>
+				<font>font26</font>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<align>left</align>
+				<label>[B]$LOCALIZE[50011][/B]</label>
+			</control>
+			<control type="togglebutton" id="101">
+				<posx>180</posx>
+				<posy>0</posy>
+				<width>336</width>
+				<height>52</height>
+				<onup>8000</onup>
+				<ondown>102</ondown>
+				<onleft>200</onleft>
+				<onright>-</onright>
+				<label>4:3 (1.33)</label>
+				<font>font26b</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>lightgreyheidi</textcolor>
+				<focusedcolor>whiteheidi</focusedcolor>
+				<textoffsetx>51</textoffsetx>
+				<texturenofocus>buttons/display-unfocused-off.png</texturenofocus>
+				<texturefocus>buttons/display-focused-off.png</texturefocus>
+				<textureclick>buttons/display-focused-off.png</textureclick>
+				<alttexturenofocus>buttons/display-unfocused-on.png</alttexturenofocus>
+				<alttexturefocus>buttons/display-focused-on.png</alttexturefocus>
+			</control>
+			<control type="togglebutton" id="102">
+				<posx>180</posx>
+				<posy>50</posy>
+				<width>336</width>
+				<height>52</height>
+				<onup>101</onup>
+				<ondown>103</ondown>
+				<onleft>200</onleft>
+				<onright>-</onright>
+				<label>16:9 (1.78)</label>
+				<font>font26b</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>lightgreyheidi</textcolor>
+				<focusedcolor>whiteheidi</focusedcolor>
+				<textoffsetx>51</textoffsetx>
+				<texturenofocus>buttons/display-unfocused-off.png</texturenofocus>
+				<texturefocus>buttons/display-focused-off.png</texturefocus>
+				<textureclick>buttons/display-focused-off.png</textureclick>
+				<alttexturenofocus>buttons/display-unfocused-on.png</alttexturenofocus>
+				<alttexturefocus>buttons/display-focused-on.png</alttexturefocus>
+			</control>
+			<control type="togglebutton" id="103">
+				<posx>180</posx>
+				<posy>100</posy>
+				<width>336</width>
+				<height>52</height>
+				<onup>102</onup>
+				<ondown>104</ondown>
+				<onleft>200</onleft>
+				<onright>-</onright>
+				<label>16:10 (1.6)</label>
+				<font>font26b</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>lightgreyheidi</textcolor>
+				<focusedcolor>whiteheidi</focusedcolor>
+				<textoffsetx>51</textoffsetx>
+				<texturenofocus>buttons/display-unfocused-off.png</texturenofocus>
+				<texturefocus>buttons/display-focused-off.png</texturefocus>
+				<textureclick>buttons/display-focused-off.png</textureclick>
+				<alttexturenofocus>buttons/display-unfocused-on.png</alttexturenofocus>
+				<alttexturefocus>buttons/display-focused-on.png</alttexturefocus>
+			</control>
+				<control type="togglebutton" id="104">
+					<posx>180</posx>
+					<posy>150</posy>
+					<width>336</width>
+					<height>52</height>
+					<onup>103</onup>
+					<ondown>105</ondown>
+					<onleft>200</onleft>
+					<onright>-</onright>
+					<label>21:9 (2.35)</label>
+					<font>font26b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<textoffsetx>51</textoffsetx>
+					<texturenofocus>buttons/display-unfocused-off.png</texturenofocus>
+					<texturefocus>buttons/display-focused-off.png</texturefocus>
+					<textureclick>buttons/display-focused-off.png</textureclick>
+					<alttexturenofocus>buttons/display-unfocused-on.png</alttexturenofocus>
+					<alttexturefocus>buttons/display-focused-on.png</alttexturefocus>
+				</control>
+				<control type="togglebutton" id="105">
+					<posx>180</posx>
+					<posy>200</posy>
+					<width>336</width>
+					<height>52</height>
+					<onup>104</onup>
+					<ondown>10</ondown>
+					<onleft>200</onleft>
+					<onright>-</onright>
+					<label>$LOCALIZE[636]</label>
+					<font>font26b</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<textoffsetx>51</textoffsetx>
+					<texturenofocus>buttons/display-unfocused-off.png</texturenofocus>
+					<texturefocus>buttons/display-focused-off.png</texturefocus>
+					<textureclick>buttons/display-focused-off.png</textureclick>
+					<alttexturenofocus>buttons/display-unfocused-on.png</alttexturenofocus>
+					<alttexturefocus>buttons/display-focused-on.png</alttexturefocus>
+				</control>
+			</control>
+				<control type="button" id="301">
+					<posx>179</posx>
+					<posy>508</posy>
+					<width>352</width>
+					<height>56</height>
+					<onup>200</onup>
+					<onleft>-</onleft>
+					<onright>302</onright>
+					<ondown>-</ondown>
+					<label>50012</label>
+					<include>Button_Heidi</include>
+				</control>
+			</control>
+		</control>
+		<control type="label" id="3">
+			<description>help information</description>
+			<posx>20</posx>
+			<posy>85</posy>
+			<width>1240</width>
+			<label>-</label>
+			<align>center</align>
+			<sans>font23b</sans>
+		</control>
+		<control type="button" id="10">
+			<posx>1040</posx>
+			<posy>550</posy>
+			<width>216</width>
+			<height>52</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>white</textcolor>
+			<focusedcolor>black</focusedcolor>
+			<texturenofocus border="20">button_settings_menu.png</texturenofocus>
+			<texturefocus border="20">button_settings_menu_on.png</texturefocus>
+			<font>font26</font>
+			<label>$LOCALIZE[209]</label>
+			<!-- NEXT -->
+			<onup>9000</onup>
+			<ondown>302</ondown>
+			<onleft>302</onleft>
+		</control>
+	</controls>
+</window>

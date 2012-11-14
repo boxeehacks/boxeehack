@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<window type="dialog" id="57">
+	<defaultcontrol always="true">9201</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<include>Window_Fade_Animation</include>
+			<posx>14</posx>
+			<posy>14</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>600</width>
+				<height>140</height>
+				<texture srcborder="51" border="34">dialog_bg.png</texture>
+			</control>
+			<control type="grouplist">
+				<description>button area</description>
+				<posx>41</posx>
+				<posy>41</posy>
+				<width>550</width>
+				<height>56</height>
+				<itemgap>12</itemgap>
+				<orientation>horizontal</orientation>
+				<onright>-</onright>
+				<onleft>-</onleft>
+				<control type="button" id="9201">
+					<onright>9202</onright>
+					<onleft>-</onleft>
+					<width>164</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[157][/B]</label>
+					<onclick>Dialog.Close(57)</onclick>
+					<onclick>ActivateWindow(123)</onclick>
+				</control>
+				<control type="button" id="9202">
+					<onright>9203</onright>
+					<onleft>9201</onleft>
+					<width>164</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[292][/B]</label>
+					<onclick>Dialog.Close(57)</onclick>
+					<onclick>ActivateWindow(124)</onclick>
+				</control>
+				<control type="button" id="9203">
+					<enable>VideoPlayer.CanSetSubtitles</enable>
+					<onright>-</onright>
+					<onleft>9202</onleft>
+					<width>164</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[574][/B]</label>
+					<onclick>Dialog.Close(57)</onclick>
+					<onclick>ActivateWindow(146)</onclick>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

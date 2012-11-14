@@ -1,0 +1,79 @@
+﻿<?xml version="1.0"?>
+<window id="2006">
+	<defaultcontrol>-</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<dynamiccontents>true</dynamiccontents>
+	<controls>
+		<control type="visualisation" id="2">
+			<description>visualisation</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+		</control>
+		<control type="group">
+			<visible>Player.ShowInfo + !Window.IsVisible(DialogSeekBar.xml) + !Window.IsVisible(boxee_music_context.xml)</visible>
+			<animation type="Visible">
+				<effect type="fade" time="200" delay="0"/>
+			</animation>
+			<animation type="Hidden">
+				<effect type="fade" time="200" delay="2000"/>
+			</animation>
+			<animation type="Hidden" condition="!Window.IsVisible(DialogSeekBar.xml) + !Window.IsVisible(boxee_music_context.xml)">
+				<effect type="fade" time="200" delay="2000"/>
+			</animation>
+			<description>upper OSD</description>
+			<include>TopGradient</include>
+			<include>OSD_Clock</include>
+			<control type="group">
+				<description>upper OSD</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<control type="image">
+					<visible>!IsEmpty(MusicPlayer.Cover)</visible>
+					<posx>32</posx>
+					<posy>32</posy>
+					<width>76</width>
+					<height>76</height>
+					<texture diffuse="masks/mask-osd-album-cover.png">$INFO[MusicPlayer.Cover]</texture>
+					<aspectratio scalediffuse="true">scale</aspectratio>
+				</control>
+				<control type="image">
+					<visible>IsEmpty(MusicPlayer.Cover)</visible>
+					<posx>32</posx>
+					<posy>32</posy>
+					<width>76</width>
+					<height>76</height>
+					<texture diffuse="masks/mask-osd-album-cover.png">boxeelogo96x96.png</texture>
+					<aspectratio scalediffuse="true">scale</aspectratio>
+				</control>
+				<control type="label">
+					<posx>117</posx>
+					<posy>16</posy>
+					<width>1006</width>
+					<height>100</height>
+					<font>font46</font>
+					<textcolor>white</textcolor>
+					<label>[B]$INFO[MusicPlayer.Title][/B]</label>
+					<aligny>top</aligny>
+					<align>left</align>
+					<scroll>false</scroll>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<posx>119</posx>
+					<posy>75</posy>
+					<width>1006</width>
+					<height>100</height>
+					<font>font30</font>
+					<textcolor>offwhite</textcolor>
+					<label>$INFO[MusicPlayer.Album]$INFO[MusicPlayer.Artist, by ]</label>
+					<aligny>top</aligny>
+					<align>left</align>
+					<scroll>false</scroll>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

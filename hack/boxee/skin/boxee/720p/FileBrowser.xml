@@ -1,0 +1,379 @@
+﻿<?xml version="1.0"?>
+<window id="126">
+	<defaultcontrol always="true">450</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Dialog_Popup_Animation</include>
+			<posx>30</posx>
+			<posy>46</posy>
+			<width>1220</width>
+			<height>660</height>
+			<control type="image">
+				<posx>0</posx>
+				<posy>70</posy>
+				<width>1220</width>
+				<height>510</height>
+				<texture border="20">browse_menu_dialog_background.png</texture>
+				<colordiffuse>FF212121</colordiffuse>
+			</control>
+			<control type="label" id="411">
+				<posx>26</posx>
+				<posy>116</posy>
+				<width>550</width>
+				<height>28</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<haspath>true</haspath>
+				<font>font48b</font>
+				<textcolor>white</textcolor>
+			</control>
+			<control type="group">
+				<posx>30</posx>
+				<posy>224</posy>
+				<control type="label" id="412">
+					<description>path</description>
+					<posx>30</posx>
+					<posy>-36</posy>
+					<width>856</width>
+					<height>52</height>
+					<font>font30b</font>
+					<aligny>center</aligny>
+					<align>left</align>
+					<textcolor>white</textcolor>
+					<haspath>true</haspath>
+				</control>
+				<control type="list" id="450">
+					<posx>0</posx>
+					<posy>24</posy>
+					<width>876</width>
+					<height>304</height>
+					<onleft>-</onleft>
+					<onright>9000</onright>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<pagecontrol>60</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<orientation>vertical</orientation>
+					<offsety>8</offsety>
+					<itemlayout height=52>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>856</width>
+							<height>52</height>
+							<texture>browse_line_feather.png</texture>
+						</control>						
+						<control type="label">
+							<posx>28</posx>
+							<posy>0</posy>
+							<width>804</width>
+							<height>42</height>
+							<font>font30</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>white</textcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout height=52>
+						<control type="image">
+							<visible>Control.HasFocus(450)</visible>
+							<posx>10</posx>
+							<posy>0</posy>
+							<width>856</width>
+							<height>52</height>
+							<texture border="20" diffuse="masks/10b9f2.png">browse_line_focus.png</texture>
+						</control>
+						<control type="image">
+							<visible>!Control.HasFocus(450)</visible>
+							<posx>0</posx>
+							<posy>-8</posy>
+							<width>876</width>
+							<height>52</height>
+							<texture>browse_line_feather.png</texture>
+						</control>
+						<control type="label">
+							<visible>!Control.HasFocus(450)</visible>
+							<posx>28</posx>
+							<posy>0</posy>
+							<width>804</width>
+							<height>52</height>
+							<font>font30</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>white</textcolor>
+						</control>
+						<control type="label">
+							<visible>Control.HasFocus(450)</visible>
+							<posx>28</posx>
+							<posy>0</posy>
+							<width>804</width>
+							<height>52</height>
+							<font>font30</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>black</textcolor>
+						</control>
+					</focusedlayout>
+				</control>
+				<control type="scrollbar" id="60">
+					<visible>Control.IsVisible(450)</visible>
+					<posx>870</posx>
+					<posy>24</posy>
+					<width>12</width>
+					<height>312</height>
+					<include>ScrollBarCommonProperties</include>
+				</control>
+				<control type="scrollbar" id="61">
+					<visible>Control.IsVisible(451)</visible>
+					<posx>870</posx>
+					<posy>24</posy>
+					<height>312</height>
+					<width>12</width>
+					<include>ScrollBarCommonProperties</include>
+				</control>
+				<control type="panel" id="451">
+					<preloaditems>10</preloaditems>
+					<posx>0</posx>
+					<posy>24</posy>
+					<width>876</width>
+					<height>304</height>
+					<onleft>-</onleft>
+					<onright>9000</onright>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<scrolltime>400</scrolltime>
+					<pagecontrol>60</pagecontrol>
+					<orientation>vertical</orientation>
+					<itemlayout height="190" width="175">
+						<control type="image">
+							<visible>!IsEmpty(ListItem.Thumb)</visible>
+							<include>BrowseThumbAnimationUnfocus</include>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>175</width>
+							<height>175</height>
+							<bordertexture border="12">masks/thumb_background.png</bordertexture>
+							<bordersize>12</bordersize>
+							<texture blend="false">$INFO[ListItem.Thumb]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="image">
+							<visible>IsEmpty(ListItem.Thumb)</visible>
+							<include>BrowseThumbAnimationUnfocus</include>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>175</width>
+							<height>175</height>
+							<bordertexture border="12">masks/thumb_background.png</bordertexture>
+							<bordersize>12</bordersize>
+							<texture>black.png</texture>
+						</control>
+						<control type="label">
+							<include>BrowseThumbAnimationUnfocus</include>
+							<posx>87</posx>
+							<posy>165</posy>
+							<width>158</width>
+							<height>18</height>
+							<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
+							<font>font18b</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>white</textcolor>
+						</control>
+						<control type="label">
+							<visible>ListItem.Property(isfolder)</visible>
+							<include>BrowseThumbAnimationUnfocus</include>
+							<posx>96</posx>
+							<posy>184</posy>
+							<width>168</width>
+							<height>18</height>
+							<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
+							<font>font18b</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>white</textcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout height="190" width="175">
+						<control type="group">
+							<visible>!Control.HasFocus(451)</visible>
+							<control type="image">
+								<visible>!IsEmpty(ListItem.Thumb)</visible>
+								<include>BrowseThumbAnimationUnfocus</include>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>175</width>
+								<height>175</height>
+								<bordertexture border="12">masks/thumb_background.png</bordertexture>
+								<bordersize>12</bordersize>
+								<texture blend="false">$INFO[ListItem.Thumb]</texture>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<fadetime>200</fadetime>
+							</control>
+							<control type="image">
+								<visible>IsEmpty(ListItem.Thumb)</visible>
+								<include>BrowseThumbAnimationUnfocus</include>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>175</width>
+								<height>175</height>
+								<bordertexture border="12">masks/thumb_background.png</bordertexture>
+								<bordersize>12</bordersize>
+								<texture>black.png</texture>
+							</control>
+							<control type="label">
+								<include>BrowseThumbAnimationUnfocus</include>
+								<posx>87</posx>
+								<posy>165</posy>
+								<width>158</width>
+								<height>18</height>
+								<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
+								<font>font18b</font>
+								<align>center</align>
+								<aligny>center</aligny>
+								<textcolor>white</textcolor>
+							</control>
+							<control type="label">
+								<visible>ListItem.Property(isfolder)</visible>
+								<include>BrowseThumbAnimationUnfocus</include>
+								<posx>96</posx>
+								<posy>184</posy>
+								<width>168</width>
+								<height>18</height>
+								<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
+								<font>font18b</font>
+								<align>center</align>
+								<aligny>center</aligny>
+								<textcolor>white</textcolor>
+							</control>
+						</control>
+						<control type="group">
+							<visible>Control.HasFocus(451)</visible>
+							<control type="image">
+								<visible>!IsEmpty(ListItem.Thumb)</visible>
+								<include>BrowseThumbAnimationFocus</include>
+								<posx>-10</posx>
+								<posy>-10</posy>
+								<width>195</width>
+								<height>195</height>
+								<bordertexture border="20">masks/thumb_background_on.png</bordertexture>
+								<bordersize>20</bordersize>
+								<texture blend="false">$INFO[ListItem.Thumb]</texture>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<fadetime>200</fadetime>
+							</control>
+							<control type="image">
+								<visible>IsEmpty(ListItem.Thumb)</visible>
+								<include>BrowseThumbAnimationFocus</include>
+								<posx>-10</posx>
+								<posy>-10</posy>
+								<width>195</width>
+								<height>195</height>
+								<bordertexture border="20">masks/thumb_background_on.png</bordertexture>
+								<bordersize>20</bordersize>
+								<texture>black.png</texture>
+							</control>
+							<control type="label">
+								<animation type="Focus">
+									<effect type="fade" start="80" end="100" time="100" delay="0"/>
+									<effect type="slide" start="0,4" end="0,14" time="200" delay="0" tween="cubic" easing="out"/>
+								</animation>
+								<posx>87</posx>
+								<posy>165</posy>
+								<width>175</width>
+								<height>18</height>
+								<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
+								<font>font18b</font>
+								<align>center</align>
+								<aligny>center</aligny>
+								<textcolor>white</textcolor>
+								<scroll>true</scroll>
+							</control>
+							<control type="label">
+								<visible>ListItem.Property(isfolder)</visible>
+								<include>BrowseThumbAnimationUnfocus</include>
+								<posx>96</posx>
+								<posy>184</posy>
+								<width>168</width>
+								<height>18</height>
+								<label>[UPPERCASE]$INFO[ListItem.label][/UPPERCASE]</label>
+								<font>font18b</font>
+								<align>center</align>
+								<aligny>center</aligny>
+								<textcolor>white</textcolor>
+							</control>
+						</control>
+					</focusedlayout>
+				</control>
+				<control type="group" id="9000">
+					<defaultcontrol always="true">413</defaultcontrol>
+					<posx>930</posx>
+					<posy>0</posy>
+					<control type="button" id="413">
+						<posx>0</posx>
+						<posy>0</posy>
+						<onup>-</onup>
+						<ondown>414</ondown>
+						<onleft>450</onleft>
+						<onright>-</onright>
+						<label>186</label>
+						<width>218</width>
+						<height>52</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<focusedcolor>black</focusedcolor>
+						<texturenofocus border="16" diffuse="masks/464646.png">button_8_pixel.png</texturenofocus>
+						<texturefocus border="16" diffuse="masks/10b9f2.png">button_8_pixel.png</texturefocus>
+						<textureclick border="16" diffuse="masks/f1f1f1.png">button_8_pixel.png</textureclick>
+						<font>font28b</font>
+					</control>
+					<control type="button" id="414">
+						<posx>0</posx>
+						<posy>70</posy>
+						<onup>413</onup>
+						<ondown>415</ondown>
+						<onleft>450</onleft>
+						<onright>-</onright>
+						<label>222</label><!--Cancel-->
+						<width>218</width>
+						<height>52</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<focusedcolor>black</focusedcolor>
+						<texturenofocus border="16" diffuse="masks/464646.png">button_8_pixel.png</texturenofocus>
+						<texturefocus border="16" diffuse="masks/10b9f2.png">button_8_pixel.png</texturefocus>
+						<textureclick border="16" diffuse="masks/f1f1f1.png">button_8_pixel.png</textureclick>
+						<font>font28b</font>
+					</control>
+					<control type="button" id="415">
+						<posx>0</posx>
+						<posy>140</posy>
+						<onup>414</onup>
+						<ondown>-</ondown>
+						<onleft>450</onleft>
+						<onright>-</onright>
+						<label>119</label><!--New Folder-->
+						<width>218</width>
+						<height>52</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<focusedcolor>black</focusedcolor>
+						<texturenofocus border="16" diffuse="masks/464646.png">button_8_pixel.png</texturenofocus>
+						<texturefocus border="16" diffuse="masks/10b9f2.png">button_8_pixel.png</texturefocus>
+						<textureclick border="16" diffuse="masks/f1f1f1.png">button_8_pixel.png</textureclick>
+						<font>font28b</font>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<window type="dialog" id="406">
+	<defaultcontrol always="true">500</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<!-- Dummy container for Music Info -->
+		<control type="list" id="5000">
+			<description>info</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<visible>false</visible>
+			<itemlayout height="0">
+		  </itemlayout>
+			<focusedlayout height="0">
+		  </focusedlayout>
+		</control>
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Dialog_Popup_Animation</include>
+			<posx>500</posx>
+			<posy>140</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>280</width>
+				<height>470</height>
+				<texture border="20">browse_menu_dialog_background.png</texture>
+				<colordiffuse>FF212121</colordiffuse>
+			</control>
+			<control type="label" id="610">
+				<posx>26</posx>
+				<posy>34</posy>
+				<width>230</width>
+				<height>28</height>
+				<font>font28b</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+			</control>
+			<control type="list" id="500">
+				<posx>14</posx>
+				<posy>76</posy>
+				<width>252</width>
+				<height>372</height>
+				<onup>100</onup>
+				<ondown>100</ondown>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>-</pagecontrol>
+				<orientation>vertical</orientation>
+				<itemlayout height="62">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>252</width>
+						<height>54</height>
+						<colordiffuse>FF464646</colordiffuse>
+						<texture border="16">button_8_pixel.png</texture>
+					</control>
+					<control type="label">
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<posx>126</posx>
+						<posy>0</posy>
+						<width>230</width>
+						<height>54</height>
+						<font>font24b</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>white</textcolor>
+					</control>
+					<control type="largeimage">
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<posx>28</posx>
+						<posy>0</posy>
+						<width>195</width>
+						<height>54</height>
+						<texture>$INFO[ListItem.Thumb]</texture>
+					</control>
+				</itemlayout>
+				<focusedlayout height="62">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>252</width>
+						<height>54</height>
+						<colordiffuse>FF10B9F2</colordiffuse>
+						<texture border="16">button_8_pixel.png</texture>
+					</control>
+					<control type="label">
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<posx>126</posx>
+						<posy>0</posy>
+						<width>230</width>
+						<height>54</height>
+						<font>font24b</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="largeimage">
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<posx>28</posx>
+						<posy>0</posy>
+						<width>195</width>
+						<height>54</height>
+						<colordiffuse>black</colordiffuse>
+						<texture>$INFO[ListItem.Thumb]</texture>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="fixedlist" id="600">
+				<posx>14</posx>
+				<posy>76</posy>
+				<width>252</width>
+				<height>372</height>
+				<onup>100</onup>
+				<ondown>100</ondown>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>-</pagecontrol>
+				<orientation>vertical</orientation>
+				<itemlayout height="62">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>252</width>
+						<height>54</height>
+						<colordiffuse>FF464646</colordiffuse>
+						<texture border="16">button_8_pixel.png</texture>
+					</control>
+					<control type="label">
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<posx>126</posx>
+						<posy>0</posy>
+						<width>230</width>
+						<height>54</height>
+						<font>font24b</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>white</textcolor>
+					</control>
+					<control type="largeimage">
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<posx>28</posx>
+						<posy>0</posy>
+						<width>195</width>
+						<height>54</height>
+						<texture>$INFO[ListItem.Thumb]</texture>
+					</control>
+				</itemlayout>
+				<focusedlayout height="62">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>252</width>
+						<height>54</height>
+						<colordiffuse>FF10B9F2</colordiffuse>
+						<texture border="16">button_8_pixel.png</texture>
+					</control>
+					<control type="label">
+						<visible>IsEmpty(ListItem.Thumb)</visible>
+						<posx>126</posx>
+						<posy>0</posy>
+						<width>230</width>
+						<height>54</height>
+						<font>font24b</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>black</textcolor>
+					</control>
+					<control type="largeimage">
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<posx>28</posx>
+						<posy>0</posy>
+						<width>195</width>
+						<height>54</height>
+						<colordiffuse>black</colordiffuse>
+						<texture>$INFO[ListItem.Thumb]</texture>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>

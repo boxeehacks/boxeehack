@@ -1,0 +1,191 @@
+<window id="128">
+	<defaultcontrol>10</defaultcontrol>
+	<coordinates>
+		<system>1</system>
+		<posx>240</posx>
+		<posy>135</posy>
+	</coordinates>
+	<include>dialogeffect</include>
+	<controls>
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>800</width>
+			<height>450</height>
+			<colordiffuse>55FFFFFF</colordiffuse>
+			<texture>grey.png</texture>
+		</control>
+		<control type="image">
+			<description>background image</description>
+			<posx>5</posx>
+			<posy>5</posy>
+			<width>790</width>
+			<height>440</height>
+			<colordiffuse>88FFFFFF</colordiffuse>
+			<texture>black.png</texture>
+		</control>
+		<control type="label" id="2">
+			<description>heading label</description>
+			<posx>20</posx>
+			<posy>10</posy>
+			<width>420</width>
+			<align>left</align>
+			<font>font16</font>
+			<label>1077</label>
+			<textcolor>green</textcolor>
+		</control>
+		<control type="spincontrolex" id="10">
+			<description>Protocol SpinControl</description>
+			<posx>15</posx>
+			<posy>45</posy>
+			<height>45</height>
+			<width>770</width>
+			<texturefocus>list-focus.png</texturefocus>
+			<texturenofocus>list-nofocus.png</texturenofocus>
+			<textureup>scroll-up.png</textureup>
+			<texturedown>scroll-down.png</texturedown>
+			<textureupfocus>scroll-up-focus-green.png</textureupfocus>
+			<texturedownfocus>scroll-down-focus-green.png</texturedownfocus>
+			<textcolor>white</textcolor>
+			<disabledcolor>disabled</disabledcolor>
+			<textoffsetx>12</textoffsetx>
+			<aligny>center</aligny>
+			<reverse>yes</reverse>
+			<label>1008</label>
+			<onup>18</onup>
+			<ondown>11</ondown>
+			<onleft>10</onleft>
+			<onright>10</onright>
+		</control>
+		<control type="button" id="11">
+			<description>Server Address Button</description>
+			<posx>15</posx>
+			<posy>92</posy>
+			<width>615</width>
+			<height>45</height>
+			<textoffsetx>12</textoffsetx>
+			<aligny>center</aligny>
+			<texturefocus>list-focus.png</texturefocus>
+			<texturenofocus>list-nofocus.png</texturenofocus>
+			<label>-</label>
+			<onup>10</onup>
+			<onleft>12</onleft>
+			<onright>12</onright>
+			<ondown>16</ondown>
+		</control>
+		<control type="button" id="12">
+			<description>Server Browse Button</description>
+			<posx>635</posx>
+			<posy>92</posy>
+			<width>150</width>
+			<height>45</height>
+			<textoffsetx>12</textoffsetx>
+			<label>1024</label>
+			<align>center</align>
+			<aligny>center</aligny>
+			<texturenofocus>button-nofocus.png</texturenofocus>
+			<texturefocus>button-focus.png</texturefocus>
+			<onup>10</onup>
+			<onleft>11</onleft>
+			<onright>11</onright>
+			<ondown>16</ondown>
+		</control>
+		<control type="button" id="16">
+			<description>Remote path Button</description>
+			<posx>10</posx>
+			<posy>139</posy>
+			<width>770</width>
+			<height>45</height>
+			<textoffsetx>12</textoffsetx>
+			<aligny>center</aligny>
+			<texturefocus>list-focus.png</texturefocus>
+			<texturenofocus>list-nofocus.png</texturenofocus>
+			<label>-</label>
+			<onup>11</onup>
+			<onleft>16</onleft>
+			<onright>16</onright>
+			<ondown>13</ondown>
+		</control>
+		<control type="button" id="13">
+			<description>Port Button</description>
+			<posx>10</posx>
+			<posy>186</posy>
+			<width>770</width>
+			<height>45</height>
+			<textoffsetx>12</textoffsetx>
+			<aligny>center</aligny>
+			<texturefocus>list-focus.png</texturefocus>
+			<texturenofocus>list-nofocus.png</texturenofocus>
+			<label>1013</label>
+			<onup>16</onup>
+			<onleft>13</onleft>
+			<onright>13</onright>
+			<ondown>14</ondown>
+		</control>
+		<control type="button" id="14">
+			<description>Username Button</description>
+			<posx>10</posx>
+			<posy>233</posy>
+			<width>770</width>
+			<height>45</height>
+			<textoffsetx>12</textoffsetx>
+			<aligny>center</aligny>
+			<texturefocus>list-focus.png</texturefocus>
+			<texturenofocus>list-nofocus.png</texturenofocus>
+			<label>1014</label>
+			<onup>13</onup>
+			<onleft>14</onleft>
+			<onright>14</onright>
+			<ondown>15</ondown>
+		</control>
+		<control type="button" id="15">
+			<description>Password Button</description>
+			<posx>10</posx>
+			<posy>280</posy>
+			<width>770</width>
+			<height>45</height>
+			<textoffsetx>12</textoffsetx>
+			<aligny>center</aligny>
+			<texturefocus>list-focus.png</texturefocus>
+			<texturenofocus>list-nofocus.png</texturenofocus>
+			<label>15052</label>
+			<onup>14</onup>
+			<onleft>15</onleft>
+			<onright>15</onright>
+			<ondown>18</ondown>
+		</control>
+		<control type="button" id="18">
+			<description>Ok Button</description>
+			<posx>195</posx>
+			<posy>395</posy>
+			<width>200</width>
+			<height>42</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<texturenofocus>button-nofocus.png</texturenofocus>
+			<texturefocus>button-focus.png</texturefocus>
+			<label>186</label>
+			<onup>15</onup>
+			<onleft>19</onleft>
+			<onright>19</onright>
+			<ondown>10</ondown>
+		</control>
+		<control type="button" id="19">
+			<description>Cancel Button</description>
+			<posx>405</posx>
+			<posy>395</posy>
+			<width>200</width>
+			<height>42</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<texturenofocus>button-nofocus.png</texturenofocus>
+			<texturefocus>button-focus.png</texturefocus>
+			<label>222</label>
+			<onup>15</onup>
+			<onleft>18</onleft>
+			<onright>18</onright>
+			<ondown>10</ondown>
+		</control>
+	</controls>
+</window>

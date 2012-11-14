@@ -1,0 +1,7 @@
+﻿<?xml version="1.0"?>
+<window id="2001">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+	</controls>
+</window>

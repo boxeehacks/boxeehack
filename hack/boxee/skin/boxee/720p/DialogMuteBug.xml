@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<window id="113">
+	<defaultcontrol>-</defaultcontrol>
+        <colorbufferactive>false</colorbufferactive>
+	<controls>
+		<control type="group">
+			<posx>1180</posx>
+			<posy>48</posy>
+			<!--visible>!Window.IsVisible(DialogProgress.xml)</visible>
+			<visible>Player.HasMedia</visible-->
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>50</width>
+				<height>40</height>
+				<texture border="20">menu_dialog_background.png</texture>
+				<colordiffuse>FF212121</colordiffuse>
+			</control>
+			<control type="image">
+				<description>speaker image</description>
+				<posx>6</posx>
+				<posy>0</posy>
+				<width>40</width>
+				<height>40</height>
+				<texture flipx="true">icons/icon_volume_off.png</texture>
+			</control>
+		</control>
+	</controls>
+</window>

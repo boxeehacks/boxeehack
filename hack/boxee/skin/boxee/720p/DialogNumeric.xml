@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<window id="109">
+	<defaultcontrol always="true">15</defaultcontrol>
+	<controls>
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Dialog_Popup_Animation</include>
+			<control type="group" id="331">
+				<!--visible>!Skin.HasFocussSetting(UseABCDKeyboard)</visible-->
+				<posx>440</posx>
+				<posy>138</posy>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>400</width>
+					<height>496</height>
+					<texture border="20">browse_menu_dialog_background.png</texture>
+					<colordiffuse>FF212121</colordiffuse>
+				</control>
+				<control type="label" id="1">
+					<description>heading label</description>
+					<posx>25</posx>
+					<posy>10</posy>
+					<width>505</width>
+					<height>32</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>font28b</font>
+					<label>-</label>
+					<textcolor>white</textcolor>
+				</control>
+				<control type="image">
+					<description>input field image</description>
+					<posx>50</posx>
+					<posy>73</posy>
+					<width>300</width>
+					<height>56</height>
+					<texture border="24">search_text_box.png</texture>
+				</control>
+				<control type="label" id="4">
+					<description>Edit Text</description>
+					<posx>72</posx>
+					<posy>82</posy>
+					<width>300</width>
+					<label>12323</label>
+					<height>34</height>
+					<font>font32b</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>white</textcolor>
+					<disabledcolor>grey</disabledcolor>
+				</control>
+				<control type="group" id="399">
+					<renderfocusedlast>true</renderfocusedlast>
+					<posx>105</posx>
+					<posy>160</posy>
+					<control type="button" id="11">
+						<description>'1' button</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<onleft>-</onleft>
+						<onright>12</onright>
+						<onup>-</onup>
+						<ondown>14</ondown>
+						<label>12311</label>
+						<include>Common_Keyboard_Button</include>
+					</control>
+					<control type="button" id="12">
+						<description>'2' button</description>
+						<posx>57</posx>
+						<posy>0</posy>
+						<onleft>11</onleft>
+						<onright>13</onright>
+						<onup>-</onup>
+						<ondown>15</ondown>
+						<label>12312</label>
+						<include>Common_Keyboard_Button</include>
+					</control>
+					<control type="button" id="13">
+						<description>'3' button</description>
+						<posx>114</posx>
+						<posy>0</posy>
+						<onleft>12</onleft>
+						<onright>-</onright>
+						<onup>-</onup>
+						<ondown>16</ondown>
+						<label>12313</label>
+						<include>Common_Keyboard_Button</include>
+					</control>
+					<control type="button" id="14">
+						<description>'4' button</description>
+						<posx>0</posx>
+						<posy>52</posy>
+						<onleft>-</onleft>
+						<onright>15</onright>
+						<onup>11</onup>
+						<ondown>17</ondown>
+						<label>12314</label>
+						<include>Common_Keyboard_Button</include>
+					</control>
+					<control type="button" id="15">
+						<description>'5' button</description>
+						<posx>57</posx>
+						<posy>52</posy>
+						<onleft>14</onleft>
+						<onright>16</onright>
+						<onup>12</onup>
+						<ondown>18</ondown>
+						<label>12315</label>
+						<include>Common_Keyboard_Button</include>
+					</control>
+					<control type="button" id="16">
+						<description>'6' button</description>
+						<posx>114</posx>
+						<posy>52</posy>
+						<onleft>15</onleft>
+						<onright>-</onright>
+						<onup>13</onup>
+						<ondown>19</ondown>
+						<label>12316</label>
+						<include>Common_Keyboard_Button</include>
+					</control>
+					<control type="button" id="17">
+						<description>'7' button</description>
+						<posx>0</posx>
+						<posy>104</posy>
+						<onleft>-</onleft>
+						<onright>18</onright>
+						<onup>14</onup>
+						<ondown>22</ondown>
+						<label>12317</label>
+						<include>Common_Keyboard_Button</include>
+					</control>
+					<control type="button" id="18">
+						<description>'8' button</description>
+						<posx>57</posx>
+						<posy>104</posy>
+						<onleft>17</onleft>
+						<onright>19</onright>
+						<onup>15</onup>
+						<ondown>10</ondown>
+						<label>12318</label>
+						<include>Common_Keyboard_Button</include>
+					</control>
+					<control type="button" id="19">
+						<description>'9' button</description>
+						<posx>114</posx>
+						<posy>104</posy>
+						<onleft>18</onleft>
+						<onright>-</onright>
+						<onup>16</onup>
+						<ondown>23</ondown>
+						<label>12319</label>
+						<include>Common_Keyboard_Button</include>
+					</control>
+					<control type="button" id="22">
+						<description>'.' button</description>
+						<posx>0</posx>
+						<posy>156</posy>
+						<onleft>-</onleft>
+						<onright>10</onright>
+						<onup>17</onup>
+						<ondown>330</ondown>
+						<label>.</label>
+						<include>Common_Keyboard_Button</include>
+					</control>
+					<control type="button" id="10">
+						<description>'0' button</description>
+						<posx>57</posx>
+						<posy>156</posy>
+						<onleft>22</onleft>
+						<onright>23</onright>
+						<onup>18</onup>
+						<ondown>330</ondown>
+						<label>12310</label>
+						<include>Common_Keyboard_Button</include>
+					</control>
+					<control type="group">
+						<control type="button" id="23">
+							<description>backspace</description>
+							<posx>114</posx>
+							<posy>156</posy>
+							<onleft>10</onleft>
+							<onright>-</onright>
+							<onup>19</onup>
+							<ondown>330</ondown>
+							<label>-</label>
+							<include>Common_Keyboard_Button</include>
+						</control>
+						<control type="image">
+							<visible>!Control.HasFocus(23)</visible>
+							<posx>118</posx>
+							<posy>164</posy>
+							<width>25</width>
+							<height>20</height>
+							<texture>keyboard_backspace_icon_off.png</texture>
+						</control>
+						<control type="image">
+							<visible>Control.HasFocus(23)</visible>
+							<posx>118</posx>
+							<posy>164</posy>
+							<width>25</width>
+							<height>20</height>
+							<texture>keyboard_backspace_icon_on.png</texture>
+						</control>
+					</control>
+				</control>
+				<control type="group" id="330">
+					<posx>104</posx>
+					<posy>420</posy>
+					<control type="button" id="21">
+						<description>DONE button</description>
+						<posx>16</posx>
+						<posy>0</posy>
+						<width>130</width>
+						<height>54</height>
+						<onleft>-</onleft>
+						<onright>-</onright>
+						<onup>10</onup>
+						<ondown>-</ondown>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>grey</textcolor>
+						<focusedcolor>black</focusedcolor>
+						<texturenofocus diffuse="grey_button.png" border="26">browse_menu_dialog_button_focus.png</texturenofocus>
+						<texturefocus diffuse="masks/10b9f2.png" border="26">browse_menu_dialog_button_focus.png</texturefocus>
+						<textureclick diffuse="black.png" border="26">browse_menu_dialog_button_focus.png</textureclick>
+						<font>font22b</font>
+						<label>20177</label>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<window id="10447">
+	<defaultcontrol always="true">240</defaultcontrol>
+	<controls>
+		<include>Common_Background</include>
+		<control type="group">
+			<include>FTUDialogNoAnim_Heidi</include>
+			<!-- RIGHT SIDE - BEGIN-->
+			<control type="label">
+				<posx>474</posx>
+				<posy>66</posy>
+				<width>312</width>
+				<align>center</align>
+				<aligny>top</aligny>
+				<label>[B]$LOCALIZE[54583][/B]</label>
+				<wrapmultiline>true</wrapmultiline>
+				<font>font24b</font>
+				<textcolor>whiteheidi</textcolor>
+			</control>
+			<control type="list" id="240">
+				<animation effect="fade" start="100" end="0" time="200" condition="Window.IsActive(DialogProgress.xml)">Conditional</animation>
+				<posx>474</posx>
+				<posy>116</posy>
+				<width>312</width>
+				<height>372</height>
+				<scrolltime>200</scrolltime>
+				<orientation>vertical</orientation>
+				<itemlayout height="48">
+					<control type="label">
+						<posx>156</posx>
+						<posy>-1</posy>
+						<width>312</width>
+						<height>48</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font20</font>
+						<textcolor>mediumgreyheidi</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="48">
+					<control type="image">
+						<width>312</width>
+						<height>48</height>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="label">
+						<posx>156</posx>
+						<posy>-1</posy>
+						<width>312</width>
+						<height>48</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font20</font>
+						<textcolor>whiteheidi</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+			<!-- RIGHT SIDE - END -->
+			<!-- LEFT SIDE - BEGIN -->
+			<control type="grouplist">
+				<posx>62</posx>
+				<posy>56</posy>
+				<width>320</width>
+				<height>412</height>
+				<orientation>vertical</orientation>
+				<itemgap>0</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<width>320</width>
+					<height min="0" max="120">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$LOCALIZE[54553][/B]</label>
+					<include>Header_Heidi</include>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<posy>10</posy>
+					<width>320</width>
+					<height min="0" max="288">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[54555]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<include>LargeText_Heidi</include>
+				</control>
+			</control>
+			<!-- LEFT SIDE - END -->
+		</control>
+	</controls>
+</window>

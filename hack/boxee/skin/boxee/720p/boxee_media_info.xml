@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<window id="10469">
+	<defaultcontrol always="true">6900</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<!-- Dummy container for Music Info -->
+		<control type="list" id="5000">
+			<description>info</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<visible>false</visible>
+			<itemlayout height="0">
+			</itemlayout>
+			<focusedlayout height="0">
+			</focusedlayout>
+		</control>
+		<control type="videowindow">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<visible>Player.HasVideo</visible>
+		</control>
+		<control type="group">
+			<include>Dialog_Popup_Animation</include>
+			<posx>340</posx>
+			<posy>96</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>600</width>
+				<height>528</height>
+				<texture srcborder="51" border="34">dialog_bg.png</texture>
+			</control>
+			<control type="grouplist">
+				<posx>26</posx>
+				<posy>26</posy>
+				<width>548</width>
+				<height>130</height>
+				<itemgap>4</itemgap>
+				<orientation>vertical</orientation>
+				<usecontrolcoords>false</usecontrolcoords>
+				<clipchildren>true</clipchildren>
+				<!-- Movie -->
+				<control type="label">
+					<visible>Container(5000).ListItem.property(IsMovie) + [!Container(5000).ListItem.property(IsRss) | !IsEmpty(Container(5000).ListItem.property(boxee-mediatype))] + !Container(5000).ListItem.property(IsTVShow) + !Container(5000).ListItem.property(IsMusic) + !IsEmpty(container(5000).ListItem.Property(metaprovider))</visible>
+					<width>468</width>
+					<height>130</height>
+					<font>font26</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$INFO[container(5000).ListItem.Label]$INFO[container(5000).ListItem.Year, (,)][/B][CR]$INFO[formattime(container(5000).ListItem.Duration min),, $LOCALIZE[51818]    ]$INFO[container(5000).ListItem.MPAA,$LOCALIZE[563]  ,]</label>
+					<textcolor>white</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<visible>Container(5000).ListItem.property(IsMovie) + [!Container(5000).ListItem.property(IsRss) | !IsEmpty(Container(5000).ListItem.property(boxee-mediatype))] + !Container(5000).ListItem.property(IsTVShow) + !Container(5000).ListItem.property(IsMusic) + IsEmpty(container(5000).ListItem.Property(metaprovider))</visible>
+					<width>548</width>
+					<height>130</height>
+					<font>font26</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$INFO[container(5000).ListItem.Label]$INFO[container(5000).ListItem.Year, (,)][/B][CR]$INFO[formattime(container(5000).ListItem.Duration min),, $LOCALIZE[51818]    ]$INFO[container(5000).ListItem.MPAA,$LOCALIZE[563]  ,]</label>
+					<textcolor>white</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<!-- TV Show -->
+				<control type="label">
+					<visible>!Container(5000).ListItem.property(IsMovie) + Container(5000).ListItem.property(IsTVShow) + !Container(5000).ListItem.property(IsMusic) + !IsEmpty(container(5000).ListItem.Property(metaprovider))</visible>
+					<width>468</width>
+					<height>130</height>
+					<font>font26</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$INFO[container(5000).ListItem.TVShowTitle][/B][CR]$INFO[container(5000).ListItem.Season,$LOCALIZE[20373]  ,$COMMA  ]$INFO[container(5000).ListItem.Episode,$LOCALIZE[20359]  ,]$INFO[container(5000).ListItem.Title,[CR]","][CR][COLOR grey]$INFO[formattime(container(5000).ListItem.Duration min),, $LOCALIZE[51818]    ]$INFO[container(5000).ListItem.MPAA,$LOCALIZE[563]  ,    ]$INFO[container(5000).ListItem.property(releasedate),,][/COLOR]</label>
+					<textcolor>white</textcolor>
+				</control>
+				<control type="label">
+					<visible>!Container(5000).ListItem.property(IsMovie) + Container(5000).ListItem.property(IsTVShow) + !Container(5000).ListItem.property(IsMusic) + IsEmpty(container(5000).ListItem.Property(metaprovider))</visible>
+					<width>548</width>
+					<height>130</height>
+					<font>font26</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$INFO[container(5000).ListItem.TVShowTitle][/B][CR]$INFO[container(5000).ListItem.Season,$LOCALIZE[20373]  ,$COMMA  ]$INFO[container(5000).ListItem.Episode,$LOCALIZE[20359]  ,]$INFO[container(5000).ListItem.Title,[CR]","][CR][COLOR grey]$INFO[formattime(container(5000).ListItem.Duration min),, $LOCALIZE[51818]    ]$INFO[container(5000).ListItem.MPAA,$LOCALIZE[563]  ,    ]$INFO[container(5000).ListItem.property(releasedate),,][/COLOR]</label>
+					<textcolor>white</textcolor>
+				</control>
+				<!-- Rss Video -->
+				<control type="label">
+					<visible>[Container(5000).ListItem.property(IsMovie) + Container(5000).ListItem.property(IsRss) + IsEmpty(Container(5000).ListItem.property(boxee-mediatype))] + !Container(5000).ListItem.property(IsTVShow) + !Container(5000).ListItem.property(IsMusic) + IsEmpty(container(5000).ListItem.Property(app-localpath)) + !IsEmpty(container(5000).ListItem.Property(metaprovider))</visible>
+					<width>468</width>
+					<height>130</height>
+					<font>font26</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$INFO[container(5000).ListItem.Label][/B][CR][COLOR grey]$INFO[formattime(container(5000).ListItem.Duration min),, $LOCALIZE[51818]    ]$INFO[container(5000).ListItem.Date,,][/COLOR]</label>
+					<textcolor>white</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<visible>[Container(5000).ListItem.property(IsMovie) + Container(5000).ListItem.property(IsRss) + IsEmpty(Container(5000).ListItem.property(boxee-mediatype))] + !Container(5000).ListItem.property(IsTVShow) + !Container(5000).ListItem.property(IsMusic) + IsEmpty(container(5000).ListItem.Property(app-localpath)) + IsEmpty(container(5000).ListItem.Property(metaprovider))</visible>
+					<width>548</width>
+					<height>130</height>
+					<font>font26</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$INFO[container(5000).ListItem.Label][/B][CR][COLOR grey]$INFO[formattime(container(5000).ListItem.Duration min),, $LOCALIZE[51818]    ]$INFO[container(5000).ListItem.Date,,][/COLOR]</label>
+					<textcolor>white</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<!-- General Video -->
+				<control type="label">
+					<visible>!Container(5000).ListItem.property(IsMovie) + !Container(5000).ListItem.property(IsTVShow) + !Container(5000).ListItem.property(IsMusic) + IsEmpty(container(5000).ListItem.Property(app-localpath)) + !IsEmpty(container(5000).ListItem.Property(metaprovider))</visible>
+					<width>468</width>
+					<height>130</height>
+					<font>font26</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$INFO[container(5000).ListItem.Label][/B][CR][COLOR grey]$INFO[formattime(container(5000).ListItem.Duration min),, $LOCALIZE[51818]    ]$INFO[container(5000).ListItem.Date,,][/COLOR]</label>
+					<textcolor>white</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<visible>!Container(5000).ListItem.property(IsMovie) + !Container(5000).ListItem.property(IsTVShow) + !Container(5000).ListItem.property(IsMusic) + IsEmpty(container(5000).ListItem.Property(app-localpath)) + IsEmpty(container(5000).ListItem.Property(metaprovider))</visible>
+					<width>548</width>
+					<height>130</height>
+					<font>font26</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$INFO[container(5000).ListItem.Label][/B][CR][COLOR grey]$INFO[formattime(container(5000).ListItem.Duration min),, $LOCALIZE[51818]    ]$INFO[container(5000).ListItem.Date,,][/COLOR]</label>
+					<textcolor>white</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<!-- Music RSS -->
+				<control type="label">
+					<visible>Container(5000).ListItem.property(IsMusic) + Container(5000).ListItem.property(IsRSS) + !IsEmpty(container(5000).ListItem.Property(metaprovider))</visible>
+					<width>468</width>
+					<height>130</height>
+					<font>font26</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$INFO[container(5000).ListItem.Label][/B][CR][COLOR grey]$INFO[formattime(container(5000).ListItem.Duration min),, $LOCALIZE[51818]    ]$INFO[container(5000).ListItem.Date,,][/COLOR]</label>
+					<textcolor>white</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<visible>Container(5000).ListItem.property(IsMusic) + Container(5000).ListItem.property(IsRSS) + IsEmpty(container(5000).ListItem.Property(metaprovider))</visible>
+					<width>548</width>
+					<height>130</height>
+					<font>font26</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$INFO[container(5000).ListItem.Label][/B][CR][COLOR grey]$INFO[formattime(container(5000).ListItem.Duration min),, $LOCALIZE[51818]    ]$INFO[container(5000).ListItem.Date,,][/COLOR]</label>
+					<textcolor>white</textcolor>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<!-- Music -->
+				<control type="label">
+					<visible>Container(5000).ListItem.property(IsMusic) + !Container(5000).ListItem.property(IsRSS) + !IsEmpty(container(5000).ListItem.Property(metaprovider))</visible>
+					<width>468</width>
+					<height>130</height>
+					<font>font26</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$INFO[container(5000).ListItem.Artist,,    ][/B]$INFO[container(5000).ListItem.Album][CR]$INFO[container(5000).ListItem.Year,$LOCALIZE[54043]  ,    ]$INFO[container(5000).ListItem.MPAA,$LOCALIZE[563]  ,]</label>
+					<textcolor>white</textcolor>
+				</control>
+				<control type="label">
+					<visible>Container(5000).ListItem.property(IsMusic) + !Container(5000).ListItem.property(IsRSS) + IsEmpty(container(5000).ListItem.Property(metaprovider))</visible>
+					<width>548</width>
+					<height>130</height>
+					<font>font26</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$INFO[container(5000).ListItem.Artist,,    ][/B]$INFO[container(5000).ListItem.Album][CR]$INFO[container(5000).ListItem.Year,$LOCALIZE[54043]  ,    ]$INFO[container(5000).ListItem.MPAA,$LOCALIZE[563]  ,]</label>
+					<textcolor>white</textcolor>
+				</control>
+			</control>
+			<control type="textbox" id="6800">
+				<posx>26</posx>
+				<posy>158</posy>
+				<width>548</width>
+				<height>342</height>
+				<font>font26</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<textcolor>grey</textcolor>
+				<label>$INFO[container(5000).ListItem.Director,[COLOR white]$LOCALIZE[20339][/COLOR]  ,[CR][CR]]$INFO[container(5000).ListItem.property(cast),[COLOR white]$LOCALIZE[54042][/COLOR]  ,[CR]]$INFO[container(5000).ListItem.Plot]</label>
+				<wrapmultiline>true</wrapmultiline>
+				<pagecontrol>6900</pagecontrol>
+			</control>				
+			<control type="image">
+				<posx>26</posx>
+				<posy>470</posy>
+				<width>548</width>
+				<height>30</height>
+				<texture>text_gradient.png</texture>
+				<colordiffuse>dialog_bg_3</colordiffuse>
+			</control>
+			<control type="group">
+				<posx>482</posx>
+				<posy>32</posy>
+				<visible>!IsEmpty(container(5000).ListItem.Property(metaprovider))</visible>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>80</width>
+					<height>10</height>
+					<font>font10b</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textcolor>white</textcolor>
+					<label>54046</label>
+				</control>
+				<control type="largeimage">
+					<posx>0</posx>
+					<posy>14</posy>
+					<width>80</width>
+					<height>40</height>
+					<info>container(5000).ListItem.Property(metaprovider)</info>
+				</control>
+				<control type="scrollbar" id="6900">
+					<posx>578</posx>
+					<posy>158</posy>
+					<width>12</width>
+					<height>342</height>
+					<texturesliderbackground srcborder="8" border="6">-</texturesliderbackground>
+					<textureslidernib>-</textureslidernib>
+					<textureslidernibfocus>-</textureslidernibfocus>
+					<texturesliderbar diffuse="nofocus.png" srcborder="8" border="6">-</texturesliderbar>
+					<texturesliderbarfocus diffuse="nofocus.png" srcborder="8" border="6">-</texturesliderbarfocus>
+					<orientation>vertical</orientation>
+					<showonepage>false</showonepage>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

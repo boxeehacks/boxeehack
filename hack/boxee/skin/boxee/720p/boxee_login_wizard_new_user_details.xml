@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<window id="4583" type="dialog">
+	<defaultcontrol always="true">8801</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Background</include>
+		<include>BoxeeLogoLogin</include>
+		<control type="group" id="7000">
+			<include>FTUDialog_Heidi</include>
+			<control type="group" id="8800">
+				<!-- visible>!Control.HasFocus(8900) + !Control.HasFocus(9000) + !Control.HasFocus(9100) + !Control.HasFocus(9200)</visible -->
+				<!-- RIGHT SIDE - BEGIN-->
+				<control type="label">
+					<posx>473</posx>
+					<posy>64</posy>
+					<width>312</width>
+					<height>20</height>
+					<label>$LOCALIZE[55630]</label>
+					<font>font20b</font>
+					<textcolor>lightgreyheidi</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+
+				<!-- GENDER TOGGLE -->
+				<control type="togglebutton" id="8801">
+					<posx>474</posx>
+					<posy>90</posy>
+					<width>312</width>
+					<height>56</height>
+					<include>ToggleButton_Heidi</include>
+					<align>left</align>
+					<textoffsetx>14</textoffsetx>
+					<label>$INFO[Window.Property(chosen-gender)]</label>
+					<onup>9003</onup>
+					<ondown>8802</ondown>
+					<onclick>-</onclick>
+				</control>
+				<control type="image">
+					<visible>Control.HasFocus(8801)</visible>
+					<posx>751</posx>
+					<posy>106</posy>
+					<width>24</width>
+					<height>24</height>
+					<texture>graphic-more-focused.png</texture>
+				</control>
+				<control type="image">
+					<visible>!Control.HasFocus(8801)</visible>
+					<posx>751</posx>
+					<posy>106</posy>
+					<width>24</width>
+					<height>24</height>
+					<texture>graphic-more-unfocused.png</texture>
+				</control>
+
+				<control type="label">
+					<posx>473</posx>
+					<posy>156</posy>
+					<width>312</width>
+					<height>20</height>
+					<label>$LOCALIZE[55631]</label>
+					<!--<label>Birthday</label>-->
+					<font>font20b</font>
+					<textcolor>lightgreyheidi</textcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+
+				<!-- MONTH TOGGLE -->
+				<control type="togglebutton" id="8802">
+					<posx>474</posx>
+					<posy>182</posy>
+					<width>312</width>
+					<height>56</height>
+					<include>ToggleButton_Heidi</include>
+					<align>left</align>
+					<textoffsetx>14</textoffsetx>
+					<label>$INFO[Window.Property(chosen-month)]</label>
+					<onup>8801</onup>
+					<ondown>8810</ondown>
+				</control>
+				<control type="image">
+					<visible>Control.HasFocus(8802)</visible>
+					<posx>751</posx>
+					<posy>198</posy>
+					<width>24</width>
+					<height>24</height>
+					<texture>graphic-more-focused.png</texture>
+				</control>
+				<control type="image">
+					<visible>!Control.HasFocus(8802)</visible>
+					<posx>751</posx>
+					<posy>198</posy>
+					<width>24</width>
+					<height>24</height>
+					<texture>graphic-more-unfocused.png</texture>
+				</control>
+
+				<control type="group" id="8810">
+					<!-- DAY TOGGLE -->
+					<control type="togglebutton" id="8803">
+						<posx>474</posx>
+						<posy>249</posy>
+						<width>148</width>
+						<height>56</height>
+						<include>ToggleButton_Heidi</include>
+						<align>left</align>
+						<textoffsetx>14</textoffsetx>
+						<label>$INFO[Window.Property(chosen-day)]</label>
+						<onright>8804</onright>
+						<onup>8802</onup>
+						<ondown>8805</ondown>
+					</control>
+					<control type="image">
+						<visible>Control.HasFocus(8803)</visible>
+						<posx>587</posx>
+						<posy>265</posy>
+						<width>24</width>
+						<height>24</height>
+						<texture>graphic-more-focused.png</texture>
+					</control>
+					<control type="image">
+						<visible>!Control.HasFocus(8803)</visible>
+						<posx>587</posx>
+						<posy>265</posy>
+						<width>24</width>
+						<height>24</height>
+						<texture>graphic-more-unfocused.png</texture>
+					</control>
+
+					<!-- YEAR TOGGLE -->
+					<control type="togglebutton" id="8804">
+						<posx>638</posx>
+						<posy>249</posy>
+						<width>148</width>
+						<height>56</height>
+						<include>ToggleButton_Heidi</include>
+						<align>left</align>
+						<textoffsetx>14</textoffsetx>
+						<label>$INFO[Window.Property(chosen-year)]</label>
+						<onleft>8803</onleft>
+						<onup>8802</onup>
+						<ondown>8805</ondown>
+					</control>
+					<control type="image">
+						<visible>Control.HasFocus(8804)</visible>
+						<posx>751</posx>
+						<posy>265</posy>
+						<width>24</width>
+						<height>24</height>
+						<texture>graphic-more-focused.png</texture>
+					</control>
+					<control type="image">
+						<visible>!Control.HasFocus(8804)</visible>
+						<posx>751</posx>
+						<posy>265</posy>
+						<width>24</width>
+						<height>24</height>
+						<texture>graphic-more-unfocused.png</texture>
+					</control>
+				</control>
+
+				<control type="button" id="8805">
+					<posx>474</posx>
+					<posy>354</posy>
+					<width>312</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>$LOCALIZE[55632]</label>
+					<!-- Submit -->
+					<onup>8810</onup>
+					<ondown>8806</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>-</onclick>
+				</control>
+
+				<control type="button" id="8806">
+					<posx>474</posx>
+					<posy>422</posy>
+					<width>312</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>$LOCALIZE[58042]</label>
+					<!-- Next -->
+					<onup>8805</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>-</onclick>
+				</control>
+				<!-- RIGHT SIDE - END-->
+			</control>
+
+			<control type="list" id="8900">
+				<description>Gender list</description>
+				<posx>474</posx>
+				<posy>64</posy>
+				<width>312</width>
+				<height>400</height>
+				<orientation>vertical</orientation>
+				<scrolltime>200</scrolltime>
+				<itemlayout width="312" height="56">
+					<control type="label">
+						<posx>156</posx>
+						<posy>0</posy>
+						<width>310</width>
+						<height>56</height>
+						<font>font24b</font>
+						<textcolor>mediumgreyheidi</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="312" height="56">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>312</width>
+						<height>56</height>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="label">
+						<posx>156</posx>
+						<posy>0</posy>
+						<font>font24b</font>
+						<textcolor>whiteheidi</textcolor>
+						<width>312</width>
+						<height>56</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+
+			<!-- LEFT SIDE - BEGIN -->
+			<control type="image">
+				<posx>66</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+
+			<control type="image">
+				<posx>82</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_circle.png</texture>
+			</control>
+
+			<control type="image">
+				<posx>98</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+
+			<control type="image">
+				<posx>114</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+
+			<control type="image">
+				<posx>130</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+
+			<control type="label">
+				<description>Header</description>
+				<posx>63</posx>
+				<posy>97</posy>
+				<width>320</width>
+				<height>200</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$LOCALIZE[55645]</label>
+				<include>Header_Heidi</include>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+
+			<control type="label">
+				<posx>64</posx>
+				<posy>203</posy>
+				<width>336</width>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$LOCALIZE[55646]</label>
+				<wrapmultiline>true</wrapmultiline>
+				<include>LargeText_Heidi</include>
+			</control>
+			<!-- LEFT SIDE - END -->
+		</control>
+
+	</controls>
+</window>

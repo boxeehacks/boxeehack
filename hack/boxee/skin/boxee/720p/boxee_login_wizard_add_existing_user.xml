@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<window id="4581" type="dialog">
+	<defaultcontrol always="true">8605</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Background</include>
+		<include>BoxeeLogoLogin</include>
+		<control type="group" id="7000">
+		<include>FTUDialog_Heidi</include>
+			<!-- RIGHT SIDE - BEGIN-->
+			<control type="edit" id="8605">
+				<description>Username</description>
+				<posx>474</posx>
+				<posy>66</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Edit_Heidi</include>
+				<align>left</align>
+				<textoffsetx>14</textoffsetx>
+				<emptylabel>$LOCALIZE[1014]</emptylabel>
+				<emptycolor>lightgreyheidi</emptycolor>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>9003</onup>
+				<onprev>-</onprev>
+				<ondown>8602</ondown>
+				<onnext>8602</onnext>
+			</control>
+			<control type="edit" id="8602">
+				<description>Password</description>
+				<posx>474</posx>
+				<posy>134</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Edit_Heidi</include>
+				<align>left</align>
+				<textoffsetx>14</textoffsetx>
+				<emptylabel>$LOCALIZE[15052]</emptylabel>
+				<emptycolor>lightgreyheidi</emptycolor>
+				<password>true</password>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>8605</onup>
+				<onprev>8605</onprev>
+				<ondown>8603</ondown>
+				<onnext>8603</onnext>
+			</control>
+			<control type="radiobutton" id="8603">
+				<posx>474</posx>
+				<posy>202</posy>
+				<width>312</width>
+				<height>48</height>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>8602</onup>
+				<onprev>8602</onprev>
+				<ondown>8607</ondown>
+				<onnext>8607</onnext>
+				<label>$LOCALIZE[51893]</label>
+				<!--Remember Password-->
+				<include>RadioButton_Heidi</include>
+			</control>
+			<control type="radiobutton" id="8607">
+				<posx>474</posx>
+				<posy>262</posy>
+				<width>312</width>
+				<height>48</height>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>8603</onup>
+				<onprev>8603</onprev>
+				<ondown>1</ondown>
+				<onnext>1</onnext>
+				<label>$LOCALIZE[54691]</label>
+				<!--Show Password-->
+				<include>RadioButton_Heidi</include>
+			</control>
+			<control type="button" id="1">
+				<posx>474</posx>
+				<posy>422</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>$LOCALIZE[51050]</label>
+				<!--Login-->
+				<onup>8607</onup>
+				<ondown>8606</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onclick>-</onclick>
+			</control>
+			<!-- RIGHT SIDE - END-->
+			<!-- LEFT SIDE - BEGIN -->
+			<control type="label">
+				<posx>63</posx>
+				<posy>57</posy>
+				<height>400</height>
+				<width>320</width>
+				<align>left</align>
+				<aligny>top</aligny>
+				<include>Header_Heidi</include>
+				<label>$LOCALIZE[55615]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<!-- LEFT SIDE - END -->
+		</control>
+		
+		<!--<control type="group" id="9000">
+			<posx>1032</posx>
+			<posy>32</posy>
+			<control type="button" id="9003">
+				<posx>76</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>64</height>
+				<texturefocus>actionbuttons/button-action-wifi-focused.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-wifi-unfocused.png</texturenofocus>
+				<onclick>ActivateWindow(NetworkSettings)</onclick>
+				<onup>-</onup>
+				<ondown>7000</ondown>
+				<onright>9004</onright>
+			</control>
+			<control type="button" id="9004">
+				<posx>152</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>64</height>
+				<texturefocus>actionbuttons/button-action-shutdown-focused.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-shutdown-unfocused.png</texturenofocus>
+				<onclick>XBMC.ShutDown()</onclick>
+				<onup>-</onup>
+				<ondown>7000</ondown>
+				<onleft>9003</onleft>
+				<onright>-</onright>
+			</control>
+		</control>-->
+	</controls>
+</window>

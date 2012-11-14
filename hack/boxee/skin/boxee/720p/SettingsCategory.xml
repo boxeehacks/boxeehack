@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<window id="12">
+	<defaultcontrol>3</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Settings_Background</include>
+		<control type="group" id="9000">
+			<control type="label" id="92">
+				<posx>28</posx>
+				<posy>18</posy>
+				<width>925</width>
+				<font>font40b</font>
+				<align>left</align>
+				<label>[B]$LOCALIZE[5][/B]</label>
+			</control>
+		</control>
+		<control type="group" id="9000">
+			<control type="grouplist" id="3">
+				<description>button area</description>
+				<posx>29</posx>
+				<posy>100</posy>
+				<width>340</width>
+				<height>480</height>
+				<onleft>-</onleft>
+				<onright>5</onright>
+				<onup>-</onup>
+				<orientation>vertical</orientation>
+			</control>
+			<control type="grouplist" id="5">
+				<description>control area</description>
+				<posx>400</posx>
+				<posy>100</posy>
+				<width>850</width>
+				<height>524</height>
+				<itemgap>0</itemgap>
+				<pagecontrol>-</pagecontrol>
+				<onleft>3</onleft>
+				<onright>-</onright>
+				<onup>-</onup>
+				<ondown>-</ondown>
+			</control>
+			<control type="togglebutton" id="10">
+				<description>Default Category Button</description>
+				<posx/>
+				<posy>0</posy>
+				<width>340</width>
+				<height>52</height>
+				<onleft>-</onleft>
+				<onright>5</onright>
+				<height>56</height>
+				<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+                <alttexturefocus srcborder="24" border="16">button-on.png</alttexturefocus>
+				<textureclick srcborder="24" border="16">button-on.png</textureclick>
+				<font>font24</font>
+				<textcolor>lightgreyheidi</textcolor>
+                <alttextcolor>lightgreyheidi</alttextcolor>
+                <altfocusedcolor>lightgreyheidi</altfocusedcolor>
+				<focusedcolor>whiteheidi</focusedcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>20</textoffsetx>
+				<pulseonselect>false</pulseonselect>
+				<onclick>SetFocus(5)</onclick>
+			</control>
+			<control type="button" id="7">
+				<description>Default Button</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>56</height>
+				<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<font>font24</font>
+				<textcolor>lightgreyheidi</textcolor>
+				<focusedcolor>whiteheidi</focusedcolor>
+				<disabledcolor>mediumgreyheidi</disabledcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textoffsetx>20</textoffsetx>
+				<pulseonselect>false</pulseonselect>
+			</control>
+			<control type="radiobutton" id="8">
+				<description>Default RadioButton</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>56</height>
+				<type>radiobutton</type>
+				<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+				<texturenofocus srcborder="24" border="16">-</texturenofocus>
+				<textureradioon>universal/graphic-radio-check.png</textureradioon>
+				<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
+				<textcolor>lightgreyheidi</textcolor>
+				<focusedcolor>whiteheidi</focusedcolor>
+				<disabledcolor>mediumgreyheidi</disabledcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>20</textoffsetx>
+				<textoffsety>0</textoffsety>
+				<pulseonselect>false</pulseonselect>
+				<radioposx>808</radioposx>
+				<radioposy>14</radioposy>
+				<radiowidth>28</radiowidth>
+				<radioheight>28</radioheight>
+				<font>font24</font>
+			</control>
+			<control type="spincontrolex" id="9">
+				<description>Default SpinControlex</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>56</height>
+				<font>font22</font>
+				<textcolor>lightgreyheidi</textcolor>
+				<focusedcolor>whiteheidi</focusedcolor>
+				<disabledcolor>mediumgreyheidi</disabledcolor>
+				<textoffsetx>20</textoffsetx>
+				<aligny>center</aligny>
+				<texturenofocus>-</texturenofocus>
+				<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+				<textureup diffuse="colors/color-grey.png">universal/graphic-spin-control-off.png</textureup>
+				<texturedown flipy="true" diffuse="colors/color-grey.png">universal/graphic-spin-control-off.png</texturedown>
+				<textureupfocus diffuse="colors/color-blue.png">universal/graphic-spin-control-on.png</textureupfocus>
+				<texturedownfocus flipy="true" diffuse="colors/color-blue.png">universal/graphic-spin-control-on.png</texturedownfocus>
+				<reverse>yes</reverse>
+				<pulseonselect>false</pulseonselect>
+			</control>
+			<control type="scrollbar" id="90">
+				<posx>1218</posx>
+				<posy>264</posy>
+				<width>28</width>
+				<height>344</height>
+				<texturesliderbackground border="14">-</texturesliderbackground>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<texturesliderbar>-</texturesliderbar>
+				<texturesliderbarfocus>-</texturesliderbarfocus>
+				<orientation>vertical</orientation>
+				<showonepage>false</showonepage>
+			</control>
+		</control>
+	</controls>
+</window>

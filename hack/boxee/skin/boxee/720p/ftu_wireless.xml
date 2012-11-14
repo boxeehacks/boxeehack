@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<window id="10440">
+	<defaultcontrol always="true">240</defaultcontrol>
+	<controls>
+		<include>Common_Background</include>
+		<control type="group" id="290">
+			<include>FTUDialogNoAnim_Heidi</include>
+			<!-- RIGHT SIDE - BEGIN-->
+			<control type="label">
+				<visible>true + window(10445).property(show-list)</visible>
+				<description>Select wireless network</description>
+				<posx>474</posx>
+				<posy>56</posy>
+				<width>322</width>
+				<align>center</align>
+				<aligny>top</aligny>
+				<label>[B]$LOCALIZE[54585][/B]</label>
+				<wrapmultiline>false</wrapmultiline>
+				<font>font24b</font>
+				<textcolor>whiteheidi</textcolor>
+			</control>
+			<control type="label">
+				<visible>true + !window(10445).property(show-list)</visible>
+				<description>No wireless network found</description>
+				<posx>474</posx>
+				<posy>56</posy>
+				<width>322</width>
+				<align>center</align>
+				<aligny>top</aligny>
+				<label>[B]$LOCALIZE[54676][/B]</label>
+				<wrapmultiline>false</wrapmultiline>
+				<font>font24b</font>
+				<textcolor>whiteheidi</textcolor>
+			</control>
+			<control type="fixedlist" id="240">
+				<animation effect="fade" start="100" end="0" time="200" condition="Window.IsActive(DialogProgress.xml)">Conditional</animation>
+				<visible>true + window(10445).property(show-list)</visible>
+				<focusposition>1</focusposition>
+				<posx>474</posx>
+				<posy>106</posy>
+				<width>312</width>
+				<height>176</height>
+				<scrolltime>200</scrolltime>
+				<orientation>vertical</orientation>
+				<ondown>255</ondown>
+				<itemlayout height="48">
+					<control type="label">
+						<posx>160</posx>
+						<posy>-1</posy>
+						<width>202</width>
+						<height>48</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font20</font>
+						<textcolor>mediumgreyheidi</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="image">
+						<posx>8</posx>
+						<posy>6</posy>
+						<width>38</width>
+						<height>38</height>
+						<info>ListItem.property(signalstrength)</info>
+					</control>
+					<control type="image">
+						<posx>272</posx>
+						<posy>6</posy>
+						<width>38</width>
+						<height>38</height>
+						<info>ListItem.property(secure)</info>
+					</control>
+				</itemlayout>
+				<focusedlayout height="48">
+					<control type="group">
+						<visible>!Control.HasFocus(240)</visible>
+						<control type="label">
+							<posx>160</posx>
+							<posy>-1</posy>
+							<width>202</width>
+							<height>48</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>font20</font>
+							<textcolor>mediumgreyheidi</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<posx>8</posx>
+							<posy>6</posy>
+							<width>38</width>
+							<height>38</height>
+							<info>ListItem.property(signalstrength)</info>
+						</control>
+						<control type="image">
+							<posx>272</posx>
+							<posy>6</posy>
+							<width>38</width>
+							<height>38</height>
+							<info>ListItem.property(secure)</info>
+						</control>
+					</control>
+					<control type="group">
+						<visible>Control.HasFocus(240)</visible>
+						<control type="image">
+							<width>312</width>
+							<height>48</height>
+							<texture srcborder="24" border="16">button-focused.png</texture>
+						</control>
+						<control type="label">
+							<posx>160</posx>
+							<posy>-1</posy>
+							<width>202</width>
+							<height>48</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>font20</font>
+							<textcolor>whiteheidi</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<scroll>true</scroll>
+						</control>
+						<control type="image">
+							<posx>8</posx>
+							<posy>6</posy>
+							<width>38</width>
+							<height>38</height>
+							<info>ListItem.property(signalstrength)</info>
+						</control>
+						<control type="image">
+							<posx>272</posx>
+							<posy>6</posy>
+							<width>38</width>
+							<height>38</height>
+							<info>ListItem.property(secure)</info>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="image">
+				<posx>470</posx>
+				<posy>288</posy>
+				<width>320</width>
+				<height>40</height>
+				<texture>graphic-divider-480.png</texture>
+			</control>
+			<control type="group">
+				<control type="button" id="255">
+					<posx>470</posx>
+					<posy>340</posy>
+					<width>320</width>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<texturenofocus srcborder="24" border="16">universal/button-unfocused.png</texturenofocus>
+					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+					<onup>240</onup>
+					<ondown>275</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>-</onclick>
+					<font>font22b</font>
+					<label>$LOCALIZE[54674]</label>
+				</control>
+				<control type="button" id="275">
+					<posx>470</posx>
+					<posy>406</posy>
+					<width>320</width>
+					<height>54</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<texturenofocus srcborder="24" border="16">universal/button-unfocused.png</texturenofocus>
+					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+					<onup>255</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>-</onclick>
+					<font>font22b</font>
+					<label>$LOCALIZE[54652]</label>
+				</control>
+				<control type="group">
+					<control type="multiimage">
+						<visible>true + window(10445).property(is-searching)</visible>
+						<animation effect="fade" time="200">VisibleChange</animation>
+						<posx>470</posx>
+						<posy>470</posy>
+						<width>40</width>
+						<height>40</height>
+						<imagepath>loading_small</imagepath>
+						<timeperimage>2</timeperimage>
+						<fadetime>2</fadetime>
+						<pauseatend>0</pauseatend>
+						<randomize>false</randomize>
+						<loop>yes</loop>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<visible>true + window(10445).property(is-searching)</visible>
+						<animation effect="fade" time="200">VisibleChange</animation>
+						<posx>520</posx>
+						<posy>470</posy>
+						<height>40</height>
+						<width>300</width>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>font20</font>
+						<label>$LOCALIZE[54677]</label>
+					</control>
+				</control>
+			</control>
+			<!-- RIGHT SIDE - END -->
+			<!-- LEFT SIDE - BEGIN -->
+			<control type="grouplist">
+				<posx>62</posx>
+				<posy>56</posy>
+				<width>320</width>
+				<height>412</height>
+				<orientation>vertical</orientation>
+				<itemgap>0</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<width>320</width>
+					<height min="0" max="120">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$LOCALIZE[54686][/B]</label>
+					<include>Header_Heidi</include>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<posy>10</posy>
+					<width>320</width>
+					<height min="0" max="288">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[54550]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<include>LargeText_Heidi</include>
+				</control>
+			</control>
+			<!-- LEFT SIDE - END -->
+		</control>
+
+	</controls>
+</window>

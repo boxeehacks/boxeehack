@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<window id="2002">
+	<defaultcontrol>10</defaultcontrol>
+	<controls>
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Dialog_Popup_Animation</include>
+			<posx>340</posx>
+			<posy>210</posy>
+			<width>600</width>
+			<height>300</height>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>600</width>
+				<height>300</height>
+				<texture border="20">browse_menu_dialog_background.png</texture>
+				<colordiffuse>FF212121</colordiffuse>
+			</control>
+			<control type="label" id="40">
+				<description>heading label</description>
+				<posx>32</posx>
+				<posy>24</posy>
+				<width>536</width>
+				<height>28</height>
+				<font>font28b</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>55500</label>
+				<textcolor>white</textcolor>
+			</control>			
+			<control type="group" id="42">
+				<posx>211</posx>
+				<posy>76</posy>
+				<width>178</width>
+				<height>51</height>							
+				<control type="image" id="421">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>51</height>
+					<texture>$INFO[Window.Property(pair-digit-0)]</texture>
+				</control>
+				<control type="image" id="422">
+					<posx>46</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>51</height>
+					<texture>$INFO[Window.Property(pair-digit-1)]</texture>
+				</control>
+				<control type="image" id="423">
+					<posx>92</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>51</height>
+					<texture>$INFO[Window.Property(pair-digit-2)]</texture>
+				</control>
+				<control type="image" id="424">
+					<posx>138</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>51</height>
+					<texture>$INFO[Window.Property(pair-digit-3)]</texture>
+				</control>
+			</control>		
+			<control type="label" id="43">
+				<posx>24</posx>
+				<posy>140</posy>
+				<width>550</width>
+				<height>78</height>
+				<label>-</label>
+				<align>center</align>
+				<font>font26</font>
+				<textcolor>white</textcolor>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="button" id="10">
+				<posx>228</posx>
+				<posy>230</posy>
+				<width>144</width>
+				<height>43</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<focusedcolor>black</focusedcolor>
+				<texturenofocus border="16" diffuse="masks/464646.png">button_8_pixel.png</texturenofocus>
+				<texturefocus border="16" diffuse="masks/10b9f2.png">button_8_pixel.png</texturefocus>
+				<textureclick border="16" diffuse="masks/f1f1f1.png">button_8_pixel.png</textureclick>
+				<font>font28b</font>
+				<label>-</label>
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onclick>-</onclick>
+			</control>
+		</control>
+	</controls>
+</window>

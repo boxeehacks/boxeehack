@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<window type="dialog" id="435">
+    <defaultcontrol always="true">240</defaultcontrol>
+    <allowoverlay>no</allowoverlay>
+    <controls>
+        <!-- Dummy container for Item Info -->
+        <control type="list" id="5000">
+            <description>info</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>0</width>
+            <height>0</height>
+            <visible>false</visible>
+            <itemlayout height="0">
+            </itemlayout>
+            <focusedlayout height="0">
+            </focusedlayout>
+        </control>      
+        <control type="group" id="6400">
+            <posx>160</posx>
+            <posy>162</posy>
+            <include>PaymentDialogBG</include>            
+            <control type="label" id="6410">
+                <posx>30</posx>
+                <posy>10</posy>
+                <width>600</width>
+                <height>80</height>
+                <font>font28b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>$LOCALIZE[55140]</label>
+                <textcolor>white</textcolor>
+            </control>
+            <control type="label" id="6411">
+                <posx>30</posx>
+                <posy>15</posy>
+                <width>850</width>
+                <height>220</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>-</label>
+                <textcolor>white</textcolor>
+                <wrapmultiline>true</wrapmultiline>                
+            </control>
+            <control type="label" id="6412">
+                <animation effect="fade" start="100" end="30" time="2000" pulse="true" condition="true" delay="500">conditional</animation>            
+                <posx>30</posx>
+                <posy>160</posy>
+                <width>650</width>
+                <height>120</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>$LOCALIZE[55141]</label>
+                <textcolor>yellow</textcolor>
+            </control>            
+            <control type="group" id="6430">        
+                <control type="button" id="6431">
+                    <!-- I'll do this later button -->
+                    <posx>20</posx>
+                    <posy>310</posy>
+                    <width>280</width>
+                    <height>110</height>
+                    <onleft>-</onleft>
+                    <onright>-</onright>
+                    <onup>-</onup>
+                    <ondown>-</ondown>
+                    <font>font28b</font>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <label>$LOCALIZE[55142]</label>
+                    <textcolor>white</textcolor>
+                    <focusedcolor>black</focusedcolor>
+                    <textoffsetx>35</textoffsetx>
+                    <texturenofocus>-</texturenofocus>
+                    <texturefocus border="39">button_action_menu_source_on.png</texturefocus>
+                    <textureclick border="39">button_action_menu_source.png</textureclick>
+                </control>
+                </control>                
+            <!-- include>PaymentBackButton</include -->
+        </control>
+    </controls>
+</window>

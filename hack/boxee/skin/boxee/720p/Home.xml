@@ -1,0 +1,530 @@
+<?xml version="1.0"?>
+<window id="0">
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Background</include>
+		<include>LogoTitleAndItemCount</include>
+		<control type="group">
+			<animation effect="fade" start="100" end="25" time="200" condition="Window.IsActive(DialogProgress.xml)">Conditional</animation>
+			<control type="group" id="9200">
+				<visible>false + boxee.newversion</visible>
+				<control type="button" id="2410">
+					<include>ViewButton</include>
+					<onup>-</onup>
+					<ondown>7000</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<texturenofocus>icons/icon_update_small.png</texturenofocus>
+					<texturefocus diffuse="masks/10b9f2.png">icons/icon_update_small.png</texturefocus>
+				</control>
+			</control>
+			<control type="group">
+				<posx>-30</posx>
+				<control type="grouplist">
+					<align>right</align>
+					<posx>435r</posx>
+					<posy>0</posy>
+					<height>63</height>
+					<orientation>horizontal</orientation>
+					<itemgap>20</itemgap>
+					<usecontrolcoords>true</usecontrolcoords>
+					<!-- OEM logo -->
+					<control type="image">
+						<visible>boxee.isshowoemlogo + !boxee.isdownloadingupdate + !boxee.newversion</visible>
+						<description>iomega image</description>
+						<posx>0</posx>
+						<posy>12</posy>
+						<width>124</width>
+						<height>48</height>
+						<aspectratio>keep</aspectratio>
+						<texture>oem.png</texture>
+						<colordiffuse>mediumgreyheidi</colordiffuse>
+					</control>
+					<!-- WEATHER -->
+					<control type="grouplist">
+						<visible>boxee.HasInternetConnection + Weather.IsFetched</visible>
+						<posy>23</posy>
+						<orientation>horizontal</orientation>
+						<itemgap>6</itemgap>
+						<usecontrolcoords>true</usecontrolcoords>
+						<control type="image">
+							<description>Weather image</description>
+							<posx>0</posx>
+							<posy>7</posy>
+							<width>24</width>
+							<height>24</height>
+							<aspectratio>keep</aspectratio>
+							<info>Weather.Conditions</info>
+							<colordiffuse>mediumgreyheidi</colordiffuse>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width min="0" max="80">auto</width>
+							<height>36</height>
+							<label>[B]$INFO[Weather.temperaturenounit][/B]</label>
+							<font>font28b</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>mediumgreyheidi</textcolor>
+						</control>
+					</control>
+					<!-- CLOCK -->
+					<control type="grouplist">
+						<posy>23</posy>
+						<orientation>horizontal</orientation>
+						<itemgap>0</itemgap>
+						<usecontrolcoords>true</usecontrolcoords>
+						<control type="group">
+							<!-- HACK TO ADD SPACE -->
+							<width>26</width>
+							<control type="image">
+								<posx>0</posx>
+								<posy>8</posy>
+								<width>21</width>
+								<height>21</height>
+								<texture>graphic-clock.png</texture>
+								<colordiffuse>mediumgreyheidi</colordiffuse>
+							</control>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width min="0" max="82">auto</width>
+							<height>36</height>
+							<font>font28b</font>
+							<textcolor>mediumgreyheidi</textcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[B]$INFO[System.Time(HH:MM)][/B]</label>
+						</control>
+						<control type="label">
+							<visible>SubString(System.Time#AM,Right)</visible>
+							<posx>2</posx>
+							<posy>7</posy>
+							<width min="0" max="80">auto</width>
+							<height>36</height>
+							<font>font20b</font>
+							<textcolor>mediumgreyheidi</textcolor>
+							<align>left</align>
+							<aligny>top</aligny>
+							<scroll>false</scroll>
+							<label>[B]AM[/B]</label>
+						</control>
+						<control type="label">
+							<visible>SubString(System.Time#PM,Right)</visible>
+							<posx>2</posx>
+							<posy>7</posy>
+							<width min="0" max="80">auto</width>
+							<height>36</height>
+							<font>font20b</font>
+							<textcolor>mediumgreyheidi</textcolor>
+							<align>left</align>
+							<aligny>top</aligny>
+							<scroll>false</scroll>
+							<label>[B]PM[/B]</label>
+						</control>
+					</control>
+				</control>
+			</control>
+			<!-- Main Menu main icon list -->
+			<control type="list" id="7000">
+				<animation type="Conditional" condition="DVB.IsTunerReady">
+					<effect type="slide" start="0" end="-79" time="200" delay="0"/>
+				</animation>
+				<posx>79</posx>
+				<posy>94</posy>
+				<width>1280</width>
+				<height>250</height>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>2410</onup>
+				<ondown>8200</ondown>
+				<scrolltime>400</scrolltime>
+				<orientation>horizontal</orientation>
+				<itemlayout width="158">
+					<control type="image">
+						<posx>42</posx>
+						<posy>10</posy>
+						<width>100</width>
+						<height>100</height>
+						<texture diffuse="colors/color-grey.png">$INFO[ListItem.Thumb]</texture>
+					</control>
+					<control type="label">
+						<posx>95</posx>
+						<posy>124</posy>
+						<width>154</width>
+						<height>65</height>
+						<font>font24bls</font>
+						<align>center</align>
+						<aligny>top</aligny>
+						<label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>
+						<textcolor>mediumgreyheidi</textcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout width="158">
+					<control type="group">
+						<visible>!Control.HasFocus(7000)</visible>
+						<control type="image">
+							<posx>42</posx>
+							<posy>10</posy>
+							<width>100</width>
+							<height>100</height>
+							<texture diffuse="colors/color-grey.png">$INFO[ListItem.Thumb]</texture>
+						</control>
+						<control type="label">
+							<posx>95</posx>
+							<posy>124</posy>
+							<width>154</width>
+							<height>65</height>
+							<font>font24bls</font>
+							<align>center</align>
+							<aligny>top</aligny>
+							<label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>
+							<textcolor>mediumgreyheidi</textcolor>
+						</control>
+					</control>
+					<control type="group">
+						<visible>Control.HasFocus(7000)</visible>
+						<control type="image">
+							<posx>30</posx>
+							<posy>0</posy>
+							<width>124</width>
+							<height>124</height>
+							<texture blend="false" srcborder="24" border="16">button-focused.png</texture>
+						</control>
+						<control type="image">
+							<posx>42</posx>
+							<posy>10</posy>
+							<width>100</width>
+							<height>100</height>
+							<texture diffuse="colors/color-white.png">$INFO[ListItem.Thumb]</texture>
+						</control>
+						<control type="label">
+							<posx>95</posx>
+							<posy>124</posy>
+							<width>154</width>
+							<height>65</height>
+							<font>font24bls</font>
+							<align>center</align>
+							<aligny>top</aligny>
+							<label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>
+							<textcolor>whiteheidi</textcolor>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>
+                <!-- 
+                    <item>
+                        <controlid>150</controlid>
+                        <thumb>icons/icon_menu_web.png</thumb>
+                        <label>53916</label>
+                        <onclick>-</onclick>
+                    </item> 
+                -->         
+					<item>
+						<visible>DVB.IsTunerReady</visible>
+						<controlid>119</controlid>
+						<label>58000</label>
+						<thumb>icons/icon-home-live-tv.png</thumb>
+						<onclick>-</onclick>
+					</item>
+					<item>
+						<controlid>112</controlid>
+						<label>53911</label>
+						<thumb>icons/icon-home-friends.png</thumb>
+						<onclick>-</onclick>
+					</item>				
+					<item>
+						<controlid>111</controlid>
+						<label>53917</label>
+						<thumb>icons/icon-home-watch-later.png</thumb>
+						<onclick>-</onclick>
+					</item>
+					<item>
+						<controlid>113</controlid>
+						<label>53912</label>
+						<thumb>icons/icon-home-shows.png</thumb>
+						<onclick>-</onclick>
+					</item>
+					<item>
+						<controlid>115</controlid>
+						<thumb>icons/icon-home-movies.png</thumb>
+						<label>53913</label>
+						<onclick>-</onclick>
+					</item>
+					<item>
+						<controlid>122</controlid>
+						<thumb>icons/icon-home-music.png</thumb>
+						<label>54031</label>
+						<onclick>ActivateWindow(10484,boxeeui://music/)</onclick>
+					</item>
+					<item>
+						<controlid>116</controlid>
+						<thumb>icons/icon-home-apps.png</thumb>
+						<label>53914</label>
+						<onclick>-</onclick>
+					</item>
+					<item>
+						<controlid>117</controlid>
+						<thumb>icons/icon-home-files.png</thumb>
+						<label>53915</label>
+						<onclick>-</onclick>
+					</item>
+					<!-- <item>
+						<controlid>120</controlid>
+						<thumb>icons/icon-home-web.png</thumb>
+						<label>53916</label>
+						<onclick>-</onclick>
+					</item>	-->
+					<!--
+					<item>
+						<visible>System.HasMediadvd</visible>
+						<controlid>118</controlid>
+						<thumb>icons/icon_menu_disc.png</thumb>
+						<label>DVD / CD</label>
+						<label2>System.DVDLabel</label2>
+						<onclick>-</onclick>
+					</item>
+					-->
+				</content>
+			</control>
+			<!-- Featured -->
+			<control type="image">
+				<posx>0</posx>
+				<posy>289</posy>
+				<width>1280</width>
+				<height>32</height>
+				<texture>homescreen/graphic-home-divider.png</texture>
+			</control>
+			<control type="label">
+				<visible>!boxee.HasInternetConnection</visible>
+				<posx>32</posx>
+				<posy>426</posy>
+				<width>1280</width>
+				<font>font36b</font>
+				<align>center</align>
+				<textcolor>mediumgreyheidi</textcolor>
+				<label>[B]$LOCALIZE[56033][/B]</label>
+			</control>
+			<control type="label">
+				<visible>!boxee.HasInternetConnection</visible>
+				<posx>0</posx>
+				<posy>470</posy>
+				<width>1280</width>
+				<font>font30</font>
+				<align>center</align>
+				<textcolor>mediumgreyheidi</textcolor>
+				<label>$LOCALIZE[51930]</label>
+			</control>
+			<control type="button" id="8200">
+				<visible>!boxee.HasInternetConnection</visible>
+				<enable>!boxee.HasInternetConnection</enable>
+				<posx>444</posx>
+				<posy>522</posy>
+				<width>392</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>[B]$LOCALIZE[90550][/B]</label>
+				<onclick>ActivateWindow(NetworkSettings)</onclick>
+				<onup>7000</onup>
+			</control>
+			
+			<control type="group" id="8000">
+				<animation effect="slide" start="0,0" end="-1248,0" time="450" condition="Container(8200).Position(3) | Container(8200).Position(4) | Container(8200).Position(5)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-2496,0" time="450" condition="Container(8200).Position(6) | Container(8200).Position(7) | Container(8200).Position(8)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-3744,0" time="450" condition="Container(8200).Position(9) | Container(8200).Position(10) | Container(8200).Position(11)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-4992,0" time="450" condition="Container(8200).Position(12) | Container(8200).Position(13) | Container(8200).Position(14)">Conditional</animation>
+				<visible>boxee.HasInternetConnection</visible>
+				<enable>boxee.HasInternetConnection</enable>
+				<posx>0</posx>
+				<posy>278</posy>
+				<control type="list" id="8200">
+					<preloaditems>4</preloaditems>
+					<posx>15</posx>
+					<posy>77</posy>
+					<width>6300</width>
+					<height>404</height>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onup>7000</onup>
+					<ondown>-</ondown>
+					<scrolltime>400</scrolltime>
+					<pagecontrol>60</pagecontrol>
+					<orientation>horizontal</orientation>
+					<itemlayout width="416" height="256">
+						<control type="image">
+							<visible>!IsEmpty(ListItem.Thumb)</visible>
+							<posx>17</posx>
+							<posy>0</posy>
+							<width>384</width>
+							<height>252</height>
+							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
+							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="image">
+							<visible>IsEmpty(ListItem.Thumb)</visible>
+							<posx>17</posx>
+							<posy>0</posy>
+							<width>384</width>
+							<height>252</height>
+							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">browse/thumbnail-default-landscape.png</texture>
+							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="label">
+							<posx>24</posx>
+							<posy>259</posy>
+							<width>364</width>
+							<height>64</height>
+							<font>font22</font>
+							<align>left</align>
+							<aligny>top</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>mediumgreyheidi</textcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout width="416" height="256">
+						<control type="image">
+							<visible>!Control.HasFocus(8200)</visible>
+							<visible>!IsEmpty(ListItem.Thumb)</visible>
+							<posx>17</posx>
+							<posy>0</posy>
+							<width>384</width>
+							<height>252</height>
+							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
+							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="image">
+							<visible>!Control.HasFocus(8200)</visible>
+							<visible>IsEmpty(ListItem.Thumb)</visible>
+							<posx>17</posx>
+							<posy>0</posy>
+							<width>384</width>
+							<height>252</height>
+							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">browse/thumbnail-default-landscape.png</texture>
+							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="image">
+							<visible>Control.HasFocus(8200)</visible>
+							<visible>!IsEmpty(ListItem.Thumb)</visible>
+							<posx>17</posx>
+							<posy>0</posy>
+							<width>384</width>
+							<height>252</height>
+							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
+							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="image">
+							<visible>Control.HasFocus(8200)</visible>
+							<visible>IsEmpty(ListItem.Thumb)</visible>
+							<posx>17</posx>
+							<posy>0</posy>
+							<width>384</width>
+							<height>252</height>
+							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">browse/thumbnail-default-landscape.png</texture>
+							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="label">
+							<visible>Control.HasFocus(8200)</visible>
+							<posx>24</posx>
+							<posy>259</posy>
+							<width>364</width>
+							<height>64</height>
+							<font>font22</font>
+							<align>left</align>
+							<aligny>Top</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>whiteheidi</textcolor>
+						</control>
+						<control type="label">
+							<visible>!Control.HasFocus(8200)</visible>
+							<posx>24</posx>
+							<posy>259</posy>
+							<width>364</width>
+							<height>64</height>
+							<font>font22</font>
+							<align>left</align>
+							<aligny>Top</aligny>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>mediumgreyheidi</textcolor>
+						</control>
+					</focusedlayout>
+					<content type="directory">
+				    	feed://featured/?limit=15
+				 	</content>
+				</control>				
+			</control>
+		</control>
+		
+		<control type="group">
+			<visible>boxee.HasInternetConnection</visible>
+			<control type="image">
+				<posx>586</posx>
+				<posy>687</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>universal/graphic-steps-dot.png</texture>
+				<colordiffuse>mediumgreyheidi</colordiffuse>
+			</control>
+			<control type="image">
+				<posx>602</posx>
+				<posy>687</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>universal/graphic-steps-dot.png</texture>
+				<colordiffuse>mediumgreyheidi</colordiffuse>
+			</control>
+			<control type="image">
+				<posx>618</posx>
+				<posy>687</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>universal/graphic-steps-dot.png</texture>
+				<colordiffuse>mediumgreyheidi</colordiffuse>
+			</control>
+			<control type="image">
+				<posx>634</posx>
+				<posy>687</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>universal/graphic-steps-dot.png</texture>
+				<colordiffuse>mediumgreyheidi</colordiffuse>
+			</control>
+			<control type="image">
+				<posx>650</posx>
+				<posy>687</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>universal/graphic-steps-dot.png</texture>
+				<colordiffuse>mediumgreyheidi</colordiffuse>
+			</control>
+			<control type="image">
+				<animation effect="slide" start="0,0" end="16,0" time="0" condition="Container(8200).Position(3) | Container(8200).Position(4) | Container(8200).Position(5)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="32,0" time="0" condition="Container(8200).Position(6) | Container(8200).Position(7) | Container(8200).Position(8)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="48,0" time="0" condition="Container(8200).Position(9) | Container(8200).Position(10) | Container(8200).Position(11)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="64,0" time="0" condition="Container(8200).Position(12) | Container(8200).Position(13) | Container(8200).Position(14)">Conditional</animation>
+				<posx>586</posx>
+				<posy>687</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>universal/graphic-steps-circle.png</texture>
+				<colordiffuse>mediumgreyheidi</colordiffuse>
+			</control>
+		</control>
+		
+		<include>DownloadingUpdatesBanner</include>
+	</controls>
+</window>

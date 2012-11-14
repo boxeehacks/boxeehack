@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<window id="10440">
+	<defaultcontrol always="true">250</defaultcontrol>
+	<controls>
+		<include>Common_Background</include>
+		<control type="group">
+			<posx>214</posx>
+			<posy>88</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>852</width>
+				<height>544</height>
+				<texture srcborder="51" border="34">dialog_bg.png</texture>
+			</control>
+			<control type="label">
+				<posx>62</posx>
+				<posy>52</posy>
+				<width>720</width>
+				<height>60</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<font>font40bls</font>
+				<textcolor>whiteheidi</textcolor>
+				<label>[B]$LOCALIZE[53257][/B]</label>
+			</control>
+			<control type="label">
+				<posx>62</posx>
+				<posy>110</posy>
+				<width>720</width>
+				<height>140</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<font>font24bls</font>
+				<textcolor>lightgreyheidi</textcolor>
+				<label>$LOCALIZE[53258]</label>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="label" id="267">
+				<posx>62</posx>
+				<posy>324</posy>
+				<width>720</width>
+				<height>140</height>
+				<align>center</align>
+				<aligny>top</aligny>
+				<font>font24bls</font>
+				<textcolor>lightgreyheidi</textcolor>
+			</control>
+			<control type="progress" id="268">
+				<posx>62</posx>
+				<posy>262</posy>
+				<width>720</width>
+				<height>56</height>
+				<texturebg diffuse="colors/color-grey.png" srcborder="42" border="28">ftu/graphic-download-bg.png</texturebg>
+				<lefttexture diffuse="colors/color-green.png" srcborder="42,0,0,0" border="28,0,0,0">ftu/graphic-download-progress-cap.png</lefttexture>
+				<midtexture diffuse="colors/color-green.png">ftu/graphic-download-progress.png</midtexture>
+				<righttexture diffuse="colors/color-green.png" srcborder="42,0,0,0" border="28,0,0,0" flipx="true">ftu/graphic-download-progress-cap.png</righttexture>
+				<overlaytexture>-</overlaytexture>
+			</control>
+			<control type="label" id="269">
+				<posx>62</posx>
+				<posy>278</posy>
+				<height>24</height>
+				<width>720</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<font>font24</font>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<window id="129">
+	<defaultcontrol>10</defaultcontrol>
+	<coordinates>
+		<system>1</system>
+		<posx>240</posx>
+		<posy>135</posy>
+	</coordinates>
+	<include>dialogeffect</include>
+	<controls>
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>800</width>
+			<height>450</height>
+			<colordiffuse>55FFFFFF</colordiffuse>
+			<texture>grey.png</texture>
+		</control>
+		<control type="image">
+			<description>background image</description>
+			<posx>5</posx>
+			<posy>5</posy>
+			<width>790</width>
+			<height>440</height>
+			<colordiffuse>88FFFFFF</colordiffuse>
+			<texture>black.png</texture>
+		</control>
+		<control type="label" id="2">
+			<description>heading label</description>
+			<posx>20</posx>
+			<posy>10</posy>
+			<width>420</width>
+			<align>left</align>
+			<font>font16</font>
+			<label>-</label>
+			<textcolor>green</textcolor>
+		</control>
+		<control type="label" id="0">
+			<description>path label</description>
+			<posx>15</posx>
+			<posy>45</posy>
+			<width>760</width>
+			<align>left</align>
+			<font>font12</font>
+			<label>1021</label>
+		</control>
+		<control type="listcontrol" id="10">
+			<description>Path List Control</description>
+			<posx>15</posx>
+			<posy>80</posy>
+			<width>615</width>
+			<height>250</height>
+			<font>font13</font>
+			<textoffsetx>8</textoffsetx>
+			<aligny>center</aligny>
+			<textureheight>45</textureheight>
+			<texturefocus>list-focus.png</texturefocus>
+			<texturenofocus>list-nofocus.png</texturenofocus>
+			<spacebetweenitems>2</spacebetweenitems>
+			<itemwidth>0</itemwidth>
+			<textxoff>0</textxoff>
+			<font2>-</font2>
+			<onup>9001</onup>
+			<onleft>9000</onleft>
+			<onright>9000</onright>
+			<ondown>12</ondown>
+		</control>
+		<control type="group" id="9000">
+			<control type="button" id="11">
+				<description>Browse Button</description>
+				<posx>635</posx>
+				<posy>80</posy>
+				<width>150</width>
+				<height>45</height>
+				<label>1024</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texturenofocus>button-nofocus.png</texturenofocus>
+				<texturefocus>button-focus.png</texturefocus>
+				<onup>18</onup>
+				<onleft>10</onleft>
+				<onright>10</onright>
+				<ondown>13</ondown>
+			</control>
+			<control type="button" id="13">
+				<description>Add Path Button</description>
+				<posx>635</posx>
+				<posy>127</posy>
+				<width>150</width>
+				<height>45</height>
+				<label>15019</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texturenofocus>button-nofocus.png</texturenofocus>
+				<texturefocus>button-focus.png</texturefocus>
+				<onup>11</onup>
+				<onleft>10</onleft>
+				<onright>10</onright>
+				<ondown>14</ondown>
+			</control>
+			<control type="button" id="14">
+				<description>Remove Path Button</description>
+				<posx>635</posx>
+				<posy>174</posy>
+				<width>150</width>
+				<height>45</height>
+				<label>1210</label>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texturenofocus>button-nofocus.png</texturenofocus>
+				<texturefocus>button-focus.png</texturefocus>
+				<onup>13</onup>
+				<onleft>10</onleft>
+				<onright>10</onright>
+				<ondown>12</ondown>
+			</control>
+		</control>
+		<control type="label" id="0">
+			<description>Name Label</description>
+			<posx>16</posx>
+			<posy>290</posy>
+			<width>770</width>
+			<font>font12</font>
+			<label>1022</label>
+		</control>
+		<control type="button" id="12">
+			<description>Name Button</description>
+			<posx>15</posx>
+			<posy>325</posy>
+			<width>770</width>
+			<height>45</height>
+			<textoffsetx>10</textoffsetx>
+			<textwidth>380</textwidth>
+			<aligny>center</aligny>
+			<texturefocus>list-focus.png</texturefocus>
+			<texturenofocus>list-nofocus.png</texturenofocus>
+			<label>-</label>
+			<onup>10</onup>
+			<onleft>12</onleft>
+			<onright>19</onright>
+			<ondown>9001</ondown>
+		</control>
+		<control type="group" id="9001">
+			<control type="button" id="18">
+				<description>Ok Button</description>
+				<posx>300</posx>
+				<posy>395</posy>
+				<width>200</width>
+				<height>42</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texturenofocus>button-nofocus.png</texturenofocus>
+				<texturefocus>button-focus.png</texturefocus>
+				<label>186</label>
+				<onup>12</onup>
+				<onleft>20</onleft>
+				<onright>19</onright>
+				<ondown>10</ondown>
+			</control>
+			<control type="button" id="19">
+				<description>Cancel Button</description>
+				<posx>510</posx>
+				<posy>395</posy>
+				<width>200</width>
+				<height>42</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texturenofocus>button-nofocus.png</texturenofocus>
+				<texturefocus>button-focus.png</texturefocus>
+				<label>222</label>
+				<onup>12</onup>
+				<onleft>18</onleft>
+				<onright>20</onright>
+				<ondown>10</ondown>
+			</control>
+			<control type="button" id="20">
+				<description>Set Content Button</description>
+				<posx>90</posx>
+				<posy>395</posy>
+				<width>200</width>
+				<height>42</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texturenofocus>button-nofocus.png</texturenofocus>
+				<texturefocus>button-focus.png</texturefocus>
+				<label>20333</label>
+				<onup>12</onup>
+				<onleft>19</onleft>
+				<onright>18</onright>
+				<ondown>10</ondown>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,58 @@
+<window id="105">
+  <defaultcontrol>1</defaultcontrol>
+  <coordinates>
+    <system>1</system>
+    <posx>0</posx>
+    <posy>0</posy>
+  </coordinates>
+  <controls>
+    <control type="image" id="1">
+      <description>Pointer Image</description>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>40</width>
+      <height>52</height>
+      <texture>universal/cursor.png</texture>
+    </control>
+    <control type="image" id="2">
+      <description>Pointer Focus Image</description>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>40</width>
+      <height>52</height>
+      <texture>universal/cursor.png</texture>
+    </control>
+    <control type="image" id="3">
+      <description>Pointer Drag Image</description>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>40</width>
+      <height>52</height>
+      <texture>universal/cursor.png</texture>
+    </control>
+    <control type="image" id="4">
+      <description>Pointer Click Image</description>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>40</width>
+      <height>52</height>
+      <texture>universal/cursor.png</texture>
+    </control>
+    <control type="image" id="5">
+      <description>Browser Cursor Image</description>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>30</width>
+      <height>30</height>
+      <texture>icons/icon_browser_osd_cursor_black.png</texture>
+    </control>
+    <control type="image" id="6">
+      <description>Browser Cursor Image</description>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>30</width>
+      <height>30</height>
+      <texture>icons/icon_browser_osd_cursor_hand_black.png</texture>
+    </control>
+  </controls>
+</window>

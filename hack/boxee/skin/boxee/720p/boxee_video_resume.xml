@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<window id="14018">
+	<defaultcontrol>11</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<!-- When on top of action dialog -->
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Dialog_Popup_Animation</include>
+			<posx>382</posx>
+			<posy>250</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>516</width>
+				<height>220</height>
+				<texture srcborder="51" border="34">dialog_bg.png</texture>
+			</control>
+			<control type="list" id="11">
+				<posx>48</posx>
+				<posy>48</posy>
+				<width>420</width>
+				<height>276</height>
+				<onleft>-</onleft>
+				<onup>-</onup>				
+				<onright>-</onright>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<itemlayout width="420" height="68">
+					<control type="label">
+						<posx>210</posx>
+						<posy>-1</posy>
+						<width>420</width>
+						<height>56</height>
+						<font>font24b</font>
+						<textcolor>mediumgreyheidi</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="420" height="68">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>420</width>
+						<height>56</height>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="label">
+						<posx>210</posx>
+						<posy>-1</posy>
+						<width>420</width>
+						<height>56</height>
+						<font>font24b</font>
+						<textcolor>whiteheidi</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>

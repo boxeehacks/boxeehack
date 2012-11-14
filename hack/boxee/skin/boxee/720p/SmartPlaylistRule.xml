@@ -1,0 +1,147 @@
+<window id="129">
+	<defaultcontrol>15</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<coordinates>
+		<system>1</system>
+		<posx>240</posx>
+		<posy>245</posy>
+	</coordinates>
+	<include>dialogeffect</include>
+	<controls>
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>800</width>
+			<height>230</height>
+			<colordiffuse>55FFFFFF</colordiffuse>
+			<texture>grey.png</texture>
+		</control>
+		<control type="image">
+			<description>background image</description>
+			<posx>5</posx>
+			<posy>5</posy>
+			<width>790</width>
+			<height>220</height>
+			<colordiffuse>88FFFFFF</colordiffuse>
+			<texture>black.png</texture>
+		</control>
+		<control type="label">
+			<description>heading label</description>
+			<posx>20</posx>
+			<posy>10</posy>
+			<width>420</width>
+			<align>left</align>
+			<font>font16</font>
+			<label>21421</label>
+			<textcolor>green</textcolor>
+		</control>
+		<control type="label" id="0">
+			<description>Rule match label</description>
+			<posx>15</posx>
+			<posy>45</posy>
+			<width>770</width>
+			<font>font13</font>
+			<label>21422</label>
+		</control>
+		<control type="group" id="9001">
+			<control type="spincontrolex" id="15">
+				<description>Rule Field</description>
+				<posx>15</posx>
+				<posy>75</posy>
+				<width>380</width>
+				<height>45</height>
+				<font>font13</font>
+				<texturefocus>list-focus.png</texturefocus>
+				<texturenofocus>list-nofocus.png</texturenofocus>
+				<onright>16</onright>
+				<onleft>16</onleft>
+				<onup>9000</onup>
+				<ondown>17</ondown>
+			</control>
+			<control type="spincontrolex" id="16">
+				<description>Rule operator</description>
+				<posx>405</posx>
+				<posy>75</posy>
+				<width>380</width>
+				<height>45</height>
+				<font>font13</font>
+				<texturefocus>list-focus.png</texturefocus>
+				<texturenofocus>list-nofocus.png</texturenofocus>
+				<onright>15</onright>
+				<onleft>15</onleft>
+				<onup>9000</onup>
+				<ondown>17</ondown>
+			</control>
+		</control>
+		<control type="button" id="17">
+			<description>Value Button</description>
+			<posx>15</posx>
+			<posy>122</posy>
+			<width>615</width>
+			<height>45</height>
+			<font>font13</font>
+			<textoffsetx>12</textoffsetx>
+			<textwidth>255</textwidth>
+			<aligny>center</aligny>
+			<texturefocus>list-focus.png</texturefocus>
+			<texturenofocus>list-nofocus.png</texturenofocus>
+			<label>-</label>
+			<colordiffuse>FFFFFFFF</colordiffuse>
+			<onup>9001</onup>
+			<onleft>20</onleft>
+			<onright>20</onright>
+			<ondown>9000</ondown>
+		</control>
+		<control type="button" id="20">
+			<description>Browse Button</description>
+			<posx>635</posx>
+			<posy>122</posy>
+			<width>150</width>
+			<height>45</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<texturefocus>button-focus.png</texturefocus>
+			<texturenofocus>button-nofocus.png</texturenofocus>
+			<label>1024</label>
+			<onup>9001</onup>
+			<onleft>17</onleft>
+			<onright>17</onright>
+			<ondown>9000</ondown>
+		</control>
+		<control type="group" id="9000">
+			<control type="button" id="18">
+				<description>Ok Button</description>
+				<posx>195</posx>
+				<posy>175</posy>
+				<width>200</width>
+				<height>45</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texturefocus>button-focus.png</texturefocus>
+				<texturenofocus>button-nofocus.png</texturenofocus>
+				<label>186</label>
+				<onup>17</onup>
+				<onleft>19</onleft>
+				<onright>19</onright>
+				<ondown>9001</ondown>
+			</control>
+			<control type="button" id="19">
+				<description>Cancel Button</description>
+				<posx>405</posx>
+				<posy>175</posy>
+				<width>200</width>
+				<height>45</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texturefocus>button-focus.png</texturefocus>
+				<texturenofocus>button-nofocus.png</texturenofocus>
+				<label>222</label>
+				<onup>17</onup>
+				<onleft>18</onleft>
+				<onright>19</onright>
+				<ondown>9001</ondown>
+			</control>
+		</control>
+	</controls>
+</window>

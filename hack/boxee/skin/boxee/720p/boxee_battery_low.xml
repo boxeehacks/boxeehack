@@ -1,0 +1,55 @@
+﻿<?xml version="1.0"?>
+<!-- Shutdown dialog -->
+<window type="buttonMenu" id="111">
+	<defaultcontrol always="true">10</defaultcontrol>
+	<controls>
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Dialog_Popup_Animation</include>
+			<posx>340</posx>
+			<posy>182</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>600</width>
+				<height>302</height>
+				<texture border="20">browse_menu_dialog_background.png</texture>
+				<colordiffuse>FF212121</colordiffuse>
+			</control>
+			<control type="image">
+				<posx>216</posx>
+				<posy>34</posy>
+				<width>168</width>
+				<height>108</height>
+				<texture>icons/icon_battery_low_large.png</texture>
+			</control>
+			<control type="label">
+				<posx>26</posx>
+				<posy>156</posy>
+				<width>550</width>
+				<height>24</height>
+				<label>-</label>
+				<align>center</align>
+				<aligny>top</aligny>
+				<font>font24</font>
+				<textcolor>white</textcolor>
+				<label>54749</label>
+			</control>
+			<control type="button" id="10">
+				<posx>220</posx>
+				<posy>208</posy>
+				<width>160</width>
+				<height>60</height>
+				<include>FTU_Button_Properties</include>
+				<font>font28b</font>
+				<label>$LOCALIZE[186]</label>
+				<!--OK-->
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<onleft>10</onleft>
+				<onright>10</onright>
+				<onclick>-</onclick>
+			</control>
+		</control>
+	</controls>
+</window>

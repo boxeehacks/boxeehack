@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<window id="10469">
+	<defaultcontrol always="true">5010</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<!-- Dummy container for Item Info -->
+		<control type="list" id="5000">
+            <description>info</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>0</width>
+            <height>0</height>
+            <visible>false</visible>
+            <itemlayout height="0">
+          </itemlayout>
+            <focusedlayout height="0">
+          </focusedlayout>
+        </control>
+		<include>Window_Fade_Animation</include>
+		<control type="group">
+			<posx>30</posx>
+			<posy>152</posy>
+			<animation effect="fade" start="100" end="25" time="200" condition="Window.IsActive(DialogProgress.xml)">Conditional</animation>
+			<control type="label" id="5005">
+				<visible>false</visible>
+				<description>file path label</description>
+				<posx>36</posx>
+				<posy>78</posy>
+				<width>1150</width>
+				<height>24</height>
+				<label>$INFO[container(5000).ListItem.pathtoshowinmediaaction]</label>
+				<aligny>center</aligny>
+				<font>font24</font>
+				<textcolor>white</textcolor>
+				<haspath>true</haspath>
+			</control>
+			<control type="image" id="5015">
+				<posx>26</posx>
+				<posy>26</posy>
+				<width>302</width>
+				<height>350</height>
+				<texture>$INFO[container(5000).ListItem.Thumb]</texture>
+				<aspectratio aligny="top">keep</aspectratio>
+				<bordertexture border="12">masks/thumb_background.png</bordertexture>
+				<bordersize>12</bordersize>
+			</control>
+			<control type="grouplist">
+				<posx>344</posx>
+				<posy>36</posy>
+				<width>840</width>
+				<height>430</height>
+				<itemgap>10</itemgap>
+				<ondown>9010</ondown>
+				<orientation>vertical</orientation>
+				<usecontrolcoords>false</usecontrolcoords>
+			<control type="label">
+				<posx>26</posx>
+				<posy>130</posy>
+					<width>840</width>
+					<height>20</height>
+				<aligny>center</aligny>
+					<font>font20b</font>
+				<textcolor>white</textcolor>
+					<label>$LOCALIZE[54204]</label>
+			</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>800</width>
+					<height>20</height>
+					<aligny>center</aligny>
+					<font>font20b</font>
+					<textcolor>white</textcolor>
+					<label>$INFO[container(5000).ListItem.Filename,[COLOR grey]$LOCALIZE[561]: [/COLOR],]</label>
+				</control>
+				<control type="group">
+					<width>840</width>
+					<height>40</height>
+			<control type="radiobutton" id="5010">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>120</width>
+				<height>40</height>
+				<onup>-</onup>
+						<ondown>5030</ondown>
+						<onright>5020</onright>
+				<onleft>-</onleft>
+				<font>font20b</font>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>disabled</disabledcolor>
+				<textoffsetx>40</textoffsetx>
+				<texturenofocus>-</texturenofocus>
+				<texturefocus border="15">button_option_menu_on.png</texturefocus>
+				<textureradiofocus>icons/icon_checkbox_full.png</textureradiofocus>
+				<textureradionofocus>icons/icon_checkbox_empty.png</textureradionofocus>
+				<pulseonselect>false</pulseonselect>
+				<radioposx>10</radioposx>
+				<radioposy>10</radioposy>
+				<radiowidth>20</radiowidth>
+				<radioheight>20</radioheight>
+						<label>$LOCALIZE[20338]</label>
+			</control>			
+			<control type="radiobutton" id="5020">
+						<posx>160</posx>
+						<posy>0</posy>
+						<width>146</width>
+				<height>40</height>
+				<onup>-</onup>
+						<ondown>5030</ondown>
+				<onright>-</onright>
+						<onleft>5010</onleft>
+				<font>font20b</font>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<disabledcolor>disabled</disabledcolor>
+				<textoffsetx>40</textoffsetx>
+				<texturenofocus>-</texturenofocus>
+				<texturefocus border="15">button_option_menu_on.png</texturefocus>
+				<textureradiofocus>icons/icon_checkbox_full.png</textureradiofocus>
+				<textureradionofocus>icons/icon_checkbox_empty.png</textureradionofocus>
+				<pulseonselect>false</pulseonselect>
+				<radioposx>10</radioposx>
+				<radioposy>10</radioposy>
+				<radiowidth>20</radiowidth>
+				<radioheight>20</radioheight>
+						<label>$LOCALIZE[20364]</label>
+			</control>			
+				</control>
+				<control type="group">
+					<width>840</width>
+					<height>40</height>
+			<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+				<width>100</width>
+				<height>40</height>
+				<aligny>center</aligny>
+						<font>font20b</font>
+				<textcolor>white</textcolor>
+						<label>$LOCALIZE[369]:</label>
+			</control>
+			<control type="edit" id="5030">
+				<description>title name</description>
+						<posx>100</posx>
+						<posy>0</posy>
+				<width>450</width>
+				<height>40</height>
+				<font>font24b</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>14</textoffsetx>
+				<texturenofocus border="20">search_text_box.png</texturenofocus>
+				<texturefocus border="20">search_text_box_focus.png</texturefocus>
+				<textureclick border="20">search_text_box_click.png</textureclick>				
+				<onleft>-</onleft>
+				<onright>-</onright>
+						<onup>5010</onup>
+						<ondown>5040</ondown>
+				<label>-</label>
+				<ontextchange/>
+			</control>
+				</control>
+				<control type="group">
+					<width>840</width>
+					<height>40</height>
+			<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+				<width>100</width>
+				<height>40</height>
+				<aligny>center</aligny>
+						<font>font20b</font>
+				<textcolor>white</textcolor>
+						<label>$LOCALIZE[20373]:</label>
+			</control>
+			<control type="edit" id="5040">
+				<description>episode season</description>
+						<posx>100</posx>
+						<posy>0</posy>
+				<width>80</width>
+				<height>40</height>
+				<font>font24b</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>14</textoffsetx>
+				<texturenofocus border="20">search_text_box.png</texturenofocus>
+				<texturefocus border="20">search_text_box_focus.png</texturefocus>
+				<textureclick border="20">search_text_box_click.png</textureclick>				
+				<onleft>-</onleft>
+						<onright>5050</onright>
+				<onup>-</onup>
+						<ondown>5060</ondown>
+				<label>-</label>
+				<ontextchange/>
+			</control>
+			<control type="label">
+						<posx>220</posx>
+						<posy>0</posy>
+				<width>100</width>
+				<height>40</height>
+				<aligny>center</aligny>
+						<font>font20b</font>
+				<textcolor>white</textcolor>
+						<label>$LOCALIZE[20359]:</label>
+			</control>
+			<control type="edit" id="5050">
+				<description>episode number</description>
+						<posx>326</posx>
+						<posy>0</posy>
+				<width>80</width>
+				<height>40</height>
+				<font>font24b</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>14</textoffsetx>
+				<texturenofocus border="20">search_text_box.png</texturenofocus>
+				<texturefocus border="20">search_text_box_focus.png</texturefocus>
+				<textureclick border="20">search_text_box_click.png</textureclick>				
+						<onleft>5040</onleft>
+				<onright>-</onright>
+						<onup>5030</onup>
+						<ondown>5060</ondown>
+				<label>-</label>
+				<ontextchange/>
+			</control>
+				</control>
+				<control type="button" id="5060">
+					<width>300</width>
+					<height>56</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>grey</textcolor>
+					<focusedcolor>white</focusedcolor>
+					<texturenofocus border="27">-</texturenofocus>
+					<texturefocus border="27">button_action_menu_source_on.png</texturefocus>
+					<textureclick border="27">button_action_menu_source_click.png</textureclick>
+					<font>font20b</font>
+					<label>$LOCALIZE[54205]</label>
+					<onup>5040</onup>
+					<ondown>-</ondown>
+					<onleft>9010</onleft>
+					<onright>-</onright>
+					<onclick>-</onclick>
+				</control>
+			</control>
+			<control type="button" id="9010">
+				<posx>36</posx>
+				<posy>378</posy>
+				<width>140</width>
+				<height>56</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>grey</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturenofocus border="27">-</texturenofocus>
+				<texturefocus border="27">button_action_menu_source_on.png</texturefocus>
+				<textureclick border="27">button_action_menu_source_click.png</textureclick>
+				<font>font22b</font>
+				<label>$LOCALIZE[20177]</label>
+				<onup>5060</onup>
+				<ondown>-</ondown>
+				<onleft>-</onleft>
+				<onright>9020</onright>
+				<onclick>-</onclick>
+			</control>
+			<control type="button" id="9020">
+				<posx>176</posx>
+				<posy>378</posy>
+				<width>140</width>
+				<height>56</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>grey</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturenofocus border="27">-</texturenofocus>
+				<texturefocus border="27">button_action_menu_source_on.png</texturefocus>
+				<textureclick border="27">button_action_menu_source_click.png</textureclick>
+				<font>font22b</font>
+				<label>$LOCALIZE[54049]</label>
+				<onup>5060</onup>
+				<ondown>-</ondown>
+				<onleft>9010</onleft>
+				<onright>9030</onright>
+				<onclick>-</onclick>
+			</control>
+			<control type="button" id="9030">
+				<description>multipart button for movie</description>
+				<posx>316</posx>
+				<posy>378</posy>
+				<width>180</width>
+				<height>56</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>grey</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<texturenofocus border="27">-</texturenofocus>
+				<texturefocus border="27">button_action_menu_source_on.png</texturefocus>
+				<textureclick border="27">button_action_menu_source_click.png</textureclick>
+				<font>font22b</font>
+				<label>$LOCALIZE[54206]</label>
+				<onup>5060</onup>
+				<ondown>-</ondown>
+				<onleft>9020</onleft>
+				<onright>-</onright>
+				<onclick>-</onclick>
+			</control>
+		</control>
+	</controls>
+</window>

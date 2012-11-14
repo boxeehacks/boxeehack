@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<window id="2002">
+	<defaultcontrol>10</defaultcontrol>
+	<controls>
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Popup_Heidi</include>
+			<control type="label" id="1">
+				<description>heading label</description>
+				<include>Popup_Title</include>
+				<label>[B]-[/B]</label>
+			</control>
+			<control type="label" id="2">
+				<description>dialog line 1</description>
+				<include>Popup_OK_Body_Properties</include>
+				<label>-</label>
+				<aligny>top</aligny>
+				<font>font26ls</font>
+				<textcolor>lightgreyheidi</textcolor>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="button" id="10">
+				<posx>66</posx>
+				<posy>422</posy>
+				<width>416</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>[B]$LOCALIZE[186][/B]</label>
+				<!--OK-->
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<onleft>10</onleft>
+				<onright>10</onright>
+				<onclick>-</onclick>
+			</control>
+		</control>
+	</controls>
+</window>

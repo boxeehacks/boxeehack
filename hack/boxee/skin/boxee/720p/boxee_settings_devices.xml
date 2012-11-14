@@ -1,0 +1,178 @@
+﻿<?xml version="1.0"?>
+<window id="10460">
+	<defaultcontrol always="true">51</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Settings_Background</include>
+		<control type="group">
+			<control type="group">
+				<include>BoxeeLogo</include>
+				<control type="label">
+					<include>PageTitleProperties</include>
+					<label>$LOCALIZE[5]</label>
+				</control>
+				<control type="label">
+					<include>PageSubtitleProperties</include>
+					<label>$LOCALIZE[55511]</label>
+				</control>
+			</control>			
+			<control type="button" id="51">
+				<posx>26</posx>
+				<posy>139</posy>
+				<width>340</width>
+				<height>54</height>
+				<label>55510</label>
+				<font>font30</font>
+				<textoffsetx>10</textoffsetx>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>black</textcolor>
+				<focusedcolor>black</focusedcolor>
+				<texturenofocus border="16" diffuse="masks/10b9f2.png">button_8_pixel.png</texturenofocus>
+				<texturefocus border="16" diffuse="masks/10b9f2.png">button_8_pixel.png</texturefocus>
+			</control>
+			<control type="group">
+				<visible>control.IsEmpty(56)</visible>
+				<control type="label">
+					<posx>426</posx>
+					<posy>159</posy>					
+					<width>700</width>
+					<height>32</height>
+					<font>font32</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>55520</label>
+					<textcolor>white</textcolor>
+				</control>
+			</control>
+			<control type="group">
+				<visible>!control.IsEmpty(56)</visible>
+				<posx>392</posx>
+				<posy>140</posy>
+				<width>1220</width>
+				<height>660</height>
+				<control type="group" id="55">			
+					<control type="list" id="56">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>950</width>
+						<height>480</height>
+						<onleft>-</onleft>
+						<onright>-</onright>
+						<onup>-</onup>
+						<ondown>-</ondown>
+						<pagecontrol>60</pagecontrol>
+						<scrolltime>200</scrolltime>
+						<orientation>vertical</orientation>
+						<focusposition>4</focusposition>
+						<itemlayout height="52">
+							<control type="image">
+								<width>650</width>
+								<include>BrowseLongLineUnfocus</include>
+							</control>
+							<control type="image">
+								<visible>!IsEmpty(ListItem.Property(deviceicon))</visible>
+								<include>BrowseLineSmallIconPropertiesUnfocus</include>
+								<texture>icons/icon_$INFO[ListItem.Property(deviceicon)].png</texture>
+							</control>
+							<control type="label">
+								<posx>56</posx>
+								<width>420</width>
+								<include>BrowseLongLineLabelProperties</include>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>white</textcolor>
+								<selectedcolor>white</selectedcolor>
+							</control>
+							<control type="label">
+								<posx>710</posx>
+								<posy>0</posy>
+								<width>360</width>
+								<height>52</height>
+								<font>font30</font>
+								<align>left</align>
+								<aligny>center</aligny>
+								<textcolor>white</textcolor>
+								<selectedcolor>white</selectedcolor>								
+								<label>55512</label>
+							</control>
+						</itemlayout>
+						<focusedlayout height="52">
+							<control type="group">
+								<visible>!Control.HasFocus(56)</visible>
+								<control type="image">
+									<width>950</width>
+									<include>BrowseLongLineUnfocus</include>
+								</control>
+								<control type="image">
+									<visible>!IsEmpty(ListItem.Property(deviceicon))</visible>
+									<include>BrowseLineSmallIconPropertiesUnfocus</include>
+									<texture>icons/icon_$INFO[ListItem.Property(deviceicon)].png</texture>
+								</control>
+								<control type="label">
+									<posx>56</posx>
+									<width>420</width>
+									<include>BrowseLongLineLabelProperties</include>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>white</textcolor>
+									<selectedcolor>white</selectedcolor>
+								</control>
+								<control type="label">
+									<posx>710</posx>
+									<posy>0</posy>
+									<width>360</width>
+									<height>52</height>
+									<font>font30</font>
+									<align>left</align>
+									<aligny>center</aligny>
+									<textcolor>white</textcolor>
+									<selectedcolor>white</selectedcolor>								
+									<label>55512</label>
+								</control>
+							</control>
+							<control type="group">
+								<visible>Control.HasFocus(56)</visible>
+								<control type="image">
+									<width>850</width>
+									<include>BrowseLongLineFocus</include>
+								</control>
+								<control type="image">
+									<visible>!IsEmpty(ListItem.Property(deviceicon))</visible>
+									<include>BrowseLineSmallIconPropertiesFocus</include>
+									<texture>icons/icon_$INFO[ListItem.Property(deviceicon)].png</texture>
+									<colordiffuse>black</colordiffuse>
+								</control>
+								<control type="label">
+									<posx>56</posx>
+									<width>420</width>
+									<include>BrowseLongLineLabelProperties</include>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>black</textcolor>
+									<selectedcolor>black</selectedcolor>
+								</control>
+								<control type="label">
+									<posx>710</posx>
+									<posy>0</posy>
+									<width>360</width>
+									<height>52</height>
+									<font>font30</font>
+									<align>left</align>
+									<aligny>center</aligny>
+									<textcolor>black</textcolor>
+									<label>55512</label>
+								</control>
+							</control>
+						</focusedlayout>
+					</control>
+					<control type="scrollbar" id="60">
+						<visible>Control.IsVisible(56)</visible>
+						<posx>888</posx>
+						<posy>2</posy>
+						<width>12</width>
+						<height>560</height>
+						<include>ScrollBarCommonProperties</include>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

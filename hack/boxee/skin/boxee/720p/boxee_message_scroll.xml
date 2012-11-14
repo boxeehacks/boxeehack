@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<window id="2002">
+	<defaultcontrol>21</defaultcontrol>
+	<controls>
+		<control type="list" id="5000">
+			<description>info</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<visible>false</visible>
+			<itemlayout height="0">
+			</itemlayout>
+			<focusedlayout height="0">
+			</focusedlayout>
+		</control>
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Popup_Heidi</include>
+			
+			<control type="label" id="1">
+				<description>heading label</description>
+				<posx>48</posx>
+				<posy>33</posy>
+				<width>320</width>
+				<height>40</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<font>font40bls</font>
+				<textcolor>whiteheidi</textcolor>
+				<label>-</label>
+				<textcolor>whiteheidi</textcolor>
+			</control>
+			<control type="group">
+				<posx>48</posx>
+				<posy>107</posy>
+				<control type="image">
+					<width>450</width>
+					<height>389</height>
+					<texture srcborder="24" border="16">text-field-no-stroke.png</texture>
+					<colordiffuse>FFEEEEEE</colordiffuse>
+				</control>
+				<control type="textbox" id="20">
+					<posx>11</posx>
+					<posy>14</posy>
+					<width>400</width>
+					<height>356</height>
+					<font>font16</font>
+					<textcolor>FF000000</textcolor>
+					<pulseonselect></pulseonselect>
+					<pagecontrol>21</pagecontrol>
+					<autoscroll>false</autoscroll>
+					<label>$INFO[container(5000).ListItem.Label]</label>
+					</control>
+				<control type="scrollbar" id="21">
+					<posx>426</posx>
+					<posy>14</posy>
+					<width>10</width>
+					<height>356</height>
+					<visible>true</visible>
+					<texturesliderbackground srcborder="0,9,0,9" border="0,6,0,6">graphic-scrollbar-bg.png</texturesliderbackground>
+					<texturesliderbar srcborder="0,9,0,9" border="0,6,0,6">graphic-scrollbar-slider.png</texturesliderbar>
+					<texturesliderbarfocus srcborder="0,9,0,9" border="0,6,0,6">graphic-scrollbar-slider.png</texturesliderbarfocus>
+					<orientation>vertical</orientation>
+					<showonepage>false</showonepage>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+				</control>
+			</control>
+			<!--<control type="button" id="10">
+				<posx>140</posx>
+				<posy>515</posy>
+				<width>160</width>
+				<height>60</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>white</textcolor>
+				<focusedcolor>black</focusedcolor>
+				<texturenofocus border="30" diffuse="grey_button.png">browse_menu_dialog_button_focus.png</texturenofocus>
+				<texturefocus border="30" diffuse="masks/10b9f2.png">browse_menu_dialog_button_focus.png</texturefocus>
+				<font>font22b</font>
+				<label>$LOCALIZE[186]</label>
+				<!--OK--*>
+				<onup>21</onup>
+				<ondown>-</ondown>
+				<onleft>10</onleft>
+				<onright>10</onright>
+				<onclick>-</onclick>
+			</control>-->
+		</control>
+	</controls>
+</window>

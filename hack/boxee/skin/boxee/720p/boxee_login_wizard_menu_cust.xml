@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<window id="9768" type="dialog">
+	<defaultcontrol always="true">8700</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Background</include>
+		<include>BoxeeLogoLogin</include>
+		<control type="group" id="7000">
+			<include>FTUDialog_Heidi</include>
+			<!-- RIGHT SIDE - BEGIN-->
+			<control type="grouplist">
+				<posx>474</posx>
+				<posy>66</posy>
+				<width>320</width>
+				<height>300</height>
+				<orientation>vertical</orientation>
+				<itemgap>12</itemgap>
+				<usecontrolcoords>false</usecontrolcoords>
+				<control type="label">
+					<width>312</width>
+					<height min="10" max="80">auto</height>
+					<align>center</align>
+					<aligny>top</aligny>
+					<label>[B]$LOCALIZE[51569][/B]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<font>font24b</font>
+					<textcolor>whiteheidi</textcolor>
+				</control>
+				<control type="button" id="8700">
+					<description>Stuff from the web</description>
+					<width>312</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[51566][/B]</label>
+					<!-- Next -->
+					<onup>-</onup>
+					<ondown>8701</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>-</onclick>
+				</control>
+				<control type="button" id="8701">
+					<description>My own files</description>
+					<width>312</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[51565][/B]</label>
+					<!-- Next -->
+					<onup>8700</onup>
+					<ondown>8702</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>-</onclick>
+				</control>
+				<control type="button" id="8702">
+					<description>I'm not sure</description>
+					<width>312</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[51567][/B]</label>
+					<!-- Next -->
+					<onup>8701</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onclick>-</onclick>
+				</control>
+			</control>
+			<!-- RIGHT SIDE - END-->
+			<!-- LEFT SIDE - BEGIN -->
+			<control type="label">
+				<description>Header</description>
+				<posx>63</posx>
+				<posy>56</posy>
+				<width>320</width>
+				<height>200</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>[B]$LOCALIZE[55695][/B]</label>
+				<include>Header_Heidi</include>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="label">
+				<posx>64</posx>
+				<posy>203</posy>
+				<width>336</width>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$LOCALIZE[55696]</label>
+				<wrapmultiline>true</wrapmultiline>
+				<include>LargeText_Heidi</include>
+			</control>
+			<!-- LEFT SIDE - END -->
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<window id="10440">
+	<defaultcontrol always="true">250</defaultcontrol>
+	<controls>
+		<include>Common_Background</include>
+		<control type="group">
+			<include>FTUDialog_Heidi</include>
+			<!-- left side -->
+			<control type="grouplist">
+				<posx>62</posx>
+				<posy>56</posy>
+				<width>320</width>
+				<height>412</height>
+				<orientation>vertical</orientation>
+				<itemgap>0</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="label">
+					<width>320</width>
+					<height min="0" max="120">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>$LOCALIZE[55200]</label>
+					<include>Header_Heidi</include>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="label">
+					<posy>20</posy>
+					<width>320</width>
+					<height min="0" max="288">auto</height>
+					<align>left</align>
+					<aligny>top</aligny>
+					<label>[B]$LOCALIZE[55203][/B]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<include>LargeText_Heidi</include>
+				</control>
+			</control>
+			<!-- right side -->
+			<control type="image">
+				<posx>478</posx>
+				<posy>82</posy>
+				<width>295</width>
+				<height>400</height>
+				<texture>ftu/graphic-ftu-tip-remote.png</texture>
+			</control>
+		</control>
+	</controls>
+</window>

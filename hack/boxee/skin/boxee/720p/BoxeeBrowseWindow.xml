@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<window id="10466">
+	<defaultcontrol>9050</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>Common_Background</include>
+				
+		<control type="image1">
+			<texture>FionaPhotosBrowseListView.png</texture>
+			<height>720</height>
+			<width>1280</width>
+		</control>
+		<include>LogoTitleAndItemCount</include>
+
+		<control type="group" id="9050">
+			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsActive(boxee_search.xml)">Conditional</animation>
+			<!--
+			<include>BrowseEpisodesView</include>
+			-->
+			<include>BrowseQueueView</include>
+		</control>
+		<include>BrowseLoadingAnimation</include>
+
+	</controls>
+</window>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<window id="2002">
+	<defaultcontrol>10</defaultcontrol>
+	<controls>
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Dialog_Popup_Animation</include>
+			<control type="image">
+				<posx>70</posx>
+				<posy>20</posy>
+				<width>1140</width>
+				<height>680</height>
+				<texture srcborder="51" border="34">dialog_bg.png</texture>
+			</control>
+            <control type="web" id="1000">
+                <posx>100</posx> 
+                <posy>50</posy> 
+                <width>1080</width> 
+                <height>620</height> 
+            </control>
+		</control>
+        <control type="multiimage">
+            <visible>true + Window(webdialog).Property(loading)</visible>
+            <include>Loading_Animation</include>
+        </control>
+	</controls>
+</window>

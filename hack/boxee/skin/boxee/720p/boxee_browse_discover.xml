@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!-- Friends / Feed Screen -->
+<window id="10490">
+	<defaultcontrol always="true">9070</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<include>Common_Background</include>
+		<control type="group" id="9001">
+			<control type="group">
+				<control type="label" id="9019">
+					<posx>35</posx>
+					<posy>44</posy>
+					<width>925</width>
+					<font>font40b</font>
+					<textcolor>whiteheidi</textcolor>
+					<align>left</align>
+					<label>[B]$LOCALIZE[51590][/B]</label>
+				</control>
+				<control type="label">
+					<visible>true + stringcompare(Container.NumItems,1)</visible>
+					<posx>35</posx>
+					<posy>25</posy>
+					<width>925</width>
+					<font>font21b</font>
+					<textcolor>boxeegreenheidi</textcolor>
+					<align>left</align>
+					<label>[UPPERCASE][B]$INFO[Container.NumItems,, $LOCALIZE[90051]][/B][/UPPERCASE]</label>
+				</control>
+				<control type="label">
+					<visible>true + !stringcompare(Container.NumItems,1)</visible>
+					<posx>35</posx>
+					<posy>25</posy>
+					<width>925</width>
+					<font>font21b</font>
+					<textcolor>boxeegreenheidi</textcolor>
+					<align>left</align>
+					<label>[UPPERCASE][B]$INFO[Container.NumItems,, $LOCALIZE[90050]][/B][/UPPERCASE]</label>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<control type="group" id="9070">
+				<include>BrowseFeedView</include>
+				<include>BrowseFriendsEmptyList</include>
+			</control>
+			<include>FullScreenLoadingAnimation</include>
+		</control>
+		<!-- include>Window_Transition</include -->
+	</controls>
+</window>

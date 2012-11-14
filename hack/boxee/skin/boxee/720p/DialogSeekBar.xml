@@ -1,0 +1,288 @@
+﻿<?xml version="1.0"?>
+<window id="115">
+	<defaultcontrol>1</defaultcontrol>
+	<colorbufferactive>false</colorbufferactive>
+	<visible>false</visible>
+	<!--
+	<visible>[Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + !Player.Caching</visible>
+	-->
+	<controls>
+		<!-- music osd -->
+		<!--
+		<control type="group">
+			<description>music osd</description>
+			<visible>Window.IsVisible(Visualisation) + Player.HasAudio + !Window.IsVisible(355)</visible>
+			<animation type="WindowOpen">
+				<effect type="fade" time="200" delay="0"/>
+			</animation>
+			<animation type="WindowClose" condition="!Window.Next(boxee_music_context.xml)">
+				<effect type="fade" time="1000" delay="2500"/>
+			</animation>
+			-->
+		<!-- OSD (upper + lower)-->
+		<!-- upper OSD -->
+		<!--
+			<control type="group">
+				<description>upper OSD</description>
+				<posx>36</posx>
+				<posy>36</posy>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1208</width>
+					<height>128</height>
+					<texture border="20">menu_dialog_background.png</texture>
+					<colordiffuse>F3212121</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>14</posx>
+					<posy>14</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture>$INFO[MusicPlayer.Cover]</texture>
+					<aspectratio>scale</aspectratio>
+				</control>
+				-->
+		<!-- upper OSD - YES music thumb - details -->
+		<!--
+				<control type="group">
+					<visible>!IsEmpty(MusicPlayer.Cover)</visible>
+					<control type="label">
+						<posx>128</posx>
+						<posy>8</posy>
+						<width>1066</width>
+						<height>80</height>
+						<font>font28</font>
+						<textcolor>white</textcolor>
+						<label>[B]$INFO[MusicPlayer.Title][/B][CR]$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Album, / ]</label>
+						<aligny>top</aligny>
+						<align>left</align>
+						<scroll>false</scroll>
+						<wrapmultiline>true</wrapmultiline>
+					</control>
+					<control type="label">
+						<posx>128</posx>
+						<posy>46</posy>
+						<width>1066</width>
+						<height>28</height>
+						<font>font28</font>
+						<textcolor>white</textcolor>
+						<label></label>
+						<aligny>center</aligny>
+						<align>left</align>
+						<scroll>false</scroll>
+					</control>
+					<control type="label">
+						<visible>!IsEmpty(nextitem.title)</visible>
+						<posx>128</posx>
+						<posy>88</posy>
+						<width>1066</width>
+						<height>24</height>
+						<font>font24</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[nextitem.title,$LOCALIZE[209]:  ,]$INFO[nextitem.artist, / ,]</label>
+						<aligny>bottom</aligny>
+						<align>left</align>
+						<scroll>false</scroll>
+					</control>
+				</control>
+				-->
+		<!-- upper OSD - NO music thumb - details -->
+		<!--
+				<control type="group">
+					<visible>IsEmpty(MusicPlayer.Cover)</visible>
+					<control type="label">
+						<posx>128</posx>
+						<posy>14</posy>
+						<width>1180</width>
+						<height>24</height>
+						<font>font24b</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[MusicPlayer.Title]</label>
+						<aligny>center</aligny>
+						<align>left</align>
+						<scroll>false</scroll>
+					</control>
+					<control type="label">
+						<posx>128</posx>
+						<posy>46</posy>
+						<width>1180</width>
+						<height>20</height>
+						<font>font20</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Album, / ]</label>
+						<aligny>center</aligny>
+						<align>left</align>
+						<scroll>false</scroll>
+					</control>
+					<control type="label">
+						<posx>128</posx>
+						<posy>94</posy>
+						<width>1180</width>
+						<height>20</height>
+						<font>font20</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Album, / ]</label>
+						<aligny>center</aligny>
+						<align>left</align>
+						<scroll>false</scroll>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<description>lower OSD</description>
+				<posx>36</posx>
+				<posy>620</posy>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1208</width>
+					<height>64</height>
+					<texture border="20">menu_dialog_background.png</texture>
+					<colordiffuse>F3212121</colordiffuse>
+				</control>
+				<include>OSD_Progress_music</include>
+				<control type="group">
+					<posx>784</posx>
+					<posy>13</posy>
+					<control type="image">
+						<visible>Player.Paused + !Player.Caching</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>38</width>
+						<height>38</height>
+						<texture>icons/icon_osd_pause.png</texture>
+					</control>
+					<control type="image">
+						<visible>Player.Playing + !Player.Caching</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>38</width>
+						<height>38</height>
+						<texture>icons/icon_osd_play.png</texture>
+					</control>			
+					<control type="label">
+						<description>Play Label</description>
+						<posx>60</posx>
+						<posy>0</posy>
+						<width>150</width>
+						<height>38</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>font28b</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[51860]</label>
+						<visible>Player.Playing + !Player.Caching</visible>
+					</control>
+					<control type="label">
+						<description>Paused Label</description>
+						<posx>60</posx>
+						<posy>0</posy>
+						<width>150</width>
+						<height>38</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>font28b</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[51861]</label>
+						<visible>Player.Paused + !Player.Caching</visible>
+					</control>
+					<control type="label">
+						<description>loading Label</description>
+						<posx>60</posx>
+						<posy>0</posy>
+						<width>150</width>
+						<height>38</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>font28b</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[51003]</label>
+						<visible>Player.Caching</visible>
+					</control>
+				</control>
+			</control>
+		</control>
+		-->
+		<!-- video osd -->
+		<!--
+		<control type="group">
+			<description>video osd</description>
+			<visible>Window.IsActive(FullscreenVideo) + Player.HasVideo + !Window.IsVisible(boxee_video_context.xml)</visible>
+			<animation effect="fade" time="200">WindowOpen</animation>
+			<animation effect="fade" time="1000" delay="500" condition="!Window.Next(boxee_video_context.xml)">WindowClose</animation>
+			<animation effect="fade" time="200">WindowClose</animation>
+			<posx>36</posx>
+			<posy>620</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1208</width>
+				<height>64</height>
+				<texture border="20">menu_dialog_background.png</texture>
+				<colordiffuse>F3212121</colordiffuse>
+			</control>
+			<include>OSD_Progress</include>
+			<control type="group">
+				<posx>640</posx>
+				<posy>13</posy>
+				<control type="image">
+					<visible>Player.Paused + !Player.Caching</visible>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>38</width>
+					<height>38</height>
+					<texture>icons/icon_osd_pause.png</texture>
+				</control>
+				<control type="image">
+					<visible>Player.Playing + !Player.Caching</visible>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>38</width>
+					<height>38</height>
+					<texture>icons/icon_osd_play.png</texture>
+				</control>			
+				<control type="label">
+					<description>Play Label</description>
+					<posx>60</posx>
+					<posy>0</posy>
+					<width>150</width>
+					<height>38</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font28b</font>
+					<textcolor>white</textcolor>
+					<label>$LOCALIZE[51860]</label>
+					<visible>Player.Playing + !Player.Caching</visible>
+				</control>
+				<control type="label">
+					<description>Paused Label</description>
+					<posx>60</posx>
+					<posy>0</posy>
+					<width>150</width>
+					<height>38</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font28b</font>
+					<textcolor>white</textcolor>
+					<label>$LOCALIZE[51861]</label>
+					<visible>Player.Paused + !Player.Caching</visible>
+				</control>
+				<control type="label">
+					<description>loading Label</description>
+					<posx>60</posx>
+					<posy>0</posy>
+					<width>150</width>
+					<height>38</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font28b</font>
+					<textcolor>white</textcolor>
+					<label>$LOCALIZE[51003]</label>
+					<visible>Player.Caching</visible>
+				</control>
+			</control>
+		</control>
+		-->
+	</controls>
+</window>

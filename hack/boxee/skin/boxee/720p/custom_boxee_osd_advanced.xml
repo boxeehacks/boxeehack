@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<window type="dialog">
+	<defaultcontrol always="true">5</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="fade" end="100" time="200"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" end="0" time="200"/>
+			</animation>
+			<control type="group">
+				<posx>342</posx>
+				<posy>126</posy>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>600</width>
+					<height>412</height>
+					<texture srcborder="51" border="34">background/window-bg-transparent.png</texture>
+				</control>
+				<!-- ADVANCED SETTINGS -->
+				<control type="label">
+					<posx>18</posx>
+					<posy>30</posy>
+					<width>564</width>
+					<height>20</height>
+					<align>center</align>
+					<aligny>top</aligny>
+					<font>font24b</font>
+					<textcolor>whiteheidi</textcolor>
+					<label>[B][UPPERCASE]$LOCALIZE[90212][/B][/UPPERCASE]</label>
+				</control>
+				
+				<!-- FACTORY -->
+				<control type="group">
+					<control type="label" id="3">
+						<description>No Settings Label</description>
+						<posx>25</posx>
+						<posy>34</posy>
+						<width>550</width>
+						<height>22</height>
+						<font>font24b</font>
+						<aligny>top</aligny>
+						<align>left</align>
+						<label>13390</label>
+						<textcolor>white</textcolor>
+					</control>
+					<control type="grouplist" id="5">
+						<description>control area</description>
+						<posx>42</posx>
+						<posy>70</posy>
+						<width>516</width>
+						<height>300</height>
+						<orientation>vertical</orientation>
+						<usecontrolcoords>false</usecontrolcoords>
+						<itemgap>0</itemgap>
+						<pagecontrol>90</pagecontrol>
+						<onleft>-</onleft>
+						<onright>-</onright>
+						<onup>-</onup>
+						<ondown>-</ondown>
+					</control>
+					<control type="button" id="7">
+						<description>Default Button</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<height>56</height>
+						<font>font24</font>
+						<textcolor>lightgreyheidi</textcolor>
+						<textcolor2>lightgreyheidi</textcolor2>
+						<focusedcolor>whiteheidi</focusedcolor>
+						<focusedcolor2>whiteheidi</focusedcolor2>
+						<disabledcolor>mediumgreyheidi</disabledcolor>
+						<textoffsetx>20</textoffsetx>
+						<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<pulseonselect>false</pulseonselect>
+					</control>
+					<control type="radiobutton" id="8">
+						<description>Default RadioButton</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<height>40</height>
+						<font>font22</font>
+						<textcolor>lightgreyheidi</textcolor>
+						<focusedcolor>whiteheidi</focusedcolor>
+						<disabledcolor>mediumgreyheidi</disabledcolor>
+						<textoffsetx>20</textoffsetx>
+						<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<textureradioon>graphic-radio-on.png</textureradioon>
+						<textureradiooff>graphic-radio-off.png</textureradiooff>
+						<pulseonselect>false</pulseonselect>
+						<radioposx>476</radioposx>
+						<radioposy>8</radioposy>
+						<radiowidth>24</radiowidth>
+						<radioheight>24</radioheight>
+					</control>
+					<!-- BEGIN - TO BE REPLACED WITH A DROPDOWN -->
+					<control type="spincontrolex" id="9">
+						<description>Default SpinControlex</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<height>40</height>
+						<font>font22</font>
+						<textcolor>white</textcolor>
+						<focusedcolor>black</focusedcolor>
+						<disabledcolor>disabled</disabledcolor>
+						<textoffsetx>20</textoffsetx>
+						<aligny>center</aligny>
+						<texturenofocus border="15">button_settings_line_divider.png</texturenofocus>
+						<texturefocus border="20" diffuse="masks/10b9f2.png">browse_line_focus.png</texturefocus>
+						<textureup diffuse="white.png">icons/icon_settings_arrow_up.png</textureup>
+						<texturedown diffuse="white.png">icons/icon_settings_arrow_down.png</texturedown>
+						<textureupfocus diffuse="black.png">icons/icon_settings_arrow_up_on.png</textureupfocus>
+						<texturedownfocus diffuse="black.png">icons/icon_settings_arrow_down_on.png</texturedownfocus>
+						<reverse>yes</reverse>
+						<pulseonselect>false</pulseonselect>
+					</control>
+					<!-- END - TO BE REPLACED WITH A DROPDOWN MENU -->
+					<control type="sliderex" id="10">
+						<description>Default Slider</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>516</width>
+						<height>56</height>
+						<font>font24</font>
+						<textcolor>lightgreyheidi</textcolor>
+						<focusedcolor>whiteheidi</focusedcolor>
+						<disabledcolor>mediumgreyheidi</disabledcolor>
+						<textoffsetx>20</textoffsetx>
+						<aligny>center</aligny>
+						<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+						<texturenofocus>-</texturenofocus>
+						<sliderwidth>124</sliderwidth>
+						<sliderheight>12</sliderheight>
+						<texturesliderbar srcborder="9,0,9,0" border="6,0,6,0" diffuse="colors/color-grey.png">osd-slider-bg.png</texturesliderbar>
+						<textureslidernib diffuse="colors/color-white.png">universal/graphic-circle-18px.png</textureslidernib>
+						<textureslidernibfocus diffuse="colors/color-blue.png">universal/graphic-circle-18px.png</textureslidernibfocus>
+						<pulseonselect>false</pulseonselect>
+					</control>
+					<!--<control type="image" id="11">
+						<description>separator image</description>
+						<height>1</height>
+						<texture>grey.png</texture>
+					</control>-->
+					<control type="scrollbar" id="90">
+						<visible>false</visible>
+						<description>scroll bar indicator for lists</description>
+						<posx>1062</posx>
+						<posy>63</posy>
+						<width>12</width>
+						<height>354</height>
+						<include>ScrollBarCommonProperties</include>
+					</control>
+				</control>
+				
+			</control>
+		</control>
+	</controls>
+</window>

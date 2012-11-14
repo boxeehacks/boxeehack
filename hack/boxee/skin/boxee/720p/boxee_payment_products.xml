@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<window type="dialog" id="430">
+	<defaultcontrol always="true">240</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<!-- Dummy container for Item Info -->
+		<control type="list" id="5000">
+			<description>info</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<visible>false</visible>
+			<itemlayout height="0">
+		    </itemlayout>
+			<focusedlayout height="0">
+		    </focusedlayout>
+		</control>
+		<control type="group" id="6000">
+		    <posx>160</posx>
+            <posy>162</posy>
+            <include>PaymentDialogBG</include>            
+            <control type="largeimage">
+                <visible>!IsEmpty(container(5000).ListItem.Property(link-providerthumb))</visible>
+                <posx>30</posx>
+                <posy>0</posy>
+                <width>128</width>
+                <height>128</height>
+                <texture>$INFO[container(5000).ListItem.Property(link-providerthumb)]</texture>
+            </control>            
+            <control type="label" id="6010">
+                <posx>30</posx>
+                <posy>100</posy>
+                <width>600</width>
+                <height>80</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>-</label>
+                <textcolor>white</textcolor>
+            </control>
+            <control type="list" id="6110">
+                <posx>30</posx>
+                <posy>180</posy>
+                <width>740</width>
+                <height>200</height>
+                <onleft>-</onleft>
+                <onright>6150</onright>
+                <onup>-</onup>
+                <ondown>-</ondown>
+                <pagecontrol>-</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <orientation>vertical</orientation>
+                <itemlayout height="100">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>740</width>
+                    <height>100</height>
+                    <texture border="10">button_action_menu_source.png</texture>
+                </control>
+                <control type="group">
+                    <control type="label">
+                        <posx>20</posx>
+                        <posy>22</posy>
+                        <width>410</width>
+                        <height>25</height>
+                        <font>font22b</font>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Property(name)]abcdefghijklmnopqrstuvwxyz</label>
+                        <textcolor>white</textcolor>
+                    </control>
+                    <control type="label">
+                        <visible>!IsEmpty(ListItem.Property(currency_symbol))</visible>
+                        <posx>720</posx>
+                        <posy>22</posy>
+                        <width>340</width>
+                        <height>55</height>
+                        <font>font32b</font>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Property(currency_symbol)]$INFO[ListItem.Property(price)]/$INFO[ListItem.Property(billing_type)]</label>
+                        <textcolor>white</textcolor>
+                    </control>
+                    <control type="label">
+                        <visible>IsEmpty(ListItem.Property(currency_symbol))</visible>
+                        <posx>720</posx>
+                        <posy>22</posy>
+                        <width>340</width>
+                        <height>55</height>
+                        <font>font32b</font>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Property(currency)]$INFO[ListItem.Property(price)]/$INFO[ListItem.Property(billing_type)]</label>
+                        <textcolor>white</textcolor>
+                    </control>                    
+                    <control type="label">
+                        <posx>20</posx>
+                        <posy>52</posy>
+                        <width>410</width>
+                        <height>25</height>
+                        <font>font18</font>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$LOCALIZE[55102]</label>
+                        <textcolor>white</textcolor>
+                    </control>                                        
+                </control>
+                </itemlayout>
+                <focusedlayout height="100">
+                <control type="image">
+                    <visible>!Control.HasFocus(6110)</visible>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>740</width>
+                    <height>100</height>
+                    <texture border="10">button_action_menu_source.png</texture>
+                </control>                
+                <control type="image">
+                    <visible>Control.HasFocus(6110)</visible>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>740</width>
+                    <height>100</height>
+                    <texture border="10">button_action_menu_source_on.png</texture>
+                </control> 
+                <control type="group">
+                    <control type="label">
+                        <posx>20</posx>
+                        <posy>22</posy>
+                        <width>410</width>
+                        <height>25</height>
+                        <font>font22b</font>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Property(name)]abcdefghijklmn</label>
+                        <textcolor>white</textcolor>
+                    </control>
+                    <control type="label">
+                        <visible>!IsEmpty(ListItem.Property(currency_symbol))</visible>
+                        <posx>720</posx>
+                        <posy>22</posy>
+                        <width>340</width>
+                        <height>55</height>
+                        <font>font32b</font>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Property(currency_symbol)]$INFO[ListItem.Property(price)]/$INFO[ListItem.Property(billing_type)]</label>
+                        <textcolor>white</textcolor>
+                    </control>
+                    <control type="label">
+                        <visible>IsEmpty(ListItem.Property(currency_symbol))</visible>
+                        <posx>720</posx>
+                        <posy>22</posy>
+                        <width>340</width>
+                        <height>55</height>
+                        <font>font32b</font>
+                        <align>right</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Property(currency)]$INFO[ListItem.Property(price)]/$INFO[ListItem.Property(billing_type)]</label>
+                        <textcolor>white</textcolor>
+                    </control>                   
+                    <control type="label">
+                        <posx>20</posx>
+                        <posy>52</posy>
+                        <width>410</width>
+                        <height>25</height>
+                        <font>font18</font>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <label>$LOCALIZE[55102]</label>
+                        <textcolor>white</textcolor>
+                    </control>                                        
+                </control>
+               </focusedlayout>
+            </control>
+            <control type="list" id="6150">
+                <posx>770</posx>
+                <posy>180</posy>
+                <width>180</width>
+                <height>200</height>
+                <onleft>6110</onleft>
+                <onright>-</onright>
+                <onup>-</onup>
+                <ondown>-</ondown>
+                <pagecontrol>65</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <orientation>vertical</orientation>
+                <itemlayout height="100">
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>185</width>
+                    <height>100</height>
+                    <texture border="10">button_action_menu_source.png</texture>
+                </control>
+                <control type="group">
+                    <control type="label">
+                        <posx>90</posx>
+                        <posy>38</posy>
+                        <width>410</width>
+                        <height>25</height>
+                        <font>font28b</font>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>white</textcolor>
+                    </control>
+                </control>
+                </itemlayout>
+                <focusedlayout height="100">
+                <control type="image">
+                    <visible>!Control.HasFocus(6150)</visible>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>185</width>
+                    <height>100</height>
+                    <texture border="10">button_action_menu_source.png</texture>
+                </control>                
+                <control type="image">
+                    <visible>Control.HasFocus(6150)</visible>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>185</width>
+                    <height>100</height>
+                    <texture border="10">button_action_menu_source_on.png</texture>
+                </control> 
+                <control type="group">
+                    <control type="label">
+                        <posx>90</posx>
+                        <posy>38</posy>
+                        <width>410</width>
+                        <height>25</height>
+                        <font>font28b</font>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textcolor>white</textcolor>
+                    </control>
+                </control>
+               </focusedlayout>
+            </control>
+            <control type="scrollbar" id="65">
+                <description>scroll bar indicator for lists</description>
+                <posx>950</posx>
+                <posy>184</posy>
+                <width>28</width>
+                <height>190</height>
+                <texturesliderbackground border="14">scrollbar_bg.png</texturesliderbackground>
+                <textureslidernib>scrollbar_slider.png</textureslidernib>
+                <textureslidernibfocus>scrollbar_slider.png</textureslidernibfocus>
+                <texturesliderbar>-</texturesliderbar>
+                <texturesliderbarfocus>-</texturesliderbarfocus>
+                <orientation>vertical</orientation>
+                <showonepage>false</showonepage>
+            </control>
+            </control>
+	</controls>
+</window>

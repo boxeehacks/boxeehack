@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<window id="10482">
+	<defaultcontrol always="true">9050</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<!-- Removed "include LogoTitleAndItemCount" since it didn't work properly with this screen. 
+		     Also removed hard coded title and subtitle.-->
+		<!-- Title moved to RepositoriesLineViewList -->
+		<!-- End change -->
+		<control type="group">
+			<control type="group" id="9050">
+				<include>BrowseRepositoriesLineViewList</include>
+				<include>BrowseRepositoriesEmptyList</include>
+			</control>
+			<include>RepositoriesActionMenu</include>
+			<include>BrowseLoadingAnimation</include>
+		</control>
+		<!-- include>Window_Transition</include -->
+	</controls>
+</window>

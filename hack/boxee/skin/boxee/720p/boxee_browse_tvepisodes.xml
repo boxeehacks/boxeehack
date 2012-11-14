@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<window id="10483">
+	<onload>Skin.SetString(EpisodeViewMode,Episodes)</onload>
+	<defaultcontrol always="true">9050</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<controls>
+		<!-- Dummy container for Item Info -->
+		<control type="list" id="5000">
+			<description>info</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<visible>false</visible>
+			<itemlayout height="0">
+			</itemlayout>
+			<focusedlayout height="0">
+			</focusedlayout>
+		</control>
+		<control type="group">
+			<control type="group" id="9050">
+				<include>BrowseEpisodesView</include>
+			</control>
+			<include>TVEpisodesActionMenu</include>
+			<include>BrowseLoadingAnimation</include>
+			<include>BrowseEpisodeEmptyList</include>
+			<include>EpisodesPremiumProviderIcons</include>
+		</control>
+	</controls>
+</window>

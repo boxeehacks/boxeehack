@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<window type="dialog">
+	<defaultcontrol always="true">1</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<include>DialogNoAnim_Heidi</include>
+			
+			<!-- left side -->
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>852</width>
+				<height>544</height>
+				<texture srcborder="51" border="34">dialog_bg.png</texture>
+				<colordiffuse>80FFFFFF</colordiffuse>
+			</control>
+			
+			<control type="image">
+				<posx>66</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>82</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>98</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_circle.png</texture>
+			</control>
+			
+			<control type="image">
+				<posx>114</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			
+			<control type="label">
+				<description>Header</description>
+				<posx>63</posx>
+				<posy>125</posy>
+				<width>400</width>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$LOCALIZE[58015]</label>
+				<include>Header_Heidi</include>
+			</control>
+			
+			<control type="label">
+				<posx>64</posx>
+				<posy>153</posy>
+				<width>306</width>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$LOCALIZE[58016]</label>
+				<wrapmultiline>true</wrapmultiline>
+				<include>LargeText_Heidi</include>
+			</control>
+			
+			<!-- right side -->
+			<control type="button" id="1">
+				<description>Live TV - Step 2</description>
+				<posx>474</posx>
+				<posy>210</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>$LOCALIZE[58019]</label>
+				<onclick></onclick>
+				<onup>2</onup>
+				<ondown>2</ondown>
+			</control>
+			
+			<control type="button" id="2">
+				<description>Live TV - Step 2</description>
+				<posx>474</posx>
+				<posy>278</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>$LOCALIZE[58030]</label>
+				<onclick></onclick>
+				<onup>1</onup>
+				<ondown>1</ondown>
+			</control>
+		</control>	
+	</controls>
+</window>

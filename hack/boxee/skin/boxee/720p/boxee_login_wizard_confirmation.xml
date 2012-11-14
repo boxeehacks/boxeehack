@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<window id="9768" type="dialog">
+	<defaultcontrol always="true">1</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Background</include>
+		<include>BoxeeLogoLogin</include>
+		<control type="group">
+			<include>Popup_Heidi</include>
+			<control type="label" id="11">
+				<posx>63</posx>
+				<posy>47</posy>
+				<width>550</width>
+				<height>28</height>
+				<font>font40b</font>
+				<textcolor>whiteheidi</textcolor>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>[B]$LOCALIZE[53453][/B]</label>
+			</control>
+			<control type="label" id="12">
+				<posx>63</posx>
+				<posy>103</posy>
+				<width>416</width>
+				<height>260</height>
+				<label>$LOCALIZE[53454]</label>
+				<aligny>top</aligny>
+				<font>font26ls</font>
+				<textcolor>lightgreyheidi</textcolor>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="button" id="1">
+				<posx>66</posx>
+				<posy>422</posy>
+				<width>416</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>[B]$LOCALIZE[55699][/B]</label>
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<onleft>10</onleft>
+				<onright>10</onright>
+				<onclick>-</onclick>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<window id="123">
+	<defaultcontrol>2</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<posx>14</posx>
+			<posy>14</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>600</width>
+				<height>126</height>
+				<texture srcborder="51" border="34">dialog_bg.png</texture>
+			</control>
+			<control type="grouplist" id="4">
+				<description>button area</description>
+				<posx>41</posx>
+				<posy>41</posy>
+				<width>550</width>
+				<height>56</height>
+				<itemgap>12</itemgap>
+				<orientation>horizontal</orientation>
+				<onright>-</onright>
+				<onleft>-</onleft>
+				<ondown>5</ondown>
+				<control type="button" id="9201">
+					<onright>9202</onright>
+					<onleft>-</onleft>
+					<width>164</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[157][/B]</label>
+					<onclick>Dialog.Close(124)</onclick>
+					<onclick>Dialog.Close(146)</onclick>
+					<onclick>ActivateWindow(123)</onclick>
+				</control>
+				<control type="button" id="9202">
+					<onright>9203</onright>
+					<onleft>9201</onleft>
+					<width>164</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[292][/B]</label>
+					<onclick>Dialog.Close(123)</onclick>
+					<onclick>Dialog.Close(146)</onclick>
+					<onclick>ActivateWindow(124)</onclick>
+				</control>
+				<control type="button" id="9203">
+					<enable>VideoPlayer.CanSetSubtitles</enable>
+					<onright>-</onright>
+					<onleft>9202</onleft>
+					<width>164</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[574][/B]</label>
+					<onclick>Dialog.Close(123)</onclick>
+					<onclick>Dialog.Close(124)</onclick>
+					<onclick>ActivateWindow(146)</onclick>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<posx>24</posx>
+			<posy>112</posy>
+			<control type="image">
+				<posx>8</posx>
+				<posy>0</posy>
+				<width>564</width>
+				<height>352</height>
+				<texture srcborder="18,0,18,18" border="12,0,12,12">osd/osd-bg-18-54px-b.png</texture>
+				<colordiffuse>6CFFFFFF</colordiffuse>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>580</width>
+				<height>360</height>
+				<texture srcborder="30,0,30,30" border="20,0,20,20">osd/osd-settings-options-bottom-border.png</texture>
+			</control>
+			<!--<control type="label">
+				<posx>25</posx>
+				<posy>34</posy>
+				<width>550</width>
+				<height>32</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<haspath>true</haspath>
+				<font>font32b</font>
+				<textcolor>white</textcolor>
+				<label>$LOCALIZE[5]</label>
+			</control>-->
+			<control type="label" id="6">
+				<posx>200</posx>
+				<posy>34</posy>
+				<width>370</width>
+				<height>32</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<haspath>true</haspath>
+				<font>font22</font>
+				<textcolor>white</textcolor>
+				<label></label>
+				<scroll>true</scroll>
+			</control>
+			<control type="group">
+				<control type="label" id="3">
+					<description>No Settings Label</description>
+					<posx>25</posx>
+					<posy>34</posy>
+					<width>550</width>
+					<height>22</height>
+					<font>font24b</font>
+					<aligny>top</aligny>
+					<align>left</align>
+					<label>13390</label>
+					<textcolor>white</textcolor>
+				</control>
+				<control type="grouplist" id="5">
+					<description>control area</description>
+					<posx>32</posx>
+					<posy>34</posy>
+					<width>512</width>
+					<height>480</height>
+					<itemgap>0</itemgap>
+					<pagecontrol>90</pagecontrol>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onup>4</onup>
+					<ondown>-</ondown>
+				</control>
+				<control type="button" id="7">
+					<description>Default Button</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<height>40</height>
+					<font>font24</font>
+					<textcolor>lightgreyheidi</textcolor>
+					<textcolor2>lightgreyheidi</textcolor2>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<focusedcolor2>whiteheidi</focusedcolor2>
+					<disabledcolor>mediumgreyheidi</disabledcolor>
+					<textoffsetx>20</textoffsetx>
+					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<pulseonselect>false</pulseonselect>
+				</control>
+				<control type="radiobutton" id="8">
+					<description>Default RadioButton</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<height>40</height>
+					<font>font22</font>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<disabledcolor>mediumgreyheidi</disabledcolor>
+					<textoffsetx>20</textoffsetx>
+					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<textureradioon>graphic-radio-on.png</textureradioon>
+					<textureradiooff>graphic-radio-off.png</textureradiooff>
+					<pulseonselect>false</pulseonselect>
+					<radioposx>476</radioposx>
+					<radioposy>8</radioposy>
+					<radiowidth>24</radiowidth>
+					<radioheight>24</radioheight>
+				</control>
+				<control type="spincontrolex" id="9">
+					<description>Default SpinControlex</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<height>40</height>
+					<font>font22</font>
+					<textcolor>white</textcolor>
+					<focusedcolor>black</focusedcolor>
+					<disabledcolor>disabled</disabledcolor>
+					<textoffsetx>20</textoffsetx>
+					<aligny>center</aligny>
+					<texturenofocus border="15">button_settings_line_divider.png</texturenofocus>
+					<texturefocus border="20" diffuse="masks/10b9f2.png">browse_line_focus.png</texturefocus>
+					<textureup diffuse="white.png">icons/icon_settings_arrow_up.png</textureup>
+					<texturedown diffuse="white.png">icons/icon_settings_arrow_down.png</texturedown>
+					<textureupfocus diffuse="black.png">icons/icon_settings_arrow_up_on.png</textureupfocus>
+					<texturedownfocus diffuse="black.png">icons/icon_settings_arrow_down_on.png</texturedownfocus>
+					<reverse>yes</reverse>
+					<pulseonselect>false</pulseonselect>
+				</control>
+				<control type="sliderex" id="10">
+					<description>Default Slider</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>516</width>
+					<height>56</height>
+					<font>font24</font>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<disabledcolor>mediumgreyheidi</disabledcolor>
+					<textoffsetx>20</textoffsetx>
+					<aligny>center</aligny>
+					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<sliderwidth>124</sliderwidth>
+					<sliderheight>12</sliderheight>
+					<texturesliderbar srcborder="9,0,9,0" border="6,0,6,0" diffuse="colors/color-grey.png">universal/graphic-circle-18px.png</texturesliderbar>
+					<textureslidernib diffuse="colors/color-white.png">universal/graphic-circle-18px.png</textureslidernib>
+					<textureslidernibfocus diffuse="colors/color-blue.png">universal/graphic-circle-18px.png</textureslidernibfocus>
+					<pulseonselect>false</pulseonselect>
+				</control>
+				<!--<control type="image" id="11">
+					<description>separator image</description>
+					<height>1</height>
+					<texture>grey.png</texture>
+				</control>-->
+				<control type="scrollbar" id="90">
+					<visible>false</visible>
+					<description>scroll bar indicator for lists</description>
+					<posx>1062</posx>
+					<posy>63</posy>
+					<width>12</width>
+					<height>354</height>
+					<include>ScrollBarCommonProperties</include>
+				</control>
+			</control>
+		</control>
+		<control type="image">
+			<posx>32</posx>
+			<posy>112</posy>
+			<width>564</width>
+			<height>24</height>
+			<texture>osd/osd-bg-mask-black.png</texture>
+		</control>
+		<control type="image">
+			<posx>32</posx>
+			<posy>116</posy>
+			<width>508</width>
+			<height>40</height>
+			<texture>osd/graphic-divider-horz.png</texture>
+		</control>
+	</controls>
+</window>

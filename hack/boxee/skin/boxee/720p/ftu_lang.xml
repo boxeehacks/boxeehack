@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<window id="10440">
+	<defaultcontrol always="true">240</defaultcontrol>
+	<controls>
+		<include>Common_Background</include>
+		<control type="group">
+			<include>Dialog_Popup_Animation</include>
+			<posx>366</posx>
+			<posy>88</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>548</width>
+				<height>492</height>
+				<texture srcborder="51" border="34">dialog_bg.png</texture>
+			</control>
+			<control type="fixedlist" id="240">
+				<posx>48</posx>
+				<posy>48</posy>
+				<width>452</width>
+				<height>400</height>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>-</onup>
+				<ondown>-</ondown>
+				<pagecontrol>-</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="68">
+					<control type="label">
+						<posx>226</posx>
+						<posy>-1</posy>
+						<width>452</width>
+						<height>56</height>
+						<font>font24b</font>
+						<textcolor>mediumgreyheidi</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="68">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>452</width>
+						<height>56</height>
+						<texture srcborder="24" border="16">button-focused.png</texture>
+					</control>
+					<control type="label">
+						<posx>226</posx>
+						<posy>-1</posy>
+						<width>452</width>
+						<height>56</height>
+						<font>font24b</font>
+						<textcolor>whiteheidi</textcolor>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<scroll>true</scroll>
+					</control>
+				</focusedlayout>
+			</control>
+			<!-- control type="scrollbar" id="60">
+				<visible>false</visible>
+				<posx>762</posx>
+				<posy>104</posy>
+				<width>12</width>
+				<height>252</height>
+				<include>ScrollBarCommonProperties</include>
+			</control -->
+		</control>
+	</controls>
+</window>

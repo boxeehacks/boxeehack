@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<window type="dialog">
+	<defaultcontrol always="true">2</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<include>DialogNoAnim_Heidi</include>
+			
+			<!-- left side -->					
+			<control type="label">
+				<description>Header</description>
+				<posx>63</posx>
+				<posy>95</posy>
+				<width>345</width>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$LOCALIZE[58090]</label>
+				<wrapmultiline>true</wrapmultiline>
+				<include>Header_Heidi</include>
+			</control>
+			
+			<control type="label" id="1">
+				<posx>64</posx>
+				<posy>139</posy>
+				<width>306</width>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$LOCALIZE[58091]</label>
+				<wrapmultiline>true</wrapmultiline>
+				<include>LargeText_Heidi</include>
+			</control>
+			
+			<!-- right side -->			
+			<control type="button" id="2">
+				<ondown>3</ondown>					
+				<onup>-</onup>
+				<posx>474</posx>
+				<posy>210</posy>
+				<include>Button_Heidi</include>
+				<label>$LOCALIZE[51542]</label>
+				<width>312</width>
+				<height>56</height>
+			</control>
+			
+			<control type="button" id="3">
+				<posx>474</posx>
+				<posy>278</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>$LOCALIZE[58093]</label>
+				<onclick>-</onclick>
+				<onup>2</onup>
+				<ondown>-</ondown>
+			</control>
+		</control>	
+	</controls>
+</window>

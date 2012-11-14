@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<window type="dialog" id="406">
+	<defaultcontrol always="true">500</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<!-- Dummy container for Music Info -->
+		<control type="list" id="5000">
+			<description>info</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>0</width>
+			<height>0</height>
+			<visible>false</visible>
+			<itemlayout height="0">
+		  </itemlayout>
+			<focusedlayout height="0">
+		  </focusedlayout>
+		</control>
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Dialog_Popup_Animation</include>
+			<posx>340</posx>
+			<posy>112</posy>
+			<control type="image">
+				<description>dialog background</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>600</width>
+				<height>442</height>
+				<texture srcborder="30" border="20">button_16_pixel.png</texture>
+       		    <colordiffuse>dialogbg</colordiffuse>
+			</control>
+			<control type="fixedlist" id="600">
+				<posx>11</posx>
+				<posy>11</posy>
+				<width>578</width>
+				<height>420</height>
+				<onleft>Dialog.Close(406)</onleft>
+				<onright>Dialog.Close(406)</onright>
+				<onup>100</onup>
+				<ondown>100</ondown>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>601</pagecontrol>
+				<orientation>vertical</orientation>
+				<itemlayout height="60">
+					<control type="image">
+						<visible>ListItem.IsFirst + !ListItem.IsLast</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>578</width>
+						<height>60</height>
+						<colordiffuse>33F8F8F8</colordiffuse>
+						<texture srcborder="30" border="20">button_16_pixel_T.png</texture>
+					</control>
+					<control type="image">
+						<visible>ListItem.IsFirst + ListItem.IsLast</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>578</width>
+						<height>60</height>
+						<colordiffuse>33F8F8F8</colordiffuse>
+						<texture srcborder="30" border="20">button_16_pixel.png</texture>
+					</control>
+					<control type="image">
+						<visible>!ListItem.IsFirst + !ListItem.IsLast</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>578</width>
+						<height>60</height>
+						<colordiffuse>33F8F8F8</colordiffuse>
+						<texture srcborder="30" border="20">white.png</texture>
+					</control>
+					<control type="image">
+						<visible>!ListItem.IsFirst + ListItem.IsLast</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>578</width>
+						<height>60</height>
+						<colordiffuse>33F8F8F8</colordiffuse>
+						<texture srcborder="30" border="20">button_16_pixel_B.png</texture>
+					</control>
+					<control type="label">
+						<visible>IsEmpty(ListItem.Thumb) + ListItem.Property(isseparator)</visible>
+						<posx>15</posx>
+						<posy>0</posy>
+						<width>558</width>
+						<height>60</height>
+						<font>font30</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>offwhite</textcolor>
+						<selectedcolor>offwhite</selectedcolor>
+					</control>
+					<control type="label">
+						<visible>IsEmpty(ListItem.Thumb) + !ListItem.Property(isseparator)</visible>
+						<posx>30</posx>
+						<posy>0</posy>
+						<width>558</width>
+						<height>60</height>
+						<font>font30</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>offwhite</textcolor>
+						<selectedcolor>offwhite</selectedcolor>
+					</control>
+					<control type="largeimage">
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<posx>10</posx>
+						<posy>0</posy>
+						<width>195</width>
+						<height>60</height>
+						<texture>$INFO[ListItem.Thumb]</texture>
+					</control>
+				</itemlayout>
+				<focusedlayout height="60">
+					<control type="image">
+						<visible>ListItem.IsFirst + !ListItem.IsLast</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>578</width>
+						<height>60</height>
+						<colordiffuse>blue</colordiffuse>
+						<texture srcborder="30" border="20">button_16_pixel_T.png</texture>
+					</control>
+					<control type="image">
+						<visible>ListItem.IsFirst + ListItem.IsLast</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>578</width>
+						<height>60</height>
+						<colordiffuse>blue</colordiffuse>
+						<texture srcborder="30" border="20">button_16_pixel.png</texture>
+					</control>
+					<control type="image">
+						<visible>!ListItem.IsFirst + !ListItem.IsLast</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>578</width>
+						<height>60</height>
+						<colordiffuse>blue</colordiffuse>
+						<texture srcborder="30" border="20">white.png</texture>
+					</control>
+					<control type="image">
+						<visible>!ListItem.IsFirst + ListItem.IsLast</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>578</width>
+						<height>60</height>
+						<colordiffuse>blue</colordiffuse>
+						<texture srcborder="30" border="20">button_16_pixel_B.png</texture>
+					</control>
+					<control type="label">
+						<visible>IsEmpty(ListItem.Thumb) + ListItem.Property(isseparator)</visible>
+						<posx>15</posx>
+						<posy>0</posy>
+						<width>558</width>
+						<height>60</height>
+						<font>font30</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>black</textcolor>
+						<selectedcolor>black</selectedcolor>
+						<scroll>true</scroll>
+					</control>
+					<control type="label">
+						<visible>IsEmpty(ListItem.Thumb) + !ListItem.Property(isseparator)</visible>
+						<posx>30</posx>
+						<posy>0</posy>
+						<width>558</width>
+						<height>60</height>
+						<font>font30</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<info>ListItem.Label</info>
+						<textcolor>black</textcolor>
+						<selectedcolor>black</selectedcolor>
+						<scroll>true</scroll>
+					</control>
+					<control type="largeimage">
+						<visible>!IsEmpty(ListItem.Thumb)</visible>
+						<posx>10</posx>
+						<posy>0</posy>
+						<width>195</width>
+						<height>60</height>
+						<colordiffuse>black</colordiffuse>
+						<texture>$INFO[ListItem.Thumb]</texture>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="scrollbar" id="601">
+				<visible>false</visible>
+				<description>scroll bar indicator for lists</description>
+				<visible>Control.IsVisible(600)</visible>
+				<posx>454</posx>
+				<posy>16</posy>
+				<width>12</width>
+				<height>340</height>
+				<include>ScrollBarCommonProperties</include>
+			</control>
+		</control>
+	</controls>
+</window>

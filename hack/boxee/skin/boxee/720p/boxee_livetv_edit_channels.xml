@@ -1,0 +1,358 @@
+<?xml version="1.0"?>
+<window id="4588" type="dialog">
+	<defaultcontrol always="true">46</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<posx>375</posx>
+			<posy>70</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>532</width>
+				<height>560</height>
+				<texture srcborder="51" border="34">dialog_bg.png</texture>
+			</control>
+			<control type="group" id="1">
+				<control type="label">
+					<posx>54</posx>
+					<posy>42</posy>
+					<width>424</width>
+					<height>40</height>
+					<textcolor>whiteheidi</textcolor>
+					<font>font40b</font>
+					<label>[B]$LOCALIZE[90311][/B]</label>
+				</control>
+				<control type="label">
+					<posx>54</posx>
+					<posy>96</posy>
+					<width>424</width>
+					<height>100</height>
+					<textcolor>lightgreyheidi</textcolor>
+					<font>font20</font>
+					<label>90315</label>
+					<wrapmultiline>true</wrapmultiline>
+				</control>
+				<control type="image">
+					<posx>6</posx>
+					<posy>159</posy>
+					<width>508</width>
+					<height>40</height>
+					<texture flipy="true">osd/graphic-divider-horz.png</texture>
+				</control>
+				
+				<control type="list" id="46">
+					<posx>38</posx>
+					<posy>195</posy>
+					<width>452</width>
+					<height>337</height>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<onleft>46</onleft>
+					<onright>61</onright>
+					<focusposition>3</focusposition>
+					<orientation>vertical</orientation>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime tween="sine" easing="out">200</scrolltime>
+					<itemlayout width="452" height="65">
+						<control type="image">
+							<posx>20</posx>
+							<posy>18</posy>
+							<width>25</width>
+							<height>25</height>
+							<texture>graphic-check-54px.png</texture>
+							<visible>ListItem.Property(ChannelEnabled)</visible>
+						</control>
+						<control type="image">
+							<posx>20</posx>
+							<posy>18</posy>
+							<width>25</width>
+							<height>25</height>
+							<texture>graphic-check-empty-54px.png</texture>
+							<visible>!ListItem.Property(ChannelEnabled)</visible>
+						</control>					
+						<control type="label">
+							<posx>57</posx>
+							<posy>0</posy>
+							<width>310</width>
+							<height>60</height>
+							<align>left</align>
+							<aligny>center</aligny>
+					        <label>[B]$INFO[ListItem.Label][/B]</label>
+							<font>font28b</font>				        
+						</control>
+					</itemlayout>
+					<focusedlayout width="452" height="65">
+						<control type="image">
+							<visible>!Control.HasFocus(61)</visible>					
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>376</width>
+							<height>60</height>
+							<texture srcborder="24" border="16">button-focused.png</texture>
+						</control>
+						<control type="image">
+							<visible>Control.HasFocus(61)</visible>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>376</width>
+							<height>60</height>
+							<texture srcborder="24" border="16">button-on.png</texture>
+						</control>
+						<control type="image">
+							<posx>20</posx>
+							<posy>18</posy>
+							<width>25</width>
+							<height>25</height>
+							<texture>graphic-check-54px.png</texture>
+							<visible>ListItem.Property(ChannelEnabled)</visible>
+						</control>													
+						<control type="image">
+							<visible>!Control.HasFocus(61)</visible>
+							<posx>390</posx>
+							<posy>0</posy>
+							<width>60</width>
+							<height>60</height>
+							<texture>actionbuttons/button-action-settings-unfocused.png</texture>
+						</control>
+						<control type="image">
+							<visible>Control.HasFocus(61)</visible>
+							<posx>390</posx>
+							<posy>0</posy>
+							<width>60</width>
+							<height>60</height>
+							<texture>actionbuttons/button-action-settings-focused.png</texture>
+						</control>					
+						<control type="label">
+							<posx>57</posx>
+							<posy>0</posy>
+							<width>310</width>
+							<height>60</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+							<font>font28b</font>
+						</control>
+					</focusedlayout>
+					<!-- content>
+						<item id="1">
+							<label>ABC</label>
+							<label2>02</label2>
+							<onclick>-</onclick>
+						</item>
+						<item id="2">
+							<label>FOX</label>
+							<label2>03</label2>
+							<onclick>-</onclick>
+						</item>
+						<item id="3">
+							<label>CBS</label>
+							<label2>04</label2>
+							<onclick>-</onclick>
+						</item>
+						<item id="4">
+							<label>C-SPAN</label>
+							<label2>05</label2>
+							<onclick>-</onclick>
+						</item>
+						<item id="5">
+							<label>CWS</label>
+							<label2>06</label2>
+							<onclick>-</onclick>
+						</item>
+						<item id="6">
+							<label>LONGCHANNELNAME</label>
+							<label2>07</label2>
+							<onclick>-</onclick>
+						</item>
+						<item id="7">
+							<label>OKENOUGH</label>
+							<label2>08</label2>
+							<onclick>-</onclick>
+						</item>
+					</content -->
+				</control>
+				<control type="button" id="61">
+					<description>edit button</description>
+					<posx>120</posx>
+					<posy>210</posy>
+					<width>1040</width>
+					<height>60</height>
+					<onup>-</onup>
+					<ondown>-</ondown>
+					<onright>-</onright>
+					<onleft>46</onleft>
+					<onclick>-</onclick>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus>-</texturefocus>
+					<textureclick>-</textureclick>
+				</control>
+			</control>
+			<control type="group" id="2">		
+				<visible>false</visible>
+				<control type="label">
+					<posx>60</posx>
+					<posy>42</posy>
+					<width>424</width>
+					<height>40</height>
+					<textcolor>whiteheidi</textcolor>
+					<font>font26b</font>
+					<label>[B]$LOCALIZE[90318][/B]</label>
+				</control>		
+				
+				<control type="edit" id="21">
+					<posx>60</posx>
+					<posy>88</posy>
+					<width>412</width>
+					<height>56</height>
+					<include>Edit_Heidi</include>
+					<align>left</align>
+					<textoffsetx>14</textoffsetx>
+					<emptylabel>$LOCALIZE[90318]</emptylabel>
+					<emptycolor>lightgreyheidi</emptycolor>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<onup>-</onup>
+					<onprev>-</onprev>
+					<ondown>22</ondown>
+					<onnext></onnext>
+				</control>
+				
+				<control type="label">
+					<posx>60</posx>
+					<posy>160</posy>
+					<width>424</width>
+					<height>40</height>
+					<textcolor>whiteheidi</textcolor>
+					<font>font26b</font>
+					<label>[B]$LOCALIZE[90320][/B]</label>
+				</control>	
+				
+				<control type="list" id="22">
+					<posx>45</posx>
+					<posy>206</posy>
+					<width>452</width>
+					<height>337</height>
+					<onup>21</onup>
+					<ondown>-</ondown>
+					<onleft>-</onleft>
+					<onright>-</onright>
+					<focusposition>3</focusposition>
+					<orientation>vertical</orientation>
+					<pagecontrol>-</pagecontrol>
+					<scrolltime tween="sine" easing="out">200</scrolltime>
+					<itemlayout width="452" height="65">
+						<control type="image">
+							<posx>20</posx>
+							<posy>18</posy>
+							<width>25</width>
+							<height>25</height>
+							<texture>universal/graphic-radio-dot.png</texture>
+							<visible>ListItem.IsSelected</visible>
+						</control>
+						<control type="image">
+							<posx>20</posx>
+							<posy>18</posy>
+							<width>25</width>
+							<height>25</height>
+							<texture>universal/graphic-radio-blank.png</texture>
+							<visible>!ListItem.IsSelected</visible>
+						</control>					
+						<control type="label">
+							<posx>57</posx>
+							<posy>0</posy>
+							<width>377</width>
+							<height>60</height>
+							<align>left</align>
+							<aligny>center</aligny>
+					        <label>[B]$INFO[ListItem.Label][/B]</label>
+							<font>font28b</font>				        
+						</control>
+					</itemlayout>
+					<focusedlayout width="452" height="65">
+						<control type="image">
+							<visible>Control.HasFocus(22)</visible>			
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>376</width>
+							<height>60</height>
+							<texture srcborder="24" border="16">button-focused.png</texture>
+						</control>
+						<control type="image">
+							<posx>20</posx>
+							<posy>18</posy>
+							<width>25</width>
+							<height>25</height>
+							<texture>universal/graphic-radio-dot.png</texture>
+							<visible>ListItem.IsSelected</visible>
+						</control>	
+						<control type="image">
+							<posx>20</posx>
+							<posy>18</posy>
+							<width>25</width>
+							<height>25</height>
+							<texture>universal/graphic-radio-blank.png</texture>
+							<visible>!ListItem.IsSelected</visible>
+						</control>																
+						<control type="label">
+							<posx>57</posx>
+							<posy>0</posy>
+							<width>377</width>
+							<height>60</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+							<font>font28b</font>
+						</control>
+					</focusedlayout>
+					<!--content>
+						<item id="1">
+							<label>ABC</label>
+							<label2>02</label2>
+							<onclick>-</onclick>
+						</item>
+						<item id="2">
+							<label>FOX</label>
+							<label2>03</label2>
+							<onclick>-</onclick>
+						</item>
+						<item id="3">
+							<label>CBS</label>
+							<label2>04</label2>
+							<onclick>-</onclick>
+						</item>
+						<item id="4">
+							<label>C-SPAN</label>
+							<label2>05</label2>
+							<onclick>-</onclick>
+						</item>
+						<item id="5">
+							<label>CWS</label>
+							<label2>06</label2>
+							<onclick>-</onclick>
+						</item>
+						<item id="6">
+							<label>LONGCHANNELNAME</label>
+							<label2>07</label2>
+							<onclick>-</onclick>
+						</item>
+						<item id="7">
+							<label>OKENOUGH</label>
+							<label2>08</label2>
+							<onclick>-</onclick>
+						</item>
+					</content-->					
+				</control>	
+				
+				<control type="ximage">
+					<visible>Control.IsVisible(22) + !Container(22).ListItem.IsLast</visible>
+					<posx>50</posx>
+					<posy>500</posy>
+					<width>370</width>
+					<height>26</height>
+					<texture flipy="true">osd_gradient.png</texture>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

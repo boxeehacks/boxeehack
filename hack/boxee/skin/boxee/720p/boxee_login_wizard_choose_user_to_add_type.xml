@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<window id="4580" type="dialog">
+	<defaultcontrol always="true">1</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Background</include>
+		<include>BoxeeLogoLogin</include>
+		<control type="group" id="7000">	
+			<include>Popup_Heidi</include>
+			<control type="label">
+				<posx>65</posx>
+				<posy>70</posy>
+				<width>408</width>
+				<height>24</height>
+				<label>$LOCALIZE[53404]</label>
+				<include>Header_Heidi</include>
+				<align>left</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="label">
+				<posx>65</posx>
+				<posy>105</posy>
+				<width>408</width>
+				<height>220</height>
+				<label>$LOCALIZE[55610]</label>
+				<font>font24</font>
+				<align>left</align>
+				<aligny>top</aligny>
+				<textcolor>lightgreyheidi</textcolor>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="button" id="8901">
+				<posx>66</posx>
+				<posy>354</posy>
+				<width>415</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>$LOCALIZE[53408]</label>
+				<!-- New User -->
+				<onup>9003</onup>
+				<ondown>8902</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+			</control>
+			<control type="button" id="8902">
+				<posx>66</posx>
+				<posy>422</posy>
+				<width>415</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>$LOCALIZE[53407]</label>
+				<!-- Existing User -->
+				<onup>8901</onup>
+				<ondown>-</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+			</control>			
+		</control>
+		<!--<control type="group" id="9000">
+			<posx>1032</posx>
+			<posy>32</posy>
+			<control type="button" id="9001">
+				<include>OnDialogOpen_HideItem</include>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>64</height>
+				<texturefocus>actionbuttons/button-action-plus-focused.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-plus-unfocused.png</texturenofocus>
+				<onclick>-</onclick>
+				<onup>-</onup>
+				<ondown>7000</ondown>
+				<onleft>7000</onleft>
+				<onright>9003</onright>
+			</control>
+			<control type="button" id="9003">
+				<posx>76</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>64</height>
+				<texturefocus>actionbuttons/button-action-wifi-focused.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-wifi-unfocused.png</texturenofocus>
+				<onclick>ActivateWindow(NetworkSettings)</onclick>
+				<onup>-</onup>
+				<ondown>7000</ondown>
+				<onright>9004</onright>
+			</control>
+			<control type="button" id="9004">
+				<posx>152</posx>
+				<posy>0</posy>
+				<width>64</width>
+				<height>64</height>
+				<texturefocus>actionbuttons/button-action-shutdown-focused.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-shutdown-unfocused.png</texturenofocus>
+				<onclick>XBMC.ShutDown()</onclick>
+				<onup>-</onup>
+				<ondown>7000</ondown>
+				<onleft>9003</onleft>
+				<onright>-</onright>
+			</control>
+		</control>-->
+	</controls>
+</window>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0"?>
+<window type="dialog" id="79">
+	<defaultcontrol always="true">9201</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Dialog_Popup_Background</include>
+		<control type="group">
+			<include>Dialog_Popup_Animation</include>
+			<posx>240</posx>
+			<posy>182</posy>
+			<control type="image">
+				<description>browse background</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>800</width>
+				<height>260</height>
+				<texture border="20">browse_menu_dialog_background.png</texture>
+				<colordiffuse>FF212121</colordiffuse>
+			</control>
+			<control type="label">
+				<posx>26</posx>
+				<posy>34</posy>
+				<width>750</width>
+				<height>28</height>
+				<font>font28b</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>53287</label>
+				<textcolor>white</textcolor>
+			</control>
+			<control type="label">
+				<posx>26</posx>
+				<posy>92</posy>
+				<width>750</width>
+				<height>90</height>
+				<label>53288</label>
+				<aligny>top</aligny>
+				<font>font26</font>
+				<textcolor>white</textcolor>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="label" id="500">
+				<description>update status</description>
+				<posx>25</posx>
+				<posy>200</posy>
+				<width>550</width>
+				<height>24</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>font24b</font>
+				<label>$LOCALIZE[53289]</label>
+				<textcolor>white</textcolor>
+			</control>
+			<control type="multiimage">
+				<posx>208</posx>
+				<posy>150</posy>
+				<width>384</width>
+				<height>32</height>
+				<imagepath>loading_small</imagepath>
+				<timeperimage>20</timeperimage>
+				<fadetime>1</fadetime>
+				<loop>yes</loop>
+				<randomize>false</randomize>
+				<colordiffuse>green</colordiffuse>
+				</control>
+		</control>
+	</controls>
+</window>

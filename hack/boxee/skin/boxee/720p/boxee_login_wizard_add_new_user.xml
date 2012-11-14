@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<window id="4582" type="dialog">
+	<defaultcontrol always="true">8700</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Common_Background</include>
+		<include>BoxeeLogoLogin</include>
+		<control type="group" id="7000">
+			<include>FTUDialog_Heidi</include>
+			<!-- RIGHT SIDE - BEGIN-->
+			<control type="button" id="8700">
+				<include>FacebookConnect_Heidi</include>
+				<posx>474</posx>
+				<posy>66</posy>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>9003</onup>
+				<onprev>-</onprev>
+				<ondown>8701</ondown>
+				<onnext>8701</onnext>
+			</control>
+			<control type="label">
+				<posx>474</posx>
+				<posy>132</posy>
+				<width>312</width>
+				<height>20</height>
+				<label>[UPPERCASE]$LOCALIZE[54673][/UPPERCASE]</label>
+				<!--<label>OR</label>-->
+				<font>font20b</font>
+				<textcolor>lightgreyheidi</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="edit" id="8701">
+				<description>UserName</description>
+				<posx>474</posx>
+				<posy>162</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Edit_Heidi</include>
+				<align>left</align>
+				<textoffsetx>14</textoffsetx>
+				<emptylabel>$LOCALIZE[51891]</emptylabel>
+				<emptycolor>lightgreyheidi</emptycolor>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>8700</onup>
+				<onprev>8700</onprev>
+				<ondown>8702</ondown>
+				<onnext>8702</onnext>
+			</control>
+			<control type="image">
+				<visible>window(10282).property(name-is-valid) + !Control.IsEmpty(8701)</visible>
+				<posx>798</posx>
+				<posy>176</posy>
+				<width>24</width>
+				<height>24</height>
+				<texture>graphic-check.png</texture>
+			</control>
+			<control type="image">
+				<visible>!window(10282).property(name-is-valid) + !Control.IsEmpty(8701)</visible>
+				<posx>798</posx>
+				<posy>176</posy>
+				<width>24</width>
+				<height>24</height>
+				<texture>graphic-error.png</texture>
+			</control>
+
+
+			<control type="edit" id="8702">
+				<description>Email</description>
+				<enable>window(10282).property(name-is-valid)</enable>
+				<posx>474</posx>
+				<posy>230</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Edit_Heidi</include>
+				<align>left</align>
+				<textoffsetx>14</textoffsetx>
+				<emptylabel>$LOCALIZE[55620]</emptylabel>
+				<emptycolor>lightgreyheidi</emptycolor>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>8701</onup>
+				<onprev>8701</onprev>
+				<ondown>8703</ondown>
+				<onnext>8703</onnext>
+			</control>
+			<control type="image">
+				<visible>window(10282).property(email-is-valid) + !Control.IsEmpty(8702)</visible>
+				<posx>798</posx>
+				<posy>244</posy>
+				<width>24</width>
+				<height>24</height>
+				<texture>graphic-check.png</texture>
+			</control>
+			<control type="image">
+				<visible>!window(10282).property(email-is-valid) + !Control.IsEmpty(8702)</visible>
+				<posx>798</posx>
+				<posy>244</posy>
+				<width>24</width>
+				<height>24</height>
+				<texture>graphic-error.png</texture>
+			</control>
+
+
+			<control type="edit" id="8703">
+				<description>Password</description>
+				<enable>window(10282).property(name-is-valid) + window(10282).property(email-is-valid)</enable>
+				<posx>474</posx>
+				<posy>298</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Edit_Heidi</include>
+				<align>left</align>
+				<textoffsetx>14</textoffsetx>
+				<emptylabel>$LOCALIZE[51892]</emptylabel>
+				<emptycolor>lightgreyheidi</emptycolor>
+				<password>true</password>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>8702</onup>
+				<onprev>8702</onprev>
+				<ondown>1</ondown>
+				<onnext>1</onnext>
+			</control>
+			<control type="image">
+				<visible>window(10282).property(password-is-valid) + !Control.IsEmpty(8703)</visible>
+				<posx>798</posx>
+				<posy>312</posy>
+				<width>24</width>
+				<height>24</height>
+				<texture>graphic-check.png</texture>
+			</control>
+			<control type="image">
+				<visible>!window(10282).property(password-is-valid) + !Control.IsEmpty(8703)</visible>
+				<posx>798</posx>
+				<posy>312</posy>
+				<width>24</width>
+				<height>24</height>
+				<texture>graphic-error.png</texture>
+			</control>
+
+
+			<control type="label">
+				<visible>!window(10282).property(name-is-valid) + !Control.IsEmpty(8701)</visible>
+				<posx>474</posx>
+				<posy>367</posy>
+				<width>312</width>
+				<height>20</height>
+				<label>$LOCALIZE[55621]</label>
+				<font>font20b</font>
+				<textcolor>errorredheidi</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="label">
+				<visible>!window(10282).property(email-is-valid) + !Control.IsEmpty(8702)</visible>
+				<posx>474</posx>
+				<posy>367</posy>
+				<width>312</width>
+				<height>20</height>
+				<label>$LOCALIZE[53451]</label>
+				<font>font20b</font>
+				<textcolor>errorredheidi</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+			<control type="label">
+				<visible>!window(10282).property(password-is-valid) + !Control.IsEmpty(8703)</visible>
+				<posx>474</posx>
+				<posy>367</posy>
+				<width>312</width>
+				<height>20</height>
+				<label>$LOCALIZE[53468]</label>
+				<font>font20b</font>
+				<textcolor>errorredheidi</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+			</control>
+
+			<control type="button" id="1">
+				<enable>window(10282).property(name-is-valid) + window(10282).property(email-is-valid) + window(10282).property(password-is-valid) + !Control.IsEmpty(8701) + !Control.IsEmpty(8702) + !Control.IsEmpty(8703)</enable>
+				<posx>474</posx>
+				<posy>422</posy>
+				<width>312</width>
+				<height>56</height>
+				<include>Button_Heidi</include>
+				<label>$LOCALIZE[209]</label>
+				<!-- Next -->
+				<onup>8703</onup>
+				<ondown>-</ondown>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<!-- onclick>ActivateWindow(4583)</onclick -->
+			</control>
+			<!-- RIGHT SIDE - END-->
+			<!-- LEFT SIDE - BEGIN -->
+			<control type="image">
+				<posx>66</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_circle.png</texture>
+			</control>
+			<control type="image">
+				<posx>82</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			<control type="image">
+				<posx>98</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			<control type="image">
+				<posx>114</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+			<control type="image">
+				<posx>130</posx>
+				<posy>66</posy>
+				<width>12</width>
+				<height>12</height>
+				<texture>graphic_steps_dot.png</texture>
+			</control>
+
+			<control type="label">
+				<description>Header</description>
+				<posx>63</posx>
+				<posy>97</posy>
+				<width>320</width>
+				<height>200</height>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$LOCALIZE[53443]</label>
+				<include>Header_Heidi</include>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+
+			<control type="label">
+				<posx>64</posx>
+				<posy>203</posy>
+				<width>336</width>
+				<align>left</align>
+				<aligny>top</aligny>
+				<label>$LOCALIZE[55625]</label>
+				<wrapmultiline>true</wrapmultiline>
+				<include>LargeText_Heidi</include>
+			</control>
+			<!-- LEFT SIDE - END -->
+		</control>
+	</controls>
+</window>
