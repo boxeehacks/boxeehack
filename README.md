@@ -11,7 +11,7 @@ This project is an attempt at returning some of the missing features and opening
 What does it do?
 ----------------
 
-  - Root access telnet support
+  - Root access telnet support (password is "secret")
   - FTP server
   - Improved buffering for Full HD videos
   - Music icon added to the main screen and menu
@@ -28,3 +28,4 @@ curl -L https://raw.github.com/boxeehacks/boxeehack/master/install/install.sh
 It will guide you through the steps needed to prepare a USB stick for hacking the box. However for now you will have to do that yourself. Afterwards simply copy the "hack" folder to your /data/ folder on the BoxeeBox and add "; sh /data/hack/boot" to the end of your workgroup name in the samba server section of the Boxee settings.
 
 See: http://forums.boxee.tv/showthread.php?t=63248 for additional help and information.
+
