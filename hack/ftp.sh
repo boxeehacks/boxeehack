@@ -1,3 +1,3 @@
 #!/bin/sh
-tcpsvd -vE 0.0.0.0 21 /data/hack/bin/busybox ftpd -w /data 2> /tmp/ftp.log &
+nohup /data/hack/bin/busybox tcpsvd -vE 0.0.0.0 21 /data/hack/bin/busybox ftpd -w /data > /dev/null &
 
