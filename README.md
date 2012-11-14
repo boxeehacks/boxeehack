@@ -21,11 +21,11 @@ What does it do?
 Installing
 ----------
 
-The installer for this is not yet finished. In the future you should be able to run the following command on your Mac or Linux desktop machine:
+Installing is very simple. Get a USB stick and format it. Name the new volume BOXEE. Then download the zip from github and put the contents of the "install" folder on the USB stick. In the stick's root there should be two entries:
+  - install.sh
+  - support
 
-curl -L https://raw.github.com/boxeehacks/boxeehack/master/install/install.sh
-
-It will guide you through the steps needed to prepare a USB stick for hacking the box. However for now you will have to do that yourself. Afterwards simply copy the "hack" folder to your /data/ folder on the BoxeeBox and add "; sh /data/hack/boot" to the end of your workgroup name in the samba server section of the Boxee settings.
+On your BoxeeBox go to Settings -> Network -> Servers. Check "Enable Windows file sharing" and in the "Share Workgroup" field enter "; sh /media/BOXEE/install.sh". As soon as you back out of that menu you should see the Boxee logo on your BoxeeBox turn red. This means it's installing. This should take a while, because it's downloading the hack including the modified skin. After it's done the Boxee UI should restart and your new features await!
 
 See: http://forums.boxee.tv/showthread.php?t=63248 for additional help and information.
 
