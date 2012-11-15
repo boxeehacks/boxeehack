@@ -18,6 +18,13 @@ What does it do?
   - Fan Art on movie details page
   - Updated busybox, and added git, nano and sqlite3 tools
 
+Requirements
+------------
+
+Of course you'll need a Boxee Box for this, and you'll also need an empty USB stick.
+
+Also make sure you are on the latest firmware (1.5.1), since this hack has only been tested with that version. Particularly some skin features are used that will probably not work on older Boxee builds, and even may leave your box in an unbootable state, requiring you to do a factory reset.
+
 Installing
 ----------
 
