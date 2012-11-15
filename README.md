@@ -34,6 +34,7 @@ Installing is very simple. Get a USB stick and format it. Name the new volume BO
 
 On your BoxeeBox go to Settings -> Network -> Servers. Check "Enable Windows file sharing" and in the "Share Workgroup" field enter "; sh /media/BOXEE/install.sh". As soon as you back out of that menu you should see the Boxee logo on your BoxeeBox turn red. This means it's installing. This should take a while, because it's downloading the hack including the modified skin. After it's done the Boxee UI should restart and your new features await!
 
+See: http://www.youtube.com/watch?v=6YrjAqPqM30 for a video walkthrough of the process on the Boxee Box
 See: http://forums.boxee.tv/showthread.php?t=63248 for additional help and information.
 
 Uninstall
