@@ -55,6 +55,7 @@
 					<height>720</height>
 					<texture>background/bg-browse-overlay.png</texture>
 				</control>
+
 				<control type="label">
 					<visible>!ControlGroup(6120).HasFocus + !Control.HasFocus(4000)</visible>
 					<posx>62</posx>
@@ -941,6 +942,7 @@
 				<!-- TV SHOW -->
 				<control type="group">
 					<visible>Container(5000).ListItem.property(IsTVShow) + IsEmpty(container(5000).ListItem.Property(app-localpath))</visible>
+
 					<control type="label">
 						<posx>108</posx>
 						<posy>19</posy>

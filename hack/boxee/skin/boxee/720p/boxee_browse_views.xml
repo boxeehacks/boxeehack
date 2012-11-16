@@ -1473,6 +1473,34 @@
 	</include>
 	<include name="BrowseEpisodesView">
 		<include>Common_Background_Browse_episodes</include>
+
+		<control type="group">
+		        <visible>stringcompare(skin.string(EpisodeViewMode),Overview)</visible>
+
+		        <control type="image">
+		                <posx>0</posx>
+		                <posy>0</posy>
+		                <width>1280</width>
+		                <height>720</height>
+		                <texture>background/background.jpg</texture>
+		        </control>
+		        <control type="image">
+		                <posx>0</posx>
+		                <posy>0</posy>
+		                <width>1280</width>
+		                <height>720</height>
+		                <aspectratio>scale</aspectratio>
+		                <texture background="true">$INFO[Container(52).ListItem(0).Path,,../fanart.jpg]</texture>
+		        </control>
+		        <control type="image">
+		                <posx>0</posx>
+		                <posy>0</posy>
+		                <width>1280</width>
+		                <height>720</height>
+		                <texture>background/bg-browse-overlay.png</texture>
+		        </control>
+		</control>
+
 		<control type="label">
 			<!--<animation effect="fade" start="80" end="100" time="200" tween="cubic" easing="inout" reversible="true">Visible></animation>-->
 			<visible>Control.HasFocus(6020) | ControlGroup(8050).HasFocus | Control.HasFocus(8006)</visible>

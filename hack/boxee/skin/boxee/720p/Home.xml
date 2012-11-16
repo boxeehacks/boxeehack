@@ -256,7 +256,7 @@
 					<item>
 						<controlid>122</controlid>
 						<thumb>icons/icon-home-music.png</thumb>
-						<label>54031</label>
+						<label>2</label>
 						<onclick>ActivateWindow(10484,boxeeui://music/)</onclick>
 					</item>
 					<item>

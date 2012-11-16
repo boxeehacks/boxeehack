@@ -291,7 +291,7 @@
 					</item>
 					<item>
 						<controlid>1888</controlid>
-						<label>54031</label>
+						<label>2</label>
 						<icon>icons/icon-home-music.png</icon>
 						<onclick>ActivateWindow(10484,boxeeui://music/)</onclick>
 					</item>
