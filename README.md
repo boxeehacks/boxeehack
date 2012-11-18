@@ -28,9 +28,8 @@ Also make sure you are on the latest firmware (1.5.1), since this hack has only 
 Installing
 ----------
 
-Installing is very simple. Get a USB stick and format it. Name the new volume BOXEE. Then download the zip from github and put the contents of the "install" folder on the USB stick. In the stick's root there should be two entries:
+Installing is very simple. Get a USB stick and format it. Name the new volume BOXEE. Then download the zip from github and put the contents of the "install" folder on the USB stick. In the stick's root there should be one entries:
   - install.sh
-  - support
 
 On your BoxeeBox go to Settings -> Network -> Servers. Check "Enable Windows file sharing" and in the "Share Workgroup" field enter "; sh /media/BOXEE/install.sh". As soon as you back out of that menu you should see the Boxee logo on your BoxeeBox turn red. This means it's installing. This should take a while, because it's downloading the hack including the modified skin. After it's done the Boxee UI should restart and your new features await!
 

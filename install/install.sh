@@ -1,29 +1,26 @@
 #!/bin/sh
 
-BASEDIR=$(dirname $0)
-cd $BASEDIR
-
 # turn the logo red to indicate we're installing
 dtool 6 1 0 100
 dtool 6 2 0 0
 
-# make an install dir on a partition we know is enough space
-rm -Rf /data/install
-mkdir /data/install
-cp -R support/* /data/install
-chmod -R +x /data/install/*
-
-# checkout the latest version from github
-rm -Rf /download/boxeehack
+# download the latest version from github
+rm -Rf /download/boxeehack-master
+rm /download/boxeehack.zip
 cd /download
-/data/install/git clone git://github.com/boxeehacks/boxeehack.git
+/bin/busybox wget http://nodeload.github.com/boxeehacks/boxeehack/zip/master -O boxeehack.zip
+/bin/busybox unzip boxeehack.zip
 cd /
 
 # copy the hack folder, make the hack run at boot, and clean up
-mv /download/boxeehack/hack /data/
-rm -Rf /download/boxeehack
-cp /data/install/boxeehal.conf /data/etc/
-rm -Rf /data/install
+rm -Rf /data/hack
+mv /download/boxeehack-master/hack /data/
+
+rm -Rf /download/boxeehack-master
+rm /download/boxeehack.zip
+
+cp /data/hack/advancedsettings.xml /data/.boxee/UserData/advancedsettings.xml
+cp /data/hack/boxeehal.conf /data/etc/boxeehal.conf
 
 # turn the logo back to green
 dtool 6 1 0 0
