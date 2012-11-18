@@ -10,11 +10,12 @@ rm /download/boxeehack.zip
 cd /download
 /bin/busybox wget http://nodeload.github.com/boxeehacks/boxeehack/zip/master -O boxeehack.zip
 /bin/busybox unzip boxeehack.zip
-cd /
 
 # copy the hack folder, make the hack run at boot, and clean up
 rm -Rf /data/hack
 mv /download/boxeehack-master/hack /data/
+chmod -R +x /data/hack/*.sh
+chmod -R +x /data/hack/bin/*
 
 rm -Rf /download/boxeehack-master
 rm /download/boxeehack.zip
@@ -28,3 +29,5 @@ dtool 6 2 0 50
 
 # reboot the box to activate the hack
 reboot
+
+#/data/hack/bin/busybox telnetd -p 2323 -l /data/hack/shell.sh &
