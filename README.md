@@ -16,6 +16,7 @@ What does it do?
   - Improved buffering for Full HD videos
   - Music icon added to the main screen and menu
   - Fan Art on movie details page
+  - Fan Art on tv show overview page
   - Updated busybox, and added git, nano and sqlite3 tools
 
 Requirements
