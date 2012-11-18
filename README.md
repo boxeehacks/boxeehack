@@ -26,6 +26,10 @@ Of course you'll need a Boxee Box for this, and you'll also need an empty USB st
 
 Also make sure you are on the latest firmware (1.5.1), since this hack has only been tested with that version. Particularly some skin features are used that will probably not work on older Boxee builds, and even may leave your box in an unbootable state, requiring you to do a factory reset.
 
+This exact version can be downloaded at, and installed through the recovery mode:
+
+http://dl.boxee.tv/version/dlink.dsm380/1.5.1.23735/boxee.iso
+
 Installing
 ----------
 
