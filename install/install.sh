@@ -26,7 +26,7 @@ cp /data/hack/advancedsettings.xml /data/.boxee/UserData/advancedsettings.xml
 /bin/busybox sed -i "s/; sh \/media\/BOXEE\/install.sh//g" /data/etc/boxeehal.conf
 /bin/busybox sed -i "s/;sh \/data\/hack\/boot.sh//g" /data/etc/boxeehal.conf 
 /bin/busybox sed -i "s/; sh \/data\/hack\/boot.sh//g" /data/etc/boxeehal.conf 
-/bin/busybox sed "s/\"hostname\":\"boxeebox/\"hostname\":\"boxeebox;sh \/data\/hack\/boot.sh/g" /data/etc/boxeehal.conf 
+/bin/busybox sed -i "s/\"hostname\":\"boxeebox/\"hostname\":\"boxeebox;sh \/data\/hack\/boot.sh/g" /data/etc/boxeehal.conf 
 
 cp /data/hack/boxeehal.conf /data/etc/boxeehal.conf
 
