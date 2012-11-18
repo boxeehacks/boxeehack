@@ -130,10 +130,10 @@
 			<!-- Main Menu main icon list -->
 			<control type="list" id="7000">
 				<animation type="Conditional" condition="DVB.IsTunerReady">
-					<effect type="slide" start="0" end="-79" time="200" delay="0"/>
+					<effect type="slide" start="0" end="-70" time="200" delay="0"/>
 				</animation>
-				<posx>79</posx>
-				<posy>94</posy>
+				<posx>70</posx>
+				<posy>99</posy>
 				<width>1280</width>
 				<height>250</height>
 				<onleft>-</onleft>
@@ -142,18 +142,18 @@
 				<ondown>8200</ondown>
 				<scrolltime>400</scrolltime>
 				<orientation>horizontal</orientation>
-				<itemlayout width="158">
+				<itemlayout width="140">
 					<control type="image">
 						<posx>42</posx>
 						<posy>10</posy>
-						<width>100</width>
-						<height>100</height>
+						<width>90</width>
+						<height>90</height>
 						<texture diffuse="colors/color-grey.png">$INFO[ListItem.Thumb]</texture>
 					</control>
 					<control type="label">
-						<posx>95</posx>
-						<posy>124</posy>
-						<width>154</width>
+						<posx>89</posx>
+						<posy>114</posy>
+						<width>136</width>
 						<height>65</height>
 						<font>font24bls</font>
 						<align>center</align>
@@ -162,20 +162,20 @@
 						<textcolor>mediumgreyheidi</textcolor>
 					</control>
 				</itemlayout>
-				<focusedlayout width="158">
+				<focusedlayout width="140">
 					<control type="group">
 						<visible>!Control.HasFocus(7000)</visible>
 						<control type="image">
 							<posx>42</posx>
 							<posy>10</posy>
-							<width>100</width>
-							<height>100</height>
+							<width>90</width>
+							<height>90</height>
 							<texture diffuse="colors/color-grey.png">$INFO[ListItem.Thumb]</texture>
 						</control>
 						<control type="label">
-							<posx>95</posx>
-							<posy>124</posy>
-							<width>154</width>
+							<posx>89</posx>
+							<posy>114</posy>
+							<width>136</width>
 							<height>65</height>
 							<font>font24bls</font>
 							<align>center</align>
@@ -189,21 +189,21 @@
 						<control type="image">
 							<posx>30</posx>
 							<posy>0</posy>
-							<width>124</width>
-							<height>124</height>
+							<width>114</width>
+							<height>114</height>
 							<texture blend="false" srcborder="24" border="16">button-focused.png</texture>
 						</control>
 						<control type="image">
 							<posx>42</posx>
 							<posy>10</posy>
-							<width>100</width>
-							<height>100</height>
+							<width>90</width>
+							<height>90</height>
 							<texture diffuse="colors/color-white.png">$INFO[ListItem.Thumb]</texture>
 						</control>
 						<control type="label">
-							<posx>95</posx>
-							<posy>124</posy>
-							<width>154</width>
+							<posx>89</posx>
+							<posy>114</posy>
+							<width>136</width>
 							<height>65</height>
 							<font>font24bls</font>
 							<align>center</align>
@@ -271,12 +271,12 @@
 						<label>53915</label>
 						<onclick>-</onclick>
 					</item>
-					<!-- <item>
+					<item>
 						<controlid>120</controlid>
 						<thumb>icons/icon-home-web.png</thumb>
 						<label>53916</label>
 						<onclick>-</onclick>
-					</item>	-->
+					</item>
 					<!--
 					<item>
 						<visible>System.HasMediadvd</visible>

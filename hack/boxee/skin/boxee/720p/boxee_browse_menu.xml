@@ -168,10 +168,10 @@
 			
 			<control type="list" id="1823">
 				<animation type="Conditional" condition="!DVB.IsTunerReady">
-					<effect type="slide" start="0" end="66" time="200" delay="0"/>
+					<effect type="slide" start="0" end="59" time="200" delay="0"/>
 				</animation>
 				<posx>130</posx>
-				<posy>228</posy>
+				<posy>232</posy>
 				<width>1100</width>
 				<height>200</height>
 				<onup>11011</onup>
@@ -180,19 +180,19 @@
 				<ondown>1824</ondown>
 				<orientation>horizontal</orientation>
 				<scrolltime tween="sine" easing="out">200</scrolltime>
-				<itemlayout width="132" height="100">
+				<itemlayout width="118" height="95">
 					<control type="image">
 						<posx>8</posx>
 						<posy>8</posy>
-						<width>80</width>
-						<height>80</height>
+						<width>75</width>
+						<height>75</height>
 						<texture>$INFO[ListItem.ActualIcon]</texture>
 						<colordiffuse>mediumgreyheidi</colordiffuse>
 					</control>
 					<control type="label">
-						<posx>50</posx>
-						<posy>95</posy>
-						<width>132</width>
+						<posx>47</posx>
+						<posy>90</posy>
+						<width>118</width>
 						<height>60</height>
 						<font>font20bls</font>
 						<textcolor>mediumgreyheidi</textcolor>
@@ -202,28 +202,28 @@
 						<label>[UPPERCASE][B]$INFO[ListItem.Label][/B][/UPPERCASE]</label>
 					</control>
 				</itemlayout>
-				<focusedlayout width="132" height="100">
+				<focusedlayout width="118" height="95">
 					<control type="group">
 						<visible>Control.HasFocus(1823)</visible>
 						<control type="image">
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>96</width>
-							<height>96</height>
+							<width>91</width>
+							<height>91</height>
 							<texture srcborder="24" border="16">button-focused.png</texture>
 						</control>
 						<control type="image">
 							<posx>8</posx>
 							<posy>8</posy>
-							<width>80</width>
-							<height>80</height>
+							<width>75</width>
+							<height>75</height>
 							<texture>$INFO[ListItem.ActualIcon]</texture>
 							<colordiffuse>whiteheidi</colordiffuse>
 						</control>
 						<control type="label">
-							<posx>50</posx>
-							<posy>95</posy>
-							<width>132</width>
+							<posx>47</posx>
+							<posy>90</posy>
+							<width>118</width>
 							<height>60</height>
 							<font>font20bls</font>
 							<textcolor>whiteheidi</textcolor>
@@ -238,15 +238,15 @@
 						<control type="image">
 							<posx>8</posx>
 							<posy>8</posy>
-							<width>80</width>
-							<height>80</height>
+							<width>75</width>
+							<height>75</height>
 							<texture>$INFO[ListItem.ActualIcon]</texture>
 							<colordiffuse>mediumgreyheidi</colordiffuse>
 						</control>
 						<control type="label">
-							<posx>50</posx>
-							<posy>95</posy>
-							<width>132</width>
+							<posx>47</posx>
+							<posy>90</posy>
+							<width>118</width>
 							<height>60</height>
 							<font>font20bls</font>
 							<textcolor>mediumgreyheidi</textcolor>
@@ -307,12 +307,12 @@
 						<icon>icons/icon-home-files.png</icon>
 						<onclick>-</onclick>
 					</item>
-					<!-- <item>
+					<item>
 						<controlid>1838</controlid>
 						<label>53916</label>
 						<icon>icons/icon-home-web.png</icon>
 						<onclick>-</onclick>
-					</item> -->
+					</item>
 				</content>
 			</control>
 			
