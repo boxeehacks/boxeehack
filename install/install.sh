@@ -12,6 +12,7 @@ cd /download
 /bin/busybox unzip boxeehack.zip
 
 # copy the hack folder, make the hack run at boot, and clean up
+umount /opt/boxee/skin
 rm -Rf /data/hack
 mv /download/boxeehack-master/hack /data/
 chmod -R +x /data/hack/*.sh
