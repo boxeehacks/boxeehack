@@ -6,7 +6,8 @@ dtool 6 2 0 0
 
 # remove all traces of the install
 rm /data/.boxee/UserData/advancedsettings.xml
-rm /data/etc/boxeehal.conf
+/bin/busybox sed -i "s/;sh \/data\/hack\/boot.sh//g" /data/etc/boxeehal.conf 
+/bin/busybox sed -i "s/; sh \/data\/hack\/boot.sh//g" /data/etc/boxeehal.conf 
 rm -Rf /data/hack
 
 # reboot the box to active finalize the uninstall
