@@ -1,5 +1,22 @@
 <advancedsettings>
-<thumbsize>960</thumbsize>
-<thumbres>504</thumbres>
-<cachemembuffersize>10485760</cachemembuffersize>
+  <thumbsize>960</thumbsize>
+  <thumbres>504</thumbres>
+  <cachemembuffersize>10485760</cachemembuffersize>
+  <sorttokens>
+    <token>The</token>
+    <token>A</token>
+    <token>An</token>
+    <token>De</token>
+    <token>Het</token>
+    <token>Le</token>
+    <token>La</token>
+    <token>Les</token>
+    <token>Un</token>
+    <token>Une</token>
+    <token>Des</token>
+    <token>L'</token>
+    <token>Der</token>
+    <token>Die</token>
+    <token>Das</token>
+  </sorttokens>
 </advancedsettings>
