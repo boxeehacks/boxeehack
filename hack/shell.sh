@@ -15,3 +15,5 @@ if [ "$PASSWORD" == "$VALID_PASSWORD" ]; then
 else
         echo "Incorrect password"       
 fi
+
+cd /data/hack
