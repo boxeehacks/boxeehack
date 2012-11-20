@@ -1403,6 +1403,24 @@
 			<aspectratio>scale</aspectratio>
 			<fadetime>200</fadetime>
 		</control>-->
+		<control type="image">
+			<visible>substring(ListItem.Genre#3D)</visible>
+			<posx>5</posx>
+			<posy>5</posy>
+			<width>75</width>
+			<height>75</height>
+			<texture>overlays/3d_off.png</texture>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)</visible>
+			<posx>78</posx>
+			<posy>146</posy>
+			<width>75</width>
+			<height>75</height>
+			<texture>overlays/music_off.png</texture>
+			<fadetime>200</fadetime>
+		</control>
 	</include>
 	<include name="BrowsePortraitThumbUnfocusBrowser">
 		<control type="image">
@@ -1555,6 +1573,24 @@
 			<aspectratio>scale</aspectratio>
 			<fadetime>200</fadetime>
 		</control>-->
+		<control type="image">
+			<visible>substring(ListItem.Genre#3D)</visible>
+			<posx>5</posx>
+			<posy>5</posy>
+			<width>75</width>
+			<height>75</height>
+			<texture>overlays/3d_on.png</texture>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)</visible>
+			<posx>78</posx>
+			<posy>146</posy>
+			<width>75</width>
+			<height>75</height>
+			<texture>overlays/music_on.png</texture>
+			<fadetime>200</fadetime>
+		</control>
 	</include>
 	<include name="BrowsePortraitThumbFocusBrowser">
 		<control type="image">
