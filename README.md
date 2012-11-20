@@ -18,6 +18,7 @@ What does it do?
   - Fan Art on tv show overview page
   - 3D Movie overlay icon
   - Music / Concert overlay icon
+  - Extra view mode for movies (small posters)
   - Updated busybox, and added git, nano and sqlite3 tools
   - Improved buffering for Full HD videos
   - Tweaked MTU if you're using a VPN/PPP connection
