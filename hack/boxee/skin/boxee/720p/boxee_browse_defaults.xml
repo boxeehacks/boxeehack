@@ -1555,7 +1555,7 @@
 		</control>
 		<control type="image">
 			<visible>[substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)] + StringCompare(Skin.String(show-thumbnails),2)</visible>
-			<posx>50</posx>
+			<posx>51</posx>
 			<posy>95</posy>
 			<width>50</width>
 			<height>50</height>
@@ -1821,7 +1821,7 @@
 		</control>
 		<control type="image">
 			<visible>[substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)] + StringCompare(Skin.String(show-thumbnails),2)</visible>
-			<posx>50</posx>
+			<posx>51</posx>
 			<posy>95</posy>
 			<width>50</width>
 			<height>50</height>
