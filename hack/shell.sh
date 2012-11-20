@@ -11,9 +11,9 @@ if [ "$PASSWORD" == "$VALID_PASSWORD" ]; then
         echo "---------------------"
         echo " Welcome to BoxeeBox "
         echo "---------------------"
+
+	cd /data/hack
         sh
 else
         echo "Incorrect password"       
 fi
-
-cd /data/hack

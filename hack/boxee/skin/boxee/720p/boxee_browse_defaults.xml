@@ -1088,7 +1088,7 @@
 			<visible>true + !Window.Property(Empty)</visible>
 			<!-- set view mode to thumbnails -->
 			<control type="button" id="8001">
-				<visible>StringCompare(Skin.String(show-thumbnails),0) | StringCompare(Skin.String(show-thumbnails),)</visible>
+				<visible>StringCompare(Skin.String(show-thumbnails),0)</visible>
 				<texturefocus>actionbuttons/button-action-grid-on.png</texturefocus>
 				<texturenofocus>actionbuttons/button-action-grid-off.png</texturenofocus>
 				<textureclick>actionbuttons/button-action-grid-off.png</textureclick>
@@ -1104,7 +1104,7 @@
 			</control>
 			<!-- set view mode to small thumbnails -->
 			<control type="button" id="8002">
-				<visible>StringCompare(Skin.String(show-thumbnails),1)</visible>
+				<visible>StringCompare(Skin.String(show-thumbnails),1) | StringCompare(Skin.String(show-thumbnails),)</visible>
 				<texturefocus>actionbuttons/button-action-grid-small-on.png</texturefocus>
 				<texturenofocus>actionbuttons/button-action-grid-small-off.png</texturenofocus>
 				<textureclick>actionbuttons/button-action-grid-small-off.png</textureclick>
@@ -1459,7 +1459,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>(substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)) + StringCompare(Skin.String(show-thumbnails),1)</visible>
+			<visible>[substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)] + StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>78</posx>
 			<posy>146</posy>
 			<width>75</width>
@@ -1554,7 +1554,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>(substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<visible>[substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)] + StringCompare(Skin.String(show-thumbnails),2)</visible>
 			<posx>50</posx>
 			<posy>95</posy>
 			<width>50</width>
@@ -1725,7 +1725,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>(substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)) + StringCompare(Skin.String(show-thumbnails),1)</visible>
+			<visible>[substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)] + StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>78</posx>
 			<posy>146</posy>
 			<width>75</width>
@@ -1820,7 +1820,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>(substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<visible>[substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)] + StringCompare(Skin.String(show-thumbnails),2)</visible>
 			<posx>50</posx>
 			<posy>95</posy>
 			<width>50</width>
