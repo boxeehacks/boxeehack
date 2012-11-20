@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<window>
+  <defaultcontrol always="true">120</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <controls>    
+    <control type="group">
+      <posx>20</posx>
+      <posy>20</posy>
+      <control type="image">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>1240</width>
+        <height>680</height>
+        <texture srcborder="51" border="34">background/window-bg-transparent.png</texture>
+      </control>
+      <control type="group">
+        <control type="label" id="180">
+          <posx>18</posx>
+          <posy>30</posy>
+          <width>1200</width>
+          <height>20</height>
+          <align>center</align>
+          <aligny>top</aligny>
+          <font>font24b</font>
+          <textcolor>whiteheidi</textcolor>
+          <label>[B][UPPERCASE]$LOCALIZE[293][/B][/UPPERCASE]</label>
+	  <scroll>true</scroll>
+          <scrollspeed>50</scrollspeed>
+          <scrollsuffix> - </scrollsuffix>
+        </control>
+        <control type="group" id="110">
+          <control type="multiimage">
+            <animation effect="fade" time="100">VisibleChange</animation>
+            <description>loading control</description>
+            <posx>550</posx>
+            <posy>310</posy>
+            <width>100</width>
+            <height>100</height>
+            <imagepath>loading</imagepath>
+            <timeperimage>12</timeperimage>
+            <fadetime>4</fadetime>
+            <pauseatend>0</pauseatend>
+            <randomize>false</randomize>
+            <loop>yes</loop>
+            <aspectratio>keep</aspectratio>
+          </control>
+        </control>
+        <control type="label" id="100">
+          <animation effect="fade" time="100">VisibleChange</animation>
+          <description>status</description>
+          <posx>420</posx>
+          <posy>280</posy>
+          <width>360</width>
+          <height>22</height>
+          <font>font22</font>
+          <aligny>center</aligny>
+          <align>center</align>
+          <label>-</label>
+          <textcolor>whiteheidi</textcolor>
+        </control>
+        <control type="label">
+          <visible>!Control.IsVisible(100) + Container(120).IsEmpty</visible>
+          <animation effect="fade" time="100">VisibleChange</animation>
+          <posx>420</posx>
+          <posy>280</posy>
+          <width>360</width>
+          <height>22</height>
+          <font>font22</font>
+          <aligny>center</aligny>
+          <align>center</align>
+          <label>No Subtitles Found</label>
+          <textcolor>whiteheidi</textcolor>
+        </control>
+        <control type="group">
+          <animation type="Conditional" condition="Window.IsVisible(DialogProgress.xml)" reversible="true">
+            <effect type="fade" start="100" end="0" time="200"/>
+          </animation>
+          <control type="fixedlist" id="120">
+            <posx>42</posx>
+            <posy>70</posy>
+            <width>1200</width>
+            <height>580</height>
+            <onleft>-</onleft>
+            <onright>-</onright>
+            <onup>-</onup>
+            <ondown>-</ondown>
+            <pagecontrol>61</pagecontrol>
+            <scrolltime>200</scrolltime>
+            <focusposition>2</focusposition>
+            <itemlayout height="56">
+                <control type="image">
+                    <posx>12</posx>
+                    <posy>16</posy>
+                    <width>44</width>
+                    <height>25</height>
+                    <info>Listitem.Thumb</info>
+                  </control>
+              <control type="label">
+                <posx>75</posx>
+                <posy>-1</posy>
+                <width>200</width>
+                <height>56</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>lightgreyheidi</textcolor>
+                <selectedcolor>lightgreyheidi</selectedcolor>
+                <label>$INFO[ListItem.Label]</label>
+              </control>
+	      <control type="label">
+                <posx>285</posx>
+                <posy>-1</posy>
+                <width>200</width>
+                <height>56</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>lightgreyheidi</textcolor>
+                <selectedcolor>lightgreyheidi</selectedcolor>
+                <label>$INFO[ListItem.property(source)]</label>
+              </control>
+	      <control type="label">
+                <posx>500</posx>
+                <posy>-1</posy>
+                <width>600</width>
+                <height>56</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>lightgreyheidi</textcolor>
+                <selectedcolor>lightgreyheidi</selectedcolor>
+                <label>$INFO[ListItem.property(release)]</label>
+              </control>
+            </itemlayout>
+            <focusedlayout height="56">
+              <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1160</width>
+                <height>56</height>
+                <texture srcborder="24" border="16">button-focused.png</texture>
+              </control>
+                <control type="image">
+                    <posx>12</posx>
+                    <posy>16</posy>
+                    <width>44</width>
+                    <height>25</height>
+                    <info>Listitem.Thumb</info>
+                  </control>
+<control type="label">
+                <posx>75</posx>
+                <posy>-1</posy>
+                <width>200</width>
+                <height>56</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>lightgreyheidi</textcolor>
+                <selectedcolor>lightgreyheidi</selectedcolor>
+                <label>$INFO[ListItem.Label]</label>
+              </control>
+	      <control type="label">
+                <posx>285</posx>
+                <posy>-1</posy>
+                <width>200</width>
+                <height>56</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>lightgreyheidi</textcolor>
+                <selectedcolor>lightgreyheidi</selectedcolor>
+                <label>$INFO[ListItem.property(source)]</label>
+              </control>
+	      <control type="label">
+                <posx>500</posx>
+                <posy>-1</posy>
+                <width>580</width>
+                <height>56</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>lightgreyheidi</textcolor>
+                <selectedcolor>lightgreyheidi</selectedcolor>
+                <label>$INFO[ListItem.property(release)]</label>
+		<scroll>true</scroll>
+		<scrollspeed>50</scrollspeed>
+        	<scrollsuffix> - </scrollsuffix>
+              </control>
+            </focusedlayout>
+          </control>
+        </control>
+      </control>
+    </control>
+  </controls>
+</window>

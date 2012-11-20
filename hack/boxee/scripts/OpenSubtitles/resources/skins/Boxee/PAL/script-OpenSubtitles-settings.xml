@@ -1,0 +1,349 @@
+﻿<window>
+  <defaultcontrol always="true">201</defaultcontrol>
+  <animation effect="fade" time="200">WindowOpen</animation>
+  <animation effect="fade" time="200" delay="450">WindowClose</animation>
+  <coordinates>
+    <system>1</system>
+    <posx>13</posx>
+    <posy>383</posy>
+  </coordinates>
+  <controls>
+    <control type="group">
+      <control type="group">
+        <animation effect="fade" time="100" delay="100">WindowClose</animation>
+        <control type="group">
+          <!--animation effect="slide" start="0, 54" end="0, 0" time="300" delay="310" tween="circle" easing="out">WindowOpen</animation>
+          <animation effect="slide" end="0, 337" time="300" delay="10" tween="circle" easing="in">WindowClose</animation>
+          <control type="image">
+            <description>background top image</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1254</width>
+            <height>54</height>
+            <texture>media_info_action_text_bg_field.png</texture>
+            <visible>true</visible>
+          </control-->
+          <control type="group" id="2000">
+            <posx>13</posx>
+            <posy>7</posy>
+            <width>1254</width>
+            <height>54</height>
+            <defaultcontrol>111</defaultcontrol>
+            <control type="button" id="250">
+              <description>ok button</description>
+              <posx>0</posx>
+              <posy>0</posy>
+              <width>120</width>
+              <height>39</height>
+              <texturenofocus>-</texturenofocus>
+              <texturefocus border="15">sort_by_button_state_on.png</texturefocus>
+              <label>Apply</label>
+              <font>font18</font>
+              <textcolor>white</textcolor>
+              <disabledcolor>grey</disabledcolor>
+              <align>center</align>
+              <onright>251</onright>
+              <onleft>252</onleft>
+              <ondown>9000</ondown>
+            </control>
+            <control type="button" id="251">
+              <description>cancel button</description>
+              <visible>false</visible>
+              <posx>122</posx>
+              <posy>0</posy>
+              <width>120</width>
+              <height>39</height>
+              <texturenofocus>-</texturenofocus>
+              <texturefocus border="15">sort_by_button_state_on.png</texturefocus>
+              <label>Cancel</label>
+              <font>font18</font>
+              <textcolor>white</textcolor>
+              <disabledcolor>grey</disabledcolor>
+              <align>center</align>
+              <onright>252</onright>
+              <onleft>250</onleft>
+              <ondown>9000</ondown>
+            </control>
+            <control type="button" id="252">
+              <description>update button</description>
+              <posx>122</posx>
+              <posy>0</posy>
+              <width>120</width>
+              <height>39</height>
+              <texturenofocus>-</texturenofocus>
+              <texturefocus border="15">sort_by_button_state_on.png</texturefocus>
+              <label>update</label>
+              <font>font18</font>
+              <textcolor>white</textcolor>
+              <disabledcolor>grey</disabledcolor>
+              <align>center</align>
+              <onright>250</onright>
+              <onleft>251</onleft>
+              <ondown>9000</ondown>
+              <enable>false</enable>
+            </control>
+          </control>
+        </control>
+      </control>
+      <control type="group" id="9100">
+        <!--animation effect="slide" start="0, 283" end="0, 0" time="300" delay="10">WindowOpen</animation>
+        <animation effect="slide" start="0, 0" end="0, 283" time="300" delay="310">WindowClose</animation>
+        <control type="image">
+          <description>background bottom image</description>
+          <posx>0</posx>
+          <posy>54</posy>
+          <width>1254</width>
+          <height>283</height>
+          <texture>media_info_pane.png</texture>
+        </control-->
+        <control type="group">
+          <control type="label" id="20">
+            <description>Title Label</description>
+            <posx>30</posx>
+            <posy>70</posy>
+            <width>300</width>
+            <height>20</height>
+            <align>left</align>
+            <aligny>center</aligny>
+            <font>font18b</font>
+            <textcolor>white</textcolor>
+            <label>-</label>
+          </control>
+          <control type="label" id="30">
+            <description>Version Label</description>
+            <posx>400</posx>
+            <posy>70</posy>
+            <height>20</height>
+            <width>160</width>
+            <align>right</align>
+            <aligny>center</aligny>
+            <font>font18</font>
+            <textcolor>white</textcolor>
+            <label>-</label>
+          </control>
+          <control type="grouplist" id="9000">
+            <posx>30</posx>
+            <posy>100</posy>
+            <width>1194</width>
+            <height>220</height>
+            <itemgap>0</itemgap>
+            <pagecontrol>-</pagecontrol>
+            <control type="group">
+              <height>44</height>
+              <control type="button" id="201">
+                <description>Setting1 Button</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1194</width>
+                <height>44</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>-</label>
+                <font>font18</font>
+                <textcolor>white</textcolor>
+                <focusedcolor>black</focusedcolor>
+                <texturefocus>context_info_settings_button_focus.png</texturefocus>
+                <texturenofocus>context_info_settings_button.png</texturenofocus>
+                <disabledcolor>grey</disabledcolor>
+                <onleft>-</onleft>
+                <onright>-</onright>
+                <onup>2000</onup>
+                <ondown>202</ondown>
+              </control>
+              <control type="button" id="221">
+                <description>Setting1 Value</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1194</width>
+                <height>44</height>
+                <align>right</align>
+                <aligny>center</aligny>
+                <label>-</label>
+                <font>font18</font>
+                <textcolor>black</textcolor>
+                <focusedcolor>black</focusedcolor>
+                <textoffsetx>10</textoffsetx>
+                <texturefocus>-</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <disabledcolor>white</disabledcolor>
+                <enable>Control.HasFocus(201)</enable>
+              </control>
+            </control>
+            <control type="group">
+              <height>44</height>
+              <control type="button" id="202">
+                <description>Setting2 Button</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1194</width>
+                <height>44</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>-</label>
+                <font>font18</font>
+                <textcolor>white</textcolor>
+                <textcolor2>white</textcolor2>
+                <focusedcolor>black</focusedcolor>
+                <focusedcolor2>black</focusedcolor2>
+                <texturefocus>context_info_settings_button_focus.png</texturefocus>
+                <texturenofocus>context_info_settings_button.png</texturenofocus>
+                <disabledcolor>grey</disabledcolor>
+                <onleft>-</onleft>
+                <onright>-</onright>
+                <onup>201</onup>
+                <ondown>203</ondown>
+              </control>
+              <control type="button" id="222">
+                <description>Setting2 Value</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1194</width>
+                <height>44</height>
+                <align>right</align>
+                <aligny>center</aligny>
+                <label>-</label>
+                <font>font18</font>
+                <textcolor>black</textcolor>
+                <focusedcolor>black</focusedcolor>
+                <textoffsetx>10</textoffsetx>
+                <texturefocus>-</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <disabledcolor>white</disabledcolor>
+                <enable>Control.HasFocus(202)</enable>
+              </control>
+            </control>
+            <control type="group">
+              <height>44</height>
+              <control type="button" id="203">
+                <description>Setting3 Button</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1194</width>
+                <height>44</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>-</label>
+                <font>font18</font>
+                <textcolor>white</textcolor>
+                <textcolor2>white</textcolor2>
+                <focusedcolor>black</focusedcolor>
+                <focusedcolor2>black</focusedcolor2>
+                <texturefocus>context_info_settings_button_focus.png</texturefocus>
+                <texturenofocus>context_info_settings_button.png</texturenofocus>
+                <disabledcolor>grey</disabledcolor>
+                <onleft>-</onleft>
+                <onright>-</onright>
+                <onup>202</onup>
+                <ondown>204</ondown>
+              </control>
+              <control type="button" id="223">
+                <description>Setting3 Value</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1194</width>
+                <height>44</height>
+                <align>right</align>
+                <aligny>center</aligny>
+                <label>-</label>
+                <font>font18</font>
+                <textcolor>black</textcolor>
+                <focusedcolor>black</focusedcolor>
+                <textoffsetx>10</textoffsetx>
+                <texturefocus>-</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <disabledcolor>white</disabledcolor>
+                <enable>Control.HasFocus(203)</enable>
+              </control>
+            </control>
+            <control type="group">
+              <height>44</height>
+              <control type="button" id="204">
+                <description>Setting4 Button</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1194</width>
+                <height>44</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>-</label>
+                <font>font18</font>
+                <textcolor>white</textcolor>
+                <textcolor2>white</textcolor2>
+                <focusedcolor>black</focusedcolor>
+                <focusedcolor2>black</focusedcolor2>
+                <texturefocus>context_info_settings_button_focus.png</texturefocus>
+                <texturenofocus>context_info_settings_button.png</texturenofocus>
+                <disabledcolor>grey</disabledcolor>
+                <onleft>-</onleft>
+                <onright>-</onright>
+                <onup>203</onup>
+                <ondown>205</ondown>
+              </control>
+              <control type="checkmark" id="224">
+                <description>Setting4 Value</description>
+                <posx>1150</posx>
+                <posy>10</posy>
+                <width>24</width>
+                <height>24</height>
+                <align>left</align>
+                <label>-</label>
+                <font>font18</font>
+                <textcolor>white</textcolor>
+                <focusedcolor>black</focusedcolor>
+                <texturecheckmark>settings_radio_button_selected.png</texturecheckmark>
+                <texturecheckmarknofocus>settings_radio_button.png</texturecheckmarknofocus>
+                <markwidth>22</markwidth>
+                <markheight>22</markheight>
+                <disabledcolor>grey</disabledcolor>
+              </control>
+            </control>
+            <control type="group">
+              <height>44</height>
+              <control type="button" id="205">
+                <description>Setting5 Button</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1194</width>
+                <height>44</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <label>-</label>
+                <font>font18</font>
+                <textcolor>white</textcolor>
+                <textcolor2>white</textcolor2>
+                <focusedcolor>black</focusedcolor>
+                <focusedcolor2>black</focusedcolor2>
+                <texturefocus>context_info_settings_button_focus.png</texturefocus>
+                <texturenofocus>context_info_settings_button.png</texturenofocus>
+                <disabledcolor>grey</disabledcolor>
+                <onleft>-</onleft>
+                <onright>-</onright>
+                <onup>204</onup>
+                <ondown>-</ondown>
+              </control>
+              <control type="button" id="225">
+                <description>Setting5 Value</description>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1194</width>
+                <height>44</height>
+                <align>right</align>
+                <aligny>center</aligny>
+                <label>-</label>
+                <font>font18</font>
+                <textcolor>black</textcolor>
+                <focusedcolor>black</focusedcolor>
+                <textoffsetx>10</textoffsetx>
+                <texturefocus>-</texturefocus>
+                <texturenofocus>-</texturenofocus>
+                <disabledcolor>white</disabledcolor>
+                <enable>Control.HasFocus(205)</enable>
+                <haspath>true</haspath>
+              </control>
+            </control>
+          </control>
+        </control>
+      </control>
+    </control>
+  </controls>
+</window>
