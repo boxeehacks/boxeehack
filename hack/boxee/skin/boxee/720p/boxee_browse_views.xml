@@ -5,7 +5,7 @@
 		<control type="group" id="501">
 			<control type="panel" id="50">
 				<enable>true + !Window.Property(empty)</enable>
-				<visible>true + !Window.Property(loading)</visible>
+				<visible>true + !Window.Property(loading) + StringCompare(Skin.String(show-thumbnails),1)</visible>
 				<preloaditems>2</preloaditems>
 				<posx>291</posx>
 				<posy>127</posy>
@@ -31,6 +31,39 @@
 					</control>
 					<control type="group">
 						<visible>Control.HasFocus(50)</visible>
+						<include>BrowsePortraitThumbFocus</include>
+						<include>BrowsePortraitLabelFocus</include>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="panel" id="52">
+				<enable>true + !Window.Property(empty)</enable>
+				<visible>true + !Window.Property(loading) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+				<preloaditems>2</preloaditems>
+				<posx>291</posx>
+				<posy>124</posy>
+				<width>990</width>
+				<height>600</height>
+				<onleft>500</onleft>
+				<onright>7000</onright>
+				<onup>8050</onup>
+				<ondown>-</ondown>
+				<scrolltimemin>200</scrolltimemin>
+				<scrolltime>350</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<itemlayout height="196" width="107">
+					<include>BrowsePortraitThumbUnfocus</include>
+					<include>BrowsePortraitLabelUnfocus</include>
+				</itemlayout>
+				<focusedlayout height="196" width="107">
+					<control type="group">
+						<visible>!Control.HasFocus(52)</visible>
+						<include>BrowsePortraitThumbUnfocus</include>
+						<include>BrowsePortraitLabelUnfocus</include>
+					</control>
+					<control type="group">
+						<visible>Control.HasFocus(52)</visible>
 						<include>BrowsePortraitThumbFocus</include>
 						<include>BrowsePortraitLabelFocus</include>
 					</control>
@@ -1335,6 +1368,25 @@
 				<aspectratio scalediffuse="false">scale</aspectratio>
 				<fadetime>200</fadetime>
 			</control>
+			<control type="image">
+				<visible>substring(Container(51).ListItem.Genre#3D)</visible>
+				<posx>828.1</posx>
+				<posy>131</posy>
+				<width>75</width>
+				<height>75</height>
+				<texture>overlays/3d_off.png</texture>
+				<fadetime>200</fadetime>
+			</control>
+			<control type="image">
+				<visible>substring(Container(51).ListItem.Genre#Music) | substring(Container(51).ListItem.Genre#Concert)</visible>
+				<posx>946</posx>
+				<posy>340</posy>
+				<width>75</width>
+				<height>75</height>
+				<texture>overlays/music_off.png</texture>
+				<fadetime>200</fadetime>
+			</control>
+			
 			<control type="image">
 				<visible>true + !Window.Property(loading)</visible>
 				<visible>Control.IsVisible(51)</visible>
@@ -4270,8 +4322,8 @@
 		<control type="group" id="8051">
 			<include>MoviesActionMenu</include>
 			<control type="group" id="7001">
-				<visible>Control.IsVisible(50)</visible>
-				<visible>true + integergreaterthan(Container(50).NumItems,5)</visible>
+				<visible>Control.IsVisible(50) | Control.IsVisible(52)</visible>
+				<visible>true + [integergreaterthan(Container(50).NumItems,5) | integergreaterthan(Container(52).NumItems,5)]</visible>
 				<visible>true + stringcompare(Window.Property(sort-label),a-z) | stringcompare(Window.Property(sort-label),z-a)</visible>
 				<visible>window.property(is-category-local) | window.property(is-category-favorites)</visible>
 				<visible>true + !Window.Property(loading)</visible>
@@ -4363,7 +4415,7 @@
 	</include>
 	<include name="BrowseByLetterList">
 		<control type="group" id="7101">
-			<visible>!Control.IsVisible(50)</visible>
+			<visible>!Control.IsVisible(50) + !Control.IsVisible(52)</visible>
 			<visible>true + integergreaterthan(Container(51).NumItems,5)</visible>
 			<visible>true + stringcompare(Window.Property(sort-label),a-z) | stringcompare(Window.Property(sort-label),z-a)</visible>
 			<visible>window.property(is-category-local) | window.property(is-category-favorites)</visible>
@@ -4546,7 +4598,7 @@
 		<control type="group">
 			<posx>708</posx>
 			<posy>322</posy>
-			<visible>Container(50).Scrolling + !Window.Property(loading) + !Window.IsActive(DialogProgress.xml)</visible>
+			<visible>[[Container(50).Scrolling + StringCompare(Skin.String(show-thumbnails),1)] | [Container(52).Scrolling + StringCompare(Skin.String(show-thumbnails),2)]] + !Window.Property(loading) + !Window.IsActive(DialogProgress.xml)</visible>
 			<visible>true + stringcompare(Window.Property(sort-label),a-z) | stringcompare(Window.Property(sort-label),z-a)</visible>
 			<animation effect="fade" start="0" end="100" time="200" delay="250" reversible="false">Visible</animation>
 			<control type="image">

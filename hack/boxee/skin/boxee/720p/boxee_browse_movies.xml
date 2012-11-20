@@ -10,6 +10,7 @@
 			<animation effect="slide" start="0,0" end="-60,0" time="200" condition="Control.HasFocus(7000) | Control.HasFocus(7100)">Conditional</animation>
 			<control type="group" id="9050">
 				<include>BrowseThumbViewMovie</include>
+				<include>BrowseThumbViewSmallMovie</include>
 				<include>BrowseLineViewMovie</include>
 			</control>
       		<include>LogoTitleAndItemCountMovies</include>

@@ -22,7 +22,7 @@
       		<include>LogoTitleAndItemCountTVShows</include>
 			<include>BrowseByLetterThumbs</include>
 			<include>BrowseByLetterList</include>
-			<!--<include>TVShowsActionMenu</include>-->			
+			<!-- <include>TVShowsActionMenu</include> -->
 			<include>BrowseShowsEmptyList</include>
 			<include>BrowseLoadingAnimation</include>
 		</control>

@@ -372,6 +372,7 @@
 	</include>
 	<include name="BrowseThumbsFade">
 		<control type="image">
+			<visible>StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>264</posx>
 			<posy>104</posy>
 			<width>1016</width>
@@ -379,10 +380,27 @@
 			<texture>browse/graphic-browse-mask-top.png</texture>
 		</control>
 		<control type="image">
+			<visible>StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>264</posx>
 			<posy>676</posy>
 			<width>1016</width>
 			<height>44</height>
+			<texture>browse/graphic-browse-mask-bottom.png</texture>
+		</control>
+		<control type="image">
+			<visible>StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>264</posx>
+			<posy>104</posy>
+			<width>1016</width>
+			<height>16</height>
+			<texture>browse/graphic-browse-mask-top.png</texture>
+		</control>
+		<control type="image">
+			<visible>StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>264</posx>
+			<posy>704</posy>
+			<width>1016</width>
+			<height>16</height>
 			<texture>browse/graphic-browse-mask-bottom.png</texture>
 		</control>
 	</include>
