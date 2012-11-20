@@ -1088,7 +1088,7 @@
 			<visible>true + !Window.Property(Empty)</visible>
 			<!-- set view mode to thumbnails -->
 			<control type="button" id="8001">
-				<visible>StringCompare(Skin.String(show-thumbnails),0)</visible>
+				<visible>StringCompare(Skin.String(show-thumbnails),0) | StringCompare(Skin.String(show-thumbnails),)</visible>
 				<texturefocus>actionbuttons/button-action-grid-on.png</texturefocus>
 				<texturenofocus>actionbuttons/button-action-grid-off.png</texturenofocus>
 				<textureclick>actionbuttons/button-action-grid-off.png</textureclick>
