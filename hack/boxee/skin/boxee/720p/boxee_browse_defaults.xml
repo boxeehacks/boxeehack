@@ -1088,7 +1088,7 @@
 			<visible>true + !Window.Property(Empty)</visible>
 			<!-- set view mode to thumbnails -->
 			<control type="button" id="8001">
-				<visible>Window.Property(show-thumbnails)</visible>
+				<visible>StringCompare(Skin.String(show-thumbnails),0)</visible>
 				<texturefocus>actionbuttons/button-action-grid-on.png</texturefocus>
 				<texturenofocus>actionbuttons/button-action-grid-off.png</texturenofocus>
 				<textureclick>actionbuttons/button-action-grid-off.png</textureclick>
@@ -1097,13 +1097,30 @@
 				<onright>8024</onright>
 				<ondown>9050</ondown>
 				<onup>-</onup>
+				<onclick>Skin.SetString(show-thumbnails,1)</onclick>
 				<onclick>Container.SetViewMode(50)</onclick>
 				<onclick>SetVisible(8002)</onclick>
 				<onclick>SetFocus(8002)</onclick>
 			</control>
-			<!-- set view mode to list -->
+			<!-- set view mode to small thumbnails -->
 			<control type="button" id="8002">
-				<visible>true + !Window.Property(show-thumbnails)</visible>
+				<visible>StringCompare(Skin.String(show-thumbnails),1)</visible>
+				<texturefocus>actionbuttons/button-action-grid-small-on.png</texturefocus>
+				<texturenofocus>actionbuttons/button-action-grid-small-off.png</texturenofocus>
+				<textureclick>actionbuttons/button-action-grid-small-off.png</textureclick>
+				<include>ViewButton2</include>
+				<onleft>8014</onleft>
+				<onright>8024</onright>
+				<ondown>9050</ondown>
+				<onup>-</onup>
+				<onclick>Skin.SetString(show-thumbnails,2)</onclick>
+				<onclick>Container.SetViewMode(52)</onclick>
+				<onclick>SetVisible(8003)</onclick>
+				<onclick>SetFocus(8003)</onclick>
+			</control>
+			<!-- set view mode to list -->
+			<control type="button" id="8003">
+				<visible>StringCompare(Skin.String(show-thumbnails),2)</visible>
 				<texturefocus>actionbuttons/button-action-list-on.png</texturefocus>
 				<texturenofocus>actionbuttons/button-action-list-off.png</texturenofocus>
 				<textureclick>actionbuttons/button-action-list-off.png</textureclick>
@@ -1112,6 +1129,7 @@
 				<onright>8024</onright>
 				<ondown>9050</ondown>
 				<onup>-</onup>
+				<onclick>Skin.SetString(show-thumbnails,0)</onclick>
 				<onclick>Container.SetViewMode(51)</onclick>
 				<onclick>SetVisible(8001)</onclick>
 				<onclick>SetFocus(8001)</onclick>
@@ -1257,12 +1275,26 @@
 	</include>
 	<include name="BrowsePortraitLabelUnfocus">
 		<control type="label">
+			<visible>StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>9</posx>
 			<posy>225</posy>
 			<width>140</width>
 			<height>60</height>
 			<label>[B]$INFO[ListItem.label][/B]</label>
 			<font>font20bls</font>
+			<align>left</align>
+			<aligny>top</aligny>
+			<textcolor>mediumgreyheidi</textcolor>
+			<wrapmultiline>true</wrapmultiline>
+		</control>
+		<control type="label">
+			<visible>StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>6</posx>
+			<posy>150</posy>
+			<width>104</width>
+			<height>48</height>
+			<label>[B]$INFO[ListItem.label][/B]</label>
+			<font>font16x</font>
 			<align>left</align>
 			<aligny>top</aligny>
 			<textcolor>mediumgreyheidi</textcolor>
@@ -1286,12 +1318,26 @@
 	</include>
 	<include name="BrowsePortraitLabelFocus">
 		<control type="label">
+			<visible>StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>9</posx>
 			<posy>225</posy>
 			<width>140</width>
 			<height>60</height>
 			<label>[B]$INFO[ListItem.label][/B]</label>
 			<font>font20bls</font>
+			<align>left</align>
+			<aligny>top</aligny>
+			<textcolor>whiteheidi</textcolor>
+			<wrapmultiline>true</wrapmultiline>
+		</control>
+		<control type="label">
+			<visible>StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>6</posx>
+			<posy>150</posy>
+			<width>104</width>
+			<height>48</height>
+			<label>[B]$INFO[ListItem.label][/B]</label>
+			<font>font16x</font>
 			<align>left</align>
 			<aligny>top</aligny>
 			<textcolor>whiteheidi</textcolor>
@@ -1328,7 +1374,7 @@
 	</include>
 	<include name="BrowsePortraitThumbUnfocus">
 		<control type="image">
-			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow)</visible>
+			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow) + StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>156</width>
@@ -1340,7 +1386,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie)</visible>
+			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie) + StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>156</width>
@@ -1352,7 +1398,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow)</visible>
+			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow) + StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>156</width>
@@ -1363,7 +1409,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie)</visible>
+			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie) + StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>156</width>
@@ -1374,7 +1420,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>ListItem.Property(watched)</visible>
+			<visible>ListItem.Property(watched) + StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>123</posx>
 			<posy>191</posy>
 			<width>20</width>
@@ -1404,7 +1450,7 @@
 			<fadetime>200</fadetime>
 		</control>-->
 		<control type="image">
-			<visible>substring(ListItem.Genre#3D)</visible>
+			<visible>substring(ListItem.Genre#3D) + StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>5</posx>
 			<posy>5</posy>
 			<width>75</width>
@@ -1413,7 +1459,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)</visible>
+			<visible>(substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)) + StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>78</posx>
 			<posy>146</posy>
 			<width>75</width>
@@ -1421,6 +1467,102 @@
 			<texture>overlays/music_off.png</texture>
 			<fadetime>200</fadetime>
 		</control>
+
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>104</width>
+			<height>149</height>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+			<bordersize>5</bordersize>
+			<texture fallback="browse/thumbnail-default-show.png" blend="false">$INFO[ListItem.Thumb]</texture>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>104</width>
+			<height>149</height>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+			<bordersize>5</bordersize>
+			<texture fallback="browse/thumbnail-default-movie.png" blend="false">$INFO[ListItem.Thumb]</texture>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>104</width>
+			<height>149</height>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+			<bordersize>5</bordersize>
+			<texture blend="false">browse/thumbnail-default-show.png</texture>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>104</width>
+			<height>149</height>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+			<bordersize>5</bordersize>
+			<texture blend="false">browse/thumbnail-default-movie.png</texture>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>ListItem.Property(watched) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>82</posx>
+			<posy>127</posy>
+			<width>13</width>
+			<height>13</height>
+			<texture>browse/graphic-thumbnail-watched-check.png</texture>
+			<aspectratio>scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<!--<control type="image">
+			<visible>ListItem.Property(watched)</visible>
+			<posx>9</posx>
+			<posy>9</posy>
+			<width>140</width>
+			<height>208</height>
+			<texture>browse/thumbnail-movie-watched-grid-scanlines.png</texture>
+			<aspectratio>scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>ListItem.Property(watched)</visible>
+			<posx>139</posx>
+			<posy>201</posy>
+			<width>20</width>
+			<height>20</height>
+			<texture>browse/graphic-thumbnail-watched-check.png</texture>
+			<aspectratio>scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>-->
+		<control type="image">
+			<visible>substring(ListItem.Genre#3D) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>5</posx>
+			<posy>5</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>overlays/3d_off.png</texture>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>(substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>50</posx>
+			<posy>95</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>overlays/music_off.png</texture>
+			<fadetime>200</fadetime>
+		</control>
+
 	</include>
 	<include name="BrowsePortraitThumbUnfocusBrowser">
 		<control type="image">
@@ -1436,16 +1578,16 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-      <visible>IsEmpty(ListItem.Thumb)</visible>
-      <posx>1</posx>
-      <posy>1</posy>
-      <width>260</width>
-      <height>152</height>
-      <texture srcborder="30" border="20">browser/default_portrait_bookmark.png</texture>
-      <bordersize>8</bordersize>
-      <aspectratio scalediffuse="false">scale</aspectratio>
-      <fadetime>200</fadetime>
-    </control>
+			<visible>IsEmpty(ListItem.Thumb)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>260</width>
+			<height>152</height>
+			<texture srcborder="30" border="20">browser/default_portrait_bookmark.png</texture>
+			<bordersize>8</bordersize>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
 		<control type="image">
 			<visible>Window.Property(remove-favorites)</visible>
 			<posx>9</posx>
@@ -1498,7 +1640,7 @@
 			<fadetime>200</fadetime>
 		</control>-->
 		<control type="image">
-			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow)</visible>
+			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow) + StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>156</width>
@@ -1510,7 +1652,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie)</visible>
+			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie) + StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>156</width>
@@ -1522,7 +1664,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow)</visible>
+			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow) + StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>156</width>
@@ -1533,7 +1675,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie)</visible>
+			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie) + StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>156</width>
@@ -1544,7 +1686,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>ListItem.Property(watched)</visible>
+			<visible>ListItem.Property(watched) + StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>123</posx>
 			<posy>191</posy>
 			<width>20</width>
@@ -1574,7 +1716,7 @@
 			<fadetime>200</fadetime>
 		</control>-->
 		<control type="image">
-			<visible>substring(ListItem.Genre#3D)</visible>
+			<visible>substring(ListItem.Genre#3D) + StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>5</posx>
 			<posy>5</posy>
 			<width>75</width>
@@ -1583,11 +1725,106 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)</visible>
+			<visible>(substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)) + StringCompare(Skin.String(show-thumbnails),1)</visible>
 			<posx>78</posx>
 			<posy>146</posy>
 			<width>75</width>
 			<height>75</height>
+			<texture>overlays/music_on.png</texture>
+			<fadetime>200</fadetime>
+		</control>
+
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>104</width>
+			<height>149</height>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+			<bordersize>5</bordersize>
+			<texture fallback="browse/thumbnail-default-show.png" blend="false">$INFO[ListItem.Thumb]</texture>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>104</width>
+			<height>149</height>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+			<bordersize>5</bordersize>
+			<texture fallback="browse/thumbnail-default-movie.png" blend="false">$INFO[ListItem.Thumb]</texture>
+			<aspectratio scalediffuse="false">scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>104</width>
+			<height>149</height>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+			<bordersize>5</bordersize>
+			<texture scalediffuse="false">browse/thumbnail-default-show.png</texture>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>1</posx>
+			<posy>1</posy>
+			<width>104</width>
+			<height>249</height>
+			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+			<bordersize>5</bordersize>
+			<texture scalediffuse="false">browse/thumbnail-default-movie.png</texture>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>ListItem.Property(watched) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>82</posx>
+			<posy>127</posy>
+			<width>13</width>
+			<height>13</height>
+			<texture>browse/graphic-thumbnail-watched-check.png</texture>
+			<aspectratio>scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<!--<control type="image">
+			<visible>ListItem.Property(watched)</visible>
+			<posx>9</posx>
+			<posy>9</posy>
+			<width>140</width>
+			<height>208</height>
+			<texture>browse/thumbnail-movie-watched-grid-scanlines.png</texture>
+			<aspectratio>scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>ListItem.Property(watched)</visible>
+			<posx>139</posx>
+			<posy>201</posy>
+			<width>28</width>
+			<height>28</height>
+			<texture>browse/graphic-thumbnail-watched-check.png</texture>
+			<aspectratio>scale</aspectratio>
+			<fadetime>200</fadetime>
+		</control>-->
+		<control type="image">
+			<visible>substring(ListItem.Genre#3D) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>5</posx>
+			<posy>5</posy>
+			<width>50</width>
+			<height>50</height>
+			<texture>overlays/3d_on.png</texture>
+			<fadetime>200</fadetime>
+		</control>
+		<control type="image">
+			<visible>(substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<posx>50</posx>
+			<posy>95</posy>
+			<width>50</width>
+			<height>50</height>
 			<texture>overlays/music_on.png</texture>
 			<fadetime>200</fadetime>
 		</control>
