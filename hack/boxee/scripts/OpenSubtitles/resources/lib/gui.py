@@ -10,6 +10,7 @@ from Queue import Queue
 import plugins
 import ConfigParser
 import logging
+import difflib
 
 try: current_dlg_id = xbmcgui.getCurrentWindowDialogId()
 except: current_dlg_id = 0
@@ -232,6 +233,9 @@ def LOG( status, format, *args ):
     if ( DEBUG_MODE >= status ):
         xbmc.output( "%s: %s\n" % ( ( "INFO", "ERROR", "NOTICE", "DEBUG", )[ status - 1 ], format % args, ) )
 
+def sort_inner(inner):
+	return inner["percent"]
+
 class GUI( xbmcgui.WindowXMLDialog ):
     socket.setdefaulttimeout(10.0) #seconds
 	
@@ -277,8 +281,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
     def connect( self ):
         logging.basicConfig()
 	self.getControl( LOADING_IMAGE ).setVisible( True )
-        self.getControl( STATUS_LABEL ).setLabel( _( 646 ) )
-        self.getControl( STATUS_LABEL ).setLabel( _( 635 ) )
+        self.getControl( STATUS_LABEL ).setLabel( "Searching" )
 	self.getControl( 180 ).setLabel("[B][UPPERCASE]$LOCALIZE[293]: " + os.path.basename(self.file_original_path) + "[/B][/UPPERCASE]");
 	langs = None
 	subtitles = []
@@ -314,8 +317,11 @@ class GUI( xbmcgui.WindowXMLDialog ):
 		LOG( LOG_INFO, "Plugin %s is not a valid plugin name. Skipping it.", ( e) )		
 
         # Get data from the queue and wait till we have a result
+        count = 0
         for name in use_plugins:
             subs = q.get(True)
+	    count = count + 1
+	    self.getControl( STATUS_LABEL ).setLabel( "Searching " + str(count) + "/" + str(len(use_plugins)) )
             if subs and len(subs) > 0:
                 if not langs:
                     subtitles += subs
@@ -325,8 +331,11 @@ class GUI( xbmcgui.WindowXMLDialog ):
                             subtitles += [sub]
 	
 	if(len(subtitles) > 0):
-		print subtitles
 		self.sublist = subtitles
+		for item in subtitles:
+			percent = (round(difflib.SequenceMatcher(None, os.path.basename(self.file_original_path), item["release"]).ratio(), 2) * 100)
+			item["percent"] = percent
+		subtitles.sort(key=sort_inner,reverse=True)	
 		for item in subtitles:
 			if(item["lang"] in trans_lang):
 				language = trans_lang[item["lang"]]
@@ -335,6 +344,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
                     	listitem = xbmcgui.ListItem( label=language, label2=item["release"], iconImage="0.0", thumbnailImage="flags/" + item["lang"] + ".png" )
                     	listitem.setProperty( "source", str(item["plugin"].__class__.__name__))
 			listitem.setProperty( "release", item["release"])
+		        listitem.setProperty( "equals", str(item["percent"]) + "%")	
 			self.getControl( SUBTITLES_LIST ).addItem( listitem )
 							
         self.setFocus( self.getControl( SUBTITLES_LIST ) )

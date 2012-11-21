@@ -15,9 +15,9 @@
       </control>
       <control type="group">
         <control type="label" id="180">
-          <posx>18</posx>
+          <posx>54</posx>
           <posy>30</posy>
-          <width>1200</width>
+          <width>1128</width>
           <height>20</height>
           <align>center</align>
           <aligny>top</aligny>
@@ -79,7 +79,7 @@
             <posx>42</posx>
             <posy>70</posy>
             <width>1200</width>
-            <height>580</height>
+            <height>570</height>
             <onleft>-</onleft>
             <onright>-</onright>
             <onup>-</onup>
@@ -98,7 +98,7 @@
               <control type="label">
                 <posx>75</posx>
                 <posy>-1</posy>
-                <width>200</width>
+                <width>180</width>
                 <height>56</height>
                 <font>font24b</font>
                 <align>left</align>
@@ -108,9 +108,9 @@
                 <label>$INFO[ListItem.Label]</label>
               </control>
 	      <control type="label">
-                <posx>285</posx>
+                <posx>265</posx>
                 <posy>-1</posy>
-                <width>200</width>
+                <width>180</width>
                 <height>56</height>
                 <font>font24b</font>
                 <align>left</align>
@@ -120,9 +120,9 @@
                 <label>$INFO[ListItem.property(source)]</label>
               </control>
 	      <control type="label">
-                <posx>500</posx>
+                <posx>480</posx>
                 <posy>-1</posy>
-                <width>600</width>
+                <width>580</width>
                 <height>56</height>
                 <font>font24b</font>
                 <align>left</align>
@@ -130,6 +130,18 @@
                 <textcolor>lightgreyheidi</textcolor>
                 <selectedcolor>lightgreyheidi</selectedcolor>
                 <label>$INFO[ListItem.property(release)]</label>
+              </control>
+	      <control type="label">
+                <posx>1075</posx>
+                <posy>-1</posy>
+                <width>100</width>
+                <height>56</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>lightgreyheidi</textcolor>
+                <selectedcolor>lightgreyheidi</selectedcolor>
+                <label>$INFO[ListItem.property(equals)]</label>
               </control>
             </itemlayout>
             <focusedlayout height="56">
@@ -147,10 +159,10 @@
                     <height>25</height>
                     <info>Listitem.Thumb</info>
                   </control>
-<control type="label">
+			     <control type="label">
                 <posx>75</posx>
                 <posy>-1</posy>
-                <width>200</width>
+                <width>180</width>
                 <height>56</height>
                 <font>font24b</font>
                 <align>left</align>
@@ -159,10 +171,10 @@
                 <selectedcolor>lightgreyheidi</selectedcolor>
                 <label>$INFO[ListItem.Label]</label>
               </control>
-	      <control type="label">
-                <posx>285</posx>
+              <control type="label">
+                <posx>265</posx>
                 <posy>-1</posy>
-                <width>200</width>
+                <width>180</width>
                 <height>56</height>
                 <font>font24b</font>
                 <align>left</align>
@@ -172,7 +184,7 @@
                 <label>$INFO[ListItem.property(source)]</label>
               </control>
 	      <control type="label">
-                <posx>500</posx>
+                <posx>480</posx>
                 <posy>-1</posy>
                 <width>580</width>
                 <height>56</height>
@@ -182,9 +194,21 @@
                 <textcolor>lightgreyheidi</textcolor>
                 <selectedcolor>lightgreyheidi</selectedcolor>
                 <label>$INFO[ListItem.property(release)]</label>
-		<scroll>true</scroll>
-		<scrollspeed>50</scrollspeed>
-        	<scrollsuffix> - </scrollsuffix>
+ 		<scroll>true</scroll>
+                <scrollspeed>50</scrollspeed>
+                <scrollsuffix> - </scrollsuffix>
+              </control>
+	      <control type="label">
+                <posx>1075</posx>
+                <posy>-1</posy>
+                <width>100</width>
+                <height>56</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>lightgreyheidi</textcolor>
+                <selectedcolor>lightgreyheidi</selectedcolor>
+                <label>$INFO[ListItem.property(equals)]</label>
               </control>
             </focusedlayout>
           </control>

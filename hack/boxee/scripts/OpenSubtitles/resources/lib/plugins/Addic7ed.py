@@ -79,6 +79,7 @@ class Addic7ed(SubtitleDatabase.SubtitleDB):
 		sublinks = []
 		name = name.lower().replace(" ", "_")
 		searchurl = "%s/serie/%s/%s/%s/%s" %(self.host, name, season, episode, name)
+		print searchurl
 		logging.debug("dl'ing %s" %searchurl)
 		try:
 			socket.setdefaulttimeout(3)
@@ -93,38 +94,33 @@ class Addic7ed(SubtitleDatabase.SubtitleDB):
 		#HTML bug in addic7ed
 		content = page.read()
 		content = content.replace("The safer, easier way", "The safer, easier way \" />")
-		
 		soup = BeautifulSoup(content)
 		for subs in soup("td", {"class":"NewsTitle", "colspan" : "3"}):
 			if not self.release_pattern.match(str(subs.contents[1])):
 				continue
 			subteams = self.release_pattern.match(str(subs.contents[1])).groups()[0].lower()
-			
 			# Addic7ed only takes the real team	into account
 			fteams = []
 			for team in teams:
 				fteams += team.split("-")
 			teams = set(fteams)
 			subteams = self.listTeams([subteams], [".", "_", " "])
-			
 			logging.debug("[Addic7ed] Team from website: %s" %subteams)
 			logging.debug("[Addic7ed] Team from file: %s" %teams)
 			logging.debug("[Addic7ed] match ? %s" %subteams.issubset(teams))
 			langs_html = subs.findNext("td", {"class" : "language"})
 			lang = self.getLG(langs_html.contents[0].strip().replace('&nbsp;', ''))
 			#logging.debug("[Addic7ed] Language : %s - lang : %s" %(langs_html, lang))
-			
 			statusTD = langs_html.findNext("td")
-
+			
 			status = statusTD.find("b").string.strip()
-
 			# take the last one (most updated if it exists)
 			links = statusTD.findNext("td").findAll("a")
 			link = "%s%s"%(self.host,links[len(links)-1]["href"])
-			
 			#logging.debug("%s - match : %s - lang : %s" %(status == "Completed", subteams.issubset(teams), (not langs or lang in langs)))
-			if status == "Completed" and subteams.issubset(teams) and (not langs or lang in langs) :
+			if status == "Completed" and (not langs or lang in langs) :
 				result = {}
+				print "WE GOT THERE YEEHAAA"
 				result["release"] = "%s.S%.2dE%.2d.%s" %(name.replace("_", ".").title(), int(season), int(episode), '.'.join(subteams)
 )
 				result["lang"] = lang
