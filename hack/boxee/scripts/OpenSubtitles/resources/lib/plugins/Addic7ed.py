@@ -108,6 +108,13 @@ class Addic7ed(SubtitleDatabase.SubtitleDB):
 			logging.debug("[Addic7ed] Team from file: %s" %teams)
 			logging.debug("[Addic7ed] match ? %s" %subteams.issubset(teams))
 			langs_html = subs.findNext("td", {"class" : "language"})
+			
+			p = re.compile('Works with (.*)')
+			works_with = subs.findNext("td", {"class" : "newsDate"})
+			works_with = works_with.contents[0].encode('utf-8').strip()
+			works_with_match = p.findall(works_with)
+			
+			
 			lang = self.getLG(langs_html.contents[0].strip().replace('&nbsp;', ''))
 			#logging.debug("[Addic7ed] Language : %s - lang : %s" %(langs_html, lang))
 			statusTD = langs_html.findNext("td")
@@ -121,6 +128,8 @@ class Addic7ed(SubtitleDatabase.SubtitleDB):
 				result = {}
 				result["release"] = "%s.S%.2dE%.2d.%s" %(name.replace("_", ".").title(), int(season), int(episode), '.'.join(subteams)
 )
+				if(len(works_with_match) > 0):
+					result["release"] = result["release"] + " / " + works_with_match[0]
 				result["lang"] = lang
 				result["link"] = link
 				result["page"] = searchurl
