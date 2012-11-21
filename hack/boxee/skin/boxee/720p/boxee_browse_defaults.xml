@@ -1104,7 +1104,7 @@
 			</control>
 			<!-- set view mode to small thumbnails -->
 			<control type="button" id="8002">
-				<visible>StringCompare(Skin.String(show-thumbnails),1) | StringCompare(Skin.String(show-thumbnails),)</visible>
+				<visible>StringCompare(Skin.String(show-thumbnails),1) | IsEmpty(Skin.String(show-thumbnails))</visible>
 				<texturefocus>actionbuttons/button-action-grid-small-on.png</texturefocus>
 				<texturenofocus>actionbuttons/button-action-grid-small-off.png</texturenofocus>
 				<textureclick>actionbuttons/button-action-grid-small-off.png</textureclick>
