@@ -19,4 +19,8 @@
     <token>Die</token>
     <token>Das</token>
   </sorttokens>
+  <gui>    
+    <algorithmdirtyregions>1</algorithmdirtyregions>
+    <nofliptimeout>1000</nofliptimeout>
+  </gui>
 </advancedsettings>
