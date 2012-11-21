@@ -144,7 +144,6 @@ class BierDopje(SubtitleDatabase.SubtitleDB):
             dom = minidom.parse(page)
             page.close()
             for sub in dom.getElementsByTagName('result'):
-                print sub
 		release = sub.getElementsByTagName('filename')[0].firstChild.data
                 if release.endswith(".srt"):
                     release = release[:-4]

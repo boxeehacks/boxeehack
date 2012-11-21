@@ -62,7 +62,6 @@ class SubsWiki(SubtitleDatabase.SubtitleDB):
         name = name.lower().replace(" ", "_")
         searchurl = "%s/serie/%s/%s/%s/" %(self.host, name, season, episode)
         logging.debug("dl'ing %s" %searchurl)
-	print searchurl
         try:
             page = urllib2.urlopen(searchurl)
             ''' test if no redirect was made '''
@@ -88,7 +87,6 @@ class SubsWiki(SubtitleDatabase.SubtitleDB):
             for langs_html in nexts:
                 lang = self.getLG(langs_html.string.strip())
                 #logging.debug("lang: %s" %lang)
-		print lang                
                 statusTD = langs_html.findNext("td")
                 status = statusTD.find("strong").string.strip()
                 #logging.debug("status: %s" %status)

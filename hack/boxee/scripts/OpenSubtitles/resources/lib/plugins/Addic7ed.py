@@ -79,7 +79,6 @@ class Addic7ed(SubtitleDatabase.SubtitleDB):
 		sublinks = []
 		name = name.lower().replace(" ", "_")
 		searchurl = "%s/serie/%s/%s/%s/%s" %(self.host, name, season, episode, name)
-		print searchurl
 		logging.debug("dl'ing %s" %searchurl)
 		try:
 			socket.setdefaulttimeout(3)
