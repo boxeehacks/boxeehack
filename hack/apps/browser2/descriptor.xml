@@ -1,0 +1,15 @@
+<app>
+  <id>browser2</id>
+  <name>Boxee Browser</name>
+  <version>1.2</version>
+  <description>Use Boxee to browse the web and play video</description>
+  <thumb>http://dir.boxee.tv/apps/browser/thumb.png</thumb>
+  <repository>http://dir.boxee.tv/-apps</repository>
+  <media>video</media>
+  <copyright>Boxee</copyright>
+  <email>support@boxee.tv</email>
+  <type>html</type>
+  <url>http://www.google.com/</url>
+  <platform>all</platform>
+  <minversion>1.0.00</minversion>
+</app>
