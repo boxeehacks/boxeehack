@@ -155,7 +155,7 @@ trans_lang = {'aa' : 'Afar',
 'pl' : 'Polish',
 'ps' : 'Pashto, Pushto',
 'pt' : 'Portuguese',
-'pt-br' : 'Brazilian',
+'pb' : 'Brazilian',
 'qu' : 'Quechua',
 'rm' : 'Romansh',
 'rn' : 'Kirundi',
@@ -340,6 +340,8 @@ class GUI( xbmcgui.WindowXMLDialog ):
 			item["percent"] = percent
 		subtitles.sort(key=sort_inner,reverse=True)	
 		for item in subtitles:
+			if(item["lang"] == "pt-br"):
+				item["lang"] = "pb"
 			if(item["lang"] in trans_lang):
 				language = trans_lang[item["lang"]]
 			else:
