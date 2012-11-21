@@ -22,6 +22,7 @@ What does it do?
   - Updated busybox, and added git, nano and sqlite3 tools
   - Improved buffering for Full HD videos
   - Tweaked MTU if you're using a VPN/PPP connection
+  - Rewritten subtitle system (BierDopje, OpenSubtitles, Subtitulos, SubsWiki, Addic7ed)
 
 Requirements
 ------------
