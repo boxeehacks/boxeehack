@@ -58,7 +58,7 @@ class BierDopje(SubtitleDatabase.SubtitleDB):
             self.api = "http://api.bierdopje.com/%s/" %key
         except ConfigParser.NoSectionError:
             return
-        self.headers = {'User-Agent' : 'periscope/%s' % version.VERSION}
+        self.headers = {'User-Agent' : 'BoxeeSubs/1.0'}
         self.cache_path = os.path.join(cache_folder_path, "bierdopje.cache")
         if not os.path.exists(self.cache_path):
             log.info("Creating cache file %s" % self.cache_path)

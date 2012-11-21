@@ -120,7 +120,6 @@ class Addic7ed(SubtitleDatabase.SubtitleDB):
 			#logging.debug("%s - match : %s - lang : %s" %(status == "Completed", subteams.issubset(teams), (not langs or lang in langs)))
 			if status == "Completed" and (not langs or lang in langs) :
 				result = {}
-				print "WE GOT THERE YEEHAAA"
 				result["release"] = "%s.S%.2dE%.2d.%s" %(name.replace("_", ".").title(), int(season), int(episode), '.'.join(subteams)
 )
 				result["lang"] = lang

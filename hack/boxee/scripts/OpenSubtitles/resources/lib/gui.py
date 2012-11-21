@@ -155,6 +155,7 @@ trans_lang = {'aa' : 'Afar',
 'pl' : 'Polish',
 'ps' : 'Pashto, Pushto',
 'pt' : 'Portuguese',
+'pt-br' : 'Brazilian',
 'qu' : 'Quechua',
 'rm' : 'Romansh',
 'rn' : 'Kirundi',
@@ -234,6 +235,8 @@ def LOG( status, format, *args ):
         xbmc.output( "%s: %s\n" % ( ( "INFO", "ERROR", "NOTICE", "DEBUG", )[ status - 1 ], format % args, ) )
 
 def sort_inner(inner):
+	if("hash" in inner and inner["hash"] == True):
+		return 100
 	return inner["percent"]
 
 class GUI( xbmcgui.WindowXMLDialog ):
@@ -344,7 +347,12 @@ class GUI( xbmcgui.WindowXMLDialog ):
                     	listitem = xbmcgui.ListItem( label=language, label2=item["release"], iconImage="0.0", thumbnailImage="flags/" + item["lang"] + ".png" )
                     	listitem.setProperty( "source", str(item["plugin"].__class__.__name__))
 			listitem.setProperty( "release", item["release"])
-		        listitem.setProperty( "equals", str(item["percent"]) + "%")	
+		        listitem.setProperty( "equals", str(item["percent"]) + "%")
+			if("hash" in item and item["hash"] == True):
+        	                listitem.setProperty( "sync", "true" )
+	                else:
+            	        	listitem.setProperty( "sync", "false" )
+	
 			self.getControl( SUBTITLES_LIST ).addItem( listitem )
 							
         self.setFocus( self.getControl( SUBTITLES_LIST ) )
@@ -359,8 +367,20 @@ class GUI( xbmcgui.WindowXMLDialog ):
             if not ok:
                 self.getControl( STATUS_LABEL ).setLabel( _( 645 ) )
                 return
-            
+            else:
+		local_path = xbmc.translatePath("special://home/subtitles")
+		dp = xbmcgui.DialogProgress()
+		dp.create( __scriptname__, _( 633 ), os.path.basename( self.file_path ) )
+		sub_filename = os.path.basename( self.file_path )
+		sub_filename = sub_filename[0:sub_filename.rfind(".")] + "." + item["lang"] + ".srt"
+		item["plugin"].downloadFile(item["link"], os.path.join( local_path, sub_filename ))
+		dp.close()
+		xbmc.Player().setSubtitles( os.path.join( local_path, sub_filename ) )
+		xbmc.showNotification( 652, '', '' )
+		self.getControl( STATUS_LABEL ).setLabel( _( 652 ) )
+		
             self.getControl( STATUS_LABEL ).setLabel( _( 649 ) )
+            self.exit_script()
 
     def exit_script( self, restart=False ):
         self.connThread.join()

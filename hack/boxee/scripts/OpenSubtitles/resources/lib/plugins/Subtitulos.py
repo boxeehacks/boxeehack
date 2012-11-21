@@ -66,7 +66,6 @@ class Subtitulos(SubtitleDatabase.SubtitleDB):
         content = self.downloadContent(searchurl, 10)
         if not content:
             return sublinks
-        
         soup = BeautifulSoup(content)
         for subs in soup("div", {"id":"version"}):
             version = subs.find("p", {"class":"title-sub"})
@@ -86,7 +85,7 @@ class Subtitulos(SubtitleDatabase.SubtitleDB):
                 status = statusLI.contents[0].string.strip()
 
                 link = statusLI.findNext("span", {"class":"descargar green"}).find("a")["href"]
-                if status == "Completado" and subteams.issubset(teams) and (not langs or lang in langs) :
+                if status == "Completado" and (not langs or lang in langs) :
                     result = {}
                     result["release"] = "%s.S%.2dE%.2d.%s" %(name.replace("-", ".").title(), int(season), int(episode), '.'.join(subteams))
                     result["lang"] = lang

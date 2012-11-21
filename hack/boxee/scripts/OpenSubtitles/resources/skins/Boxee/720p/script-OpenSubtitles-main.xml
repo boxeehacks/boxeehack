@@ -142,6 +142,15 @@
                 <textcolor>lightgreyheidi</textcolor>
                 <selectedcolor>lightgreyheidi</selectedcolor>
                 <label>$INFO[ListItem.property(equals)]</label>
+		<visible>!ListItem.property(sync)</visible>
+              </control>
+	      <control type="image">
+                <posx>1075</posx>
+                <posy>21</posy>
+                <width>40</width>
+                <height>12</height>
+                <texture>icons/icon_sync.png</texture>
+                <visible>ListItem.property(sync)</visible>
               </control>
             </itemlayout>
             <focusedlayout height="56">
@@ -209,6 +218,15 @@
                 <textcolor>lightgreyheidi</textcolor>
                 <selectedcolor>lightgreyheidi</selectedcolor>
                 <label>$INFO[ListItem.property(equals)]</label>
+		<visible>!ListItem.property(sync)</visible>
+              </control>
+	      <control type="image">
+                <posx>1075</posx>
+                <posy>21</posy>
+                <width>40</width>
+                <height>12</height>
+                <texture>icons/icon_sync.png</texture>
+                <visible>ListItem.property(sync)</visible>
               </control>
             </focusedlayout>
           </control>

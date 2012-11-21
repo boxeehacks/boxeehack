@@ -106,7 +106,8 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
         suburl = subtitle["link"]
         videofilename = subtitle["filename"]
         srtbasefilename = videofilename.rsplit(".", 1)[0]
-        self.downloadFile(suburl, srtbasefilename + ".srt.gz")
+        
+	content = self.downloadContent(suburl)
         f = gzip.open(srtbasefilename+".srt.gz")
         dump = open(srtbasefilename+".srt", "wb")
         dump.write(f.read())
@@ -115,6 +116,19 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
         os.remove(srtbasefilename+".srt.gz")
         return srtbasefilename+".srt"
 
+    def downloadFile(self, link, path):
+	content = self.downloadContent(link)
+	dump = open(path+".gz", "wb")
+        dump.write(content)
+        dump.close()
+        f = gzip.open(path+".gz")
+        dump = open(path, "wb")
+        dump.write(f.read())
+        dump.close()
+        f.close()
+        os.remove(path+".gz")
+        return path	
+
     def query(self, filename, imdbID=None, moviehash=None, bytesize=None, langs=None):
         ''' Makes a query on opensubtitles and returns info about found subtitles.
             Note: if using moviehash, bytesize is required.    '''
@@ -122,7 +136,10 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
         #Prepare the search
         search = {}
         sublinks = []
-        if moviehash: search['moviehash'] = moviehash
+	gotHash = False
+        if moviehash: 
+		search['moviehash'] = moviehash
+		gotHash = True
         if imdbID: search['imdbid'] = imdbID
         if bytesize: search['moviebytesize'] = str(bytesize)
         if langs: search['sublanguageid'] = ",".join([self.getLanguage(lang) for lang in langs])
@@ -151,7 +168,7 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
             
         # Search
         self.filename = filename #Used to order the results
-        sublinks += self.get_results(token, search)
+        sublinks += self.get_results(token, search, gotHash)
 
         # Logout
         try:
@@ -162,7 +179,7 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
         return sublinks
         
         
-    def get_results(self, token, search):
+    def get_results(self, token, search, gotHash):
         log.debug("query: token='%s', search='%s'" % (token, search))
         try:
             if search:
@@ -183,6 +200,8 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
                 result["release"] = r['SubFileName']
                 result["link"] = r['SubDownloadLink']
                 result["page"] = r['SubDownloadLink']
+		if(gotHash == True and r['MovieHash'] == search['moviehash']):
+			result["hash"] = True
                 result["lang"] = self.getLG(r['SubLanguageID'])
                 if search.has_key("query") : #We are using the guessed file name, let's remove some results
                     if r["MovieReleaseName"].startswith(self.filename):
