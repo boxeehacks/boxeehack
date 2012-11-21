@@ -1,5 +1,4 @@
-<?xml version="1.0"?>
-<window>
+<?xml version="1.0"?> <window>
   <defaultcontrol always="true">120</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <controls>    
@@ -145,7 +144,7 @@
 		<visible>!ListItem.property(sync)</visible>
               </control>
 	      <control type="image">
-                <posx>1075</posx>
+                <posx>1090</posx>
                 <posy>21</posy>
                 <width>40</width>
                 <height>12</height>
@@ -221,7 +220,7 @@
 		<visible>!ListItem.property(sync)</visible>
               </control>
 	      <control type="image">
-                <posx>1075</posx>
+                <posx>1090</posx>
                 <posy>21</posy>
                 <width>40</width>
                 <height>12</height>
