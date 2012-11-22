@@ -336,7 +336,9 @@ class GUI( xbmcgui.WindowXMLDialog ):
 	if(len(subtitles) > 0):
 		self.sublist = subtitles
 		for item in subtitles:
-			percent = (round(difflib.SequenceMatcher(None, os.path.basename(self.file_original_path), item["release"]).ratio(), 2) * 100)
+			sub_filename = os.path.basename( self.file_original_path )
+                	sub_filename = sub_filename[0:sub_filename.rfind(".")]
+			percent = (round(difflib.SequenceMatcher(None, sub_filename, item["release"]).ratio(), 2) * 100)
 			item["percent"] = percent
 		subtitles.sort(key=sort_inner,reverse=True)	
 		for item in subtitles:
