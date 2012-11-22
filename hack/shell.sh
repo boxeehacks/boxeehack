@@ -3,6 +3,8 @@ VALID_PASSWORD="secret"
 
 export LD_LIBRARY_PATH='.:/data/hack/lib:/opt/local/lib:/usr/local/lib:/usr/lib:/lib:/lib/gstreamer-0.10:/opt/local/lib/qt'
 export PATH='/data/hack/bin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/opt/local/sbin:/usr/local/sbin:/usr/sbin:/sbin:/scripts'
+export HOME='/data/hack'
+export PS1='# '
 
 read -s -p "Password: " PASSWORD
 
@@ -12,7 +14,7 @@ if [ "$PASSWORD" == "$VALID_PASSWORD" ]; then
         echo " Welcome to BoxeeBox "
         echo "---------------------"
 
-	cd /data/hack
+        cd /data/hack
         sh
 else
         echo "Incorrect password"       
