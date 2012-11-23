@@ -16,5 +16,8 @@ rm /data/.boxee/UserData/advancedsettings.xml
 /bin/busybox sed -i "s/; sh \/data\/hack\/boot.sh//g" /data/.boxee/UserData/guisettings.conf 
 rm -Rf /data/hack
 
+# on uninstall we also remove the password
+rm /data/etc/passwd
+
 # reboot the box to active finalize the uninstall
 reboot
