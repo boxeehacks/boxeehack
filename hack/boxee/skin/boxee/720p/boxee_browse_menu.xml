@@ -292,7 +292,7 @@
 					<item>
 						<controlid>1888</controlid>
 						<label>2</label>
-						<icon>icons/icon-home-music.png</icon>
+						<icon>../720p/resources/icons/icon-home-music.png</icon>
 						<onclick>ActivateWindow(10484,boxeeui://music/)</onclick>
 					</item>
 					<item>

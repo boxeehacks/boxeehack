@@ -38,7 +38,7 @@
 					<posy>0</posy>
 					<width>1280</width>
 					<height>720</height>
-					<texture>background/background.jpg</texture>
+					<texture>../720p/resources/background/background.jpg</texture>
 				</control>
 		                <control type="image">
 		                        <posx>0</posx>

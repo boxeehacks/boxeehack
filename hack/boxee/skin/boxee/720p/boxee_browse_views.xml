@@ -1374,7 +1374,7 @@
 				<posy>131</posy>
 				<width>75</width>
 				<height>75</height>
-				<texture>overlays/3d_off.png</texture>
+				<texture>../720p/resources/overlays/3d_off.png</texture>
 				<fadetime>200</fadetime>
 			</control>
 			<control type="image">
@@ -1383,7 +1383,7 @@
 				<posy>340</posy>
 				<width>75</width>
 				<height>75</height>
-				<texture>overlays/music_off.png</texture>
+				<texture>../720p/resources/overlays/music_off.png</texture>
 				<fadetime>200</fadetime>
 			</control>
 			
@@ -1549,7 +1549,7 @@
 		                <posy>0</posy>
 		                <width>1280</width>
 		                <height>720</height>
-		                <texture>background/bg-browse-overlay.png</texture>
+		                <texture>../720p/resources/bg-browse-overlay.png</texture>
 		        </control>
 		</control>
 

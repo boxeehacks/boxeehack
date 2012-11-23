@@ -1105,9 +1105,9 @@
 			<!-- set view mode to small thumbnails -->
 			<control type="button" id="8002">
 				<visible>StringCompare(Skin.String(show-thumbnails),1) | IsEmpty(Skin.String(show-thumbnails))</visible>
-				<texturefocus>actionbuttons/button-action-grid-small-on.png</texturefocus>
-				<texturenofocus>actionbuttons/button-action-grid-small-off.png</texturenofocus>
-				<textureclick>actionbuttons/button-action-grid-small-off.png</textureclick>
+				<texturefocus>../720p/resources/actionbuttons/button-action-grid-small-on.png</texturefocus>
+				<texturenofocus>../720p/resources/actionbuttons/button-action-grid-small-off.png</texturenofocus>
+				<textureclick>../720p/resources/actionbuttons/button-action-grid-small-off.png</textureclick>
 				<include>ViewButton2</include>
 				<onleft>8014</onleft>
 				<onright>8024</onright>
@@ -1455,7 +1455,7 @@
 			<posy>5</posy>
 			<width>75</width>
 			<height>75</height>
-			<texture>overlays/3d_off.png</texture>
+			<texture>../720p/resources/overlays/3d_off.png</texture>
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
@@ -1464,7 +1464,7 @@
 			<posy>146</posy>
 			<width>75</width>
 			<height>75</height>
-			<texture>overlays/music_off.png</texture>
+			<texture>../720p/resources/overlays/music_off.png</texture>
 			<fadetime>200</fadetime>
 		</control>
 
@@ -1550,7 +1550,7 @@
 			<posy>5</posy>
 			<width>50</width>
 			<height>50</height>
-			<texture>overlays/3d_off.png</texture>
+			<texture>../720p/resources/overlays/3d_off.png</texture>
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
@@ -1559,7 +1559,7 @@
 			<posy>95</posy>
 			<width>50</width>
 			<height>50</height>
-			<texture>overlays/music_off.png</texture>
+			<texture>../720p/resources/overlays/music_off.png</texture>
 			<fadetime>200</fadetime>
 		</control>
 
@@ -1721,7 +1721,7 @@
 			<posy>5</posy>
 			<width>75</width>
 			<height>75</height>
-			<texture>overlays/3d_on.png</texture>
+			<texture>../720p/resources/overlays/3d_on.png</texture>
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
@@ -1730,7 +1730,7 @@
 			<posy>146</posy>
 			<width>75</width>
 			<height>75</height>
-			<texture>overlays/music_on.png</texture>
+			<texture>../720p/resources/overlays/music_on.png</texture>
 			<fadetime>200</fadetime>
 		</control>
 
@@ -1816,7 +1816,7 @@
 			<posy>5</posy>
 			<width>50</width>
 			<height>50</height>
-			<texture>overlays/3d_on.png</texture>
+			<texture>../720p/resources/overlays/3d_on.png</texture>
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
@@ -1825,7 +1825,7 @@
 			<posy>95</posy>
 			<width>50</width>
 			<height>50</height>
-			<texture>overlays/music_on.png</texture>
+			<texture>../720p/resources/overlays/music_on.png</texture>
 			<fadetime>200</fadetime>
 		</control>
 	</include>
