@@ -1,0 +1,263 @@
+﻿<window>
+  <defaultcontrol always="true">110</defaultcontrol>
+  <animation effect="fade" time="200">WindowOpen</animation>
+  <animation effect="fade" time="200" delay="450">WindowClose</animation>
+  <coordinates>
+    <system>1</system>
+    <posx>13</posx>
+    <posy>383</posy>
+  </coordinates>
+  <controls>
+    <control type="group">
+      <control type="group">
+        <animation effect="fade" time="100" delay="100">WindowClose</animation>
+        <control type="group">
+          <animation effect="slide" start="0, 54" end="0, 0" time="300" delay="310" tween="circle" easing="out">WindowOpen</animation>
+          <animation effect="slide" end="0, 337" time="300" delay="10" tween="circle" easing="in">WindowClose</animation>
+          <control type="image">
+            <description>background top image</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1254</width>
+            <height>54</height>
+            <texture>media_info_action_text_bg_field.png</texture>
+            <visible>true</visible>
+          </control>
+          <control type="image">
+            <posx>1090</posx>
+            <posy>18</posy>
+            <width>103</width>
+            <height>19</height>
+            <texture>opensubtitles_logo.png</texture>
+          </control>
+          <control type="image">
+            <posx>1200</posx>
+            <posy>11</posy>
+            <width>32</width>
+            <height>32</height>
+            <texture>opensubtitles_logo2.png</texture>
+          </control>
+          <control type="group" id="110">
+            <posx>13</posx>
+            <posy>7</posy>
+            <width>1254</width>
+            <height>54</height>
+            <defaultcontrol>111</defaultcontrol>
+            <control type="button" id="111">
+              <description>search button</description>
+              <enable>true</enable>
+              <posx>0</posx>
+              <posy>0</posy>
+              <width>120</width>
+              <height>39</height>
+              <texturenofocus>-</texturenofocus>
+              <texturefocus border="15">sort_by_button_state_on.png</texturefocus>
+              <label>Search</label>
+              <font>font18</font>
+              <textcolor>white</textcolor>
+              <disabledcolor>grey</disabledcolor>
+              <align>center</align>
+              <onright>112</onright>
+              <onleft>112</onleft>
+              <ondown>120</ondown>
+            </control>
+            <control type="button" id="112">
+              <description>settings button</description>
+              <posx>122</posx>
+              <posy>0</posy>
+              <width>120</width>
+              <height>39</height>
+              <texturenofocus>-</texturenofocus>
+              <texturefocus border="15">sort_by_button_state_on.png</texturefocus>
+              <label>Settings</label>
+              <font>font18</font>
+              <textcolor>white</textcolor>
+              <disabledcolor>grey</disabledcolor>
+              <align>center</align>
+              <onright>111</onright>
+              <onleft>111</onleft>
+              <ondown>120</ondown>
+            </control>
+          </control>
+        </control>
+      </control>
+      <control type="group" id="9100">
+        <animation effect="slide" start="0, 283" end="0, 0" time="300" delay="10">WindowOpen</animation>
+        <animation effect="slide" start="0, 0" end="0, 283" time="300" delay="310">WindowClose</animation>
+        <control type="image">
+          <description>background bottom image</description>
+          <posx>0</posx>
+          <posy>54</posy>
+          <width>1254</width>
+          <height>283</height>
+          <texture>media_info_pane.png</texture>
+        </control>
+        <control type="group">
+          <control type="label" id="100">
+            <description>textarea</description>
+            <posx>30</posx>
+            <posy>285</posy>
+            <width>1194</width>
+            <height>52</height>
+            <font>font18</font>
+            <textcolor>white</textcolor>
+            <aligny>center</aligny>
+            <wrapmultiline>true</wrapmultiline>
+          </control>
+          <control type="image">
+            <posx>15</posx>
+            <posy>285</posy>
+            <width>1224</width>
+            <height>2</height>
+            <texture>list-nofocus.png</texture>
+          </control>
+          <control type="list" id="120">
+            <posx>30</posx>
+            <posy>60</posy>
+            <width>1180</width>
+            <height>220</height>
+            <onleft>110</onleft>
+            <onright>110</onright>
+            <onup>110</onup>
+            <ondown>-</ondown>
+            <viewtype label="535">list</viewtype>
+            <pagecontrol>60</pagecontrol>
+            <scrolltime>200</scrolltime>
+            <itemlayout height="44">
+              <control type="image">
+                <posx>0</posx>
+                <posy>42</posy>
+                <width>1180</width>
+                <height>2</height>
+                <texture>context_info_settings_button_focus.png</texture>
+              </control>
+              <control type="image">
+                <posx>12</posx>
+                <posy>16</posy>
+                <width>18</width>
+                <height>12</height>
+                <info>Listitem.Thumb</info>
+              </control>
+              <control type="label">
+                <posx>40</posx>
+                <posy>0</posy>
+                <width>100</width>
+                <height>44</height>
+                <font>font18</font>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <selectedcolor>green</selectedcolor>
+                <align>left</align>
+                <info>ListItem.Label2</info>
+              </control>
+              <control type="label">
+                <posx>200</posx>
+                <posy>0</posy>
+                <width>900</width>
+                <height>44</height>
+                <font>font18</font>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <selectedcolor>green</selectedcolor>
+                <align>left</align>
+                <info>ListItem.Label</info>
+              </control>
+            </itemlayout>
+            <focusedlayout height="44">
+              <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1180</width>
+                <height>44</height>
+                <texture>context_info_settings_button_focus.png</texture>
+                <visible>Control.HasFocus(120)</visible>
+              </control>
+              <control type="image">
+                <posx>0</posx>
+                <posy>42</posy>
+                <width>1180</width>
+                <height>2</height>
+                <texture>context_info_settings_button_focus.png</texture>
+                <visible>!Control.HasFocus(120)</visible>
+              </control>
+              <control type="image">
+                <posx>12</posx>
+                <posy>16</posy>
+                <width>18</width>
+                <height>12</height>
+                <info>Listitem.Thumb</info>
+              </control>
+              <control type="label">
+                <posx>40</posx>
+                <posy>0</posy>
+                <width>100</width>
+                <height>44</height>
+                <font>font18</font>
+                <aligny>center</aligny>
+                <textcolor>black</textcolor>
+                <selectedcolor>green</selectedcolor>
+                <align>left</align>
+                <info>ListItem.Label2</info>
+                <visible>Control.HasFocus(120)</visible>
+              </control>
+              <control type="label">
+                <posx>40</posx>
+                <posy>0</posy>
+                <width>100</width>
+                <height>44</height>
+                <font>font18</font>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <selectedcolor>green</selectedcolor>
+                <align>left</align>
+                <info>ListItem.Label2</info>
+                <visible>!Control.HasFocus(120)</visible>
+              </control>
+              <control type="label">
+                <posx>200</posx>
+                <posy>0</posy>
+                <width>900</width>
+                <height>44</height>
+                <font>font18</font>
+                <aligny>center</aligny>
+                <textcolor>black</textcolor>
+                <selectedcolor>green</selectedcolor>
+                <align>left</align>
+                <info>ListItem.Label</info>
+                <visible>Control.HasFocus(120)</visible>
+              </control>
+              <control type="label">
+                <posx>200</posx>
+                <posy>0</posy>
+                <width>900</width>
+                <height>44</height>
+                <font>font18</font>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <selectedcolor>green</selectedcolor>
+                <align>left</align>
+                <info>ListItem.Label</info>
+                <visible>!Control.HasFocus(120)</visible>
+              </control>
+            </focusedlayout>
+          </control>
+          <control type="scrollbar" id="60">
+            <description>scroll bar indicator for lists</description>
+            <posx>8</posx>
+            <posy>60</posy>
+            <width>14</width>
+            <height>220</height>
+            <visible>Control.IsVisible(120)</visible>
+            <texturesliderbackground border="7">scrollbar_vertical_bg.png</texturesliderbackground>
+            <texturesliderbar border="7">scrollbar_vertical_nib.png</texturesliderbar>
+            <texturesliderbarfocus border="7">scrollbar_vertical_nib.png</texturesliderbarfocus>
+            <!--textureslidernib>scrollbar_vertical_nib.png</textureslidernib>
+            <textureslidernibfocus>scrollbar_vertical_nib.png</textureslidernibfocus-->
+            <orientation>vertical</orientation>
+            <showonepage>false</showonepage>
+          </control>
+        </control>
+      </control>
+    </control>
+  </controls>
+</window>
