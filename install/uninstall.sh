@@ -5,8 +5,8 @@ dtool 6 1 0 100
 dtool 6 2 0 0
 
 # remove all traces of the install
-umount /opt/boxee/skin
-umount /opt/boxee/skin/boxee/720p
+umount -f /opt/boxee/skin
+umount -f /opt/boxee/skin/boxee/720p
 rm /data/.boxee/UserData/advancedsettings.xml
 /bin/busybox sed -i "s/;sh \/media\/BOXEE\/uninstall.sh//g" /data/etc/boxeehal.conf 
 /bin/busybox sed -i "s/; sh \/media\/BOXEE\/uninstall.sh//g" /data/etc/boxeehal.conf
