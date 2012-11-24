@@ -13,6 +13,7 @@ cd /download
 
 # copy the hack folder, make the hack run at boot, and clean up
 umount /opt/boxee/skin
+umount /opt/boxee/skin/boxee/720p
 rm -Rf /data/hack
 mv /download/boxeehack-master/hack /data/
 chmod -R +x /data/hack/*.sh
