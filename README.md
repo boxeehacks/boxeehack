@@ -24,6 +24,8 @@ What does it do?
   - Improved buffering for Full HD videos
   - Tweaked MTU if you're using a VPN/PPP connection
   - Rewritten subtitle system (BierDopje, OpenSubtitles, Subtitulos, SubsWiki, Addic7ed)
+  - Special BoxeeHack settings menu
+  - Check for new versions
 
 Requirements
 ------------
