@@ -90,15 +90,18 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
     def process(self, filepath, langs):
         ''' main method to call on the plugin, pass the filename and the wished 
         languages and it will query OpenSubtitles.org '''
-        if  xbmc.getFileSize(filepath):
-            filehash = self.hashFile(filepath)
-            log.debug(filehash)
-            size =  xbmc.getFileSize(filepath)
-            fname = self.getFileName(filepath)
-            return self.query(moviehash=filehash, langs=langs, bytesize=size, filename=fname)
-        else:
-            fname = self.getFileName(filepath)
-            return self.query(langs=langs, filename=fname)
+
+        filehash = self.hashFile(filepath)
+        # disabled this part because getFileSize gives negative values for large files
+        # on BoxeeBox, which makes this useless for larger movies
+#        if xbmc.getFileSize(filepath):
+#            log.debug(filehash)
+#            size = long(xbmc.getFileSize(filepath))
+#            fname = self.getFileName(filepath)
+#            return self.query(moviehash=filehash, langs=langs, bytesize=size, filename=fname)
+#        else:
+        fname = self.getFileName(filepath)
+        return self.query(langs=langs, filename=fname, moviehash=filehash)
         
     def createFile(self, subtitle):
         '''pass the URL of the sub and the file it matches, will unzip it
@@ -137,11 +140,14 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
         search = {}
         sublinks = []
 	gotHash = False
-        if moviehash: 
-		search['moviehash'] = moviehash
-		gotHash = True
+	
+	# disabled extra stuff because it fails on BoxeeBox for large (HD > 2GB) files
+	# this basically means searching is always going to happen based on filename
+#        if moviehash: 
+#            search['moviehash'] = moviehash
+#            gotHash = True
         if imdbID: search['imdbid'] = imdbID
-        if bytesize: search['moviebytesize'] = str(bytesize)
+#        if bytesize: search['moviebytesize'] = str(bytesize)
         if langs: search['sublanguageid'] = ",".join([self.getLanguage(lang) for lang in langs])
         if len(search) == 0:
             log.debug("No search term, we'll use the filename")
@@ -178,7 +184,6 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
         socket.setdefaulttimeout(None)
         return sublinks
         
-        
     def get_results(self, token, search, gotHash):
         log.debug("query: token='%s', search='%s'" % (token, search))
         try:
@@ -204,9 +209,16 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
 			result["hash"] = True
                 result["lang"] = self.getLG(r['SubLanguageID'])
                 if search.has_key("query") : #We are using the guessed file name, let's remove some results
+
+                    # We're not actually removing, since due to some BoxeeBox issues we're
+                    # always searching by filename. And if a user renames their files (which)
+                    # works better with Boxee, then these names will probably never match
+                    # so we only prioritize the matches, but keep everything else in there as
+                    # well...
                     if r["MovieReleaseName"].startswith(self.filename):
-                        sublinks.append(result)
+                        sublinks.insert(0,result)
                     else:
+                        sublinks.append(result)
                         log.debug("Removing %s because release '%s' has not right start %s" %(result["release"], r["MovieReleaseName"], self.filename))
                 else :
                     sublinks.append(result)
