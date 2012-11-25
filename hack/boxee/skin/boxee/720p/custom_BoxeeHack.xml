@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <window id="1337">
+	<onunload>Control.SetFocus(7)</onunload>
+	<onunload>Control.SetFocus(10)</onunload>
 	<defaultcontrol>3</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
@@ -101,6 +103,21 @@
 					<label>Enable Subtitle Plugin</label>
 					<selected>StringCompare(Skin.String(subtitles-plugin),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py","subtitles")</onclick>
+				</control>
+				<control type="button" id="13">
+					<width>850</width>
+					<height>56</height>
+					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<font>font24</font>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<disabledcolor>mediumgreyheidi</disabledcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textoffsetx>20</textoffsetx>
+					<label>Check for new version...</label>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py","version")</onclick>
 				</control>
 			</control>
 <!--			<control type="spincontrolex" id="9">

@@ -46,17 +46,35 @@ def subtitle_function():
 #    if ret == 1:
     os.system("sh /data/hack/subtitles.sh")
 
+def version_function():
+    import urllib2
+    u = urllib2.urlopen('https://raw.github.com/boxeehacks/boxeehack/master/hack/version')
+    version_remote = "%s" % u.read()
+    version_local = file_get_contents("/data/hack/version")
+
+    version_remote_parts = version_remote.split(".")
+    version_local_parts = version_local.split(".")
+
+    hasnew = 0
+    if version_remote_parts[0] > version_local_parts[0]:
+        hasnew = 1
+    elif version_remote_parts[0] == version_local_parts[0]:
+        if version_remote_parts[1] > version_local_parts[1]:
+            hasnew = 1
+        elif version_remote_parts[1] == version_local_parts[1]:
+            if version_remote_parts[2] > version_local_parts[2]:
+                hasnew = 1
+
+    dialog = xbmcgui.Dialog()
+    if hasnew:
+        dialog.ok("BoxeeHack Version", "A new version of BoxeeHack is available. Upgrade to %s" % (version_remote))
+    else:
+        dialog.ok("BoxeeHack Version", "Your BoxeeHack version is up to date.")
+
 if (__name__ == "__main__"):
     if sys.argv[1] == "telnet":
         telnet_function()
     if sys.argv[1] == "subtitles":
         subtitle_function()
-
-#if ( __name__ == "__main__" ):
-#    if len(sys.argv[ 1 ]) > 0:
-#        if sys.argv[1] == "telnet":
-#            telnet_function()
-#        elif sys.argv[1] == "exit":
-#            exit_function()
-#    else:
-#        xbmc.log( "No Arguments sent", xbmc.LOGNOTICE )
+    if sys.argv[1] == "version":
+        version_function()
