@@ -1549,7 +1549,7 @@
 		                <posy>0</posy>
 		                <width>1280</width>
 		                <height>720</height>
-		                <texture>../720p/resources/bg-browse-overlay.png</texture>
+		                <texture>../720p/resources/background/bg-browse-overlay.png</texture>
 		        </control>
 		</control>
 
