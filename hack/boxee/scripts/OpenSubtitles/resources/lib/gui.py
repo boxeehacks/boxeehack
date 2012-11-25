@@ -285,7 +285,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
         logging.basicConfig()
 	self.getControl( LOADING_IMAGE ).setVisible( True )
         self.getControl( STATUS_LABEL ).setLabel( "Searching" )
-	self.getControl( 180 ).setLabel("[B][UPPERCASE]$LOCALIZE[293]: " + os.path.basename(self.file_original_path) + "[/B][/UPPERCASE]");
+	self.getControl( 180 ).setLabel("[B][UPPERCASE]$LOCALIZE[293]:[/B] " + self.search_string.replace("+", " ") + "[/UPPERCASE]");
 	langs = None
 	subtitles = []
 	q = Queue()
