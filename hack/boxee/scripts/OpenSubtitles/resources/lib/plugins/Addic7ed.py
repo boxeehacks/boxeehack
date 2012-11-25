@@ -129,7 +129,7 @@ class Addic7ed(SubtitleDatabase.SubtitleDB):
 				result["release"] = "%s.S%.2dE%.2d.%s" %(name.replace("_", ".").title(), int(season), int(episode), '.'.join(subteams)
 )
 				if(len(works_with_match) > 0):
-					result["release"] = result["release"] + " / " + works_with_match[0]
+					result["release"] = result["release"].decode('utf-8').strip() + " / " + works_with_match[0].decode('utf-8').strip()
 				result["lang"] = lang
 				result["link"] = link
 				result["page"] = searchurl

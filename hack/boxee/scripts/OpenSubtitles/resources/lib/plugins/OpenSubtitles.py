@@ -140,7 +140,11 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
         search = {}
         sublinks = []
 	gotHash = False
-	
+	fileHash = ''
+	if(moviehash):
+		gotHash = True
+		fileHash = moviehash
+		
 	# disabled extra stuff because it fails on BoxeeBox for large (HD > 2GB) files
 	# this basically means searching is always going to happen based on filename
 #        if moviehash: 
@@ -174,7 +178,7 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
             
         # Search
         self.filename = filename #Used to order the results
-        sublinks += self.get_results(token, search, gotHash)
+        sublinks += self.get_results(token, search, gotHash, fileHash)
 
         # Logout
         try:
@@ -184,7 +188,7 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
         socket.setdefaulttimeout(None)
         return sublinks
         
-    def get_results(self, token, search, gotHash):
+    def get_results(self, token, search, gotHash, fileHash):
         log.debug("query: token='%s', search='%s'" % (token, search))
         try:
             if search:
@@ -205,7 +209,7 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
                 result["release"] = r['SubFileName']
                 result["link"] = r['SubDownloadLink']
                 result["page"] = r['SubDownloadLink']
-		if(gotHash == True and r['MovieHash'] == search['moviehash']):
+		if(gotHash == True and r['MovieHash'] == fileHash):
 			result["hash"] = True
                 result["lang"] = self.getLG(r['SubLanguageID'])
                 if search.has_key("query") : #We are using the guessed file name, let's remove some results
