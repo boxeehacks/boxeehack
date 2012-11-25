@@ -60,7 +60,9 @@ class BierDopje(SubtitleDatabase.SubtitleDB):
             return
         self.headers = {'User-Agent' : 'BoxeeSubs/1.0'}
         self.cache_path = os.path.join(cache_folder_path, "bierdopje.cache")
-        if not os.path.exists(self.cache_path):
+        if not os.path.exists(cache_folder_path):
+	    os.makedirs(cache_folder_path)
+	if not os.path.exists(self.cache_path):
             log.info("Creating cache file %s" % self.cache_path)
             f = open(self.cache_path, 'w')
             pickle.dump({'showids' : {}}, f)
