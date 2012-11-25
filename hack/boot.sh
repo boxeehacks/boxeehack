@@ -1,5 +1,6 @@
 #!/bin/sh
 sh /data/hack/skin.sh &
+sh /data/hack/subtitles.sh &
 sh /data/hack/logo.sh &
 sh /data/hack/apps.sh &
 sh /data/hack/network.sh &
