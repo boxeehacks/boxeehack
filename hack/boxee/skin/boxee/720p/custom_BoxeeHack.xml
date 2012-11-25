@@ -104,6 +104,30 @@
 					<selected>StringCompare(Skin.String(subtitles-plugin),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py","subtitles")</onclick>
 				</control>
+				<control type="radiobutton" id="14">
+					<width>850</width>
+					<height>56</height>
+					<type>radiobutton</type>
+					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+					<texturenofocus srcborder="24" border="16">-</texturenofocus>
+					<textureradioon>universal/graphic-radio-check.png</textureradioon>
+					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<disabledcolor>mediumgreyheidi</disabledcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textoffsetx>20</textoffsetx>
+					<textoffsety>0</textoffsety>
+					<radioposx>808</radioposx>
+					<radioposy>14</radioposy>
+					<radiowidth>28</radiowidth>
+					<radioheight>28</radioheight>
+					<font>font24</font>
+					<label>Use TVCatchup if Live TV unavailable (UK only)</label>
+					<selected>StringCompare(Skin.String(livetvcatchup),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py","livetvcatchup")</onclick>
+				</control>
 				<control type="button" id="13">
 					<width>850</width>
 					<height>56</height>

@@ -1,0 +1,190 @@
+<html>
+<head>
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<title>Live TV</title>
+<style type="text/css">
+body
+{
+	overflow:hidden;
+	background-color:grey;
+}
+
+.visibleframe
+{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	position:absolute;
+}
+
+.hiddenframe
+{
+	width:0px;
+	height:0px;
+	overflow:hidden;
+	position:absolute;
+	top:-100px; left:-100px;
+}
+
+.zoomed
+{
+    -moz-transform: scale(2);
+    -moz-origin: 0 0 0;
+    -webkit-transform: scale(2);
+    -webkit-transform-origin: 0 0 0;
+}
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+function setFrameContent(url)
+{
+	var obj = $('#channel-frame');
+	var container = obj.parent();
+	obj.attr('data',url);
+	var newobj = $(obj).clone();
+	$(obj).remove();
+	$(container).append( newobj );
+}
+
+var channels = [ 
+{ id: 1, name: "BBC One" },
+{ id: 2, name: "BBC Two" },
+{ id: 3, name: "ITV1" },
+{ id: 4, name: "Channel 4" },
+{ id: 5, name: "Channel 5" },
+{ id: 64, name: "ITV1+1" },
+{ id: 20, name: "Channel 4 +1" },
+{ id: 75, name: "Channel 5 + 1" },
+{ id: 12, name: "BBC Three" },
+{ id: 13, name: "BBC Four" },
+{ id: 6, name: "ITV2" },
+{ id: 23, name: "ITV2 +1" },
+{ id: 9, name: "ITV3" },
+{ id: 28, name: "ITV3 +1" },
+{ id: 10, name: "ITV4" },
+{ id: 29, name: "ITV4 +1" },
+{ id: 8, name: "E4" },
+{ id: 21, name: "E4 +1" },
+{ id: 11, name: "More 4" },
+{ id: 27, name: "More4 +1" },
+{ id: 16, name: "Film 4" },
+{ id: 30, name: "Film4 +1" },
+{ id: 106, name: "4seven" },
+{ id: 14, name: "Dave" },
+{ id: 7, name: "5USA" },
+{ id: 77, name: "5USA + 1" },
+{ id: 15, name: "5*" },
+{ id: 76, name: "5* + 1" },
+{ id: 18, name: "CBBC Channel" },
+{ id: 24, name: "CBeebies" },
+{ id: 19, name: "CITV"},
+{ id: 36, name: "Pick TV" },
+{ id: 74, name: "Challenge" },
+{ id: 73, name: "Quest" },
+{ id: 26, name: "Yesterday" },
+{ id: 66, name: "Really" },
+{ id: 65, name: "Red Button" },
+{ id: 17, name: "BBC News" },
+{ id: 31, name: "BBC Parliament" },
+{ id: 34, name: "Sky News" },
+{ id: 50, name: "Al Jazeera" },
+{ id: 71, name: "Clubbing TV" },
+{ id: 72, name: "BritAsia TV" },
+{ id: 25, name: "4Music" },
+{ id: 37, name: "Viva" },
+{ id: 67, name: "Channel AKA" },
+{ id: 63, name: "Vintage TV" },
+{ id: 58, name: "Movies4Men" },
+{ id: 60, name: "Movies4Men +1" },
+{ id: 33, name: "QVC" }
+];
+
+var channelIndex = 0;
+
+var gotActive = false;
+
+var attemptFullScreen = function() {
+	if(window.boxee) { 
+		boxee.exec("var wids = boxee.getWidgets(); wids.some(function(A) { var widgetId = A.getAttribute('id'); if(widgetId == 'TVCatchupWebPlayer') { A.setActive(); boxee.setMode(boxee.KEYBOARD_MODE); browser.execute('gotActive = true'); return true; } else { return false; } });");
+	}
+}
+
+function findActive()
+{
+	if(!gotActive)
+	{
+		if(window.boxee) {
+		//boxee.exec("boxee.showNotification('Checking', '.', 3)");
+		boxee.exec("var wid=boxee.getWidgets(); for(var i=0;i<wid.length;i++) { if(wid[i].getAttribute('id').toLowerCase() == 'TVCatchupWebPlayer'.toLowerCase()) { wid[i].setActive(); boxee.setMode(boxee.KEYBOARD_MODE); browser.execute('gotActive = true'); } }");
+		}
+	}
+}
+
+function initChannel(index)
+{
+	try
+	{
+		channelIndex = index;
+		var channel = channels[channelIndex];
+		var url = "http://tvcatchup.com/watchV1.html?c=" + channel.id;
+		
+		setFrameContent(url);
+		var msg = (index + 1) + ": " + channel.name;
+		if(window.boxee) { boxee.exec("boxee.showNotification('" + msg + "', '.', 3)"); } else { alert(msg); }
+	}
+	catch(e)
+	{
+		if(window.boxee) { boxee.showNotification(e.message, ".", 10); } else { alert(msg); }
+	}
+}
+
+function changeChannel(index)
+{
+	initChannel(index);
+	setTimeout(attemptFullScreen,2000);
+}
+
+var prevChannel = function()
+{
+	if(channelIndex > 0)
+	{
+		changeChannel(channelIndex - 1);
+	}
+}
+
+
+var nextChannel = function()
+{
+	if(channelIndex < channels.length - 1)
+	{
+		changeChannel(channelIndex + 1);
+	}
+}
+
+var init = function()
+{
+	if(window.boxee)
+	{
+		boxee.exec("boxee.setMode(boxee.KEYBOARD_MODE)");
+		boxee.exec("boxee.reloadOnPageChange = true");
+		boxee.exec("boxee.showOSDOnStartup = false");
+		boxee.exec("boxee.renderBrowser = false");
+		boxee.exec("boxee.onKeyboardKeyBack = function() { browser.shutdown(); }");
+		boxee.exec("boxee.onKeyboardKeyLeft = function() { browser.execute('prevChannel()'); }");
+		boxee.exec("boxee.onKeyboardKeyRight = function() { browser.execute('nextChannel()'); }");
+		boxee.exec("showNotification('Welcome to Live TV', '.', 10)");
+	}
+	
+	initChannel(0);
+	setInterval(findActive,1000);
+}
+</script>
+</head>
+<body style="margin:0px;" onload="init();">
+<object id="channel-frame" data="wait.html" type="text/html" style="width:100%;height:100%"></object>
+</body>
+</html>

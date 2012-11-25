@@ -46,6 +46,17 @@ def subtitle_function():
 #    if ret == 1:
     os.system("sh /data/hack/subtitles.sh")
 
+def livetvcatchup_function():
+    livetvcatchup = file_get_contents("/data/etc/.livetvcatchup_enabled")
+
+    if livetvcatchup == "1":
+        livetvcatchup = "0"
+    else:
+        livetvcatchup = "1"
+
+    xbmc.executebuiltin("Skin.SetString(livetvcatchup,%s)" % livetvcatchup)
+    file_put_contents("/data/etc/.livetvcatchup_enabled", livetvcatchup)
+
 def version_function():
     import urllib2
     u = urllib2.urlopen('https://raw.github.com/boxeehacks/boxeehack/master/hack/version')
@@ -76,5 +87,7 @@ if (__name__ == "__main__"):
         telnet_function()
     if sys.argv[1] == "subtitles":
         subtitle_function()
+    if sys.argv[1] == "livetvcatchup":
+        livetvcatchup_function()
     if sys.argv[1] == "version":
         version_function()

@@ -167,7 +167,7 @@
 			</control>
 			
 			<control type="list" id="1823">
-				<animation type="Conditional" condition="!DVB.IsTunerReady">
+				<animation type="Conditional" condition="!DVB.IsTunerReady + !StringCompare(Skin.String(livetvcatchup),1)">
 					<effect type="slide" start="0" end="59" time="200" delay="0"/>
 				</animation>
 				<posx>130</posx>
@@ -264,6 +264,13 @@
 						<label>58000</label>
 						<icon>icons/icon-home-live-tv.png</icon>
 						<onclick>-</onclick>
+					</item>
+					<item>
+						<visible>!DVB.IsTunerReady + StringCompare(Skin.String(livetvcatchup),1)</visible>
+						<controlid>999</controlid>
+						<label>58000</label>
+						<icon>icons/icon-home-live-tv.png</icon>
+						<onclick>PlayMedia("http://localhost/livetv/")</onclick>
 					</item>
 					<item>
 						<controlid>1832</controlid>
