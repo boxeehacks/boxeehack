@@ -12,10 +12,10 @@ rm /data/.boxee/UserData/advancedsettings.xml
 /bin/busybox sed -i "s/; sh \/media\/BOXEE\/uninstall.sh//g" /data/etc/boxeehal.conf
 /bin/busybox sed -i "s/;sh \/data\/hack\/boot.sh//g" /data/etc/boxeehal.conf 
 /bin/busybox sed -i "s/; sh \/data\/hack\/boot.sh//g" /data/etc/boxeehal.conf 
-/bin/busybox sed -i "s/;sh \/media\/BOXEE\/uninstall.sh//g" /data/.boxee/UserData/guisettings.conf 
-/bin/busybox sed -i "s/; sh \/media\/BOXEE\/uninstall.sh//g" /data/.boxee/UserData/guisettings.conf
-/bin/busybox sed -i "s/;sh \/data\/hack\/boot.sh//g" /data/.boxee/UserData/guisettings.conf 
-/bin/busybox sed -i "s/; sh \/data\/hack\/boot.sh//g" /data/.boxee/UserData/guisettings.conf 
+/bin/busybox sed -i "s/;sh \/media\/BOXEE\/uninstall.sh//g" /data/.boxee/UserData/guisettings.xml
+/bin/busybox sed -i "s/; sh \/media\/BOXEE\/uninstall.sh//g" /data/.boxee/UserData/guisettings.xml
+/bin/busybox sed -i "s/;sh \/data\/hack\/boot.sh//g" /data/.boxee/UserData/guisettings.xml
+/bin/busybox sed -i "s/; sh \/data\/hack\/boot.sh//g" /data/.boxee/UserData/guisettings.xml
 rm -Rf /data/hack
 
 # on uninstall we also remove the password
