@@ -137,20 +137,8 @@ class SubtitleDB(object):
         return os.path.splitext(filename)[1][1:].lower()
         
     def getFileName(self, filepath):
-        if  xbmc.getFileSize(filepath):
-            filename = os.path.basename(filepath)
-            log.warn("This is a file")
-	else:
-            filename = filepath
-	    log.warn("This is not a file")
-	fname = filename
-        
-	#if filename.endswith(('.avi', '.wmv', '.mov', '.mp4', '.mpeg', '.mpg', '.mkv')):
-        #    fname = filename.rsplit('.', 1)[0]
-        #else:
-        #    fname = filename
-        return fname
-        
+        return os.path.basename(filepath)
+                
     def guessFileData(self, filename):
         filename = unicode(self.getFileName(filename).lower())
         matches_tvshow = self.tvshowRegex.match(filename)
@@ -183,7 +171,6 @@ class SubtitleDB(object):
                     return {'type' : 'unknown', 'name' : filename, 'teams' : [] }
 
     def hashFile(self, name):
-	log.warn(xbmc.getFileHash(name))
 	return xbmc.getFileHash(name)	
 
     def hashFile2(self, name):
