@@ -458,7 +458,7 @@
                                 <height>524</height>
                                 <itemgap>0</itemgap>
                                 <pagecontrol>-</pagecontrol>
-                                <onleft>3</onleft>
+                                <onleft>300</onleft>
                                 <onright>-</onright>
                                 <onup>-</onup>
                                 <ondown>-</ondown>
