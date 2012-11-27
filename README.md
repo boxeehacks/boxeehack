@@ -51,6 +51,7 @@ On your BoxeeBox go to Settings -> Network -> Servers. Check "Enable Windows fil
 
 See: http://www.youtube.com/watch?v=6YrjAqPqM30 for a video walkthrough of the process on the Boxee Box
 See: http://forums.boxee.tv/showthread.php?t=63248 for additional help and information.
+See: http://boxeeplus.com/ for other info.
 
 If for some reason the hack disappears (which is still an issue with this version), just go into Settings -> Network -> Servers again and enter "boxeebox; sh /data/hack/boot.sh". After another reboot the hack should work (again).
 
