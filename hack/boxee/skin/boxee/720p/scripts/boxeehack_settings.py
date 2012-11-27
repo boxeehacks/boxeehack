@@ -82,8 +82,6 @@ def toggle_subtitles(mode):
 			config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
                 	if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
                         	config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
-                	else:
-                        	self.close();
 			config.set("DEFAULT", "lang", "All")
 			
 			if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
