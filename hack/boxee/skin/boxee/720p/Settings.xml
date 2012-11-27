@@ -146,7 +146,7 @@
 						<thumb>icons/icon-settings-system.png</thumb>
 					</item>
 					<item>
-						<label>BoxeeHack</label>
+						<label>BOXEE+</label>
 						<label2></label2>
 						<onclick>ActivateWindow(1337)</onclick>
 						<thumb>../720p/resources/icons/icon-settings-boxeehack.png</thumb>
