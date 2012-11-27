@@ -137,9 +137,9 @@ def check_new_version():
 
     dialog = xbmcgui.Dialog()
     if hasnew:
-        dialog.ok("BoxeeHack Version", "A new version of BoxeeHack is available. Upgrade to %s" % (version_remote))
+        dialog.ok("BOXEE+ Version", "A new version of BOXEE+ is available. Upgrade to %s" % (version_remote))
     else:
-        dialog.ok("BoxeeHack Version", "Your BoxeeHack version is up to date.")
+        dialog.ok("BOXEE+ Version", "Your BOXEE+ version is up to date.")
 
 if (__name__ == "__main__"):
     command = sys.argv[1]
