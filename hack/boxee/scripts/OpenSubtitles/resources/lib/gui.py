@@ -268,7 +268,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
     def onInit( self ):
         LOG( LOG_INFO, "onInit" )
         self.setup_all()
-        if self.file_path or self.search_string:
+        if self.file_path:
             self.connThread = threading.Thread( target=self.connect, args=() )
             self.connThread.start()
         
@@ -282,6 +282,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
             self.set_filepath( xbmc.Player().getPlayingFile() )
 
     def connect( self ):
+	self.setup_all()
         logging.basicConfig()
 	self.getControl( LOADING_IMAGE ).setVisible( True )
         self.getControl( STATUS_LABEL ).setLabel( "Searching" )
@@ -310,8 +311,6 @@ class GUI( xbmcgui.WindowXMLDialog ):
 		use_langs = None
 
 	for name in use_plugins:
-	    LOG( LOG_INFO, name)
-	    LOG( LOG_INFO, self.file_original_path)
 	    filep = self.file_original_path
             try :
                 plugin = getattr(plugins, name)(self.config, '/data/hack/cache')
@@ -405,3 +404,4 @@ class GUI( xbmcgui.WindowXMLDialog ):
                     self.exit_script()
         except:
                 self.exit_script()
+
