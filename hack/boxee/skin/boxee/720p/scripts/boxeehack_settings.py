@@ -56,14 +56,13 @@ def get_subtitles_language_filter():
         if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
       		config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
 	langs_config = config.get("DEFAULT", "lang")
-	if(langs_config.strip() == "" or langs_config == "All"):
+	if(langs_config.strip() == "" or langs_config.strip() == "All"):
 		return "0"
 	else:
 		return "1"	
 
 # Enable/disable the subtitle functionality
-def toggle_subtitles(mode):
-
+def toggle_subtitles(mode, current):
 	if(mode == "all"):
     		subtitles = get_subtitles_enabled()
 
@@ -76,7 +75,7 @@ def toggle_subtitles(mode):
     		os.system("sh /data/hack/subtitles.sh")
     		xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % subtitles )    
 	if(mode == "language"):
-		if(get_subtitles_language_filter() == "0"):
+		if(get_subtitles_language_filter() == "0" and current != "1"):
 			xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,1)" )		
 		else:
 			config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
@@ -172,7 +171,7 @@ if (__name__ == "__main__"):
     command = sys.argv[1]
 
     if command == "telnet": set_telnet_password()
-    if command == "subtitles": toggle_subtitles(sys.argv[2])
+    if command == "subtitles": toggle_subtitles(sys.argv[2], sys.argv[3])
     if command == "version": check_new_version()
     if command == "defaults": register_defaults()
     if command == "subtitles-provider":
