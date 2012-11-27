@@ -1,0 +1,144 @@
+<?xml version="1.0"?> <window>
+  <defaultcontrol always="true">120</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <controls>    
+    <control type="group">
+      <posx>342</posx>
+      <posy>126</posy>
+      <control type="image">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>600</width>
+        <height>412</height>
+        <texture srcborder="51" border="34">background/window-bg-transparent.png</texture>
+      </control>
+      <control type="group">
+        <control type="label" id="180">
+	  <posx>18</posx>
+          <posy>30</posy>
+          <width>564</width>
+          <height>20</height>
+          <align>center</align>
+          <aligny>top</aligny>
+          <font>font24b</font>
+          <textcolor>whiteheidi</textcolor>
+          <label>Subtitle languages</label>
+        </control>
+        <control type="group">
+          <animation type="Conditional" condition="Window.IsVisible(DialogProgress.xml)" reversible="true">
+            <effect type="fade" start="100" end="0" time="200"/>
+          </animation>
+          <control type="fixedlist" id="120">
+	    <posx>42</posx>
+            <posy>70</posy>
+            <width>516</width>
+            <height>290</height>
+            <onleft>-</onleft>
+            <onright>-</onright>
+            <onup>-</onup>
+            <ondown>-</ondown>
+            <pagecontrol>61</pagecontrol>
+            <scrolltime>200</scrolltime>
+            <focusposition>2</focusposition>
+            <itemlayout height="56">
+              <control type="label">
+                <posx>10</posx>
+                <posy>-1</posy>
+                <width>450</width>
+                <height>56</height>
+		<font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>lightgreyheidi</textcolor>
+                <selectedcolor>lightgreyheidi</selectedcolor>
+                <label>$INFO[ListItem.Label]</label>
+              </control>
+	      <control type="button">
+                <posx>470</posx>
+                <posy>14</posy>
+                <width>28</width>
+                <height>28</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>lightgreyheidi</textcolor>
+                <selectedcolor>lightgreyheidi</selectedcolor>
+                <label>-</label>
+		<visible>ListItem.Property(set)</visible>
+		<texturefocus>universal/graphic-radio-check.png</texturefocus>
+      		<texturenofocus>universal/graphic-radio-check.png</texturenofocus>
+              </control>
+	      <control type="button">
+                <posx>470</posx>
+                <posy>14</posy>
+                <width>28</width>
+                <height>28</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>lightgreyheidi</textcolor>
+                <selectedcolor>lightgreyheidi</selectedcolor>
+                <label>-</label>
+                <visible>!ListItem.Property(set)</visible>
+		<texturefocus>universal/graphic-radio-blank.png</texturefocus>
+                <texturenofocus>universal/graphic-radio-blank.png</texturenofocus>
+              </control>
+            </itemlayout>
+            <focusedlayout height="56">
+	      <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>515</width>
+                <height>56</height>
+                <texture srcborder="24" border="16">button-focused.png</texture>
+              </control>
+	      <control type="label">
+                <posx>10</posx>
+                <posy>-1</posy>
+                <width>490</width>
+                <height>56</height>
+		<font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>lightgreyheidi</textcolor>
+                <selectedcolor>lightgreyheidi</selectedcolor>
+                <label>$INFO[ListItem.Label]</label>
+              </control>
+	      <control type="button">
+                <posx>470</posx>
+                <posy>14</posy>
+                <width>28</width>
+                <height>28</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>lightgreyheidi</textcolor>
+                <selectedcolor>lightgreyheidi</selectedcolor>
+                <label>-</label>
+                <visible>ListItem.Property(set)</visible>
+                <texturefocus>universal/graphic-radio-check.png</texturefocus>
+                <texturenofocus>universal/graphic-radio-check.png</texturenofocus>
+              </control>
+              <control type="button">
+                <posx>470</posx>
+                <posy>14</posy>
+                <width>28</width>
+                <height>28</height>
+                <font>font24b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>lightgreyheidi</textcolor>
+                <selectedcolor>lightgreyheidi</selectedcolor>
+                <label>-</label>
+		<visible>!ListItem.Property(set)</visible>
+                <texturefocus>universal/graphic-radio-blank.png</texturefocus>
+                <texturenofocus>universal/graphic-radio-blank.png</texturenofocus>
+              </control>
+            </focusedlayout>
+          </control>
+        </control>
+      </control>
+    </control>
+  </controls>
+</window>
+
