@@ -52,49 +52,51 @@ def get_subtitles_enabled():
     return subtitles
 
 def get_subtitles_language_filter():
-	config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
-        if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-      		config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
-	langs_config = config.get("DEFAULT", "lang")
-	if(langs_config.strip() == "" or langs_config.strip() == "All"):
-		return "0"
-	else:
-		return "1"	
+    config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
+    if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
+        config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
+    langs_config = config.get("DEFAULT", "lang")
+    if(langs_config.strip() == "" or langs_config.strip() == "All"):
+        return "0"
+    else:
+        return "1"	
 
 # Enable/disable the subtitle functionality
 def toggle_subtitles(mode, current):
-	if(mode == "all"):
-    		subtitles = get_subtitles_enabled()
+    if(mode == "all"):
+        subtitles = get_subtitles_enabled()
 
-		if subtitles == "1":
-        		subtitles = "0"
-    		else:
-        		subtitles = "1"
+        if subtitles == "1":
+            subtitles = "0"
+        else:
+            subtitles = "1"
 
-    		file_put_contents("/data/etc/.subtitles_enabled", subtitles)
-    		os.system("sh /data/hack/subtitles.sh")
-    		xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % subtitles )    
-	if(mode == "language"):
-		if(get_subtitles_language_filter() == "0" and current != "1"):
-			xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,1)" )		
-		else:
-			config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
-                	if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-                        	config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
-			config.set("DEFAULT", "lang", "All")
-			
-			if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-                        	configfile = open("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini", "w")
-                        	config.write(configfile)
-                        	configfile.close()
-			xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,0)" )
+        file_put_contents("/data/etc/.subtitles_enabled", subtitles)
+        os.system("sh /data/hack/subtitles.sh")
+        xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % subtitles)
+
+    if(mode == "language"):
+        if(get_subtitles_language_filter() == "0" and current != "1"):
+            xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,1)")
+        else:
+            config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
+            if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
+                config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
+            config.set("DEFAULT", "lang", "All")
+
+            if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
+                configfile = open("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini", "w")
+                config.write(configfile)
+                configfile.close()
+            
+            xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,0)")
 
 # Edit the subtitle providers
 def subtitle_provider(method, section, provider=None):
     config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
 
     if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-    	config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
+        config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
 
     plugins = config.get("DEFAULT", "plugins")	
     plugin_section = "default"
@@ -109,7 +111,7 @@ def subtitle_provider(method, section, provider=None):
         plugins = config.get("DEFAULT", "movieplugins")
         plugin_section = "movie"
         config_section = "movieplugins"
-    
+
     enabled_providers = plugins.split(',')
     if method == "get":
         if provider != None:
@@ -174,5 +176,4 @@ if (__name__ == "__main__"):
     if command == "subtitles": toggle_subtitles(sys.argv[2], sys.argv[3])
     if command == "version": check_new_version()
     if command == "defaults": register_defaults()
-    if command == "subtitles-provider":
-        subtitle_provider("set", sys.argv[2], sys.argv[3])
+    if command == "subtitles-provider": subtitle_provider("set", sys.argv[2], sys.argv[3])
