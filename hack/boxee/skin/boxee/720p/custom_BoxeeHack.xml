@@ -151,7 +151,7 @@
 					<font>font24</font>
 					<label>Enable Subtitle Plugin</label>
 					<selected>StringCompare(Skin.String(subtitles-plugin),1)</selected>
-					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles", "all", "")</onclick>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles", "all", "all")</onclick>
 				</control>
 				<control type="button" id="13">
 					<width>850</width>

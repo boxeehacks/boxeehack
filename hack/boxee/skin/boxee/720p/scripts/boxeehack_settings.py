@@ -28,7 +28,7 @@ def register_defaults():
     xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % get_subtitles_enabled() )
     version_local = get_local_version()
     if version_local != "":
-        xbmc.executebuiltin("Skin.SetString(boxeeplus-version,%s)" % get_local_version() )
+        xbmc.executebuiltin("Skin.SetString(boxeeplus-version,%s)" % version_local )
 
 # Set the password for the telnet functionality    
 def set_telnet_password():
@@ -62,11 +62,11 @@ def get_subtitles_language_filter():
     if(langs_config.strip() == "" or langs_config.strip() == "All"):
         return "0"
     else:
-        return "1"	
+        return "1"
 
 # Enable/disable the subtitle functionality
 def toggle_subtitles(mode, current):
-    if(mode == "all"):
+    if mode == "all":
         subtitles = get_subtitles_enabled()
 
         if subtitles == "1":
@@ -78,8 +78,8 @@ def toggle_subtitles(mode, current):
         os.system("sh /data/hack/subtitles.sh")
         xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % subtitles)
 
-    if(mode == "language"):
-        if(get_subtitles_language_filter() == "0" and current != "1"):
+    if mode == "language":
+        if get_subtitles_language_filter() == "0" and current != "1":
             xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,1)")
         else:
             config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
@@ -91,7 +91,7 @@ def toggle_subtitles(mode, current):
                 configfile = open("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini", "w")
                 config.write(configfile)
                 configfile.close()
-            
+
             xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,0)")
 
 # Edit the subtitle providers
