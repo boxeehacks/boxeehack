@@ -2393,7 +2393,7 @@
 			<control type="togglebutton" id="8014">
 				<include>ViewButton</include>
 				<onright>-</onright>
-				<onleft>-</onleft>
+				<onleft>8015</onleft>
 				<ondown>52</ondown>
 				<font>font18b</font>
 				<align>left</align>
@@ -2407,6 +2407,21 @@
 				<alttexturenofocus>actionbuttons/button-action-sort-on.png</alttexturenofocus>
 				<alttexturefocus>actionbuttons/button-action-sort-on.png</alttexturefocus>
 			</control>
+			<control type="button" id="8015">
+				<include>ViewButton2</include>
+                                <onright>8014</onright>
+                                <onleft>-</onleft>
+                                <ondown>52</ondown>
+                                <font>font18b</font>
+                                <align>left</align>
+                                <aligny>center</aligny>
+                                <textcolor>white</textcolor>
+                                <focusedcolor>white</focusedcolor>
+                                <textoffsetx>14</textoffsetx>				
+				<texturefocus>icons/icon_media_action_watched_on.png</texturefocus>
+                                <texturenofocus>icons/icon_media_action_watched_off.png</texturenofocus>
+				<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_setwatched.py")</onclick>
+                        </control>
 			<!--<control type="group" id="8000">
 				 Add to favorites 
 				<control type="button" id="8004">
