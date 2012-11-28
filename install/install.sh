@@ -44,6 +44,6 @@ dtool 6 2 0 50
 
 # reboot the box to activate the hack
 sleep 3
-reboot
+rm /download/install.sh; reboot
 
 #/data/hack/bin/busybox telnetd -p 2323 -l /data/hack/shell.sh &

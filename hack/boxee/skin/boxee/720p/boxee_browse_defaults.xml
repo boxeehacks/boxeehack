@@ -44,12 +44,12 @@
 			<posy>24</posy>
 			<width>36</width>
 			<height>36</height>
-			<visible>boxee.HasInternetConnection + !boxee.newversionforce</visible>
+			<visible>boxee.HasInternetConnection</visible><!-- + !boxee.newversionforce</visible> -->
 			<texturefocus>../720p/resources/icons/boxeeplus-online.png</texturefocus>
 			<texturenofocus>../720p/resources/icons/boxeeplus-online.png</texturenofocus>
 			<onclick>XBMC.ReloadSkin()</onclick>
 		</control>
-		<control type="button" id="2410">
+<!--		<control type="button" id="2410">
 			<posx>28</posx>
 			<posy>24</posy>
 			<width>36</width>
@@ -58,7 +58,7 @@
 			<visible>boxee.HasInternetConnection + boxee.newversionforce</visible>
 			<texturefocus diffuse="masks/10b9f2.png">icons/boxeeplus-update.png</texturefocus>
 			<texturenofocus>icons/boxeeplus-update.png</texturenofocus>
-		</control>
+		</control> -->
 		<control type="button">
 			<posx>28</posx>
 			<posy>24</posy>
@@ -76,12 +76,12 @@
 			<posy>32</posy>
 			<width>48</width>
 			<height>48</height>
-			<visible>boxee.HasInternetConnection + !boxee.newversionforce</visible>
+			<visible>boxee.HasInternetConnection</visible><!-- + !boxee.newversionforce</visible> -->
 			<texturefocus>icons/boxee-online.png</texturefocus>
 			<texturenofocus>icons/boxee-online.png</texturenofocus>
 			<onclick>XBMC.ReloadSkin()</onclick>
 		</control>
-		<control type="button">
+<!--		<control type="button">
 			<posx>32</posx>
 			<posy>32</posy>
 			<width>48</width>
@@ -90,7 +90,7 @@
 			<texturefocus>icons/boxee-update.png.png</texturefocus>
 			<texturenofocus>icons/boxee-update.png.png</texturenofocus>
 			<onclick>XBMC.ReloadSkin()</onclick>
-		</control>
+		</control> -->
 		<control type="button">
 			<posx>32</posx>
 			<posy>32</posy>

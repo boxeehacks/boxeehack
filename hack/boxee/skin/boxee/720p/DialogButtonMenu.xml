@@ -102,25 +102,31 @@
 						<thumb>icons/icon-shutdown-sleep.png</thumb>
 					</item>
 					<item id="15">
-						<visible>!boxee.newversionforce + [system.platform.windows | system.platform.osx]</visible>
+						<!-- <visible>!boxee.newversionforce + --><visible>[system.platform.windows | system.platform.osx]</visible>
 						<label>13012</label>
 						<onclick>XBMC.Quit()</onclick>
 						<thumb>icons/icon-shutdown-shutdown.png</thumb>
 					</item>
 					<item id="11">
-						<visible>true + !boxee.newversionforce + !system.platform.osx + !system.platform.windows</visible>
+						<!-- <visible>true + !boxee.newversionforce + --><visible>true + !system.platform.osx + !system.platform.windows</visible>
 						<label>54060</label>
 						<onclick>-</onclick>
 						<thumb>icons/icon-shutdown-shutdown.png</thumb>
 					</item>
-					<item id="14">
+					<item id="16">
+						<!-- <visible>true + !boxee.newversionforce + --><visible>true + !system.platform.osx + !system.platform.windows</visible>
+						<label>13013</label>
+						<onclick>XBMC.Reboot()</onclick>
+						<thumb>../720p/resources/icons/icon-shutdown-reboot.png</thumb>
+					</item>
+<!--					<item id="14">
 						<visible>boxee.newversion</visible>
 						<label>53251</label>
 						<onclick>-</onclick>
 						<thumb>icons/icon-shutdown-update.png</thumb>
-					</item>					
+					</item> -->			
 					<item id="12">
-						<visible>!boxee.newversionforce</visible>
+<!--						<visible>!boxee.newversionforce</visible> -->
 						<label>54061</label>
 						<onclick>XBMC.Logout()</onclick>
 						<thumb>icons/icon-shutdown-logout.png</thumb>

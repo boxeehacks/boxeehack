@@ -25,6 +25,8 @@ What does it do?
   - Tweaked MTU if you're using a VPN/PPP connection
   - Rewritten subtitle system (BierDopje, OpenSubtitles, Subtitulos, SubsWiki, Addic7ed)
   - Special BoxeeHack settings menu
+  - Reboot option
+  - No more forced updates
   - Check for new versions
 
 Requirements
