@@ -175,12 +175,19 @@ def check_new_version():
         elif version_remote_parts[1] == version_local_parts[1]:
             if version_remote_parts[2] > version_local_parts[2]:
                 hasnew = 1
+    issame = 0
+    if version_remote_parts[0] == version_local_parts[0]:
+        if version_remote_parts[1] == version_local_parts[1]:
+            if version_remote_parts[2] == version_local_parts[2]:
+                issame = 1
 
     dialog = xbmcgui.Dialog()
     if hasnew:
         dialog.ok("BOXEE+ Version", "A new version of BOXEE+ is available. Upgrade to %s" % (version_remote))
-    else:
+    elif issame:
         dialog.ok("BOXEE+ Version", "Your BOXEE+ version is up to date.")
+    else:
+        dialog.ok("BOXEE+ Version", "Hi there Doc Brown. How's the future?")
 
 if (__name__ == "__main__"):
     command = sys.argv[1]
