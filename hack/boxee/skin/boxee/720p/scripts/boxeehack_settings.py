@@ -25,7 +25,10 @@ def register_defaults():
     subtitle_provider("get", "tv")
     subtitle_provider("get", "movie")
     xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,%s)" % get_subtitles_language_filter() )
-    xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % get_subtitles_enabled() ) 
+    xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % get_subtitles_enabled() )
+    version_local = get_local_version()
+    if version_local != "":
+        xbmc.executebuiltin("Skin.SetString(boxeeplus-version,%s)" % get_local_version() )
 
 # Set the password for the telnet functionality    
 def set_telnet_password():
@@ -143,13 +146,23 @@ def subtitle_provider(method, section, provider=None):
             config.write(configfile)
             configfile.close()
 
-# Check for newer version
-def check_new_version():
+# Get the remote version number from github
+def get_remote_version():
     import urllib2
     u = urllib2.urlopen('https://raw.github.com/boxeehacks/boxeehack/master/hack/version')
     version_remote = "%s" % u.read()
-    version_local = file_get_contents("/data/hack/version")
+    return version_remote
 
+# Get the version number for the locally installed version
+def get_local_version():
+    version_local = file_get_contents("/data/hack/version")
+    return version_local
+
+# Check for newer version
+def check_new_version():
+    version_remote = get_remote_version()
+    version_local = get_local_version()
+    
     version_remote_parts = version_remote.split(".")
     version_local_parts = version_local.split(".")
 
