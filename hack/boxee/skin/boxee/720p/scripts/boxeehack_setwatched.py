@@ -39,15 +39,17 @@ def set_watched(command):
 			episode = item.GetEpisode()
 			boxeeid = mc.GetInfoString("Container(52).ListItem("+str(info_count)+").Property(boxeeid)")
 			info_count = info_count + 1
+			print boxeeid
 			if(episode != -1):
 				current_count = current_count+1
 				percent = int( ( episodes_count / current_count ) * 100)
 				message = "Episode " + str(current_count) + " out of " + str(episodes_count)
 				progress.update( percent, "", message, "" )
+				path = item.GetPath()
 				if command == "watched":
-				    	os.system('echo -e \'.timeout 10000;\\nINSERT INTO watched VALUES(null, "'+item.GetPath()+'", null, 1, 0, -1.0);\' | /data/hack/bin/sqlite3 ' + db_path + 'boxee_user_catalog.db')
-		        	elif command == "unwatched":
-		            		os.system('echo -e \'.timeout 10000;\\nDELETE FROM watched WHERE strPath = "'+item.GetPath()+'" OR strBoxeeId = "'+boxeeid+'";\' | /data/hack/bin/sqlite3 ' + db_path + 'boxee_user_catalog.db')
+				    	os.system('echo -e ".timeout 10000;\\nINSERT INTO watched VALUES(null, \\"'+path+'\\", \\"'+boxeeid+'\\", 1, 0, -1.0);" | /data/hack/bin/sqlite3 ' + db_path + 'boxee_user_catalog.db')
+				elif command == "unwatched":
+		            		os.system('echo -e ".timeout 10000;\\nDELETE FROM watched WHERE strPath = \\"'+path+'\\" OR (strBoxeeId != \\"\\" AND strBoxeeId = \\"'+boxeeid+'\\");" | /data/hack/bin/sqlite3 ' + db_path + 'boxee_user_catalog.db')
 				else:
                     			print "Unknown command"
 		progress.close()
