@@ -25,7 +25,10 @@ def register_defaults():
     subtitle_provider("get", "tv")
     subtitle_provider("get", "movie")
     xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,%s)" % get_subtitles_language_filter() )
-    xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % get_subtitles_enabled() ) 
+    xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % get_subtitles_enabled() )
+    version_local = get_local_version()
+    if version_local != "":
+        xbmc.executebuiltin("Skin.SetString(boxeeplus-version,%s)" % version_local )
 
 # Set the password for the telnet functionality    
 def set_telnet_password():
@@ -52,49 +55,51 @@ def get_subtitles_enabled():
     return subtitles
 
 def get_subtitles_language_filter():
-	config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
-        if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-      		config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
-	langs_config = config.get("DEFAULT", "lang")
-	if(langs_config.strip() == "" or langs_config.strip() == "All"):
-		return "0"
-	else:
-		return "1"	
+    config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
+    if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
+        config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
+    langs_config = config.get("DEFAULT", "lang")
+    if(langs_config.strip() == "" or langs_config.strip() == "All"):
+        return "0"
+    else:
+        return "1"
 
 # Enable/disable the subtitle functionality
 def toggle_subtitles(mode, current):
-	if(mode == "all"):
-    		subtitles = get_subtitles_enabled()
+    if mode == "all":
+        subtitles = get_subtitles_enabled()
 
-		if subtitles == "1":
-        		subtitles = "0"
-    		else:
-        		subtitles = "1"
+        if subtitles == "1":
+            subtitles = "0"
+        else:
+            subtitles = "1"
 
-    		file_put_contents("/data/etc/.subtitles_enabled", subtitles)
-    		os.system("sh /data/hack/subtitles.sh")
-    		xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % subtitles )    
-	if(mode == "language"):
-		if(get_subtitles_language_filter() == "0" and current != "1"):
-			xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,1)" )		
-		else:
-			config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
-                	if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-                        	config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
-			config.set("DEFAULT", "lang", "All")
-			
-			if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-                        	configfile = open("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini", "w")
-                        	config.write(configfile)
-                        	configfile.close()
-			xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,0)" )
+        file_put_contents("/data/etc/.subtitles_enabled", subtitles)
+        os.system("sh /data/hack/subtitles.sh")
+        xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % subtitles)
+
+    if mode == "language":
+        if get_subtitles_language_filter() == "0" and current != "1":
+            xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,1)")
+        else:
+            config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
+            if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
+                config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
+            config.set("DEFAULT", "lang", "All")
+
+            if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
+                configfile = open("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini", "w")
+                config.write(configfile)
+                configfile.close()
+
+            xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,0)")
 
 # Edit the subtitle providers
 def subtitle_provider(method, section, provider=None):
     config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
 
     if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-    	config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
+        config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
 
     plugins = config.get("DEFAULT", "plugins")	
     plugin_section = "default"
@@ -109,7 +114,7 @@ def subtitle_provider(method, section, provider=None):
         plugins = config.get("DEFAULT", "movieplugins")
         plugin_section = "movie"
         config_section = "movieplugins"
-    
+
     enabled_providers = plugins.split(',')
     if method == "get":
         if provider != None:
@@ -141,13 +146,23 @@ def subtitle_provider(method, section, provider=None):
             config.write(configfile)
             configfile.close()
 
-# Check for newer version
-def check_new_version():
+# Get the remote version number from github
+def get_remote_version():
     import urllib2
     u = urllib2.urlopen('https://raw.github.com/boxeehacks/boxeehack/master/hack/version')
     version_remote = "%s" % u.read()
-    version_local = file_get_contents("/data/hack/version")
+    return version_remote
 
+# Get the version number for the locally installed version
+def get_local_version():
+    version_local = file_get_contents("/data/hack/version")
+    return version_local
+
+# Check for newer version
+def check_new_version():
+    version_remote = get_remote_version()
+    version_local = get_local_version()
+    
     version_remote_parts = version_remote.split(".")
     version_local_parts = version_local.split(".")
 
@@ -160,12 +175,19 @@ def check_new_version():
         elif version_remote_parts[1] == version_local_parts[1]:
             if version_remote_parts[2] > version_local_parts[2]:
                 hasnew = 1
+    issame = 0
+    if version_remote_parts[0] == version_local_parts[0]:
+        if version_remote_parts[1] == version_local_parts[1]:
+            if version_remote_parts[2] == version_local_parts[2]:
+                issame = 1
 
     dialog = xbmcgui.Dialog()
     if hasnew:
         dialog.ok("BOXEE+ Version", "A new version of BOXEE+ is available. Upgrade to %s" % (version_remote))
-    else:
+    elif issame:
         dialog.ok("BOXEE+ Version", "Your BOXEE+ version is up to date.")
+    else:
+        dialog.ok("BOXEE+ Version", "Hi there Doc Brown. How's the future?")
 
 if (__name__ == "__main__"):
     command = sys.argv[1]
@@ -174,5 +196,4 @@ if (__name__ == "__main__"):
     if command == "subtitles": toggle_subtitles(sys.argv[2], sys.argv[3])
     if command == "version": check_new_version()
     if command == "defaults": register_defaults()
-    if command == "subtitles-provider":
-        subtitle_provider("set", sys.argv[2], sys.argv[3])
+    if command == "subtitles-provider": subtitle_provider("set", sys.argv[2], sys.argv[3])
