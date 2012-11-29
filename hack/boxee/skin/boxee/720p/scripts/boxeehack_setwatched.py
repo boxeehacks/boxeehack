@@ -5,7 +5,7 @@ import subprocess
 
 os.environ["LD_LIBRARY_PATH"]=".:/data/hack/lib:/opt/local/lib:/usr/local/lib:/usr/lib:/lib:/lib/gstreamer-0.10:/opt/local/lib/qt"
 
-def set_watched():
+def set_watched(command):
 	list = mc.GetWindow(10483).GetList(52)
 	item = list.GetItem(1)
 	series = mc.GetInfoString("Container(52).ListItem.TVShowTitle")
@@ -21,7 +21,7 @@ def set_watched():
 
 	seasons = dict.fromkeys(seasons)
 	seasons = seasons.keys()
-	
+
 	use_season = -1
 	season_string = ""
 	if(len(seasons) == 1):
@@ -29,9 +29,9 @@ def set_watched():
 		use_season = seasons[0]
 
 	dialog = xbmcgui.Dialog()
-    	if dialog.yesno("Watched", "Do you want to mark all episodes of %s%s as watched?" % (series, season_string)):
-		progress = xbmcgui.DialogProgress()
-		progress.create('Updating episodes', 'Setting %s%s as watched' % (series, season_string))
+    if dialog.yesno("Watched", "Do you want to mark all episodes of %s%s as %s?" % (series, season_string, command)):
+        progress = xbmcgui.DialogProgress()
+        progress.create('Updating episodes', 'Setting %s%s as %s' % (series, season_string, command))
 
 		current_count = 0
 		for item in itemList:
@@ -41,9 +41,17 @@ def set_watched():
 				percent = int( ( episodes_count / current_count ) * 100)
 				message = "Episode " + str(current_count) + " out of " + str(episodes_count)
 				progress.update( percent, "", message, "" )
-				os.system('/data/hack/bin/sqlite3 ' + db_path + 'boxee_user_catalog.db \'INSERT INTO watched VALUES(null, "'+item.GetPath()+'", null, 1, 0, -1.0);\'')
+				if command == "watched":
+				    os.system('/data/hack/bin/sqlite3 ' + db_path + 'boxee_user_catalog.db \'.timeout 10000; INSERT INTO watched VALUES(null, "'+item.GetPath()+'", null, 1, 0, -1.0);\'')
+		        elif command == "unwatched":
+		            os.system('/data/hack/bin/sqlite3 ' + db_path + 'boxee_user_catalog.db \'.timeout 10000; DELETE FROM watched WHERE strPath = "'+item.GetPath()+'";\'')
+                else:
+                    print "Unknown command"
 		progress.close()
-		mc.ShowDialogNotification('Marked all episodes for %s%s as watched!' % (series, season_string))
+		mc.ShowDialogNotification('Marked all episodes for %s%s as %s!' % (series, season_string, command))
+		#xbmc.ReplaceWindow(10483)
+		xbmc.executebuiltin("Container.Refresh")
 
 if (__name__ == "__main__"):
-	set_watched()
+    command = sys.argv[1]
+	set_watched(command)
