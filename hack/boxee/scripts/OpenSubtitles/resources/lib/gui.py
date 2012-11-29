@@ -331,7 +331,10 @@ class GUI( xbmcgui.WindowXMLDialog ):
                     subtitles += subs
                 else:
                     for sub in subs:
-                        if sub["lang"] in langs:
+			lang_code = sub["lang"]
+			if(lang_code == "pt-br"):
+                                lang_code = "pb"
+                        if lang_code in langs:
                             subtitles += [sub]
 	
 	if(len(subtitles) > 0):

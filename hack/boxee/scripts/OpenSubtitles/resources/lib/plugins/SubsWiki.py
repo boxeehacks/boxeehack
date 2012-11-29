@@ -93,7 +93,7 @@ class SubsWiki(SubtitleDatabase.SubtitleDB):
 
                 link = statusTD.findNext("td").find("a")["href"]
 
-                if ((status == "Completed" or status == "Completado") and (not langs or lang in langs)) :
+                if ((status == "Completed" or status == "Completado")) :
                     result = {}
                     result["release"] = "%s.S%.2dE%.2d.%s" %(name.replace("-", ".").title(), int(season), int(episode), '.'.join(subteams))
                     result["lang"] = lang
