@@ -2326,7 +2326,7 @@
 				<textureclick>actionbuttons/button-action-sort-off.png</textureclick>
 				<alttexturenofocus>actionbuttons/button-action-sort-on.png</alttexturenofocus>
 				<alttexturefocus>actionbuttons/button-action-sort-on.png</alttexturefocus>
-			</control>		
+			</control>
 		</control>
 	</include>
 	<include name="MusicActionMenu">
@@ -2359,7 +2359,7 @@
 					<texturefocus>actionbuttons/button-action-grid-on.png</texturefocus>
 					<texturenofocus>actionbuttons/button-action-grid-off.png</texturenofocus>
 					<textureclick>actionbuttons/button-action-grid-on.png</textureclick>
-					<include>ViewButton</include>	
+					<include>ViewButton</include>
 					<onleft>8014</onleft>
 					<onright>9050</onright>
 					<ondown>9050</ondown>
@@ -2383,7 +2383,7 @@
 					<onclick>SetVisible(8001)</onclick>
 					<onclick>SetFocus(8001)</onclick>
 				</control>
-			</control>-->			
+			</control>-->
 		</control>
 	</include>
 	<include name="TVEpisodesActionMenu">
@@ -2409,21 +2409,36 @@
 			</control>
 			<control type="button" id="8015">
 				<include>ViewButton2</include>
-                                <onright>8014</onright>
-                                <onleft>-</onleft>
-                                <ondown>52</ondown>
-                                <font>font18b</font>
-                                <align>left</align>
-                                <aligny>center</aligny>
-                                <textcolor>white</textcolor>
-                                <focusedcolor>white</focusedcolor>
-                                <textoffsetx>14</textoffsetx>				
-				<texturefocus>icons/icon_media_action_watched_on.png</texturefocus>
-                                <texturenofocus>icons/icon_media_action_watched_off.png</texturenofocus>
-				<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_setwatched.py")</onclick>
-                        </control>
+                <onright>8014</onright>
+                <onleft>8016</onleft>
+                <ondown>52</ondown>
+                <font>font18b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <focusedcolor>white</focusedcolor>
+                <textoffsetx>14</textoffsetx>
+                <texturefocus>icons/icon_media_action_watched_on.png</texturefocus>
+                <texturenofocus>icons/icon_media_action_watched_off.png</texturenofocus>
+	            <onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_setwatched.py", "watched")</onclick>
+            </control>
+            <control type="button" id="8016">
+                <include>ViewButton3</include>
+                <onright>8015</onright>
+                <onleft>-</onleft>
+                <ondown>52</ondown>
+                <font>font18b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <focusedcolor>white</focusedcolor>
+                <textoffsetx>14</textoffsetx>
+                <texturefocus>icons/icon_media_action_unwatched_on.png</texturefocus>
+                <texturenofocus>icons/icon_media_action_unwatched_off.png</texturenofocus>
+                <onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_setwatched.py", "unwatched")</onclick>
+            </control>
 			<!--<control type="group" id="8000">
-				 Add to favorites 
+				 Add to favorites
 				<control type="button" id="8004">
 					<visible>true + !Window.Property(is-favorite)</visible>
 					<texturefocus>icons/icon_action_favorite_off_on.png</texturefocus>
@@ -2437,7 +2452,7 @@
 					<onclick>SetVisible(8005)</onclick>
 					<onclick>SetFocus(8005)</onclick>
 				</control>
-				 Remove from favorites 
+				 Remove from favorites
 				<control type="button" id="8005">
 					<visible>Window.Property(is-favorite)</visible>
 					<texturefocus>icons/icon_action_favorite_on_on.png</texturefocus>
@@ -2478,7 +2493,7 @@
 				<textureclick>actionbuttons/button-action-sort-off.png</textureclick>
 				<alttexturenofocus>actionbuttons/button-action-sort-on.png</alttexturenofocus>
 				<alttexturefocus>actionbuttons/button-action-sort-on.png</alttexturefocus>
-			</control>		
+			</control>
 		</control>
 	</include>
 	<include name="MoviesActionMenu">
@@ -2511,7 +2526,7 @@
 				<onright>-</onright>
 				<ondown>51</ondown>
 				<onup>-</onup>
-			</control>	
+			</control>
 		</control>
 	</include>-->
 	<include name="BrowseSquareLabelFocusApps">
