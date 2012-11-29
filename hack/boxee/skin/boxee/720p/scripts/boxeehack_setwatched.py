@@ -29,9 +29,9 @@ def set_watched(command):
 		use_season = seasons[0]
 
 	dialog = xbmcgui.Dialog()
-    if dialog.yesno("Watched", "Do you want to mark all episodes of %s%s as %s?" % (series, season_string, command)):
-        progress = xbmcgui.DialogProgress()
-        progress.create('Updating episodes', 'Setting %s%s as %s' % (series, season_string, command))
+    	if dialog.yesno("Watched", "Do you want to mark all episodes of %s%s as %s?" % (series, season_string, command)):
+        	progress = xbmcgui.DialogProgress()
+        	progress.create('Updating episodes', 'Setting %s%s as %s' % (series, season_string, command))
 
 		current_count = 0
 		for item in itemList:
@@ -42,16 +42,15 @@ def set_watched(command):
 				message = "Episode " + str(current_count) + " out of " + str(episodes_count)
 				progress.update( percent, "", message, "" )
 				if command == "watched":
-				    os.system('/data/hack/bin/sqlite3 ' + db_path + 'boxee_user_catalog.db \'.timeout 10000; INSERT INTO watched VALUES(null, "'+item.GetPath()+'", null, 1, 0, -1.0);\'')
-		        elif command == "unwatched":
-		            os.system('/data/hack/bin/sqlite3 ' + db_path + 'boxee_user_catalog.db \'.timeout 10000; DELETE FROM watched WHERE strPath = "'+item.GetPath()+'";\'')
-                else:
-                    print "Unknown command"
+				    	os.system('echo -e \'.timeout 10000;\\nINSERT INTO watched VALUES(null, "'+item.GetPath()+'", null, 1, 0, -1.0);\' | /data/hack/bin/sqlite3 ' + db_path + 'boxee_user_catalog.db')
+		        	elif command == "unwatched":
+		            		os.system('echo -e \'.timeout 10000;\\nDELETE FROM watched WHERE strPath = "'+item.GetPath()+'";\' | /data/hack/bin/sqlite3 ' + db_path + 'boxee_user_catalog.db')
+				else:
+                    			print "Unknown command"
 		progress.close()
 		mc.ShowDialogNotification('Marked all episodes for %s%s as %s!' % (series, season_string, command))
-		#xbmc.ReplaceWindow(10483)
-		xbmc.executebuiltin("Container.Refresh")
+		xbmc.executebuiltin("XBMC.ReplaceWindow(10483)")
 
 if (__name__ == "__main__"):
-    command = sys.argv[1]
+    	command = sys.argv[1]
 	set_watched(command)
