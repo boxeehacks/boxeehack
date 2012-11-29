@@ -152,7 +152,7 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
 #            gotHash = True
         if imdbID: search['imdbid'] = imdbID
 #        if bytesize: search['moviebytesize'] = str(bytesize)
-        if langs: search['sublanguageid'] = ",".join([self.getLanguage(lang) for lang in langs])
+#        if langs: search['sublanguageid'] = ",".join([self.getLanguage(lang) for lang in langs])
         if len(search) == 0:
             log.debug("No search term, we'll use the filename")
             # Let's try to guess what to search:
