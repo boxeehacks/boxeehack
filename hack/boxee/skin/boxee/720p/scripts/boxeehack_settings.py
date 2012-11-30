@@ -26,6 +26,7 @@ def register_defaults():
     subtitle_provider("get", "movie")
     xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,%s)" % get_subtitles_language_filter() )
     xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % get_subtitles_enabled() )
+    xbmc.executebuiltin("Skin.SetString(replace-featured,%s)" % get_replace_featured_enabled() )
     version_local = get_local_version()
     if version_local != "":
         xbmc.executebuiltin("Skin.SetString(boxeeplus-version,%s)" % version_local )
@@ -63,6 +64,23 @@ def get_subtitles_language_filter():
         return "0"
     else:
         return "1"
+
+def toggle_replace_featured():
+	replace = get_replace_featured_enabled()
+
+        if replace == "1":
+            replace = "0"
+        else:
+            replace = "1"
+
+	file_put_contents("/data/etc/.replace_featured_enabled", replace)
+        xbmc.executebuiltin("Skin.SetString(replace-featured,%s)" % replace)
+
+def get_replace_featured_enabled():
+    replace = file_get_contents("/data/etc/.replace_featured_enabled")
+    if replace == "":
+        replace = "0"
+    return replace
 
 # Enable/disable the subtitle functionality
 def toggle_subtitles(mode, current):
@@ -197,3 +215,4 @@ if (__name__ == "__main__"):
     if command == "version": check_new_version()
     if command == "defaults": register_defaults()
     if command == "subtitles-provider": subtitle_provider("set", sys.argv[2], sys.argv[3])
+    if command == "replace_featured": toggle_replace_featured()
