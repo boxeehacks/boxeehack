@@ -353,6 +353,8 @@
 					<scrolltime>400</scrolltime>
 					<pagecontrol>60</pagecontrol>
 					<orientation>horizontal</orientation>
+					<visible>boxee.HasInternetConnection + !stringcompare(Skin.String(replace-featured),1)</visible>
+                	                <enable>boxee.HasInternetConnection + !stringcompare(Skin.String(replace-featured),1)</enable>
 					<itemlayout width="416" height="256">
 						<control type="image">
 							<visible>!IsEmpty(ListItem.Thumb)</visible>
@@ -484,15 +486,15 @@
 			</control>
 
 			<control type="group" id="8000">
-				<animation effect="slide" start="0,0" end="-1248,0" time="450" condition="Container(8300).Position(3) | Container(8300).Position(4) | Container(8300).Position(5)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-2496,0" time="450" condition="Container(8300).Position(6) | Container(8300).Position(7) | Container(8300).Position(8)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-3744,0" time="450" condition="Container(8300).Position(9) | Container(8300).Position(10) | Container(8300).Position(11)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-4992,0" time="450" condition="Container(8300).Position(12) | Container(8300).Position(13) | Container(8300).Position(14)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-1248,0" time="450" condition="Container(8200).Position(3) | Container(8200).Position(4) | Container(8200).Position(5)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-2496,0" time="450" condition="Container(8200).Position(6) | Container(8200).Position(7) | Container(8200).Position(8)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-3744,0" time="450" condition="Container(8200).Position(9) | Container(8200).Position(10) | Container(8200).Position(11)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-4992,0" time="450" condition="Container(8200).Position(12) | Container(8200).Position(13) | Container(8200).Position(14)">Conditional</animation>
 				<posx>0</posx>
 				<posy>278</posy>
 				<visible>StringCompare(Skin.String(replace-featured),1)</visible>
 				<enable>StringCompare(Skin.String(replace-featured),1)</enable>
-				<control type="list" id="8300">
+				<control type="list" id="8200">
 					<preloaditems>4</preloaditems>
 					<posx>16</posx>
 					<posy>100</posy>
@@ -505,6 +507,8 @@
 					<scrolltime>400</scrolltime>
 					<pagecontrol>60</pagecontrol>
 					<orientation>horizontal</orientation>
+					<visible>StringCompare(Skin.String(replace-featured),1)</visible>
+                                	<enable>StringCompare(Skin.String(replace-featured),1)</enable>
 					<itemlayout width="416" height="256">
 						<control type="image">
 							<visible>!IsEmpty(ListItem.Thumb)</visible>
@@ -574,7 +578,7 @@
 					</itemlayout>
 					<focusedlayout width="416" height="256">
 						<control type="image">
-							<visible>!Control.HasFocus(8300)</visible>
+							<visible>!Control.HasFocus(8200)</visible>
 							<visible>!IsEmpty(ListItem.Thumb)</visible>
 							<posx>17</posx>
 							<posy>0</posy>
@@ -586,7 +590,7 @@
 							<aspectratio>scale</aspectratio>
 						</control>
 						<control type="image">
-							<visible>!Control.HasFocus(8300)</visible>
+							<visible>!Control.HasFocus(8200)</visible>
 							<visible>IsEmpty(ListItem.Thumb)</visible>
 							<posx>17</posx>
 							<posy>0</posy>
@@ -598,7 +602,7 @@
 							<aspectratio>scale</aspectratio>
 						</control>
 						<control type="image">
-							<visible>Control.HasFocus(8300)</visible>
+							<visible>Control.HasFocus(8200)</visible>
 							<visible>!IsEmpty(ListItem.Thumb)</visible>
 							<posx>17</posx>
 							<posy>0</posy>
@@ -610,7 +614,7 @@
 							<aspectratio>scale</aspectratio>
 						</control>
 						<control type="image">
-							<visible>Control.HasFocus(8300)</visible>
+							<visible>Control.HasFocus(8200)</visible>
 							<visible>IsEmpty(ListItem.Thumb)</visible>
 							<posx>17</posx>
 							<posy>0</posy>
@@ -653,7 +657,7 @@
                                                         <fadetime>200</fadetime>
                                                 </control>
 						<control type="label">
-							<visible>Control.HasFocus(8300)</visible>
+							<visible>Control.HasFocus(8200)</visible>
 							<posx>24</posx>
 							<posy>259</posy>
 							<width>364</width>
@@ -665,7 +669,7 @@
 							<textcolor>whiteheidi</textcolor>
 						</control>
 						<control type="label">
-							<visible>!Control.HasFocus(8300)</visible>
+							<visible>!Control.HasFocus(8200)</visible>
 							<posx>24</posx>
 							<posy>259</posy>
 							<width>364</width>
@@ -685,7 +689,7 @@
 		</control>
 		
 		<control type="group">
-			<visible>boxee.HasInternetConnection + !stringcompare(Skin.String(replace-featured),1)</visible>
+			<visible>boxee.HasInternetConnection | stringcompare(Skin.String(replace-featured),1)</visible>
 			<control type="image">
 				<posx>586</posx>
 				<posy>687</posy>
@@ -731,61 +735,6 @@
 				<animation effect="slide" start="0,0" end="32,0" time="0" condition="Container(8200).Position(6) | Container(8200).Position(7) | Container(8200).Position(8)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="48,0" time="0" condition="Container(8200).Position(9) | Container(8200).Position(10) | Container(8200).Position(11)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="64,0" time="0" condition="Container(8200).Position(12) | Container(8200).Position(13) | Container(8200).Position(14)">Conditional</animation>
-				<posx>586</posx>
-				<posy>687</posy>
-				<width>12</width>
-				<height>12</height>
-				<texture>universal/graphic-steps-circle.png</texture>
-				<colordiffuse>mediumgreyheidi</colordiffuse>
-			</control>
-		</control>
-		<control type="group">
-			<visible>stringcompare(Skin.String(replace-featured),1)</visible>
-			<control type="image">
-				<posx>586</posx>
-				<posy>687</posy>
-				<width>12</width>
-				<height>12</height>
-				<texture>universal/graphic-steps-dot.png</texture>
-				<colordiffuse>mediumgreyheidi</colordiffuse>
-			</control>
-			<control type="image">
-				<posx>602</posx>
-				<posy>687</posy>
-				<width>12</width>
-				<height>12</height>
-				<texture>universal/graphic-steps-dot.png</texture>
-				<colordiffuse>mediumgreyheidi</colordiffuse>
-			</control>
-			<control type="image">
-				<posx>618</posx>
-				<posy>687</posy>
-				<width>12</width>
-				<height>12</height>
-				<texture>universal/graphic-steps-dot.png</texture>
-				<colordiffuse>mediumgreyheidi</colordiffuse>
-			</control>
-			<control type="image">
-				<posx>634</posx>
-				<posy>687</posy>
-				<width>12</width>
-				<height>12</height>
-				<texture>universal/graphic-steps-dot.png</texture>
-				<colordiffuse>mediumgreyheidi</colordiffuse>
-			</control>
-			<control type="image">
-				<posx>650</posx>
-				<posy>687</posy>
-				<width>12</width>
-				<height>12</height>
-				<texture>universal/graphic-steps-dot.png</texture>
-				<colordiffuse>mediumgreyheidi</colordiffuse>
-			</control>
-			<control type="image">
-				<animation effect="slide" start="0,0" end="16,0" time="0" condition="Container(8300).Position(3) | Container(8300).Position(4) | Container(8300).Position(5)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="32,0" time="0" condition="Container(8300).Position(6) | Container(8300).Position(7) | Container(8300).Position(8)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="48,0" time="0" condition="Container(8300).Position(9) | Container(8300).Position(10) | Container(8300).Position(11)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="64,0" time="0" condition="Container(8300).Position(12) | Container(8300).Position(13) | Container(8300).Position(14)">Conditional</animation>
 				<posx>586</posx>
 				<posy>687</posy>
 				<width>12</width>
