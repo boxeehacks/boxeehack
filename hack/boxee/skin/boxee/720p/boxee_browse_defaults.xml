@@ -1421,7 +1421,7 @@
 		</control>
 		<control type="image">
 			<visible>ListItem.Property(watched) + StringCompare(Skin.String(show-thumbnails),1)</visible>
-			<posx>123</posx>
+			<posx>15</posx>
 			<posy>191</posy>
 			<width>20</width>
 			<height>20</height>
@@ -1516,7 +1516,7 @@
 		</control>
 		<control type="image">
 			<visible>ListItem.Property(watched) + StringCompare(Skin.String(show-thumbnails),2)</visible>
-			<posx>82</posx>
+			<posx>12</posx>
 			<posy>127</posy>
 			<width>13</width>
 			<height>13</height>
@@ -1687,7 +1687,7 @@
 		</control>
 		<control type="image">
 			<visible>ListItem.Property(watched) + StringCompare(Skin.String(show-thumbnails),1)</visible>
-			<posx>123</posx>
+			<posx>15</posx>
 			<posy>191</posy>
 			<width>20</width>
 			<height>20</height>
@@ -1782,7 +1782,7 @@
 		</control>
 		<control type="image">
 			<visible>ListItem.Property(watched) + StringCompare(Skin.String(show-thumbnails),2)</visible>
-			<posx>82</posx>
+			<posx>12</posx>
 			<posy>127</posy>
 			<width>13</width>
 			<height>13</height>
@@ -2390,6 +2390,7 @@
 		<control type="group" id="8051">
 			<visible>stringcompare(skin.string(EpisodeViewMode),Episodes)</visible>
 			<visible>true + !Window.Property(loading)</visible>
+
 			<control type="togglebutton" id="8014">
 				<include>ViewButton</include>
 				<onright>-</onright>
@@ -2418,8 +2419,8 @@
                 <textcolor>white</textcolor>
                 <focusedcolor>white</focusedcolor>
                 <textoffsetx>14</textoffsetx>
-                <texturefocus>icons/icon_media_action_watched_on.png</texturefocus>
-                <texturenofocus>icons/icon_media_action_watched_off.png</texturenofocus>
+                <texturefocus>../720p/resources/actionbuttons/button-action-watched-on.png</texturefocus>
+                <texturenofocus>../720p/resources/actionbuttons/button-action-watched-off.png</texturenofocus>
 	            <onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_setwatched.py", "watched")</onclick>
             </control>
             <control type="button" id="8016">
@@ -2433,8 +2434,8 @@
                 <textcolor>white</textcolor>
                 <focusedcolor>white</focusedcolor>
                 <textoffsetx>14</textoffsetx>
-                <texturefocus>icons/icon_media_action_unwatched_on.png</texturefocus>
-                <texturenofocus>icons/icon_media_action_unwatched_off.png</texturenofocus>
+                <texturefocus>../720p/resources/actionbuttons/button-action-unwatched-on.png</texturefocus>
+                <texturenofocus>../720p/resources/actionbuttons/button-action-unwatched-off.png</texturenofocus>
                 <onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_setwatched.py", "unwatched")</onclick>
             </control>
 			<!--<control type="group" id="8000">

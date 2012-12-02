@@ -556,6 +556,21 @@
 					<label>Clear thumbnail cache...</label>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_clear_cache.py", "thumbnail")</onclick>
 				</control>
+				<control type="button" id="304">
+					<width>850</width>
+					<height>56</height>
+					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<font>font24</font>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<disabledcolor>mediumgreyheidi</disabledcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textoffsetx>20</textoffsetx>
+					<label>Reload skin...</label>
+					<onclick>XBMC.ReloadSkin</onclick>
+				</control>
 			</control>
 		</control>
 	</controls>
