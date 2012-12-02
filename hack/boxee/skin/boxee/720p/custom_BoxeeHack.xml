@@ -170,29 +170,29 @@
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "version")</onclick>
 				</control>
 				<control type="radiobutton" id="14">
-                                        <width>850</width>
-                                        <height>56</height>
-                                        <type>radiobutton</type>
-                                        <texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-                                        <texturenofocus srcborder="24" border="16">-</texturenofocus>
-                                        <textureradioon>universal/graphic-radio-check.png</textureradioon>
-                                        <textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-                                        <textcolor>lightgreyheidi</textcolor>
-                                        <focusedcolor>whiteheidi</focusedcolor>
-                                        <disabledcolor>mediumgreyheidi</disabledcolor>
-                                        <align>left</align>
-                                        <aligny>center</aligny>
-                                        <textoffsetx>20</textoffsetx>
-                                        <textoffsety>0</textoffsety>
-                                        <radioposx>808</radioposx>
-                                        <radioposy>14</radioposy>
-                                        <radiowidth>28</radiowidth>
-                                        <radioheight>28</radioheight>
-                                        <font>font24</font>
-                                        <label>Replace home featured by recent content</label>
-                                        <selected>StringCompare(Skin.String(replace-featured),1)</selected>
-                                        <onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "replace_featured")</onclick>
-                                </control>
+					<width>850</width>
+					<height>56</height>
+					<type>radiobutton</type>
+					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+					<texturenofocus srcborder="24" border="16">-</texturenofocus>
+					<textureradioon>universal/graphic-radio-check.png</textureradioon>
+					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<disabledcolor>mediumgreyheidi</disabledcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textoffsetx>20</textoffsetx>
+					<textoffsety>0</textoffsety>
+					<radioposx>808</radioposx>
+					<radioposy>14</radioposy>
+					<radiowidth>28</radiowidth>
+					<radioheight>28</radioheight>
+					<font>font24</font>
+					<label>Replace home featured by recent content</label>
+					<selected>StringCompare(Skin.String(featured-feed),feed://recent/?limit=15)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "replace_featured")</onclick>
+				</control>
 			</control>
 			<control type="grouplist" id="201">
 				<description>control area</description>

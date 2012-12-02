@@ -26,7 +26,7 @@ def register_defaults():
     subtitle_provider("get", "movie")
     xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,%s)" % get_subtitles_language_filter() )
     xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % get_subtitles_enabled() )
-    xbmc.executebuiltin("Skin.SetString(replace-featured,%s)" % get_replace_featured_enabled() )
+    xbmc.executebuiltin("Skin.SetString(featured-feed,%s)" % get_featured_feed() )
     version_local = get_local_version()
     if version_local != "":
         xbmc.executebuiltin("Skin.SetString(boxeeplus-version,%s)" % version_local )
@@ -65,18 +65,27 @@ def get_subtitles_language_filter():
     else:
         return "1"
 
-def toggle_replace_featured():
-	replace = get_replace_featured_enabled()
+def toggle_featured_feed():
+    replace = get_featured_feed_value()
 
-        if replace == "1":
-            replace = "0"
-        else:
-            replace = "1"
+    if replace == "1":
+        replace = "0"
+    else:
+        replace = "1"
 
-	file_put_contents("/data/etc/.replace_featured_enabled", replace)
-        xbmc.executebuiltin("Skin.SetString(replace-featured,%s)" % replace)
+    file_put_contents("/data/etc/.replace_featured_enabled", replace)
+    xbmc.executebuiltin("Skin.SetString(featured-feed,%s)" % get_featured_feed() )
 
-def get_replace_featured_enabled():
+def get_featured_feed():
+    replace = get_featured_feed_value()
+    feed = "feed://featured/?limit=15"
+
+    if replace == "1":
+        feed = "feed://recent/?limit=15"
+
+    return feed
+
+def get_featured_feed_value():
     replace = file_get_contents("/data/etc/.replace_featured_enabled")
     if replace == "":
         replace = "0"
@@ -215,4 +224,4 @@ if (__name__ == "__main__"):
     if command == "version": check_new_version()
     if command == "defaults": register_defaults()
     if command == "subtitles-provider": subtitle_provider("set", sys.argv[2], sys.argv[3])
-    if command == "replace_featured": toggle_replace_featured()
+    if command == "replace_featured": toggle_featured_feed()
