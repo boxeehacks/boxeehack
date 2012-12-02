@@ -8,14 +8,8 @@ dtool 6 2 0 0
 umount -f /opt/boxee/skin
 umount -f /opt/boxee/skin/boxee/720p
 rm /data/.boxee/UserData/advancedsettings.xml
-/bin/busybox sed -i "s/;sh \/media\/BOXEE\/uninstall.sh//g" /data/etc/boxeehal.conf 
-/bin/busybox sed -i "s/; sh \/media\/BOXEE\/uninstall.sh//g" /data/etc/boxeehal.conf
-/bin/busybox sed -i "s/;sh \/data\/hack\/boot.sh//g" /data/etc/boxeehal.conf 
-/bin/busybox sed -i "s/; sh \/data\/hack\/boot.sh//g" /data/etc/boxeehal.conf 
-/bin/busybox sed -i "s/;sh \/media\/BOXEE\/uninstall.sh//g" /data/.boxee/UserData/guisettings.xml
-/bin/busybox sed -i "s/; sh \/media\/BOXEE\/uninstall.sh//g" /data/.boxee/UserData/guisettings.xml
-/bin/busybox sed -i "s/;sh \/data\/hack\/boot.sh//g" /data/.boxee/UserData/guisettings.xml
-/bin/busybox sed -i "s/; sh \/data\/hack\/boot.sh//g" /data/.boxee/UserData/guisettings.xml
+/bin/busybox sed -i 's/"hostname":"\(.*\);.*","p/"hostname":"\1","p/g' /data/etc/boxeehal.conf
+/bin/busybox sed -i 's/<hostname>\(.*\)<\/hostname>/<hostname>\1<\/hostname>/g' /data/.boxee/UserData/guisettings.xml
 rm -Rf /data/hack
 
 # on uninstall we also remove the password

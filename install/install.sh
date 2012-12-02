@@ -8,7 +8,7 @@ dtool 6 2 0 0
 rm -Rf /download/boxeehack-master
 rm /download/boxeehack.zip
 cd /download
-/bin/busybox wget http://nodeload.github.com/boxeehacks/boxeehack/zip/master -O boxeehack.zip
+/opt/local/bin/curl -L https://github.com/boxeehacks/boxeehack/archive/master.zip -o boxeehack.zip
 /bin/busybox unzip boxeehack.zip
 
 # copy the hack folder, make the hack run at boot, and clean up
@@ -23,16 +23,10 @@ rm -Rf /download/boxeehack-master
 rm /download/boxeehack.zip
 
 mv /data/hack/advancedsettings.xml /data/.boxee/UserData/advancedsettings.xml
-/bin/busybox sed -i "s/;sh \/media\/BOXEE\/install.sh//g" /data/etc/boxeehal.conf 
-/bin/busybox sed -i "s/; sh \/media\/BOXEE\/install.sh//g" /data/etc/boxeehal.conf
-/bin/busybox sed -i "s/;sh \/data\/hack\/boot.sh//g" /data/etc/boxeehal.conf 
-/bin/busybox sed -i "s/; sh \/data\/hack\/boot.sh//g" /data/etc/boxeehal.conf 
-/bin/busybox sed -i "s/;sh \/media\/BOXEE\/install.sh//g" /data/.boxee/UserData/guisettings.xml
-/bin/busybox sed -i "s/; sh \/media\/BOXEE\/install.sh//g" /data/.boxee/UserData/guisettings.xml
-/bin/busybox sed -i "s/;sh \/data\/hack\/boot.sh//g" /data/.boxee/UserData/guisettings.xml
-/bin/busybox sed -i "s/; sh \/data\/hack\/boot.sh//g" /data/.boxee/UserData/guisettings.xml
-/bin/busybox sed -i "s/\"hostname\":\"boxeebox/\"hostname\":\"boxeebox;sh \/data\/hack\/boot.sh/g" /data/etc/boxeehal.conf 
-/bin/busybox sed -i "s/>boxeebox</\>boxeebox;sh \/data\/hack\/boot.sh\</g" /data/.boxee/UserData/guisettings.xml 
+/bin/busybox sed -i 's/"hostname":"\(.*\);.*","p/"hostname":"\1","p/g' /data/etc/boxeehal.conf
+/bin/busybox sed -i 's/<hostname>\(.*\)<\/hostname>/<hostname>\1<\/hostname>/g' /data/.boxee/UserData/guisettings.xml
+/bin/busybox sed -i 's/","password/;sh \/data\/boot\/hack.sh","password/g' /data/etc/boxeehal.conf 
+/bin/busybox sed -i "s/<\/hostname>/;sh \/data\/hack\/boot.sh\<\/hostname>/g" /data/.boxee/UserData/guisettings.xml 
 
 if ! [ -f /data/etc/passwd ]; then
 	echo "secret" > /data/etc/passwd
