@@ -19,6 +19,7 @@ What does it do?
   - 3D Movie overlay icon
   - Music / Concert overlay icon
   - Extra view mode for movies (small posters)
+  - Mark all TV Show episodes watched or unwatched with one button
   - Custom browser home page
   - Updated busybox, and added git, nano and sqlite3 tools
   - Improved buffering for Full HD videos
