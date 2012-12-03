@@ -372,7 +372,7 @@
 					</item>
 					<item id="2">
 						<thumb>../720p/resources/icons/graphic-vpn.png</thumb>
-						<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_vpn.py")</onclick>
+						<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_vpn.py", "vpn")</onclick>
 					</item>
 					<item id="3">
 						<thumb>mainmenu/graphic-icon-history.png</thumb>
