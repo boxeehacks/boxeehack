@@ -380,19 +380,18 @@
 						</control>
 						<control type="image">
 							<visible>ListItem.property(IsMovie)</visible>
-							<posx>330</posx>
-							<posy>180</posy>
+							<posx>321</posx>
+							<posy>173</posy>
 							<width>75</width>
 							<height>75</height>
 							<texture>../720p/resources/overlays/movie_off.png</texture>
-							<bordersize>8</bordersize>
 							<aspectratio>scale</aspectratio>
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
 							<visible>ListItem.property(IsTVShow)</visible>
-							<posx>340</posx>
-							<posy>190</posy>
+							<posx>321</posx>
+							<posy>173</posy>
 							<width>75</width>
 							<height>75</height>
 							<texture>../720p/resources/overlays/tvshow_off.png</texture>
@@ -401,8 +400,8 @@
 						</control>
 						<control type="image">
 							<visible>ListItem.property(IsMusic)</visible>
-							<posx>340</posx>
-							<posy>190</posy>
+							<posx>321</posx>
+							<posy>173</posy>
 							<width>75</width>
 							<height>75</height>
 							<texture>../720p/resources/overlays/music_off.png</texture>
@@ -473,20 +472,19 @@
 						<control type="image">
 							<visible>ListItem.property(IsMovie)</visible>
 							<visible>Control.HasFocus(8200)</visible>
-							<posx>330</posx>
-							<posy>180</posy>
+							<posx>321</posx>
+							<posy>173</posy>
 							<width>75</width>
 							<height>75</height>
 							<texture>../720p/resources/overlays/movie_on.png</texture>
-							<bordersize>8</bordersize>
 							<aspectratio>scale</aspectratio>
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
 							<visible>ListItem.property(IsTVShow)</visible>
 							<visible>Control.HasFocus(8200)</visible>
-							<posx>330</posx>
-							<posy>180</posy>
+							<posx>321</posx>
+							<posy>173</posy>
 							<width>75</width>
 							<height>75</height>
 							<texture>../720p/resources/overlays/tvshow_on.png</texture>
@@ -496,8 +494,8 @@
 						<control type="image">
 							<visible>ListItem.property(IsMusic)</visible>
 							<visible>Control.HasFocus(8200)</visible>
-							<posx>330</posx>
-							<posy>180</posy>
+							<posx>321</posx>
+							<posy>173</posy>
 							<width>75</width>
 							<height>75</height>
 							<texture>../720p/resources/overlays/music_on.png</texture>
@@ -507,20 +505,19 @@
 						<control type="image">
 							<visible>ListItem.property(IsMovie)</visible>
 							<visible>!Control.HasFocus(8200)</visible>
-							<posx>330</posx>
-							<posy>180</posy>
+							<posx>321</posx>
+							<posy>173</posy>
 							<width>75</width>
 							<height>75</height>
 							<texture>../720p/resources/overlays/movie_off.png</texture>
-							<bordersize>8</bordersize>
 							<aspectratio>scale</aspectratio>
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
 							<visible>ListItem.property(IsTVShow)</visible>
 							<visible>!Control.HasFocus(8200)</visible>
-							<posx>330</posx>
-							<posy>180</posy>
+							<posx>321</posx>
+							<posy>173</posy>
 							<width>75</width>
 							<height>75</height>
 							<texture>../720p/resources/overlays/tvshow_off.png</texture>
@@ -530,8 +527,8 @@
 						<control type="image">
 							<visible>ListItem.property(IsMusic)</visible>
 							<visible>!Control.HasFocus(8200)</visible>
-							<posx>330</posx>
-							<posy>180</posy>
+							<posx>321</posx>
+							<posy>173</posy>
 							<width>75</width>
 							<height>75</height>
 							<texture>../720p/resources/overlays/music_off.png</texture>
