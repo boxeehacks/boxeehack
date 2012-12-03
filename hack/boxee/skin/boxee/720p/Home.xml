@@ -351,8 +351,8 @@
 					<ondown>-</ondown>
 					<scrolltime>400</scrolltime>
 					<pagecontrol>60</pagecontrol>
-					<visible>boxee.HasInternetConnection | stringcompare(Skin.String(featured-feed),feed://featured/?limit=15)</visible>
-					<enable>boxee.HasInternetConnection | stringcompare(Skin.String(featured-feed),feed://featured/?limit=15)</enable>
+					<visible>boxee.HasInternetConnection | !stringcompare(Skin.String(featured-feed),feed://featured/?limit=15)</visible>
+					<enable>boxee.HasInternetConnection | !stringcompare(Skin.String(featured-feed),feed://featured/?limit=15)</enable>
 					<orientation>horizontal</orientation>
 					<itemlayout width="416" height="256">
 						<control type="image">
