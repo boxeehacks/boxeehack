@@ -1774,7 +1774,7 @@
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>104</width>
-			<height>249</height>
+			<height>149</height>
 			<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
 			<bordersize>5</bordersize>
 			<texture scalediffuse="false">browse/thumbnail-default-movie.png</texture>
