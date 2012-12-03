@@ -305,7 +305,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
 	use_plugins = map(lambda x : x.strip(), config_plugins.split(","))
 
 	config_langs = self.config.get("DEFAULT", "lang") 
-	if(config_langs != "All" && config_langs != ""):
+	if(config_langs != "All" and config_langs != ""):
 		use_langs = map(lambda x : x.strip(), config_langs.split(","))
 	else:
 		use_langs = None
