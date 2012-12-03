@@ -190,7 +190,7 @@
 					<radioheight>28</radioheight>
 					<font>font24</font>
 					<label>Replace home featured by recent content</label>
-					<selected>StringCompare(Skin.String(featured-feed),feed://recent/?limit=15)</selected>
+					<selected>StringCompare(Skin.String(featured-feed),boxeedb://recent/?limit=15)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "replace_featured")</onclick>
 				</control>
 			</control>
