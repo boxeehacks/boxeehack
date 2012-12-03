@@ -335,8 +335,8 @@
 				<animation effect="slide" start="0,0" end="-2496,0" time="450" condition="Container(8200).Position(6) | Container(8200).Position(7) | Container(8200).Position(8)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="-3744,0" time="450" condition="Container(8200).Position(9) | Container(8200).Position(10) | Container(8200).Position(11)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="-4992,0" time="450" condition="Container(8200).Position(12) | Container(8200).Position(13) | Container(8200).Position(14)">Conditional</animation>
-				<visible>boxee.HasInternetConnection | stringcompare(Skin.String(featured-feed),feed://featured/?limit=15)</visible>
-				<enable>boxee.HasInternetConnection | stringcompare(Skin.String(featured-feed),feed://featured/?limit=15)</enable>
+				<visible>boxee.HasInternetConnection | !stringcompare(Skin.String(featured-feed),feed://featured/?limit=15)</visible>
+				<enable>boxee.HasInternetConnection | !stringcompare(Skin.String(featured-feed),feed://featured/?limit=15)</enable>
 				<posx>0</posx>
 				<posy>278</posy>
 				<control type="list" id="8200">
