@@ -20,6 +20,7 @@ echo $BASEDIR/hack
 if [ -d "$BASEDIR/hack" ];
 then
     # install the version from the USB drive
+	rm -Rf /data/hack
     cp -R "$BASEDIR/hack" /data/
 else
     # download the latest version from github
