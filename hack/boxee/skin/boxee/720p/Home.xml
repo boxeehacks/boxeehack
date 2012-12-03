@@ -335,6 +335,8 @@
 				<animation effect="slide" start="0,0" end="-2496,0" time="450" condition="Container(8200).Position(6) | Container(8200).Position(7) | Container(8200).Position(8)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="-3744,0" time="450" condition="Container(8200).Position(9) | Container(8200).Position(10) | Container(8200).Position(11)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="-4992,0" time="450" condition="Container(8200).Position(12) | Container(8200).Position(13) | Container(8200).Position(14)">Conditional</animation>
+				<visible>boxee.HasInternetConnection | stringcompare(Skin.String(featured-feed),feed://featured/?limit=15)</visible>
+				<enable>boxee.HasInternetConnection | stringcompare(Skin.String(featured-feed),feed://featured/?limit=15)</enable>
 				<posx>0</posx>
 				<posy>278</posy>
 				<control type="list" id="8200">
@@ -349,6 +351,8 @@
 					<ondown>-</ondown>
 					<scrolltime>400</scrolltime>
 					<pagecontrol>60</pagecontrol>
+					<visible>boxee.HasInternetConnection | stringcompare(Skin.String(featured-feed),feed://featured/?limit=15)</visible>
+					<enable>boxee.HasInternetConnection | stringcompare(Skin.String(featured-feed),feed://featured/?limit=15)</enable>
 					<orientation>horizontal</orientation>
 					<itemlayout width="416" height="256">
 						<control type="image">
@@ -375,36 +379,36 @@
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
-                                                        <visible>ListItem.property(IsMovie)</visible>
-                                                        <posx>320</posx>
-                                                        <posy>170</posy>
-                                                        <width>75</width>
-                                                        <height>75</height>
-                                                        <texture>icons/icon-home-movies.png</texture>
-                                                        <bordersize>8</bordersize>
-                                                        <aspectratio>scale</aspectratio>
-                                                        <fadetime>200</fadetime>
-                                                </control>
+							<visible>ListItem.property(IsMovie)</visible>
+							<posx>330</posx>
+							<posy>180</posy>
+							<width>75</width>
+							<height>75</height>
+							<texture>../720p/resources/overlays/movie_off.png</texture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
 						<control type="image">
-                                                        <visible>ListItem.property(IsTVShow)</visible>
-                                                        <posx>320</posx>
-                                                        <posy>170</posy>
-                                                        <width>75</width>
-                                                        <height>75</height>
-                                                        <texture>icons/icon-home-shows.png</texture>
-                                                        <aspectratio>scale</aspectratio>
-                                                        <fadetime>200</fadetime>
-                                                </control>
+							<visible>ListItem.property(IsTVShow)</visible>
+							<posx>340</posx>
+							<posy>190</posy>
+							<width>75</width>
+							<height>75</height>
+							<texture>../720p/resources/overlays/tvshow_off.png</texture>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
 						<control type="image">
-                                                        <visible>ListItem.property(IsMusic)</visible>
-                                                        <posx>320</posx>
-                                                        <posy>170</posy>
-                                                        <width>75</width>
-                                                        <height>75</height>
-                                                        <texture>../720p/resources/icons/icon-home-music.png</texture>
-                                                        <aspectratio>scale</aspectratio>
-                                                        <fadetime>200</fadetime>
-                                                </control>
+							<visible>ListItem.property(IsMusic)</visible>
+							<posx>340</posx>
+							<posy>190</posy>
+							<width>75</width>
+							<height>75</height>
+							<texture>../720p/resources/overlays/music_off.png</texture>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
 						<control type="label">
 							<posx>24</posx>
 							<posy>259</posy>
@@ -467,36 +471,73 @@
 							<aspectratio>scale</aspectratio>
 						</control>
 						<control type="image">
-                                                        <visible>ListItem.property(IsMovie)</visible>
-                                                        <posx>320</posx>
-                                                        <posy>170</posy>
-                                                        <width>75</width>
-                                                        <height>75</height>
-                                                        <texture>icons/icon-home-movies.png</texture>
-                                                        <bordersize>8</bordersize>
-                                                        <aspectratio>scale</aspectratio>
-                                                        <fadetime>200</fadetime>
-                                                </control>
+							<visible>ListItem.property(IsMovie)</visible>
+							<visible>Control.HasFocus(8200)</visible>
+							<posx>330</posx>
+							<posy>180</posy>
+							<width>75</width>
+							<height>75</height>
+							<texture>../720p/resources/overlays/movie_on.png</texture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
 						<control type="image">
-                                                        <visible>ListItem.property(IsTVShow)</visible>
-                                                        <posx>320</posx>
-                                                        <posy>170</posy>
-                                                        <width>75</width>
-                                                        <height>75</height>
-                                                        <texture>icons/icon-home-shows.png</texture>
-                                                        <aspectratio>scale</aspectratio>
-                                                        <fadetime>200</fadetime>
-                                                </control>
+							<visible>ListItem.property(IsTVShow)</visible>
+							<visible>Control.HasFocus(8200)</visible>
+							<posx>330</posx>
+							<posy>180</posy>
+							<width>75</width>
+							<height>75</height>
+							<texture>../720p/resources/overlays/tvshow_on.png</texture>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
 						<control type="image">
-                                                        <visible>ListItem.property(IsMusic)</visible>
-                                                        <posx>320</posx>
-                                                        <posy>170</posy>
-                                                        <width>75</width>
-                                                        <height>75</height>
-                                                        <texture>../720p/resources/icons/icon-home-music.png</texture>
-                                                        <aspectratio>scale</aspectratio>
-                                                        <fadetime>200</fadetime>
-                                                </control>
+							<visible>ListItem.property(IsMusic)</visible>
+							<visible>Control.HasFocus(8200)</visible>
+							<posx>330</posx>
+							<posy>180</posy>
+							<width>75</width>
+							<height>75</height>
+							<texture>../720p/resources/overlays/music_on.png</texture>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="image">
+							<visible>ListItem.property(IsMovie)</visible>
+							<visible>!Control.HasFocus(8200)</visible>
+							<posx>330</posx>
+							<posy>180</posy>
+							<width>75</width>
+							<height>75</height>
+							<texture>../720p/resources/overlays/movie_off.png</texture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="image">
+							<visible>ListItem.property(IsTVShow)</visible>
+							<visible>!Control.HasFocus(8200)</visible>
+							<posx>330</posx>
+							<posy>180</posy>
+							<width>75</width>
+							<height>75</height>
+							<texture>../720p/resources/overlays/tvshow_off.png</texture>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="image">
+							<visible>ListItem.property(IsMusic)</visible>
+							<visible>!Control.HasFocus(8200)</visible>
+							<posx>330</posx>
+							<posy>180</posy>
+							<width>75</width>
+							<height>75</height>
+							<texture>../720p/resources/overlays/music_off.png</texture>
+							<aspectratio>scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
 						<control type="label">
 							<visible>Control.HasFocus(8200)</visible>
 							<posx>24</posx>
