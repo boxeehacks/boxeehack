@@ -91,17 +91,19 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
         ''' main method to call on the plugin, pass the filename and the wished 
         languages and it will query OpenSubtitles.org '''
 
+	subs = []
         filehash = self.hashFile(filepath)
         # disabled this part because getFileSize gives negative values for large files
         # on BoxeeBox, which makes this useless for larger movies
-#        if xbmc.getFileSize(filepath):
-#            log.debug(filehash)
-#            size = long(xbmc.getFileSize(filepath))
-#            fname = self.getFileName(filepath)
-#            return self.query(moviehash=filehash, langs=langs, bytesize=size, filename=fname)
-#        else:
-        fname = self.getFileName(filepath)
-        return self.query(langs=langs, filename=fname, moviehash=filehash)
+	fname = self.getFileName(filepath)
+        if xbmc.getFileSize(filepath):
+            log.debug(filehash)
+            size = long(xbmc.getFileSize(filepath))
+            fname = self.getFileName(filepath)
+            subs += self.query(moviehash=filehash, langs=langs, bytesize=size, filename=fname)
+  
+        subs += self.query(langs=langs, filename=fname)
+	return subs
         
     def createFile(self, subtitle):
         '''pass the URL of the sub and the file it matches, will unzip it
@@ -145,14 +147,11 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
 		gotHash = True
 		fileHash = moviehash
 		
-	# disabled extra stuff because it fails on BoxeeBox for large (HD > 2GB) files
-	# this basically means searching is always going to happen based on filename
-#        if moviehash: 
-#            search['moviehash'] = moviehash
-#            gotHash = True
+        if moviehash: 
+            search['moviehash'] = moviehash
+            gotHash = True
         if imdbID: search['imdbid'] = imdbID
-#        if bytesize: search['moviebytesize'] = str(bytesize)
-#        if langs: search['sublanguageid'] = ",".join([self.getLanguage(lang) for lang in langs])
+        if bytesize: search['moviebytesize'] = str(bytesize)
         if len(search) == 0:
             log.debug("No search term, we'll use the filename")
             # Let's try to guess what to search:
