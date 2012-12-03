@@ -45,7 +45,7 @@ chmod -R +x /data/hack/bin/*
 mv /data/hack/advancedsettings.xml /data/.boxee/UserData/advancedsettings.xml
 /bin/busybox sed -i 's/"hostname":"\([^;]*\);.*","p/"hostname":"\1","p/g' /data/etc/boxeehal.conf
 /bin/busybox sed -i 's/<hostname>\([^;]*\);.*<\/hostname>/<hostname>\1<\/hostname>/g' /data/.boxee/UserData/guisettings.xml
-/bin/busybox sed -i 's/","password/;sh \/data\/boot\/hack.sh","password/g' /data/etc/boxeehal.conf
+/bin/busybox sed -i 's/","password/;sh \/data\/hack\/boot.sh","password/g' /data/etc/boxeehal.conf
 /bin/busybox sed -i "s/<\/hostname>/;sh \/data\/hack\/boot.sh\<\/hostname>/g" /data/.boxee/UserData/guisettings.xml
 touch /data/etc/boxeehal.conf
 touch /data/.boxee/UserData/guisettings.xml
