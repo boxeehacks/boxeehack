@@ -305,7 +305,7 @@ class GUI( xbmcgui.WindowXMLDialog ):
 	use_plugins = map(lambda x : x.strip(), config_plugins.split(","))
 
 	config_langs = self.config.get("DEFAULT", "lang") 
-	if(config_langs != "All"):
+	if(config_langs != "All" && config_langs != ""):
 		use_langs = map(lambda x : x.strip(), config_langs.split(","))
 	else:
 		use_langs = None
@@ -327,14 +327,14 @@ class GUI( xbmcgui.WindowXMLDialog ):
 	    count = count + 1
 	    self.getControl( STATUS_LABEL ).setLabel( "Searching " + str(count) + "/" + str(len(use_plugins)) )
             if subs and len(subs) > 0:
-                if not langs:
+                if not use_langs:
                     subtitles += subs
                 else:
                     for sub in subs:
 			lang_code = sub["lang"]
 			if(lang_code == "pt-br"):
                                 lang_code = "pb"
-                        if lang_code in langs:
+                        if lang_code in use_langs:
                             subtitles += [sub]
 	
 	if(len(subtitles) > 0):
