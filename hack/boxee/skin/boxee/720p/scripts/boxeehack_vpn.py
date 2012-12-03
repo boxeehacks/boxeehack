@@ -10,6 +10,5 @@ def vpn_function():
 if (__name__ == "__main__"):
     section = sys.argv[1]
 
-    if section == "vpn":
-        vpn_function()
+if command == "vpn": vpn_function()
 
