@@ -7,16 +7,13 @@ dtool 6 1 0 100
 dtool 6 2 0 0
 
 # stop Boxee from running and screwing things up
-killall U99boxee
-killall run_boxee.sh
-killall BoxeeLauncher
-killall BoxeeHal
-killall Boxee
+killall U99boxee; killall BoxeeLauncher; killall run_boxee.sh; killall Boxee; killall BoxeeHal
 
 # cleanup some old stuff first
 umount -f /opt/boxee/skin
 umount -f /opt/boxee/media/boxee_screen_saver
 umount -f /opt/boxee/skin/boxee/720p
+umount -f /opt/boxee/visualisations/projectM
 
 echo $BASEDIR/hack
 
@@ -50,6 +47,8 @@ mv /data/hack/advancedsettings.xml /data/.boxee/UserData/advancedsettings.xml
 /bin/busybox sed -i 's/<hostname>\([^;]*\);.*<\/hostname>/<hostname>\1<\/hostname>/g' /data/.boxee/UserData/guisettings.xml
 /bin/busybox sed -i 's/","password/;sh \/data\/boot\/hack.sh","password/g' /data/etc/boxeehal.conf
 /bin/busybox sed -i "s/<\/hostname>/;sh \/data\/hack\/boot.sh\<\/hostname>/g" /data/.boxee/UserData/guisettings.xml
+touch /data/etc/boxeehal.conf
+touch /data/.boxee/UserData/guisettings.xml
 
 # set a password if one does not yet exist
 if ! [ -f /data/etc/passwd ]; then
@@ -57,6 +56,7 @@ if ! [ -f /data/etc/passwd ]; then
 fi
 
 # turn the logo back to green
+sleep 5
 dtool 6 1 0 0
 dtool 6 2 0 50
 
