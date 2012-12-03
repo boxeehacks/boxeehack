@@ -81,7 +81,7 @@ def get_featured_feed():
     feed = "feed://featured/?limit=15"
 
     if replace == "1":
-        feed = "feed://recent/?limit=15"
+        feed = "boxeedb://recent/?limit=15"
 
     return feed
 
