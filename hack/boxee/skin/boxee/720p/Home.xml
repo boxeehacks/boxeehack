@@ -335,8 +335,8 @@
 				<animation effect="slide" start="0,0" end="-2496,0" time="450" condition="Container(8200).Position(6) | Container(8200).Position(7) | Container(8200).Position(8)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="-3744,0" time="450" condition="Container(8200).Position(9) | Container(8200).Position(10) | Container(8200).Position(11)">Conditional</animation>
 				<animation effect="slide" start="0,0" end="-4992,0" time="450" condition="Container(8200).Position(12) | Container(8200).Position(13) | Container(8200).Position(14)">Conditional</animation>
-				<visible>boxee.HasInternetConnection | !stringcompare(Skin.String(featured-feed),feed://featured/?limit=15)</visible>
-				<enable>boxee.HasInternetConnection | !stringcompare(Skin.String(featured-feed),feed://featured/?limit=15)</enable>
+				<visible>boxee.HasInternetConnection | substring(Skin.String(featured-feed),boxeedb://)</visible>
+				<enable>boxee.HasInternetConnection | substring(Skin.String(featured-feed),boxeedb://)</enable>
 				<posx>0</posx>
 				<posy>278</posy>
 				<control type="list" id="8200">
@@ -351,8 +351,8 @@
 					<ondown>-</ondown>
 					<scrolltime>400</scrolltime>
 					<pagecontrol>60</pagecontrol>
-					<visible>boxee.HasInternetConnection | !stringcompare(Skin.String(featured-feed),feed://featured/?limit=15)</visible>
-					<enable>boxee.HasInternetConnection | !stringcompare(Skin.String(featured-feed),feed://featured/?limit=15)</enable>
+					<visible>boxee.HasInternetConnection | substring(Skin.String(featured-feed),boxeedb://)</visible>
+					<enable>boxee.HasInternetConnection | substring(Skin.String(featured-feed),boxeedb://)</enable>
 					<orientation>horizontal</orientation>
 					<itemlayout width="416" height="256">
 						<control type="image">
@@ -379,7 +379,27 @@
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
-							<visible>ListItem.property(IsMovie)</visible>
+							<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie)</visible>
+							<posx>17</posx>
+							<posy>0</posy>
+							<width>384</width>
+							<height>253</height>
+							<texture background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="image">
+							<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTvShow)</visible>
+							<posx>17</posx>
+							<posy>0</posy>
+							<width>384</width>
+							<height>253</height>
+							<texture background="true">$INFO[ListItem.Path,,../fanart.jpg]</texture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="image">
+							<visible>ListItem.property(IsMovie) + substring(Skin.String(featured-feed),boxeedb://)</visible>
 							<posx>321</posx>
 							<posy>173</posy>
 							<width>75</width>
@@ -389,7 +409,7 @@
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
-							<visible>ListItem.property(IsTVShow)</visible>
+							<visible>ListItem.property(IsTVShow) + substring(Skin.String(featured-feed),boxeedb://)</visible>
 							<posx>321</posx>
 							<posy>173</posy>
 							<width>75</width>
@@ -399,7 +419,7 @@
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
-							<visible>ListItem.property(IsMusic)</visible>
+							<visible>ListItem.property(IsMusic) + substring(Skin.String(featured-feed),boxeedb://)</visible>
 							<posx>321</posx>
 							<posy>173</posy>
 							<width>75</width>
@@ -453,6 +473,7 @@
 							<width>384</width>
 							<height>252</height>
 							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
+							<aligny>top</aligny>
 							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
 							<bordersize>8</bordersize>
 							<aspectratio>scale</aspectratio>
@@ -470,7 +491,27 @@
 							<aspectratio>scale</aspectratio>
 						</control>
 						<control type="image">
-							<visible>ListItem.property(IsMovie)</visible>
+							<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie)</visible>
+							<posx>17</posx>
+							<posy>0</posy>
+							<width>384</width>
+							<height>253</height>
+							<texture background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="image">
+							<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTvShow)</visible>
+							<posx>17</posx>
+							<posy>0</posy>
+							<width>384</width>
+							<height>253</height>
+							<texture background="true">$INFO[ListItem.Path,,../fanart.jpg]</texture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="image">
+							<visible>ListItem.property(IsMovie) + substring(Skin.String(featured-feed),boxeedb://)</visible>
 							<visible>Control.HasFocus(8200)</visible>
 							<posx>321</posx>
 							<posy>173</posy>
@@ -481,7 +522,7 @@
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
-							<visible>ListItem.property(IsTVShow)</visible>
+							<visible>ListItem.property(IsTVShow) + substring(Skin.String(featured-feed),boxeedb://)</visible>
 							<visible>Control.HasFocus(8200)</visible>
 							<posx>321</posx>
 							<posy>173</posy>
@@ -492,7 +533,7 @@
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
-							<visible>ListItem.property(IsMusic)</visible>
+							<visible>ListItem.property(IsMusic) + substring(Skin.String(featured-feed),boxeedb://)</visible>
 							<visible>Control.HasFocus(8200)</visible>
 							<posx>321</posx>
 							<posy>173</posy>
@@ -503,7 +544,7 @@
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
-							<visible>ListItem.property(IsMovie)</visible>
+							<visible>ListItem.property(IsMovie) + substring(Skin.String(featured-feed),boxeedb://)</visible>
 							<visible>!Control.HasFocus(8200)</visible>
 							<posx>321</posx>
 							<posy>173</posy>
@@ -514,7 +555,7 @@
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
-							<visible>ListItem.property(IsTVShow)</visible>
+							<visible>ListItem.property(IsTVShow) + substring(Skin.String(featured-feed),boxeedb://)</visible>
 							<visible>!Control.HasFocus(8200)</visible>
 							<posx>321</posx>
 							<posy>173</posy>
@@ -525,7 +566,7 @@
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
-							<visible>ListItem.property(IsMusic)</visible>
+							<visible>ListItem.property(IsMusic) + substring(Skin.String(featured-feed),boxeedb://)</visible>
 							<visible>!Control.HasFocus(8200)</visible>
 							<posx>321</posx>
 							<posy>173</posy>
