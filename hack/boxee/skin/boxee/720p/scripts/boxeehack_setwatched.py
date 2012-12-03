@@ -79,7 +79,7 @@ def set_watched(command):
 #
 #		progress.close()
 #
-#		xbmc.executebuiltin("XBMC.ReplaceWindow(10483)")
+		xbmc.executebuiltin("XBMC.ReplaceWindow(10483)")
 
 		xbmc.executebuiltin("Notification(,%s marked as %s...,2000)" % (display_name, command))
 
