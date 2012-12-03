@@ -21,6 +21,7 @@ What does it do?
   - Extra view mode for movies (small posters)
   - Mark all TV Show episodes watched or unwatched with one button
   - Custom browser home page
+  - More music visualisers (+ customisable)
   - Updated busybox, and added git, nano and sqlite3 tools
   - Improved buffering for Full HD videos
   - Tweaked MTU if you're using a VPN/PPP connection
