@@ -3,7 +3,7 @@ import xbmc, xbmcgui
 
 def vpn_function():
 	os.system("/data/hack/vpn/vpn_check.sh")
-	xbmc.sleep(400)
+	xbmc.sleep(100)
 if os.path.exists("/tmp/vpn.enabled"):
 	dialog = xbmcgui.Dialog()
 	if dialog.yesno("VPN Connection", "Connect/Disconnect VPN?"):
