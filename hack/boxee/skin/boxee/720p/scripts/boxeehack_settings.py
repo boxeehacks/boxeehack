@@ -1,5 +1,5 @@
 import os
-import xbmc, xbmcgui
+import xbmc, xbmcgui, mc
 import ConfigParser
 
 available_providers = ['Addic7ed', 'BierDopje', 'OpenSubtitles', 'SubsWiki', 'Subtitulos']
@@ -27,6 +27,7 @@ def register_defaults():
     xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,%s)" % get_subtitles_language_filter() )
     xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % get_subtitles_enabled() )
     xbmc.executebuiltin("Skin.SetString(featured-feed,%s)" % get_featured_feed() )
+    xbmc.executebuiltin("Skin.SetString(featured-name,%s)" % get_featured_name() )
     version_local = get_local_version()
     if version_local != "":
         xbmc.executebuiltin("Skin.SetString(boxeeplus-version,%s)" % version_local )
@@ -65,25 +66,47 @@ def get_subtitles_language_filter():
     else:
         return "1"
 
-def toggle_featured_feed():
+def featured_next():
     replace = get_featured_feed_value()
+    num = int(replace) + 1
+    if num > 3: num = 0
 
-    if replace == "1":
-        replace = "0"
-    else:
-        replace = "1"
+    replace = "%s" % num
 
     file_put_contents("/data/etc/.replace_featured_enabled", replace)
     xbmc.executebuiltin("Skin.SetString(featured-feed,%s)" % get_featured_feed() )
+    xbmc.executebuiltin("Skin.SetString(featured-name,%s)" % get_featured_name() )
+
+def featured_previous():
+    replace = get_featured_feed_value()
+    num = int(replace) - 1
+    if num < 0: num = 3
+
+    replace = "%s" % num
+
+    file_put_contents("/data/etc/.replace_featured_enabled", replace)
+    xbmc.executebuiltin("Skin.SetString(featured-feed,%s)" % get_featured_feed() )
+    xbmc.executebuiltin("Skin.SetString(featured-name,%s)" % get_featured_name() )
 
 def get_featured_feed():
     replace = get_featured_feed_value()
     feed = "feed://featured/?limit=15"
 
-    if replace == "1":
-        feed = "boxeedb://recent/?limit=15"
+    if replace == "1": feed = "boxeedb://recent/?limit=15"
+    if replace == "2": feed = "rss://vimeo.com/channels/staffpicks/videos/rss"
+    if replace == "3": feed = "rss://gdata.youtube.com/feeds/api/standardfeeds/recently_featured?alt=rss"
 
     return feed
+
+def get_featured_name():
+    replace = get_featured_feed_value()
+    name = "Boxee Featured"
+
+    if replace == "1": name = "Recently added"
+    if replace == "2": name = "Vimeo staff picks"
+    if replace == "3": name = "Youtube featured"
+
+    return name
 
 def get_featured_feed_value():
     replace = file_get_contents("/data/etc/.replace_featured_enabled")
@@ -224,4 +247,5 @@ if (__name__ == "__main__"):
     if command == "version": check_new_version()
     if command == "defaults": register_defaults()
     if command == "subtitles-provider": subtitle_provider("set", sys.argv[2], sys.argv[3])
-    if command == "replace_featured": toggle_featured_feed()
+    if command == "featured_next": featured_next()
+    if command == "featured_previous": featured_previous()
