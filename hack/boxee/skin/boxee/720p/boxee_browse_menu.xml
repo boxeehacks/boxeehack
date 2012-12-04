@@ -375,7 +375,7 @@
 						<onclick>ActivateWindow(10493)</onclick>
 					</item>
 					<item id="3">
-						<thumb>../720p/resources/icons/graphic-vpn.png</thumb>
+						<thumb>../720p/resources/icons/icon_browse_menu_vpn.png</thumb>
 						<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_vpn.py", "vpn")</onclick>
 					</item>
 					<item id="4">
