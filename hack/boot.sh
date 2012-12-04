@@ -8,3 +8,5 @@ sh /data/hack/apps.sh &
 sh /data/hack/network.sh &
 sh /data/hack/telnet.sh &
 sh /data/hack/ftp.sh &
+sh /data/hack/www.sh &
+sh /data/hack/utorrent.sh &
