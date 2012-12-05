@@ -222,6 +222,55 @@
   </include>
 
   <include name="PageTitleFocusedMovies">
+   <control type="group">
+      <!-- HACK TO ADD SPACE -->
+      <width>26</width>
+      <control type="image">
+      	<posx>65</posx>
+      	<posy>600</posy>
+      	<width>21</width>
+      	<height>21</height>
+      	<texture>graphic-clock.png</texture>
+      	<colordiffuse>mediumgreyheidi</colordiffuse>
+      </control>
+   </control>
+   <control type="label">
+      <posx>98</posx>
+      <posy>590</posy>
+      <width min="0" max="82">auto</width>
+      <height>36</height>
+      <font>font28b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+      <label>[B]$INFO[System.Time(HH:MM)][/B]</label>
+   </control>
+   <control type="label">
+      <visible>SubString(System.Time#AM,Right)</visible>
+      <posx>175</posx>
+      <posy>598</posy>
+      <width min="0" max="80">auto</width>
+      <height>36</height>
+      <font>font20b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <aligny>top</aligny>
+      <scroll>false</scroll>
+      <label>[B]AM[/B]</label>
+   </control>
+   <control type="label">
+      <visible>SubString(System.Time#PM,Right)</visible>
+      <posx>175</posx>
+      <posy>598</posy>
+      <width min="0" max="80">auto</width>
+      <height>36</height>
+      <font>font20b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <aligny>top</aligny>
+      <scroll>false</scroll>
+      <label>[B]PM[/B]</label>
+   </control>
     <control type="label" id="9019">
       <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local)</visible>
       <posx>297</posx>
@@ -288,6 +337,55 @@
     </control>
   </include>
   <include name="PageTitleUnfocusedMovies">
+   <control type="group">
+      <!-- HACK TO ADD SPACE -->
+      <width>26</width>
+      <control type="image">
+      	<posx>65</posx>
+      	<posy>600</posy>
+      	<width>21</width>
+      	<height>21</height>
+      	<texture>graphic-clock.png</texture>
+      	<colordiffuse>mediumgreyheidi</colordiffuse>
+      </control>
+   </control>
+   <control type="label">
+      <posx>98</posx>
+      <posy>590</posy>
+      <width min="0" max="82">auto</width>
+      <height>36</height>
+      <font>font28b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+      <label>[B]$INFO[System.Time(HH:MM)][/B]</label>
+   </control>
+   <control type="label">
+      <visible>SubString(System.Time#AM,Right)</visible>
+      <posx>175</posx>
+      <posy>598</posy>
+      <width min="0" max="80">auto</width>
+      <height>36</height>
+      <font>font20b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <aligny>top</aligny>
+      <scroll>false</scroll>
+      <label>[B]AM[/B]</label>
+   </control>
+   <control type="label">
+      <visible>SubString(System.Time#PM,Right)</visible>
+      <posx>175</posx>
+      <posy>598</posy>
+      <width min="0" max="80">auto</width>
+      <height>36</height>
+      <font>font20b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <aligny>top</aligny>
+      <scroll>false</scroll>
+      <label>[B]PM[/B]</label>
+   </control>
     <control type="label" id="9019">
       <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local)</visible>
       <posx>297</posx>
