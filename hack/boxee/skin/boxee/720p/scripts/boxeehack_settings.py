@@ -2,7 +2,7 @@ import os
 import xbmc, xbmcgui, mc
 import ConfigParser
 
-available_providers = ['Addic7ed', 'BierDopje', 'OpenSubtitles', 'SubsWiki', 'Subtitulos']
+available_providers = ['Addic7ed', 'BierDopje', 'OpenSubtitles', 'SubsWiki', 'Subtitulos', 'Undertexter']
 
 # Read file contents into a string
 def file_get_contents(filename):
@@ -250,3 +250,4 @@ if (__name__ == "__main__"):
     if command == "subtitles-provider": subtitle_provider("set", sys.argv[2], sys.argv[3])
     if command == "featured_next": featured_next()
     if command == "featured_previous": featured_previous()
+
