@@ -133,6 +133,9 @@
 				<animation type="Conditional" condition="DVB.IsTunerReady">
 					<effect type="slide" start="0" end="-70" time="200" delay="0"/>
 				</animation>
+				<animation type="Conditional" condition="StringCompare(Skin.String(showmusic),0)">
+					<effect type="slide" start="0" end="70" time="200" delay="0"/>
+				</animation>
 				<posx>70</posx>
 				<posy>99</posy>
 				<width>1280</width>
@@ -255,6 +258,7 @@
 						<onclick>-</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(showmusic),1)</visible>
 						<controlid>122</controlid>
 						<thumb>../720p/resources/icons/icon-home-music.png</thumb>
 						<label>2</label>
