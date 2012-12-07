@@ -170,6 +170,9 @@
 				<animation type="Conditional" condition="!DVB.IsTunerReady">
 					<effect type="slide" start="0" end="59" time="200" delay="0"/>
 				</animation>
+				<animation type="Conditional" condition="StringCompare(Skin.String(showmusic),0)">
+					<effect type="slide" start="0" end="59" time="200" delay="0"/>
+				</animation>
 				<posx>130</posx>
 				<posy>232</posy>
 				<width>1100</width>
@@ -290,6 +293,7 @@
 						<onclick>ActivateWindow(10481,boxeeui://movies/)</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(showmusic),1)</visible>
 						<controlid>1888</controlid>
 						<label>2</label>
 						<icon>../720p/resources/icons/icon-home-music.png</icon>
