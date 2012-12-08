@@ -402,7 +402,7 @@
 							<font>font24bex</font>
 							<align>left</align>
 							<aligny>top</aligny>
-							<label>$LOCALIZE[20339]$INFO[Container(5000).ListItem.Director, ,]</label>
+							<label>[COLOR white]$LOCALIZE[20339][/COLOR]$INFO[Container(5000).ListItem.Director, ,]</label>
 							<textcolor>lightgreyheidi</textcolor>
 						</control>
 						<!-- Cast -->
@@ -413,7 +413,7 @@
 							<font>font24bex</font>
 							<align>left</align>
 							<aligny>top</aligny>
-							<label>$LOCALIZE[54042]$INFO[Container(5000).ListItem.property(cast), ,]</label>
+							<label>[COLOR white]$LOCALIZE[54042][/COLOR]$INFO[Container(5000).ListItem.property(cast), ,]</label>
 							<textcolor>lightgreyheidi</textcolor>
 							<!--<wrapmultiline>true</wrapmultiline> MAKES LABEL DISAPPEAR-->
 						</control>
@@ -581,7 +581,7 @@
 								<aligny>top</aligny>
 								<font>font24b</font>
 								<textcolor>mediumgreyheidi</textcolor>
-								<label>$INFO[ListItem.Label2]asdf</label>
+								<label>$INFO[ListItem.Label2]</label>
 							</control>
 						</itemlayout>
 						<focusedlayout width="348" height="76">
@@ -1539,6 +1539,37 @@
 							<haspath>false</haspath>
 							<wrapmultiline>true</wrapmultiline>
 							<textcolor>whiteheidi</textcolor>
+						</control>
+<!--						<control type="image">
+							<posx>579</posx>
+							<posy>11</posy>
+							<width>145</width>
+							<height>30</height>
+							<colordiffuse>FF3A3F42</colordiffuse>
+							<texture>../720p/resources/flags/frame_aspect.png</texture>
+						</control>
+						<control type="image">
+							<posx>638</posx>
+							<posy>44</posy>
+							<width>86</width>
+							<height>30</height>
+							<colordiffuse>FF3A3F42</colordiffuse>
+							<texture>../720p/resources/flags/frame_audio.png</texture>
+						</control>
+						<control type="image">
+							<posx>579</posx>
+							<posy>11</posy>
+							<width>39</width>
+							<height>26</height>
+							<colordiffuse>FF9FA1A3</colordiffuse>
+							<texture>../720p/resources/flags/video/$INFO[ListItem.VideoCodec].png</texture>
+						</control>-->
+						<control type="label">
+							<posx>279</posx>
+							<posy>11</posy>
+							<width>390</width>
+							<height>260</height>
+							<label>$INFO[ListItem.Property(is-hd)]</label>
 						</control>
 					</control>
 					<control type="group">
