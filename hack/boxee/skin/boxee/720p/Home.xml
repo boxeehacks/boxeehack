@@ -403,6 +403,16 @@
 							<aspectratio>scale</aspectratio>
 						</control>
 						<control type="image">
+							<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTvShow)</visible>
+							<posx>17</posx>
+							<posy>0</posy>
+							<width>384</width>
+							<height>253</height>
+							<texture background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="image">
 							<visible>ListItem.property(IsMovie) + substring(Skin.String(featured-feed),boxeedb://)</visible>
 							<posx>321</posx>
 							<posy>173</posy>
@@ -511,6 +521,16 @@
 							<width>384</width>
 							<height>253</height>
 							<texture background="true">$INFO[ListItem.Path,,../fanart.jpg]</texture>
+							<bordersize>8</bordersize>
+							<aspectratio>scale</aspectratio>
+						</control>
+						<control type="image">
+							<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTvShow)</visible>
+							<posx>17</posx>
+							<posy>0</posy>
+							<width>384</width>
+							<height>253</height>
+							<texture background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
 							<bordersize>8</bordersize>
 							<aspectratio>scale</aspectratio>
 						</control>
