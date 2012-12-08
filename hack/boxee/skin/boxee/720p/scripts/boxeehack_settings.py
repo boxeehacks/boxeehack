@@ -2,7 +2,7 @@ import os
 import xbmc, xbmcgui, mc
 import ConfigParser
 
-available_providers = ['Addic7ed', 'BierDopje', 'OpenSubtitles', 'SubsWiki', 'Subtitulos']
+available_providers = ['Addic7ed', 'BierDopje', 'OpenSubtitles', 'SubsWiki', 'Subtitulos', 'Undertexter']
 
 # Read file contents into a string
 def file_get_contents(filename):

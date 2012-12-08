@@ -465,11 +465,35 @@
 					<radiowidth>28</radiowidth>
 					<radioheight>28</radioheight>
 					<font>font24</font>
+					<label>All - Undertexter.se</label>
+					<selected>StringCompare(Skin.String(subtitles-plugin-default-Undertexter),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "default", "Undertexter")</onclick>
+				</control>
+				<control type="radiobutton" id="250">
+					<width>850</width>
+					<height>56</height>
+					<type>radiobutton</type>
+					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+					<texturenofocus srcborder="24" border="16">-</texturenofocus>
+					<textureradioon>universal/graphic-radio-check.png</textureradioon>
+					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<disabledcolor>mediumgreyheidi</disabledcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textoffsetx>20</textoffsetx>
+					<textoffsety>0</textoffsety>
+					<radioposx>808</radioposx>
+					<radioposy>14</radioposy>
+					<radiowidth>28</radiowidth>
+					<radioheight>28</radioheight>
+					<font>font24</font>
 					<label>TV - Bierdopje</label>
 					<selected>StringCompare(Skin.String(subtitles-plugin-tv-BierDopje),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "BierDopje")</onclick>
 				</control>
-				<control type="radiobutton" id="210">
+				<control type="radiobutton" id="251">
 					<width>850</width>
 					<height>56</height>
 					<type>radiobutton</type>
@@ -493,7 +517,7 @@
 					<selected>StringCompare(Skin.String(subtitles-plugin-tv-OpenSubtitles),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "OpenSubtitles")</onclick>
 				</control>
-				<control type="radiobutton" id="211">
+				<control type="radiobutton" id="252">
 					<width>850</width>
 					<height>56</height>
 					<type>radiobutton</type>
@@ -517,7 +541,7 @@
 					<selected>StringCompare(Skin.String(subtitles-plugin-tv-Subtitulos),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "Subtitulos")</onclick>
 				</control>
-				<control type="radiobutton" id="212">
+				<control type="radiobutton" id="253">
 					<width>850</width>
 					<height>56</height>
 					<type>radiobutton</type>
@@ -541,7 +565,7 @@
 					<selected>StringCompare(Skin.String(subtitles-plugin-tv-SubsWiki),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "SubsWiki")</onclick>
 				</control>
-				<control type="radiobutton" id="213">
+				<control type="radiobutton" id="254">
 					<width>850</width>
 					<height>56</height>
 					<type>radiobutton</type>
@@ -565,7 +589,31 @@
 					<selected>StringCompare(Skin.String(subtitles-plugin-tv-Addic7ed),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "Addic7ed")</onclick>
 				</control>
-				<control type="radiobutton" id="214">
+				<control type="radiobutton" id="255">
+					<width>850</width>
+					<height>56</height>
+					<type>radiobutton</type>
+					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+					<texturenofocus srcborder="24" border="16">-</texturenofocus>
+					<textureradioon>universal/graphic-radio-check.png</textureradioon>
+					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<disabledcolor>mediumgreyheidi</disabledcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textoffsetx>20</textoffsetx>
+					<textoffsety>0</textoffsety>
+					<radioposx>808</radioposx>
+					<radioposy>14</radioposy>
+					<radiowidth>28</radiowidth>
+					<radioheight>28</radioheight>
+					<font>font24</font>
+					<label>TV - Undertexter.se</label>
+					<selected>StringCompare(Skin.String(subtitles-plugin-tv-Undertexter),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "Undertexter")</onclick>
+				</control>
+				<control type="radiobutton" id="275">
 					<width>850</width>
 					<height>56</height>
 					<type>radiobutton</type>
@@ -588,6 +636,30 @@
 					<label>Movie - OpenSubtitles</label>
 					<selected>StringCompare(Skin.String(subtitles-plugin-movie-OpenSubtitles),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider","movie", "OpenSubtitles")</onclick>
+				</control>
+				<control type="radiobutton" id="276">
+					<width>850</width>
+					<height>56</height>
+					<type>radiobutton</type>
+					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+					<texturenofocus srcborder="24" border="16">-</texturenofocus>
+					<textureradioon>universal/graphic-radio-check.png</textureradioon>
+					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
+					<textcolor>lightgreyheidi</textcolor>
+					<focusedcolor>whiteheidi</focusedcolor>
+					<disabledcolor>mediumgreyheidi</disabledcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textoffsetx>20</textoffsetx>
+					<textoffsety>0</textoffsety>
+					<radioposx>808</radioposx>
+					<radioposy>14</radioposy>
+					<radiowidth>28</radiowidth>
+					<radioheight>28</radioheight>
+					<font>font24</font>
+					<label>Movie - Undertexter.se</label>
+					<selected>StringCompare(Skin.String(subtitles-plugin-movie-Undertexter),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider","movie", "Undertexter")</onclick>
 				</control>
 			</control>
 			<control type="grouplist" id="301">
@@ -653,3 +725,4 @@
 		</control>
 	</controls>
 </window>
+
