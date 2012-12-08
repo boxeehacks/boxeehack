@@ -1343,7 +1343,7 @@
 						<font>font20ls</font>
 						<align>left</align>
 						<aligny>top</aligny>
-						<label>$INFO[ListItem.pathtoshowinmediaaction]</label>
+						<label>$INFO[ListItem.filename]</label>
 						<textcolor>mediumgreyheidi</textcolor>
 						<wrapmultiline>false</wrapmultiline>
 					</control>
@@ -1357,7 +1357,7 @@
 						<font>font20ls</font>
 						<align>left</align>
 						<aligny>top</aligny>
-						<label>$INFO[ListItem.pathtoshowinmediaaction]</label>
+						<label>$INFO[ListItem.filename]</label>
 						<textcolor>mediumgreyheidi</textcolor>
 						<wrapmultiline>false</wrapmultiline>
 					</control>
@@ -1490,7 +1490,7 @@
 							<font>font20ls</font>
 							<align>left</align>
 							<aligny>top</aligny>
-							<label>$INFO[ListItem.pathtoshowinmediaaction]</label>
+							<label>$INFO[ListItem.filename]</label>
 							<textcolor>whiteheidi</textcolor>
 							<wrapmultiline>false</wrapmultiline>
 							<scroll>true</scroll>
@@ -1505,7 +1505,7 @@
 							<font>font20ls</font>
 							<align>left</align>
 							<aligny>top</aligny>
-							<label>$INFO[ListItem.pathtoshowinmediaaction]</label>
+							<label>$INFO[ListItem.filename]</label>
 							<textcolor>whiteheidi</textcolor>
 							<wrapmultiline>false</wrapmultiline>
 							<scroll>true</scroll>
@@ -1614,7 +1614,7 @@
 							<font>font20ls</font>
 							<align>left</align>
 							<aligny>top</aligny>
-							<label>$INFO[ListItem.pathtoshowinmediaaction]</label>
+							<label>$INFO[ListItem.filename]</label>
 							<textcolor>mediumgreyheidi</textcolor>
 							<wrapmultiline>false</wrapmultiline>
 						</control>
@@ -1628,7 +1628,7 @@
 							<font>font20ls</font>
 							<align>left</align>
 							<aligny>top</aligny>
-							<label>$INFO[ListItem.pathtoshowinmediaaction]</label>
+							<label>$INFO[ListItem.filename]</label>
 							<textcolor>mediumgreyheidi</textcolor>
 							<wrapmultiline>false</wrapmultiline>
 						</control>
