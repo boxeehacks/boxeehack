@@ -18,10 +18,12 @@ status=`ifconfig |grep ppp | busybox awk '{ print $1 }'`
 
 if [ "$status" = "" ]; then
 	pppd pty "pptp $host --nolaunchpppd" file /etc/ppp/options.pptp user $username password $password
-	sleep 2
+	sleep 3
 	ppp=`ip route | grep "ppp[01]" | cut -f 1 -d " "`
 	route del default
-	route add default gw $ppp
+	route add default gw $pp
+	ifconfig eth0 mtu 1460
+        ifconfig ppp0 mtu 1400p
 	touch /tmp/vpn.up
 else
 	killall pptp
