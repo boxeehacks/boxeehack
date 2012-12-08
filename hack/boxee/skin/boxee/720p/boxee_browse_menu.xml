@@ -173,6 +173,15 @@
 				<animation type="Conditional" condition="StringCompare(Skin.String(showmusic),0)">
 					<effect type="slide" start="0" end="59" time="200" delay="0"/>
 				</animation>
+				<animation type="Conditional" condition="StringCompare(Skin.String(hidefriends),1)">
+					<effect type="slide" start="0" end="59" time="200" delay="0"/>
+				</animation>
+				<animation type="Conditional" condition="StringCompare(Skin.String(hidelater),1)">
+					<effect type="slide" start="0" end="59" time="200" delay="0"/>
+				</animation>
+				<animation type="Conditional" condition="StringCompare(Skin.String(hidebrowser),1)">
+					<effect type="slide" start="0" end="59" time="200" delay="0"/>
+				</animation>
 				<posx>130</posx>
 				<posy>232</posy>
 				<width>1100</width>
@@ -269,12 +278,14 @@
 						<onclick>-</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(hidefriends),0)</visible>
 						<controlid>1832</controlid>
 						<label>53911</label>
 						<icon>icons/icon-home-friends.png</icon>
 						<onclick>-</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(hidelater),0)</visible>
 						<controlid>1833</controlid>
 						<label>53917</label>
 						<icon>icons/icon-home-watch-later.png</icon>
@@ -293,11 +304,18 @@
 						<onclick>ActivateWindow(10481,boxeeui://movies/)</onclick>
 					</item>
 					<item>
-						<visible>StringCompare(Skin.String(showmusic),1)</visible>
+						<visible>StringCompare(Skin.String(hidemusic),0) + StringCompare(Skin.String(replacemusic),0)</visible>
 						<controlid>1888</controlid>
 						<label>2</label>
 						<icon>../720p/resources/icons/icon-home-music.png</icon>
 						<onclick>ActivateWindow(10484,boxeeui://music/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(hidemusic),0) + StringCompare(Skin.String(replacemusic),1)</visible>
+						<controlid>1888</controlid>
+						<label>2</label>
+						<icon>../720p/resources/icons/icon-home-music.png</icon>
+						<onclick>PlayMedia("app://spotify")</onclick>
 					</item>
 					<item>
 						<controlid>1837</controlid>
@@ -311,7 +329,8 @@
 						<icon>icons/icon-home-files.png</icon>
 						<onclick>-</onclick>
 					</item>
-					<item>
+					<item>						
+						<visible>StringCompare(Skin.String(hidebrowser),0)</visible>
 						<controlid>1838</controlid>
 						<label>53916</label>
 						<icon>icons/icon-home-web.png</icon>

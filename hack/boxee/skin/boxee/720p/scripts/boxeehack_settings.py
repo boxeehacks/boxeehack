@@ -125,6 +125,54 @@ def showmusic_function():
 
     xbmc.executebuiltin("Skin.SetString(showmusic,%s)" % showmusic)
     file_put_contents("/data/etc/.showmusic_enabled", showmusic)
+
+# Hide / Show Friends icon
+def hidefriends_function():
+    hidefriends = file_get_contents("/data/etc/.hidefriends_enabled")
+
+    if hidefriends == "1":
+        hidefriends = "0"
+    else:
+        hidefriends = "1"
+
+    xbmc.executebuiltin("Skin.SetString(hidefriends,%s)" % hidefriends)
+    file_put_contents("/data/etc/.hidefriends_enabled", hidefriends)
+
+# Hide / Show Watch Later icon
+def hidelater_function():
+    hidelater = file_get_contents("/data/etc/.hidelater_enabled")
+
+    if hidelater == "1":
+        hidelater = "0"
+    else:
+        hidelater = "1"
+
+    xbmc.executebuiltin("Skin.SetString(hidelater,%s)" % hidelater)
+    file_put_contents("/data/etc/.hidelater_enabled", hidelater)
+
+# Hide / Show Browser icon
+def hidebrowser_function():
+    hidebrowser = file_get_contents("/data/etc/.hidebrowser_enabled")
+
+    if hidebrowser == "1":
+        hidebrowser = "0"
+    else:
+        hidebrowser = "1"
+
+    xbmc.executebuiltin("Skin.SetString(hidebrowser,%s)" % hidebrowser)
+    file_put_contents("/data/etc/.hidebrowser_enabled", hidebrowser)
+    
+# Replace music functionality with Spotify app
+def replacemusic_function():
+    replacemusic = file_get_contents("/data/etc/.replacemusic_enabled")
+
+    if replacemusic == "1":
+        replacemusic = "0"
+    else:
+        replacemusic = "1"
+
+    xbmc.executebuiltin("Skin.SetString(replacemusic,%s)" % replacemusic)
+    file_put_contents("/data/etc/.replacemusic_enabled", replacemusic)    
     
 # Enable/disable the subtitle functionality
 def toggle_subtitles(mode, current):
@@ -263,3 +311,7 @@ if (__name__ == "__main__"):
     if command == "featured_next": featured_next()
     if command == "featured_previous": featured_previous()
     if command == "showmusic": showmusic_function()
+    if command == "hidefriends": hidefriends_function()
+    if command == "hidelater": hidelater_function()
+    if command == "hidebrowser": hidebrowser_function()
+    if command == "replacemusic": replacemusic_function()

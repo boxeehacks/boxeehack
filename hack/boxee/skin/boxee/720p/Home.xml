@@ -136,6 +136,14 @@
 				<animation type="Conditional" condition="StringCompare(Skin.String(showmusic),0)">
 					<effect type="slide" start="0" end="70" time="200" delay="0"/>
 				</animation>
+				<animation type="Conditional" condition="StringCompare(Skin.String(hidefriends),1)">
+					<effect type="slide" start="0" end="70" time="200" delay="0"/>
+				</animation>
+				<animation type="Conditional" condition="StringCompare(Skin.String(hidelater),1)">
+					<effect type="slide" start="0" end="70" time="200" delay="0"/>
+				</animation>
+				<animation type="Conditional" condition="StringCompare(Skin.String(hidebrowser),1)">
+					<effect type="slide" start="0" end="70" time="200" delay="0"/>
 				<posx>70</posx>
 				<posy>99</posy>
 				<width>1280</width>
@@ -234,12 +242,14 @@
 						<onclick>-</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(hidefriends),0)</visible>
 						<controlid>112</controlid>
 						<label>53911</label>
 						<thumb>icons/icon-home-friends.png</thumb>
 						<onclick>-</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(hidelater),0)</visible>
 						<controlid>111</controlid>
 						<label>53917</label>
 						<thumb>icons/icon-home-watch-later.png</thumb>
@@ -258,11 +268,18 @@
 						<onclick>-</onclick>
 					</item>
 					<item>
-						<visible>StringCompare(Skin.String(showmusic),1)</visible>
+						<visible>StringCompare(Skin.String(hidemusic),0) + StringCompare(Skin.String(replacemusic),0)</visible>
 						<controlid>122</controlid>
 						<thumb>../720p/resources/icons/icon-home-music.png</thumb>
 						<label>2</label>
 						<onclick>ActivateWindow(10484,boxeeui://music/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(hidemusic),0) + StringCompare(Skin.String(replacemusic),1)</visible>
+						<controlid>122</controlid>
+						<thumb>../720p/resources/icons/icon-home-music.png</thumb>
+						<label>2</label>
+						<onclick>PlayMedia("app://spotify")</onclick>
 					</item>
 					<item>
 						<controlid>116</controlid>
@@ -277,6 +294,7 @@
 						<onclick>-</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(hidebrowser),0)</visible>					
 						<controlid>120</controlid>
 						<thumb>icons/icon-home-web.png</thumb>
 						<label>53916</label>
