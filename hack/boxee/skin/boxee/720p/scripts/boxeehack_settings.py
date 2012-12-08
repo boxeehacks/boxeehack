@@ -114,6 +114,18 @@ def get_featured_feed_value():
         replace = "0"
     return replace
 
+# Hide / Show Music icon
+def showmusic_function():
+    showmusic = file_get_contents("/data/etc/.showmusic_enabled")
+
+    if showmusic == "1":
+        showmusic = "0"
+    else:
+        showmusic = "1"
+
+    xbmc.executebuiltin("Skin.SetString(showmusic,%s)" % showmusic)
+    file_put_contents("/data/etc/.showmusic_enabled", showmusic)
+    
 # Enable/disable the subtitle functionality
 def toggle_subtitles(mode, current):
     if mode == "all":
@@ -250,3 +262,4 @@ if (__name__ == "__main__"):
     if command == "subtitles-provider": subtitle_provider("set", sys.argv[2], sys.argv[3])
     if command == "featured_next": featured_next()
     if command == "featured_previous": featured_previous()
+    if command == "showmusic": showmusic_function()
