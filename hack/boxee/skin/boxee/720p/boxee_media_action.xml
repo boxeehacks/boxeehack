@@ -192,6 +192,21 @@
 				<!-- OVERVIEW -->
 				<control type="group">
 					<visible>!stringcompare(skin.string(MediaAction),CastCrew) + !stringcompare(skin.string(MediaAction),Related)</visible>
+					<control type="image">
+						<posx>1070</posx>
+						<posy>25</posy>
+						<width>161</width>
+						<height>109</height>
+						<texture>../720p/resources/studios/$INFO[Container(5000).ListItem.Studio].png</texture>
+						<aspectratio align="right">keep</aspectratio>
+					</control>
+<!--					<control type="label">
+						<posx>50</posx>
+						<posy>50</posy>
+						<width>1000</width>
+						<height>109</height>
+						<label>../720p/resources/studios/$INFO[Container(5000).ListItem.Studio].png</label>
+					</control>-->
 					<control type="label">
 						<visible>!Control.HasFocus(6020)</visible>
 						<posx>302</posx>
@@ -566,7 +581,7 @@
 								<aligny>top</aligny>
 								<font>font24b</font>
 								<textcolor>mediumgreyheidi</textcolor>
-								<label>$INFO[ListItem.Label2]</label>
+								<label>$INFO[ListItem.Label2]asdf</label>
 							</control>
 						</itemlayout>
 						<focusedlayout width="348" height="76">
