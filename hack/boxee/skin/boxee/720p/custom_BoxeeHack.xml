@@ -409,6 +409,10 @@
 						<include>SettingsLabelEntry</include>
 						<label>Cigamit</label>
 					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>Winedog</label>
+					</control>
 				</control>
 				<control type="grouplist">
 					<posx>320</posx>
