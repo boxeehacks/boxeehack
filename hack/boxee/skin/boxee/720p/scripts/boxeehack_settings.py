@@ -24,13 +24,52 @@ def register_defaults():
     subtitle_provider("get", "default")
     subtitle_provider("get", "tv")
     subtitle_provider("get", "movie")
+
     xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,%s)" % get_subtitles_language_filter() )
     xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % get_subtitles_enabled() )
     xbmc.executebuiltin("Skin.SetString(featured-feed,%s)" % get_featured_feed() )
     xbmc.executebuiltin("Skin.SetString(featured-name,%s)" % get_featured_name() )
+
+    set_home_enabled_strings()
+
     version_local = get_local_version()
     if version_local != "":
         xbmc.executebuiltin("Skin.SetString(boxeeplus-version,%s)" % version_local )
+
+def get_home_enabled_default_list():
+    return "-,friends,watchlater,shows,movies,music,apps,files,web"
+    
+def set_home_enabled_strings():
+    homeitems = get_home_enabled_default_list().split(",")
+
+    for item in homeitems:
+        xbmc.executebuiltin("Skin.SetString(homeenabled-%s,%s)" % (item, get_homeenabled(item)))
+
+
+def get_homeenabled_value():
+    homeenabled = file_get_contents("/data/etc/.home_enabled")
+    if homeenabled == "":
+        homeenabled = get_home_enabled_default_list()
+    return homeenabled
+
+def get_homeenabled(section):
+    homeenabled = get_homeenabled_value().split(",")
+    
+    if section in homeenabled:
+        return "1"
+    else:
+        return "0"
+
+def toggle_homeenabled(section):
+    homeenabled = get_homeenabled_value().split(",")
+    
+    if section in homeenabled:
+        homeenabled.remove(section)
+    else:
+        homeenabled.append(section)
+
+    file_put_contents("/data/etc/.home_enabled", ",".join(homeenabled))
+    set_home_enabled_strings()
 
 # Set the password for the telnet functionality    
 def set_telnet_password():
@@ -263,3 +302,4 @@ if (__name__ == "__main__"):
     if command == "featured_next": featured_next()
     if command == "featured_previous": featured_previous()
     if command == "showmusic": showmusic_function()
+    if command == "homeenabled": toggle_homeenabled(sys.argv[2])

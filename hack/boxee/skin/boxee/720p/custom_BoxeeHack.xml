@@ -1,11 +1,19 @@
 <?xml version="1.0"?>
 <window id="1337">
 	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "defaults")</onload>
+	<onunload>Control.SetFocus(302)</onunload>
+	<onunload>Control.SetFocus(301)</onunload>
 	<onunload>Control.SetFocus(202)</onunload>
-	<onunload>Control.SetFocus(7)</onunload>
+	<onunload>Control.SetFocus(201)</onunload>
+	<onunload>Control.SetFocus(102)</onunload>
+	<onunload>Control.SetFocus(101)</onunload>
+	<onunload>Control.SetFocus(12)</onunload>
+	<onunload>Control.SetFocus(11)</onunload>
 	<onunload>Control.SetFocus(10)</onunload>
-	<defaultcontrol>3</defaultcontrol>
+	<onunload>Control.SetFocus(1)</onunload>
+	<defaultcontrol>1</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
+	
 	<controls>
 		<include>Common_Settings_Background</include>
 		<control type="group" id="9000">
@@ -18,706 +26,335 @@
 				<label>[B]BOXEE+[/B]</label>
 			</control>
 		</control>
+		<!-- CATEGORIES -->
 		<control type="group" id="9001">
-			<control type="grouplist" id="3">
-				<description>button area</description>
+			<control type="grouplist" id="1">
 				<posx>29</posx>
 				<posy>100</posy>
 				<width>340</width>
 				<height>480</height>
 				<orientation>vertical</orientation>
 				<control type="togglebutton" id="10">
-					<width>340</width>
-					<height>56</height>
-					<onright>SetFocus(5)</onright>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<alttexturefocus srcborder="24" border="16">button-on.png</alttexturefocus>
-					<alttexturenofocus srcborder="24" border="16">button-on.png</alttexturenofocus>
-					<textureclick srcborder="24" border="16">button-on.png</textureclick>
-					<usealttexture>ControlGroup(5).HasFocus()</usealttexture>
-					<font>font24</font>
-					<textcolor>lightgreyheidi</textcolor>
-					<alttextcolor>lightgreyheidi</alttextcolor>
-					<altfocusedcolor>lightgreyheidi</altfocusedcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<pulseonselect>false</pulseonselect>
-					<onclick>SetFocus(5)</onclick>
-					<onclick>SetFocus(7)</onclick>
+					<include>SettingsCategoryToggleButton</include>
+					<onright>SetFocus(11)</onright>
+					<usealttexture>ControlGroup(11).HasFocus()</usealttexture>
+					<onclick>SetFocus(11)</onclick>
+					<onclick>SetFocus(12)</onclick>
 					<label>General</label>
 				</control>
+				<control type="togglebutton" id="100">
+					<include>SettingsCategoryToggleButton</include>
+					<onright>SetFocus(101)</onright>
+					<usealttexture>ControlGroup(101).HasFocus()</usealttexture>
+					<onclick>SetFocus(101)</onclick>
+					<onclick>SetFocus(102)</onclick>
+					<label>Home screen</label>
+				</control>
 				<control type="togglebutton" id="200">
-					<posx/>
-					<posy>0</posy>
-					<width>340</width>
+					<include>SettingsCategoryToggleButton</include>
 					<onright>SetFocus(201)</onright>
-					<height>56</height>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<alttexturefocus srcborder="24" border="16">button-on.png</alttexturefocus>
-					<alttexturenofocus srcborder="24" border="16">button-on.png</alttexturenofocus>
-					<textureclick srcborder="24" border="16">button-on.png</textureclick>
 					<usealttexture>ControlGroup(201).HasFocus()</usealttexture>
-					<font>font24</font>
-					<textcolor>lightgreyheidi</textcolor>
-					<alttextcolor>lightgreyheidi</alttextcolor>
-					<altfocusedcolor>lightgreyheidi</altfocusedcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<pulseonselect>false</pulseonselect>
 					<onclick>SetFocus(201)</onclick>
 					<onclick>SetFocus(202)</onclick>
 					<label>Subtitles</label>
 					<visible>StringCompare(Skin.String(subtitles-plugin),1)</visible>
 				</control>
-				<control type="button" id="300">
-					<description>Default Category Button</description>
-					<posx/>
-					<posy>0</posy>
-					<width>340</width>
-					<height>52</height>
-					<onleft>-</onleft>
+				<control type="togglebutton" id="300">
+					<include>SettingsCategoryToggleButton</include>
 					<onright>SetFocus(301)</onright>
-					<height>56</height>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<alttexturefocus srcborder="24" border="16">button-focused.png</alttexturefocus>
-					<textureclick srcborder="24" border="16">button-focused.png</textureclick>
-					<font>font24</font>
-					<textcolor>lightgreyheidi</textcolor>
-					<alttextcolor>lightgreyheidi</alttextcolor>
-					<altfocusedcolor>lightgreyheidi</altfocusedcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<pulseonselect>false</pulseonselect>
+					<usealttexture>ControlGroup(301).HasFocus()</usealttexture>
 					<onclick>SetFocus(301)</onclick>
+					<onclick>SetFocus(302)</onclick>
 					<label>Tools</label>
 				</control>
 			</control>
-			<control type="grouplist" id="5">
-				<description>control area</description>
-				<posx>400</posx>
-				<posy>100</posy>
-				<width>850</width>
-				<height>524</height>
-				<itemgap>0</itemgap>
-				<pagecontrol>-</pagecontrol>
-				<onleft>3</onleft>
-				<onright>-</onright>
-				<onup>-</onup>
-				<ondown>-</ondown>
-				<visible allowhiddenfocus="true">ControlGroup(5).HasFocus() | Control.HasFocus(10)</visible>
-				<control type="button" id="7">
-					<width>850</width>
-					<height>56</height>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<font>font24</font>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
+			
+			<!-- GENERAL -->
+			<control type="grouplist" id="11">
+				<include>SettingsCategoryArea</include>
+				<visible>ControlGroup(11).HasFocus() | Control.HasFocus(10)</visible>
+				<control type="button" id="12">
+					<include>SettingsButton</include>
 					<label>Set telnet password...</label>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "telnet")</onclick>
 				</control>
-				<control type="radiobutton" id="8">
-					<width>850</width>
-					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
+				<control type="radiobutton" id="13">
+					<include>SettingsRadioButton</include>
 					<label>Enable Subtitle Plugin</label>
 					<selected>StringCompare(Skin.String(subtitles-plugin),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles", "all", "all")</onclick>
 				</control>
-				<control type="radiobutton" id="17">
-					<width>850</width>
-					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
-					<label>Show Music</label>
-					<selected>StringCompare(Skin.String(showmusic),1)</selected>
-					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py","showmusic")</onclick>
-				</control>
-				<control type="button" id="13">
-					<width>850</width>
-					<height>56</height>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<font>font24</font>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
+				<control type="button" id="14">
+					<include>SettingsButton</include>
 					<label>Check for new version...</label>
 					<label2>$INFO[Skin.String(boxeeplus-version)]</label2>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "version")</onclick>
 				</control>
-				<control type="group" id="14">
+			</control>
+			
+			<!-- HOME SCREEN -->
+			<control type="grouplist" id="101">
+				<include>SettingsCategoryArea</include>
+				<visible>ControlGroup(101).HasFocus() | Control.HasFocus(100)</visible>
+				<control type="group" id="102">
 					<width>850</width>
 					<height>56</height>
 					<control type="image">
-						<width>850</width>
-						<height>56</height>
-						<visible>ControlGroup(15).HasFocus()</visible>
-						<texture srcborder="24" border="16">button-focused.png</texture>
+						<visible>ControlGroup(102).HasFocus()</visible>
+						<include>SettingsScrollBG</include>
 					</control>
 					<control type="label">
-						<width>550</width>
-						<height>56</height>
-						<aligny>center</aligny>
-						<posx>21</posx>
-						<font>font22</font>
-						<textcolor>lightgreyheidi</textcolor>
+						<visible>!ControlGroup(102).HasFocus()</visible>
+						<include>SettingsScrollLabelUnfocused</include>
 						<label>Home screen content</label>
-						<visible>!ControlGroup(15).HasFocus()</visible>
 					</control>
 					<control type="label">
-						<width>550</width>
-						<height>56</height>
-						<aligny>center</aligny>
-						<posx>21</posx>
-						<font>font22</font>
-						<textcolor>whiteheidi</textcolor>
+						<visible>ControlGroup(102).HasFocus()</visible>
+						<include>SettingsScrollLabelFocused</include>
 						<label>Home screen content</label>
-						<visible>ControlGroup(15).HasFocus()</visible>
+					</control>
+					<control type="label">
+						<visible>!ControlGroup(102).HasFocus()</visible>
+						<include>SettingsScrollLabel2Unfocused</include>
+						<label>$INFO[Skin.String(featured-name)]</label>
+					</control>
+					<control type="label">
+						<visible>ControlGroup(102).HasFocus()</visible>
+						<include>SettingsScrollLabel2Focused</include>
+						<label>$INFO[Skin.String(featured-name)]</label>
 					</control>
 
-					<control type="label">
-						<width>550</width>
-						<height>56</height>
-						<posx>780</posx>
-						<textcolor>lightgreyheidi</textcolor>
-						<font>font22</font>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>$INFO[Skin.String(featured-name)]</label>
-						<visible>!ControlGroup(15).HasFocus()</visible>
-					</control>
-					<control type="label">
-						<width>550</width>
-						<height>56</height>
-						<posx>780</posx>
-						<textcolor>whiteheidi</textcolor>
-						<font>font22</font>
-						<align>right</align>
-						<aligny>center</aligny>
-						<label>$INFO[Skin.String(featured-name)]</label>
-						<visible>ControlGroup(15).HasFocus()</visible>
-					</control>
-					<control type="button" id="1401">
-						<posx>788</posx>
-						<posy>16</posy>
-						<onup>SetFocus(13)</onup>
-						<ondown>SetFocus(15)</ondown>
-						<onright>SetFocus(1402)</onright>
-						<onleft>SetFocus(3)</onleft>
-						<width>22</width>
-						<height>22</height>
-						<texturenofocus flipy="true" diffuse="colors/color-grey.png">universal/graphic-spin-control-off.png</texturenofocus>
-						<texturefocus flipy="true" diffuse="colors/color-blue.png">universal/graphic-spin-control-on.png</texturefocus>
+					<control type="button" id="10201">
+						<onup>-</onup>
+						<ondown>103</ondown>
+						<onright>10202</onright>
+						<onleft>1</onleft>
+						<include>SettingsScrollButtonUp</include>
 						<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "featured_next")</onclick>
 					</control>
-					<control type="button" id="1402">
-						<posx>809</posx>
-						<posy>16</posy>
-						<onup>SetFocus(13)</onup>
-						<ondown>SetFocus(15)</ondown>
+					<control type="button" id="10202">
+						<onup>-</onup>
+						<ondown>103</ondown>
 						<onright>-</onright>
-						<onleft>SetFocus(1401)</onleft>
-						<width>22</width>
-						<height>22</height>
-						<texturenofocus diffuse="colors/color-grey.png">universal/graphic-spin-control-off.png</texturenofocus>
-						<texturefocus diffuse="colors/color-blue.png">universal/graphic-spin-control-on.png</texturefocus>
+						<onleft>10201</onleft>
+						<include>SettingsScrollButtonDown</include>
 						<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "featured_previous")</onclick>
 					</control>
 				</control>
-			</control>
-			<control type="grouplist" id="201">
-				<description>control area</description>
-				<posx>400</posx>
-				<posy>100</posy>
-				<width>850</width>
-				<height>524</height>
-				<itemgap>0</itemgap>
-				<pagecontrol>-</pagecontrol>
-				<onleft>3</onleft>
-				<onright>-</onright>
-				<onup>-</onup>
-				<ondown>-</ondown>
-				<visible allowhiddenfocus="true">ControlGroup(201).HasFocus() | Control.HasFocus(200)</visible>
-				<control type="radiobutton" id="202">
-					<width>850</width>
+				<control type="group">
 					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
+					<control type="label">
+						<include>SettingsLabel</include>
+						<label>Home screen icons</label>
+					</control>
+				</control>
+				<control type="radiobutton" id="103">
+					<onup>SetFocus(102)</onup>
+					<include>SettingsRadioButton</include>
+					<label>Friends</label>
+					<selected>StringCompare(Skin.String(homeenabled-friends),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "friends")</onclick>
+				</control>
+				<control type="radiobutton" id="104">
+					<include>SettingsRadioButton</include>
+					<label>Watch later</label>
+					<selected>StringCompare(Skin.String(homeenabled-watchlater),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "watchlater")</onclick>
+				</control>
+				<control type="radiobutton" id="105">
+					<include>SettingsRadioButton</include>
+					<label>Shows</label>
+					<selected>StringCompare(Skin.String(homeenabled-shows),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "shows")</onclick>
+				</control>
+				<control type="radiobutton" id="106">
+					<include>SettingsRadioButton</include>
+					<label>Movies</label>
+					<selected>StringCompare(Skin.String(homeenabled-movies),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "movies")</onclick>
+				</control>
+				<control type="radiobutton" id="107">
+					<include>SettingsRadioButton</include>
+					<label>Music</label>
+					<selected>StringCompare(Skin.String(homeenabled-music),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "music")</onclick>
+				</control>
+				<control type="radiobutton" id="108">
+					<include>SettingsRadioButton</include>
+					<label>Apps</label>
+					<selected>StringCompare(Skin.String(homeenabled-apps),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "apps")</onclick>
+				</control>
+				<control type="radiobutton" id="109">
+					<include>SettingsRadioButton</include>
+					<label>Files</label>
+					<selected>StringCompare(Skin.String(homeenabled-files),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "files")</onclick>
+				</control>
+				<control type="radiobutton" id="110">
+					<include>SettingsRadioButton</include>
+					<label>Web</label>
+					<selected>StringCompare(Skin.String(homeenabled-web),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "web")</onclick>
+				</control>
+			</control>
+			
+			<!-- SUBTITLES -->
+			<control type="grouplist" id="201">
+				<include>SettingsCategoryArea</include>
+				<visible>ControlGroup(201).HasFocus() | Control.HasFocus(200)</visible>
+				<control type="group">
+					<height>56</height>
+					<control type="label">
+						<include>SettingsLabel</include>
+						<label>Languages</label>
+					</control>
+				</control>
+				<control type="radiobutton" id="202">
+					<include>SettingsRadioButton</include>
 					<label>Use language filter</label>
+					<ondown>SetFocus(204)</ondown>
+					<ondown>SetFocus(203)</ondown>
+					<ondown>SetFocus(201)</ondown>
 					<selected>StringCompare(Skin.String(subtitles-plugin-language),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles", "language", "$INFO[Skin.String(subtitles-plugin-language)]")</onclick>
 				</control>
 				<control type="button" id="203">
-					<width>850</width>
-					<height>56</height>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<font>font24</font>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<label>Set languages</label>
+					<include>SettingsButton</include>
+					<label>Set languages...</label>
+					<ondown>SetFocus(204)</ondown>
+					<ondown>SetFocus(201)</ondown>
 					<visible>StringCompare(Skin.String(subtitles-plugin-language),1)</visible>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_sublangs.py")</onclick>
 				</control>
-				<control type="radiobutton" id="204">
-					<width>850</width>
+				
+				<control type="group">
 					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
-					<label>All - Bierdopje</label>
+					<control type="label">
+						<include>SettingsLabel</include>
+						<label>All</label>
+					</control>
+				</control>
+				<control type="radiobutton" id="204">
+					<include>SettingsRadioButton</include>
+					<label>Bierdopje</label>
+					<onup>SetFocus(202)</onup>
+					<onup>SetFocus(203)</onup>
+					<onup>SetFocus(201)</onup>
 					<selected>StringCompare(Skin.String(subtitles-plugin-default-BierDopje),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "default", "BierDopje")</onclick>
 				</control>
 				<control type="radiobutton" id="205">
-					<width>850</width>
-					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
-					<label>All - OpenSubtitles</label>
+					<include>SettingsRadioButton</include>
+					<label>OpenSubtitles</label>
 					<selected>StringCompare(Skin.String(subtitles-plugin-default-OpenSubtitles),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "default", "OpenSubtitles")</onclick>
 				</control>
 				<control type="radiobutton" id="206">
-					<width>850</width>
-					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
-					<label>All - Subtitulos</label>
+					<include>SettingsRadioButton</include>
+					<label>Subtitulos</label>
 					<selected>StringCompare(Skin.String(subtitles-plugin-default-Subtitulos),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "default", "Subtitulos")</onclick>
 				</control>
 				<control type="radiobutton" id="207">
-					<width>850</width>
-					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
-					<label>All - SubsWiki</label>
+					<include>SettingsRadioButton</include>
+					<label>SubsWiki</label>
 					<selected>StringCompare(Skin.String(subtitles-plugin-default-SubsWiki),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "default", "SubsWiki")</onclick>
 				</control>
 				<control type="radiobutton" id="208">
-					<width>850</width>
-					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
-					<label>All - Addic7ed</label>
+					<include>SettingsRadioButton</include>
+					<label>Addic7ed</label>
 					<selected>StringCompare(Skin.String(subtitles-plugin-default-Addic7ed),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "default", "Addic7ed")</onclick>
 				</control>
 				<control type="radiobutton" id="209">
-					<width>850</width>
-					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
-					<label>All - Undertexter.se</label>
+					<include>SettingsRadioButton</include>
+					<label>Undertexter.se</label>
+					<ondown>SetFocus(275)</ondown>
 					<selected>StringCompare(Skin.String(subtitles-plugin-default-Undertexter),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "default", "Undertexter")</onclick>
 				</control>
-				<control type="radiobutton" id="250">
-					<width>850</width>
+
+				<control type="group">
 					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
-					<label>TV - Bierdopje</label>
-					<selected>StringCompare(Skin.String(subtitles-plugin-tv-BierDopje),1)</selected>
-					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "BierDopje")</onclick>
-				</control>
-				<control type="radiobutton" id="251">
-					<width>850</width>
-					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
-					<label>TV - OpenSubtitles</label>
-					<selected>StringCompare(Skin.String(subtitles-plugin-tv-OpenSubtitles),1)</selected>
-					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "OpenSubtitles")</onclick>
-				</control>
-				<control type="radiobutton" id="252">
-					<width>850</width>
-					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
-					<label>TV - Subtitulos</label>
-					<selected>StringCompare(Skin.String(subtitles-plugin-tv-Subtitulos),1)</selected>
-					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "Subtitulos")</onclick>
-				</control>
-				<control type="radiobutton" id="253">
-					<width>850</width>
-					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
-					<label>TV - SubsWiki</label>
-					<selected>StringCompare(Skin.String(subtitles-plugin-tv-SubsWiki),1)</selected>
-					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "SubsWiki")</onclick>
-				</control>
-				<control type="radiobutton" id="254">
-					<width>850</width>
-					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
-					<label>TV - Addic7ed</label>
-					<selected>StringCompare(Skin.String(subtitles-plugin-tv-Addic7ed),1)</selected>
-					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "Addic7ed")</onclick>
-				</control>
-				<control type="radiobutton" id="255">
-					<width>850</width>
-					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
-					<label>TV - Undertexter.se</label>
-					<selected>StringCompare(Skin.String(subtitles-plugin-tv-Undertexter),1)</selected>
-					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "Undertexter")</onclick>
+					<control type="label">
+						<include>SettingsLabel</include>
+						<label>Movie</label>
+					</control>
 				</control>
 				<control type="radiobutton" id="275">
-					<width>850</width>
-					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
-					<label>Movie - OpenSubtitles</label>
+					<include>SettingsRadioButton</include>
+					<label>OpenSubtitles</label>
+					<onup>SetFocus(209)</onup>
 					<selected>StringCompare(Skin.String(subtitles-plugin-movie-OpenSubtitles),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider","movie", "OpenSubtitles")</onclick>
 				</control>
 				<control type="radiobutton" id="276">
-					<width>850</width>
-					<height>56</height>
-					<type>radiobutton</type>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus srcborder="24" border="16">-</texturenofocus>
-					<textureradioon>universal/graphic-radio-check.png</textureradioon>
-					<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<radioposx>808</radioposx>
-					<radioposy>14</radioposy>
-					<radiowidth>28</radiowidth>
-					<radioheight>28</radioheight>
-					<font>font24</font>
-					<label>Movie - Undertexter.se</label>
+					<include>SettingsRadioButton</include>
+					<label>Undertexter.se</label>
+					<ondown>SetFocus(250)</ondown>
 					<selected>StringCompare(Skin.String(subtitles-plugin-movie-Undertexter),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider","movie", "Undertexter")</onclick>
 				</control>
+
+				<control type="group">
+					<height>56</height>
+					<control type="label">
+						<include>SettingsLabel</include>
+						<label>Shows</label>
+					</control>
+				</control>
+				<control type="radiobutton" id="250">
+					<include>SettingsRadioButton</include>
+					<label>Bierdopje</label>
+					<onup>SetFocus(276)</onup>
+					<selected>StringCompare(Skin.String(subtitles-plugin-tv-BierDopje),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "BierDopje")</onclick>
+				</control>
+				<control type="radiobutton" id="251">
+					<include>SettingsRadioButton</include>
+					<label>OpenSubtitles</label>
+					<selected>StringCompare(Skin.String(subtitles-plugin-tv-OpenSubtitles),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "OpenSubtitles")</onclick>
+				</control>
+				<control type="radiobutton" id="252">
+					<include>SettingsRadioButton</include>
+					<label>Subtitulos</label>
+					<selected>StringCompare(Skin.String(subtitles-plugin-tv-Subtitulos),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "Subtitulos")</onclick>
+				</control>
+				<control type="radiobutton" id="253">
+					<include>SettingsRadioButton</include>
+					<label>SubsWiki</label>
+					<selected>StringCompare(Skin.String(subtitles-plugin-tv-SubsWiki),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "SubsWiki")</onclick>
+				</control>
+				<control type="radiobutton" id="254">
+					<include>SettingsRadioButton</include>
+					<label>Addic7ed</label>
+					<selected>StringCompare(Skin.String(subtitles-plugin-tv-Addic7ed),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "Addic7ed")</onclick>
+				</control>
+				<control type="radiobutton" id="255">
+					<include>SettingsRadioButton</include>
+					<label>Undertexter.se</label>
+					<selected>StringCompare(Skin.String(subtitles-plugin-tv-Undertexter),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles-provider", "tv", "Undertexter")</onclick>
+				</control>
 			</control>
+			
+			<!-- TOOLS -->
 			<control type="grouplist" id="301">
-				<description>control area</description>
-				<posx>400</posx>
-				<posy>100</posy>
-				<width>850</width>
-				<height>524</height>
-				<itemgap>0</itemgap>
-				<pagecontrol>-</pagecontrol>
-				<onleft>3</onleft>
-				<onright>-</onright>
-				<onup>-</onup>
-				<ondown>-</ondown>
-				<visible allowhiddenfocus="true">ControlGroup(301).HasFocus() | Control.HasFocus(300)</visible>
-				<!--				<control type="button" id="302">
-					<width>850</width>
-					<height>56</height>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<font>font24</font>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
-					<label>Clear fanart cache</label>
-					<visible>false</visible>
-					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_clear_cache.py", "fanart")</onclick>       
-				</control> -->
-				<control type="button" id="303">
-					<width>850</width>
-					<height>56</height>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<font>font24</font>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
+				<include>SettingsCategoryArea</include>
+				<visible>ControlGroup(301).HasFocus() | Control.HasFocus(300)</visible>
+				<control type="button" id="302">
+					<include>SettingsButton</include>
 					<label>Clear thumbnail cache...</label>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_clear_cache.py", "thumbnail")</onclick>
 				</control>
-				<control type="button" id="304">
-					<width>850</width>
-					<height>56</height>
-					<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<font>font24</font>
-					<textcolor>lightgreyheidi</textcolor>
-					<focusedcolor>whiteheidi</focusedcolor>
-					<disabledcolor>mediumgreyheidi</disabledcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-					<textoffsetx>20</textoffsetx>
+				<control type="button" id="303">
+					<include>SettingsButton</include>
 					<label>Reload skin...</label>
 					<onclick>XBMC.ReloadSkin</onclick>
 				</control>

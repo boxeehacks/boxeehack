@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<includes>
+	<include name="SettingsCategoryToggleButton">
+		<width>340</width>
+		<height>56</height>
+		<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<alttexturefocus srcborder="24" border="16">button-on.png</alttexturefocus>
+		<alttexturenofocus srcborder="24" border="16">button-on.png</alttexturenofocus>
+		<textureclick srcborder="24" border="16">button-on.png</textureclick>
+		<font>font24</font>
+		<textcolor>lightgreyheidi</textcolor>
+		<alttextcolor>lightgreyheidi</alttextcolor>
+		<altfocusedcolor>lightgreyheidi</altfocusedcolor>
+		<focusedcolor>whiteheidi</focusedcolor>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textoffsetx>20</textoffsetx>
+		<pulseonselect>false</pulseonselect>
+	</include>
+	<include name="SettingsLabel">
+		<posx>20</posx>
+		<width>850</width>
+		<height>56</height>
+		<font>font24</font>
+		<textcolor>mediumgreyheidi</textcolor>
+		<colordiffuse>80FFFFFF</colordiffuse>
+		<align>left</align>
+		<aligny>center</aligny>
+	</include>
+	<include name="SettingsCategoryArea">
+		<posx>400</posx>
+		<posy>100</posy>
+		<width>850</width>
+		<height>524</height>
+		<itemgap>0</itemgap>
+		<pagecontrol>-</pagecontrol>
+		<onleft>1</onleft>
+		<onright>-</onright>
+		<onup>-</onup>
+		<ondown>-</ondown>
+	</include>
+	<include name="SettingsButton">
+		<width>850</width>
+		<height>56</height>
+		<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<font>font24</font>
+		<textcolor>lightgreyheidi</textcolor>
+		<focusedcolor>whiteheidi</focusedcolor>
+		<disabledcolor>mediumgreyheidi</disabledcolor>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textoffsetx>20</textoffsetx>
+	</include>
+	<include name="SettingsRadioButton">
+		<width>850</width>
+		<height>56</height>
+		<type>radiobutton</type>
+		<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+		<texturenofocus srcborder="24" border="16">-</texturenofocus>
+		<textureradioon>universal/graphic-radio-check.png</textureradioon>
+		<textureradiooff>universal/graphic-radio-blank.png</textureradiooff>
+		<textcolor>lightgreyheidi</textcolor>
+		<focusedcolor>whiteheidi</focusedcolor>
+		<disabledcolor>mediumgreyheidi</disabledcolor>
+		<align>left</align>
+		<aligny>center</aligny>
+		<textoffsetx>20</textoffsetx>
+		<textoffsety>0</textoffsety>
+		<radioposx>808</radioposx>
+		<radioposy>14</radioposy>
+		<radiowidth>28</radiowidth>
+		<radioheight>28</radioheight>
+		<font>font24</font>
+	</include>
+	<include name="SettingsScrollBG">
+		<width>850</width>
+		<height>56</height>
+		<texture srcborder="24" border="16">button-focused.png</texture>
+	</include>
+	<include name="SettingsScrollLabelUnfocused">
+		<width>550</width>
+		<height>56</height>
+		<aligny>center</aligny>
+		<posx>21</posx>
+		<font>font24</font>
+		<textcolor>lightgreyheidi</textcolor>
+	</include>
+	<include name="SettingsScrollLabelFocused">
+		<width>550</width>
+		<height>56</height>
+		<aligny>center</aligny>
+		<posx>21</posx>
+		<font>font24</font>
+		<textcolor>whiteheidi</textcolor>
+	</include>
+	<include name="SettingsScrollLabel2Unfocused">
+		<width>550</width>
+		<height>56</height>
+		<posx>780</posx>
+		<font>font24</font>
+		<align>right</align>
+		<aligny>center</aligny>
+		<textcolor>lightgreyheidi</textcolor>
+	</include>
+	<include name="SettingsScrollLabel2Focused">
+		<width>550</width>
+		<height>56</height>
+		<posx>780</posx>
+		<font>font24</font>
+		<align>right</align>
+		<aligny>center</aligny>
+		<textcolor>whiteheidi</textcolor>
+	</include>
+	<include name="SettingsScrollButtonUp">
+		<posx>788</posx>
+		<posy>16</posy>
+		<width>22</width>
+		<height>22</height>
+		<texturenofocus flipy="true" diffuse="colors/color-grey.png">universal/graphic-spin-control-off.png</texturenofocus>
+		<texturefocus flipy="true" diffuse="colors/color-blue.png">universal/graphic-spin-control-on.png</texturefocus>
+	</include>
+	<include name="SettingsScrollButtonDown">
+		<posx>809</posx>
+		<posy>16</posy>
+		<width>22</width>
+		<height>22</height>
+		<texturenofocus diffuse="colors/color-grey.png">universal/graphic-spin-control-off.png</texturenofocus>
+		<texturefocus diffuse="colors/color-blue.png">universal/graphic-spin-control-on.png</texturefocus>
+	</include>
+</includes>

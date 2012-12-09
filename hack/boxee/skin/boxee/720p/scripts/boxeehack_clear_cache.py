@@ -10,7 +10,7 @@ def thumbnail_function():
     dialog = xbmcgui.Dialog()
     if dialog.yesno("Clear thumbnail cache", "Are you sure you want to clear the thumbnail cache?"):
         os.system("find /data/.boxee/UserData/profiles/*/Thumbnails/ -name \*.tbn | xargs rm")
-    xbmc.executebuiltin("Notification(,Clearing thumbnail cache,3000)")
+        xbmc.executebuiltin("Notification(,Clearing thumbnail cache,3000)")
 
 if (__name__ == "__main__"):
     section = sys.argv[1]
