@@ -446,6 +446,10 @@
 						<include>SettingsLabelEntry</include>
 						<label>Stephan Schill</label>
 					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>Kevin Sartori</label>
+					</control>
 				</control>
 			</control>
 		</control>
