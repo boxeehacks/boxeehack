@@ -167,13 +167,37 @@
 			</control>
 			
 			<control type="list" id="1823">
-				<animation type="Conditional" condition="!DVB.IsTunerReady">
-					<effect type="slide" start="0" end="59" time="200" delay="0"/>
+				<animation type="Conditional" condition="DVB.IsTunerReady">
+					<effect type="slide" start="0" end="-59" time="200" delay="0"/>
 				</animation>
-				<animation type="Conditional" condition="StringCompare(Skin.String(showmusic),0)">
-					<effect type="slide" start="0" end="59" time="200" delay="0"/>
+				<animation type="Conditional" condition="DVB.IsTunerReady">
+					<effect type="slide" start="0" end="-59" time="200" delay="0"/>
 				</animation>
-				<posx>130</posx>
+				<animation type="Conditional" condition="StringCompare(Skin.String(homeenabled-friends),1)">
+					<effect type="slide" start="0" end="-59" time="200" delay="0"/>
+				</animation>
+				<animation type="Conditional" condition="StringCompare(Skin.String(homeenabled-watchlater),1)">
+					<effect type="slide" start="0" end="-59" time="200" delay="0"/>
+				</animation>
+				<animation type="Conditional" condition="StringCompare(Skin.String(homeenabled-shows),1)">
+					<effect type="slide" start="0" end="-59" time="200" delay="0"/>
+				</animation>
+				<animation type="Conditional" condition="StringCompare(Skin.String(homeenabled-movies),1)">
+					<effect type="slide" start="0" end="-59" time="200" delay="0"/>
+				</animation>
+				<animation type="Conditional" condition="StringCompare(Skin.String(homeenabled-music),1)">
+					<effect type="slide" start="0" end="-59" time="200" delay="0"/>
+				</animation>
+				<animation type="Conditional" condition="StringCompare(Skin.String(homeenabled-apps),1)">
+					<effect type="slide" start="0" end="-59" time="200" delay="0"/>
+				</animation>
+				<animation type="Conditional" condition="StringCompare(Skin.String(homeenabled-files),1)">
+					<effect type="slide" start="0" end="-59" time="200" delay="0"/>
+				</animation>
+				<animation type="Conditional" condition="StringCompare(Skin.String(homeenabled-web),1)">
+					<effect type="slide" start="0" end="-59" time="200" delay="0"/>
+				</animation>
+				<posx>655</posx>
 				<posy>232</posy>
 				<width>1100</width>
 				<height>200</height>
@@ -269,49 +293,56 @@
 						<onclick>-</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(homeenabled-friends),1)</visible>
 						<controlid>1832</controlid>
 						<label>53911</label>
 						<icon>icons/icon-home-friends.png</icon>
 						<onclick>-</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(homeenabled-watchlater),1)</visible>
 						<controlid>1833</controlid>
 						<label>53917</label>
 						<icon>icons/icon-home-watch-later.png</icon>
 						<onclick>-</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(homeenabled-shows),1)</visible>
 						<controlid>1834</controlid>
 						<label>20343</label>
 						<icon>icons/icon-home-shows.png</icon>
 						<onclick>ActivateWindow(10480,boxeeui://shows/)</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(homeenabled-movies),1)</visible>
 						<controlid>1835</controlid>
 						<label>342</label>
 						<icon>icons/icon-home-movies.png</icon>
 						<onclick>ActivateWindow(10481,boxeeui://movies/)</onclick>
 					</item>
 					<item>
-						<visible>StringCompare(Skin.String(showmusic),1)</visible>
+						<visible>StringCompare(Skin.String(homeenabled-music),1)</visible>
 						<controlid>1888</controlid>
 						<label>2</label>
 						<icon>../720p/resources/icons/icon-home-music.png</icon>
 						<onclick>ActivateWindow(10484,boxeeui://music/)</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(homeenabled-apps),1)</visible>
 						<controlid>1837</controlid>
 						<label>54048</label>
 						<icon>icons/icon-home-apps.png</icon>
 						<onclick>ActivateWindow(10482,boxeeui://apps/)</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(homeenabled-files),1)</visible>
 						<controlid>1836</controlid>
 						<label>744</label>
 						<icon>icons/icon-home-files.png</icon>
 						<onclick>-</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(homeenabled-web),1)</visible>
 						<controlid>1838</controlid>
 						<label>53916</label>
 						<icon>icons/icon-home-web.png</icon>
