@@ -22,3 +22,4 @@ from Subtitulos import Subtitulos
 from BierDopje import BierDopje
 from SubsWiki import SubsWiki
 from Addic7ed import Addic7ed
+from Undertexter import Undertexter

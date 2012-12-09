@@ -2,7 +2,7 @@ import os
 import xbmc, xbmcgui, mc
 import ConfigParser
 
-available_providers = ['Addic7ed', 'BierDopje', 'OpenSubtitles', 'SubsWiki', 'Subtitulos']
+available_providers = ['Addic7ed', 'BierDopje', 'OpenSubtitles', 'SubsWiki', 'Subtitulos', 'Undertexter']
 
 # Read file contents into a string
 def file_get_contents(filename):
@@ -24,13 +24,83 @@ def register_defaults():
     subtitle_provider("get", "default")
     subtitle_provider("get", "tv")
     subtitle_provider("get", "movie")
+
     xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,%s)" % get_subtitles_language_filter() )
     xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % get_subtitles_enabled() )
     xbmc.executebuiltin("Skin.SetString(featured-feed,%s)" % get_featured_feed() )
     xbmc.executebuiltin("Skin.SetString(featured-name,%s)" % get_featured_name() )
+    xbmc.executebuiltin("Skin.SetString(browser-homepage,%s)" % "".join(get_browser_homepage().split("http://")) )
+
+    set_home_enabled_strings()
+
     version_local = get_local_version()
     if version_local != "":
         xbmc.executebuiltin("Skin.SetString(boxeeplus-version,%s)" % version_local )
+
+def get_home_enabled_default_list():
+    return "-,friends,watchlater,shows,movies,music,apps,files,web"
+    
+def set_home_enabled_strings():
+    homeitems = get_home_enabled_default_list().split(",")
+
+    for item in homeitems:
+        xbmc.executebuiltin("Skin.SetString(homeenabled-%s,%s)" % (item, get_homeenabled(item)))
+
+
+def get_homeenabled_value():
+    homeenabled = file_get_contents("/data/etc/.home_enabled")
+    if homeenabled == "":
+        homeenabled = get_home_enabled_default_list()
+    return homeenabled
+
+def get_homeenabled(section):
+    homeenabled = get_homeenabled_value().split(",")
+    
+    if section in homeenabled:
+        return "1"
+    else:
+        return "0"
+
+def toggle_homeenabled(section):
+    homeenabled = get_homeenabled_value().split(",")
+    
+    if section in homeenabled:
+        homeenabled.remove(section)
+    else:
+        homeenabled.append(section)
+
+    file_put_contents("/data/etc/.home_enabled", ",".join(homeenabled))
+    set_home_enabled_strings()
+
+def get_browser_homepage():
+    homepage = file_get_contents("/data/etc/.browser_homepage")
+
+    if homepage == "":
+        homepage = "http://www.myfav.es/boxee"
+
+    return homepage
+
+def set_browser_homepage():
+    homepage = get_browser_homepage()
+
+    kb = xbmc.Keyboard('default', 'heading', True)
+    kb.setDefault(homepage)
+    kb.setHeading('Enter homepage URL') # optional
+    kb.setHiddenInput(False) # optional
+    kb.doModal()
+
+    if kb.isConfirmed():
+        homepage = kb.getText()
+
+        file_put_contents("/data/etc/.browser_homepage", homepage)
+
+        template = file_get_contents("/data/hack/apps/browser2/template.xml")
+        template = homepage.join(template.split("$URL$"))
+        file_put_contents("/data/hack/apps/browser2/descriptor.xml", template)
+
+        os.system("sh /data/hack/apps.sh")
+
+        xbmc.executebuiltin("Skin.SetString(browser-homepage,%s)" % "".join(get_browser_homepage().split("http://")) )
 
 # Set the password for the telnet functionality    
 def set_telnet_password():
@@ -43,11 +113,11 @@ def set_telnet_password():
     if kb.isConfirmed():
         passwd = kb.getText()
 
-    if passwd == "":
-        dialog = xbmcgui.Dialog()
-        ok = dialog.ok('Telnet', 'The telnet password must not be empty.')
-    else:
-        file_put_contents("/data/etc/passwd", passwd)    
+        if passwd == "":
+            dialog = xbmcgui.Dialog()
+            ok = dialog.ok('Telnet', 'The telnet password must not be empty.')
+        else:
+            file_put_contents("/data/etc/passwd", passwd)    
 
 # Determine whether subtitle functionality is enabled/enabled
 def get_subtitles_enabled():
@@ -114,6 +184,18 @@ def get_featured_feed_value():
         replace = "0"
     return replace
 
+# Hide / Show Music icon
+def showmusic_function():
+    showmusic = file_get_contents("/data/etc/.showmusic_enabled")
+
+    if showmusic == "1":
+        showmusic = "0"
+    else:
+        showmusic = "1"
+
+    xbmc.executebuiltin("Skin.SetString(showmusic,%s)" % showmusic)
+    file_put_contents("/data/etc/.showmusic_enabled", showmusic)
+    
 # Enable/disable the subtitle functionality
 def toggle_subtitles(mode, current):
     if mode == "all":
@@ -250,3 +332,6 @@ if (__name__ == "__main__"):
     if command == "subtitles-provider": subtitle_provider("set", sys.argv[2], sys.argv[3])
     if command == "featured_next": featured_next()
     if command == "featured_previous": featured_previous()
+    if command == "showmusic": showmusic_function()
+    if command == "homeenabled": toggle_homeenabled(sys.argv[2])
+    if command == "browser-homepage": set_browser_homepage()
