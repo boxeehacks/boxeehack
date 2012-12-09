@@ -87,13 +87,19 @@
 					<label>Set telnet password...</label>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "telnet")</onclick>
 				</control>
-				<control type="radiobutton" id="13">
+				<control type="button" id="13">
+					<include>SettingsButton</include>
+					<label>Browser homepage...</label>
+					<label2>$INFO[Skin.String(browser-homepage)]</label2>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "browser-homepage")</onclick>
+				</control>
+				<control type="radiobutton" id="14">
 					<include>SettingsRadioButton</include>
 					<label>Enable Subtitle Plugin</label>
 					<selected>StringCompare(Skin.String(subtitles-plugin),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles", "all", "all")</onclick>
 				</control>
-				<control type="button" id="14">
+				<control type="button" id="15">
 					<include>SettingsButton</include>
 					<label>Check for new version...</label>
 					<label2>$INFO[Skin.String(boxeeplus-version)]</label2>

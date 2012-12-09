@@ -29,6 +29,7 @@ def register_defaults():
     xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % get_subtitles_enabled() )
     xbmc.executebuiltin("Skin.SetString(featured-feed,%s)" % get_featured_feed() )
     xbmc.executebuiltin("Skin.SetString(featured-name,%s)" % get_featured_name() )
+    xbmc.executebuiltin("Skin.SetString(browser-homepage,%s)" % "".join(get_browser_homepage().split("http://")) )
 
     set_home_enabled_strings()
 
@@ -71,6 +72,36 @@ def toggle_homeenabled(section):
     file_put_contents("/data/etc/.home_enabled", ",".join(homeenabled))
     set_home_enabled_strings()
 
+def get_browser_homepage():
+    homepage = file_get_contents("/data/etc/.browser_homepage")
+
+    if homepage == "":
+        homepage = "http://www.myfav.es/boxee"
+
+    return homepage
+
+def set_browser_homepage():
+    homepage = get_browser_homepage()
+
+    kb = xbmc.Keyboard('default', 'heading', True)
+    kb.setDefault(homepage)
+    kb.setHeading('Enter homepage URL') # optional
+    kb.setHiddenInput(False) # optional
+    kb.doModal()
+
+    if kb.isConfirmed():
+        homepage = kb.getText()
+
+        file_put_contents("/data/etc/.browser_homepage", homepage)
+
+        template = file_get_contents("/data/hack/apps/browser2/template.xml")
+        template = homepage.join(template.split("$URL$"))
+        file_put_contents("/data/hack/apps/browser2/descriptor.xml", template)
+
+        os.system("sh /data/hack/apps.sh")
+
+        xbmc.executebuiltin("Skin.SetString(browser-homepage,%s)" % "".join(get_browser_homepage().split("http://")) )
+
 # Set the password for the telnet functionality    
 def set_telnet_password():
     passwd = file_get_contents("/data/etc/passwd")
@@ -82,11 +113,11 @@ def set_telnet_password():
     if kb.isConfirmed():
         passwd = kb.getText()
 
-    if passwd == "":
-        dialog = xbmcgui.Dialog()
-        ok = dialog.ok('Telnet', 'The telnet password must not be empty.')
-    else:
-        file_put_contents("/data/etc/passwd", passwd)    
+        if passwd == "":
+            dialog = xbmcgui.Dialog()
+            ok = dialog.ok('Telnet', 'The telnet password must not be empty.')
+        else:
+            file_put_contents("/data/etc/passwd", passwd)    
 
 # Determine whether subtitle functionality is enabled/enabled
 def get_subtitles_enabled():
@@ -303,3 +334,4 @@ if (__name__ == "__main__"):
     if command == "featured_previous": featured_previous()
     if command == "showmusic": showmusic_function()
     if command == "homeenabled": toggle_homeenabled(sys.argv[2])
+    if command == "browser-homepage": set_browser_homepage()
