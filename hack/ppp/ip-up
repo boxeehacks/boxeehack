@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# to get PATH and LD_LIBRARY_PATH correct
+. /etc/profile
+PRIMARY=`ip route | grep default | grep "eth[01]" | cut -f 5 -d " "`
+CURRGW=`ip route  | grep default | grep "eth[01]" | cut -f 3 -d " "`
+SERVER=$5
+CONNECTION=$6
+if [ "${CONNECTION}" = "" ]; then CONNECTION=${PPP_IPPARAM}; fi
+TUNNEL=$1
+if [ "${TUNNEL}" = "" ]; then TUNNEL=${PPP_IFACE}; fi
+if [ "${CONNECTION}" = "vpn" ] ; then
+#  route add -host ${SERVER} gw ${CURRGW} dev ${PRIMARY}
+  route del default ${PRIMARY}
+  route add default gw ${SERVER} dev ${TUNNEL}
+fi
+touch /tmp/vpn.up
+/etc/ppp/usepeerdns
+
+ifconfig eth0 mtu 1460
+ifconfig ppp0 mtu 1400
+
+/opt/local/bin/curl "http://127.0.0.1:5700/vpn.Notify?status=connected"
+
+sleep 2
+ifconfig eth0 mtu 1460
+ifconfig ppp0 mtu 1400
+
+sleep 3
+ifconfig eth0 mtu 1460
+ifconfig ppp0 mtu 1400

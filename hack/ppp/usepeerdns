@@ -1,0 +1,22 @@
+#!/bin/sh -e
+# this variable is only set if the usepeerdns pppd option is being used
+[ "$USEPEERDNS" ] || exit 0
+
+# create the file if it does not exist
+if [ ! -e /etc/resolv.conf ]; then
+  : > /etc/resolv.conf
+fi
+
+# follow any symlink to find the real file
+REALRESOLVCONF=$(readlink -f /etc/resolv.conf)
+
+# merge the new nameservers with the other options from the old configuration
+{
+  cat /etc/ppp/resolv.conf
+  grep -v '^nameserver[[:space:]]' "$REALRESOLVCONF" || true
+} > "$REALRESOLVCONF.tmp"
+
+mv -f "$REALRESOLVCONF.tmp" "$REALRESOLVCONF"
+
+exit 0
+
