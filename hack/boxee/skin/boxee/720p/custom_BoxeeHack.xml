@@ -67,6 +67,15 @@
 					<onclick>SetFocus(302)</onclick>
 					<label>Tools</label>
 				</control>
+				<control type="togglebutton" id="400">
+					<include>SettingsCategoryToggleButton</include>
+					<usealttexture>false</usealttexture>
+<!--					<onright>SetFocus(401)</onright>
+					<usealttexture>ControlGroup(401).HasFocus()</usealttexture>
+					<onclick>SetFocus(401)</onclick>
+					<onclick>SetFocus(402)</onclick> -->
+					<label>About</label>
+				</control>
 			</control>
 			
 			<!-- GENERAL -->
@@ -357,6 +366,86 @@
 					<include>SettingsButton</include>
 					<label>Reload skin...</label>
 					<onclick>XBMC.ReloadSkin</onclick>
+				</control>
+			</control>
+			
+			<!-- ABOUT -->
+			<control type="group" id="401">
+				<include>SettingsCategoryArea</include>
+				<visible>ControlGroup(401).HasFocus() | Control.HasFocus(400)</visible>
+				<control type="grouplist">
+					<posx>20</posx>
+					<control type="label">
+						<include>SettingsLabel</include>
+						<label>Contributors</label>
+					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>Solitude</label>
+					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>Ronald</label>
+					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>Jerbob92</label>
+					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>Mike3y</label>
+					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>D4yz</label>
+					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>Cigamit</label>
+					</control>
+				</control>
+				<control type="grouplist">
+					<posx>320</posx>
+					<control type="label">
+						<include>SettingsLabel</include>
+						<label>Donations</label>
+					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>Chris Eybergen</label>
+					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>JoHannes Hiller</label>
+					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>Matthew Schreiber</label>
+					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>Amin Bahadori</label>
+					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>Michael Hawthorne</label>
+					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>Korhan Tekin</label>
+					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>Scooter, LLC</label>
+					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>Jordi Llonch Esteve</label>
+					</control>
+					<control type="label">
+						<include>SettingsLabelEntry</include>
+						<label>Stephan Schill</label>
+					</control>
 				</control>
 			</control>
 		</control>

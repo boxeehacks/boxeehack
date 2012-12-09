@@ -18,6 +18,16 @@
 		<textoffsetx>20</textoffsetx>
 		<pulseonselect>false</pulseonselect>
 	</include>
+	<include name="SettingsLabelEntry">
+		<posx>20</posx>
+		<width>850</width>
+		<height>32</height>
+		<font>font24</font>
+		<textcolor>lightgreyheidi</textcolor>
+		<colordiffuse>80FFFFFF</colordiffuse>
+		<align>left</align>
+		<aligny>top</aligny>
+	</include>
 	<include name="SettingsLabel">
 		<posx>20</posx>
 		<width>850</width>
