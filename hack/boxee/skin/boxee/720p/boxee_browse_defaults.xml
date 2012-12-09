@@ -1,5 +1,55 @@
 <?xml version="1.0"?>
 <includes>
+<!--
+    <control type="group">
+       <width>26</width>
+       <control type="image">
+         <posx>65</posx>
+         <posy>600</posy>
+         <width>21</width>
+         <height>21</height>
+         <texture>graphic-clock.png</texture>
+         <colordiffuse>mediumgreyheidi</colordiffuse>
+       </control>
+    </control>
+    <control type="label">
+       <posx>98</posx>
+       <posy>590</posy>
+       <width min="0" max="82">auto</width>
+       <height>36</height>
+       <font>font28b</font>
+       <textcolor>mediumgreyheidi</textcolor>
+       <align>left</align>
+       <aligny>center</aligny>
+       <label>[B]$INFO[System.Time(HH:MM)][/B]</label>
+    </control>
+    <control type="label">
+       <visible>SubString(System.Time#AM,Right)</visible>
+       <posx>175</posx>
+       <posy>598</posy>
+       <width min="0" max="80">auto</width>
+       <height>36</height>
+       <font>font20b</font>
+       <textcolor>mediumgreyheidi</textcolor>
+       <align>left</align>
+       <aligny>top</aligny>
+       <scroll>false</scroll>
+       <label>[B]AM[/B]</label>
+    </control>
+    <control type="label">
+       <visible>SubString(System.Time#PM,Right)</visible>
+       <posx>175</posx>
+       <posy>598</posy>
+       <width min="0" max="80">auto</width>
+       <height>36</height>
+       <font>font20b</font>
+       <textcolor>mediumgreyheidi</textcolor>
+       <align>left</align>
+       <aligny>top</aligny>
+       <scroll>false</scroll>
+       <label>[B]PM[/B]</label>
+    </control>
+-->
 	<include name="BrowseLoadingAnimation">
 		<control type="group">
 			<visible>Window.Property(loading) + !Window.IsActive(DialogProgress.xml)</visible>

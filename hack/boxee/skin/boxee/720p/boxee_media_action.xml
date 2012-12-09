@@ -192,6 +192,21 @@
 				<!-- OVERVIEW -->
 				<control type="group">
 					<visible>!stringcompare(skin.string(MediaAction),CastCrew) + !stringcompare(skin.string(MediaAction),Related)</visible>
+					<control type="image">
+						<posx>1070</posx>
+						<posy>25</posy>
+						<width>161</width>
+						<height>109</height>
+						<texture>../720p/resources/studios/$INFO[Container(5000).ListItem.Studio].png</texture>
+						<aspectratio align="right">keep</aspectratio>
+					</control>
+<!--					<control type="label">
+						<posx>50</posx>
+						<posy>50</posy>
+						<width>1000</width>
+						<height>109</height>
+						<label>../720p/resources/studios/$INFO[Container(5000).ListItem.Studio].png</label>
+					</control>-->
 					<control type="label">
 						<visible>!Control.HasFocus(6020)</visible>
 						<posx>302</posx>
@@ -387,7 +402,7 @@
 							<font>font24bex</font>
 							<align>left</align>
 							<aligny>top</aligny>
-							<label>$LOCALIZE[20339]$INFO[Container(5000).ListItem.Director, ,]</label>
+							<label>[COLOR white]$LOCALIZE[20339][/COLOR]$INFO[Container(5000).ListItem.Director, ,]</label>
 							<textcolor>lightgreyheidi</textcolor>
 						</control>
 						<!-- Cast -->
@@ -398,7 +413,7 @@
 							<font>font24bex</font>
 							<align>left</align>
 							<aligny>top</aligny>
-							<label>$LOCALIZE[54042]$INFO[Container(5000).ListItem.property(cast), ,]</label>
+							<label>[COLOR white]$LOCALIZE[54042][/COLOR]$INFO[Container(5000).ListItem.property(cast), ,]</label>
 							<textcolor>lightgreyheidi</textcolor>
 							<!--<wrapmultiline>true</wrapmultiline> MAKES LABEL DISAPPEAR-->
 						</control>
@@ -1343,7 +1358,7 @@
 						<font>font20ls</font>
 						<align>left</align>
 						<aligny>top</aligny>
-						<label>$INFO[ListItem.pathtoshowinmediaaction]</label>
+						<label>$INFO[ListItem.filename]</label>
 						<textcolor>mediumgreyheidi</textcolor>
 						<wrapmultiline>false</wrapmultiline>
 					</control>
@@ -1357,7 +1372,7 @@
 						<font>font20ls</font>
 						<align>left</align>
 						<aligny>top</aligny>
-						<label>$INFO[ListItem.pathtoshowinmediaaction]</label>
+						<label>$INFO[ListItem.filename]</label>
 						<textcolor>mediumgreyheidi</textcolor>
 						<wrapmultiline>false</wrapmultiline>
 					</control>
@@ -1490,7 +1505,7 @@
 							<font>font20ls</font>
 							<align>left</align>
 							<aligny>top</aligny>
-							<label>$INFO[ListItem.pathtoshowinmediaaction]</label>
+							<label>$INFO[ListItem.filename]</label>
 							<textcolor>whiteheidi</textcolor>
 							<wrapmultiline>false</wrapmultiline>
 							<scroll>true</scroll>
@@ -1505,7 +1520,7 @@
 							<font>font20ls</font>
 							<align>left</align>
 							<aligny>top</aligny>
-							<label>$INFO[ListItem.pathtoshowinmediaaction]</label>
+							<label>$INFO[ListItem.filename]</label>
 							<textcolor>whiteheidi</textcolor>
 							<wrapmultiline>false</wrapmultiline>
 							<scroll>true</scroll>
@@ -1524,6 +1539,37 @@
 							<haspath>false</haspath>
 							<wrapmultiline>true</wrapmultiline>
 							<textcolor>whiteheidi</textcolor>
+						</control>
+<!--						<control type="image">
+							<posx>579</posx>
+							<posy>11</posy>
+							<width>145</width>
+							<height>30</height>
+							<colordiffuse>FF3A3F42</colordiffuse>
+							<texture>../720p/resources/flags/frame_aspect.png</texture>
+						</control>
+						<control type="image">
+							<posx>638</posx>
+							<posy>44</posy>
+							<width>86</width>
+							<height>30</height>
+							<colordiffuse>FF3A3F42</colordiffuse>
+							<texture>../720p/resources/flags/frame_audio.png</texture>
+						</control>
+						<control type="image">
+							<posx>579</posx>
+							<posy>11</posy>
+							<width>39</width>
+							<height>26</height>
+							<colordiffuse>FF9FA1A3</colordiffuse>
+							<texture>../720p/resources/flags/video/$INFO[ListItem.VideoCodec].png</texture>
+						</control>-->
+						<control type="label">
+							<posx>279</posx>
+							<posy>11</posy>
+							<width>390</width>
+							<height>260</height>
+							<label>$INFO[ListItem.Property(is-hd)]</label>
 						</control>
 					</control>
 					<control type="group">
@@ -1614,7 +1660,7 @@
 							<font>font20ls</font>
 							<align>left</align>
 							<aligny>top</aligny>
-							<label>$INFO[ListItem.pathtoshowinmediaaction]</label>
+							<label>$INFO[ListItem.filename]</label>
 							<textcolor>mediumgreyheidi</textcolor>
 							<wrapmultiline>false</wrapmultiline>
 						</control>
@@ -1628,7 +1674,7 @@
 							<font>font20ls</font>
 							<align>left</align>
 							<aligny>top</aligny>
-							<label>$INFO[ListItem.pathtoshowinmediaaction]</label>
+							<label>$INFO[ListItem.filename]</label>
 							<textcolor>mediumgreyheidi</textcolor>
 							<wrapmultiline>false</wrapmultiline>
 						</control>
