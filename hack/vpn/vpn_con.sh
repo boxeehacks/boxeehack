@@ -21,7 +21,7 @@ if [ "$status" = "" ]; then
 	sleep 3
 	ppp=`ip route | grep "ppp[01]" | cut -f 1 -d " "`
 	route del default
-	route add default gw $pp
+	route add default gw $ppp
 	ifconfig eth0 1460
         ifconfig ppp0 mtu 1400
 	touch /tmp/vpn.up
