@@ -1335,6 +1335,7 @@
 	</include>
 	<include name="BrowseLineViewMovie">
 		<include>BrowseLineViewList</include>
+
 		<control type="image">
 			<visible>Control.IsVisible(51)</visible>
      		<visible>!Control.IsEmpty(51)</visible>
@@ -1525,10 +1526,7 @@
 	</include>
 	<include name="BrowseEpisodesView">
 		<include>Common_Background_Browse_episodes</include>
-
 		<control type="group">
-		        <visible>stringcompare(skin.string(EpisodeViewMode),Overview)</visible>
-
 		        <control type="image">
 		                <posx>0</posx>
 		                <posy>0</posy>
@@ -1560,7 +1558,6 @@
 		                <texture>../720p/resources/background/bg-browse-overlay.png</texture>
 		        </control>
 		</control>
-
 		<control type="label">
 			<!--<animation effect="fade" start="80" end="100" time="200" tween="cubic" easing="inout" reversible="true">Visible></animation>-->
 			<visible>Control.HasFocus(6020) | ControlGroup(8050).HasFocus | Control.HasFocus(8006)</visible>
@@ -1813,7 +1810,7 @@
 				<visible>true</visible>
 				<preloaditems>2</preloaditems>
 				<posx>281</posx>
-				<posy>72</posy>
+				<posy>105</posy>
 				<width>970</width>
 				<height>636</height>
 				<onleft>6020</onleft>
@@ -1933,7 +1930,7 @@
 						<posy>0</posy>
 						<width>966</width>
 						<height>110</height>
-						<texture srcborder="24" border="16">button-focused.png</texture>
+						<texture srcborder="24" border="16">../720p/resources/background/button-focused.png</texture>
 					</control>
 					<control type="image">
 						<visible>!IsEmpty(ListItem.Thumb)</visible>
@@ -2041,7 +2038,7 @@
 				<posy>68</posy>
 				<width>1016</width>
 				<height>68</height>
-				<texture>background/background-mask-episodes.png</texture>
+				<!-- <texture>background/background-mask-episodes.png</texture> -->
 			</control>
 		</control>
 		<!-- SHARED -->
