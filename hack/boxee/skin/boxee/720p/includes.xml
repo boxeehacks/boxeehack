@@ -5,6 +5,7 @@
 	<include file="boxee_browse_defaults.xml"/>
 	<include file="boxee_browse_views.xml"/>
 	<include file="boxee_browse_empty_screens.xml"/>
+	<include file="boxeehack_includes.xml"/>
 	
 	<include name="Dialog_Popup_Open_Animation">
 		<animation type="WindowOpen">
