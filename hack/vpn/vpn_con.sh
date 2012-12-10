@@ -22,11 +22,13 @@ if [ "$status" = "" ]; then
 	ppp=`ip route | grep "ppp[01]" | cut -f 1 -d " "`
 	route del default
 	route add default gw $pp
+	ifconfig eth0 1460
         ifconfig ppp0 mtu 1400
 	touch /tmp/vpn.up
 else
 	killall pptp
 	route add default gw $dgateway	
+	ifconfig eth0 1500
 	rm /tmp/vpn.up
 
 fi
