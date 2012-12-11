@@ -415,50 +415,17 @@
 					</control>
 				</control>
 				<control type="grouplist">
-					<posx>320</posx>
+					<posx>220</posx>
 					<control type="label">
 						<include>SettingsLabel</include>
 						<label>Donations</label>
 					</control>
 					<control type="label">
+						<width>600</width>
+						<height>500</height>
 						<include>SettingsLabelEntry</include>
-						<label>Chris Eybergen</label>
-					</control>
-					<control type="label">
-						<include>SettingsLabelEntry</include>
-						<label>JoHannes Hiller</label>
-					</control>
-					<control type="label">
-						<include>SettingsLabelEntry</include>
-						<label>Matthew Schreiber</label>
-					</control>
-					<control type="label">
-						<include>SettingsLabelEntry</include>
-						<label>Amin Bahadori</label>
-					</control>
-					<control type="label">
-						<include>SettingsLabelEntry</include>
-						<label>Michael Hawthorne</label>
-					</control>
-					<control type="label">
-						<include>SettingsLabelEntry</include>
-						<label>Korhan Tekin</label>
-					</control>
-					<control type="label">
-						<include>SettingsLabelEntry</include>
-						<label>Scooter, LLC</label>
-					</control>
-					<control type="label">
-						<include>SettingsLabelEntry</include>
-						<label>Jordi Llonch Esteve</label>
-					</control>
-					<control type="label">
-						<include>SettingsLabelEntry</include>
-						<label>Stephan Schill</label>
-					</control>
-					<control type="label">
-						<include>SettingsLabelEntry</include>
-						<label>Kevin Sartori</label>
+						<wrapmultiline>true</wrapmultiline>
+						<label>Chris Eybergen, JoHannes Hiller, Matthew Schreiber, Amin Bahadori, Michael Hawthorne, Korhan Tekin, Scooter, LLC, Jordi Llonch Esteve, Stephan Schill, Kevin Sartori, Helge Odland, Gabriel Tapia, Magnus Pettersson, Boris Kushkuley, Craig Havens</label>
 					</control>
 				</control>
 			</control>
