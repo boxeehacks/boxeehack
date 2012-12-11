@@ -14,8 +14,18 @@ then
 		route del -host ${SERVER} gw ${NEWGW} dev ${PRIMARY}
 		route del default ${TUNNEL}
 		route add default gw ${NEWGW} dev ${PRIMARY}
+		ifconfig eth0 mtu 1500
 	fi
-	ifconfig eth0 mtu 1500
 	rm /tmp/vpn.up
   /opt/local/bin/curl "http://127.0.0.1:5700/vpn.Notify?status=disconnected"
 fi
+
+# Wait and make sure the PPP connection is down again first
+PPP="`ifconfig -a | grep -A 6`"
+while [ "${PPP}" != "" ];
+do
+  sleep 1
+  PPP="`ifconfig -a | grep -A 6`"
+done
+
+ifconfig eth0 mtu 1500
