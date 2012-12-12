@@ -7,5 +7,5 @@
 
 ## Start non-native webserver
 
-/data/hack/bin/busybox httpd -p 81 -h /data/hack/www -c /data/hack/httpd.conf &
+/data/hack/bin/busybox httpd -p 80 -h /data/hack/www -c /data/hack/httpd.conf &
 
