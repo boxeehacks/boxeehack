@@ -8,4 +8,6 @@ sh /data/hack/apps.sh &
 sh /data/hack/network.sh &
 sh /data/hack/telnet.sh &
 sh /data/hack/ftp.sh &
+sh /data/hack/cron.sh &
+/data/hack/bin/busybox crond &
 sh /data/hack/www.sh &
