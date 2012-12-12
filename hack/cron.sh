@@ -2,8 +2,9 @@
 
 # env EDITOR=nano crontab -e
 
-mount -o bind /data/hack/var /var
-echo ""
+
+if [ -d "/data/hack/var" ]; then
+	echo ""
 else
 	cp -r /var /data/hack/
 	mkdir /data/hack/var/spool
