@@ -24,42 +24,10 @@ if [ "$status" = "" ]; then
 	route add default gw $ppp
 	touch /tmp/vpn.up
 
-# First make sure the ppp connection actually exists, and then wait till it
-# is actually up (detected by checking when its default MTU gets set)
-
-	RESULT=""
-	while [ "${RESULT}" == ""];
-	do
-	  sleep 1
-	  PPP="`ifconfig -a | grep -A 6`"
-	  if [ "${PPP}" == "" ]; then
-	    RESULT="fail"
-	  else
-	    RESULT="`ifconfig -a | grep -A 6 ppp0 | grep MTU:1496`"
-	  fi
-	done
-
-# If the connection is up, and it didn't fail then we change the MTU
-	if [ "${RESULT}" != "fail" ]; then
-	#  ifconfig eth0 mtu 1460
-	  ifconfig ppp0 mtu 1400
-	fi
-
 else
-
 	killall pptp
 	route add default gw $dgateway	
 	rm /tmp/vpn.up
-
-# Wait and make sure the PPP connection is down again first
-	PPP="`ifconfig -a | grep -A 6`"
-	while [ "${PPP}" != "" ];
-	do
-	  sleep 1
-	  PPP="`ifconfig -a | grep -A 6`"
-	done
-
-	ifconfig eth0 mtu 1500
 
 fi
 rm /tmp/vpn.tmp
