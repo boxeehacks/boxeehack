@@ -26,8 +26,8 @@ if [ "$status" = "" ]; then
         ifconfig ppp0 mtu 1400
         touch /tmp/vpn.up
 else
-        killall pptp
         route add default gw $dgateway
+        killall pptp
 #       ifconfig eth0 1500 (Breaks VPN Connection
         rm /tmp/vpn.up
 
