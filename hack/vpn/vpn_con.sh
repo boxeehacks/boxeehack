@@ -22,6 +22,7 @@ if [ "$status" = "" ]; then
         if [ "$ppp" = "" ]; then
                 echo "Failed!"
         else
+                dgateway=`ip route  | grep default | grep "eth[01]" | cut -f 3 -d " " > /data/hack/vpn/.gw`
                 route del default
                 route add default gw $ppp
                 ifconfig ppp0 mtu 1400
@@ -29,8 +30,9 @@ if [ "$status" = "" ]; then
         fi
 
 else
+        dgw=`cat /data/hack/vpn/.gw`
         killall pptp
-        route add default gw $dgateway
+        route add default gw $dgw
         rm /tmp/vpn.up
 
 fi
