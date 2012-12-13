@@ -20,15 +20,18 @@ if [ "$status" = "" ]; then
         pppd pty "pptp $host --nolaunchpppd" file /etc/ppp/options.pptp user $username password $password
         sleep 3
         ppp=`ip route | grep "ppp[01]" | cut -f 1 -d " "`
-        route del default
-        route add default gw $ppp
-#       ifconfig eth0 1460 (Breaks the VPN Connection)
-        ifconfig ppp0 mtu 1400
-        touch /tmp/vpn.up
+        if [ "$ppp" = ""]; then
+                echo "Failed!"
+        else
+                route del default
+                route add default gw $ppp
+                ifconfig ppp0 mtu 1400
+                touch /tmp/vpn.up
+        fi
+
 else
         route add default gw $dgateway
         killall pptp
-#       ifconfig eth0 1500 (Breaks VPN Connection
         rm /tmp/vpn.up
 
 fi
