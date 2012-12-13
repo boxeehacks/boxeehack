@@ -17,17 +17,19 @@ status=`ifconfig |grep ppp | busybox awk '{ print $1 }'`
 
 
 if [ "$status" = "" ]; then
-	pppd pty "pptp $host --nolaunchpppd" file /etc/ppp/options.pptp user $username password $password
-	sleep 3
-	ppp=`ip route | grep "ppp[01]" | cut -f 1 -d " "`
-	route del default
-	route add default gw $ppp
-	touch /tmp/vpn.up
-
+        pppd pty "pptp $host --nolaunchpppd" file /etc/ppp/options.pptp user $username password $password
+        sleep 3
+        ppp=`ip route | grep "ppp[01]" | cut -f 1 -d " "`
+        route del default
+        route add default gw $ppp
+#       ifconfig eth0 1460 (Breaks the VPN Connection)
+        ifconfig ppp0 mtu 1400
+        touch /tmp/vpn.up
 else
-	killall pptp
-	route add default gw $dgateway	
-	rm /tmp/vpn.up
+        killall pptp
+        route add default gw $dgateway
+#       ifconfig eth0 1500 (Breaks VPN Connection
+        rm /tmp/vpn.up
 
 fi
 rm /tmp/vpn.tmp
