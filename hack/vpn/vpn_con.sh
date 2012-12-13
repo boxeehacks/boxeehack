@@ -15,12 +15,11 @@ dgateway=`grep gateway /data/.boxee/UserData/guisettings.xml | awk -F'>' '{print
 
 status=`ifconfig |grep ppp | busybox awk '{ print $1 }'`
 
-
 if [ "$status" = "" ]; then
         pppd pty "pptp $host --nolaunchpppd" file /etc/ppp/options.pptp user $username password $password
         sleep 3
-        ppp=`ip route | grep "ppp[01]" | cut -f 1 -d " "`
-        if [ "$ppp" = ""]; then
+        ppp=`ifconfig |grep -A 6 ppp[01] |grep addr: | cut -f 2 -d ":" | cut -f 1 -d " "`
+        if [ "$ppp" = "" ]; then
                 echo "Failed!"
         else
                 route del default
@@ -30,8 +29,8 @@ if [ "$status" = "" ]; then
         fi
 
 else
-        route add default gw $dgateway
         killall pptp
+        route add default gw $dgateway
         rm /tmp/vpn.up
 
 fi
