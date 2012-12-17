@@ -362,6 +362,50 @@
 		</control>
 		<include>BrowseMenuLevel1</include>
 	</include>
+	<include name="Common_Background_Fanart">
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>background/background.jpg</texture>
+		</control>
+        <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1280</width>
+                <height>720</height>
+                <aspectratio>scale</aspectratio>
+                <texture background="true">$INFO[Container(53).ListItem.Property(custom:fanart)]</texture>
+        </control>
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>../720p/resources/background/bg-fanart-overlay.png</texture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+	</include>
+	<include name="Common_Background_Simple">
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>background/background.jpg</texture>
+		</control>
+	</include>
+	<include name="Common_Background_Menu">
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>264</width>
+			<height>720</height>
+			<texture>../720p/resources/background/bg-browse-sidebar.png</texture>
+		</control>
+		<include>BrowseMenuLevel1</include>
+	</include>
 	<include name="Common_Background_Browse_episodes">
 		<control type="image">
 			<posx>0</posx>
@@ -407,6 +451,7 @@
 	</include>
 	<include name="BrowseLineFade">
 		<control type="image">
+			<visible>!StringCompare(Skin.String(show-thumbnails),3)</visible>
 			<posx>264</posx>
 			<posy>104</posy>
 			<width>1016</width>
@@ -414,6 +459,7 @@
 			<texture>browse/graphic-browse-mask-top.png</texture>
 		</control>
 		<control type="image">
+			<visible>!StringCompare(Skin.String(show-thumbnails),3)</visible>
 			<posx>264</posx>
 			<posy>676</posy>
 			<width>1016</width>

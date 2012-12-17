@@ -1,7 +1,14 @@
 <?xml version="1.0"?>
 <includes>
 	<include name="BrowseThumbViewList">
-		<include>Common_Background_Browse</include>
+		<control type="group">
+			<visible>!StringCompare(Skin.String(show-thumbnails),3)</visible>
+			<include>Common_Background_Simple</include>
+		</control>
+		<control type="group">
+			<visible>StringCompare(Skin.String(show-thumbnails),3)</visible>
+			<include>Common_Background_Fanart</include>
+		</control>
 		<control type="group" id="501">
 			<control type="panel" id="50">
 				<enable>true + !Window.Property(empty)</enable>
@@ -69,7 +76,52 @@
 					</control>
 				</focusedlayout>
 			</control>
-			<include>BrowseThumbsFade</include>
+			<control type="wraplist" id="53">
+				<enable>true + !Window.Property(empty)</enable>
+				<visible>true + !Window.Property(loading) + StringCompare(Skin.String(show-thumbnails),3)</visible>
+				<preloaditems>2</preloaditems>
+				<posx>25</posx>
+				<posy>465</posy>
+				<width>1230</width>
+				<height>280</height>
+				<onleft>500</onleft>
+				<onright>7000</onright>
+				<onup>8050</onup>
+				<ondown>-</ondown>
+				<scrolltimemin>200</scrolltimemin>
+				<scrolltime>350</scrolltime>
+				<pagecontrol>60</pagecontrol>
+				<orientation>horizontal</orientation>
+				<focusposition>5</focusposition>
+				<scrolltime tween="sine" easing="out">200</scrolltime>
+				<itemlayout height="196" width="107">
+					<control type="group">
+						<posy>78</posy>
+						<include>BrowsePortraitThumbUnfocus</include>
+					</control>
+				</itemlayout>
+				<focusedlayout height="280" width="160">
+					<control type="group">
+						<visible>!Control.HasFocus(53)</visible>
+						<include>BrowsePortraitThumbFocus</include>
+					</control>
+					<control type="group">
+						<visible>Control.HasFocus(53)</visible>
+						<include>BrowsePortraitThumbFocus</include>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="group">
+				<visible>!StringCompare(Skin.String(show-thumbnails),3)</visible>
+				<include>BrowseThumbsFade</include>
+			</control>
+			<control type="group">
+				<animation type="Conditional" condition="Control.HasFocus(53) + StringCompare(Skin.String(show-thumbnails),3)">
+					<effect type="slide" start="0" end="-264" time="200" delay="0"/>
+				</animation>
+				<posx>0</posx>
+				<include>Common_Background_Menu</include>
+			</control>
 		</control>
 		<!--<control type="image">
 			<posx>0</posx>
@@ -147,7 +199,7 @@
 					<onup>8050</onup>
 					<ondown>-</ondown>
 					<onleft>-</onleft>
-					<onright>501</onright>
+					<onright>51</onright>
 					<orientation>vertical</orientation>
 					<scrolltime tween="sine" easing="out">200</scrolltime>
 					<focusposition>2</focusposition>
@@ -4606,7 +4658,7 @@
 		<control type="group">
 			<posx>708</posx>
 			<posy>322</posy>
-			<visible>[[Container(50).Scrolling + StringCompare(Skin.String(show-thumbnails),1)] | [Container(52).Scrolling + StringCompare(Skin.String(show-thumbnails),2)]] + !Window.Property(loading) + !Window.IsActive(DialogProgress.xml)</visible>
+			<visible>[[Container(50).Scrolling + StringCompare(Skin.String(show-thumbnails),1)] | [Container(52).Scrolling + StringCompare(Skin.String(show-thumbnails),2)] | [Container(53).Scrolling + StringCompare(Skin.String(show-thumbnails),3)]] + !Window.Property(loading) + !Window.IsActive(DialogProgress.xml)</visible>
 			<visible>true + stringcompare(Window.Property(sort-label),a-z) | stringcompare(Window.Property(sort-label),z-a)</visible>
 			<animation effect="fade" start="0" end="100" time="200" delay="250" reversible="false">Visible</animation>
 			<control type="image">

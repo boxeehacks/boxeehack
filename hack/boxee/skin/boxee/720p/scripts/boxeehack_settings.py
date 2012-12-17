@@ -1,23 +1,9 @@
 import os
 import xbmc, xbmcgui, mc
 import ConfigParser
+import common
 
 available_providers = ['Addic7ed', 'BierDopje', 'OpenSubtitles', 'SubsWiki', 'Subtitulos', 'Undertexter']
-
-# Read file contents into a string
-def file_get_contents(filename):
-    if os.path.exists(filename):
-        fp = open(filename, "r")
-        content = fp.read()
-        fp.close()
-        return content
-    return ""
-
-# Write string back to a file
-def file_put_contents(filename, content):
-    fp = open(filename, "w")
-    fp.write(content)
-    fp.close()
 
 # Set some default values for the subtitles handling
 def register_defaults():
@@ -48,7 +34,7 @@ def set_home_enabled_strings():
 
 
 def get_homeenabled_value():
-    homeenabled = file_get_contents("/data/etc/.home_enabled")
+    homeenabled = common.file_get_contents("/data/etc/.home_enabled")
     if homeenabled == "":
         homeenabled = get_home_enabled_default_list()
     return homeenabled
@@ -69,11 +55,11 @@ def toggle_homeenabled(section):
     else:
         homeenabled.append(section)
 
-    file_put_contents("/data/etc/.home_enabled", ",".join(homeenabled))
+    common.file_put_contents("/data/etc/.home_enabled", ",".join(homeenabled))
     set_home_enabled_strings()
 
 def get_browser_homepage():
-    homepage = file_get_contents("/data/etc/.browser_homepage")
+    homepage = common.file_get_contents("/data/etc/.browser_homepage")
 
     if homepage == "":
         homepage = "http://www.myfav.es/boxee"
@@ -92,11 +78,11 @@ def set_browser_homepage():
     if kb.isConfirmed():
         homepage = kb.getText()
 
-        file_put_contents("/data/etc/.browser_homepage", homepage)
+        common.file_put_contents("/data/etc/.browser_homepage", homepage)
 
-        template = file_get_contents("/data/hack/apps/browser2/template.xml")
+        template = common.file_get_contents("/data/hack/apps/browser2/template.xml")
         template = homepage.join(template.split("$URL$"))
-        file_put_contents("/data/hack/apps/browser2/descriptor.xml", template)
+        common.file_put_contents("/data/hack/apps/browser2/descriptor.xml", template)
 
         os.system("sh /data/hack/apps.sh")
 
@@ -104,7 +90,7 @@ def set_browser_homepage():
 
 # Set the password for the telnet functionality    
 def set_telnet_password():
-    passwd = file_get_contents("/data/etc/passwd")
+    passwd = common.file_get_contents("/data/etc/passwd")
     kb = xbmc.Keyboard('default', 'heading', True)
     kb.setDefault(passwd) # optional
     kb.setHeading('Enter telnet password') # optional
@@ -117,11 +103,11 @@ def set_telnet_password():
             dialog = xbmcgui.Dialog()
             ok = dialog.ok('Telnet', 'The telnet password must not be empty.')
         else:
-            file_put_contents("/data/etc/passwd", passwd)    
+            common.file_put_contents("/data/etc/passwd", passwd)    
 
 # Determine whether subtitle functionality is enabled/enabled
 def get_subtitles_enabled():
-    subtitles = file_get_contents("/data/etc/.subtitles_enabled")
+    subtitles = common.file_get_contents("/data/etc/.subtitles_enabled")
     if subtitles == "":
         subtitles = "0"
     return subtitles
@@ -143,7 +129,7 @@ def featured_next():
 
     replace = "%s" % num
 
-    file_put_contents("/data/etc/.replace_featured_enabled", replace)
+    common.file_put_contents("/data/etc/.replace_featured_enabled", replace)
     xbmc.executebuiltin("Skin.SetString(featured-feed,%s)" % get_featured_feed() )
     xbmc.executebuiltin("Skin.SetString(featured-name,%s)" % get_featured_name() )
 
@@ -154,7 +140,7 @@ def featured_previous():
 
     replace = "%s" % num
 
-    file_put_contents("/data/etc/.replace_featured_enabled", replace)
+    common.file_put_contents("/data/etc/.replace_featured_enabled", replace)
     xbmc.executebuiltin("Skin.SetString(featured-feed,%s)" % get_featured_feed() )
     xbmc.executebuiltin("Skin.SetString(featured-name,%s)" % get_featured_name() )
 
@@ -179,14 +165,14 @@ def get_featured_name():
     return name
 
 def get_featured_feed_value():
-    replace = file_get_contents("/data/etc/.replace_featured_enabled")
+    replace = common.file_get_contents("/data/etc/.replace_featured_enabled")
     if replace == "":
         replace = "0"
     return replace
 
 # Hide / Show Music icon
 def showmusic_function():
-    showmusic = file_get_contents("/data/etc/.showmusic_enabled")
+    showmusic = common.file_get_contents("/data/etc/.showmusic_enabled")
 
     if showmusic == "1":
         showmusic = "0"
@@ -194,7 +180,7 @@ def showmusic_function():
         showmusic = "1"
 
     xbmc.executebuiltin("Skin.SetString(showmusic,%s)" % showmusic)
-    file_put_contents("/data/etc/.showmusic_enabled", showmusic)
+    common.file_put_contents("/data/etc/.showmusic_enabled", showmusic)
     
 # Enable/disable the subtitle functionality
 def toggle_subtitles(mode, current):
@@ -206,7 +192,7 @@ def toggle_subtitles(mode, current):
         else:
             subtitles = "1"
 
-        file_put_contents("/data/etc/.subtitles_enabled", subtitles)
+        common.file_put_contents("/data/etc/.subtitles_enabled", subtitles)
         os.system("sh /data/hack/subtitles.sh")
         xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % subtitles)
 
@@ -287,7 +273,7 @@ def get_remote_version():
 
 # Get the version number for the locally installed version
 def get_local_version():
-    version_local = file_get_contents("/data/hack/version")
+    version_local = common.file_get_contents("/data/hack/version")
     return version_local
 
 # Check for newer version
