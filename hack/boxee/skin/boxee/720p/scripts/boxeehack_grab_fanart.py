@@ -1,5 +1,6 @@
 import xbmc, xbmcgui
 import time
+import subprocess
 import common
 
 fanart = {}
@@ -16,7 +17,7 @@ def get_fanart_list():
             line = line.split("=")
             show = line[0]
             art = line[1]
-#            fanart[show] = art
+            fanart[show] = art
 
 def store_fanart_list():
     global shows
@@ -27,13 +28,18 @@ def store_fanart_list():
     
     common.file_put_contents("/data/etc/.fanart", file)
 
+first = 1
 def grab_fanart_for_item(item):
     global fanart, first
     
     db_path = xbmc.translatePath('special://profile/Database/')
     
     label = item.GetLabel()
-    path = item.GetPath()
+    path = "%s" % item.GetPath()
+    if "stack:" in path:
+        path = path.split(" , ")
+        path = path[len(path)-1]
+        
     thumbnail = item.GetThumbnail()
     art = ""
 
@@ -43,15 +49,23 @@ def grab_fanart_for_item(item):
         art = path[0:path.rfind("/")+1] + "fanart.jpg"
     elif thumbnail.find("special://") == -1:
         art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
-    else:
-        if path.find("boxeedb://") == -1:
-            # it must be a movie
-            command = "echo \"SELECT strCover FROM video_files WHERE strTitle=\'" + label + "\';\" | sqlite3 \"" + db_path + "../../../Database/boxee_catalog.db\""
-        else:
-            # it must be a tv show
-            command = "echo \"SELECT strCover FROM series WHERE strTitle=\'" + label + "\';\" | sqlite3 \"" + db_path + "../../../Database/boxee_catalog.db\""
-        thumbnail = os.popen(command).read()
-        art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
+#    else:
+#        sql = ".timeout 1000000\n"
+#        if path.find("boxeedb://") == -1:
+#            # it must be a movie
+#            sql = sql + "SELECT strCover FROM video_files WHERE strTitle=\"" + label + "\";\n"
+#        else:
+#            # it must be a tv show
+#            sql = sql + "SELECT strCover FROM series WHERE strTitle=\"" + label + "\";\n"
+#
+#        common.file_put_contents("/tmp/sqlinject", sql)
+#        os.system('/bin/sh \'cat /tmp/sqlinject | /data/hack/bin/sqlite3 "' + db_path + '../../../Database/boxee_catalog.db" > /tmp/readsql\'')
+#        thumbnail = common.file_get_contents("/tmp/readsql")
+#        if first == 1:
+#            first = 0
+#            xbmc.executebuiltin("Notification(,'%s',)" % thumbnail)
+#        if "/" in thumbnail:
+#            art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
 
     if art != "":
         fanart[label] = art
