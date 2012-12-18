@@ -16,7 +16,7 @@ def get_fanart_list():
             line = line.split("=")
             show = line[0]
             art = line[1]
-            fanart[show] = art
+#            fanart[show] = art
 
 def store_fanart_list():
     global shows
@@ -27,7 +27,6 @@ def store_fanart_list():
     
     common.file_put_contents("/data/etc/.fanart", file)
 
-first = 1
 def grab_fanart_for_item(item):
     global fanart, first
     
@@ -45,7 +44,12 @@ def grab_fanart_for_item(item):
     elif thumbnail.find("special://") == -1:
         art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
     else:
-        command = "echo \"SELECT strCover FROM series WHERE strTitle=\'" + label + "\';\" | sqlite3 \"" + db_path + "../../../Database/boxee_catalog.db\""
+        if path.find("boxeedb://") == -1:
+            # it must be a movie
+            command = "echo \"SELECT strCover FROM video_files WHERE strTitle=\'" + label + "\';\" | sqlite3 \"" + db_path + "../../../Database/boxee_catalog.db\""
+        else:
+            # it must be a tv show
+            command = "echo \"SELECT strCover FROM series WHERE strTitle=\'" + label + "\';\" | sqlite3 \"" + db_path + "../../../Database/boxee_catalog.db\""
         thumbnail = os.popen(command).read()
         art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
 
@@ -66,39 +70,9 @@ def grab_fanart():
     for item in items:
         grab_fanart_for_item(item)
 
-#    mc.GetActiveWindow().GetList(53).SetItems(items)
-#    mc.GetActiveWindow().GetList(53).Refresh()
-#    xbmc.executebuiltin("Notification(,flap%s,2000)" % items[0].GetThumbnail())
-    
     store_fanart_list()
-        
-        
-#    grabloop = int(mc.GetInfoString("Skin.String(grab-fanart-loop)"))
-#    if grabloop == 1:
-#        return
-#        
-#    grabloop = 1
-#    lasttitle = ""
-#    xbmc.executebuiltin("Skin.SetString(grab-fanart-loop,%s)" % grabloop )
-#    while grabloop == 1:
-#        grabloop = int(mc.GetInfoString("Skin.String(grab-fanart-loop)"))
-#        time.sleep(0.1)
-#        if grabloop == 1:
-#            item = mc.GetActiveWindow().GetList(53).GetFocusedItem()
-#            
-#            title = mc.GetInfoString("Container(53).ListItem.Label")
-#            if lasttitle != title:
-#                lasttitle = title
-#                items = mc.GetActiveWindow().GetList(53)
-#            
-#                xbmc.executebuiltin("Notification(,%s,2000)" % title)
-
-#def stop_grab_fanart():
-#    xbmc.executebuiltin("Skin.SetString(grab-fanart-loop,0)")
 
 if (__name__ == "__main__"):
     command = sys.argv[1]
 
     if command == "grab_fanart": grab_fanart()
-#    if command == "stop_grab_fanart": stop_grab_fanart()
-#    if command == "reset": stop_grab_fanart()
