@@ -156,7 +156,16 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
             log.debug("No search term, we'll use the filename")
             # Let's try to guess what to search:
             guessed_data = self.guessFileData(filename)
-            search['query'] = guessed_data['name']
+	    searchstring = guessed_data['name']
+	    if guessed_data['type'] == 'tvshow':
+	    	if(int(guessed_data['season']) < 10):
+                	guessed_data['season'] = "0"+str(guessed_data['season'])
+            	if(int(guessed_data['episode']) < 10):
+                	guessed_data['episode'] = "0"+str(guessed_data['episode'])
+            
+		searchstring = "%s S%sE%s" % (guessed_data['name'], guessed_data['season'], guessed_data['episode'])
+
+            search['query'] = searchstring
             log.debug(search['query'])
             
         #Login
