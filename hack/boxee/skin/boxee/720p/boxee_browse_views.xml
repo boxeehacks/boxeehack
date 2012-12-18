@@ -1594,15 +1594,7 @@
 		                <width>1280</width>
 		                <height>720</height>
 		                <aspectratio>scale</aspectratio>
-		                <texture background="true">$INFO[Container(52).ListItem(0).Path,,../fanart.jpg]</texture>
-		        </control>
-		        <control type="image">
-		                <posx>0</posx>
-		                <posy>0</posy>
-		                <width>1280</width>
-		                <height>720</height>
-		                <aspectratio>scale</aspectratio>
-		                <texture background="true">$INFO[Container(52).ListItem(0).Path,,fanart.jpg]</texture>
+		                <texture background="true">$INFO[Container(5000).ListItem.Property(custom:fanart)]</texture>
 		        </control>
 		        <control type="image">
 		                <posx>0</posx>
@@ -4658,7 +4650,7 @@
 		<control type="group">
 			<posx>708</posx>
 			<posy>322</posy>
-			<visible>[[Container(50).Scrolling + StringCompare(Skin.String(show-thumbnails),1)] | [Container(52).Scrolling + StringCompare(Skin.String(show-thumbnails),2)] | [Container(53).Scrolling + StringCompare(Skin.String(show-thumbnails),3)]] + !Window.Property(loading) + !Window.IsActive(DialogProgress.xml)</visible>
+			<visible>[[Container(50).Scrolling + StringCompare(Skin.String(show-thumbnails),1)] | [Container(52).Scrolling + StringCompare(Skin.String(show-thumbnails),2)]] + !Window.Property(loading) + !Window.IsActive(DialogProgress.xml)</visible>
 			<visible>true + stringcompare(Window.Property(sort-label),a-z) | stringcompare(Window.Property(sort-label),z-a)</visible>
 			<animation effect="fade" start="0" end="100" time="200" delay="250" reversible="false">Visible</animation>
 			<control type="image">
@@ -4667,6 +4659,7 @@
 				<texture>nomedia_background.png</texture>
 			</control>
 			<control type="label">
+				<visible>StringCompare(Skin.String(show-thumbnails),1)</visible>
 				<width>128</width>
 				<height>128</height>
 				<posx>0</posx>
@@ -4674,6 +4667,17 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$INFO[Container(50).ListItem.SortLetter]</label>
+				<font>font80b</font>
+			</control>
+			<control type="label">
+				<visible>StringCompare(Skin.String(show-thumbnails),2)</visible>
+				<width>128</width>
+				<height>128</height>
+				<posx>0</posx>
+				<posy>-1</posy>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[Container(52).ListItem.SortLetter]</label>
 				<font>font80b</font>
 			</control>
 		</control>
