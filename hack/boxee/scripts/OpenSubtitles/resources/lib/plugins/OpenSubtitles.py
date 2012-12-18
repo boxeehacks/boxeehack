@@ -253,3 +253,4 @@ class OpenSubtitles(SubtitleDatabase.SubtitleDB):
         if not xmatch and ymatch:
             return 1
         return 0
+
