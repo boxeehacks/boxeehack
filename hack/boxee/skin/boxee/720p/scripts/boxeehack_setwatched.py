@@ -2,6 +2,7 @@ import time
 import os,sys
 import xbmc, xbmcgui, mc
 import subprocess
+import common
 
 os.environ["LD_LIBRARY_PATH"]=".:/data/hack/lib:/opt/local/lib:/usr/local/lib:/usr/lib:/lib:/lib/gstreamer-0.10:/opt/local/lib/qt"
 
@@ -58,7 +59,7 @@ def set_watched(command):
 				if command == "watched":
 					sql = sql + "INSERT INTO watched VALUES(null, \""+path+"\", \""+boxeeid+"\", 1, 0, -1.0);\n"
 
-		file_put_contents("/tmp/sqlinject", sql)
+		common.file_put_contents("/tmp/sqlinject", sql)
 		os.system('cat /tmp/sqlinject | /data/hack/bin/sqlite3 ' + db_path + 'boxee_user_catalog.db')
 
 		xbmc.executebuiltin("Container.Update")
@@ -82,11 +83,6 @@ def set_watched(command):
 #		xbmc.executebuiltin("XBMC.ReplaceWindow(10483)")
 
 		xbmc.executebuiltin("Notification(,%s marked as %s...,2000)" % (display_name, command))
-
-def file_put_contents(filename, content):
-	fp = open(filename, "w")
-	fp.write(content)
-	fp.close()
 
 if (__name__ == "__main__"):
     	command = sys.argv[1]

@@ -273,7 +273,7 @@
 
   <include name="PageTitleFocusedMovies">
     <control type="label" id="9019">
-      <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local)</visible>
+      <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local) + !StringCompare(Skin.String(show-thumbnails),3)</visible>
       <posx>297</posx>
       <posy>46</posy>
       <width>622</width>
@@ -281,6 +281,16 @@
       <textcolor>whiteheidi</textcolor>
       <align>left</align>
       <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local) + StringCompare(Skin.String(show-thumbnails),3)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>622</width>
+      <font>font40b</font>
+      <textcolor>whiteheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Container(53).ListItem.Label][/B]</label>
     </control>
     <control type="label">
       <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
@@ -339,7 +349,7 @@
   </include>
   <include name="PageTitleUnfocusedMovies">
     <control type="label" id="9019">
-      <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local)</visible>
+      <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local) + !StringCompare(Skin.String(show-thumbnails),3)</visible>
       <posx>297</posx>
       <posy>46</posy>
       <width>622</width>
@@ -347,6 +357,16 @@
       <textcolor>mediumgreyheidi</textcolor>
       <align>left</align>
       <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local) + StringCompare(Skin.String(show-thumbnails),3)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>622</width>
+      <font>font40b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Container(53).ListItem.Label][/B]</label>
     </control>
     <control type="label">
       <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
@@ -419,7 +439,7 @@
   </include>
   <include name="PageTitleFocusedTVShows">
     <control type="label" id="9019">
-      <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local)</visible>
+      <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local) + !StringCompare(Skin.String(show-thumbnails),3)</visible>
       <posx>297</posx>
       <posy>46</posy>
       <width>622</width>
@@ -427,6 +447,16 @@
       <textcolor>whiteheidi</textcolor>
       <align>left</align>
       <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local) + StringCompare(Skin.String(show-thumbnails),3)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>622</width>
+      <font>font40b</font>
+      <textcolor>whiteheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Container(53).ListItem.Label][/B]</label>
     </control>
     <control type="label">
       <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
@@ -485,7 +515,7 @@
   </include>
   <include name="PageTitleUnfocusedTVShows">
     <control type="label" id="9019">
-      <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local)</visible>
+      <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local) + !StringCompare(Skin.String(show-thumbnails),3)</visible>
       <posx>297</posx>
       <posy>46</posy>
       <width>622</width>
@@ -493,6 +523,16 @@
       <textcolor>mediumgreyheidi</textcolor>
       <align>left</align>
       <label>[B]$INFO[Window.Property(item-summary)][/B]</label>
+    </control>
+    <control type="label" id="9019">
+      <visible>!Window.Property(Empty) + !Window.Property(loading) + window.property(is-category-local) + StringCompare(Skin.String(show-thumbnails),3)</visible>
+      <posx>297</posx>
+      <posy>46</posy>
+      <width>622</width>
+      <font>font40b</font>
+      <textcolor>mediumgreyheidi</textcolor>
+      <align>left</align>
+      <label>[B]$INFO[Container(53).ListItem.Label][/B]</label>
     </control>
     <control type="label">
       <visible>true + IsEmpty(Window.Property(user-name)) + !Window.Property(filters-and-sort) + IsEmpty(Window.Property(item-summary-count)) + !Window.Property(loading)</visible>
@@ -1171,6 +1211,22 @@
 			<!-- set view mode to list -->
 			<control type="button" id="8003">
 				<visible>StringCompare(Skin.String(show-thumbnails),2)</visible>
+				<texturefocus>../720p/resources/actionbuttons/button-action-coverflow-on.png</texturefocus>
+				<texturenofocus>../720p/resources/actionbuttons/button-action-coverflow-off.png</texturenofocus>
+				<textureclick>../720p/resources/actionbuttons/button-action-coverflow-off.png</textureclick>
+				<include>ViewButton2</include>
+				<onleft>8014</onleft>
+				<onright>8024</onright>
+				<ondown>9050</ondown>
+				<onup>-</onup>
+				<onclick>Skin.SetString(show-thumbnails,3)</onclick>
+				<onclick>Container.SetViewMode(53)</onclick>
+				<onclick>SetVisible(8104)</onclick>
+				<onclick>SetFocus(8104)</onclick>
+			</control>
+			<!-- set view mode to list -->
+			<control type="button" id="8104">
+				<visible>StringCompare(Skin.String(show-thumbnails),3)</visible>
 				<texturefocus>actionbuttons/button-action-list-on.png</texturefocus>
 				<texturenofocus>actionbuttons/button-action-list-off.png</texturenofocus>
 				<textureclick>actionbuttons/button-action-list-off.png</textureclick>
@@ -1338,7 +1394,7 @@
 			<wrapmultiline>true</wrapmultiline>
 		</control>
 		<control type="label">
-			<visible>StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<visible>StringCompare(Skin.String(show-thumbnails),2) | StringCompare(Skin.String(show-thumbnails),3)</visible>
 			<posx>6</posx>
 			<posy>150</posy>
 			<width>104</width>
@@ -1368,7 +1424,7 @@
 	</include>
 	<include name="BrowsePortraitLabelFocus">
 		<control type="label">
-			<visible>StringCompare(Skin.String(show-thumbnails),1)</visible>
+			<visible>StringCompare(Skin.String(show-thumbnails),1) | StringCompare(Skin.String(show-thumbnails),3)</visible>
 			<posx>9</posx>
 			<posy>225</posy>
 			<width>140</width>
@@ -1519,7 +1575,7 @@
 		</control>
 
 		<control type="image">
-			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow) + [StringCompare(Skin.String(show-thumbnails),2) | StringCompare(Skin.String(show-thumbnails),3)]</visible>
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>104</width>
@@ -1531,7 +1587,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie) + [StringCompare(Skin.String(show-thumbnails),2) | StringCompare(Skin.String(show-thumbnails),3)]</visible>
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>104</width>
@@ -1543,7 +1599,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow) + [StringCompare(Skin.String(show-thumbnails),2) | StringCompare(Skin.String(show-thumbnails),3)]</visible>
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>104</width>
@@ -1554,7 +1610,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie) + [StringCompare(Skin.String(show-thumbnails),2) | StringCompare(Skin.String(show-thumbnails),3)]</visible>
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>104</width>
@@ -1565,7 +1621,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>ListItem.Property(watched) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<visible>ListItem.Property(watched) + [StringCompare(Skin.String(show-thumbnails),2) | StringCompare(Skin.String(show-thumbnails),3)]</visible>
 			<posx>12</posx>
 			<posy>127</posy>
 			<width>13</width>
@@ -1595,7 +1651,7 @@
 			<fadetime>200</fadetime>
 		</control>-->
 		<control type="image">
-			<visible>substring(ListItem.Genre#3D) + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<visible>substring(ListItem.Genre#3D) + [StringCompare(Skin.String(show-thumbnails),2) | StringCompare(Skin.String(show-thumbnails),3)]</visible>
 			<posx>5</posx>
 			<posy>5</posy>
 			<width>50</width>
@@ -1604,7 +1660,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>[substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)] + StringCompare(Skin.String(show-thumbnails),2)</visible>
+			<visible>[substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)] + [StringCompare(Skin.String(show-thumbnails),2) | StringCompare(Skin.String(show-thumbnails),3)]</visible>
 			<posx>51</posx>
 			<posy>95</posy>
 			<width>50</width>
@@ -1690,7 +1746,7 @@
 			<fadetime>200</fadetime>
 		</control>-->
 		<control type="image">
-			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow) + StringCompare(Skin.String(show-thumbnails),1)</visible>
+			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow) + [StringCompare(Skin.String(show-thumbnails),1) | StringCompare(Skin.String(show-thumbnails),3)]</visible>
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>156</width>
@@ -1702,7 +1758,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie) + StringCompare(Skin.String(show-thumbnails),1)</visible>
+			<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie) + [StringCompare(Skin.String(show-thumbnails),1) | StringCompare(Skin.String(show-thumbnails),3)]</visible>
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>156</width>
@@ -1714,7 +1770,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow) + StringCompare(Skin.String(show-thumbnails),1)</visible>
+			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsTVShow) + [StringCompare(Skin.String(show-thumbnails),1) | StringCompare(Skin.String(show-thumbnails),3)]</visible>
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>156</width>
@@ -1725,7 +1781,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie) + StringCompare(Skin.String(show-thumbnails),1)</visible>
+			<visible>IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie) + [StringCompare(Skin.String(show-thumbnails),1) | StringCompare(Skin.String(show-thumbnails),3)]</visible>
 			<posx>1</posx>
 			<posy>1</posy>
 			<width>156</width>
@@ -1736,7 +1792,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>ListItem.Property(watched) + StringCompare(Skin.String(show-thumbnails),1)</visible>
+			<visible>ListItem.Property(watched) + [StringCompare(Skin.String(show-thumbnails),1) | StringCompare(Skin.String(show-thumbnails),3)]</visible>
 			<posx>15</posx>
 			<posy>191</posy>
 			<width>20</width>
@@ -1766,7 +1822,7 @@
 			<fadetime>200</fadetime>
 		</control>-->
 		<control type="image">
-			<visible>substring(ListItem.Genre#3D) + StringCompare(Skin.String(show-thumbnails),1)</visible>
+			<visible>substring(ListItem.Genre#3D) + [StringCompare(Skin.String(show-thumbnails),1) | StringCompare(Skin.String(show-thumbnails),3)]</visible>
 			<posx>5</posx>
 			<posy>5</posy>
 			<width>75</width>
@@ -1775,7 +1831,7 @@
 			<fadetime>200</fadetime>
 		</control>
 		<control type="image">
-			<visible>[substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)] + StringCompare(Skin.String(show-thumbnails),1)</visible>
+			<visible>[substring(ListItem.Genre#Music) | substring(ListItem.Genre#Concert)] + [StringCompare(Skin.String(show-thumbnails),1) | StringCompare(Skin.String(show-thumbnails),3)]</visible>
 			<posx>78</posx>
 			<posy>146</posy>
 			<width>75</width>
@@ -2755,7 +2811,8 @@
 		<texturenofocus>actionbuttons/button-action-scan-off.png</texturenofocus>
 		<textureclick>actionbuttons/button-action-scan-off.png</textureclick>
 		<include>ViewButton4</include>
-		<onleft>9050</onleft>
+		<onleft>47</onleft>
+<!--		<onleft>9050</onleft> -->
 		<onright>8014</onright>
 		<ondown>9050</ondown>
 		<onup>-</onup>

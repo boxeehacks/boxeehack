@@ -8,6 +8,7 @@ def fanart_function():
 
 def thumbnail_function():
     dialog = xbmcgui.Dialog()
+    os.system("rm /data/etc/.fanart")
     if dialog.yesno("Clear thumbnail cache", "Are you sure you want to clear the thumbnail cache?"):
         os.system("find /data/.boxee/UserData/profiles/*/Thumbnails/ -name \*.tbn | xargs rm")
         xbmc.executebuiltin("Notification(,Clearing thumbnail cache,3000)")
