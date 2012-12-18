@@ -180,8 +180,7 @@ def showmusic_function():
         showmusic = "1"
 
     xbmc.executebuiltin("Skin.SetString(showmusic,%s)" % showmusic)
-<<<<<<< HEAD
-    file_put_contents("/data/etc/.showmusic_enabled", showmusic)
+    common.file_put_contents("/data/etc/.showmusic_enabled", showmusic)
 
 # Hide / Show VPN Shortcut icon
 def showvpn_function():
@@ -194,9 +193,6 @@ def showvpn_function():
 
     xbmc.executebuiltin("Skin.SetString(showvpn,%s)" % showvpn)
     file_put_contents("/data/etc/.showvpn_enabled", showvpn)
-=======
-    common.file_put_contents("/data/etc/.showmusic_enabled", showmusic)
->>>>>>> upstream/development
     
 # Enable/disable the subtitle functionality
 def toggle_subtitles(mode, current):
