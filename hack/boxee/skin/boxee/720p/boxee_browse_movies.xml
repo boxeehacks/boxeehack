@@ -2,7 +2,7 @@
 <window id="10481">
 	<onunload>Skin.Reset(BrowseMenuLevel3)</onunload>
 	<onunload>Skin.Reset(BrowseMenuLevel2)</onunload>
-	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_grab_fanart.py", "grab_fanart")</onload>
+	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_grab_fanart.py", "grab_fanart_list", 53)</onload>
 	<defaultcontrol always="true">9050</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<controls>

@@ -2,6 +2,7 @@
 <window id="0">
 	<allowoverlay>no</allowoverlay>
 	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "defaults")</onload>
+	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_grab_fanart.py", "grab_fanart_list", 8200)</onload>
 <!--	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_server.py")</onload> -->
 	<controls>
 		<include>Common_Background</include>
@@ -412,32 +413,11 @@
 							<fadetime>200</fadetime>
 						</control>
 						<control type="image">
-							<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie)</visible>
 							<posx>17</posx>
 							<posy>0</posy>
 							<width>384</width>
 							<height>253</height>
-							<texture background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
-							<bordersize>8</bordersize>
-							<aspectratio>scale</aspectratio>
-						</control>
-						<control type="image">
-							<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTvShow)</visible>
-							<posx>17</posx>
-							<posy>0</posy>
-							<width>384</width>
-							<height>253</height>
-							<texture background="true">$INFO[ListItem.Path,,../fanart.jpg]</texture>
-							<bordersize>8</bordersize>
-							<aspectratio>scale</aspectratio>
-						</control>
-						<control type="image">
-							<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTvShow)</visible>
-							<posx>17</posx>
-							<posy>0</posy>
-							<width>384</width>
-							<height>253</height>
-							<texture background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
+			                <texture background="true">$INFO[ListItem.Property(custom:fanart)]</texture>
 							<bordersize>8</bordersize>
 							<aspectratio>scale</aspectratio>
 						</control>
@@ -534,32 +514,11 @@
 							<aspectratio>scale</aspectratio>
 						</control>
 						<control type="image">
-							<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsMovie)</visible>
 							<posx>17</posx>
 							<posy>0</posy>
 							<width>384</width>
 							<height>253</height>
-							<texture background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
-							<bordersize>8</bordersize>
-							<aspectratio>scale</aspectratio>
-						</control>
-						<control type="image">
-							<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTvShow)</visible>
-							<posx>17</posx>
-							<posy>0</posy>
-							<width>384</width>
-							<height>253</height>
-							<texture background="true">$INFO[ListItem.Path,,../fanart.jpg]</texture>
-							<bordersize>8</bordersize>
-							<aspectratio>scale</aspectratio>
-						</control>
-						<control type="image">
-							<visible>!IsEmpty(ListItem.Thumb) + ListItem.property(IsTvShow)</visible>
-							<posx>17</posx>
-							<posy>0</posy>
-							<width>384</width>
-							<height>253</height>
-							<texture background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
+			                <texture background="true">$INFO[ListItem.Property(custom:fanart)]</texture>
 							<bordersize>8</bordersize>
 							<aspectratio>scale</aspectratio>
 						</control>

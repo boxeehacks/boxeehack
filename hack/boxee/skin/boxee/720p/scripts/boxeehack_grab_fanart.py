@@ -43,6 +43,10 @@ def grab_fanart_for_item(item):
     thumbnail = item.GetThumbnail()
     art = ""
 
+    # to make sure we don't generate fanart entries for things like vimeo
+    if path.find("http://") != -1:
+        return
+
     if label in fanart:
         art = fanart[item.GetLabel()]
     elif path != "" and path.find("boxeedb://") == -1:
@@ -70,23 +74,60 @@ def grab_fanart_for_item(item):
     if art != "":
         fanart[label] = art
         item.SetProperty("fanart", art)
+#        item.SetThumbnail(art)
 
-#    item.SetThumbnail(thumbnail)
-    
-def grab_fanart():
+def get_list(listNum):
+    try:
+        lst = mc.GetActiveWindow().GetList(listNum)
+    except:
+        lst = ""
+    return lst
+
+def grab_fanart_list(listNum):
+
     get_fanart_list()
     
-    items = mc.GetActiveWindow().GetList(53).GetItems()
-    if len(items) == 0:
-        time.sleep(0.5)
-        items = mc.GetActiveWindow().GetList(53).GetItems()
-        
-    for item in items:
-        grab_fanart_for_item(item)
+    # sometimes the list control isn't available yet onload
+    # so add some checking to make sure
+    lst = get_list(listNum)
+    count = 3
+    while lst == "" and count > 0:
+        time.sleep(0.25)
+        lst = get_list(listNum)
+        count = count - 1
 
-    store_fanart_list()
+    if lst == "":
+        pass
+    else:
+        items = lst.GetItems()
+        done = 1
+        num = len(items)
+        count = 5
+        
+        # some delays to wait until the list is complete
+        # Boxee does a bit of lazy initialisation which
+        # sometimes causes only half the list to be updated
+        # otherwise
+        while done != 0:
+            time.sleep(0.25)
+            items = lst.GetItems()
+            if num == len(items) and num != 0:
+                # do a few attempts to find more before giving up
+                # because sometimes the Boxee Box is really slow
+                count = count - 1
+                if count == 0:
+                    done = 0
+            else:
+                num = len(items)
+        
+                # try and apply the stuff we already know about
+                for item in items:
+                    grab_fanart_for_item(item)
+        
+        # store the fanart list for next time
+        store_fanart_list()
 
 if (__name__ == "__main__"):
     command = sys.argv[1]
 
-    if command == "grab_fanart": grab_fanart()
+    if command == "grab_fanart_list": grab_fanart_list(int(sys.argv[2]))
