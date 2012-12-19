@@ -184,7 +184,7 @@ def showmusic_function():
 
 # Hide / Show VPN Shortcut icon
 def showvpn_function():
-    showvpn = file_get_contents("/data/etc/.showvpn_enabled")
+    showvpn = common.file_put_contents("/data/etc/.showvpn_enabled")
 
     if showvpn == "1":
         showvpn = "0"
@@ -192,7 +192,7 @@ def showvpn_function():
         showvpn = "1"
 
     xbmc.executebuiltin("Skin.SetString(showvpn,%s)" % showvpn)
-    file_put_contents("/data/etc/.showvpn_enabled", showvpn)
+    common.file_put_contents("/data/etc/.showvpn_enabled", showvpn)
     
 # Enable/disable the subtitle functionality
 def toggle_subtitles(mode, current):
