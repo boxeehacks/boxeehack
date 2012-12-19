@@ -184,7 +184,7 @@ def showmusic_function():
 
 # Hide / Show VPN Shortcut icon
 def showvpn_function():
-    showvpn = common.file_put_contents("/data/etc/.showvpn_enabled")
+    showvpn = common.file_get_contents("/data/etc/.showvpn_enabled")
 
     if showvpn == "1":
         showvpn = "0"
