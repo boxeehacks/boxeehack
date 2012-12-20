@@ -346,22 +346,23 @@ class GUI( xbmcgui.WindowXMLDialog ):
 			item["percent"] = percent
 		subtitles.sort(key=sort_inner,reverse=True)	
 		for item in subtitles:
-			if(item["lang"] == "pt-br"):
-				item["lang"] = "pb"
-			if(item["lang"] in trans_lang):
-				language = trans_lang[item["lang"]]
-			else:
-				language = item["lang"]
-                    	listitem = xbmcgui.ListItem( label=language, label2=item["release"], iconImage="0.0", thumbnailImage="flags/" + item["lang"] + ".png" )
-                    	listitem.setProperty( "source", str(item["plugin"].__class__.__name__))
-			listitem.setProperty( "release", item["release"])
-		        listitem.setProperty( "equals", str(item["percent"]) + "%")
-			if("hash" in item and item["hash"] == True):
-        	                listitem.setProperty( "sync", "true" )
-	                else:
-            	        	listitem.setProperty( "sync", "false" )
+			if(item["lang"] and item["release"]):
+				if(item["lang"] == "pt-br"):
+					item["lang"] = "pb"
+				if(item["lang"] in trans_lang):
+					language = trans_lang[item["lang"]]
+				else:
+					language = item["lang"]
+                    		listitem = xbmcgui.ListItem( label=language, label2=item["release"], iconImage="0.0", thumbnailImage="flags/" + item["lang"] + ".png" )
+                    		listitem.setProperty( "source", str(item["plugin"].__class__.__name__))
+				listitem.setProperty( "release", item["release"])
+		        	listitem.setProperty( "equals", str(item["percent"]) + "%")
+				if("hash" in item and item["hash"] == True):
+        	                	listitem.setProperty( "sync", "true" )
+	                	else:
+            	        		listitem.setProperty( "sync", "false" )
 	
-			self.getControl( SUBTITLES_LIST ).addItem( listitem )
+				self.getControl( SUBTITLES_LIST ).addItem( listitem )
 							
         self.setFocus( self.getControl( SUBTITLES_LIST ) )
 	self.getControl( SUBTITLES_LIST ).selectItem( 0 )
