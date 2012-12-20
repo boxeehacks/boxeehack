@@ -1,0 +1,2476 @@
+[2012/12/12 00:53:00, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/12 00:53:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/12 00:53:01, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 00:53:01, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/12 00:53:01, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/12 01:21:08, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:08, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/12 01:21:08, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/12 01:21:09, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:09, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/12 01:21:09, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/12 01:21:21, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/12 01:21:21, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/12 01:21:21, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:21, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:21, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/12 01:21:21, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:21, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:21, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:21, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/12 01:21:21, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:21, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/12 01:21:21, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/12 01:21:22, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/12 01:21:22, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:22, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:22, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/12 01:21:22, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:22, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:22, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:22, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/12 01:21:22, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/12 01:21:22, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/12 01:21:22, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/14 21:33:52, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/14 21:33:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/14 21:33:52, 0] passdb/secrets.c:secrets_init(67)
+  Failed to open /opt/local/private/secrets.tdb
+[2012/12/14 21:33:52, 0] smbd/server.c:main(984)
+  standard input is not a socket, assuming -D option
+[2012/12/14 21:33:52, 0] passdb/secrets.c:secrets_init(67)
+  Failed to open /opt/local/private/secrets.tdb
+[2012/12/14 21:33:52, 0] smbd/server.c:main(1025)
+  ERROR: smbd can not open secrets.tdb
+[2012/12/14 21:33:53, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:33:53, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/14 21:33:53, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/14 21:34:00, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:34:00, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/14 21:34:00, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/14 21:42:48, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:48, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/14 21:42:48, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/14 21:42:50, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/14 21:42:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/14 21:42:50, 0] passdb/secrets.c:secrets_init(67)
+  Failed to open /opt/local/private/secrets.tdb
+[2012/12/14 21:42:50, 0] smbd/server.c:main(984)
+  standard input is not a socket, assuming -D option
+[2012/12/14 21:42:50, 0] passdb/secrets.c:secrets_init(67)
+  Failed to open /opt/local/private/secrets.tdb
+[2012/12/14 21:42:50, 0] smbd/server.c:main(1025)
+  ERROR: smbd can not open secrets.tdb
+[2012/12/14 21:42:56, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 21:42:56, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/14 21:42:56, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/14 23:21:15, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/14 23:21:15, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:16, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/14 23:21:16, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/14 23:21:18, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/14 23:21:18, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/14 23:21:18, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/15 21:24:37, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 21:24:37, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/15 21:24:37, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/15 23:16:50, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:50, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/15 23:16:50, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/15 23:16:52, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:16:52, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/15 23:16:52, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/15 23:22:40, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/15 23:22:40, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/15 23:22:40, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/16 00:06:47, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:47, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/16 00:06:47, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/16 00:06:49, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:06:49, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/16 00:06:49, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/16 00:26:30, 0] smbd/server.c:main(942)
+  smbd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2012/12/16 00:26:30, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x0826d367
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2012/12/16 00:26:30, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII

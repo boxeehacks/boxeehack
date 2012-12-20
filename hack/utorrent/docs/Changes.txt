@@ -1,0 +1,2739 @@
+
+uTorrent Changelog.
+
+- Fix: don't delete files when 'download to' and 'move to' directories are the same
+- Change: Menu item "Add Torrent (no default save)" became "Add Torrent (choose save dir)"
+
+-- 2011-02-09: Version 3.0 (build 24613)
+- Fix: support vodo's RSS feeds
+- Fix: minor crash
+- Change: New installs now default to the minified view.
+
+-- 2011-02-08: Version 3.0 (build 24591)
+- Fix: Message would cut off part of text with newlines in 64-bit on vista and up
+- Fix: In minified UI, use completed value in ## of ## display instead of downloaded value
+- Change: Install app bundled with torrent file only when app button clicked for torrent 
+- Feature: added debug call to dump sockets in logger tab context menu
+- Fix: uTP fast-resend bug
+- Fix: Socket leak, leading to being unable to download 
+
+-- 2011-02-03: Version 3.0 (build 24520)
+- Fix: minified view hand cursor re-enabled (on share or open hover)
+- Fix: minified view share and open icons now have text again
+- Fix: re-enable minified view alternating row color
+- Fix: rating tab didn't erase properly on resize
+- Fix: don't highlight column in minified listview
+- Fix: ui artifacts when switching between minified and non-minified dl list
+- Fix: list item label edit showed up briefly in minified mode on dbl click
+- Feature: enable disk congestion logic when disk cache is turned off
+- Fix: "RSS" status didn't show up on list item highlight
+- Fix: Show/hide status icon in name column when user changes setting
+- Change: improve logging for pex flood events and average over more messages
+- Change: dropzone appearance
+- Feature: dropzone highlights when file dragged into it
+
+-- 2011-01-28: Version 3.0 (build 24408)
+- Change: change semantics of seeding filter to include seeds that are not currently transferring
+- Fix: socks5 proxy error handling would sometimes cause a freeze and infinite loop
+- Change: text on streaming buttons, widen app source button
+- Change: "Source" column to "App"
+- Change: streaming button font
+- Fix: remove column highlight flicker in minified list
+- Fix: don't fall back on browser to download RSS torrents when proxy is used and non proxied connections are disabled
+
+-- 2011-01-26: Version 3.0 (build 24369)
+- Fix: episode numbers are no longer limited to 2 digits in torrent list
+- Fix: hide tabs button was showing up on find content pane
+- Fix: RSS item rendering in minified list view
+- Fix: fixed bug where the torrent would be removed when downloading a missing file from webUI
+
+-- 2011-01-26: Version 3.0 (build 24354)
+- Fix: fix copy bug in list views (would sometimes fail top copy certain fields)
+- Change: increase margin around tab icons
+- Change: column order is now different
+- Change: different columns are shown by default
+- Change: new highlight color in list view
+- Change: high status icons by default (showable with adv setting)
+- Fix: show correct buttons on minified toolbar
+- Change: don't update RSS feeds just by opening the edit window
+- Change: Minify toolbar button now just minifies the download list
+
+-- 2011-01-24: Version 3.0 (build 24305)
+- Fix: fixed bug in disk congestion calculation
+- Fix: fixed encoding bug in DHT announce messages (introduced with name extension)
+
+-- 2011-01-21: Version 3.0 (build 24289)
+- Fix: fix crash when sometimes rating torrents on delete
+- Fix: crash when using portable mode
+- Fix: Display installing progress bar when user clicks back to btapp install node
+- Change: allow 2000 items in the RSS history (increased from 600)
+- Change: use buttons for torrent actions in download list
+
+-- 2011-01-19: Version 3.0 (build 24240)
+- Fix: fixed gui.graph_overhead
+- Change: limit cache size to 2000 MB (for 32 bit builds)
+- Fix: attempt at fixing disappearing systray icon
+- Fix: crash in Ratings tab related to adding a comment
+- Change: Run apps in standard mode (not IE7 compatibility mode)
+- Fix: Remove erroneous scam messagebox
+- Fix: GUI hang when deleting torrent with many files
+- Fix: Copy and paste in File list view fixed. (ctrl-A, ctrl-C, ctrl-V)
+- Fix: miscellaneous crashes
+- Fix: crash when showing the download bar
+- Fix: crash while canceling btapp install
+- Feature: support chunked http web seeding
+
+-- 2011-01-11: Version 3.0 (build 24120)
+- Fix: don't attempt to open a file if it doesn't exist (caused association dialog to appear)
+- Fix: bandwidth allocation priorities displaying improperly
+- Change: only apply the port > 1023 for outgoing connection restriction for peers only hear about through the DHT
+- Fix: add torrent save directory history would not be saved correctly for magnet links
+- Fix: Apps did not work under Win7 in portable mode
+- Fix: fix some crashes related to threaded IE frame
+- Fix: convert saved ratings to the 5 star rating. Fixes a crash
+- Fix: fix bug in UDP socks5 support which would cause infinite loops
+- Fix: Use system call to open containing folder instead of launching explorer.exe (when available)
+
+-- 2011-01-03: Version 3.0 (build 24023)
+- Fix: Don't connect to ports < 1024 when no-connect-to-services is enabled (which it is by default)
+- Fix: don't ask user to rate torrent when deleting
+- Fix: privacy checkbox in general settings would have multiline text
+- Change: add port 80 and 443 to the default port block list
+
+-- 2010-12-28: Version 3.0 (build 23983)
+- Fix: crashbug in DHT (introduced by new rating feature)
+- Fix: fixed WM_COPYDATA message, causing a running instance to display an error message when launchin a new instance
+- Fix: transparent background for play, source app and AV icons in torrent list
+
+-- 2010-12-21: Version 3.0 (build 23926)
+- Fix: be less strict when banning peers for PEX flood
+- Fix: possible crash during autoupdate
+- Fix: fixed IP filter bug where overlapping ranges would not be handled properly
+
+-- 2010-12-16: Version 3.0 (build 23829)
+- Fix: optimized CPU usage in GUI
+- Fix: Only ask user once if they want hidden files during torrent creation
+- Fix: potential fix of disconnecting peers by "pex flood"
+- Change: rating column UI
+- Feature: Added more tags to RSS parser and fixed parsing bug.
+- Change: Only report a torrent as red because of tracker error if we don't have any peers
+- Feature: Enter Portable mode from within the uT installer
+- Change: updated voting icons
+- Change: add more spacing between download list items
+- Feature: add rating UI to remove torrent dialog
+- Feature: Add a uTP delay measurement graph
+- Feature: Comments and voting UI
+- Fix: make the torrent add dialog look better on low-dpi screens
+- Feature: enable/disable detail tabs via a right click context menu
+- Fix: Ctrl+C copy in files tab
+- Fix: skinning bug for tabs.bmp
+- Change: default screen size now 1024x600
+- Feature: Use buffered IO on network drives.
+- Fix: Find content item wasn't displaying properly on XP
+- Fix: fixed uTP reply_micro initialization bug
+
+-- 2010-11-17: Version 3.0 (build 23217)
+- Fix: prevent a crash in listview column ordering
+- Fix: running under wine again
+- Fix: don't auto-update apps when they are disabled
+- Feature: listen on the IPv6 webui port if possible.
+- Feature: restart application after reboot caused by windows update / install if OS supports.
+- Fix: re-binding udp sockets after closing preferences caused slowdown on Win 7
+- Feature: confirm exit if sharing a torrent and availability is < 2.0.
+- Fix: fixed and tuned PMTU discovery for uTP
+- Fix: search box flickers when it should be hidden
+- Fix: fixed exploit with open containing folder
+- Fix: on XP the sidebar thought it was wider than it was in certain cases
+- Fix: toolbar took a second to update when switching from narrow to wide
+- Fix: rss toolbar wouldn't be active after a feed was deleted
+- Change: Use UTF-8 for App names
+- Fix: autoupdating fails sometimes
+- Fix: reduce the amount of bogus hang reports
+- Change: always show persistent labels in sidebar
+- Fix: in install of first app the apps node was not expanded (win7)
+- Change: stop downloading icon now a stop sign
+- Fix: reduce occurence of gui hangs when updating systray
+- Change: Set download location now changes the torrent directory name on a multifile torrent.
+- Fix: various misbehaviors when running on systems where the year > 2038
+- Change: switch from find pane to download pane when a torrent is added
+
+-- 2010-10-26: Version 3.0 (build 22787)
+- Fix: context menu wouldn't show if there were persistent labels
+- Change: btinstalls wait for selection of app before installation begins
+
+-- 2010-10-25: Version 3.0 (build 22755)
+- Fix: try to improve new upload choker
+- Fix: broken node ID generation on DHT
+- Fix: run command feature would not trigger on downloading->finished state change
+- Fix: tell explorer to reload app icon on client update
+- Change: center drop zone text
+- Fix: general tab default background should be gray on XP and Win7 classic theme
+- Feature: allow multiple labels per torrent.
+- Fix: selecting files in torrent add window is really slow
+- Change: more room for upload/download rates in status bar
+- Fix: Re-enable save directory column.
+- Fix: resize column cursor in download list would stay after un-minifying view
+- Feature: add ability to browse for torrent event command to run
+
+-- 2010-10-13: Version 3.0 (build 22557)
+- Disabled save directory column to prevent crashes.
+- Fix: infinity symbol would flash when seeding ratio achieved
+
+-- 2010-10-12: Version 3.0 (build 22519)
+- Fix: proper url encoding of web seed http requests
+- Feature: add a previous state variable (%P) to RunCommand
+- Fix: drop zone showing up when it should be hidden
+- Fix: problems with https requests
+- Fix: generate correct JSON for list-dirs action in web interface
+- Change: left align status text if it doesn't fit in the column
+- Change: new sidebar, toolbar, tabs, and main icons 
+- Fix: un-minifying to a maximized window placed the window offscreen
+- Fix: remember maximized state across restarts
+- Fix: remove gray background from BitTorrent install icon
+- Fix: uTP EACK vulnerability
+- Change: Top-level labels node count now includes the No Labels count
+- Fix: Multi-selecting torrents in the download list and adding a label resulted in an incorrect sidebar count
+- Fix: minified view appears partially after screen first time
+- Feature: add save directory column to main listview
+
+-- 2010-10-05: Version 3.0 (build 22329)
+- Change: remove non-working upload slot settings
+- Feature: make more colors skinnable
+- Fix: toggle rss icon when feed re-enabled
+- Fix: fix skinning of tab icons
+- Fix: set download location now works properly with !ut extension
+
+-- 2010-09-27: Version 3.0 (build 22186)
+- Fix: relocating of single files
+- Fix: handle forged timestamps and clock drift in uTP better
+- Fix: crash introduced in previous release
+
+-- 2010-09-24: Version 3.0 (build 22145)
+- Change: make items in sidebar smaller
+- Fix: various crashes
+- Change: new toolbar and status icons
+- Change: merge Status and Done columns and add advanced option to enable old behavior
+- Fix: Performance improvements with uTorrent Web "get files"
+- Fix: use internal torrent name instead of display name for webseeds
+- Fix: torrent creation was failing for files larger than 2G
+- Fix: web seeded torrents sometimes failed to complete
+- Fix: web seeding of very large files was broken
+- Feature: Enabled dialog when adding magnet URLs using Add URL.
+- Change: small uTP CPU optimization
+
+-- 2010-09-21: Version 3.0 (build 22091)
+- Fix: 100% CPU issue when retrying http downloads
+- Fix: transfer cap doesn't update unless uTorrent is running
+
+-- 2010-09-16: Version 3.0 (build 22021) 
+- Change: Make find pane smaller if AV dialog is showing
+- Fix: crash while streaming
+
+-- 2010-09-15: Version 3.0 (build 22005) 
+- Fix: fix piece priority in the piece tab
+- Feature: perform name resolution through SOCKS 5 proxy for UDP traffic.
+- Fix: Prevent a race between DNS resolution and HTTP connect
+- Fix: Fixed uTP ACK timer wrap bug
+
+-- 2010-09-10: Version 3.0 (build 21887) 
+- Fix: icon rendering issue
+- Fix: Fix problem where https was failing for some trackers and web servers
+- Fix: remove toolbar creation flags which caused buttons to be off center
+- Fix: don't clear completed-on when rechecking
+- Fix: It's no longer possible to wake up the client when in boss-mode
+- Fix: file !ut suffix on completed files when loading resume file
+- Fix: crash when adding AV icon to imagelist
+- Fix: some rendering issues caused by reskin
+- Fix: uTorrent Web "Get files" crash
+- Change: Re-ask user for additional permissions when app loads when not given enough permissions
+
+-- 2010-09-01: Version 3.0 (build 21711)
+- Change: reload image lists when a skin is applied
+- Change: right-click on find item does nothing
+- Fix: right click on already selected item does not change selection
+- Fix: crash associated with downloading favicons
+- Fix: survey was displaying incorrectly and at the wrong time
+
+-- 2010-08-31: Version 3.0 (build 21663)
+- Fix: Set Download Location... used to crash when changing the file name
+  of single file torrents.
+- Feature: support skinning colors
+
+-- 2010-08-30: Version 3.0 (build 21639)
+- Feature: added option to show overhead in status bar
+- Fix: drop zone wasn't redrawing properly on resize
+- Fix: right click was deselecting multi-selected items in side bar
+- Change: if a tree node with selected children is collapsed, select the node
+- Fix: reduce flicker when switching from apps to find content
+- Fix: tracker retry interval
+- Fix: reduce flicker in AV dialog when updating or scanning
+- Feature: Added prioritize files by sort order
+- Feature: zipped skinnable elements in .btskin file.
+- Fix: ignore hotkeys while boss-key hidden.
+- Change: cache downloading of favicons in search dropdown
+- Feature: show file dialog when loading magnet links
+- Feature: password protected boss-key.
+- Fix: send started and stopped events to all active trackers
+- Fix: update rss feed counts when a feed is added or removed
+
+-- 2010-08-24: Version 3.0 (build 21433)
+- Change: reorder the labels menu
+- Fix: torrents that have excluded files appear fully downloaded properly
+- Fix: horizontally scrolling the sidebar causes render problems with find item
+- Fix: drop zone would cover bottom of sidebar with a wide toolbar
+- Feature: advanced option to run commands when any torrent completes download or changes state
+- Change: remove screenshot from find pane.  Change find pane text.
+- Feature: option in Bandwidth Settings to stop transfers when user interacts with windows.
+
+-- 2010-08-18: Version 3.0 (build 21340)
+- Fix: update app sidebar counts correctly when apps are installed
+- Feature: end to end path MTU calculation based on ICMP messages and missing packets
+- Change: use friendly name for rss items in sidebar
+- Fix: Fix uTorrent Web "Get File" feature
+- Feature expose more granular file priority levels
+- Feature: take bandwidth used by RSS and tracker into account for rate limiting
+- Change: add bold text for Ask toolbar offer
+- Fix: remove toolbar button was not enabled when certain torrents were selected
+- Fix: set bt.transp_disposition to use new uTP header
+- Feature: Added privacy options to BitTorrent settings
+- Fix: btapp html updates properly when updated
+
+-- 2010-08-13: Version 3.0 (build 21169)
+- Fix: made apps sidebar string translatable
+- Fix: Fixed size of static text in transfer cap setting pane to be translatable
+- Fix: Make 'Set Download Location...' actually move the torrented data
+- Fix: fixed RSS feed selection filtering
+- Fix: sidebar can sometimes disappear when showing-hiding find pane or apps
+- Feature: Added ability to bundle btapps with utorrent.exe with bundle.py
+- Feature: support feed:// links for RSS feeds
+- Feature: uTP / UDP traffic over SOCKS5 proxy server. 
+- Change: select torrents pane if find pane is select and sidebar is hidden
+- Change: select torrents if on startup apps or find is chosen and sidebar is hi
+dden
+- Change: updated status icons
+- Fix: reduce sidebar flicker when adding or removing torrents
+- Change: remove the "always show add dialog" and merge its functionality with the "show add dialog"
+- Change: cache the bitmap used by some utorrent panes for double buffering
+- Change: remove the overhead display from the status bar
+- Fix: arrow-key navigation of multi-file torrent filelist.
+- Fix: garbage hint text when hovering in sidebar
+- Feature: added option to have the progress bar color match the status icon
+- Fix: select download pane if find pane or apps were selected and the preferenc
+e for them is disabled
+- Feature: support multi-announce in LSD packets
+- Fix: sidebar counts would not update in all cases
+- Change: move partner app uninstall to the install thread
+- Fix: reduce sidebar flickering during rss updates and torrent additions
+- Change: add support for label counts
+- Fix: find pane is only default for fresh installs, not for upgrades
+- Change: Promoted show-apps, show-find-pane, narrow-toolbar, category-spaces settings to options menu
+- Change: labels now sort when added
+- Fix: separators could be selected on rclick, causing problems
+- Fix: Fixed peer exchange exploit
+- Fix: remembering last side bar selection across application restarts.  if the selection is a dynamic node, select the parent.
+- Change: remember which side bar items are expanded across application restarts
+- Change: Advanced option to disable display of Antivirus icon
+- Fix: Install node gets left behind when installing Virus Guard
+- Fix: Shift-selecting user-defined labels would sometimes choose the wrong items
+
+-- 2010-08-04: Version 3.0 (build 20905)
+- Fix: SDK and mac detection of torrent storage on an unmounted volume
+- Change: Multiselect is now the union of all selected items.  this fixes label selection
+- Fix: Status icon in lower right corner no longer cut off.
+- Change: Download screenshot on find conent dynamically
+- Fix: not all favicons were downloading for default search providers
+- Fix: Crashes in IEFrame
+- Fix: Crashes after app install
+- Fix: Changes to/between app download/install nodes
+- Change: Hide the find pane on win2k (it's not supported)
+- Fix: take our survey no longer hides the toolbar
+- Fix: Find Content Pane is the default on first install
+- Fix: Find Content no longer will show if the category tree is hidden
+- Fix: Safari 5 compatibility for WebUI and uTorrent Web 
+- Change: Gracefuly degrade if app icon is missing: allow app to load 
+- Fix: WebUI security improvements 
+
+-- 2010-07-30: Version 3.0 (build 20814)
+- Fix: Selected / sorting column no longer reverts to default.
+- Feature: Make utorrent deal properly with unmounted volumes on startup.
+
+-- 2010-07-29: Version 3.0 (build 20777)
+- Fix: Crash when running BitDefender or adding torrents via btapp
+
+-- 2010-07-28: Version 3.0 (build 20759)
+- Fix: toolbar appearance during app install
+- Fix: Multi Select issues in sidebar
+- Fix: Find Item not showing selection in non-aero theme
+- Fix: Crash during btapp installs - double permission requests
+- Fix: Crash during btapp install
+- Fix: Crash in AddImage
+- Change: add mousewheel scrolling
+
+-- 2010-07-22: Version 3.0 (build 20680)
+- Fix: Crash during btapp install.
+- Fix: Crash when privileged btapp is loaded and torrent status changed.
+- Fix: Crash in speed guide when exiting dialog early.
+- Feature: "Security Question" can be used to migrate uTorrent Web username between computers 
+- Change: disable IPv6 on Win7 by default.  Could be turned on using net.disable_ipv6 property.
+- Change: Add Find Content Pane
+- Change: sidebar separators and layout
+- Change: context sensitive toolbars
+- Change: new flat, green artwork
+- Fix: save selected item in sidebar 
+- Change: added more default search engines
+- Fix: fixed string truncation of &ip= parameter to trackers when on IPv6
+- Change: add openbittorrent and publicbt as default trackers when creating torrents
+- Fix: fixed progress bar when downloading over HTTP directly to a file
+- Fix: crash in network thread
+
+-- 2010-07-13: Version 3.0 (build 20533)
+- Fix: Show correct app state if apps hidden then displayed in prefs.
+- Change: clear dont fragment bit for UDP traffic
+- Change: lower the estimated path MTU 1393 bytes
+
+-- 2010-07-09: Version 3.0 (build 20507)
+- Fix: apps pane not showing in the sidebar if no apps installed
+
+-- 2010-07-09: Version 3.0 (build 20504)
+- Fix: attempt another crash fix in the new choker
+- Fix: set dont fragment bit for UDP traffic
+
+-- 2010-07-06: Version 3.0 (build 20402)
+- Fix: super verbose logging was always enabled
+- Fix: fixed uTP crash in rate limiter
+
+-- 2010-07-02: Version 3.0 (build 20385)
+- Fix: fixed common crash in new choker
+- Change: raise half-open connection limit on post XP systems back to 100
+
+-- 2010-07-01: Version 3.0 (build 20355)
+- Change: lowered half-open connection limit on post XP systems to 25
+- Fix: connect overhead graph was broken
+- Change: lowered default connect speed from 10 to 7
+- Change: increase timeouts and have fewer re-sends when connecting to uTP peers. This reduces some overhead
+- Change: only rate limit local uTP sockets if both uTP sockets are limited and 'limit local peers' is set
+- Fix: added support for utf8 in btapp files. Javascript files can now contain Japanese and it will be correctly displayed
+- Fix: graph TCP rates when uTP is not rate limited, even when tcp_rate_control is off
+- Fix: fixed bug where "apply rate limit to uTP" would get unchecked by itself
+
+-- 2010-06-24: Version 3.0 (build 20228)
+- Fix: fixed uTP crash on sockets being closed with uninitialized read buffers
+- Fix: default download directory fix for multifile torrents
+- Change: rate limit uTP by default
+- Fix: Fixed fast-resend bug in selective ack handling in uTP. This could cause too aggressive resends on packet loss
+- Change: fix crash when formatting a string with NULL
+- Change: make uTP slightly less aggressive on loss
+- Change: Mention uTP in settings and reorganize new bandwidth checkbox since they apply to both up and down limits
+- Change: Render TCP rates in speed graph when uTP is not throttled
+- Change: Moved net.calc_overhead to the Bandwidth settings pane
+- Fix: RSS items show a different icon if disabled
+- Change: Turn on uTP throttling when scheduler is in "limited" mode
+- Fix: Fixed a delayed ack issue in uTP (lowers overhead)
+- Fix: RSS items would show when torrent list was empty
+- Fix: made magnet links in RSS feeds work
+- Change: made uTP packet size increase based on low delay measurements
+- Fix: made uTP packet size depend on total send rate, not just uTP send rate
+- Change: new advanced settings net.disable_ipv6 that defaults to True on 64bit Windows 
+- Change: Don't show add torrent dialog by default.
+- Feature: Add checkbox to disable UDP trackers
+
+-- 2010-05-19: Version 2.1 (build 19702)
+- Change: "Remote Access" preference pane renamed to "Web"
+- Feature: Major improvements to Falcon encryption
+
+-- 2010-05-13: Version 2.1 (build 19623)
+- Fix: occasional connection crash
+- Fix: 100% CPU with streaming header parsing on bad MKV files
+- Fix: the header parsing occasionally returns success on improperly parsed files
+
+-- 2010-05-06: Version 2.1 (build 19424)
+- Change: Sharper help graphic
+- Fix: minor uTP fix where it would be too aggressive on LANs
+- Change: streamline installer for bundled executables
+- Feature: new share torrent dialog
+
+-- 2010-04-27: Version 2.1 (build 19280)
+- Change: bypass Windows system cache while reading to avoid excessive memory uage
+- Fix: invalid header response on WebUI when an expired token or invalid request was sent
+- Change: flush files periodically to prevent write cache build-ups
+- Change: right align interface toggle buttons
+- Change: prioritize downloading torrents even more than seeds when making new connections
+
+-- 2010-04-08: Version 2.1 (build 18959)
+- Fix: IP resolving crash on peers tab
+- Change: drop uTP compatibility with uT <=1.8.1
+
+-- 2010-04-07: Version 2.1 (build 18936)
+- Change: improved loading column settings from older version settings files
+- Change: change default uTP packet size to 600 bytes
+
+-- 2010-04-02: Version 2.1 (build 18888)
+- Fix: handle column widths better on upgrade from older versions
+- Fix: crash on startup if you had a lot of streamable files in your torrents
+
+-- 2010-03-29: Version 2.1 (build 18825)
+- Fix: streaming crash
+- Fix: startup crash
+- Fix: crash with webseeds
+- Fix: RSS in the web API
+
+-- 2010-03-24: Version 2.1 (build 18750)
+- Change: If your client is too old to connect to Falcon, you are given the option to autoupdate
+- Fix: eliminate duplicate connections to the same peer ID over different IPs
+- Change: default double click action is "Open Folder" for seeding torrents
+- Fix: column size being 0, and invisible
+
+-- 2010-03-19: Version 2.1 (build 18683)
+- Feature: complete_ago extension handshake
+- Feature: account for clock skew in delay measurements of uTP
+- Fix: fixed uTP packet size bug on local networks
+- Fix: fixed uTP fast-resend counter wrapping bug
+- Fix: fixed uTP advertised window size bug
+
+-- 2010-03-11: Version 2.1 (build 18581)
+- Change: Open files in exclusive mode when writing (don't let anyone else write to them)
+- Fix: streaming bugs
+- Change: only close files that haven't been used for a while periodically (closing all files could interact badly with indexers)
+- Fix: dismissing pairing dialog is now interpreted as no. "no" is also the default button
+- Fix: Fixed bug where Bandwidth Management checkbox sometimes didn't work
+- Feature: queueup/down/top/bottom commands for WebUI
+
+-- 2010-03-08: Version 2.1 (build 18516)
+- Fix: crashes introduced in 18429
+- Change: Set Download Location no longer require manual stopping and restarting of torrents
+- Change: Minimized command line option starts minimized in taskbar for Windows 7
+- Change: Minified interface layout tweaks
+- Change: Send streaming progress to web UI with getfiles and list requests
+- Fix: fixed issue where the web UI would respond on the peer port when an alternate port was set
+- Fix: respond with reasonable mime types for /proxy requests
+- Change: disable transparent graph legend by default
+
+-- 2010-03-04: Version 2.1 (build 18429)
+- Feature: support streaming wmv
+- Fix: Fixed half-open limit on Windows 7
+- Fix: Fixed bug where uTorrent could freeze on broken web UI requests
+- Fix: Fixed bug in uTP header field layout
+- Feature: added advanced option to turn off uTP variable packet size
+- Feature: added advanced option to turn off discoverability (web integration)
+- Fix: uTP base delay bug fix and update interval tweaking
+- Fix: uTP timer stability fixes
+- Change: Support hyperlinks in autoupdate dialog
+- Change: Disable force streaming option until bitrate is known
+- Feature: Enable tooltips in minified UI
+- Change: Grey out toolbar icons dynamically in minified UI
+- Feature: Added hooks for tagging items as seen in RSS feeds
+- Fix: default player set to quicktime causes error
+- Fix: calc_overhead bug
+
+-- 2010-02-23: Version 2.1 (build 18304)
+- Fix: Schedule map would show times that were "off" as grey in disabled view
+- Fix: issue where we would incorrectly report being as seed when using magnet links
+- Feature: Add option to render the legend as solid instead of transparent
+- Fix: Make toolbar icons render nice on vista+
+- Fix: GDI leak when toggling interfaces
+- Feature: Add option to not report problems
+- Change: Make uTP packet size depend on global uTP rate instead of the rate of each individual connection
+- Fix: Store window dimensions for each interface mode
+- Feature: Add Windows Media Player to streaming player list
+- Feature: add detailed network overhead breakdown graph
+- Fix: Race condition when toggling interface modes
+- Fix: UDP tracker peer list parsing
+- Change: increase allowed max packet size (fixes issue with torrents with more than 131000 pieces)
+- Fix: BEP 22 would sometimes not kick in for new torrents
+- Feature: make initial uTP packet size configurable
+- Fix: simultaneous uTP and TCP connection race condition
+- Fix: "Not downloading" disconnects when remote peer had previously been a seed
+
+-- 2010-02-11: Version 2.1 (build 18148)
+- Feature: display overhead at status bar
+- Fix: torrents randomly starting on restart of client
+- Change: Do not count local overhead if local peers are not limited
+- Change: Count overhead for transfer caps
+- Feature: added legend to graphs
+- Feature: it's now possible to graph the tcp_rate_control rates
+- Fix: potential buffer overrun with mismatched langpack
+- Change: Gray out deleting data from client with created and seeded torrents
+- Fix: Close download bar with hotkey
+- Change: Toggle minified interface stays centered on toggle button
+- Fix: enable apply button if changing scheduler
+- Fix: Reliability of SSL connections (including Falcon connections) improved
+
+-- 2010-02-09: Version 2.1 (build 18069)
+- Change: Icons in minified interface
+- Feature: stop downloading and seed already-downloaded data if out of disk space
+- Fix: Don't allow streaming of checking torrenst
+- Change: Do not stop torrents when automatically shutdown
+- Fix: DHT would store duplicate peers for torrents
+- Change: add torrent dialog on windows now shows trackers
+- Fix: Potential bug when accessing the root directory of a URL
+- Fix: Upgraded certificates for Falcon servers
+- Feature: Oneclick support for Falcon
+- Fix: 'Cookie' setting in WebUI add-torrent-by-url works again
+- Fix: Now possible to uninstall uTorrent without losing access to Falcon beta
+- Fix: Falcon works in non-English locales
+
+-- 2010-01-26: Version 2.1 (build 17935)
+- Feature: Added support for suggest piece messages (part of FAST extensions)
+- Feature: Optional minified user interface
+- Change: update TCP/IP overhead estimation
+- Fix: handle wrapping in uTP timestamps
+- Fix: Crash in setup dialog when dialog is exited before server list is downloaded.
+- Change: Speedguide does not prompt for user selection if geolocated server list fetch successful
+- Change: added second upload and download graphs that include the estimated TCP/IP overhead
+- Change: Falcon registration now performed manually
+- Change: Better error reporting on Falcon authentication failures
+- Fix: Settings file security improved
+- Fix: Folder icons for add torrent in Windows 7
+- Fix: rate limiting problem when using calc_overhead and switching between unlimited and rate limited upload or download
+- Fix: GUI issue where some strings would be truncated for some translations
+- Feature: Add a check box in streaming page that allows users to use default player for preview
+- Fix: Allow streaming even when DNA is disabled
+- Fix: Compatibility with old skins
+- Fix: Compelete pending Disk operations before automatically shutting down
+- Fix: Don't exceed the upload limit with overhead when calc_overhead is on
+- Change: Move down "force streaming" in context menu
+- Change: silently add multiple torrents when more than 5 torrents are added
+- Change: Improve torrent gray out by also graying out progress bar when stopped by scheduler
+- Fix: Don't gray out force started torrents when scheduler has stopped other torrents
+- Change: Use different icon for disabled RSS feed
+- Fix: Sharpen icon edges
+- Change: Each file will switch to seed only if the volume it's being written to runs out of space.  It will resume when either the volume can fit the whole torrent or more than resume_min megabytes become available.
+
+-- 2009-12-15: Version 2.1 (build 17687)
+- Fix: streaming related bugs
+- Fix: disconnect issue with seeds
+- Fix: uTP over Teredo at high speeds, and MTU problems on some kinds of networks
+- Fix: Add translations to new graph strings
+
+-- 2009-12-15: Version 2.1 (build 17618)
+- Change: New default artwork
+- Fix: webui would allow any name for guest account when enabled.
+
+-- 2009-11-09: Version 2.1 (build 17553)
+- Change: Added auto restart feature for use in minimized mode.
+- Change: on Windows 7 default to not minimize to tray
+- Change: tell user about buggy 3rd party software that might degrade uTorrent performance
+- Fix: Added critical section to prevent race conditions in alternate builds
+- Fix: Transfer Cap tab in preferences would display incorrect Uploaded / Downloaded
+- Fix: fixed rare crash when using magnet links
+- Fix: fixed crash when super seeding a torrent without metadata
+- Fix: fixed handling of a uTP edge-case
+- Change: complete upload-only extension support
+- Feature: Add streaming buttons at torrent view and files tab
+- Fix: plugged some string memory leaks
+- Fix: various GUI crash bugs
+- Fix: catches crashes in bad DLLs
+- Fix: accept magnet links through add-url webUI
+- Fix: More strict https connection state management for halfopen accounting.
+- Feature: A new tunable option in advanced setting for failover peer speed threshold
+- Fix: Problem during install toolbar offer
+- Change: relaxed the requirements on bencoded integers to parse some broken torrents
+- Fix: svn revision in PeerID on PPC now takes endianness into account
+- Fix: added socket state logging when draining read socket to prevent false asserts
+- Change: fixed nationalization support so it no longer depends on Windows functions
+- Change: added checks for heap corruption that caused crash in uTP
+- Change: improved stability by making all executable pages not writable
+- Fix: fixed stack overflow when copying peer list
+- Fix: fixed allocation regression in connection to peers
+
+-- 2009-11-05: Version 2.1 (build 17154)
+
+- Change: enable multiple instances of the client to run on multi-user machines (e.g. fast user switching)
+- Fix: fixed uTP crash in edge condition
+- Fix: fixed crash when icmp.dll wouldn't contain the expected functions
+- Fix: fixed crash when closing add torrent dialog while dragging a column
+- Change: The Speed guide will now reject ports listed in bt.no_connect_to_services_list
+- Change: add an upgrade message if a buggy version of nvLsp is detected
+- Fix: don't take the total number of connections into account when connecting to trackers
+- Change: increase default transfer cap to 250 GB/month
+- Fix: Accounting of halfopen https connections would cause uT to stop making new connections
+- Change: Made the DHT compatible with future extensions
+- Fix: sometimes the &ip= parameter sent to trackers would be incorrect
+- Fix: correctly order bencoded dict items in extension handshake message
+- Fix: fixed holepunch error handling and support detection
+- Fix: check invalid ports and IPs in the DNS resolver to avoid using them
+- Fix: various polishing on the setup guide
+- Fix: potential crash related to TLS not being initialized
+- Change: Better handle torrents with files having case insensitive equivalent paths
+- Feature: support trackers and web seeds in magnet links
+- Change: Redirect WebUI requests from /gui to /gui/
+- Change: Disable installer for Wine
+- Change: Balance CDNs to download updates
+- Fix: Fixes bug where magnet links wouldn't work if PEX was disabled
+- Fix: potential crash in network code
+- Fix: More crashes when using magnet links
+- Fix: Port settings saved in Setup guide
+- Change: Updated helpfile links to use redirects
+- Feature: added RSS feeds and filters to WebUI
+- Feature: Reconnect to falcon if it times out
+- Fix: fixed crashes in setup guide
+- Fix: greyout custom toolbar with transparency
+- Feature: display the parsed information of streamable files in files tab
+- Change: Disable Ask for unsupported 64-bit Windows
+- Fix: fixed UDP-tracker crash when dns resolution would fail
+- Change: Use user-supplied port in Setup Guide, save auto-portmap prefs.
+- Change: Added European Servers in Setup Guide
+- Change: New Icons in Setup Guide
+- Fix: Improper mutex accounting in hang detector
+- Fix: crash when creating torrents
+
+-- 2009-09-11: Version 2.0 (build 16454)
+
+- Fix: crash in UDP tracker support when tracker sends malformed responses
+- Fix: file association bug
+- Fix: bugs where have messages would not be remebered for magnet link downloads
+- Fix: Buffer overrun vulnerability
+- Change: Conservative network locking in installer
+- Fix: rare crash in low level network read and write
+- Feature: Support streaming multiple streamable files included in one torrent
+- Fix: fixed crash in udp tracker connection with unresponsive DNS
+- Fix: improved out-of-memory error handling in disk thread
+- Fix: Installer crash after download
+- Feature: Stop setup guide tests without exiting dialog
+- Fix: Crash when peers disconnect from a magnet-link torrent right as we received the matadata
+- Fix: Fixes bug where magnet links wouldn't work if PEX was disabled
+- Feature: added ability to re-run setup tests
+- Fix: Fix crash when using magnet links and a peer is failing at a particular point
+- Fix: Fixed negative allocation in RequestChunks() for web seeds
+- Change: Updated bandwidth presets in Setup guide
+- Feature: Send torrents via magnet link
+- Change: Optimization added to speed up torrent creation
+- Fix: Fix startup race condition between network and disk I/O thread
+- Feature: Added versioned help files.
+- Fix: installer with UAC
+- Fix: Allow UDP trackers in the first tier when creating torrents
+- Fix: UDP Tracker retries three times instead of two
+- Fix: potential crash in installer
+- Fix: Crashes when removing labels
+- Fix: selection of labels over 256 characters in length
+- Fix: Vista and Windows 7 FW rules are created for all profiles
+- Fix: multiple HTTP download crashes
+- Feature: Accelerate downloading video header
+- Fix: http seed fix for multifile torrents
+- Fix: uTP connections that are upload rate limited will not have their max window size grow indefinitely
+- Feature: Enabled magnet bundles.
+- Change: run the 64 bit version of explorer when running as a 32 bit app in a 64 bit windows os.
+- Change: disable toolbar offers for Wine installs
+- Feature: New Setup guide & Speedtest.
+- Change: uninstaller is added to all user profiles
+- Fix: crash when assigning new label to torrents from RSS
+- Change: Incomplete downloads sort after completed downloads if sorting by "Completed On"
+- Change: UAC must be completed to install in Vista or higher
+- Feature: Add Moldova to peer flags
+- Change: Added upnp host cache to speed up upnp nat resolution on misbehaving routers
+- Fix: maintain category list selection on update for some edge cases
+- Change: if selected, install start menu and desktop shortcuts to all users instead of only current user
+- Feature: Grayscale disabled toolbar buttons
+- Fix: fixed uTP selective ack bug (woulc cause connections to stall and time out)
+- Fix: fixed uTP fast re-send bug (would sometimes re-send packets that shouldn't be re-sent)
+- Change: prompt to take associations in installer only if any others exist
+- Feature: automatically upload/download speed setting according to the result of speed test
+- Feature: stop torrents when running speed test
+- Fix: buffer overrun vulnerability in create torrent dialog
+- Feature: added graph of bandwidth usage on speed tab
+- Fix: uTP recovers faster after timeout
+- Feature: uTP supports window sizes smaller than the packet size
+- Change: reduced uTP overhead slightly by ramping up packet sizes at lower rates
+- Feature: enable and disable toolbar buttons according to selected torrents
+- Fix: memory leaks in main window, protocol associations, settings dialog, general tab
+- Change: Tweaks to Ask toolbar offer
+- Feature: UDP tracker support
+- Fix: only change run on startup if installer is shown
+- Change: added support for 3:rd party applications to more easily be configured to access the uTorrent web UI, i.e. to pair the applications
+- Fix: make "alternate upload rate when seeding" apply when the seeding is set by the scheduler
+- Fix: align "Web Seeds" in torrent creation dialog
+- Fix: translated strings in uninstaller
+- Fix: Clicking "Advanced" when adding new torrent no longer crashes (trunk only)
+- Fix: http seeds would not reconnect after stopping and starting torrent
+- Fix: http seed for multifile torrents
+- Fix: setup Vista firewall
+- Fix: remove settings on Vista during un-installation
+- Feature: New installer with EULA, file association
+- Fix: uTP issue on low-latency high-throughput networks
+- Fix: copying long filenames to clipboard no longer results in garbage or crash
+- Fix: fixed web seed support for multi-file torrents
+- Change: torrent whose "Force Recheck" is greyed out will not recheck when asked through multi-torrent selections
+- Fix: when adding torrents through URLs via commandline, we would always open the add torrent dialog
+- Fix: handle multi file torrents with web seed urls that incorrectly don't end with a slash
+- Fix: make sure web seed urls end with a slash for multifile torrents
+- Change: rss.feed_as_default_label controls whether a torrent added from a feed is given the feed's name as a label
+- Fix: uTP packet size fix. Sometimes it would send packets exceeding MTU. Fixes long standing rate oscillations.
+- Fix: fixed crash when receiving a malformed PEX message
+- Fix: evades potential crash when reporting crashdumps
+- Fix: crash when parsing some magnet uri components without values
+- Fix: crash when starting a torrent in super seed mode and connecting to peers before it's completely loaded
+- Change: Scam site warning in installer
+- Feature: Added support for multiple download directories through WebUI
+- Change: Installer UI checkbox whether to install or run standalone
+- Change: Left align numeric fields in settings
+- Fix: Remember category list selection after adding a torrent
+- Change: Disabled feed icon has precedence over broken feed icon
+- Fix: DHT bootstrap failures now have an exponential back-off
+- Fix: uTP would not ramp up its rate fast enough
+- Change: .torrent association not a factor in displaying the installer
+- Fix: remove file association registry keys on uninstall
+- Fix: invalid encoding of non-ascii urls in web seeds
+- Fix: uTP fix when receiving acks for old packets
+- Fix: uTP variable packet size bug
+- Change: link to EULA in installer
+- Change: added knob to set the uTP target delay (adjusts how hard to push uTP uploads)
+- Fix: don't wait indefinitely for trackers and UPnP when shutting down (two new advanced options)
+- Fix: fixed bug where uTP might send packets larger than the MTU
+- Fix: fixed inaccuracy in net.calc_overhead
+- Fix: download rate limiter for uTP connections
+- Fix: lowered uTP overhead by increasing the max packet size to fit mtu
+- Change: Enable DEP Compatibility and Image Randomization
+- Fix: Socket bug that broke incoming connections. (Mac)
+- Fix: Deadlock/100% CPU utilization on socket error. (Mac)
+- Fix: default download folder was not used when using the WebUI
+- Fix: improve TCP/uTP mixed mode
+- Change: support some older skins
+- Fix: .dat file memory leak
+- Fix: Torrent create bug introduced while optimizing file order
+- Fix: uTP selective ack was broken
+- Fix: uTP bug introduced while lowering overhead
+- Change: Preserve file order text
+- Fix: Prompt for .torrent association with new installs
+- Change: Default bt.graceful_shutdown=true and diskio.no_zero=true
+- Fix: Integrity check .dat files after saving. Do not overwrite file.dat.old with a bad file.dat
+- Feature: New "Transfer Cap" pane in Preferences
+- Feature: uTP can be enabled or disabled using "Enable bandwidth management" checkbox in Preferences
+- Fix: Check at startup for incompatible versions of NVIDIA nForce firewall
+
+-- 2009-02-25: Version 1.9 (build 14659)
+- Change: uTP variable packet sizes (decreases overhead)
+- Change: added code for handing bundles with the bundle type encoded in the bundle
+- Change: modified the bundle code to unconditionally pop up dialog box
+- Change: modified installer to remove the extra 32 bytes for the bundle type when installing from bundle 
+- Change: added checkbox to the build torrent dialog so the user has the option not to rearrange the file order.
+- Change: Modified the string for the "Start Seeding" checkbox to use 't' as the shortcut since 's' was being used by "Create and Save As..."
+- Change: lengthen "About" dialog
+- Fix: no longer shows "make this your default .torrent handler" when running a bundle
+- Fix: Integrity check .dat files after saving. Do not overwrite file.dat.old with a bad file.dat
+
+-- 2009-02-13: Version 1.9 (build 14589)
+- Change: optimize torrent generator to move the largest file to the front of the torrent
+- Change: support TB, PB, and EB sizes in UI
+- Feature: language selector and downloader before installer
+- Change: show revision number in HTTP user agent
+
+--- 2009-02-04: Version 1.9 (build 14470)
+- Feature: url bundling (from 1.8.2)
+- Fix: duplicate search engines are no longer added to the list
+- Fix: don't process SYN packets on existing uTP connections
+- Fix: uTP congestion control fix
+- Change: Translation initialization
+- Change: 'h' peer flag for connections via hole-punching
+
+--- 2008-12-24: Version 1.9 (build 13910)
+- Fix: never 'upload_only' in superseeding mode
+- Fix: total download byte counters
+
+--- 2008-12-20: Version 1.9 (build 13885)
+- Feature: NAT hole-punching (for uTP only)
+- Feature: account for uTP overhead when net.calc_overhead is true
+- Feature: Open URL in Browser for torrents
+- Feature: Right click menu in RSS history
+- Change: default net.calc_overhead to true
+- Change: Red RSS icon for broken feeds
+- Change: Bring back RSS icons for new and previously downloaded items
+- Change: Use feed name as label to torrents downloaded via RSS
+- Change: RSS dialog subscription wording
+- Change: URL column in RSS history
+- Change: Tweak RSS episode parser to better handle multi-episode feed items
+- Fix: uTP compatibility with 1.8.1
+
+--- 2008-12-02: Version 1.9 (build 13582)
+- Change: add independent TCP and uTP, and queue length stats to Statistics dialog
+- Fix: another fix to trackers stuck in "updating..."
+- Fix: PEX address parsing bug
+- Fix: New Download message from RSS feed
+
+--- 2008-12-01: Version 1.9 (build 13559)
+- Fix: TCP connection queue when using uTP (fixed trackers stuck in "updating...")
+- Fix: re-connecting too quickly to peers when using uTP
+- Fix: crash/corrupt text with Advanced button in Add Torrent dialog
+
+--- 2008-11-24: Version 1.9 (build 13485)
+- Feature: uTP with rate balancing
+
+--- 2009-02-03: Version 1.8.2 (build 14458)
+- Fix: installer crashes after installing on Vista
+
+--- 2009-01-29: Version 1.8.2 (build 14415)
+- Change: installer will appear based on revision number instead of executable modification time
+
+--- 2009-01-24: Version 1.8.2 (build 14153)
+- Feature: allow btsearch bundling
+- Change: add bt.transp_disposition value (3) for uTP-only
+- Change: allow 16kB piece sizes
+- Fix: PEX address parsing bug
+
+--- 2008-10-07: Version 1.8.1 (build 12639)
+- Fix: install dialog appearing on auto-upgrade from 1.8
+
+--- 2008-10-06: Version 1.8.1 (build 12616)
+- Fix: disconnect inactive peers sometimes not taking effect
+- Fix: rare crash with very large peer lists
+
+--- 2008-10-02: Version 1.8.1 RC1 (build 12549)
+- Feature: detect IPv4 external IP from Teredo address
+- Change: revert "remaining" bytes to seeding goal change
+- Fix: parsing of IPs with leading zeros, in ipfilter.dat
+
+--- 2008-09-29: Version 1.8.1 beta (build 12495)
+- Feature: Remaining column displays bytes left to meet seed goal, when seeding (webui too)
+- Fix: crash when deleteing torrent data
+- Fix: do not log about moving torrent data if it is already in the correct place
+- Fix: do not leave webui password field blank if no change occurred
+- Fix: parsing of URLs with username:password@
+- Fix: avoid duplicate connections with the same ID
+- Fix: a few UPnP log messages
+- Fix: crashes on Vista when network was changed (VPN, enabled/disabled, hibernation)
+
+--- 2008-09-21: Version 1.8.1 beta (build 12323)
+- Fix: diskio.no_zero also when not pre-allocating
+- Fix: magnet URI .torrent storage path still was not being set
+
+--- 2008-09-20: Version 1.8.1 beta (build 12320)
+- Feature: diskio.no_zero, to avoid zeroing a file during allocation, where available (>= XP)
+- Fix: kB/s truncated off upload speed in speed guide
+- Fix: connection distribution system with large number of torrents and a low global limit
+
+--- 2008-09-19: Version 1.8.1 beta (build 12285)
+- Feature: parse 'downloaded' if sent with announce response
+- Change: do not include IPv6 addresses in 'Copy Peer List' if IPv6 is not installed (fixes [<ERROR>]:12345)
+- Fix: store .torrents from magnet URIs in correct storage path
+- Fix: halfopen miscount with aborted https connections
+
+--- 2008-09-12: Version 1.8.1 beta (build 12183)
+- Fix: duplicate connections to same IP
+- Fix: cancelled connection counting (solves tracker stuck in "updating...")
+
+--- 2008-09-10: Version 1.8.1 beta (build 12154)
+- Fix: IP detection on < Win2k
+- Change: write DefaultIcon for .torrent association
+
+--- 2008-09-09: Version 1.8.1 beta (build 12130)
+- Feature: resolve hostnames through SOCKS4a and HTTPS proxies
+- Feature: add option for hostname resolution through proxies
+- Feature: isp.bep22, default off, inactive for private torrents (see: http://bittorrent.org/beps/bep_0022.html)
+- Feature: report successful upgrade, with statistics
+- Change: make room for the 'Downloaded' column header
+- Change: save resume file when graceful_shutdown is off and the time runs out
+- Fix: handle timed out sockets that connect eventually
+- Fix: crash with guest login for the webui
+- Fix: remove Teredo-specific logic from IPv6 support
+- Fix: IPv6 with SOCKS5
+- Fix: literal IPv6 addresses in tracker and web seed URLs
+
+--- 2008-09-05: Version 1.8.1 beta (build 12083)
+- Feature: Double clicking RSS feed in category view edits feed
+- Change: Filter RSS log messages
+- Fix: guest account for webui
+- Fix: move halfopen counting improvements - should fix "tracker stuck in offline state" errors
+- Fix: work around Kaspersky bug with DNS SRV records
+
+--- 2008-08-29: Version 1.8.1 beta (build 12024)
+- Change: reduce coalesce_write_size back to 2MB
+- Fix: improved halfopen counting
+- Fix: slow load with slow drives that are present
+
+--- 2008-08-25: Version 1.8.1 beta (build 11962)
+- Fix: Issue where dialogs would focus main window when closed instead of last focused dialog
+- Fix: Copying of corrupt data from certain fields in the general tab
+- Fix: Corruption and various other settings-related issues caused by previous 1.8.1 betas
+- Fix: webui hashed password field auto-blanks and only hashes on change
+
+--- 2008-08-19: Version 1.8.1 beta (build 11903)
+- Change: Allow custom seeding time maximums
+- Fix: webui hashed password upgrade from <= 1.8
+- Fix: resolve conflicts between .torrents in move complete path with .1.torrent etc
+- Fix: crash with cancelling HTTPS requests
+
+--- 2008-08-18: Version 1.8.1 beta (build 11882)
+- Feature: 2x faster hashing
+- Feature: Open Containing Folder for Files tab
+- Change: sort torrents without ETA after torrents with infinity
+- Change: remove "Download Limited" behaviour
+- Change: turn sparse files off by default, due to fragmentation issues
+- Change: relax min_interval restriction on manual updates to 60 seconds if the last tracker request failed
+- Change: store hash of the webui password instead of plaintext
+- Fix: force non-sparse with preallocate on
+- Fix: 'hostname not found' on NT4
+- Fix: slow load with lots of torrents that point to a dead/missing drive
+- Fix: Some checkboxes overlapping others in the connection section of preferences
+- Fix: work around NOD32 IMON bug (HTTP 400)
+
+--- 2008-08-12: Version 1.8 (build 11813)
+- Fix: do not check routing for IPs when a proxy is in use
+- Fix: replace backslashes in file paths for multifile URL seeding with forward slashes
+- Fix: incorrect bencode key sorting on keys where one is a subset of the other
+
+--- 2008-08-10: Version 1.8 (build 11758)
+- Fix: magnet URI file naming
+
+--- 2008-08-09: Version 1.8 (build 11742)
+- Fix: adding directory for multifile torrents in addition to default save path
+
+--- 2008-08-08: Version 1.8 RC8 (build 11730)
+- Fix: work around Windows bug with network drives and sparse files
+- Fix: crash with Torrent and RSS items selected when setting labels
+- Fix: write MIME associations to a user-writable location in the registry, for limited user accounts
+- Fix: check the 'complete' folder for items downloaded from RSS, same as adding manually
+
+--- 2008-08-05: Version 1.8 RC7 (build 11705)
+- Feature: Downloaded column for Trackers tab
+- Change: Return to 1.7 peer logging behaviour of turning the logging off when the logging tab menu is brought up and dismissed
+- Change: advanced option for mapping only TCP port with UPnP (for broken routers)
+- Change: Remove redundant error message when a torrent from the autoload folder is not loaded
+- Fix: Do not bring window to front when "Activate the program window" under "When adding torrents" is not selected
+- Fix: crash with very large copying Created By field
+- Fix: enforce prio_first_last_piece with magnet URI downloads
+- Fix: create folder for multi file torrents, with magnet URI downloads
+- Fix: When an autoload directory is set more add torrent dialogs will not be shown until the current batch is closed
+
+--- 2008-07-22: Version 1.8 RC6 (build 11564)
+- Fix: loading of skins (enabled and disabled images, flags)
+- Fix: crash with Change Location dialog when adding torrents
+
+--- 2008-07-21: Version 1.8 RC5 (build 11549)
+- Feature: add associate magnet URI button
+- Change: handle magnet URIs
+- Change: make association check on startup apply to all associations, not just .torrent
+- Change: when a file is relocated, do not recheck if it is unlikely the file has changed. mirrors Stop and Start behaviour
+- Change: warn and do not load skins of the wrong size
+- Fix: logger options represent settings after peer log selection
+- Fix: do not reset check_update_beta when upgrading from beta to stable
+- Fix: rare http peer connection stall
+
+--- 2008-07-16: Version 1.8 RC4 (build 11468)
+- Fix: possible fatal error after clearing peer list
+
+--- 2008-07-15: Version 1.8 RC3 (build 11464)
+- Change: move upload_only flag to extension message
+- Change: add peer ID for the BitTorrent SDK
+- Fix: Clear Peers would leave some peers in the list
+- Fix: do not try to connect to IPv6 peers if IPv6 is not installed
+- Fix: crash when a download completed and connections were pending
+- Fix: correctly reset completed_on and move files for torrent that finish a second time (after unskipping or force rechecking and losing data)
+- Fix: cookie syntax with HTTP proxies
+
+--- 2008-07-15: Version 1.8 RC2 (build 11439)
+- Feature: 'Clear all logging flags' in logger tab
+- Feature: use SOCKS5 hostname capability instead of resolving DNS locally
+- Change: move icmp port bind failure message to misc error log
+- Change: prefer to resume pieces which are more complete
+- Change: sort piece bar column on Pieces tab by number of busy blocks
+- Change: stopped torrents now show no ETA instead of infinity
+- Change: do not automatically register .torrent, prompt instead
+- Change: fix overuse of ellipses in menu items
+- Change: while downloading, disconnect 'upload only' peers that have nothing we need
+- Change: do not display infinity for >1000 share ratio in general tab
+- Change: improve peer connection priority system
+- Fix: send reject messages for requests dropped from socket buffer
+- Fix: bring the window to the front correctly when "Activate the program window" under "When adding torrents" is selected on Windows 98/2000+
+- Fix: reset .torrent file attributes when copying to storage so that it can be deleted etc. later if wanted
+- Fix: prevent excessively long multiscrape HTTPS URLs because wininet can not handle them
+- Fix: fix column display when RSS category is selected and no torrents are loaded
+- Fix: showing of RSS Downloader from category context menu when no RSS items were present
+- Fix: include HTTP seed connections in "use proxy for p2p connections" option
+- Fix: shutting down when there are deleted torrents to process and graceful_shutdown is on
+- Fix: systray icon loading before Explorer is running
+
+--- 2008-06-25: Version 1.8 RC1 (build 11200)
+- Change: beta markings removed
+
+--- 2008-06-25: Version 1.8 beta (build 11140)
+- Fix: Enabled/Disable toggle on RSS menu
+- Fix: Bug where the rebar/toolbar was not displaying correctly on XP+
+
+--- 2008-06-23: Version 1.8 beta (build 11086)
+- Feature: send stop event to tracker on third announce interval after torrent is paused
+- Feature: add "Open RSS Favorites..." to RSS category context menu
+- Change: with XP UPnP, log that we are not remapping when a mapping exists
+- Fix: preserve command line flags in run on startup string, if the path/exe is the same
+- Fix: do not show a balloon when RSS adds a torrent that is already loaded
+- Fix: allow a different filename selection if the save fails after creating a torrent, without re-hashing the data
+
+--- 2008-06-13: Version 1.8 beta (build 10853)
+- Fix: re-enable installer dialog
+- Fix: save "run on startup" across installs
+
+--- 2008-06-12: Version 1.8 beta (build 10843)
+- Change: remove extra debugging (exe size and CPU should be back to normal)
+- Change: add ftp34.dll to malware DLLs list. Please scan your systems!
+- Fix: Fatal Error: 3985
+- Fix: Some tweaks to refix searchbox border issue
+- Fix: a couple inverted Yes/No vs. Ok/Cancel checks
+
+--- 2008-06-09: Version 1.8 beta (build 10770)
+- Change: Display application name instead of executable name in Windows Vista message boxes
+- Change: Make more message boxes that had OK and CANCEL options instead have YES and NO options
+- Change: When deleting trackers, display the real number of trackers being deleted, not including PEX, DHT, or LPD
+- Change: Changed confirmation text when deleting trackers and torrents
+- Change: Change text of autoupdate confirmation dialog to clarify what the checkbox on it does; do not show the checkbox when updating manually
+- Change: Display infinity symbol if the current font supports it in appropriate places
+- Change: When bt.graceful_shutdown is enabled the autoupdate process will now wait indefinately for the original process to shut down
+- Change: ETA times are now maxed out at 4 years
+- Fix: Bug where searchbox border was drawn below toolbar when toolbar is hidden and then reshown
+- Fix: Bug where part of the rebar (XP+) was drawn below toolbar when toolbar is hidden and then reshown
+- Fix: Z/Tab order bug with searchbox in main window
+
+--- 2008-05-29: Version 1.8 beta (build 10497)
+- Change: Display number of deleted trackers as well
+- Fix: formatting of bytes 1000 through 1031
+- Fix: Tab order issue in create torrent dialog
+
+--- 2008-05-27: Version 1.8 beta (build 10431)
+- Change: The deletion comfirmation dialog for torrents now shows how many are to be deleted
+- Change: Add System Default language option to preferences
+
+--- 2008-05-26: Version 1.8 beta (build 10415)
+- Change: add ETA strings to lang file
+- Fix: crash when editing 'Run Program' on multiple torrents simultaniously
+- Fix: association check looking for an extra key that association did not add
+- Fix: case where UPnP would remap UDP (if TCP was already mapped)
+
+--- 2008-05-20: Version 1.8 beta (build 10363)
+- Change: grey out association buttons if associated
+- Change: stagger PEX interval per-torrent
+- Change: keep the RSS publication date after the torrent is added, for 'Added On'
+- Fix: (XP UPnP) no need to remove the mappings if they are the same port number
+- Fix: crash when saving resume.dat with very large peer lists
+- Fix: crash when a connection limit is hit and there is no "most inactive" peer and a local peer connection arrives
+
+--- 2008-05-13: Version 1.8 beta (build 10198)
+- Change: add node age to DHT dump buckets
+- Fix: very rare (and very old) bug with expired peers and PEX
+- Fix: DHT tid processing
+
+--- 2008-05-13: Version 1.8 beta (build 10182)
+- Fix: less rare crash bug with incoming socket timeout
+
+--- 2008-05-13: Version 1.8 beta (build 10181)
+- Change: token-based webui changes to prevent XSRF (optional: webui.token_auth)
+- Change: send webui response as 'text/plain'
+- Change: upload activity prevents a downloading torrent from being marked as "inactive"
+- Fix: rare crash bug with incoming socket timeout
+- Fix: .torrent autoload problems when using Add Torrent dialog
+- Fix: XP UPnP IP field bug
+
+--- 2008-05-10: Version 1.8 beta (build 10093)
+- Change: prealloc_space now overrides diskio.sparse_files
+- Change: warn when disk buffer allocation fails
+- Fix: slow or no connections with large numbers of seeding torrents
+- Fix: XP UPnP IP field bug
+
+--- 2008-05-09: Version 1.8 beta (build 10085)
+- Change: change unique id to include last-seen timestamp
+- Fix: very rare DHT memory corruption
+- Fix: vertical grid lines on speed graph were off-by-one
+
+--- 2008-05-08: Version 1.8 beta (build 10054)
+- Feature: gui.log_date for logging date in Logger lines
+- Feature: add 'complete', 'incomplete' and 'external ip' to internal tracker
+- Feature: net.calc_overhead to add TCP/IP overhead calculation to rate measure
+- Change: Merge General and Transfer tabs
+- Change: send webui response as 'application/x-json'
+- Change: log about invalid lines in ipfilter (in misc errors)
+- Change: keep old computer ids, to reduce scam warning on valid ID switch
+- Change: remove 0x8000 flag from peerid
+- Fix: internal tracker
+- Fix: give the Speed Guide a title
+- Fix: ipfilter would not drop some peers on reload
+- Fix: GDI memory leak when changing torrents
+- Fix: several (minor) UPnP bugs when enabling/disabling and/or changing the port
+- Fix: Minor memory leak involving help file downloader
+- Fix: GDI handle leak on resize
+- Fix: grid lines on speed graph were off-by-one
+
+--- 2008-04-20: Version 1.8 beta (build 9704)
+- Change: when done, disconnect peers that have everything we have (instead of only 100%)
+- Change: drop inactive peers in favor of local peers, if a connection limit is hit
+- Fix: timezone parsing in RSS feeds (PST, EDT, etc)
+- Fix: allowed fast messages before we have metadata
+- Fix: "incorrect alignment" errors
+- Fix: crash when creating and seeding torrent
+
+--- 2008-04-15: Version 1.8 beta (build 9599)
+- Change: make 'Local Peer Discovery' and 'Peer Exchange' more like the DHT entry in the Trackers tab
+- Fix: crash with btsearch duplicate check
+
+--- 2008-04-14: Version 1.8 beta (build 9578)
+- Feature: show PEX and LSD in Trackers tab
+- Change: warn about file size exceeding volume limit in add torrent dialog
+
+--- 2008-04-14: Version 1.8 beta (build 9564)
+- Change: do not open files that do not exist, in Files tab
+- Change: remove 10000 cap on share ratio display
+- Change: remove default search engines (see http://www.bittorrent.org/beps/bep_0018.html for search plugins)
+- Change: local peer connections do not count towards the NAT light
+- Fix: smart sparse hash check on compressed NTFS volumes
+- Fix: context menu copy of peers entry (was stripping whitespace)
+- Fix: loading .btsearch files on startup and from drag'n'drop
+- Fix: loading the same .btsearch again caused a second entry
+- Fix: RSS items marked as "Previously Downloaded" even on error
+- Fix: lexicographical ordering of bencode dict keys (fixes .torrent creation)
+- Fix: UNC path handling of storage directories
+
+--- 2008-04-04: Version 1.8 beta (build 9363)
+- Fix: crash with some RSS settings files
+- Fix: DHT processing
+
+--- 2008-04-03: Version 1.8 beta (build 9360)
+- Change: improved DHT processing
+- Fix: infrequent lock ups with the Files tab
+- Fix: Some cases where icons in add torrent dialog were not loaded properly
+- Fix: Display of '&' characters in various places including general tab
+- Fix: titlebar speed formatting
+- Fix: 'remove' and 'removedata' actions in webui now respect the 'remove to trash' option
+
+--- 2008-03-28: Version 1.8 beta (build 9272)
+- Change: better error messages on bind failure
+- Change: clear peer traffic logging options on startup (fixes noisy logging after 1.7 upgrade)
+- Change: diskio.smart_sparse_hash for broken file systems (like Windows Home Server)
+- Fix: UNC and long path parsing
+- Fix: more "Invalid Parameter" errors when drives are not present when the torrent is added
+- Fix: DHT dump buckets formatting for large numbers
+- Fix: black progress bar on 0 byte files
+- Fix: Enable/Disable Feed option on All Feeds item
+
+--- 2008-03-21: Version 1.8 beta (build 9137)
+- Feature: Different download listview settings for RSS categories and regular Torrents
+- Feature: (advanced) option to use tall or short Category list
+- Feature: improve distribution of new connections across torrents
+- Change: open Category list on upgrade to 1.8, if there are any RSS feeds
+- Change: increase tracker interval on failure ("failure message" and HTTP 50X status codes)
+- Change: reduce number of digits on many list and bar speeds and sizes
+- Change: informative error on bind failure
+- Change: slow_ul/dl_threshold affects inactive/active status as well
+- Change: default sort order for RSS categories to 'Added On'
+- Fix: use different UPnP mapping names to prevent UDP mapping overwriteing TCP mapping on some routers
+- Fix: peer.resolve_country
+- Fix: higher scrape count for peers was not displayed in the torrent list Peers column
+- Fix: HTTPS User-Agent for betas
+- Fix: "Invalid Parameter" errors with long path names
+
+--- 2008-03-10: Version 1.8 alpha (build 8912)
+- Fix: crash when stopping an in-progress hash-check
+
+--- 2008-03-10: Version 1.8 alpha (build 8907)
+- Change: more strict fast resume for compact allocation
+- Fix: pieces in some files would be ignored on fast resume if any file needed rechecking
+
+--- 2008-03-07: Version 1.8 alpha (build 8891)
+- Feature: seed to peer ratio column
+- Change: remove one hour cap on interval and min_interval
+- Fix: re-hash after hash failure would sometimes be incorrect
+    
+--- 2008-03-06: Version 1.8 alpha (build 8872)
+- Fix: more connection parse errors
+
+--- 2008-03-05: Version 1.8 alpha (build 8855)
+- Fix: encrypted connection parse error
+- Fix: rare crash with metadata requests
+
+--- 2008-03-04: Version 1.8 alpha (build 8852)
+- Feature: add queue.slow_dl/ul_threshold advanced options
+- Change: Never rangeblock web seeds
+- Change: When banning a web seed due to hash fail, limit ban duration to 5 min
+- Change: Right align search button popup menu to search button to match Windows (Internet) Explorer
+- Change: preallocate diskspace now overrides bt.compact_allocation
+- Change: unchoke local peers when not rate limited
+- Change: last active column no longer counts sends while downloading
+- Change: prevent skipping files when compact allocation is on, and prevent enabling compact allocation when files are skipped
+- Change: do not use bt.compact_allocation by default on Vista, since files can not be skipped
+- Fix: allow Update Feed on All Feeds
+- Fix: Ignore last preference and overview tab from previous versions; fixes a crash when downgrading
+- Fix: hash check on compact allocation would not drop pieces that are lost
+- Fix: hash check on compact allocation would never find the last piece
+- Fix: smart hashecheck would get incorrect hashes on pieces that span file boundaries
+- Fix: Crash when redirecting multiple files at once
+
+--- 2008-02-24: Version 1.8 alpha (build 8682)
+- Fix: crash when right-clicking category view
+
+--- 2008-02-23: Version 1.8 alpha (build 8680)
+- Feature: support 'failure reason' in scrape response
+- Feature: optional piece progress bar
+- Change: (yet another) new installation dialog
+- Change: More informative error message for misc. autoupdate errors
+- Change: Return to 1.7-style RSS errors
+- Change: remove 1000 files warning in create torrent
+- Change: Turn off sparse files and turn on compact allocation by default on Vista, because it has a terrible bug
+- Change: do not enable a feed when Update Feed is selected
+- Change: send rejects to FAST extension peers that request the same piece again before it's sent
+- Change: grey out Update Feed when feed is disabled
+- Change: change Toggle Feed to Enable/Disable Feed
+- Change: update free space on focus change in create torrent
+- Change: some RSS speed optimizations for large history and feed item counts
+- Fix: Tab order issues in Add Feed dialog
+- Fix: magnet URI download directory is now default download directoy
+- Fix: Display of "&" characters in title of folder browsing dialog on Windows versions less then Vista, and give Vista version a title
+- Fix: Preferences tab order
+- Fix: Longstanding bug where dialogs that inside tab controls did not have the proper background when using XP themes
+- Fix: Issue where it would stay as admin user after autoupdating through a normal user
+- Fix: element not found and 99% cpu bug with partfiles
+- Fix: piece picker bug that would cause it to start more equally rare pieces than needed
+- Fix: key sort order with extension handshake
+- Fix: download bar toggle
+- Fix: external IP detection with NAT-PMP and non-conforming routers (like the Airport Extreme...)
+- Fix: rare "invalid packet length" bug with encrypted connections
+- Fix: Feed names not displaying unicode characters properly in category view
+- Fix: Element Not Found when using partfiles with compact allocation
+
+--- 2008-01-28: Version 1.8 alpha (build 8205)
+- Change: Return to old font size for listview progress bars
+- Fix: Do not select a listview column if an option is not chosen from the column context menu
+- Fix: update timeouts with trackers
+- Fix: a few crash bugs
+
+--- 2008-01-26: Version 1.8 alpha (build 8188)
+- Change: Removed the two pixel gap on both sides of the main toolbar
+- Change: Add properties to torrent category menu
+- Change: Give delete torrent confirmation dialog "always show this dialog"-style functionality
+- Change: Give search button a style more conformant to the Vista UI guidelines if available
+- Change: Make delete torrent button look pressed while its menu is up
+- Change: make Search and Remove buttons consistant with IE7 search button behaviour
+- Change: removed 10 pixel gap on the right side of the searchbox 
+- Change: Alternate listview background color to be roughly the same color as the selected column, rather then a constant gray
+- Change: Increase maximum waiting time from five seconds to one minute for UAC subprocess when installing on Vista
+- Change: Add confirm deletion of trackers option to UI Settings 
+- Change: Show graphical progress bar option is now in advanced settings
+- Change: Delete key now deletes trackers in the trackers tab
+- Change: Remove label setting from torrent properties dialog
+- Change: Note that port 0 in the speed guide is a signal for uTorrent itself to choose the port
+- Change: Make about dialog non-modal
+- Change: Change text of a few updater-related checkboxes in preferences to be more specific about what they effect 
+- Change: Always show the selection in the tracker and file listviews, even if they don't have focus
+- Change: Move items in add torrent dialog listview left a bit if there are no directories in the torrent
+- Change: Max Up and Max Down have been renamed to Up Limit and Down Limit
+- Fix: Some cases of controls, such as listviews, not properly updating on Windows theme change
+- Fix: potential remote crash exploit
+- Fix: Opening dialog on Windows 95
+- Fix: Modal dialogs now correctly disable and return focus to the window they were launched from, not the main window
+- Fix: Various tiny memory leaks
+- Fix: Leaking of memory when closing non-modal dialogs (existed in both 1.6 and 1.7)
+- Fix: corrupted URL/messsage in Add Torrent by URL dialog
+- Fix: incorrect column highlighting after hiding/showing columns
+- Fix: disable webui relative path parsing
+
+--- 2008-01-18: Version 1.8 alpha (build 7928)
+- Change: If the torrent's label was changed in torrent properties form the add torrent dialog, reflect it in the add torrent dialog
+- Change: Advanced setting to disable WINE hacks if need be (program restart required)
+- Change: A boatload of GUI hacks for WINE, including disabling listview flicker workarounds, a multitude of ugly hacks to make the addtorrent dialog usable on it, and disabling the messagebox subclassing (which means no checkbox or controls in them)
+- Change: use "client" instead of "enterpriseclient" for Teredo setup
+- Fix: "Wierdly colored selection border" in add torrent dialog
+- Fix: WINE DNS problems (WINE bug in GetBestInterface)
+- Fix: possible negative "downloaded=" numbers
+- Fix: port not saving in Installation dialog
+
+--- 2008-01-17: Version 1.8 alpha (build 7895)
+- Change: Added link to forums on system tray icon
+- Change: Add context menu for bandwidth allocation column in torrents listview
+- Change: Close firewall entry of installing exe
+- Change: Continue installing settings if installing to same path of exe
+- Change: Add another hidden column to the files tab, "Name", that contains the original name of the individual file
+- Fix: Saving of retargetted files relative to the torrent's download directory
+- Fix: remote crash bug (affects all 1.6.x, 1.7.x, and 1.8 builds released to date)
+
+--- 2008-01-15: Version 1.8 alpha (build 7834)
+- Change: do not display remaining bytes if 0
+- Fix: Pressing the associate buttons in the preferences window would get .torrent and .btsearch extensions mixed up in web browsers
+- Fix: UPnP would unmap after 20 minutes instead of re-mapping
+- Fix: Wrong path put in run in startup entry when installing
+
+--- 2008-01-12: Version 1.8 alpha (build 7795)
+- Change: disable RSS query information button when no feed is selected
+- Fix: Crash in some cases with HTTP seeds
+- Fix: Speed guide always using default port in the installation dialog
+- Fix: Installation dialog showing up in some cases where it should not
+- Fix: "None" string in Vista firewall entry
+
+--- 2008-01-12: Version 1.8 alpha (build 7785)
+- Fix: crash on Win98 when making a temp file
+- Fix: Crash when showing speed guide by itself
+
+--- 2008-01-11: Version 1.8 alpha (build 7777)
+- Feature: Add Tracker and Use DHT menu items in tracker tab context menu
+- Feature: Setup Windows Firewall option in installer (prompts for elevation on Vista, assumes admin access on XP)
+- Change: Swap seeds with peers in transfer tab
+- Change: When retargeted files in torrents, make the paths relative after retarget if possible
+- Change: Combine path and name columns in files tab
+- Change: Make scheduler descriptions more descriptive and really clear left-behind text
+- Change: skip udp:// urls in tracker rotation
+- Change: grey out IPv6/Teredo option if installed or on platforms that do not support it
+- Change: do not try (and fail) to open firewall on platforms that do not support it
+- Change: parse https:// urls in Tracker column
+- Change: auto WebUI installation on enable. Installation option on /gui/index.html when not installed
+- Fix: More font size issues on Vista
+- Fix: HTTP 400s from trackers / RSS feeds when running NOD32 IMON
+- Fix: rare crash with DNS
+- Fix: rare GetExternalIP failure
+- Fix: more firewall entry removal, entry for previously installed version
+- Fix: progress bar size and placement when it was the first enabled column
+- Fix: DHT Update Tracker menu item
+- Fix: crash with partitions of different sector alignments
+- Fix: do not allow IPv6 installation on networks with DNS that do not support AAAA lookups
+- Fix: Teredo installation timeout bug: "result was: []"
+- Fix: false Teredo installation failure on non-english platforms
+- Fix: shortcut and file association problems when not moving or copying exe during install
+
+--- 2008-01-09: Version 1.8 alpha (build 7676)
+- Feature: tracker tab context menu now operates on all selected items
+- Fix: remove leftover firewall entry on install
+
+--- 2008-01-08: Version 1.8 alpha (build 7671)
+- Feature: Remove Tracker confirmation dialog
+- Fix: Hanging when pressing some buttons in preferences
+- Fix: broken Logger tab context menu
+
+--- 2008-01-08: Version 1.8 alpha (build 7660)
+- Feature: add logger option for WebUI messages
+- Change: return Category Status items to Filter behavior. "All", Labels, and RSS Feeds are still Containers
+- Change: make opening dialog wider to remove whitespace
+- Fix: recheck UPnP port mappings every 20 minutes even with the XP API
+- Fix: rare deadlock with some systems
+- Fix: prevent "No Disk" message boxes with missing media
+- Fix: elusive "The parameter is incorrect" and "The data is invalid" errors on Win98 (old partfiles with this error are corrupt, sorry)
+- Fix: tray icon removal on Vista
+- Fix: Font size on Vista with all DPIs
+- Fix: Bug where RSS items were being downloaded to settings directory if no filter path is set
+
+--- 2008-01-07: Version 1.8 alpha (build 7593)
+- Feature: Interval and Min Interval (non-default) columns for Trackers tab
+- Feature: context menu for Trackers tab
+- Feature: "Selected Size" column for main listctrl - displays total size - skipped size
+- Change: Reworked preferences dialog
+- Change: New opening dialog/wizard with speed guide/setup combination
+- Change: peer id parsing for (lol) LimeWire 
+- Change: Remove a previous fix for custom taskbar/title icons, as it make some existing ones choose the wrong format
+- Change: If a default download directory is chosen, torrents automatically added from the autoload directory will never pop up the add torrent dialog
+- Change: An error is now shown if there is a autoload directory, a custom torrent storage directory is not chosen, and the autoload directory matches the settings directory
+- Change: use CONNECT for peer connections through HTTP style proxies
+- Change: "Seeding only"/pink scheduler mode, available before when shift was held down, is now part of the normal scheduler click rotation
+- Change: In places where the infinity symbol was printed, nothing is printed
+- Fix: reverse DNS resolution with old-style tracker responses
+- Fix: search string corruption on Win98
+- Fix: resolve host to report to tracker before any tracker requests
+- Fix: CONNECT requests to "HTTPS" style proxies (peer connections now work)
+- Fix: communication with trackers that only parse the first TCP packet (fix your trackers please!)
+- Fix: trackers stuck in "updating..." if UPnP was enabled but not functioning
+- Fix: negative "Remaining" value if files are skipped after they are completed
+- Fix: When a second instance is started while uTorrent is shutting down, it will now wait for the first instance to finish then continue, rather then silently quitting
+
+--- 2008-01-03: Version 1.8 alpha (build 7491)
+- Feature: add Copy to the Logger tab context menu
+- Change: only use "B" for sizes, not rates
+- Fix: IPv6 resolution for DNS names
+- Fix: intermittent DNS failures
+- Fix: stall in (un)choker at startup
+- Fix: crash with large numbers of sockets
+- Fix: string corruption on Win98
+
+--- 2008-01-01: Version 1.8 alpha (build 7435)
+- Feature: options to bypass Windows disk cache
+- Change: flush write jobs if downloading is complete
+- Change: remove bundled sorts in "#", "eta" and "completed on". use second-sort instead
+- Change: Add some elipses to a couple context menu options in the main window (Add Torrent, Add RSS Feed) for consistency
+- Fix: delete files normally if delete to trash fails
+- Fix: stalls and invalid requests with HTTP seeds
+- Fix: load torrents with incorrect relative paths from previous alphas
+- Fix: do not look for torrent on the network if .torrent file dissappears
+- Fix: crash bug loading torrent state when .torrent is missing and file target was set previously
+- Fix: wrong .torrent file name was saved if .torrent was loaded from torrent storage directory
+
+--- 2007-12-30: Version 1.8 alpha (build 7398)
+- Change: better error when file exceeds filesystem size limit
+- Fix: "<ERROR>" sometimes appearing in download limit in the transfer tab
+- Fix: Logging options if "Log Traffic to Logger Tab" is chosen from the peers tab menu
+- Fix: rare crash with hashfails
+- Fix: season column showing episode for torrent items
+
+--- 2007-12-24: Version 1.8 alpha (build 7364)
+- Feature: Users can now be more precise in the log options they want to display
+- Change: When moving .torrent files to the completed torrent folder, uTorrent now will replace existing torrent files with the same name in the folder and create folders up to the completed folder if necessary (same behavior as when moving to the original torrent storage folder)
+- Change: When enabling teredo at installation, hide the background netsh process window
+- Fix: Speed graph dotted lines on Win9x
+- Fix: Speed graph left legend alignment on Win9x
+- Fix: Handling of relative paths when moving torrent file to completed folder
+- Fix: persist current initial-seed piece in settings
+
+--- 2007-12-17: Version 1.8 alpha (build 7237)
+- Feature: setup Teredo automatically (requires IPv6)
+- Feature: automatic unchoke intervals based on piece size
+- Fix: Support relative paths in torrent storage location and other user entered paths
+- Fix: Installation of shortcuts and various other issues
+
+--- 2007-12-17: Version 1.8 alpha (build 7135)
+- Feature: skip hashchecking sparse sections of sparse files (greatly improves check speed)
+- Change: With custom main.ico files, uTorrent now explicitly loads the system menu-sized icon (fixing some alt-tab and other oversizing issues that have existed since at least 1.6)
+- Change: Help menu option now downloads utorrent-help.zip directly from website and obtains the help file form the zip file
+- Change: Display infinity for up/download limits in transfer tab if there is none set for them
+- Fix: Enabling of shutdown privileges so that autoshutdown works
+
+--- 2007-12-17: Version 1.8 alpha (build 7118)
+- Change: "#" sorts by "completed on" for seeding torrents
+- Change: "eta" sorts by "completed on" for seeding torrents (and "completed on" sorts by "eta" for download torrents)
+- Change: Layout of "Save in:" column in RSS filter tab to match others with "..." buttons
+- Fix: crash bug with relevance column and metadata mode
+- Fix: directories left behind by Delete + Data to trash
+- Fix: prio_first_last_piece would overlap adjacent files more than needed
+- Fix: ETA miscalc with bottlenecked torrents
+- Fix: Font scaling on vista with non-default DPI
+- Fix: Tab order of advanced tab in torrent properties
+
+--- 2007-12-12: Version 1.8 alpha (build 7022)
+- Feature: better Windows Firewall registration on Vista
+- Change: move IpFilter and RangeBlock blocked messages to Peer Traffic
+- Change: webui now looks for webui.zip on each request
+- Fix: crash when deleting multiple RSS feeds
+- Fix: crash with very large numbers of outstanding disk IO jobs
+- Fix: minor titlebar and torrent list transfer rate mismatch
+    
+--- 2007-12-04: Version 1.8 alpha (build 6838)
+- Change: friendly name logging in UPnP verbose log
+- Change: prevent delete to trash from locking up transfers
+- Fix: Showing of add feed dialog on Vista
+- Fix: more GDI leaks
+
+--- 2007-12-04: Version 1.8 alpha (build 6806)
+- Change: default to "All" category on startup if none selected
+- Fix: Some blank dialogs on Windows 9x
+- Fix: Some dialogs on Vista that didn't use the native font
+- Fix: some GDI leaks
+- Fix: upnp never stopped updating if it was disabled (prevented tracker updates)
+
+--- 2007-12-03: Version 1.8 alpha (build 6799)
+- Change: Add support for more 4095 characters in edit controls and other windows
+- Change: Make category selections a union
+- Change: persist current initial-seed piece in settings
+- Fix: It will run on Windows 9x again
+- Fix: Cancelling an in-place edit in the main listview no longer accepts that value on Windows 9x
+- Fix: Some blocks appearing in some scheduler day/time strings in the preferences dialog
+- Fix: incorrect selected_cats length in settings
+- Fix: adding blank url-list to .torrent on generation
+- Fix: "&corrupt=" instead of "&corrupted="
+- Fix: UPnP unmap issue, existant mapping with XP API
+- Fix: seed-only mode in scheduler (https seeds were not stopping)
+
+--- 2007-12-01: Version 1.8 alpha (build 6723)
+- Feature: Improved ETA algorithm
+- Feature: report "&corrupted=X" to the tracker (hashfail byte count, deltas same as downloaded= and uploaded=)
+- Feature: All Feeds category
+- Change: Only use 3-state checkboxes in torrent properties for torrent combinations with a mixed state
+- Change: The LSD option is now completely per-torrent and is no longer global as well
+- Change: move IpFilter and RangeBlock blocked messages to Verbose
+- Change: Parts of the general and transfer tab can now be scrolled
+- Change: Put a separator after the create torrent button
+- Fix: crashbug with prio_first_last_piece and some torrents
+- Fix: more accurate check for existant UPnP mapping
+- Fix: close files during hash check
+- Fix: disable the web seeds edit control while the create torrent dialog is busy
+- Fix: display correct font in download bar so that infinity symbol shows
+- Fix: Crash in add torrent dialog when unexpanding certain items
+- Fix: hashfail with part file
+- Fix: Last Active sorting  
+
+--- 2007-11-21: Version 1.8 alpha (build 6415)
+- Change: add resource version info properly, so Explorer tooltip works
+- Change: turn banned dlls in to vebose log messages and notes on the crashdump dialog
+- Change: Local peer discovery can now be controlled per-torrent through torrent properties
+- Change: Various changes to file retargetting feature based on user feedback
+- Change: Various changes to transfer tab text layout based on user feedback
+- Change: Added ability to autosize first column in the new add torrent listview by double-clicking the header divider
+- Change: Hide path column by default for now in add torrent listview
+- Change: The add torrent listview now remembers the column state (which columns are visible etc.) 
+- Fix: crash bugs in selecting RSS feed from category view, and sorting RSS items
+- Fix: some minor memory leaks/size issues
+- Fix: remove noisy logging
+- Fix: crash bug with SOCKS5 proxies, and a problem with SOCKS4 proxies not connecting
+- Fix: Loading of single file torrents from custom-set complete directory
+- Fix: minor DHT improvement, prevents early termination of queries
+- Fix: Loading of torrents from certain directories (alpha-specific)
+- Fix: Total size refereshing in add torrent dialog when path is changed (alpha-specific) 
+- Fix: Correct initial values of second tab of the torrent properties dialog (alpha-specific)
+- Fix: Various issues of reloading HTTP seeds when changed from torrent properties
+- Fix: HTTP seeds of torrents editing through torrent properties is now remembered between sessions
+- Fix: Loading of single file torrents from custom-set complete directory (very old bug, existed back to 1.6 and possibly before then)
+- Fix: Fix a bug where the value in the filename box would get appended to the folder name in the new vista open dialog
+- Fix: allow WebUI port and BT port to be the same without error (same as not setting the WebUI port)
+    
+--- 2007-11-15: Version 1.8 alpha (build 6171)
+- Feature: Support for file:// URLs
+- Feature: Use RSS feed title as alias if available
+- Feature: Last Active column
+- Feature: Use RSS feed TTL value if available
+- Feature: RSS title parsing available for all torrents in main window
+- Feature: Codec parsing from title
+- Feature: Smart episode filter will download repack for most recent episode with rss.smart_repack_filter
+- Feature: More support for http web seeds including support for torrents with multiple files, torrent creation with web seeds, and changing web seeds on the fly via torrent properties
+- Feature: Elapsed time column
+- Feature: Program start time in statistics window
+- Feature: Improved hashfail banning system (special thanks to the Azureus devs for describing their method)
+- Feature: Faster resume after a crash (does not re-check finished or flushed files)
+- Feature: Support FAST extensions
+- Feature: Basic auto-download setup available while adding RSS feeds
+- Feature: Metadata extension
+- Feature: Support %s (search term) and %v (version identifier) in search engine list
+- Feature: Support .btsearch files to add to search engine list
+- Feature: Improved uTorrent UPnP mechanism. Should map correctly on routers that only send NOTIFY packets, uses XP API where functional, and maps UDP port now too
+- Feature: Editing torrent properties now works on multiple torrents (batch torrent property editing)
+- Change: User-Agent for web usage is now "BTWebClient/" plus uT version
+- Change: Added a tracker and transfers tab to help spread out the information a bit
+- Change: uTorrent now fetches paths using shfolder.dll so that it can get the correct APPDATA path for Windows 95. If you are on a similar system you will need to download shfolder.dll from Microsoft if you do not have a later version of Internet Explorer installed.
+- Change: Change addtorrent dialog treeview into a listview so it can be sorted + have a selection rectangle et al.
+- Change: uTorrent now uses the user's download folder on Vista by default, rather than the custom %HOMEPATH%\Downloads
+- Change: utorrent.exe now has version, company, and product metadata
+- Change: prio_first_last_piece now prioritizes first and last megabyte of file instead of only the piece on the edge
+- Change: diskio.sparse_files is now enabled by default
+- Change: RSS feeds listed in category view, items in main window
+- Change: Removed now-redundant feeds and releases tabs from RSS Downloader window
+- Change: RSS button on toolbar now brings up Add Feed dialog
+- Change: rss.filters_use_default_dir determines if default download folder is used for filter matches when filter or settings do not specify a download path
+- Change: do not use adapter subnets to detect local peers. seems to result in many false-positives
+- Change: Add torrent uses .torrent storage path as default search path
+- Change: allow a manual reannounce every max(60 seconds, min_interval) where min_interval is from the tracker
+- Change: remove non-US supporting site from search list
+- Change: queue RSS feed updates
+- Change: ";" no longer separates skip files in Create Torrent since it is a valid filename character in Windows
+- Change: no more blank white screen when the WebUI is not installed, instead an informative message and a link (also 404s for other resource requests)
+- Change: Adding trackers via RSS autodownload does not override original label
+- Change: Help option in Help menu now downloads and displays utorrent .chm manual instead of launching online FAQ
+- Change: Widen downloadbar to 600 pixels for translators
+- Change: The folder selection dialog no longer uses the compatability version of the native dialog on Windows Vista
+- Change: Torrent paths as now stored relative to the torrent storage path if possible. This enables self-contained installations to be moved while preserving path settings, for example.
+- Change: For most text, the application now uses the native Windows dialog font rather then the hardwired tahoma
+- Fix: Implement ability to change trackers for a torrent from webui 
+- Fix: When creating a .torrent file, all files are now sorted regardless of file system 
+- Fix: Logic error where it would not copy the .torrent to the storage path if only part of the path was matched
+- Fix: Bug where BT backend didn't take into account alt .torrent storage path
+- Fix: "&" characters in label names within the main download list context menu no longer become accelerators and display normally
+- Fix: Last line of ipfilter.dat is loaded if it does not end with a carriage return
+- Fix: Close file handles during hashchecking, instead of all at the end
+- Fix: Properly open RSS releases with quotes in title
+- Fix: Fixed several cases where UPnP would not unmap the portmapping on exit
+- Fix: extremely rare and extremely old crash bug with timing out disk jobs
+- Fix: Crash when removing the currently edited torrent on XP or less 
+- Fix: Crash with pressing alt-F in advanced settings
+- Fix: Tab/Z order of searchbox when using rebar on XP
+
+--- 2008-01-25: Version 1.7.7 (build 8179)
+- Fix: remote crash bug in WebUI
+- Fix: (potential) remote crash bug with extension protocol
+
+--- 2008-01-15: Version 1.7.6 (build 7859)
+- Fix: remote crash bug
+
+--- 2007-09-11: Version 1.7.5 (build 4602)
+- Fix: rare crash bug with malformed UPnP response
+- Fix: downloads stalled in rare cases
+
+--- 2007-09-06: Version 1.7.4 (build 4482)
+- Fix: crash bug in Mainline DHT compatability
+
+--- 2007-09-05: Version 1.7.3 (build 4470)
+- Change: Returned to listview for addtorrent dialog
+- Change: Always activate other instances of uTorrent, even if they were started with /HIDE or /MINIMIZE
+- Change: do not let missing or unwanted pieces prevent endgame
+- Change: improve compatability with Mainline DHT
+- Change: DHT port message implementation
+- Fix: Tentative fix for "Proxy for peer-to-peer connections" functionality if disabled
+- Fix: Divide-by-zero crash in statistics
+- Fix: Smarter guessing of whether to replace run on startup registry key in case user wants to modify it
+- Fix: Hang when deleting files
+- Fix: sending in cookie with rss feed item requests
+
+--- 2007-07-21: Version 1.7.2 (build 3458)
+- Fix: Disable Local Peer Discovery for private torrents
+
+--- 2007-07-13: Version 1.7.1 (build 3360)
+- Fix: Invalid download amounts being reported to trackers for >4GB torrents
+
+--- 2007-07-13: Version 1.7 (build 3353)
+- Fix: Some cases where uTorrent thought all peers were local
+
+--- 2007-07-13: Version 1.7 (build 3351)
+- Fix: Determination of which peers are local on Windows 98 (and possibly other 95 varieties)
+
+--- 2007-07-12: Version 1.7 (build 3341)
+- Change: add 48x48 icon
+- Change: use cached scrape stats if scrapes fail (up to 24 hours)
+- Change: "When µTorrent has reached the seeding goal" -> "When µTorrent Reaches Seeding Goal" in Queue preferences to make capitalization consistant
+- Change: Implement auto-resizing when header a divider in the addtorrent dialog treeview is double-clicked
+- Change: Rework accelerator keys of toplevel menus in the download list right-click menu so that there are no duplicate accelerator keys
+- Fix: crashes with addtorrent dialog treeview with torrents with a very large number of files in the same folder (100+)
+
+--- 2007-07-10: Version 1.7 (build 3291)
+- Change: Use 1.6 uTorrent icon
+- Fix: remove unused BT strings
+
+--- 2007-07-07: Version 1.7 (build 3265)
+- Change: Condense transfer speed text in status bar so it fits more easily
+- Fix: In the add torrent dialog, don't put files in a folder that only partially matches it's parent (i.e. "TD 1" should not go in "TD 10")
+
+--- 2007-07-05: Version 1.7 (build 3170)
+- Change: Tweaks to XML parser
+- Change: HTTP client now tries to acquire more data per request
+- Change: improved statusbar text for local bandwidth
+- Change: speed up delete .torrent and/or data a bit (parallelize tracker and disk ops)
+
+--- 2007-07-04: Version 1.7 (build 3148)
+- Change: Only report downloaded, verified good pieces in tracker announce
+- Change: Fix seeding queue behaviour when prio_no_seeds was enabled
+- Change: Show the local bandwidth in the status bar and in the speed graph (the latter in purple and blue)
+- Change: Always show total bandwidth in status bar, even when option to show bandwidth limit in status bar is enabled
+- Change: Add a limit local peers option to the bittorrent options in the preferences window
+- Fix: Some rare case memory leaks
+- FiX: Rebar chevron dropdown menu with some custom toolbar skins (previously it would sometimes have a black background on each icon)
+- Fix: Correct disabling of other controls when automatic uplink throttling is checked 
+- Fix: Enable escape key to work right after the apply button is pressed in the preferences dialog 
+
+--- 2007-06-29: Version 1.7 (build 2999)
+- Change: I18N a couple more strings
+- Change: Consider all filesystem which don't supports ACL writable (which "fixes" an access issue with Wine)
+- Change: More aggressive wine detection
+- Fix: Windows 95 compatability due to a missing export
+
+--- 2007-06-28: Version 1.7 (build 2991)
+- Change: Icon is tweaked to look better on black backgrounds and to be less grainy
+- Change: Popup menu from toolbar when collapsed is now native with icons and text, and has a border
+
+--- 2007-06-26: Version 1.7 (build 2951)
+- Change: improvements to auto uplink management on very high bandwidth connections
+- Change: bt.auto_ul_max has been removed
+- Change: For messages boxes with checkboxes on pre-vista systems add the checkbox to the tab order and reduce the size between the checkbox and bottom buttons a bit
+
+--- 2007-06-26: Version 1.7 (build 2936)
+- Fix: Always consider drives formatted with the FAT and FAT32 file systems writable/accessible
+- Fix: crash bug with Files tab
+
+--- 2007-06-25: Version 1.7 (build 2922)
+- Fix: crash bug with allow_same_ip
+
+--- 2007-06-25: Version 1.7 (build 2899)
+- Change: Tracker list rotates in UI with rate defined by gui.update_rate
+- Fix: Search button is now hidden again if there are no search engines set in the options
+- Fix: Toolbar is now hides properly again if the option is unchecked
+- Fix: Crashes when minimized to tray and trying to close
+- Fix: Low color icon no longer displays when not running in 32-bit color, instead 256 color icon is used always
+- Fix: uTorrent now always runs as the launching user, even after it does UAC work, so opening .torrent files from explorer will now work correctly
+- Fix: Memory leak in files tab
+
+--- 2007-06-18: Version 1.7 (build 2740)
+- Fix: Escape-style handling on the exit confirmation and a create torrent dialog
+
+--- 2007-06-18: Version 1.7 (build 2733)
+- Feature: Now requires or asks for elevation on Vista if needed. Currently this includes installation, uninstallation, autoupdate, and if settings files are in the same directory.
+- Feature: Several of the messageboxes now can be turned of from the messagebox itself, and some have radio buttons instead of yes/no/cancel etc.
+- Feature: Several of the messageboxes are now taskdialogs on Vista; a couple use commandlinks instead of yes/no/cancel etc.
+- Feature: uTorrent now has a 256x256 compressed png icon for Vista
+- Feature: The top toolbar in the main window is now a rebar and will collapse the left portion as the window size decreases
+- Change: (technical) When launching uTorrent from another process, it should obey the showwindow flags passed through the STARTUPINFO
+- Change: bt.auto_ul_min no longer specifies smallest speed sample, but the lowest auto rate
+- Change: The search icon is now to the right of the searchbox
+- Change: detect Wine only for TCP socket repair
+- Fix: Refresh issues with listviews on pre-XP systems
+- Fix: The rest of the webui preferences page is grayed out when it is disabled
+- Fix: Off by one error in the speed tab graph
+
+--- 2007-06-11: Version 1.7 (build 2585)
+- Fix: tickling of Wine bug with TCP sockets
+
+--- 2007-06-07: Version 1.7 (build 2539)
+- Fix: Switch focus to the tab control when the user changes a tab and focus was in a previous tab
+- Change: display local peer bandwidth in the totals (like the statusbar)
+
+--- 2007-06-07: Version 1.7 (build 2517)
+- Change: Default to delete files to trash
+- Change: Language file errors go to log instead of popup
+- Change: Make autoupdater a bit smarter with its failure messages
+
+--- 2007-06-07: Version 1.7 (build 2481)
+- Fix: fix a case where local peers would be rate limited regardless of the option
+
+--- 2007-06-07: Version 1.7 (build 2475)
+- Change: Move NAT-PMP logging to "error" and "verbose", depending
+- Fix: fix a rare crash bug on settings change (like popup speed menus)
+- Fix: if local peers aren't rate controlled still include them in speed graph
+
+--- 2007-06-06: Version 1.7 (build 2465)
+- Change: There is a new command line option, "/NOINSTALL", which will bypass the installation dialog in most instances. Installer authors should always pass this argument on the first run of the program.
+
+--- 2007-06-05: Version 1.7 (build 2448)
+- Change: Move UPnP logging to "error" and "verbose", depending
+- Fix: DHT bootstrapping in many cases
+- Fix: UPnP mapping when local IP changes
+- Fix: spurious settings file integrity failure messages
+    
+--- 2007-06-05: Version 1.7 (build 2407)
+- Fix: update local peer limiting when settings change
+- Fix: settings.dat could erroneously to be found corrupted when switching from 1.7 to 1.6.1 and back
+- Fix: restore missing upload rate for local peers
+- Fix: Make crash dialog and dumping work again in Windows 95 varieties
+- Fix: Reset completed on date if new files are unskipped and completed
+
+--- 2007-05-31: Version 1.7 (build 2248)
+- Change: uTorrent now no longer forks on uninstallation so it should correctly be removed from add/remove programs on windows 95 varieties
+- Change: include all adapters in subnet search for local peers
+- Change: consider peers in reserved local ranges as local peers
+- Change: don't limit local peers by default
+- Change: sort RSS release qualities
+- Fix: download rate limiting bug
+- Fix: fix a bug with force recheck from 2224
+
+--- 2007-05-30: Version 1.7 (build 2228)
+- Feature: allow > 65k pieces in the torrent creator (if piece size is >= 1mB)
+
+--- 2007-05-30: Version 1.7 (build 2224)
+- Feature: support > 65535 pieces (now 4294967295 is max)
+- Change: don't turn off "check association on startup" if the user says no to the dialog (use the settings to turn it off)
+- Change: Display an error dialog if the user types in an invalid path on a single file torrent for the "..." button
+- Change: case insensitive hosts in flags.conf
+- Change: RSS title parsing
+- Change: Implement home, end, pageup, and pagedown selection with shift or control keys in the addtorrent dialog treeview
+- Change: Some changes to make up, down, home, end, pageup, and pagedown keys in the addtorrent dialog treeview behave more like the old listview
+- Fix: fix duplication connection race condition
+- Fix: in filenames, replace trailing spaces with underscores (since Windows does not allow them)
+- Fix: repair settings files with duplicate entries (and log about it)
+- Fix: rss.start_matches broken with certain settings
+- Fix: Dump memory info crash on Vista
+- Fix: Would end up not rate limiting local peers if already connected before discovery and they were not on the local subnet
+
+--- 2007-05-27: Version 1.7 (build 2151)
+- Change: Remove a hack that was put in for Wine's getsockname() in build 2132; it didn't work correctly
+- Fix: multifile torrents and url-list (still unsupported, but log instead of crash)
+
+--- 2007-05-27: Version 1.7 (build 2145)
+- Change: Swap tvRSS in to the search engine list, because it's awesome
+- Change: Minor gui tweak and text removal
+- Fix: crash introduced in 2132
+
+--- 2007-05-27: Version 1.7 (build 2132)
+- Change: RSS title parsing
+- Change: Detect external IP
+- Fix: When installing to user profile directory uTorrent now tries to be smarter in choosing a localized program files directory name
+- Fix: Work around a Wine bug where getsockname() returns success but keeps passed in port at 0 if socket already bound; thus uTorrent would itself reset back to port 0 if it was already in use
+- Fix: Don't scroll general tab horizontally since it has no horizontal scrollbar
+
+--- 2007-05-22: Version 1.7 (build 1977)
+- Change: use radio marks for Bandwidth Allocation menu items instead of check marks
+
+--- 2007-05-22: Version 1.7 (build 1952)
+- Feature: Client ID parsing for Blizzard Downloader
+- Feature: Now remembers which log settings you had on each run when changed from the logger context menu
+- Change: display text strings instead of numbers for piece priority 
+- Change: reply with "invalid request" if the webui is queried on the wrong port 
+- Change: RSS filter by episode can specify ending season in addition to episode
+- Change: bt.graceful_shutdown waits for all cleanup (diskio, tracker "stopped" messages, UPnP unmapping) before exiting
+- Fix: Font size of progress bars in the main listview is the same as the rest of the listview
+- Fix: fix piece priority display bug (incorrect index)
+- Fix: Copy Selected Hosts now copies multiple hosts with a carriage return and a newline rather then just a newline 
+- Fix: Crash when clicking in window with torrent and then moving mousewheel outside application 
+- Fix: Log when the UPNP fails on the timeout (20 minutes), and on each timeout retry 3 times as it does at application launch
+
+--- 2007-05-17: Version 1.7 (build 1875)
+- Fix: Re-enabled automatic upload rate
+
+--- 2007-05-17: Version 1.7 (build 1861)
+- Fix: Fixed small port range bug
+- Fix: Fixed hasherr counter bug
+
+--- 2007-05-17: Version 1.7 (build 1822)
+- Feature: option to auto update to betas
+- Feature: reselect categories on start that were selected on the previous run of the program
+- Change: Feed information is included in RSS history
+- Change: rss.start_matches controls start behavior for RSS filter matches
+- Change: Ability to show piece priority in pieces tab 
+- Change: Disconnect immediately from connected peers that are added to block lists
+- Change: RSS filter queries will not match entries already in history
+- Change: Feed column in RSS history
+- Change: Formatting for torrent status strings
+- Change: RSS title parsing
+- Change: RSS filter by episode with just starting point
+- Change: more even distrobution of random listening port on startup
+- Fix: Size of horizontal scrollbar in addtorrent dialog treeview
+- Fix: Some rare scrollbar bugs in the addtorrent dialog treeview
+- Fix: Header updating in the addtorrent dialog treeview 
+- Fix: Size of horizontal scrollbar in addtorrent dialog treeview when expanding items
+- Fix: Display of bullets in bandwidth setting right-click menus on wine
+- Fix: Handle HTTP errors without attached messages 
+
+---- 2007-05-06: Version 1.7 (build 1703)
+- Change: Prioritize seed queue based off seed/peer ratio (use_seed_peer_ratio)
+- Change: Sort advanced settings by name
+- Fix: Workaround some ancient modal dialog bugs with keyboard and other input in non-modal dialogs by disabling them
+- Fix: Bug where one addtorrent dialog could get activated when another was already active
+- Fix: Don't repeatedly try to start if another uTorrent window is discovered but hung
+- Fix: uTorrent continues normal startup if another uTorrent instance is detected and exits; previously it would inform the user uTorrent was already running and exit
+- Fix: incorrect DHT announce interval
+
+---- 2007-05-05: Version 1.7 (build 1672)
+- Change: better DHT ping for BT node discovery 
+- Fix: potential crash bug on torrent removal
+- Fix: rare memory leak in DHT
+
+---- 2007-05-02: Version 1.7 (build 1625)
+- Change: The treeview in the addtorrent dialog now should have the same border style as the old listview
+- Change: The treeview horizontal scrollbar size in the addtorrent dialog is tweaked a bit to more closely match old listview
+- Change: A couple more strings I18N'd
+- Change: More comprehensive support of unicode pathnames
+- Change: Revamped installation backend including better handling of failure cases and checking of NT permissions for determining where to install
+- Change: Don't block while waiting to delete from disk
+- Fix: Reversed sorting on many listviews
+- Fix: Update torrent size after context menu action in addtorrent dialog
+- Fix: Memory leaks of directory names and item images in addtorrent dialog treeview
+- Fix: Have mousewheel work on controls in modal dialogs even when they don't have focus (i.e. treeview in addtorrent dialog)
+- Fix: A few misc memory leaks
+- Fix: Get rid of duplicate default button in install dialog - "Yes" should always be the default now
+- Fix: The requests column in the peers tab is now sorted by active requests then pending requests, instead of just active requests
+- Fix: More tab order fixes to RSS dialog
+- Fix: Crash with older versions of RSS history
+
+--- 2007-04-30: Version 1.7 (build 1549)
+- Change: Don't force an immediate recheck when download path changes, check on next start
+- Change: Faster/smaller SHA1
+- Fix: More (rare) memory leaks
+- Fix: outgoing connection management
+
+--- 2007-04-28: Version 1.7 (build 1514)
+- Fix: Enable use_rangeblock toggle
+
+--- 2007-04-28: Version 1.7 (build 1509)
+- Feature: Detection of several more clients including Shareaza alpha/beta
+- Change: Improve locale autodetection
+- Change: RSS item will only be added to history once
+- Change: RSS downloader will follow user preference to automatically start downloads
+- Change: Installation dialog text fields width changed for translators and display purposes
+- Change: Don't change the selection when the bounds of the treeview is reached and up or down is pressed
+- Change: The contents of the add torrent treeview header is now shown when dragging 
+- Change: The add torrent treeview header is now resized while dragging instead of just on mouse up
+- Change: Display warning if user tries putting illegal characters in path for Add New Torrent
+- Change: Move legend one square back in scheduler for translators
+- Change: Rearrange controls in speed wizard for translators
+- Change: Leave up and down speed blank in main window if rate is negligible
+- Change: Tweak RSS feed parsing
+- Change: Improved half-open connection management
+- Change: Reconnect to peers immediately when switching seeding modes
+- Change: Improved and configurable bad piece based banning
+- Fix: Fix many memory leaks
+- Fix: Smart episode filter will download first successful RSS entry if multiple candidates appear in a single feed update
+- Fix: Pausing torrents in queue will show paused icon
+- Fix: Various issues with torrents of same name from multiple RSS feeds
+- Fix: Improved UPnP including compatablity with Hamachi
+- Fix: Fix some refresh issues with Windows 98 and the tab control and search bar
+- Fix: UPnP port is now upmapped on exit
+- Fix: Bugs where the scrollbar didn't appear in general tab when switching torrents
+- Fix: Incorrect display of peer versions of uTorrent 1.5.1-1.6.1beta clients
+- Fix: Some multi-selection issues with the add torrent dialog treeview with Vista
+- Fix: Fix some tab order issues with the speed dialog
+- Fix: Fix some tab order issues with the speed tab; remove tabinput from graph and give tabinput to reset button
+- Fix: The header in the add torrent treeview now resizes properly on Windows 95/98
+
+--- 2007-04-17: Version 1.7 (build 1355)
+- Feature: Open URL in browser from RSS Releases tab
+- Feature: Handle different half-open limits on Vista flavors
+- Feature: Display Opera peer id
+- Feature: Display BitTyrant peer id
+- Feature: Support 3-state checkboxes in addtorrent dialog treeview
+- Feature: Support multiple selection in addtorrent dialog treeview
+- Feature: The addtorrent dialog treeview now displays icons based on the type of the file
+- Change: Adjust horizontal scrollbar size in addtorrent dialog treeview
+- Change: Logging options now independently selectable
+- Change: Force a re-check after download location change of a stopped torrent
+- Change: Better memory management
+- Change: Add ability to install a shortcut to the quicklaunch menu
+- Change: Always custom-draw checkboxes in addtorrent dialog treeview
+- Change: Add Torrent dialog selects all items by default (return to old behaviour)
+- Change: Handle disconnect during handshake sequence
+- Change: Increased default setting of bt.auto_ul_min
+- Fix: Auto uplink now correctly updates seed-only limit
+- Fix: Memory leak
+- Fix: Improved management of halfopen connections (remove some edge conditions)
+- Fix: Display an error for invalid folder name in the edit field while browsing for folder
+- Fix: Refresh RSS releases icons after download
+- Fix: Properly update icon on RSS releases if item is deleted from history
+- Fix: Do not add RSS item to history or update smart episode filter if .torrent download fails
+- Fix: Incoming port no longer gets set to 65535 if there is an error
+- Fix: Check state of items in addtorrent dialog treeview are now updated when child items are toggled
+- Fix: Uninstall display name is now unicode complaint and displays correctly across locales
+- Fix: Shortcut names are now unicode complaint and display correctly across locales
+- Fix: uTorrent client names of later versions are now displayed properly in the peers tab
+- Fix: UPNP and NATPMP now map the correct port when port 0 is chosen
+
+--- 2007-04-10: Version 1.7 (build 1170)
+- Fix: "Move Up" tooltip corruption
+
+--- 2007-04-10: Version 1.7 (build 1167)
+- Change: Compact memory when system resources are low
+- Fix: Improved UPnP device detection by setting TTL
+- Fix: Multiple monitor clipping problem by removing changes that clipped certain windows to the monitor size
+- Fix: "Duplicate ID" detection
+- Fix: A duplicate connection race condition
+
+--- 2007-04-07: Version 1.7 (build 1137)
+- Change: ctrl+up/down in torrent list is now ctrl+alt+up/down
+- Fix: log scrolling bug
+- Fix: & characters in add torrent dialog
+- Fix: update disk free in Add Torrent dialog when a new path is chosen
+- Fix: Lots of Settings dialog layout fixes
+- Fix: Context menu now shows up in the add torrent dialog
+- Fix: Items in add torrent dialog are now selected on right-click
+- Fix: Display issues with add torrent dialog when there is only one item in a torrent and that item is a folder
+- Fix: DHT status and update were switched
+
+--- 2007-04-06: Version 1.7 (build 1111)
+- Change: Dynamically load system file and folder icons for add torrent dialog (thus appearing more up to date on some systems)
+- Change: Integrate tracker warning with tracker status
+- Change: Clip the size of all resizable dialogs to the current monitor on creation
+- Change: Will now use custom-drawn checkboxes in add torrent treeview if IE version is less than 4, instead of checking if they are really available
+- Change: Never grey out associate .torrent files button in preferences so users can fix existing associations if they want
+- Change: Change to how the random port number is selected at startup to avoid it being in use
+- Change: Don't create DefaultIcon subkey if maindoc.ico doesn't exist so associated .torrent files have an icon on XP/VISTA if maindoc.ico doesn't exist
+- Fix: Get free disk space on 95 varieties if there is no history in the add torrent dialog
+- Fix: Previous build incorrectly handled some CLASSES registry keys and didn't remove them properly. This is fixed.
+- Fix: Z/tab order of treeview in add torrent dialog
+- Fix: UPnP discovery issues
+
+--- 2007-04-05: Version 1.7 (build 1092)
+- Fix: missing torrent crash bugs
+- Fix: Don't have treeview size in addtorrent dialog exceed client size of the scrollbox (thus having the full vertical scrollbar showing all the time)
+
+--- 2007-04-05: Version 1.7 (build 1085)
+- Change: Tooltips over status bar and toolbar are now native tooltips instead of custom-drawn
+- Fix: Bandwidth Allocation selection bug fixed
+- Fix: Modal dialog boxes now give focus on close to the proper window (add button in RSS now gives focus back to RSS window, for example)
+
+--- 2007-03-29: Version 1.7 (build 1065)
+- Feature: Outgoing port range, via advanced settings (net.outgoing_max_port)
+- Feature: List number of pieces we have in General tab (as part of Pieces:)
+- Feature: Mark unavailable pieces as red in the Files tab (like in the general tab)
+- Feature: Auto uplink throttling (beta)
+- Feature: List web seeds in General tab
+- Feature: Web seed support for single-file torrents
+- Feature: NAT-PMP support
+- Feature: Local Peer Discovery
+- Feature: Option to configure whether rate limits apply to local peers (bt.limit_local_peers)
+- Feature: Support for HTTPS links in RSS feeds
+- Feature: Next Piece display
+- Feature: Remembering the last selected tab in the main view
+- Feature: Remembering the last selected tab in the preferences view
+- Feature: Vista font scaling support (DPI aware) - to disable pass /NODPIAWARE to the command line
+- Feature: Secondary column sorting should now be supported by all list views
+- Feature: New treeview-based add torrent dialog
+- Feature: Added Reboot and Quit on Finished options
+- Feature: Tracker "warning message" support
+- Change: State files (resume.dat etc) are now hash protected
+- Change: Save aside bad state files as .bad for analysis
+- Change: Remove modal state file dialogs, instead log a message, only modal at program exit
+- Change: UPnP now ignores net.outgoing_port setting
+- Change: Added grid lines to speed graphs
+- Change: Parse FlashGet client version
+- Change: Added Log Errors to Logger context menu
+- Change: Reject duplicate IDs (mimic Mainline)
+- Change: Remove UPnP unicast
+- Change: Send multiple UPnP search messages each time (because UDP is awesome)
+- Change: Display client name as advertized in extension header
+- Change: The scrolled window in the main tab is now able to receive standard input
+- Change: New installation system, including the ability to uninstall
+- Change: Now notes if it can't use APPDATA for settings in the log
+- Change: Main window is now clipped to the monitor it is run on
+- Change: Search bar is now hidden if the window is too small
+- Change: During execution the application no longer prompts the user to save the resume file; only on exit now
+- Change: The number of queued items in the create torrent dialog is decreased, which results in a quicker response time when stopping creation
+- Change: Several ok/cancel dialogs have been replaced with shorter yes/no versions
+- Change: Log listview now selects current item if it is full and keeps getting messages
+- Change: New method is used to try to automatically determine an open port for the speed wizard on startup. This same method can be used by setting the incoming port to 0.
+- Change: show tooltips for items in listviews with elipses "..."
+- Change: Add some keys and input to scrolled window in general tab
+- Change: Show torrent creator by the "Created On:" column in the general tab
+- Change: highlight existing torrent when duplicated torrent added
+- Fix: Various issues with enabling/disabling Verbose in Logger context menu
+- Fix: Stopped/paused torrents no longer hold up auto shutdown
+- Fix: Make Create Torrent more responsive to Cancel
+- Fix: Log the correct internal port in UPnP port mapping log message
+- Fix: Eliminate temporary on screen client version corruption
+- Fix: Various minor issues with HTTP client implementation (error handling, parsing)
+- Fix: Incoming HTTP connections could sometimes go dead (event dispatch problem)
+- Fix: Some internal size calculations weren't 64-bit clean
+- Fix: RSS error logging
+- Fix: The general tab should now scroll down to and show the full comment field
+- Fix: Fix many flicker issues throughout the application
+- Fix: Correct WinSock version detection - it should fail now if it detects the wrong version
+- Fix: Custom speedlists now show instead of the default in the main listview context menu
+- Fix: Correct acquisition of special operating system paths (such as the windows directory) on Windows 95 family
+- Fix: Fix shortcut creation for Windows 95 family
+- Fix: Fix diskspace information on Windows 95 family
+- Fix: Confirmation dialog for resume file saving now actually tries to save the resume file on retry
+- Fix: Create torrent dialog now closes all the way when the close button is pressed during torrent creation
+- Fix: Cleared progress bar in create torrent dialog when stopping
+- Fix: Fix various tab order bugs in main window
+- Fix: Shutdown on finish option will now shutdown the machine, even if it is locked
+- Fix: Fix file association if uTorrent is installed after BitTorrent mainline client
+- Fix: 307 redirection HTTP code is now handled, instead of an error (i.e. jamendo.com)
+- Fix: Logging is now done in Unicode, fixing some I18N issues
+- Fix: Speed wizard no longer asks you to confirm twice when trying to close it from its  close box
+- Fix: Log listview no longer shows the horizontal scrollbar if it is past the last visible item but doesn't need to
+- Fix: Pressing ESC on exit dialog will dismiss the dialog
+- Fix: Fix z order of searchbox/toolbar on older windows
+- Fix: Fix scrolling bug where scrollbar would not redraw sometimes
+- Fix: .torrent Association for limited users
+- Fix: Enable users to have "maindoc.ico" in the settings folder for associated documents' icons for fixing them on older windows versions that don't automatically generate them
+
+--- 2007-02-15: Version 1.6.1 (build 490)
+
+--- 2007-02-??: Version 1.6.1 (build 489)
+
+--- 2006-??-??: Version 1.6 (build 474)
+
+--- ???
+- Feature: Added option to open download bar when doubleclicking a torrent
+
+--- 2006-04-29: Version 1.5.1 (build 453)
+- Feature: Make shift + delete key remove torrent + data
+- Feature: Add a way to set the upload/download cap through system tray
+- Feature: Add an option to reset bans
+- Feature: Add a way to make µt startup in bosskey mode
+- Feature: Add a move to top/down button or key
+- Feature: Add remaining HD space in the BC-style dialog
+- Feature: Better graph controls
+- Feature: Disk statistics
+- Feature: Proxy for peer connections
+- Feature: Show a warning if no disk space when moving a complete torrent
+- Feature: Added a way to delete the internal peerlist
+- Feature: Remember waste/hashfails across sessions
+- Feature: Allow torrents in list to be renamed
+- Feature: Shutdown/hibernate when downloads complete
+- Feature: Delete torrents to trash
+- Feature: Show speed limits in status bar
+- Feature: Set default action for delete button (right click on it and hold shift)
+- Feature: RSS update interval
+- Feature: Show a warning in the add dialog if the torrent doesn't fit on the drive
+- Feature: New disk cache settings
+- Feature: Draggable download bars separate from the main window
+- Feature: Open containing folder selects the item	
+- Feature: Open the folder if you click on the tray popup when a download is finished
+- Feature: Show speed in title bar
+- Feature: Enable scheduler from tray
+- Feature: Change label from the torrent properties dialog
+- Feature: Torrent create dialog remembers the previous settings
+- Feature: Ability to filter files in torrent creator
+- Feature: Setup outgoing port to bind to
+- Feature: Pause in tetris
+- Feature: Added graphical progress bar in main list
+- Change: Don't switch between green/yellow icon too often
+- Change: Don't delete torrents from list if the torrentfile wasn't found
+- Change: Tweaked piece selection algorithm a little
+- Change: Trim spaces from tracker url in create torrent dialog
+- Change: Separate the tracker from the webui + webui settings
+- Change: num_wsa_events to control how many WSA EVENTS to allocate
+- Change: Don't resolve peer ips by default
+- Change: Never request more than 50 chunks from a bitcomet peer
+- Change: Modified algorihtm for giving extra upload slots
+- Change: Show better error message when adding a torrent through URL and it can't be loaded
+- Fix: The label entry box in the BC-style dialog is too short
+- Fix: Make the after crash re-check not re-check torrents that already finished in that session
+- Fix: Don't hang when deleting a torrent
+- Fix: Don't crash if popup menu is active while the active torrent is deselected
+- Fix: Generals tab should flicker less
+- Fix: Fixed a few crash bugs
+
+--- 2006-03-08: Version 1.5 (build 437)
+- Change: Lower # of pieces started at the same time
+- Fix: Fix issue when compact allocation getting enabled even though it's off
+- Fix: Tab icons now transparent
+
+--- 2006-03-07: Version 1.5 (build 436)
+- Feature: Setting to determine the number of µTorrent users.
+- Feature: Use icons instead of network ok/nat error
+- Feature: Auto detect read cache size
+- Feature: Language file can be auto updated
+- Feature: Keys can be used in main listview to move to the right item
+- Feature: New easter egg
+- Feature: RSS Help button
+- Feature: Reorder RSS favorites
+- Feature: If user is running from temporary internet files, prompt to install it.
+- Feature: Added popup menu to easily change if the scheduler/dht is enabled.
+- Feature: Added log-to-file option in logger.
+- Feature: Option to always prioritize the rarest pieces. 
+- Feature: Added active/inactive categories in category list
+- Feature: DEL key works in RSS history, and the last item is selected
+- Feature: RSS history remembers only 500-600 items
+- Feature: XML parser supports &#x23; tags
+- Feature: Determine the values to show in the speed popup list automatically.
+- Feature: Category list to filter main torrent list.
+- Feature: Propagate encryption support through PEX
+- Feature: Choose what happens on double click in torrent list
+- Feature: Show a special message if utorrent crashes while NOD32 is active.
+- Feature: Added scheduler mode to seed only (hold Shift button)
+- Feature: Support min_interval key
+- Feature: Ctrl Up/Down to move up/down a torrent
+- Feature: Show average up/down speed since start.
+- Feature: Show encryption status in Flags field
+- Feature: Copy hosts from peer list
+- Feature: Peer Exchange (only with µT peers for now)
+- Feature: Protocol Encryption 
+- Feature: Bypass Windows XP Firewall
+- Feature: Make torrent prioritized from add torrent window
+- Feature: RSS toolbar button
+- Feature: Smart RSS episode filtering - avoids downloading the same ep twice.
+- Feature: ESC minimizes
+- Change: Rearranged settings dialog
+- Change: Default to priorizing rarest pieces
+- Change: Switch default theme
+- Change: Skip hidden/system files when creating torrent.
+- Change: Right align some columns.
+- Change: Remove spaces from urls in RSS feeds
+- Change: DHT binds UDP socket to net.bind_ip
+- Change: Smarter block hashing, tries to avoid re-reading from the file if possible.
+- Change: Tracker connections obey max_halfopen/max_connections
+- Change: Switching folder in the Add window tries to detect if you point at an already downloaded folder.
+- Change: Added support for &quot; in XML parser
+- Change: Optimized disk-io
+- Change: coalesce_writes defaults to true
+- Change: &Exit to E&xit
+- Change: Show up/down arrows in listview headers
+- Change: Rearranged some stuff in the settings dialog
+- Change: Add FAQ to the help menu
+- Change: Use UTF-8 instead of utf-8 in created torrents.
+- Change: Min autodetected piecesize is now 64k.
+- Change: Remember last active RSS page.
+- Change: Don't increase counters while paused.
+- Change: Auto detect if RSS feed uses latin1 or utf8.
+- Change: Sort by scrape peers instead of connected peers
+- Change: Relevance rounds up instead of down.
+- Change: Rename langpack to utorrent.lng.
+- Change: If langpack is in the exedir, it gets installed to APPDATA.
+- Change: Remember if torrents have errored when you restart
+- Change: Optimizations to piecepicker algorithm
+- Change: Fast/Slow pieces
+- Change: Simplified encryption settings
+- Change: Support langpack.zip with translations.
+- Change: Don't download first/last piece of a file first. Can be re-enabled.
+- Change: Added a black down image to the spyglass icon
+- Change: Protect webui with a password
+- Change: Include beta build # in http requests.
+- Change: Show <Search Here> in the search box.
+- Change: Open partfile in read only mode if read/write fails.
+- Change: Read cache uses less CPU
+- Change: Support paths >260 chars.
+- Change: Icons in RSS Releases (thanks TVTAD)
+- Change: RSS Not filtering matches full release name
+- Change: RSS Reader supports more date formats
+- Change: Adjusted some lazy bitfield parameters
+- Change: Renamed to RSS Downloader
+- Change: Allow deleting multiple history lines at the same time
+- Change: Improvements to RSS parser
+- Change: Pause button toggles
+- Change: net.low_cpu defaults to false.
+- Change: Reworked network code for faster speeds.
+- Change: Add torrent dialog defaults to whatever folder entered in settings
+- Change: Added some qualities to rss reader
+- Change: Changed date format
+- Fix: Work better when large fonts are used.
+- Fix: Prevent windows from going above pixel 0.
+- Fix: Ratio on generals tab wasn't computed exactly like the main list.
+- Fix: Crash bug with columns
+- Fix: Better support for adjusted computer clock.
+- Fix: Don't behave incorrectly if 0-byte files are deleted by the user.
+- Fix: If the torrent storage path hasn't been created, create it.
+- Fix: Fix a crash related to language packs.
+- Fix: Superseeding works better
+- Fix: RSS feeds are utf8-decoded
+- Fix: Deleting from RSS history forgot about sorting
+- Fix: Disallow some more characters from filenames
+- Fix: Crash when deleting multiple items from RSS history
+- Fix: RSS parser parsed month bad for some timestamps.
+- Fix: Fixed crash in torrent creator
+- Fix: Ipfilter memory leak
+- Fix: Support mixes of name and name.utf8
+- Fix: Sorting reverse by name didn't work
+- Fix: Improved autoload so it waits a bit if the file hasn't fully been written to disk yet.
+- Fix: Stop ALL torrents when scheduler is active.
+- Fix: When moving a complete download, use the name entered in the add dialog instead of the default.
+
+
+--- 2006-01-11: Version 1.4 (build 402)
+- Feature: Added boss key
+- Feature: Turn on/off multiscrape
+- Feature: Statistics on help menu
+- Feature: Option to enable/disable new tray behavior
+- Feature: Double click in files list opens the file
+- Feature: Use Shift when clicking on the main listview's columns to setup a secondary sorting order.
+- Feature: Ability to select label from the Bitcomet style add dialog
+- Feature: Support sending a hostname to the tracker (it will be resolved)
+- Feature: Bitcomet style Torrent Add dialog.
+- Feature: Added-On column
+- Feature: Delete thumbs.db when deleting torrents
+- Feature: Append .!ut to incomplete files.
+- Feature: Added some more values in the seeding time dropdown
+- Feature: Run a program when a torrent finishes.
+- Feature: Setting to enable/disable DHT when scheduler turns off.
+- Feature: Added upload limit / download limit columns
+- Feature: Lower the amount of active torrents if upload is set too low.
+- Feature: Lower download speed if upload is set too low.
+- Feature: Show a message if some incompatible firewalls are loaded in memory.
+- Feature: Boss key now hides the settings window too.
+- Feature: Argument /MINIMIZED and µTorrent starts up minimized (suitable for autostart)
+- Feature: Check for updates every day.
+- Feature: Don't send HAVE pieces to seeds.
+- Feature: Timeout requests that never arrive
+- Feature: RSS Reader
+- Feature: Support RSS cookies. Append :cookie:uid=12345;password=asdkjad at the end of the url, or equivalent.
+- Feature: Wildcard matching in RSS window supports ?* and |. I.e. you can write Foo*|Bar* to match strings starting with Foo or Bar.
+- Feature: Ability to not put computer in standby while torrents are active.
+- Feature: Multi scrape.
+- Feature: Speed Wizard
+- Feature: Allow a single IP in ipfilter lines.
+- Feature: net.outgoing_ip to specify which IP that's used for outgoing connections.
+- Change: Try to detect hacked bitcomet.
+- Change: Scheduler limit doesn't apply if in turn-off mode.
+- Change: Show a more informative message if tracker is sending invalid data.
+- Change: Changed queue algorithm for fast connections to work better when there's disk overload.
+- Change: Tweak some settings
+- Change: Print additional info to the log in case there's a "element not found" error
+- Change: Add folder name when adding through RSS
+- Change: Scrape. vs torrents in internal list are calculated a little bit differently in the main list
+- Change: Swap the order of my requests / their requests in the Reqs column in the peers tab.
+- Change: Connect a little bit more aggressively to peers.
+- Change: Increased http timeout to 60 seconds
+- Change: Built-in tracker didn't support &ip=
+- Change: Don't reconnect to banned peers after 1 hour.
+- Change: Reset last connect time when restarting torrent
+- Change: Auto detect how much bandwidth to use for DHT
+- Fix: More robust detection if µTorrent is already running.
+- Fix: Prevent ? and * from being used in filenames.
+- Fix: Not all gzipped http downloads in connection:close mode with a content-length specifier worked right.
+- Fix: Connect to peers in a round-robin fashion when multiple torrents are active.
+- Fix: Auto detect some more parameters if invalid values are given.
+- Fix: Better detection if BitComet clients threw away my requests.
+- Fix: Don't preallocate diskspace if using compact mode
+- Fix: Sorting files tab by starting piece should show them in the order they appear in the .torrent
+- Fix: More robust crash handler.
+- Fix: Use CSIDL_DESKTOPLOCATION instead of CSIDL_DESKTOP
+- Fix: Hopefully fixed refresh issue for people with objectdock
+- Fix: New algorithm to minimize the number of waste pieces.
+- Fix: Added some clients to version decoder
+- Fix: Don't start multiple processes on Japanese windows.
+- Fix: Fixed unpause bug.
+- Fix: Disconnect peers if global slots reached even if local slots not reached.
+- Fix: Tweaked performance on high speed connections
+- Fix: Use less CPU when force rechecking skipped files.
+- Fix: Disk Overloaded feature wasn't working right.
+- Fix: Refresh window immediately when adding a torrent through explorer.
+- Fix: Speed graph would wrap for very large numbers.
+- Fix: Save to a network share didn't work.
+- Fix: Some more strings are now translatable.
+- Change: Rearranged settings dialog
+- Fix: Lower DNS caching time.
+- Fix: Better move up/down
+
+
+--- 2005-12-10: Version 1.2.3-beta (build 361)
+- Fix: Don't BSOD on some computers with buggy drivers.
+- Fix: Error message in tray would sometimes not go away
+- Fix: Don't count a seed as a download if there are free seed slots (#68)
+- Fix: Change random port selection
+- Fix: Upload a little bit more aggressively
+
+
+--- 2005-12-08: Version 1.2.3-beta (build 360)
+- Feature: Nicer availability graph.
+- Fix: ulslots wasn't saved properly on restart.
+- Change: Increase the amount of connects a bit.
+- Feature: Added setting to control how fast utorrent tries to connect to new peers.
+- Fix: Support piecesize 16k.
+- Feature: Added option to enable/disable internal tracker.
+- Feature: Detect encoding field in a torrent and parse filenames accordingly.
+- Feature: Support crashdumps on pre-WinXp.
+
+
+--- 2005-11-30: Version 1.2.3-beta (build 356)
+- Feature: UNICODE!
+- Feature: Added option to sort downloads based on the label.
+- Feature: Autodetect if the language textfile is utf8 or ansi.
+- Feature: Rate limit DHT traffic.
+- Fix: Use atomic movefile when saving resume file on XP
+- Fix: Better utorrent.exe.log if translation loading fails
+- Fix: Fix bug that DHT got stuck in (Login)
+- Fix: Fixed some crash bugs. (Thanks to the crash dumps)
+- Fix: Hopefully worked around the file open crash. (Caused by Adobe Acrobat 7).
+- Fix: Fix crash bug if an invalid filename is selected in the opendialog.
+- Fix: Fix crash when removing torrents.
+- Fix: Fix sorting in pieces tab
+
+--- 2005-11-25: Version 1.2.2 (build 345)
+- Fix: Fixed lockup when deleting a torrent.
+- Fix: Center torrent properties on the main window
+- Fix: Fixed rare DHT crash bug.
+- Change: Show a warning message if there were problems loading a user defined language file.
+
+--- 2005-11-23: Version 1.2.1 (build 341)
+- Feature: Feature to select if DHT should be on/off by default for torrents.
+- Feature: Support compact file allocation method.
+- Change: Swapped order of Upload/Download in the status bar.
+- Change: Fixed problem when seeding from a CD.
+- Change: Tweaked peer upload queue size.
+- Change: Do not support private=1 in tracker replies.
+- Change: Don't scrape stopped torrents.
+- Fix: Fix problem with Alt-F/O etc not working.
+- Fix: bind_ip should affect UPnP too.
+- Fix: Don't give read-only errors when seeding a torrent.
+- Fix: Color in generals tab didn't work well on dark color schemes.
+- Fix: Don't allow adding the same torrent twice (even if the select directory window is open).
+- Fix: 255.255.255.255 didn't work in ipblocking.
+- Fix: Don't show "do you want to remove..." unless something is selected.
+- Fix: Disconnect ALL seeds when becoming a seed.
+- Fix: Bug in Seed ETA computation.
+- Fix: Don't make multiannounce torrents if only a single tracker is entered.
+- Fix: Display bug if sending/receiving >2MB/s
+
+--- 2005-11-15: Version 1.2.1-beta3 (build 335)
+- Fix: /directory option didn't work as intended for singlefile torrents.
+- Fix: DHT announce port wasn't quite right
+- Feature: Create torrent window supports multitracker
+- Feature: Implemented BT Extension protocol
+- Feature: Added option to turn off disconnect inactive peers
+- Feature: Now there's a checkbox so you have to actually enable seed settings override.
+- Changed: Renamed some advanced options.
+- Feature: Compute ETA until seeding goal is reached.
+- Feature: Show D in the peers flags for peers using DHT.
+- Feature: gui.compat_diropen for people with problems with the directory open dialog.
+- Feature: gui.alternate_color will show every other listview line in a different color.
+- Fix: confirm_when_deleting option had no effect.
+- Fix: If zeros are entered in seed settings, the seed is unprioritized.
+
+--- 2005-11-09: Version 1.2 (build 328)
+- Fix: Creating multifile torrents was broken.
+- Feature: Remember last tracker in create torrent window.
+- Fix: Fix issue with move directory not working.
+- Feature: Mainline compatible DHT
+- Feature: Show tracker url in list.
+- Feature: Configurable flags (flags.conf / flags.bmp)
+- Feature: Resolve countries using ip->country online database.
+- Feature: Autodetect write queue size.
+- Feature: Ability to relocate torrents.
+- Feature: Show amount of waste bytes.
+- Feature: Ability to specify directory where to save with the /directory command line option.
+- Feature: Parse the 'nodes' attribute in a torrent.
+- Feature: Added remaining column
+- Feature: Added Ctrl-C/Ctrl-A in logger window
+- Fix: Tracker ip not working.
+- Fix: Search box size was limited.
+- Fix: Done column wasn't sortable.
+- Change: Use less memory for torrents with lots of files.
+- Fix: Support moving complete torrents across file systems.
+- Fix: Use a little bit less memory in the network code.
+- Fix: Use closesocket instead of close when closing ipblocked sockets.
+- Fix: >4GB torrents were created incorrectly.
+- Fix: Better recovery if resume.dat is missing/damaged.
+- Change: Changed default value of flush_files to true.
+- Change: New flags.
+- Fix: Ignore directories in the autoload dir.
+- Change: Show a message if the user is adding a duplicate torrent.
+- Fix: Don't rotate trackers in main list
+- Change: *.cpl is an unsafe file 
+- Fix: fixed a status bar flicker issue when going into a menu
+- Fix: Prevent listen error if you start up µTorrent immediately after closing it.
+
+--- 2005-10-26: Version 1.1.8 (build 307)
+- Change: Changed bt.slow_connect into net.max_halfopen
+- Feature: Persistent labels.
+- Fix: Disable delay when hashing
+- Change: Added some new hotkeys
+- Feature: Label torrents.
+- Fix: Send key field to the tracker.
+- Fix: Also delete the partfile when deleting the data.
+- Fix: Don't show an empty window if pressing Esc in the search engine edit field.
+- Fix: Enlargen some controls to suit translators better.
+- Fix: Show in tray only when minimized when show_in_tray is off.
+- Fix: Wait a random interval between subsequent connect attempts.
+- Fix: The generals tab showed the wrong filename for files saved with a nondefault filename.
+- Feature: Main icon and tray icon are now skinnable (main.ico / tray.ico).
+- Feature: Allow stuff on the generals page to be copied to the clipboard.
+- Fix: If window was minimized&hidden when exiting, it would get the wrong size next time it's started.
+- Feature: Use digital signatures in the updater to verify the integrity of the new exe file.
+
+--- 2005-10-23: Version 1.1.7.2 (build 293)
+- Fix: Remember window location if you move the window.
+- Change: Print sizes with always 3 value-digits.
+- Change: Tweaks to seeding priority ranking.
+- Feature: Selectible upload/download speed popups
+- Change: Changed the ratio seeding priority box to an edit box.
+- Feature: Added option to switch upload speed while not downloading.
+
+--- 2005-10-21: Version 1.1.7 (build 288)
+- Fix: Ipfilter was off by default (and there was no way to enable it).
+- Fix: True/False boxes in advanced settings page wern't hidden when window is loaded.
+- Fix: Advanced settings dialog would crash if you double clicked outside of the list.
+- Fix: deadlock if utorrent was shutdown apruptly.
+- Change: Compute ratio as uploaded/total_size instead of uploaded/downloaded for seeding tasks.
+- Fix: Start seeding checkbox in Create Torrent dialog was buggy.
+- Feature: Added search engine feature.
+- Change: Create Torrent dialog generates less pieces in "Autosize" mode.
+- Fix: ipfilter.dat didn't work.
+- Fix: Increase the amount of laziness for lazy_bitfield.
+- Change: Redesigned seeding priority system.
+- Fix: Support moving directories across partitions on Win2k/XP.
+- Feature: Added option to hide µTorrent from the tray.
+- Feature: Increase # of uploads if uploading is slow.
+- Fix: Ignore case when sorting torrents.
+- Feature: Show tray popup if there's a download error.
+- Feature: Single click on tray icon.
+
+--- 2005-10-18: Version 1.1.6.1 (build 280)
+- Fix: uTorrent didn't work when newly installed(!)
+
+--- 2005-10-17: Version 1.1.6 (build 279)
+- Fix: Better multitracker support.
+- Fix: When skipping files, it would corrupt the Partfile, resulting in hash fails.
+- Fix: Disk Overloaded was shown too often.
+- Change: Only show the "dangerous file" dialog when trying to open an executable file.
+- Feature: The sorted column is now shown in a different color (Only after you clicked sort once)
+- Feature: Create start menu shortcut the first time uTorrent runs.
+- Feature: Show more info in the tray tooltip.
+- Feature: Support lazy-bitfields, required for some ISPs, or seeding won't work.
+- Feature: New page to setup advanced settings.
+- Feature: Remember a peer's upload/download even if it reconnects.
+- Feature: Support sparse files on NTFS (But please do not use this, it will fragment your drive).
+
+--- 2005-10-15: Version 1.1.5 (build 270)
+- Feature: Base the ETA value on the actual size.
+- Feature: Show the total size and skipped size in the generals tab.
+- Fix: If download speed below [  ] limit upload to [  ] used bytes/s instead of kB/s.
+- Feature: Added queued status icons.
+- Feature: Added Clear Logger / Verbose option.
+- Change: Changed timeout before retrying a peer.
+- Feature: Added a couple of new menu hotkeys in main window.
+- Feature: Changed telia.com and bredband.com flags into swedish.
+- Fix: Possibly fixed the opendialog crash bug.
+- Change: New Icon (thanks BloodStainedHurricane)
+- Change: New toolbar/status icons (thanks DrLamok)
+- Fix: Print all three connected/in-list/scrape values on the generals tab.
+- Feature: Added option to create private torrents.
+- Feature: If a language file is present, startup uTorrent with the system language (if available)
+- Feature: Added 'Hacker' translation
+- Fix: Load torrents from the autoload folder when uTorrent starts.
+- Feature: Added option to close file handles every minute. Might lower windows's file cache.
+- Fix: Don't show 100% if torrent is not fully downloaded (rounding error).
+- Feature: Experimental support for ipfilter.dat
+- Fix: Fixed crash bug when loading torrents.
+- Feature: Added option to order downloads.
+- Feature: Support for Socks4, Socks5, HTTP, and HTTPS proxys.
+- Change: Changed default value for cpu_mode and slow connects to true.
+- Fix: If switching to unlimited download speed, it would temporarily set download speed to zero.
+- Fix: Changed to work with some buggy trackers that don't support :80 in the Host field.
+- Change: Don't default open file name dialog to last filename.
+- Change: Add with No Default Save doesn't default to download location.
+- Feature: Added option to notify the user when a download is complete.
+- Fix: Half open connection counter could count wrong.
+- Change: Show scrape peers/seeds in main list.
+- Fix: Remove spaces from base directory name.
+- Feature: Support HTTP 302 Found.
+- Fix: German flag color was broken.
+- Fix: Fix problem with autoupdater. If the old process was still running, it would show an empty error message.
+- Feature: Detect more peer ids: Burst!, G3, bitcomet < 0.59
+
+--- 2005-10-10: Version 1.1.4 (build 239)
+- Fix: Switch to vurlix's icon
+- Fix: Changed default port to 32459
+- Fix: Decrease about box sound volume to 50%
+- Fix: Center several dialogs on the screen.
+- Fix: Set the connect-to-tracker-on-exit timeout to 10 seconds instead of 60
+- Fix: Show 100% for zero byte files.
+- Fix: Missing OleInitialize from directory browser.
+- Fix: Some missing translations.
+- Feature: Superseed.
+- Feature: Send no_peer_id=1 to tracker.
+- Fix: Rename button in create torrent dialog to Cancel/Close depending on state.
+- Fix: Replaced 'Create and start sharing' with a checkbox and fixed so it actually works.
+- Feature: Don't play the sound unless you click on the uTorrent icon in the about box.
+- Feature: Store peers in resume file.
+- Fix: Resolve Peer Ips option is now instant.
+- Feature: Don't include forced jobs in seed queue computations.
+- Fix: Flags field in the UI sometimes said U incorrectly.
+- Feature: Ban clients that result in too many hashfails.
+- Feature: If you are adding a new torrent, check if the data has already been downloaded to the completed folder.
+- Fix: Crash when adding torrent for some languages.
+- Feature: Added logger window.
+- Fix: Use system's default character set when creating font objects. Fixes some strings not displaying correctly in translations
+- Fix: Use the system's window text color in the general detail tab
+- Fix: any/all in seed priority were reversed.
+- Change: Use WsaEventSelect() instead of select(). (Should get rid of Select() error)
+- Fix: Fix crash bug for some tracker replies
+- Change: Show scrape info only on the generals tab. Show internal list info in the list.
+- Feature: Load announce-list.
+- Feature: Added relevance column in peer view, shows how interesting the peer is.
+- Feature: Don't allow connect to self.
+- Fix: Be somewhat smarter when detecting if a torrent has already been downloaded to a location.
+- Fix: Move completed torrents didn't work right, torrents would get lost on restart.
+- Change: Unchoker will behave as if it's seeding when nothing is being downloaded.
+- Feature: Submit utorrent version number in crashdumps.
+- Feature: The %-done counter now doesn't include skipped pieces.
+- Feature: Include version number in HTTP requests.
+- Fix: File associate function didn't cleanup properly from BitComet.
+- Feature: Show blocks that have been downloaded but not yet written to disk in a different color.
+- Feature: Include incomplete pieces in the resume state.
+- Fix: Produce better error dumps.
+- Fix: Window wasn't maximized on startup.
+- Feature: Auto load torrents from a specified directory.
+- Change: Redesigned generals tab.
+- Feature: Added option to limit # of connections for computers with unpatched SP2.
+- Feature: Connect to tracker again if we don't have enough peers in the internal list.
+- Fix: Seeder priority now works right if you've skipped some pieces.
+- Feature: If there is no default download folder, remember the last chosen folder when asking where to save torrents.
+- Feature: Added option to log peer traffic.
+- Change: Switch to Determination's status icons.
+
+--- 2005-10-02: Version 1.1.3 (build 179)
+- Fix: Reserve 25% of connections for incoming peers.
+- Fix: Send numwant=0 on Stopped.
+- Feature: Ability to change user interface language.
+- Feature: Added French & Swedish translations.
+- Feature: Don't send anonymous usage statistics.
+- Fix: Remove key field, it confused some trackers.
+- Fix: Randomize peer id when µTorrent starts.
+- Fix: Tweaks to internal bittorrent parameters.
+- Feature: Disconnect inactive peers after 5 minutes.
+- Fix: Open on the Files view would sometimes open the wrong file.
+- Feature: Allow scroll wheel on the mouse to scroll the views.
+- Fix: The torrent id shown on the generals page had 32 characters instead of 40.
+- Feature: Added inactive column to peer view to show the inactivity.
+- Changed: Include some more columns by default in peer view.
+- Fix: Peer handshake was waiting for peer id, but not all clients sent that immediately.
+- Feature: Show error message in status bar if listen() fails.
+- Fix: Focus wasn't moved to the edit box that contained an invalid value in settings dialog.
+- Fix: Send a stopped command to trackers when closing µTorrent.
+- Fix: Some invalid torrents would show a message about memory allocation failed, instead of "can't load torrent".
+- Fix: Don't bandwidth limit http communication.
+- Fix: Ratio column showed "inf" way too often.
+- Fix: Nicer about dialog.
+- Feature: Play THX sound in about dialog.
+- Fix: Make sure file priority works even if file list is sorted in a different order.
+- Fix: Make sure STOPPED is sent when a torrent is deleted.
+- Fix: New icons (thanks ipunk)
+- Fix: Identify Shareaza clients
+- Feature: Support loading of torrent status icons / toolbar icons from an external file (tstatus.bmp or toolbar.bmp in storage folder)
+- Fix: Crash bug with multiple trackers.
+- Fix: Autostart option wasn't saved to config file.
+
+--- 2005-09-26: Version 1.1.2 (build 132)
+- Fix: Use the downloaded value instead of completed, when computing the ratio.
+- Fix: Changes in tracker communication, is it right now?
+- Feature: Detect if disk can't keep up with the download and limit download speed.
+- Fix: Show "select() error" in status bar if an incompatible firewall is being used.
+- Feature: Added option to select if uTorrent should be activated or not when adding a file.
+- Fix: Remove Quota columns from peer view, they wern't useful.
+- Feature: Added Peer download speed; shows the estimated download speed of the peer.
+- Fix: Fixed one issue with x64 DEP (no-execute) protection.
+- Fix: When using the no-default-save option, start browsing in the directory specified in preferences.
+- Feature: Open torrent properties if you double click a torrent.
+- Feature: Options to show/hide torrent info and status bar.
+- Feature: Added option to autostart µTorrent when Windows starts.
+- Feature: Added option to disable sending statistics to uTorrent.com.
+- Feature: Sort jobs in disk queue. Might improve disk performance a little.
+- Feature: Controls to setup the size of the disk queueing.
+! Fix: Fix resource.h anarchy.
+! Fix: Added RTL subfolder, since .dsp refers to it.
+! Fix: Removed all traces of the tip of day dialog.
+! Change: Changed has_id logic a little.
+! Change: Changed format of the listview get data callback.
+- Feature: Files listview is now sortable.
+- Feature: Ctrl-A in a listview selects all.
+- Feature: Ctrl-C in a listview copies to clipboard.
+- Fix: Lower connect timeout to 20 seconds.
+- Fix: If a tracker didn't return peer ids, it wouldn't work.
+- Change: If scraping is off, never get the scrape url.
+- Fix: Always show updating... when connecting to tracker.
+- Fix: Columns in Pieces view didn't display right if some were hidden.
+- Fix: When closing to tray, minimize it too, to lower mem usage. (Only works if you have both close to tray and minimize to tray enabled).
+- Fix: Reset generals tab if you deselect the torrent.
+- Fix: Don't allow "Do you want to exit µTorrent" to be shown twice.
+- Fix: Sorting by port in peers listview didn't work.
+
+--- 2005-09-23: Version 1.1.1-dev (build 110)
+- Fix: Spaced out controls in Create Torrent dialog a bit
+! Fix: Cleaned up a little in bencoded.cpp
+- Feature: Added option to hide toolbar.
+- Feature: Enter key opens the folder.
+- Feature: Del key deletes a torrent.
+- Fix: Hide Port column by default, show empty string instead of 65535
+- Fix: Upload/Download rates in scheduler settings were reversed.
+- Fix: Two dialogs used the wrong font.
+- Fix: Query String dialog used Avbryt instead of Cancel.
+- Fix: Tab key didn't work in main window.
+- Feature: Added menus to quickly select up/down rates by right clicking on the up/down part of the status bar.
+- Feature: Added option to randomize port each time uTorrent starts.
+- Feature: Preallocate diskspace
+- Fix: Sent wrong downloaded value to tracker when seeding.
+- Change: Distinguish between downloaded and complete bytes.
+- Feature: If resuming a download, and you select the existing folder instead of the parent, behave in the way the user expects.
+- Fix: Use FILE_FLAG_RANDOM_ACCESS, might improve caching performance.
+- Fix: Limit also the incoming number of connections.
+- Feature: Able to limit upload speed if download speed is low.
+- Fix: Always enable Remove menu item.
+- Fix: Create torrent was unable to make a torrent from a directory.
+- Change: Have less checker jobs in action at the same time when checking files.
+
+--- 2005-09-21: Version 1.1 (build 95)
+- Fix: Tray icon said uTorrent 1.0
+- Feature: Show upload/download speed and number of torrents in tray.
+- Fix: It now works to double click on torrents in explorer.
+- Fix: Show actual download time instead of total time in Run Time in general info.
+- Feature: Show Up/Down limits in torrent info tab.
+! Feature: In debug mode, shows the amount of allocated memory.
+! Fix: Added some checks to be able to track down the divison by zero crash easier.
+! Fix: Actually remove priority flag if torrent is turned off because no priority
+! Fix: Upload faking, clamp to max size of torrent.
+Fix: The dialog shown when there is no memory could crash the program.
+Fix: The bandwidth graph's update rate was the same as the GUI update rate.
+- Fix: Fixed handle leak in graph drawer
+- Fix: GDI Handle leak on the generals tab.
+- Fix: If you press cancel in the download directory select dialog, don't save torrent.
+- Fix: Query user if about to delete data.
+! Feature: In debug builds, report memory usage better.
+! Fix: Changed version encoding.
+
+--- 2005-09-19: Version 1.1 beta2 (build 88)
+- Change: Beta build # is now shown in title bar.
+- Feature: Support for scraping
+! Fix: Fixed TorrentTracker memory leak
+! Change: Better ways to control logging
+- Feature: Properly identify the mainline client.
+- Fix: Lowered chunksize to 16k, improves download speed by a lot.
+- Fix: Don't disconnect clients if an unrequested packet with data is recevied.
+- Feature: If settings.dat exists in the current directory, use the current directory instead of Local Settings for file storage.
+- Fix: The peers field of the seeder priority settings wasn't saved to the config file properly.
+- Change: Scheduler is now by default off.
+- Feature: Add an option to Open the files in the file list context menu.
+- Fix: No bandwidth was being allocated to HTTP downloads (trackers etc)
+! Change: Automatically update version number in dialogs based on a global variable
+
+
+--- 2005-09-18: Version 1.1 beta (build 75)
+- Feature: Implemented download limiting
+- Feature: Implemented per torrent bandwidth limiting
+- Feature: Support multi select in the open dialog when adding torrents in the gui.
+- Feature: Add option to resolve peerips to the context menu.
+- Feature: UPnP port mapping on Windows XP
+- Enhancement: Nicer settings dialog
+- Fix: Crashdumps weren't generated properly.
+- Fix: Fixed ListView column restore issues.
+- Feature: Added /BIGDUMP command line option to generate bigger crash dumps with more information.
+- Fix: Prevent "Update In" from showing anything if torrent is stopped.
+- Fix: ETA column/status show "inf" at the same time now.
+- Feature: ETA computation enhanced with weeks.
+- Feature: Better seeding priority controls
+- Fix: Pause/Resume command in the tray now works.
+- Feature: Added Availability column in main view.
+- Fix: Comment field wasn't displayed properly
+- Fix: Delete .torrent didn't actually delete the torrent
+- Fix: When there are multiple torrents with the same name, use a.NN.torrent instead of a.torrent.NN file name.
+- Fix: Refresh screen immediately when torrents are added.
+- Fix: Delete data didn't delete the empty directories.
+- Fix: Delete Data menu option didn't work at all.
+- Change: When window is minimized, it's not refreshed, saving some CPU.
+- Feature: Scheduler, allows you to specify at what times that uTorrent should use less bandwidth.
+- Fix: Torrents weren't properly re-checked if uTorrent had quit abruptly.
+

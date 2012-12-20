@@ -1,0 +1,5 @@
+lock
+XXXREQMPPEXXX
+refuse-eap
+lcp-echo-failure 15
+lcp-echo-interval 15

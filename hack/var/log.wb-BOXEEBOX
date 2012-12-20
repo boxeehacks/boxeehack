@@ -1,0 +1,28 @@
+[2012/12/12 00:53:00, 0] nsswitch/winbindd_passdb.c:sid_to_name(126)
+  Possible deadlock: Trying to lookup SID S-1-1-0 with passdb backend
+[2012/12/12 00:53:00, 0] nsswitch/winbindd_passdb.c:sid_to_name(126)
+  Possible deadlock: Trying to lookup SID S-1-5-2 with passdb backend
+[2012/12/12 00:53:01, 0] nsswitch/winbindd_passdb.c:sid_to_name(126)
+  Possible deadlock: Trying to lookup SID S-1-1-0 with passdb backend
+[2012/12/12 00:53:01, 0] nsswitch/winbindd_passdb.c:sid_to_name(126)
+  Possible deadlock: Trying to lookup SID S-1-5-2 with passdb backend
+[2012/12/14 02:49:18, 0] lib/util_sock.c:write_data(564)
+  write_data: write failure. Error = Broken pipe
+[2012/12/14 02:56:39, 0] nsswitch/winbindd_dual.c:fork_domain_child(1181)
+  Could not write result
+[2012/12/14 03:02:24, 0] lib/util_sock.c:write_data(564)
+  write_data: write failure. Error = Broken pipe
+[2012/12/14 03:04:41, 0] nsswitch/winbindd_dual.c:fork_domain_child(1181)
+  Could not write result
+[2012/12/14 07:56:01, 0] lib/util_sock.c:write_data(564)
+  write_data: write failure. Error = Broken pipe
+[2012/12/14 07:59:05, 0] nsswitch/winbindd_dual.c:fork_domain_child(1181)
+  Could not write result
+[2012/12/14 08:03:26, 0] lib/util_sock.c:write_data(564)
+  write_data: write failure. Error = Broken pipe
+[2012/12/14 08:07:11, 0] nsswitch/winbindd_dual.c:fork_domain_child(1181)
+  Could not write result
+[2012/12/14 08:13:39, 0] lib/util_sock.c:write_data(564)
+  write_data: write failure. Error = Broken pipe
+[2012/12/14 08:14:44, 0] nsswitch/winbindd_dual.c:fork_domain_child(1181)
+  Could not write result

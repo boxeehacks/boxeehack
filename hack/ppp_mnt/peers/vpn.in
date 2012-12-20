@@ -1,0 +1,7 @@
+remotename vpn
+linkname vpn
+ipparam vpn
+pty "/opt/local/sbin/pptp XXXHOSTNAMEXXX --nolaunchpppd "
+name XXXUSERNAMEXXX
+usepeerdns
+file /data/etc/ppp/options.pptp

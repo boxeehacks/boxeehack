@@ -1,0 +1,31 @@
+#!/bin/sh
+# to get the full PATH and LD_LIBRARY_PATH
+. /etc/profile
+if [ -f /tmp/vpn.up ]
+then
+	SERVER=`ip route   | grep -v $4 | grep -v $3 | grep -v "0.0.0.0" | cut -f 1 -d " "`
+	PRIMARY=`ip route   | grep -v $4 | grep -v $3 | grep -v "0.0.0.0" | cut -f 5 -d " "`
+	NEWGW=`ip route   | grep -v $4 | grep -v $3 | grep -v "0.0.0.0" | cut -f 3 -d " "`
+	CONNECTION=$6
+	if [ "${CONNECTION}" = "" ]; then CONNECTION=${PPP_IPPARAM}; fi
+	TUNNEL=$1
+	if [ "${TUNNEL}" = "" ]; then TUNNEL=${PPP_IFACE}; fi
+	if [ "${CONNECTION}" = "vpn" ] ; then
+		route del -host ${SERVER} gw ${NEWGW} dev ${PRIMARY}
+		route del default ${TUNNEL}
+		route add default gw ${NEWGW} dev ${PRIMARY}
+		ifconfig eth0 mtu 1500
+	fi
+	rm /tmp/vpn.up
+  /opt/local/bin/curl "http://127.0.0.1:5700/vpn.Notify?status=disconnected"
+fi
+
+# Wait and make sure the PPP connection is down again first
+PPP="`ifconfig -a | grep -A 6`"
+while [ "${PPP}" != "" ];
+do
+  sleep 1
+  PPP="`ifconfig -a | grep -A 6`"
+done
+
+ifconfig eth0 mtu 1500
