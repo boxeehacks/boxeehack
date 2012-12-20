@@ -1,0 +1,1117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.6: http://docutils.sourceforge.net/" />
+<title>uTorrent Server</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+<body>
+<div class="title document" id="utorrent-server">
+<h1 class="title">uTorrent Server</h1>
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#overview" id="id1">Overview</a><ul>
+<li><a class="reference internal" href="#introduction" id="id2">Introduction</a></li>
+<li><a class="reference internal" href="#features" id="id3">Features</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#getting-started" id="id4">Getting Started</a><ul>
+<li><a class="reference internal" href="#command-line-arguments" id="id5">Command-line Arguments</a></li>
+<li><a class="reference internal" href="#configuration-file" id="id6">Configuration File</a></li>
+<li><a class="reference internal" href="#environment" id="id7">Environment</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#application-settings" id="id8">Application Settings</a><ul>
+<li><a class="reference internal" href="#internal-settings" id="id9">Internal Settings</a></li>
+<li><a class="reference internal" href="#regular-settings" id="id10">Regular Settings</a></li>
+<li><a class="reference internal" href="#reloadable-settings" id="id11">Reloadable Settings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#torrent-api" id="id12">µTorrent API</a><ul>
+<li><a class="reference internal" href="#what-is-the-torrent-web-ui" id="id13">What is the µTorrent Web UI?</a></li>
+<li><a class="reference internal" href="#what-is-the-torrent-web-api" id="id14">What is the µTorrent Web API?</a></li>
+<li><a class="reference internal" href="#general-notes-for-api-access" id="id15">General notes for API access</a></li>
+<li><a class="reference internal" href="#token-authentication-system-important" id="id16">Token Authentication System (important!)</a></li>
+<li><a class="reference internal" href="#modifying-settings" id="id17">Modifying Settings</a></li>
+<li><a class="reference internal" href="#torrent-labels-rss-filters-list" id="id18">Torrent/labels/RSS/Filters List</a></li>
+<li><a class="reference internal" href="#files-list" id="id19">Files List</a></li>
+<li><a class="reference internal" href="#torrent-job-properties" id="id20">Torrent Job Properties</a></li>
+<li><a class="reference internal" href="#actions" id="id21">Actions</a></li>
+<li><a class="reference internal" href="#limitations" id="id22">Limitations</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#legal-notices" id="id23">Legal Notices</a></li>
+</ul>
+</div>
+<div class="section" id="overview">
+<h1>Overview</h1>
+<div class="section" id="introduction">
+<h2>Introduction</h2>
+<p>µTorrent Server is designed for use on computers
+running Linux and other UNIX-like operating systems.
+It provides a state-of-the-art implementation of the
+BitTorrent protocol and a full-featured web-based user interface
+in a small footprint.</p>
+</div>
+<div class="section" id="features">
+<h2>Features</h2>
+<p>µTorrent Server is a full implementation of the official BitTorrent
+protocol.  Features include:</p>
+<blockquote>
+<ul class="simple">
+<li>Distributed hash table (DHT)</li>
+<li>UPnP port mapping</li>
+<li>NAT-PMP port mapping</li>
+<li>Upload rate limiting</li>
+<li>Download rate limiting</li>
+<li>Queuing</li>
+<li>Configurable limit on number of simultaneously uploading peers</li>
+<li>Incremental file allocation</li>
+<li>Block level piece picking</li>
+<li>Separate threads for file-check and download</li>
+<li>Single thread and single port for multiple torrent downloads</li>
+<li>BitTorrent extension protocol</li>
+<li>Multi-tracker extension support</li>
+<li>Fair trade extension</li>
+<li>Compact tracker extension</li>
+<li>Fast resume</li>
+<li>Queuing of torrent file-check if fast resume not possible</li>
+<li>HTTP seed support</li>
+<li>Resumption of partial downloads from other BitTorrent clients</li>
+<li>File-sizes greater than 2GB</li>
+<li>Selective download of multi-file torrents</li>
+<li>IPv6</li>
+<li>High performance network stack</li>
+<li>uTP - Advanced UDP-based transport with dynamic congestion control</li>
+</ul>
+</blockquote>
+<p>Additionally, µTorrent Server includes a full-featured web-based
+user interface.</p>
+</div>
+</div>
+<div class="section" id="getting-started">
+<h1>Getting Started</h1>
+<p>µTorrent Server consist of an executable (<tt class="docutils literal">utserver</tt>)
+that implements BitTorrent services and is controlled through an
+HTTP-based application programming interface (API).</p>
+<div class="section" id="command-line-arguments">
+<h2>Command-line Arguments</h2>
+<p>µTorrent Server supports the following arguments - the keywords are
+case-insensitive and should be immediately preceded with a dash (<tt class="docutils literal">-</tt>):</p>
+<blockquote>
+<ul class="simple">
+<li><tt class="docutils literal">configfile</tt> - path to and name of the configuration file - if this
+argument is not specified, the <tt class="docutils literal">utserver</tt> program looks for a file named
+<tt class="docutils literal">utserver.conf</tt> in the current working directory - see the following
+section for more details</li>
+<li><tt class="docutils literal">logfile</tt> - path to and name of the log file - specifying
+<tt class="docutils literal"><span class="pre">-logfile</span> filename</tt> will direct log output to <tt class="docutils literal">filename</tt>, while
+specifying <tt class="docutils literal"><span class="pre">-logfile</span></tt> without a filename will direct log file output to
+<tt class="docutils literal">utserver.log</tt> in the current working directory</li>
+<li><tt class="docutils literal">settingspath</tt> - path to directory to store files of relatively
+small size (operational settings, torrent resume information, RSS
+feed information) - if not specified, the <tt class="docutils literal">utserver</tt> program will store
+these files in the current working directory</li>
+<li><tt class="docutils literal">pidfile</tt> - path to and name of the file to create that will contain the
+process ID of the <tt class="docutils literal">utserver</tt> process</li>
+<li><tt class="docutils literal">daemon</tt> - directs the server to run in its own process group</li>
+<li><tt class="docutils literal">usage</tt> - directs the server to generate message describing
+supported arguments and then exit</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="configuration-file">
+<h2>Configuration File</h2>
+<p>At startup the <tt class="docutils literal">utserver</tt> process looks for a configuration file which
+allows the behavior of the product to be customized by changing the
+values of certain settings.  The format of this file is as follows:</p>
+<blockquote>
+<ul class="simple">
+<li>each setting is on a separate line;</li>
+<li>each line consists of colon-separated name of the setting and its
+value;</li>
+<li>any line whose first non-whitespace character is <tt class="docutils literal">#</tt> is a comment.</li>
+</ul>
+</blockquote>
+<p>For example, a file that sets two values and includes one comment
+might look like:</p>
+<pre class="literal-block">
+# This is a comment
+dir_temp_files: temp
+preferred_interface: eth0
+</pre>
+<p>For a complete list of application settings, see <a class="reference internal" href="#application-settings">Application Settings</a>.</p>
+</div>
+<div class="section" id="environment">
+<h2>Environment</h2>
+<p>When the <tt class="docutils literal">utserver</tt> process creates files intended for end users, such as
+torrent data files, it uses the value of the file mode creation mask to
+specify access to these files.
+For more information, run <tt class="docutils literal">man umask</tt> on a Linux command line.
+The value of the file mode creation mask is not considered when creating files
+not intended for use by users, such as settings files.</p>
+</div>
+</div>
+<div class="section" id="application-settings">
+<h1>Application Settings</h1>
+<p>Settings fall into two categories:</p>
+<blockquote>
+<ul class="simple">
+<li>internal settings, whose values can only be set in the
+<tt class="docutils literal">utserver.conf</tt> file;</li>
+<li>regular settings, whose values can be set in the
+<tt class="docutils literal">utserver.conf</tt> file or the <tt class="docutils literal"><span class="pre">/api/app-settings-set</span></tt> RPC API
+call.</li>
+</ul>
+</blockquote>
+<p>A setting can be of one of three types:</p>
+<blockquote>
+<ul class="simple">
+<li><em>string</em></li>
+<li><em>integer</em></li>
+<li><em>Boolean</em> value (<tt class="docutils literal">1</tt> for true and <tt class="docutils literal">0</tt> for false)</li>
+</ul>
+</blockquote>
+<div class="section" id="internal-settings">
+<h2>Internal Settings</h2>
+<dl class="docutils">
+<dt><strong>bind_ip</strong> (<em>string</em>):</dt>
+<dd>IP address to use for socket connections. If not provided, a
+default IP address will be used. We do not recommend changing this value.</dd>
+<dt><strong>ut_webui_port</strong> (<em>integer</em>):</dt>
+<dd>Default value: 8080. Port number where the <tt class="docutils literal">utserver</tt> process accepts
+HTTP RPC API calls to support the µTorrent-compatible HTTP interface.
+If the <tt class="docutils literal">utserver</tt> process also serves HTML files (see
+<tt class="docutils literal">webui_server_files</tt> setting), also the port of HTTP server.</dd>
+<dt><strong>token_auth_enable</strong> (<em>boolean</em>)</dt>
+<dd>Default value: true. If true, the µTorrent HTTP interface
+defends against cross-site request forgeries by requiring that a
+short-lived token be obtained from the µTorrent HTTP interface and
+included at the beginning of the parameter list of any request made
+to that interface.  If false, the µTorrent HTTP interface will not be
+protected in this manner.</dd>
+<dt><strong>dir_active</strong> (<em>string</em>):</dt>
+<dd>Default value: &quot;./&quot;. Directory in which currently downloaded data
+is saved. Can be an absolute path or a relative path. If it is a
+relative path, the value is relative to <tt class="docutils literal">dir_root</tt> or the current
+working directory if <tt class="docutils literal">dir_root</tt> is not defined or an empty
+string. It is recommended that this directory be hidden from users
+(i.e. not exported through Samba).</dd>
+<dt><strong>dir_completed</strong> (<em>string</em>):</dt>
+<dd>Default value: &quot;&quot;. Directory where completed downloads are stored. If the
+value is an empty string, the value of <tt class="docutils literal">dir_active</tt> is used. This value
+must represent a path that is accessible to users (e.g. exported through
+Samba). It also has to be on the same volume as <tt class="docutils literal">dir_active</tt>.</dd>
+<dt><strong>dir_download</strong> (<em>string</em>):</dt>
+<dd><p class="first">Default value: &quot;&quot;. Optional directory where completed downloads can be
+stored, instead of in <tt class="docutils literal">dir_completed</tt>. If no value is specified for this
+setting, the value of <tt class="docutils literal">dir_completed</tt> is used. The value must represent
+a path that is accessible to users (e.g. exported through
+Samba).</p>
+<p>This option can be specified multiple times in the file -
+once for each directory to be designated as such.  This option can be
+used when adding torrents via the µTorrent HTTP interface, not via the
+SDK interface.</p>
+<p class="last">Use the action <tt class="docutils literal"><span class="pre">list-dirs</span></tt> to obtain a list of
+download directories from the µTorrent HTTP interface.  Use the option
+<tt class="docutils literal">download_dir</tt> to specify which of these directories to use when
+adding a torrent by URL or file through the µTorrent HTTP interface;
+specify the one-based index of the entry of interest.  The index of each
+entry will be in order in which each entry appears in <tt class="docutils literal">utserver.conf</tt>,
+starting with 1 for the first entry, 2 for the second entry, and so on.
+0 indicates the default download directory should be used.</p>
+</dd>
+<dt><strong>dir_torrent_files</strong> (<em>string</em>):</dt>
+<dd>Default value: &quot;&quot;. Directory where torrent files are stored. If the
+empty string, the value of <tt class="docutils literal">dir_active</tt> is used.  It is recommended
+that this directory be hidden from users (i.e. not exported through
+Samba).</dd>
+<dt><strong>dir_temp_files</strong> (<em>string</em>):</dt>
+<dd>Default value: &quot;&quot;. Directory where temporary files are stored. If the
+empty string, the value of <tt class="docutils literal">dir_active</tt> is used.  It is recommended
+that this directory be hidden from users (i.e. not exported through
+Samba).   Also, using a separate directory just for temporary files
+allows for deleting the files in this directory on boot and/or
+periodically.  The <tt class="docutils literal">utserver</tt> process creates temporary files with a <tt class="docutils literal">.utt</tt>
+extension - if a value for this setting is specified, the <tt class="docutils literal">utserver</tt>
+process will delete all files with that extension in that directory
+at process startup.  This setting applies only to POSIX systems.
+The value should specify a directory, not a symbolic link to a directory.</dd>
+<dt><strong>dir_autoload</strong> (<em>string</em>):</dt>
+<dd>Default value: &quot;&quot;. Directory where torrent files will be recognized
+and auto-loaded. If the empty string, auto-load is disabled.</dd>
+<dt><strong>dir_autoload_delete</strong> (<em>boolean</em>):</dt>
+<dd>Default value: false. If true, torrent files in the autoload directory
+will be deleted after being loaded, else they will be renamed with
+an extension of <tt class="docutils literal">.loaded</tt>.  The <tt class="docutils literal">dir_autoload</tt> setting must be
+specified for this setting to have an effect.</dd>
+<dt><strong>dir_request</strong> (<em>string</em>):</dt>
+<dd><p class="first">Default value: &quot;&quot;. Directory where maintenance request files will be
+recognized, loaded, and deleted. If the empty string, maintenance
+request handling is disabled.  This directory should be hidden from
+users (i.e., not exported through Samba).  Your software running on
+your device can create the following files in this directory in
+order to request the following maintenance procedures.</p>
+<p>If the file <tt class="docutils literal">c.utmr</tt> is created in or moved into this directory,
+the credentials necessary to access the µTorrent HTTP interface
+will be reset to username <tt class="docutils literal">admin</tt> and a blank password.</p>
+<p>If the file <tt class="docutils literal">wipl.utmr</tt> is created in or moved into this directory,
+the IP restriction list that limits the IPs that can use the µTorrent
+HTTP interface is cleared, so that there will be no restrictions on
+IP address.</p>
+<p>These maintenance operations provide a way to help a
+user who has either entered new credentials and then forgotten them,
+or who has entered an IP range in the restricted list and can no
+longer access the µTorrent HTTP interface as a result.</p>
+<p>If the file <tt class="docutils literal">rcf.utmr</tt> is created in or moved into this directory, the
+server will reload the configuration file.  If you always use this method
+to request a configuration file reload, you can safely change the value of
+this setting while the server is running.</p>
+<p class="last">The server will also reload the configuration file if you send a hangup
+signal to the server; however, a race condition may occur if you send a
+hangup signal to the server in order to change the value of this setting.
+<em>You should either only use the file system interface for requesting
+configuration file reloads, or you should not change the value of this
+setting in the configuration file before sending a hangup signal to the
+server.</em></p>
+</dd>
+<dt><strong>upnp</strong> (<em>boolean</em>):</dt>
+<dd>Default value: true. If true, UPNP functionality for mapping ports
+is used by <tt class="docutils literal">utserver</tt>. We recommend setting this value to true.</dd>
+<dt><strong>natpmp</strong> (<em>boolean</em>):</dt>
+<dd>If true, NAT-PMP functionality for mapping ports is used by
+<tt class="docutils literal">utserver</tt>. Default value: true. We recommend setting this value to
+true.</dd>
+<dt><strong>lsd</strong> (<em>boolean</em>):</dt>
+<dd>Default value: true. If true, Local Service Discovery is
+enabled. We recommend setting this value to true.</dd>
+<dt><strong>dht</strong> (<em>boolean</em>):</dt>
+<dd>Default value: true. If true, Distributed Hash Table extension is
+enabled. We recommend setting this value to true.</dd>
+<dt><strong>pex</strong> (<em>boolean</em>):</dt>
+<dd>Default value: true. If true, Peer Exchange extension is
+enabled. We recommend setting this value to true.</dd>
+<dt><strong>rate_limit_local_peers</strong> (<em>boolean</em>):</dt>
+<dd>Default value: false. If true, rate limiting also applies to communications
+with peers in the local subnet. We recommend setting this value to false.</dd>
+<dt><strong>dir_root</strong> (<em>string</em>):</dt>
+<dd>Default value: &quot;&quot;. If not empty, <strong>dir_active</strong>, <strong>dir_completed</strong>,
+and <strong>dir_torrent_files</strong> are relative to this directory.</dd>
+<dt><strong>disk_cache_max_size</strong> (<em>integer</em>):</dt>
+<dd><p class="first">Default value: 0.  Maximum amount of memory used by each of the
+read, write, and piece caches.  Value is in megabytes.
+If 0, accepts the SDK's default choices on
+selecting sizes of disk caches.  Maximum value is 512.</p>
+<p class="last">The value of this setting will be applied every time the <tt class="docutils literal">utserver</tt> process
+starts.</p>
+</dd>
+<dt><strong>preferred_interface</strong> (<em>string</em>):</dt>
+<dd><p class="first">Default value: &quot;&quot;.  If defined, name of network interface to be
+preferred when attempting to search among network interfaces for
+an external IP and hardware address.
+If empty string, preferred interface is ignored.</p>
+<p>You need to provide a value for this setting if either 1) the
+toolchain for your computer does not supply ifaddrs.h, or 2) you want
+the <tt class="docutils literal">utserver</tt> process to choose a different interface than it would choose on
+its own.  You should set a value for this setting if you see an
+incorrect port mapping on a UPnP router for the subnet to which the
+device belongs (the IP address of the device will not appear in the
+port mapping requested by the <tt class="docutils literal">utserver</tt> process - instead, the IP address
+associated with the mapping will be 0.0.0.0 with a device having a
+toolchain that does not include ifaddrs.h, or some other IP address with a
+device having a toolchain that includes ipaddrs.h).</p>
+<p class="last">The value of this setting will be applied every time the <tt class="docutils literal">utserver</tt> process
+starts.</p>
+</dd>
+<dt><strong>admin_name</strong> (<em>string</em>):</dt>
+<dd>Default value: &quot;admin&quot;.
+If defined, name that must be supplied (along with the password) when
+authenticating to the server via the HTTP interface.
+This allows the administrator to define an initial non-default value for
+this name.
+This value will not be applied from <tt class="docutils literal">utserver.conf</tt> if <tt class="docutils literal">settings.dat</tt>
+already exists.</dd>
+<dt><strong>admin_password</strong> (<em>string</em>):</dt>
+<dd>Default value: &quot;&quot;.
+If defined, password that must be supplied (along with the name) when
+authenticating to the server via the HTTP interface.
+This allows the administrator to define an initial non-default value for
+this password.
+This value will not be applied from <tt class="docutils literal">utserver.conf</tt> if <tt class="docutils literal">settings.dat</tt>
+already exists.</dd>
+<dt><strong>logmask</strong> (<em>integer</em>):</dt>
+<dd><p class="first">Default value: 0.  A mask whose bits when set allow certain categories of
+log messages to be generated.
+The value of this setting will be applied every time the <tt class="docutils literal">utserver</tt> process
+starts.</p>
+<p>The bits (0 - 31) in the value of this setting correspond to a set of
+internal events and subsystems.  The usage of these bits may change
+without advance notice in a future release.</p>
+<ul class="last simple">
+<li>3 - send have</li>
+<li>6 - hole punch</li>
+<li>7 - got bad piece request</li>
+<li>8 - trace</li>
+<li>9 - piece picker</li>
+<li>10 - got bad cancel</li>
+<li>11 - got bad unchoke</li>
+<li>12 - got bad piece</li>
+<li>13 - rss</li>
+<li>14 - rss error</li>
+<li>15 - got have</li>
+<li>16 - got bad have</li>
+<li>17 - error</li>
+<li>18 - aggregated</li>
+<li>19 - disconnect</li>
+<li>20 - out connect</li>
+<li>21 - in connect</li>
+<li>22 - UPnP</li>
+<li>23 - UPnP error</li>
+<li>24 - NATPMP</li>
+<li>25 - NATPMP error</li>
+<li>26 - metadata finish</li>
+<li>27 - web UI</li>
+<li>28 - got bad reject</li>
+<li>29 - pex</li>
+<li>30 - peer messages</li>
+<li>31 - blocked connect</li>
+</ul>
+</dd>
+<dt><strong>ut_webui_dir</strong> (<em>string</em>):</dt>
+<dd>Directory where the web UI file archive <tt class="docutils literal">webui.zip</tt> is stored, or
+which contains a <tt class="docutils literal">webui</tt> subdirectory within which the unarchived
+web UI files are stored.
+It can be an absolute path or set relative to the current directory.
+It is recommended that this directory be hidden from users (i.e. not
+exported through Samba).
+Default value: &quot;&quot; (to use the same directory as <tt class="docutils literal">settings.dat</tt> and other
+settings files).</dd>
+<dt><strong>finish_cmd</strong> (<em>string</em>), <strong>state_cmd</strong> (<em>string</em>):</dt>
+<dd><p class="first">If defined, <tt class="docutils literal">finish_cmd</tt> is a command that will be executed upon
+completion of each torrent, and <tt class="docutils literal">state_cmd</tt> is a command that will be
+executed when a torrent changes state.
+Default value: &quot;&quot; (no command is run for the event(s) associated with that
+setting).</p>
+<p>The command is run asynchronously, so that a lengthy or hung process will
+not block the server.
+The server creates a new process group for the command, so that the server
+does not need to wait for it, and so the kernel process table does not fill
+up with zombie processes.
+The command is run as the same user that runs the server process.</p>
+<p>The server permits substitutions in the command text as follows:</p>
+<dl class="docutils">
+<dt><strong>%F</strong></dt>
+<dd>Name of downloaded data file (for single-file torrents)</dd>
+<dt><strong>%D</strong></dt>
+<dd>directory where torrent data files are saved</dd>
+<dt><strong>%N</strong></dt>
+<dd>torrent title</dd>
+<dt><strong>%S</strong></dt>
+<dd>torrent state</dd>
+<dt><strong>%P</strong></dt>
+<dd>previous state of torrent</dd>
+<dt><strong>%L</strong></dt>
+<dd>label associated with torrent</dd>
+<dt><strong>%T</strong></dt>
+<dd>tracker</dd>
+<dt><strong>%M</strong></dt>
+<dd>status message</dd>
+<dt><strong>%I</strong></dt>
+<dd>hex-encoded info-hash</dd>
+</dl>
+<p>State (<tt class="docutils literal">%S</tt>) and previous state (<tt class="docutils literal">%P</tt>) are integers that have the
+following values:</p>
+<ul class="last simple">
+<li>1 (error)</li>
+<li>2 (checked)</li>
+<li>3 (paused)</li>
+<li>4 (super seeding)</li>
+<li>5 (seeding)</li>
+<li>6 (downloading)</li>
+<li>7 (super seeding (forced))</li>
+<li>8 (seeding (forced))</li>
+<li>9 (downloading (forced))</li>
+<li>10 (queued seed)</li>
+<li>11 (finished)</li>
+<li>12 (queued)</li>
+<li>13 (stopped)</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="regular-settings">
+<h2>Regular Settings</h2>
+<dl class="docutils">
+<dt><strong>bind_port</strong> (<em>integer</em>):</dt>
+<dd>Default value: 6881. Port used for BitTorrent protocol. This can be
+any value in the range 1025-65000.</dd>
+<dt><strong>max_ul_rate</strong> (<em>integer</em>):</dt>
+<dd>Default value: -1. Maximum total upload rate in kilobytes per
+second. -1 means unlimited. We recommend setting it to -1.</dd>
+<dt><strong>max_ul_rate_seed</strong> (<em>integer</em>):</dt>
+<dd>Default value: -1. Maximum per-torrent upload rate when seeding, in
+kilobytes per second. -1 means unlimited. We recommend setting it to -1.</dd>
+<dt><strong>conns_per_torrent</strong> (<em>integer</em>):</dt>
+<dd>Default value: 50. Maximum number of connections for a given torrent.</dd>
+<dt><strong>max_total_connections</strong> (<em>integer</em>):</dt>
+<dd>Default value: 200. Maximum number of connection opened at the same time.</dd>
+<dt><strong>auto_bandwidth_management</strong> (<em>boolean</em>):</dt>
+<dd>Default value: true. If true, upload bandwidth is automatically
+throttled in order to not impact other applications using TCP/IP.</dd>
+<dt><strong>max_dl_rate</strong> (<em>integer</em>):</dt>
+<dd>Default value: -1. Maximum total download rate in kilobytes per
+second. -1 means unlimited. We recommend setting it to -1.</dd>
+<dt><strong>seed_ratio</strong> (<em>integer</em>):</dt>
+<dd>Default value: 0. Seed ratio in percent (%) (e.g. 100 means
+100%). If not 0, seeding will stop after reaching this
+upload/download ratio.</dd>
+<dt><strong>seed_time</strong> (<em>integer</em>):</dt>
+<dd>Default value: 0. Time after which seeding will stop, in seconds. 0
+means seeding won't stop.</dd>
+</dl>
+</div>
+<div class="section" id="reloadable-settings">
+<h2>Reloadable Settings</h2>
+<p>Many of these settings are only read from the configuration file when the
+µTorrent settings file <tt class="docutils literal">settings.dat</tt> does not already exist in the
+settings directory.  Once <tt class="docutils literal">settings.dat</tt> exists, the values specified in the
+configuration file for these settings will be ignored, and the values stored
+in <tt class="docutils literal">settings.dat</tt> will be used.  For other settings, the server will load the
+values from the configuration file every time the program starts or receives a
+request to reload the configuration file.</p>
+<p>The settings for which the values are always applied from the configuration
+file when the file is read by the server include:</p>
+<ul class="simple">
+<li><tt class="docutils literal">dir_request</tt></li>
+<li><tt class="docutils literal">disk_cache_max_size</tt></li>
+<li><tt class="docutils literal">finish_cmd</tt></li>
+<li><tt class="docutils literal">logmask</tt></li>
+<li><tt class="docutils literal">preferred_interface</tt></li>
+<li><tt class="docutils literal">state_cmd</tt></li>
+<li><tt class="docutils literal">ut_webui_dir</tt></li>
+</ul>
+</div>
+</div>
+<div class="section" id="torrent-api">
+<h1>µTorrent API</h1>
+<div class="section" id="what-is-the-torrent-web-ui">
+<h2>What is the µTorrent Web UI?</h2>
+<p>µTorrent Server is based on the same codebase as the BitTorrent Mainline
+and µTorrent PC applications, which have a powerful API to control and configure
+the client from both local and remote applications, as well as display most data
+available. Normally, this functionality is used in a web browser with the
+reference Web UI we provide, but any application can talk to µTorrent directly
+by using the Web API.</p>
+</div>
+<div class="section" id="what-is-the-torrent-web-api">
+<h2>What is the µTorrent Web API?</h2>
+<p>It is an API to access the functions of the WebUI built into the application.
+The API is stable and largely complete.
+Missing functionality will be added over time and
+compatibility with existing applications will generally be preserved, so little
+to no work will be needed to keep your web app working with future versions
+of the applications. Many community projects have extended the functionality of the
+PC applications using this Web API.  These projects form a rich ecosystem and vibrant
+community.  Partners should consider the relative merits of enabling this
+community to extend their platforms through the Web API.  Current projects and
+discussion can be accessed in the Web API section of the developer forums at
+forum.utorrent.com.</p>
+</div>
+<div class="section" id="general-notes-for-api-access">
+<h2>General notes for API access</h2>
+<p>The base URI to access the API is:</p>
+<p><tt class="docutils literal"><span class="pre">http://[IP]:[PORT]/gui/</span></tt>. The data returned by calls is in
+the JSON format.</p>
+<p>Authentication is done with basic HTTP authentication. The guest account,
+disabled by default, is limited to a subset of the calls (Action calls that
+modify torrent state and application and torrent settings are disallowed).</p>
+<p>Unless otherwise noted, each request is made using HTTP GET. Parameters are added
+onto the base URI in the format that is standard for HTTP GET. The first
+parameter should always be the command (e.g. <tt class="docutils literal"><span class="pre">?list</span></tt> or <tt class="docutils literal"><span class="pre">?action</span></tt>).</p>
+<p>Most action commands require a hash to be passed. This is the infohash of the
+torrent, obtained from listing all torrents. Each hash is a 40-character ASCII
+string. Some commands accept multiple infohashes chained together,
+e.g.``http://[IP]:[PORT]/gui/?action=[ACTION]&amp;hash=[TORRENT HASH 1]&amp;hash=[TORRENT HASH
+2]&amp;...`` to cut down on the number of requests required.</p>
+<p>When setting boolean values either by &amp;action=setsetting or &amp;action=setprops,
+the value parameter should be sent as 0 for &quot;false&quot; or 1 for &quot;true&quot; rather than
+a string indicating &quot;true&quot; or &quot;false&quot;.</p>
+</div>
+<div class="section" id="token-authentication-system-important">
+<h2>Token Authentication System (important!)</h2>
+<p>A token authentication system (<a class="reference external" href="http://trac.utorrent.com/trac/wiki/TokenSystem">http://trac.utorrent.com/trac/wiki/TokenSystem</a>)
+was implemented in µTorrent to prevent cross-site request forgeries (CSRF). All
+developers creating applications that use the WebUI backend MUST implement
+support for this system, as the application will otherwise fail if the user has
+webui.token_auth enabled.</p>
+<p>The <tt class="docutils literal">token=</tt> parameter must appear on a request's parameter list before or
+immediately following the <tt class="docutils literal">action</tt> or <tt class="docutils literal">list</tt> parameters, or the request will
+fail.</p>
+<p>In 1.8.3 (µTorrent for windows) and earlier, token authentication is disabled by
+default (though users can enable it manually), but this option WILL be enable by
+default in future versions, so implementing support now is a requirement for
+future compatibility.</p>
+</div>
+<div class="section" id="modifying-settings">
+<h2>Modifying Settings</h2>
+<p>The base parameter for settings is <tt class="docutils literal"><span class="pre">?action=getsettings</span></tt>. Using this parameter
+by itself will give a list of settings in the following format:</p>
+<pre class="literal-block">
+{
+ &quot;build&quot;: BUILD NUMBER (integer),
+ &quot;settings&quot;: [
+     [
+         OPTION NAME (string),
+         TYPE* (integer),
+         VALUE (string),
+         PARAMETERS {
+           &quot;access&quot;: (string)
+         }
+     ],
+        ...
+ ]
+}
+</pre>
+<p>OPTION NAME is the name of the setting. They are not listed here, as some of the
+settings (particularly advanced ones) vary with each version and most are
+self-explanatory. However, a near-complete list for 1.8.2 is at
+<a class="reference external" href="http://forum.utorrent.com/viewtopic.php?id=55526">http://forum.utorrent.com/viewtopic.php?id=55526</a> for your perusal.</p>
+<p>TYPE: The TYPE is an integer value that indicates what type of data is enclosed
+within the VALUE string. The following is a list of the possible TYPEs and what
+VALUE type it corresponds to:</p>
+<blockquote>
+<ul class="simple">
+<li>0 = Integer</li>
+<li>1 = Boolean</li>
+<li>2 = String</li>
+</ul>
+</blockquote>
+<p>To change settings, the following URI can be used:</p>
+<p><tt class="docutils literal"><span class="pre">http://[IP]:[PORT]/gui/?action=setsetting&amp;s=[SETTING]&amp;v=[VALUE]</span></tt></p>
+<p>Multiple settings can be changed in a single request by chaining together <tt class="docutils literal">s=</tt> and
+<tt class="docutils literal">v=</tt> in the URI. <tt class="docutils literal">s=</tt> defines the setting and <tt class="docutils literal">v=</tt> is the value for the <tt class="docutils literal">s=</tt> immediately
+preceding it.</p>
+<p>For example, to set the global upload cap to 10KiB/s and the global download cap
+to 40KiB/s, you would request this URI:</p>
+<p><tt class="docutils literal"><span class="pre">http://[IP]:[PORT]/gui/?action=setsetting&amp;s=max_ul_rate&amp;v=10&amp;s=max_dl_rate&amp;v=40</span></tt></p>
+<p>PARAMETERS: The PARAMETERS is a dictionary of additional attributes of the
+associated setting.  The only attribute currently supported is <tt class="docutils literal">access</tt>,
+which specifies if the client can view and/or modify this setting.  Here
+are the possible values:</p>
+<blockquote>
+<ul class="simple">
+<li>Y - read and write</li>
+<li>R - read only</li>
+<li>W - write only</li>
+</ul>
+</blockquote>
+<p>Settings that are neither readable nor writable won't be included in the
+list of settings generated by the <tt class="docutils literal">getsettings</tt> action.</p>
+</div>
+<div class="section" id="torrent-labels-rss-filters-list">
+<h2>Torrent/labels/RSS/Filters List</h2>
+<p>To get the list of all torrents and RSS feeds, request
+<tt class="docutils literal"><span class="pre">http://[IP]:[PORT]/gui/?list=1</span></tt> . This will return the torrents in
+the following fashion:</p>
+<pre class="literal-block">
+{
+        &quot;build&quot;: BUILD NUMBER (integer),
+        &quot;label&quot;: [
+                [ LABEL (string),
+                TORRENTS IN LABEL (integer) ],
+                ...
+        ],
+        &quot;torrents&quot;: [
+                [ HASH (string),
+                STATUS* (integer),
+                NAME (string),
+                SIZE (integer in bytes),
+                PERCENT PROGRESS (integer in per mils),
+                DOWNLOADED (integer in bytes),
+                UPLOADED (integer in bytes),
+                RATIO (integer in per mils),
+                UPLOAD SPEED (integer in bytes per second),
+                DOWNLOAD SPEED (integer in bytes per second),
+                ETA (integer in seconds),
+                LABEL (string),
+                PEERS CONNECTED (integer),
+                PEERS IN SWARM (integer),
+                SEEDS CONNECTED (integer),
+                SEEDS IN SWARM (integer),
+                AVAILABILITY (integer in 1/65535ths),
+                TORRENT QUEUE ORDER (integer),
+                REMAINING (integer in bytes),
+                DOWNLOAD URL (string),
+                RSS FEED URL (string),
+                STATUS MESSAGE (string),
+                STREAM ID (string),
+                ADDED ON (integer in seconds),
+                COMPLETED ON (integer in seconds),
+                APP UPDATE URL (string) ],
+
+                ...
+        ],
+        &quot;rssfeeds&quot;: [
+                [ IDENT (integer),
+                ENABLED (boolean),
+                USE FEED TITLE (boolean),
+                USER SELECTED (boolean),
+                PROGRAMMED (boolean),
+                DOWNLOAD STATE (integer),
+                URL (string),
+                NEXT UPDATE (integer in unix time),
+                [
+                        [ NAME (string),
+                        NAME FULL (string),
+                        URL (string),
+                        QUALITY (integer),
+                        CODEC (integer),
+                        TIMESTAMP (integer),
+                        SEASON (integer),
+                        EPISODE (integer),
+                        EPISODE TO (integer),
+                        FEED ID (integer),
+                        REPACK (boolean),
+                        IN HISTORY (boolean) ],
+
+                        ...
+                ] ],
+
+                ...
+        ],
+        &quot;rssfilters&quot;: [
+                [ IDENT (integer),
+                FLAGS (integer),
+                NAME (string),
+                FILTER (string as regexp),
+                NOT FILTER (string as regexp),
+                DIRECTORY (string),
+                FEED (integer as feed ID),
+                QUALITY (integer in bytes),
+                LABEL (string),
+                POSTPONE MODE (integer),
+                LAST MATCH (integer),
+                SMART EP FILTER (integer),
+                REPACK EP FILTER (integer),
+                EPISODE FILTER STR (string),
+                EPISODE FILTER (boolean),
+                RESOLVING CANDIDATE (boolean) ],
+
+                ...
+        ],
+        &quot;torrentc&quot;: CACHE ID** (string integer)
+}
+</pre>
+<p>STATUS: The STATUS is a bitfield represented as integers, which is obtained by
+adding up the different values for corresponding statuses:</p>
+<blockquote>
+<ul class="simple">
+<li>1 = Started</li>
+<li>2 = Checking</li>
+<li>4 = Start after check</li>
+<li>8 = Checked</li>
+<li>16 = Error</li>
+<li>32 = Paused</li>
+<li>64 = Queued</li>
+<li>128 = Loaded</li>
+</ul>
+</blockquote>
+<p>For example, if a torrent job has a status of 201 = 128 + 64 + 8 + 1, then it is
+loaded, queued, checked, and started. A bitwise AND operator should be used to
+determine whether the given STATUS contains a particular status.</p>
+<p>CACHE ID: The CACHE ID is a number randomly generated by µTorrent for the given
+data. By requesting the torrent list using
+<tt class="docutils literal"><span class="pre">http://[IP]:[PORT]/gui/?list=1&amp;cid=[CACHE</span> ID]</tt>, only the items that have changed
+since the list corresponding to the CACHE ID was sent will be returned. This is
+used to minimize bandwidth usage and simplify parsing by decreasing the amount
+of data sent by µTorrent. In this situation, six new dictionary keys replace
+<tt class="docutils literal">&quot;torrents&quot;</tt>, <tt class="docutils literal">&quot;rssfeeds&quot;</tt> and <tt class="docutils literal">&quot;rssfilters&quot;</tt> and the returned JSON will look as follows:</p>
+<pre class="literal-block">
+{
+        &quot;build&quot;: BUILD NUMBER (integer),
+        &quot;label&quot;: [
+                [ LABEL (string),
+                TORRENTS IN LABEL (integer) ],
+
+                ...
+        ],
+        &quot;torrentp&quot;: [
+                [ HASH (string),
+                STATUS (integer),
+                NAME (string),
+                SIZE (integer in bytes),
+                PERCENT PROGRESS (integer in per mils),
+                DOWNLOADED (integer in bytes),
+                UPLOADED (integer in bytes),
+                RATIO (integer in per mils),
+                UPLOAD SPEED (integer in bytes per second),
+                DOWNLOAD SPEED (integer in bytes per second),
+                ETA (integer in seconds),
+                LABEL (string),
+                PEERS CONNECTED (integer),
+                PEERS IN SWARM (integer),
+                SEEDS CONNECTED (integer),
+                SEEDS IN SWARM (integer),
+                AVAILABILITY (integer in 1/65535ths),
+                TORRENT QUEUE ORDER (integer),
+                REMAINING (integer in bytes),
+                DOWNLOAD URL (string),
+                RSS FEED URL (string),
+
+                ...
+        ],
+        &quot;torrentm&quot;: [
+                HASH (string),
+
+                ...
+        ],
+        &quot;rssfeedp&quot;: [
+                [ IDENT (integer),
+                ENABLED (boolean),
+                USE FEED TITLE (boolean),
+                USER SELECTED (boolean),
+                PROGRAMMED (boolean),
+                DOWNLOAD STATE (integer),
+                URL (string),
+                NEXT UPDATE (integer in unix time), [
+                        [ NAME (string),
+                        NAME FULL (string),
+                        URL (string),
+                        QUALITY (integer),
+                        CODEC (integer),
+                        TIMESTAMP (integer),
+                        SEASON (integer),
+                        EPISODE (integer),
+                        EPISODE TO (integer),
+                        FEED ID (integer),
+                        REPACK (boolean),
+                        IN HISTORY (boolean) ],
+
+                        ...
+                        ] ],
+                ...
+        ],
+        &quot;rssfeedm&quot;: [
+                IDENT (integer),
+                ...
+        ],
+        &quot;rssfilterp&quot;: [
+                [ IDENT (integer),
+                FLAGS (integer),
+                NAME (string),
+                FILTER (string as regexp),
+                NOT FILTER (string as regexp),
+                DIRECTORY (string),
+                FEED (integer as feed ID),
+                QUALITY (integer in bytes),
+                LABEL (string),
+                POSTPONE MODE (integer),
+                LAST MATCH (integer),
+                SMART EP FILTER (integer),
+                REPACK EP FILTER (integer),
+                EPISODE FILTER STR (string),
+                EPISODE FILTER (boolean),
+                RESOLVING CANDIDATE (boolean) ],
+
+                ...
+        ],
+        &quot;rssfilterm&quot;: [
+                IDENT (integer),
+                ...
+        ],
+        &quot;torrentc&quot;: CACHE ID (string integer)
+}
+</pre>
+<p>The <tt class="docutils literal">&quot;torrentp&quot;</tt> array contains a list of torrent jobs that have
+changed since the corresponding CACHE ID and is identical to the
+&quot;torrents&quot; array in format. Similarly the <tt class="docutils literal">&quot;rssfeedp&quot;</tt> and
+<tt class="docutils literal">&quot;rssfilterp&quot;</tt> arrays correspond to the &quot;rssfeeds&quot; and &quot;resfilters&quot;
+arrays respectively.  The <tt class="docutils literal">&quot;torrentm&quot;</tt> array contains a list of
+hashes for torrent jobs that have been removed since the corresponding
+CACHE ID.  Similarly the <tt class="docutils literal">&quot;rssfeedm&quot;</tt> and <tt class="docutils literal">&quot;rssfilterm&quot;</tt> reflect
+rss feeds and filters that have been removed since the corresponding
+CACHE ID.  A new CACHE ID will be given in torrentc and this can be
+used for the next list request.</p>
+</div>
+<div class="section" id="files-list">
+<h2>Files List</h2>
+<p>To get the list of files in a torrent job, request this URI:</p>
+<p><tt class="docutils literal"><span class="pre">http://[IP]:[PORT]/gui/?action=getfiles&amp;hash=[TORRENT</span> HASH]</tt>.</p>
+<p>This will return the following:</p>
+<pre class="literal-block">
+{
+        &quot;build&quot;: BUILD NUMBER (integer),
+        &quot;files&quot;: [
+                HASH (string),
+                [
+                        [ FILE NAME (string),
+                        FILE SIZE (integer in bytes),
+                        DOWNLOADED (integer in bytes),
+                        PRIORITY* (integer) ,
+                        FIRST PIECE (integer),
+                        NUM PIECES (integer),
+                        STREAMABLE (boolean),
+                        ENCODED RATE (integer),
+                        DURATION (integer),
+                        WIDTH (integer),
+                        HEIGHT (integer),
+                        STREAM ETA (integer),
+                        STREAMABILITY (integer) ],
+
+                        ...
+                ]
+        ]
+}
+</pre>
+<p>PRIORITY: This is an integer value that indicates the file's priority. The
+following is a list of the possible PRIORITY values and what each corresponds to:</p>
+<blockquote>
+<ul class="simple">
+<li>0 = Don't Download</li>
+<li>1 = Low Priority</li>
+<li>2 = Normal Priority</li>
+<li>3 = High Priority</li>
+</ul>
+</blockquote>
+<p>This command accepts multiple hashes. It will return multiple &quot;files&quot; key/value
+pairs.</p>
+</div>
+<div class="section" id="torrent-job-properties">
+<h2>Torrent Job Properties</h2>
+<p>To get a list of the various properties for a torrent job, request:</p>
+<pre class="literal-block">
+http://[IP]:[PORT]/gui/?action=getprops&amp;hash=[TORRENT HASH]
+</pre>
+<p>This will return the following:</p>
+<pre class="literal-block">
+{
+        &quot;build&quot;: BUILD NUMBER (integer),
+        &quot;props&quot;: [
+        {
+                &quot;hash&quot;: HASH (string),
+                &quot;trackers&quot;: TRACKERS* (string),
+                &quot;ulrate&quot;: UPLOAD LIMIT (integer in bytes per second),
+                &quot;dlrate&quot;: DOWNLOAD LIMIT (integer in bytes per second),
+                &quot;superseed&quot;: INITIAL SEEDING** (integer),
+                &quot;dht&quot;: USE DHT** (integer),
+                &quot;pex&quot;: USE PEX** (integer),
+                &quot;seed_override&quot;: OVERRIDE QUEUEING** (integer),
+                &quot;seed_ratio&quot;: SEED RATIO (integer in per mils),
+                &quot;seed_time&quot;: SEEDING TIME*** (integer in seconds),
+                &quot;ulslots&quot;: UPLOAD SLOTS (integer)
+        } ]
+}
+</pre>
+<p>TRACKERS: This is a list of the trackers used by the torrent job. Each newline is
+represented by a carriage return followed by a newline ( ).</p>
+<p>INITIAL SEEDING/USE DHT/USE PEX/OVERRIDE QUEUEING: These options are all integer
+values that indicate their respective states. The following is a list of the
+possible values and what each corresponds to:</p>
+<blockquote>
+<ul class="simple">
+<li>-1 = Not allowed</li>
+<li>0 = Disabled</li>
+<li>1 = Enabled</li>
+</ul>
+</blockquote>
+<p>SEEDING TIME: This is an integer representing the minimum amount of time (in
+seconds) that µTorrent should continue to seed after it has finished downloading
+the torrent. A value of 0 (zero) means no minimum seeding time.</p>
+<p>To change the properties for a torrent, the following URI can be used:</p>
+<pre class="literal-block">
+http://[IP]:[PORT]/gui/?action=setprops&amp;hash=[TORRENTHASH]
+&amp;s=[PROPERTY]&amp;v=[VALUE]
+</pre>
+<p>Multiple properties can be changed at once by appending more s= and v= pairs.
+Multiple torrent jobs can be modified in a single request by appending another
+hash= value along with its s= and v= pairs. Any following s= and v= pairs will
+modify the properties of the last specified hash.</p>
+<p>For example, to set an upload rate limit of 10 KiB/s and a download rate of 20
+KiB/s for [TORRENT HASH 1], while simultaneously setting 4 upload slots for
+[TORRENT HASH 2], request the following URI:</p>
+<pre class="literal-block">
+http://[IP]:[PORT]/gui/?action=setprops&amp;hash=
+[TORRENT HASH 1]&amp;s=ulrate&amp;v=10240&amp;s=dlrate&amp;v=20480&amp;hash=
+[TORRENT HASH 2]&amp;s=ulslots&amp;v=4
+</pre>
+</div>
+<div class="section" id="actions">
+<h2>Actions</h2>
+<p>This section contains a list of all the other possible actions supported by the
+API.  All actions are in the form <tt class="docutils literal"><span class="pre">http://[IP]:[PORT]/gui/?action=</span></tt></p>
+<p><strong>?action=start&amp;hash=[TORRENT HASH]</strong>
+This action tells µTorrent to start the specified torrent job(s). Multiple hashes may be specified
+to act on multiple torrent jobs.</p>
+<p><strong>?action=stop&amp;hash=[TORRENT HASH]</strong>
+This action tells µTorrent to stop the specified torrent job(s). Multiple hashes may be specified
+to act on multiple torrent jobs.</p>
+<p><strong>?action=pause&amp;hash=[TORRENT HASH]</strong> This action tells
+µTorrent to pause the specified torrent job(s). Multiple hashes may be specified
+to act on multiple torrent jobs.</p>
+<p><strong>?action=forcestart&amp;hash=[TORRENT HASH]</strong> This action
+tells µTorrent to force the specified torrent job(s) to start. Multiple hashes
+may be specified to act on multiple torrent jobs.</p>
+<p><strong>?action=unpause&amp;hash=[TORRENT HASH]</strong> This action tells
+µTorrent to unpause the specified torrent job(s). Multiple hashes may be
+specified to act on multiple torrent jobs.</p>
+<p><strong>?action=recheck&amp;hash=[TORRENT HASH]</strong> This action tells
+µTorrent to recheck the torrent contents for the specified torrent job(s).
+Multiple hashes may be specified to act on multiple torrent jobs.</p>
+<p><strong>?action=remove&amp;hash=[TORRENT HASH]</strong> This action
+removes the specified torrent job(s) from the torrent jobs list. Multiple hashes
+may be specified to act on multiple torrent jobs. This action respects the
+option &quot;Move to trash if possible&quot;.</p>
+<p><strong>?action=removedata&amp;hash=[TORRENT HASH]</strong> This action
+removes the specified torrent job(s) from the torrent jobs list and removes the
+corresponding torrent contents (data) from disk. Multiple hashes may be
+specified to act on multiple torrent jobs. This action respects the option &quot;Move
+to trash if possible&quot;.</p>
+<p><strong>?action=removetorrent&amp;hash=[TORRENT HASH]</strong> This action
+removes the specified torrent job(s) from the torrent jobs list and removes the
+corresponding torrent file(s) from disk. Multiple hashes may be
+specified to act on multiple torrent jobs. This action respects the option &quot;Move
+to trash if possible&quot;.</p>
+<p><strong>?action=removedatatorrent&amp;hash=[TORRENT HASH]</strong> This action
+removes the specified torrent job(s) from the torrent jobs list, removes the
+corresponding torrent file(s) from disk, and removes the
+corresponding torrent contents (data) from disk. Multiple hashes may be
+specified to act on multiple torrent jobs. This action respects the option &quot;Move
+to trash if possible&quot;.</p>
+<p><strong>?action=setprio&amp;hash=[TORRENTHASH]&amp;p=[PRIORITY]&amp;f=[FILE INDEX]</strong>
+This action sets the priority for the specified file(s) in the torrent job. The possible priority levels are the
+values returned by &quot;getfiles&quot;. A file is specified using the zero-based index of
+the file in the inside the list returned by &quot;getfiles&quot;. Only one priority level
+may be specified on each call to this action, but multiple files may be
+specified.</p>
+<p><strong>?action=getxferhist</strong> This action returns the current transfer history.</p>
+<p><strong>?action=resetxferhist</strong> This action resets the current transfer history.</p>
+<p><strong>?action=getversion</strong> This action returns information about the server.</p>
+<pre class="literal-block">
+{
+        &quot;version&quot;: [
+        {
+                &quot;product_code&quot;: &quot;server&quot;,
+                &quot;ui_version&quot;: (revision number),
+                &quot;engine_version&quot;: (revision number),
+                &quot;major_version&quot;: (major version number)
+                &quot;minor_version&quot;: (minor version number)
+                &quot;user_agent&quot;: (user-agent)
+                &quot;version_date&quot;: (date product was built)
+                &quot;device_id&quot;: (identifies general type of target/OS)
+                &quot;peer_id&quot;: (identifier sent to peers)
+        } ]
+}
+</pre>
+<p><strong>?action=add-url&amp;s=[TORRENT URL]</strong> This action adds a
+torrent job from the given URL. For servers that require cookies, cookies can be
+sent with the :COOKIE: method (see here). The string must be URL-encoded.</p>
+<p><strong>?action=add-file</strong> This action is different from the
+other actions in that it uses HTTP POST instead of HTTP GET to submit data to
+µTorrent. The HTTP form must use an enctype of &quot;multipart/form-data&quot; and have an
+input field of type &quot;file&quot; with name &quot;torrent_file&quot; that stores the local path
+to the file to upload to µTorrent.</p>
+<p>Optional parameters to add-file and add-url actions:</p>
+<p><strong>&amp;download_dir=&lt;integer&gt;</strong> This action determines which download directory to
+put the torrent in. The integer refers to the list of download dirs the client
+has configured (see list-dirs action). 0 always means the default directory. The
+list of available download directories must be created in the btsettings.txt
+file. On PC systems the directories can be created by users via the application,
+but not via the web UI. There is currently no API to create download
+directories.</p>
+<p><strong>&amp;path=&lt;sub_path&gt;</strong> This action determines&nbsp; a subdirectory to put the file in,
+under the already chosen download directory. This path may not contain &quot;..&quot; and
+must be a relative path.</p>
+<p><strong>http://[IP]:[PORT]/gui/?action=list-dirs</strong> The return value has a list,
+download-dirs. Each entry in the list is a dictionary:</p>
+<pre class="literal-block">
+&quot;download-dirs&quot;: [
+{ &quot;path&quot;: &lt;full path&gt;, &quot;available&quot;: &lt;available free disk space in MB&gt; },
+...
+]
+</pre>
+<p><strong>http://&lt;ip&gt;:&lt;port&gt;/proxy?id=&lt;info-hash&gt;&amp;file=&lt;file index&gt;</strong> The <tt class="docutils literal">&amp;file=</tt>
+parameter may be omitted if the torrent is a single file torrent. The call will
+return the entire file, or a part of it if a range request was made to it.</p>
+<p>RSS Feed Actions:</p>
+<p><strong>?action=rss-remove&amp;feed-id=[FEED ID]</strong> This action removes the
+corresponding RSS feed from the list of RSS feeds.</p>
+<p><strong>?action=rss-update&amp;feed-id=[FEED ID]</strong> This action adds or updates an
+RSS feed.</p>
+<p>Optional parameters for rss-update action:</p>
+<p><strong>&amp;download_dir=&lt;integer&gt;</strong> This action determines which download directory to
+put the torrent in. The integer refers to the list of download dirs the client
+has configured (see list-dirs action). 0 always means the default directory. The
+list of available download directories must be created in the btsettings.txt
+file. On PC systems the directories can be created by users via the application,
+but not via the web UI. There is currently no API to create download
+directories.</p>
+<p><strong>&amp;feed-id=&lt;integer&gt;</strong> This parameter identifies the RSS feed
+receiving the updates.  If this parameter is set to -1 or omitted a
+new RSS feed will be created and the following will be included in the
+return:</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>&quot;rss_ident&quot; : [RSS IDENT] (integer),</dd>
+</dl>
+<p><strong>&amp;url=&lt;string&gt;</strong> This parameter identifies the URL of the RSS feed.</p>
+<p><strong>&amp;alias=&lt;string&gt;</strong> This parameter identifies the RSS feed alias.</p>
+<p><strong>&amp;subscribe=&lt;boolean&gt;</strong> This parameter signifies whether or not the
+user wishes to subscribe to the RSS feed.</p>
+<p><strong>&amp;smart-filter=&lt;boolean&gt;</strong> This parameter enables the smart filter
+functionality on an RSS feed.</p>
+<p><strong>&amp;enabled=&lt;boolean&gt;</strong> This enables or disables the RSS feed.</p>
+<p><strong>&amp;update=1</strong> If this is set the RSS feed is forced to update instead
+of waiting for the next update interval.  The update interval will be
+set accordingly.</p>
+<p>RSS Filter Actions:</p>
+<p><strong>?action=filter-remove&amp;filter-id=[FILTER ID]</strong> This action removes the
+corresponding RSS filter from the list of RSS filters.</p>
+<p><strong>?action=filter-update&amp;filter-id=[FILTER ID]</strong> This action adds or
+updates an RSS filter.</p>
+<p>Optional parameters for filter-update action:</p>
+<p><strong>?filter-id=&lt;integer&gt;</strong> The ID of the RSS filter to be updated.  If
+this is omitted or set to -1 a new filter will be created and the
+following will be included in the return value:</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>&quot;filter_ident&quot;: [FEED ID] (integer),</dd>
+</dl>
+<p><strong>?name=&lt;string&gt;</strong> Name of the RSS Filter.</p>
+<p><strong>?save-in=&lt;string&gt;</strong> Directory to save the downloaded RSS torrents
+in.</p>
+<p><strong>?episode=&lt;string&gt;</strong> Episode expression to download.</p>
+<p><strong>?filter=&lt;string&gt;</strong> Download filter expression.</p>
+<p><strong>?not-filter=&lt;string&gt;</strong> Download exception filter expression.</p>
+<p><strong>?label=&lt;string&gt;</strong> Label to apply to torrents downloaded by this
+filter rule.</p>
+<p><strong>?quality=&lt;integer&gt;</strong> Minimum quality to accept when qualifying for
+download.</p>
+<p><strong>?episode-filter=&lt;boolean&gt;</strong> Set the enabling of downloading by episode.</p>
+<p><strong>?origname=&lt;string&gt;</strong> Filter original name.</p>
+<p><strong>?prio=&lt;boolean&gt;</strong> Prioritize this filter.</p>
+<p><strong>?smart-ep-filter=&lt;boolean&gt;</strong> Enable/disable smart episode filter.</p>
+<p><strong>?add-stopped=&lt;boolean&gt;</strong> Enable queuing of torrents selected by this
+filter as stopped for manual starting rather than adding them to the
+download queue.</p>
+<p><strong>?postpone-mode=&lt;boolean&gt;</strong> Enable/disable postpone mode.</p>
+<p><strong>?feed-id=&lt;integer&gt;</strong> RSS feed to associate this filter with.  If set
+to -1 the feed is associated with all active RSS feeds.</p>
+</div>
+<div class="section" id="limitations">
+<h2>Limitations</h2>
+<p>It is not possible to rename or relocate individual files in a torrent job.</p>
+</div>
+</div>
+<div class="section" id="legal-notices">
+<h1>Legal Notices</h1>
+<p>Copyright (c) 2010 BitTorrent Inc. All rights reserved.</p>
+<p>BitTorrent and µTorrent are trademarks or registered trademarks of
+BitTorrent, Inc. used only under license.</p>
+</div>
+</div>
+</body>
+</html>

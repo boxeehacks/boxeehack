@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# to get PATH and LD_LIBRARY_PATH correct
+. /etc/profile
+PRIMARY=`ip route | grep default | grep "eth[01]" | cut -f 5 -d " "`
+CURRGW=`ip route  | grep default | grep "eth[01]" | cut -f 3 -d " "`
+SERVER=$5
+CONNECTION=$6
+if [ "${CONNECTION}" = "" ]; then CONNECTION=${PPP_IPPARAM}; fi
+TUNNEL=$1
+if [ "${TUNNEL}" = "" ]; then TUNNEL=${PPP_IFACE}; fi
+if [ "${CONNECTION}" = "vpn" ] ; then
+#  route add -host ${SERVER} gw ${CURRGW} dev ${PRIMARY}
+  route del default ${PRIMARY}
+  route add default gw ${SERVER} dev ${TUNNEL}
+fi
+touch /tmp/vpn.up
+/etc/ppp/usepeerdns
+
+/opt/local/bin/curl "http://127.0.0.1:5700/vpn.Notify?status=connected"
+
+# First make sure the ppp connection actually exists, and then wait till it
+# is actually up (detected by checking when its default MTU gets set)
+
+RESULT=""
+while [ "${RESULT}" == ""];
+do
+  sleep 1
+  PPP="`ifconfig -a | grep -A 6`"
+  if [ "${PPP}" == "" ]; then
+    RESULT="fail"
+  else
+    RESULT="`ifconfig -a | grep -A 6 ppp0 | grep MTU:1496`"
+  fi
+done
+
+# If the connection is up, and it didn't fail then we change the MTU
+if [ "${RESULT}" != "fail" ]; then
+#  ifconfig eth0 mtu 1460
+  ifconfig ppp0 mtu 1400
+fi

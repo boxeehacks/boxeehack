@@ -1,11 +1,11 @@
 #!/bin/sh
 
-## Stop native webserver
+ID=$(ps aux | grep httpd | grep busybox | grep -v grep | awk '{print $2}')
 
-# killall -9 thttpd_wrapper
-# killall -9 thttpd
+www=$(cat /data/etc/www);
 
-## Start non-native webserver
-
-/data/hack/bin/busybox httpd -p 80 -h /data/hack/www -c /data/hack/httpd.conf &
-
+if [ $ID ]; then
+	kill -9 $ID
+elif [ ! $ID ] && [ $www == "1" ]; then
+	/data/hack/bin/busybox httpd -p 80 -h /data/hack/www -c /data/hack/httpd.conf &
+fi
