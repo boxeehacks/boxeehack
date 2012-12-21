@@ -1,0 +1,123 @@
+[2000/01/01 01:40:14, 1] nsswitch/winbindd.c:main(1019)
+  winbindd version 3.0.37 started.
+  Copyright Andrew Tridgell and the Samba Team 1992-2009
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16LE to CP850 not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16LE to ASCII
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-8 to CP850 not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from ASCII to CP850 not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16LE not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16LE
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-8 not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to ASCII not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF8 not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from CP850 to UTF-16BE not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to UTF-16BE
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF8 to CP850 not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from ASCII to ASCII
+[2000/01/01 01:40:14, 0] lib/module.c:do_smb_load_module(69)
+  Module '/opt/local/lib/charset/CP850.so' initialization failed: NT code 0x080fc4bf
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(159)
+  init_iconv: Conversion from UTF-16BE to CP850 not supported
+[2000/01/01 01:40:14, 0] lib/charcnv.c:init_iconv(167)
+  init_iconv: Attempting to replace with conversion from UTF-16BE to ASCII

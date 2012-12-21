@@ -32,7 +32,6 @@ def set_home_enabled_strings():
     for item in homeitems:
         xbmc.executebuiltin("Skin.SetString(homeenabled-%s,%s)" % (item, get_homeenabled(item)))
 
-
 def get_homeenabled_value():
     homeenabled = common.file_get_contents("/data/etc/.home_enabled")
     if homeenabled == "":
@@ -105,6 +104,25 @@ def set_telnet_password():
         else:
             common.file_put_contents("/data/etc/passwd", passwd)    
 
+# Set the password for the telnet functionality    
+def set_youtube_sub():
+    youtube = file_get_contents("/data/etc/youtube")
+    yt = xbmc.Keyboard('default', 'heading', True)
+    yt.setDefault(youtube) # optional
+    yt.setHeading('Enter youtube username') # optional
+    yt.setHiddenInput(False) # optional
+    yt.doModal()
+    if yt.isConfirmed():
+        you = yt.getText()
+       
+        if you == "":
+            dialog = xbmcgui.Dialog()
+            ok = dialog.ok('YouTube', 'You most choose a username.')
+        else:
+            file_put_contents("/data/etc/youtube", you)
+	    xbmc.executebuiltin("Skin.SetString(youtube,%s)" % you )
+
+
 # Determine whether subtitle functionality is enabled/enabled
 def get_subtitles_enabled():
     subtitles = common.file_get_contents("/data/etc/.subtitles_enabled")
@@ -125,7 +143,7 @@ def get_subtitles_language_filter():
 def featured_next():
     replace = get_featured_feed_value()
     num = int(replace) + 1
-    if num > 3: num = 0
+    if num > 4: num = 0
 
     replace = "%s" % num
 
@@ -136,7 +154,7 @@ def featured_next():
 def featured_previous():
     replace = get_featured_feed_value()
     num = int(replace) - 1
-    if num < 0: num = 3
+    if num < 0: num = 4
 
     replace = "%s" % num
 
@@ -145,12 +163,14 @@ def featured_previous():
     xbmc.executebuiltin("Skin.SetString(featured-name,%s)" % get_featured_name() )
 
 def get_featured_feed():
+    youtube = file_get_contents("/data/etc/youtube")
     replace = get_featured_feed_value()
     feed = "feed://featured/?limit=15"
 
     if replace == "1": feed = "boxeedb://recent/?limit=15"
     if replace == "2": feed = "rss://vimeo.com/channels/staffpicks/videos/rss"
     if replace == "3": feed = "rss://gdata.youtube.com/feeds/api/standardfeeds/recently_featured?alt=rss"
+    if replace == "4": feed = "rss://gdata.youtube.com/feeds/api/users/" + youtube + "/newsubscriptionvideos?alt=rss"
 
     return feed
 
@@ -161,6 +181,7 @@ def get_featured_name():
     if replace == "1": name = "Recently added"
     if replace == "2": name = "Vimeo staff picks"
     if replace == "3": name = "Youtube featured"
+    if replace == "4": name = "Youtube subscription"
 
     return name
 
@@ -308,10 +329,63 @@ def check_new_version():
     else:
         dialog.ok("BOXEE+ Version", "Hi there Doc Brown. How's the future?")
 
+def check_webserver():
+    tmp = file_get_contents("/data/etc/www")
+    
+    if tmp == "1":
+	tmp = "0"
+	xbmc.executebuiltin("Skin.SetString(www,%s)" % "Stopped" )
+    else:
+    	tmp = "1"
+	xbmc.executebuiltin("Skin.SetString(www,%s)" % "Running" )
+    
+    file_put_contents("/data/etc/www", tmp)
+    os.system("sh /data/hack/www.sh")
+
+def check_ftpserver():
+    tmp = file_get_contents("/data/etc/ftp")
+
+    if tmp == "1":
+	tmp = "0"
+	xbmc.executebuiltin("Skin.SetString(ftp,%s)" % "Stopped" )
+    else:
+    	tmp = "1"
+	xbmc.executebuiltin("Skin.SetString(ftp,%s)" % "Running" )
+    
+    file_put_contents("/data/etc/ftp", tmp)
+    os.system("sh /data/hack/ftp.sh")
+
+def check_telnetserver():
+    tmp = file_get_contents("/data/etc/telnet")
+
+    if tmp == "1":
+	tmp = "0"
+	xbmc.executebuiltin("Skin.SetString(telnets,%s)" % "Stopped" )
+    else:
+    	tmp = "1"
+	xbmc.executebuiltin("Skin.SetString(telnets,%s)" % "Running" )
+    
+    file_put_contents("/data/etc/telnet", tmp)
+    os.system("sh /data/hack/telnet.sh")
+
+def check_utorrentserver():
+    tmp = file_get_contents("/data/etc/utorrent")
+
+    if tmp == "1":
+	tmp = "0"
+	xbmc.executebuiltin("Skin.SetString(utorrent,%s)" % "Running" )
+    else:
+    	tmp = "1"
+	xbmc.executebuiltin("Skin.SetString(utorrent,%s)" % "Stopped" )
+    
+    file_put_contents("/data/etc/utorrent", tmp)
+    os.system("sh /data/hack/utorrent.sh")
+
 if (__name__ == "__main__"):
     command = sys.argv[1]
 
     if command == "telnet": set_telnet_password()
+    if command == "youtube": set_youtube_sub()
     if command == "subtitles": toggle_subtitles(sys.argv[2], sys.argv[3])
     if command == "version": check_new_version()
     if command == "defaults": register_defaults()
@@ -321,3 +395,8 @@ if (__name__ == "__main__"):
     if command == "showmusic": showmusic_function()
     if command == "homeenabled": toggle_homeenabled(sys.argv[2])
     if command == "browser-homepage": set_browser_homepage()
+    if command == "www": check_webserver()
+    if command == "ftp": check_ftpserver()
+    if command == "utorrent": check_utorrentserver()
+    if command == "telnets": check_telnetserver()
+    
