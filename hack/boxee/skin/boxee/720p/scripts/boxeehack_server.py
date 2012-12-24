@@ -1,5 +1,6 @@
 import socket
 import xbmc
+import urllib
 
 _connector = socket.socket( socket.AF_INET, socket.SOCK_STREAM )
 try:
@@ -15,6 +16,7 @@ try:
             recvData = channel.recv(2000)
 
             recvData = "".join(recvData.split("GET /")).split(" HTTP/")[0]
+            recvData = urllib.unquote(recvData).decode("utf-8")
             xbmc.executebuiltin("%s" % recvData)
             channel.send("HTTP/1.1 200 OK\nContent-type: text/html\n\n%s" % recvData)
 
