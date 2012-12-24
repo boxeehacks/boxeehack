@@ -387,12 +387,13 @@
 						</control>
 						<control type="label">
 							<width>700</width>
-							<height min="0" max="130">auto</height>
+							<height min="0" max="200">auto</height>
 							<font>font24bex</font>
 							<align>left</align>
 							<aligny>top</aligny>
 							<label>$INFO[Container(5000).ListItem.PlotOutline]</label>
 							<textcolor>lightgreyheidi</textcolor>
+							<scroll>true</scroll>
 							<wrapmultiline>true</wrapmultiline>
 						</control>
 						<!-- Director -->
@@ -421,14 +422,14 @@
 					</control>
 					<control type="image">
 						<posx>495</posx>
-						<posy>369</posy>
+						<posy>439</posy>
 						<width>816</width>
 						<height>24</height>
 						<texture>mediaaction/graphic-divider-right.png</texture>
 					</control>
 					<control type="largeimage">
 						<posx>523</posx>
-						<posy>404</posy>
+						<posy>474</posy>
 						<visible>!IsEmpty(container(5000).ListItem.Property(user_message))</visible>
 						<width>64</width>
 						<height>64</height>
@@ -438,7 +439,7 @@
 					<control type="group">
 						<visible>!IsEmpty(container(5000).ListItem.Property(user_message))</visible>
 						<posx>497</posx>
-						<posy>396</posy>
+						<posy>436</posy>
 						<width>570</width>
 						<height>10</height>
 						<control type="grouplist">
@@ -461,7 +462,7 @@
 					<control type="image">
 						<visible>!IsEmpty(container(5000).ListItem.Property(user_message))</visible>
 						<posx>495</posx>
-						<posy>481</posy>
+						<posy>551</posy>
 						<width>816</width>
 						<height>24</height>
 						<texture>mediaaction/graphic-divider-right.png</texture>
@@ -1262,7 +1263,7 @@
 				<animation effect="slide" start="0,0" end="-136,36" time="0" condition="[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(appid))">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,112" time="0" condition="Container(5000).ListItem.property(IsMovie) + !IsEmpty(container(5000).ListItem.Property(user_message))">Conditional</animation>
 				<posx>510</posx>
-				<posy>404</posy>
+				<posy>474</posy>
 				<width>750</width>
 				<height>180</height>
 				<onleft>6120</onleft>
