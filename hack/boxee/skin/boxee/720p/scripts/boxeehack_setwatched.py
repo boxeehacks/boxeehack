@@ -45,16 +45,16 @@ def focus_last_unwatched(listNum):
         items = lst.GetItems()
         
         info_count = 0
-        focus = len(items) - 1
+        focus = 0
+        more = 1
         for item in items:
             watched = "%s" % mc.GetInfoString("Container(52).ListItem("+str(info_count)+").Property(watched)")
-            if watched == "1" and info_count - 1 < focus:
-                focus = info_count - 1
             info_count = info_count + 1
+            if watched == "0" and info_count > focus and more == 1:
+                focus = info_count
+            if watched == "1":
+                more = 0
             
-        if focus < 0:
-            focus = 0
-        
         lst.SetFocusedItem(focus)
 
 def set_watched(command):
