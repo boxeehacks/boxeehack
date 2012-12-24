@@ -10,9 +10,9 @@ read -s -p "Password: " PASSWORD
 
 echo ""
 if [ "$PASSWORD" == "$VALID_PASSWORD" ]; then
-        echo "---------------------"
-        echo " Welcome to BoxeeBox "
-        echo "---------------------"
+        echo "-------------------"
+        echo " Welcome to Boxee+ "
+        echo "-------------------"
 
 	cd /data/hack
 
