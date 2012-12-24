@@ -16,7 +16,7 @@
 					<onup>-</onup>
 					<ondown>7000</ondown>
 					<onleft>-</onleft>
-					<onright>-</onright>
+					<onright>8888</onright>
 					<texturenofocus>icons/icon_update_small.png</texturenofocus>
 					<texturefocus diffuse="masks/10b9f2.png">icons/icon_update_small.png</texturefocus>
 				</control>
@@ -27,7 +27,7 @@
 					<align>right</align>
 					<posx>435r</posx>
 					<posy>0</posy>
-					<height>63</height>
+					<height>70</height>
 					<orientation>horizontal</orientation>
 					<itemgap>20</itemgap>
 					<usecontrolcoords>true</usecontrolcoords>
@@ -44,32 +44,77 @@
 						<colordiffuse>mediumgreyheidi</colordiffuse>
 					</control>
 					<!-- WEATHER -->
-					<control type="grouplist">
+					<control type="group">
 						<visible>boxee.HasInternetConnection + Weather.IsFetched</visible>
-						<posy>23</posy>
-						<orientation>horizontal</orientation>
-						<itemgap>6</itemgap>
-						<usecontrolcoords>true</usecontrolcoords>
-						<control type="image">
-							<description>Weather image</description>
+						<width>80</width>
+						<control type="button" id="8888">
+							<onleft>2410</onleft>
+							<ondown>7000</ondown>
 							<posx>0</posx>
-							<posy>7</posy>
-							<width>24</width>
-							<height>24</height>
-							<aspectratio>keep</aspectratio>
-							<info>Weather.Conditions</info>
-							<colordiffuse>mediumgreyheidi</colordiffuse>
+							<posy>16</posy>
+							<width>80</width>
+							<height>50</height>
+							<onclick>RunApp(app://accuweather/)</onclick>
+							<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
+							<texturenofocus>-</texturenofocus>
 						</control>
-						<control type="label">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width min="0" max="80">auto</width>
-							<height>36</height>
-							<label>[B]$INFO[Weather.temperaturenounit][/B]</label>
-							<font>font28b</font>
-							<align>left</align>
-							<aligny>center</aligny>
-							<textcolor>mediumgreyheidi</textcolor>
+						<control type="grouplist">
+							<visible>!Control.HasFocus(8888)</visible>
+							<posy>23</posy>
+							<posx>12</posx>
+							<orientation>horizontal</orientation>
+							<itemgap>6</itemgap>
+							<usecontrolcoords>true</usecontrolcoords>
+							<control type="image">
+								<description>Weather image</description>
+								<posx>0</posx>
+								<posy>7</posy>
+								<width>24</width>
+								<height>24</height>
+								<aspectratio>keep</aspectratio>
+								<info>Weather.Conditions</info>
+								<colordiffuse>mediumgreyheidi</colordiffuse>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="0" max="80">auto</width>
+								<height>36</height>
+								<label>[B]$INFO[Weather.temperaturenounit][/B]</label>
+								<font>font28b</font>
+								<align>left</align>
+								<aligny>center</aligny>
+								<textcolor>mediumgreyheidi</textcolor>
+							</control>
+						</control>
+						<control type="grouplist">
+							<visible>Control.HasFocus(8888)</visible>
+							<posy>23</posy>
+							<posx>12</posx>
+							<orientation>horizontal</orientation>
+							<itemgap>6</itemgap>
+							<usecontrolcoords>true</usecontrolcoords>
+							<control type="image">
+								<description>Weather image</description>
+								<posx>0</posx>
+								<posy>7</posy>
+								<width>24</width>
+								<height>24</height>
+								<aspectratio>keep</aspectratio>
+								<info>Weather.Conditions</info>
+								<colordiffuse>whiteheidi</colordiffuse>
+							</control>
+							<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="0" max="80">auto</width>
+								<height>36</height>
+								<label>[B]$INFO[Weather.temperaturenounit][/B]</label>
+								<font>font28b</font>
+								<align>left</align>
+								<aligny>center</aligny>
+								<textcolor>whiteheidi</textcolor>
+							</control>
 						</control>
 					</control>
 					<!-- CLOCK -->
@@ -165,7 +210,7 @@
 				<height>250</height>
 				<onleft>-</onleft>
 				<onright>-</onright>
-				<onup>2410</onup>
+				<onup>8888</onup>
 				<ondown>8000</ondown>
 				<scrolltime>400</scrolltime>
 				<orientation>horizontal</orientation>
