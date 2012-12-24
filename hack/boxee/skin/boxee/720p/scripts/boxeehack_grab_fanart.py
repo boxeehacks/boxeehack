@@ -50,7 +50,7 @@ def grab_fanart_for_item(item):
         return
 
     if label in fanart:
-        art = fanart[item.GetLabel()]
+        art = fanart[label]
     elif path != "" and path.find("boxeedb://") == -1:
         art = path[0:path.rfind("/")+1] + "fanart.jpg"
     elif thumbnail.find("special://") == -1:
@@ -76,27 +76,30 @@ def grab_fanart_for_item(item):
         fanart_changed = 1
         item.SetProperty("fanart", art)
 
-def get_list(listNum):
+def get_list(listNum, special):
     try:
-        lst = mc.GetActiveWindow().GetList(listNum)
+        if special == True:
+            lst = mc.GetWindow(xbmcgui.getCurrentWindowDialogId()).GetList(listNum)
+        else:
+            lst = mc.GetActiveWindow().GetList(listNum)
     except:
         lst = ""
     return lst
-
-def grab_fanart_list(listNum):
+    
+def grab_fanart_list(listNum, special):
     global fanart_changed
     
     get_fanart_list()
     
     # sometimes the list control isn't available yet onload
     # so add some checking to make sure
-    lst = get_list(listNum)
+    lst = get_list(listNum, special)
     count = 10
     while lst == "" and count > 0:
         time.sleep(0.25)
-        lst = get_list(listNum)
+        lst = get_list(listNum, special)
         count = count - 1
-
+        
     if lst == "":
         pass
     else:
@@ -110,13 +113,14 @@ def grab_fanart_list(listNum):
         # get cached in memory
         while lst != "":
             items = lst.GetItems()
+
             # try and apply the stuff we already know about
             for item in items:
                 grab_fanart_for_item(item)
                 
             time.sleep(0.25)
             
-            lst = get_list(listNum)
+            lst = get_list(listNum, special)
         
             # store the fanart list for next time if the list
             # was modified
@@ -126,4 +130,5 @@ def grab_fanart_list(listNum):
 if (__name__ == "__main__"):
     command = sys.argv[1]
 
-    if command == "grab_fanart_list": grab_fanart_list(int(sys.argv[2]))
+    if command == "grab_fanart_list": grab_fanart_list(int(sys.argv[2]), False)
+    if command == "grab_fanart_list_special": grab_fanart_list(int(sys.argv[2]), True)
