@@ -99,7 +99,13 @@
 					<selected>StringCompare(Skin.String(subtitles-plugin),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "subtitles", "all", "all")</onclick>
 				</control>
-				<control type="button" id="15">
+				<control type="radiobutton" id="15">
+					<include>SettingsRadioButton</include>
+					<label>Jump to last unwatched TV Episode</label>
+					<selected>StringCompare(Skin.String(jump-to-unwatched),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "toggle-jump-to-last-unwatched")</onclick>
+				</control>
+				<control type="button" id="16">
 					<include>SettingsButton</include>
 					<label>Check for new version...</label>
 					<label2>$INFO[Skin.String(boxeeplus-version)]</label2>

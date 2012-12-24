@@ -6,6 +6,57 @@ import common
 
 os.environ["LD_LIBRARY_PATH"]=".:/data/hack/lib:/opt/local/lib:/usr/local/lib:/usr/lib:/lib:/lib/gstreamer-0.10:/opt/local/lib/qt"
 
+def get_list(listNum, special):
+    try:
+        if special == True:
+            lst = mc.GetWindow(xbmcgui.getCurrentWindowDialogId()).GetList(listNum)
+        else:
+            lst = mc.GetActiveWindow().GetList(listNum)
+    except:
+        lst = ""
+    return lst
+    
+def get_jump_to_last_unwatched_value():
+    jumpenabled = common.file_get_contents("/data/etc/.jump_to_unwatched_enabled")
+    if jumpenabled == "":
+        jumpenabled = "0"
+    return jumpenabled
+
+def focus_last_unwatched(listNum):
+    global fanart_changed
+    
+    jumpenabled = get_jump_to_last_unwatched_value()
+    if jumpenabled == "0":
+        return
+    
+    # sometimes the list control isn't available yet onload
+    # so add some checking to make sure
+    lst = get_list(listNum, False)
+    count = 10
+    while lst == "" and count > 0:
+        time.sleep(0.1)
+        lst = get_list(listNum, False)
+        count = count - 1
+        
+    if lst == "":
+        pass
+    else:
+        time.sleep(0.1)
+        items = lst.GetItems()
+        
+        info_count = 0
+        focus = len(items) - 1
+        for item in items:
+            watched = "%s" % mc.GetInfoString("Container(52).ListItem("+str(info_count)+").Property(watched)")
+            if watched == "1" and info_count - 1 < focus:
+                focus = info_count - 1
+            info_count = info_count + 1
+            
+        if focus < 0:
+            focus = 0
+        
+        lst.SetFocusedItem(focus)
+
 def set_watched(command):
 	list = mc.GetWindow(10483).GetList(52)
 	item = list.GetItem(1)
@@ -85,5 +136,7 @@ def set_watched(command):
 		xbmc.executebuiltin("Notification(,%s marked as %s...,2000)" % (display_name, command))
 
 if (__name__ == "__main__"):
-    	command = sys.argv[1]
-	set_watched(command)
+    command = sys.argv[1]
+    if command == "watched": set_watched("watched")
+    if command == "unwatched": set_watched("unwatched")
+    if command == "focus_last_unwatched": focus_last_unwatched(int(sys.argv[2]))

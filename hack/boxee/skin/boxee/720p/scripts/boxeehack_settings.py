@@ -32,6 +32,22 @@ def set_home_enabled_strings():
     for item in homeitems:
         xbmc.executebuiltin("Skin.SetString(homeenabled-%s,%s)" % (item, get_homeenabled(item)))
 
+def get_jump_to_last_unwatched_value():
+    jumpenabled = common.file_get_contents("/data/etc/.jump_to_unwatched_enabled")
+    if jumpenabled == "":
+        jumpenabled = "0"
+    return jumpenabled
+
+def toggle_jump_to_last_unwatched():
+    jumpenabled = get_jump_to_last_unwatched_value()
+    
+    if jumpenabled == "1":
+        jumpenabled = "0"
+    else:
+        jumpenabled = "1"
+
+    common.file_put_contents("/data/etc/.jump_to_unwatched_enabled", jumpenabled)
+    xbmc.executebuiltin("Skin.SetString(jump-to-unwatched,%s)" % jumpenabled)
 
 def get_homeenabled_value():
     homeenabled = common.file_get_contents("/data/etc/.home_enabled")
@@ -170,18 +186,6 @@ def get_featured_feed_value():
         replace = "0"
     return replace
 
-# Hide / Show Music icon
-def showmusic_function():
-    showmusic = common.file_get_contents("/data/etc/.showmusic_enabled")
-
-    if showmusic == "1":
-        showmusic = "0"
-    else:
-        showmusic = "1"
-
-    xbmc.executebuiltin("Skin.SetString(showmusic,%s)" % showmusic)
-    common.file_put_contents("/data/etc/.showmusic_enabled", showmusic)
-    
 # Enable/disable the subtitle functionality
 def toggle_subtitles(mode, current):
     if mode == "all":
@@ -318,6 +322,6 @@ if (__name__ == "__main__"):
     if command == "subtitles-provider": subtitle_provider("set", sys.argv[2], sys.argv[3])
     if command == "featured_next": featured_next()
     if command == "featured_previous": featured_previous()
-    if command == "showmusic": showmusic_function()
     if command == "homeenabled": toggle_homeenabled(sys.argv[2])
     if command == "browser-homepage": set_browser_homepage()
+    if command == "toggle-jump-to-last-unwatched": toggle_jump_to_last_unwatched()
