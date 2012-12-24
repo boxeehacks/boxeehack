@@ -4,6 +4,7 @@ import subprocess
 import common
 
 fanart = {}
+fanart_changed = 0
 def get_fanart_list():
     global fanart
     showlist = common.file_get_contents("/data/etc/.fanart")
@@ -20,20 +21,21 @@ def get_fanart_list():
             fanart[show] = art
 
 def store_fanart_list():
-    global shows
+    global shows, fanart_changed
     
     file = ""
     for show in fanart:
         file = file + show + "=" + fanart[show] + "\n"
     
     common.file_put_contents("/data/etc/.fanart", file)
+    fanart_changed = 0
 
-first = 1
 def grab_fanart_for_item(item):
-    global fanart, first
-    
-    db_path = xbmc.translatePath('special://profile/Database/')
-    
+    global fanart, fanart_changed
+
+    if item.GetProperty("fanart") != "":
+        return
+
     label = item.GetLabel()
     path = "%s" % item.GetPath()
     if "stack:" in path:
@@ -54,6 +56,7 @@ def grab_fanart_for_item(item):
     elif thumbnail.find("special://") == -1:
         art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
 #    else:
+#        db_path = xbmc.translatePath('special://profile/Database/')
 #        sql = ".timeout 1000000\n"
 #        if path.find("boxeedb://") == -1:
 #            # it must be a movie
@@ -65,16 +68,13 @@ def grab_fanart_for_item(item):
 #        common.file_put_contents("/tmp/sqlinject", sql)
 #        os.system('/bin/sh \'cat /tmp/sqlinject | /data/hack/bin/sqlite3 "' + db_path + '../../../Database/boxee_catalog.db" > /tmp/readsql\'')
 #        thumbnail = common.file_get_contents("/tmp/readsql")
-#        if first == 1:
-#            first = 0
-#            xbmc.executebuiltin("Notification(,'%s',)" % thumbnail)
 #        if "/" in thumbnail:
 #            art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
 
     if art != "":
         fanart[label] = art
+        fanart_changed = 1
         item.SetProperty("fanart", art)
-#        item.SetThumbnail(art)
 
 def get_list(listNum):
     try:
@@ -84,13 +84,14 @@ def get_list(listNum):
     return lst
 
 def grab_fanart_list(listNum):
-
+    global fanart_changed
+    
     get_fanart_list()
     
     # sometimes the list control isn't available yet onload
     # so add some checking to make sure
     lst = get_list(listNum)
-    count = 3
+    count = 10
     while lst == "" and count > 0:
         time.sleep(0.25)
         lst = get_list(listNum)
@@ -100,32 +101,27 @@ def grab_fanart_list(listNum):
         pass
     else:
         items = lst.GetItems()
-        done = 1
-        num = len(items)
-        count = 5
         
-        # some delays to wait until the list is complete
-        # Boxee does a bit of lazy initialisation which
-        # sometimes causes only half the list to be updated
-        # otherwise
-        while done != 0:
-            time.sleep(0.25)
+        # as long as the list exists (while the window exists)
+        # the list gets updated at regular intervals. otherwise
+        # the fanart disappears when you change sort-orders or
+        # select a genre
+        # should have very little overhead because all the values
+        # get cached in memory
+        while lst != "":
             items = lst.GetItems()
-            if num == len(items) and num != 0:
-                # do a few attempts to find more before giving up
-                # because sometimes the Boxee Box is really slow
-                count = count - 1
-                if count == 0:
-                    done = 0
-            else:
-                num = len(items)
+            # try and apply the stuff we already know about
+            for item in items:
+                grab_fanart_for_item(item)
+                
+            time.sleep(0.25)
+            
+            lst = get_list(listNum)
         
-                # try and apply the stuff we already know about
-                for item in items:
-                    grab_fanart_for_item(item)
-        
-        # store the fanart list for next time
-        store_fanart_list()
+            # store the fanart list for next time if the list
+            # was modified
+            if fanart_changed == 1:
+                store_fanart_list()
 
 if (__name__ == "__main__"):
     command = sys.argv[1]
