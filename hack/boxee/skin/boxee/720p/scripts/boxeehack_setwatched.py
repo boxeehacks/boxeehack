@@ -44,16 +44,37 @@ def focus_last_unwatched(listNum):
         time.sleep(0.1)
         items = lst.GetItems()
         
-        info_count = 0
-        focus = 0
         more = 1
-        for item in items:
-            watched = "%s" % mc.GetInfoString("Container(52).ListItem("+str(info_count)+").Property(watched)")
-            info_count = info_count + 1
-            if watched == "0" and info_count > focus and more == 1:
-                focus = info_count
-            if watched == "1":
-                more = 0
+        reverse = 0
+
+        item = items[1]
+        if item.GetSeason() == 1 and item.GetEpisode() == 1:
+            reverse = 1
+
+        if reverse == 0:
+            info_count = 0
+            focus = info_count
+            for item in items:
+                watched = "%s" % mc.GetInfoString("Container(52).ListItem("+str(info_count)+").Property(watched)")
+                
+                info_count = info_count + 1
+                if watched == "0" and info_count > focus and more == 1:
+                    focus = info_count
+                
+                if watched == "1":
+                    more = 0
+        else:
+            info_count = len(items) - 1
+            focus = info_count
+            for item in items:
+                watched = "%s" % mc.GetInfoString("Container(52).ListItem("+str(info_count)+").Property(watched)")
+                
+                if watched == "0" and info_count < focus and more == 1:
+                    focus = info_count
+                info_count = info_count - 1
+                
+                if watched == "1":
+                    more = 0
             
         lst.SetFocusedItem(focus)
 
