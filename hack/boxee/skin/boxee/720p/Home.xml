@@ -3,9 +3,37 @@
 	<allowoverlay>no</allowoverlay>
 	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "defaults")</onload>
 	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_grab_fanart.py", "grab_fanart_list", 8200)</onload>
+	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_grab_fanart.py", "grab_random_fanart", 8250)</onload>
 	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_server.py")</onload>
 	<controls>
 		<include>Common_Background</include>
+		<control type="group">
+			<visible>StringCompare(Skin.String(featured-feed),about:blank)</visible>
+	        <control type="image" id="8250">
+	                <posx>0</posx>
+	                <posy>0</posy>
+	                <width>1280</width>
+	                <height>720</height>
+	                <aspectratio>scale</aspectratio>
+	                <texture background="true">$INFO[Skin.String(random-fanart)]</texture>
+	        </control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>-50</posy>
+				<width>1280</width>
+				<height>770</height>
+				<texture>../720p/resources/background/bg-fanart-overlay.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>-720</posy>
+				<width>1280</width>
+				<height>1640</height>
+				<texture>../720p/resources/background/bg-fanart-overlay.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+		</control>
 		<include>LogoTitleAndItemCount</include>
 		<control type="group">
 			<animation effect="fade" start="100" end="25" time="200" condition="Window.IsActive(DialogProgress.xml)">Conditional</animation>
@@ -46,13 +74,13 @@
 					<!-- WEATHER -->
 					<control type="group">
 						<visible>boxee.HasInternetConnection + Weather.IsFetched</visible>
-						<width>80</width>
+						<width>100</width>
 						<control type="button" id="8888">
 							<onleft>2410</onleft>
 							<ondown>7000</ondown>
 							<posx>0</posx>
 							<posy>16</posy>
-							<width>80</width>
+							<width>100</width>
 							<height>50</height>
 							<onclick>RunApp(app://accuweather/)</onclick>
 							<texturefocus srcborder="24" border="16">button-focused.png</texturefocus>
@@ -177,6 +205,9 @@
 			</control>
 			<!-- Main Menu main icon list -->
 			<control type="list" id="7000">
+				<animation type="Conditional" condition="StringCompare(Skin.String(featured-feed),about:blank)">
+					<effect type="slide" start="0,0" end="0,440" time="200" delay="0"/>
+				</animation>
 				<animation type="Conditional" condition="DVB.IsTunerReady">
 					<effect type="slide" start="0" end="-70" time="200" delay="0"/>
 				</animation>
@@ -370,352 +401,360 @@
 				</content>
 			</control>
 			<!-- Featured -->
-			<control type="image">
-				<posx>0</posx>
-				<posy>289</posy>
-				<width>1280</width>
-				<height>32</height>
-				<texture>homescreen/graphic-home-divider.png</texture>
-			</control>
-			<control type="label">
-				<visible>!boxee.HasInternetConnection</visible>
-				<posx>32</posx>
-				<posy>426</posy>
-				<width>1280</width>
-				<font>font36b</font>
-				<align>center</align>
-				<textcolor>mediumgreyheidi</textcolor>
-				<label>[B]$LOCALIZE[56033][/B]</label>
-			</control>
-			<control type="label">
-				<visible>!boxee.HasInternetConnection</visible>
-				<posx>0</posx>
-				<posy>470</posy>
-				<width>1280</width>
-				<font>font30</font>
-				<align>center</align>
-				<textcolor>mediumgreyheidi</textcolor>
-				<label>$LOCALIZE[51930]</label>
-			</control>
-			<control type="button" id="8200">
-				<visible>!boxee.HasInternetConnection</visible>
-				<enable>!boxee.HasInternetConnection</enable>
-				<posx>444</posx>
-				<posy>522</posy>
-				<width>392</width>
-				<height>56</height>
-				<include>Button_Heidi</include>
-				<label>[B]$LOCALIZE[90550][/B]</label>
-				<onclick>ActivateWindow(NetworkSettings)</onclick>
-				<onup>7000</onup>
-			</control>
-			<control type="group" id="8000">
-				<animation effect="slide" start="0,0" end="-1248,0" time="450" condition="Container(8200).Position(3) | Container(8200).Position(4) | Container(8200).Position(5)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-2496,0" time="450" condition="Container(8200).Position(6) | Container(8200).Position(7) | Container(8200).Position(8)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-3744,0" time="450" condition="Container(8200).Position(9) | Container(8200).Position(10) | Container(8200).Position(11)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-4992,0" time="450" condition="Container(8200).Position(12) | Container(8200).Position(13) | Container(8200).Position(14)">Conditional</animation>
-				<visible>boxee.HasInternetConnection | substring(Skin.String(featured-feed),boxeedb://)</visible>
-				<enable>boxee.HasInternetConnection | substring(Skin.String(featured-feed),boxeedb://)</enable>
-				<posx>0</posx>
-				<posy>278</posy>
-				<control type="list" id="8200">
-					<preloaditems>4</preloaditems>
-					<posx>15</posx>
-					<posy>77</posy>
-					<width>6300</width>
-					<height>404</height>
-					<onleft>-</onleft>
-					<onright>-</onright>
+			<control type="group">
+				<visible>!StringCompare(Skin.String(featured-feed),about:blank)</visible>
+				<enabled>!StringCompare(Skin.String(featured-feed),about:blank)</enabled>
+				<control type="image">
+					<posx>0</posx>
+					<posy>289</posy>
+					<width>1280</width>
+					<height>32</height>
+					<texture>homescreen/graphic-home-divider.png</texture>
+				</control>
+				<control type="label">
+					<visible>!boxee.HasInternetConnection</visible>
+					<posx>32</posx>
+					<posy>426</posy>
+					<width>1280</width>
+					<font>font36b</font>
+					<align>center</align>
+					<textcolor>mediumgreyheidi</textcolor>
+					<label>[B]$LOCALIZE[56033][/B]</label>
+				</control>
+				<control type="label">
+					<visible>!boxee.HasInternetConnection</visible>
+					<posx>0</posx>
+					<posy>470</posy>
+					<width>1280</width>
+					<font>font30</font>
+					<align>center</align>
+					<textcolor>mediumgreyheidi</textcolor>
+					<label>$LOCALIZE[51930]</label>
+				</control>
+				<control type="button" id="8200">
+					<visible>!boxee.HasInternetConnection</visible>
+					<enable>!boxee.HasInternetConnection</enable>
+					<posx>444</posx>
+					<posy>522</posy>
+					<width>392</width>
+					<height>56</height>
+					<include>Button_Heidi</include>
+					<label>[B]$LOCALIZE[90550][/B]</label>
+					<onclick>ActivateWindow(NetworkSettings)</onclick>
 					<onup>7000</onup>
-					<ondown>-</ondown>
-					<scrolltime>400</scrolltime>
-					<pagecontrol>60</pagecontrol>
+				</control>
+				<control type="group" id="8000">
+					<animation effect="slide" start="0,0" end="-1248,0" time="450" condition="Container(8200).Position(3) | Container(8200).Position(4) | Container(8200).Position(5)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="-2496,0" time="450" condition="Container(8200).Position(6) | Container(8200).Position(7) | Container(8200).Position(8)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="-3744,0" time="450" condition="Container(8200).Position(9) | Container(8200).Position(10) | Container(8200).Position(11)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="-4992,0" time="450" condition="Container(8200).Position(12) | Container(8200).Position(13) | Container(8200).Position(14)">Conditional</animation>
 					<visible>boxee.HasInternetConnection | substring(Skin.String(featured-feed),boxeedb://)</visible>
 					<enable>boxee.HasInternetConnection | substring(Skin.String(featured-feed),boxeedb://)</enable>
-					<orientation>horizontal</orientation>
-					<itemlayout width="416" height="256">
-						<control type="image">
-							<visible>!IsEmpty(ListItem.Thumb)</visible>
-							<posx>17</posx>
-							<posy>0</posy>
-							<width>384</width>
-							<height>252</height>
-							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
-							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
-							<bordersize>8</bordersize>
-							<aspectratio>scale</aspectratio>
-						</control>
-						<control type="image">
-							<visible>IsEmpty(ListItem.Thumb)</visible>
-							<posx>17</posx>
-							<posy>0</posy>
-							<width>384</width>
-							<height>252</height>
-							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">browse/thumbnail-default-landscape.png</texture>
-							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
-							<bordersize>8</bordersize>
-							<aspectratio>scale</aspectratio>
-							<fadetime>200</fadetime>
-						</control>
-						<control type="image">
-							<posx>17</posx>
-							<posy>0</posy>
-							<width>384</width>
-							<height>253</height>
-			                <texture background="true">$INFO[ListItem.Property(custom:fanart)]</texture>
-							<bordersize>8</bordersize>
-							<aspectratio>scale</aspectratio>
-						</control>
-						<control type="image">
-							<visible>ListItem.property(IsMovie) + substring(Skin.String(featured-feed),boxeedb://)</visible>
-							<posx>321</posx>
-							<posy>173</posy>
-							<width>75</width>
-							<height>75</height>
-							<texture>../720p/resources/overlays/movie_off.png</texture>
-							<aspectratio>scale</aspectratio>
-							<fadetime>200</fadetime>
-						</control>
-						<control type="image">
-							<visible>ListItem.property(IsTVShow) + substring(Skin.String(featured-feed),boxeedb://)</visible>
-							<posx>321</posx>
-							<posy>173</posy>
-							<width>75</width>
-							<height>75</height>
-							<texture>../720p/resources/overlays/tvshow_off.png</texture>
-							<aspectratio>scale</aspectratio>
-							<fadetime>200</fadetime>
-						</control>
-						<control type="image">
-							<visible>ListItem.property(IsMusic) + substring(Skin.String(featured-feed),boxeedb://)</visible>
-							<posx>321</posx>
-							<posy>173</posy>
-							<width>75</width>
-							<height>75</height>
-							<texture>../720p/resources/overlays/music_off.png</texture>
-							<aspectratio>scale</aspectratio>
-							<fadetime>200</fadetime>
-						</control>
-						<control type="label">
-							<posx>24</posx>
-							<posy>259</posy>
-							<width>364</width>
-							<height>64</height>
-							<font>font22</font>
-							<align>left</align>
-							<aligny>top</aligny>
-							<label>$INFO[ListItem.Label]</label>
-							<textcolor>mediumgreyheidi</textcolor>
-						</control>
-					</itemlayout>
-					<focusedlayout width="416" height="256">
-						<control type="image">
-							<visible>!Control.HasFocus(8200)</visible>
-							<visible>!IsEmpty(ListItem.Thumb)</visible>
-							<posx>17</posx>
-							<posy>0</posy>
-							<width>384</width>
-							<height>252</height>
-							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
-							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
-							<bordersize>8</bordersize>
-							<aspectratio>scale</aspectratio>
-						</control>
-						<control type="image">
-							<visible>!Control.HasFocus(8200)</visible>
-							<visible>IsEmpty(ListItem.Thumb)</visible>
-							<posx>17</posx>
-							<posy>0</posy>
-							<width>384</width>
-							<height>252</height>
-							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">browse/thumbnail-default-landscape.png</texture>
-							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
-							<bordersize>8</bordersize>
-							<aspectratio>scale</aspectratio>
-						</control>
-						<control type="image">
-							<visible>Control.HasFocus(8200)</visible>
-							<visible>!IsEmpty(ListItem.Thumb)</visible>
-							<posx>17</posx>
-							<posy>0</posy>
-							<width>384</width>
-							<height>252</height>
-							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
-							<aligny>top</aligny>
-							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
-							<bordersize>8</bordersize>
-							<aspectratio>scale</aspectratio>
-						</control>
-						<control type="image">
-							<visible>Control.HasFocus(8200)</visible>
-							<visible>IsEmpty(ListItem.Thumb)</visible>
-							<posx>17</posx>
-							<posy>0</posy>
-							<width>384</width>
-							<height>252</height>
-							<texture fallback="browse/thumbnail-default-landscape.png" blend="false">browse/thumbnail-default-landscape.png</texture>
-							<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
-							<bordersize>8</bordersize>
-							<aspectratio>scale</aspectratio>
-						</control>
-						<control type="image">
-							<posx>17</posx>
-							<posy>0</posy>
-							<width>384</width>
-							<height>253</height>
-			                <texture background="true">$INFO[ListItem.Property(custom:fanart)]</texture>
-							<bordersize>8</bordersize>
-							<aspectratio>scale</aspectratio>
-						</control>
-						<control type="image">
-							<visible>ListItem.property(IsMovie) + substring(Skin.String(featured-feed),boxeedb://)</visible>
-							<visible>Control.HasFocus(8200)</visible>
-							<posx>321</posx>
-							<posy>173</posy>
-							<width>75</width>
-							<height>75</height>
-							<texture>../720p/resources/overlays/movie_on.png</texture>
-							<aspectratio>scale</aspectratio>
-							<fadetime>200</fadetime>
-						</control>
-						<control type="image">
-							<visible>ListItem.property(IsTVShow) + substring(Skin.String(featured-feed),boxeedb://)</visible>
-							<visible>Control.HasFocus(8200)</visible>
-							<posx>321</posx>
-							<posy>173</posy>
-							<width>75</width>
-							<height>75</height>
-							<texture>../720p/resources/overlays/tvshow_on.png</texture>
-							<aspectratio>scale</aspectratio>
-							<fadetime>200</fadetime>
-						</control>
-						<control type="image">
-							<visible>ListItem.property(IsMusic) + substring(Skin.String(featured-feed),boxeedb://)</visible>
-							<visible>Control.HasFocus(8200)</visible>
-							<posx>321</posx>
-							<posy>173</posy>
-							<width>75</width>
-							<height>75</height>
-							<texture>../720p/resources/overlays/music_on.png</texture>
-							<aspectratio>scale</aspectratio>
-							<fadetime>200</fadetime>
-						</control>
-						<control type="image">
-							<visible>ListItem.property(IsMovie) + substring(Skin.String(featured-feed),boxeedb://)</visible>
-							<visible>!Control.HasFocus(8200)</visible>
-							<posx>321</posx>
-							<posy>173</posy>
-							<width>75</width>
-							<height>75</height>
-							<texture>../720p/resources/overlays/movie_off.png</texture>
-							<aspectratio>scale</aspectratio>
-							<fadetime>200</fadetime>
-						</control>
-						<control type="image">
-							<visible>ListItem.property(IsTVShow) + substring(Skin.String(featured-feed),boxeedb://)</visible>
-							<visible>!Control.HasFocus(8200)</visible>
-							<posx>321</posx>
-							<posy>173</posy>
-							<width>75</width>
-							<height>75</height>
-							<texture>../720p/resources/overlays/tvshow_off.png</texture>
-							<aspectratio>scale</aspectratio>
-							<fadetime>200</fadetime>
-						</control>
-						<control type="image">
-							<visible>ListItem.property(IsMusic) + substring(Skin.String(featured-feed),boxeedb://)</visible>
-							<visible>!Control.HasFocus(8200)</visible>
-							<posx>321</posx>
-							<posy>173</posy>
-							<width>75</width>
-							<height>75</height>
-							<texture>../720p/resources/overlays/music_off.png</texture>
-							<aspectratio>scale</aspectratio>
-							<fadetime>200</fadetime>
-						</control>
-						<control type="label">
-							<visible>Control.HasFocus(8200)</visible>
-							<posx>24</posx>
-							<posy>259</posy>
-							<width>364</width>
-							<height>64</height>
-							<font>font22</font>
-							<align>left</align>
-							<aligny>Top</aligny>
-							<label>$INFO[ListItem.Label]</label>
-							<textcolor>whiteheidi</textcolor>
-						</control>
-						<control type="label">
-							<visible>!Control.HasFocus(8200)</visible>
-							<posx>24</posx>
-							<posy>259</posy>
-							<width>364</width>
-							<height>64</height>
-							<font>font22</font>
-							<align>left</align>
-							<aligny>Top</aligny>
-							<label>$INFO[ListItem.Label]</label>
-							<textcolor>mediumgreyheidi</textcolor>
-						</control>
-					</focusedlayout>
-					<content type="directory">
-				    	$INFO[Skin.String(featured-feed)]
-				 	</content>
+					<posx>0</posx>
+					<posy>278</posy>
+					<control type="list" id="8200">
+						<preloaditems>4</preloaditems>
+						<posx>15</posx>
+						<posy>77</posy>
+						<width>6300</width>
+						<height>404</height>
+						<onleft>-</onleft>
+						<onright>-</onright>
+						<onup>7000</onup>
+						<ondown>-</ondown>
+						<scrolltime>400</scrolltime>
+						<pagecontrol>60</pagecontrol>
+						<visible>boxee.HasInternetConnection | substring(Skin.String(featured-feed),boxeedb://)</visible>
+						<enable>boxee.HasInternetConnection | substring(Skin.String(featured-feed),boxeedb://)</enable>
+						<orientation>horizontal</orientation>
+						<itemlayout width="416" height="256">
+							<control type="image">
+								<visible>!IsEmpty(ListItem.Thumb)</visible>
+								<posx>17</posx>
+								<posy>0</posy>
+								<width>384</width>
+								<height>252</height>
+								<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
+								<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+								<bordersize>8</bordersize>
+								<aspectratio>scale</aspectratio>
+							</control>
+							<control type="image">
+								<visible>IsEmpty(ListItem.Thumb)</visible>
+								<posx>17</posx>
+								<posy>0</posy>
+								<width>384</width>
+								<height>252</height>
+								<texture fallback="browse/thumbnail-default-landscape.png" blend="false">browse/thumbnail-default-landscape.png</texture>
+								<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+								<bordersize>8</bordersize>
+								<aspectratio>scale</aspectratio>
+								<fadetime>200</fadetime>
+							</control>
+							<control type="image">
+								<posx>17</posx>
+								<posy>0</posy>
+								<width>384</width>
+								<height>253</height>
+				                <texture background="true">$INFO[ListItem.Property(custom:fanart)]</texture>
+								<bordersize>8</bordersize>
+								<aspectratio>scale</aspectratio>
+							</control>
+							<control type="image">
+								<visible>ListItem.property(IsMovie) + substring(Skin.String(featured-feed),boxeedb://)</visible>
+								<posx>321</posx>
+								<posy>173</posy>
+								<width>75</width>
+								<height>75</height>
+								<texture>../720p/resources/overlays/movie_off.png</texture>
+								<aspectratio>scale</aspectratio>
+								<fadetime>200</fadetime>
+							</control>
+							<control type="image">
+								<visible>ListItem.property(IsTVShow) + substring(Skin.String(featured-feed),boxeedb://)</visible>
+								<posx>321</posx>
+								<posy>173</posy>
+								<width>75</width>
+								<height>75</height>
+								<texture>../720p/resources/overlays/tvshow_off.png</texture>
+								<aspectratio>scale</aspectratio>
+								<fadetime>200</fadetime>
+							</control>
+							<control type="image">
+								<visible>ListItem.property(IsMusic) + substring(Skin.String(featured-feed),boxeedb://)</visible>
+								<posx>321</posx>
+								<posy>173</posy>
+								<width>75</width>
+								<height>75</height>
+								<texture>../720p/resources/overlays/music_off.png</texture>
+								<aspectratio>scale</aspectratio>
+								<fadetime>200</fadetime>
+							</control>
+							<control type="label">
+								<posx>24</posx>
+								<posy>259</posy>
+								<width>364</width>
+								<height>64</height>
+								<font>font22</font>
+								<align>left</align>
+								<aligny>top</aligny>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>mediumgreyheidi</textcolor>
+							</control>
+						</itemlayout>
+						<focusedlayout width="416" height="256">
+							<control type="image">
+								<visible>!Control.HasFocus(8200)</visible>
+								<visible>!IsEmpty(ListItem.Thumb)</visible>
+								<posx>17</posx>
+								<posy>0</posy>
+								<width>384</width>
+								<height>252</height>
+								<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
+								<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+								<bordersize>8</bordersize>
+								<aspectratio>scale</aspectratio>
+							</control>
+							<control type="image">
+								<visible>!Control.HasFocus(8200)</visible>
+								<visible>IsEmpty(ListItem.Thumb)</visible>
+								<posx>17</posx>
+								<posy>0</posy>
+								<width>384</width>
+								<height>252</height>
+								<texture fallback="browse/thumbnail-default-landscape.png" blend="false">browse/thumbnail-default-landscape.png</texture>
+								<bordertexture srcborder="30" border="20">browse/thumbnail-bg-off.png</bordertexture>
+								<bordersize>8</bordersize>
+								<aspectratio>scale</aspectratio>
+							</control>
+							<control type="image">
+								<visible>Control.HasFocus(8200)</visible>
+								<visible>!IsEmpty(ListItem.Thumb)</visible>
+								<posx>17</posx>
+								<posy>0</posy>
+								<width>384</width>
+								<height>252</height>
+								<texture fallback="browse/thumbnail-default-landscape.png" blend="false">$INFO[ListItem.Thumb]</texture>
+								<aligny>top</aligny>
+								<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+								<bordersize>8</bordersize>
+								<aspectratio>scale</aspectratio>
+							</control>
+							<control type="image">
+								<visible>Control.HasFocus(8200)</visible>
+								<visible>IsEmpty(ListItem.Thumb)</visible>
+								<posx>17</posx>
+								<posy>0</posy>
+								<width>384</width>
+								<height>252</height>
+								<texture fallback="browse/thumbnail-default-landscape.png" blend="false">browse/thumbnail-default-landscape.png</texture>
+								<bordertexture srcborder="30" border="20">browse/thumbnail-bg-on.png</bordertexture>
+								<bordersize>8</bordersize>
+								<aspectratio>scale</aspectratio>
+							</control>
+							<control type="image">
+								<posx>17</posx>
+								<posy>0</posy>
+								<width>384</width>
+								<height>253</height>
+				                <texture background="true">$INFO[ListItem.Property(custom:fanart)]</texture>
+								<bordersize>8</bordersize>
+								<aspectratio>scale</aspectratio>
+							</control>
+							<control type="image">
+								<visible>ListItem.property(IsMovie) + substring(Skin.String(featured-feed),boxeedb://)</visible>
+								<visible>Control.HasFocus(8200)</visible>
+								<posx>321</posx>
+								<posy>173</posy>
+								<width>75</width>
+								<height>75</height>
+								<texture>../720p/resources/overlays/movie_on.png</texture>
+								<aspectratio>scale</aspectratio>
+								<fadetime>200</fadetime>
+							</control>
+							<control type="image">
+								<visible>ListItem.property(IsTVShow) + substring(Skin.String(featured-feed),boxeedb://)</visible>
+								<visible>Control.HasFocus(8200)</visible>
+								<posx>321</posx>
+								<posy>173</posy>
+								<width>75</width>
+								<height>75</height>
+								<texture>../720p/resources/overlays/tvshow_on.png</texture>
+								<aspectratio>scale</aspectratio>
+								<fadetime>200</fadetime>
+							</control>
+							<control type="image">
+								<visible>ListItem.property(IsMusic) + substring(Skin.String(featured-feed),boxeedb://)</visible>
+								<visible>Control.HasFocus(8200)</visible>
+								<posx>321</posx>
+								<posy>173</posy>
+								<width>75</width>
+								<height>75</height>
+								<texture>../720p/resources/overlays/music_on.png</texture>
+								<aspectratio>scale</aspectratio>
+								<fadetime>200</fadetime>
+							</control>
+							<control type="image">
+								<visible>ListItem.property(IsMovie) + substring(Skin.String(featured-feed),boxeedb://)</visible>
+								<visible>!Control.HasFocus(8200)</visible>
+								<posx>321</posx>
+								<posy>173</posy>
+								<width>75</width>
+								<height>75</height>
+								<texture>../720p/resources/overlays/movie_off.png</texture>
+								<aspectratio>scale</aspectratio>
+								<fadetime>200</fadetime>
+							</control>
+							<control type="image">
+								<visible>ListItem.property(IsTVShow) + substring(Skin.String(featured-feed),boxeedb://)</visible>
+								<visible>!Control.HasFocus(8200)</visible>
+								<posx>321</posx>
+								<posy>173</posy>
+								<width>75</width>
+								<height>75</height>
+								<texture>../720p/resources/overlays/tvshow_off.png</texture>
+								<aspectratio>scale</aspectratio>
+								<fadetime>200</fadetime>
+							</control>
+							<control type="image">
+								<visible>ListItem.property(IsMusic) + substring(Skin.String(featured-feed),boxeedb://)</visible>
+								<visible>!Control.HasFocus(8200)</visible>
+								<posx>321</posx>
+								<posy>173</posy>
+								<width>75</width>
+								<height>75</height>
+								<texture>../720p/resources/overlays/music_off.png</texture>
+								<aspectratio>scale</aspectratio>
+								<fadetime>200</fadetime>
+							</control>
+							<control type="label">
+								<visible>Control.HasFocus(8200)</visible>
+								<posx>24</posx>
+								<posy>259</posy>
+								<width>364</width>
+								<height>64</height>
+								<font>font22</font>
+								<align>left</align>
+								<aligny>Top</aligny>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>whiteheidi</textcolor>
+							</control>
+							<control type="label">
+								<visible>!Control.HasFocus(8200)</visible>
+								<posx>24</posx>
+								<posy>259</posy>
+								<width>364</width>
+								<height>64</height>
+								<font>font22</font>
+								<align>left</align>
+								<aligny>Top</aligny>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>mediumgreyheidi</textcolor>
+							</control>
+						</focusedlayout>
+						<content type="directory">
+					    	$INFO[Skin.String(featured-feed)]
+					 	</content>
+					</control>
 				</control>
 			</control>
 		</control>
 		<control type="group">
-			<control type="image">
-				<posx>586</posx>
-				<posy>687</posy>
-				<width>12</width>
-				<height>12</height>
-				<texture>universal/graphic-steps-dot.png</texture>
-				<colordiffuse>mediumgreyheidi</colordiffuse>
-			</control>
-			<control type="image">
-				<posx>602</posx>
-				<posy>687</posy>
-				<width>12</width>
-				<height>12</height>
-				<texture>universal/graphic-steps-dot.png</texture>
-				<colordiffuse>mediumgreyheidi</colordiffuse>
-			</control>
-			<control type="image">
-				<posx>618</posx>
-				<posy>687</posy>
-				<width>12</width>
-				<height>12</height>
-				<texture>universal/graphic-steps-dot.png</texture>
-				<colordiffuse>mediumgreyheidi</colordiffuse>
-			</control>
-			<control type="image">
-				<posx>634</posx>
-				<posy>687</posy>
-				<width>12</width>
-				<height>12</height>
-				<texture>universal/graphic-steps-dot.png</texture>
-				<colordiffuse>mediumgreyheidi</colordiffuse>
-			</control>
-			<control type="image">
-				<posx>650</posx>
-				<posy>687</posy>
-				<width>12</width>
-				<height>12</height>
-				<texture>universal/graphic-steps-dot.png</texture>
-				<colordiffuse>mediumgreyheidi</colordiffuse>
-			</control>
-			<control type="image">
-				<animation effect="slide" start="0,0" end="16,0" time="0" condition="Container(8200).Position(3) | Container(8200).Position(4) | Container(8200).Position(5)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="32,0" time="0" condition="Container(8200).Position(6) | Container(8200).Position(7) | Container(8200).Position(8)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="48,0" time="0" condition="Container(8200).Position(9) | Container(8200).Position(10) | Container(8200).Position(11)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="64,0" time="0" condition="Container(8200).Position(12) | Container(8200).Position(13) | Container(8200).Position(14)">Conditional</animation>
-				<posx>586</posx>
-				<posy>687</posy>
-				<width>12</width>
-				<height>12</height>
-				<texture>universal/graphic-steps-circle.png</texture>
-				<colordiffuse>mediumgreyheidi</colordiffuse>
+			<visible>!StringCompare(Skin.String(featured-feed),about:blank)</visible>
+			<enabled>!StringCompare(Skin.String(featured-feed),about:blank)</enabled>
+			<control type="group">
+				<control type="image">
+					<posx>586</posx>
+					<posy>687</posy>
+					<width>12</width>
+					<height>12</height>
+					<texture>universal/graphic-steps-dot.png</texture>
+					<colordiffuse>mediumgreyheidi</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>602</posx>
+					<posy>687</posy>
+					<width>12</width>
+					<height>12</height>
+					<texture>universal/graphic-steps-dot.png</texture>
+					<colordiffuse>mediumgreyheidi</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>618</posx>
+					<posy>687</posy>
+					<width>12</width>
+					<height>12</height>
+					<texture>universal/graphic-steps-dot.png</texture>
+					<colordiffuse>mediumgreyheidi</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>634</posx>
+					<posy>687</posy>
+					<width>12</width>
+					<height>12</height>
+					<texture>universal/graphic-steps-dot.png</texture>
+					<colordiffuse>mediumgreyheidi</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>650</posx>
+					<posy>687</posy>
+					<width>12</width>
+					<height>12</height>
+					<texture>universal/graphic-steps-dot.png</texture>
+					<colordiffuse>mediumgreyheidi</colordiffuse>
+				</control>
+				<control type="image">
+					<animation effect="slide" start="0,0" end="16,0" time="0" condition="Container(8200).Position(3) | Container(8200).Position(4) | Container(8200).Position(5)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="32,0" time="0" condition="Container(8200).Position(6) | Container(8200).Position(7) | Container(8200).Position(8)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="48,0" time="0" condition="Container(8200).Position(9) | Container(8200).Position(10) | Container(8200).Position(11)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="64,0" time="0" condition="Container(8200).Position(12) | Container(8200).Position(13) | Container(8200).Position(14)">Conditional</animation>
+					<posx>586</posx>
+					<posy>687</posy>
+					<width>12</width>
+					<height>12</height>
+					<texture>universal/graphic-steps-circle.png</texture>
+					<colordiffuse>mediumgreyheidi</colordiffuse>
+				</control>
 			</control>
 		</control>
 		<include>DownloadingUpdatesBanner</include>

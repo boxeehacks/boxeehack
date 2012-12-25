@@ -2,9 +2,11 @@ import xbmc, xbmcgui
 import time
 import subprocess
 import common
+from random import randint
 
 fanart = {}
 fanart_changed = 0
+
 def get_fanart_list():
     global fanart
     showlist = common.file_get_contents("/data/etc/.fanart")
@@ -29,7 +31,7 @@ def store_fanart_list():
     
     common.file_put_contents("/data/etc/.fanart", file)
     fanart_changed = 0
-
+    
 def grab_fanart_for_item(item):
     global fanart, fanart_changed
 
@@ -71,17 +73,61 @@ def grab_fanart_for_item(item):
 #        if "/" in thumbnail:
 #            art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
 
-    if art != "":
+    if art != "" and art != "fanart.jpg":
         fanart[label] = art
         fanart_changed = 1
         item.SetProperty("fanart", art)
+        
+def get_window_id(special):
+    if special == True:
+        return xbmcgui.getCurrentWindowDialogId()
+    else:
+        return xbmcgui.getCurrentWindowId()
+
+def get_control(controlNum, special):
+    try:
+        control = mc.GetWindow(get_window_id(special)).GetControl(controlNum)
+    except:
+        control = ""
+    return control
+
+def grab_random_fanart(controlNum, special):
+    global fanart, is_running
+    
+    get_fanart_list()
+    
+    # sometimes the list control isn't available yet onload
+    # so add some checking to make sure
+    control = get_control(controlNum, special)
+    count = 10
+    while control == "" and count > 0:
+        time.sleep(0.25)
+        control = get_control(controlNum, special)
+        count = count - 1
+    
+    window = get_window_id(special)
+    if control == "":
+        pass
+    else:
+        more = 1
+        while control != "" and more == 1:
+            art = fanart[fanart.keys()[randint(0, len(fanart))]]
+            if art != "":
+                art = "$COMMA".join(art.split(","))
+            
+            xbmc.executebuiltin("Skin.SetString(random-fanart,%s)" % art)
+            count = 4 * 8
+            while count > 0 and more == 1:
+                if window != get_window_id(special):
+                    more = 0
+                time.sleep(0.25)
+                count = count - 1
+            
+            control = get_control(controlNum, special)
 
 def get_list(listNum, special):
     try:
-        if special == True:
-            lst = mc.GetWindow(xbmcgui.getCurrentWindowDialogId()).GetList(listNum)
-        else:
-            lst = mc.GetActiveWindow().GetList(listNum)
+        lst = mc.GetWindow(get_window_id(special)).GetList(listNum)
     except:
         lst = ""
     return lst
@@ -100,6 +146,7 @@ def grab_fanart_list(listNum, special):
         lst = get_list(listNum, special)
         count = count - 1
         
+    window = get_window_id(special)
     if lst == "":
         pass
     else:
@@ -111,7 +158,7 @@ def grab_fanart_list(listNum, special):
         # select a genre
         # should have very little overhead because all the values
         # get cached in memory
-        while lst != "":
+        while lst != "" and window == get_window_id(special):
             items = lst.GetItems()
 
             # try and apply the stuff we already know about
@@ -132,3 +179,4 @@ if (__name__ == "__main__"):
 
     if command == "grab_fanart_list": grab_fanart_list(int(sys.argv[2]), False)
     if command == "grab_fanart_list_special": grab_fanart_list(int(sys.argv[2]), True)
+    if command == "grab_random_fanart": grab_random_fanart(int(sys.argv[2]), False)

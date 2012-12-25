@@ -141,7 +141,7 @@ def get_subtitles_language_filter():
 def featured_next():
     replace = get_featured_feed_value()
     num = int(replace) + 1
-    if num > 3: num = 0
+    if num > 4: num = 0
 
     replace = "%s" % num
 
@@ -152,7 +152,7 @@ def featured_next():
 def featured_previous():
     replace = get_featured_feed_value()
     num = int(replace) - 1
-    if num < 0: num = 3
+    if num < 0: num = 4
 
     replace = "%s" % num
 
@@ -167,6 +167,7 @@ def get_featured_feed():
     if replace == "1": feed = "boxeedb://recent/?limit=15"
     if replace == "2": feed = "rss://vimeo.com/channels/staffpicks/videos/rss"
     if replace == "3": feed = "rss://gdata.youtube.com/feeds/api/standardfeeds/recently_featured?alt=rss"
+    if replace == "4": feed = "about:blank"
 
     return feed
 
@@ -177,6 +178,7 @@ def get_featured_name():
     if replace == "1": name = "Recently added"
     if replace == "2": name = "Vimeo staff picks"
     if replace == "3": name = "Youtube featured"
+    if replace == "4": name = "Fanart"
 
     return name
 
