@@ -1,4 +1,4 @@
-import xbmc, xbmcgui
+import xbmc, xbmcgui, mc
 import time
 import subprocess
 import common
@@ -6,6 +6,8 @@ from random import randint
 
 fanart = {}
 fanart_changed = 0
+
+from pysqlite2 import dbapi2 as sqlite
 
 def get_fanart_list():
     global fanart
@@ -39,6 +41,7 @@ def grab_fanart_for_item(item):
         return
 
     label = item.GetLabel()
+
     path = "%s" % item.GetPath()
     if "stack:" in path:
         path = path.split(" , ")
@@ -51,32 +54,35 @@ def grab_fanart_for_item(item):
     if path.find("http://") != -1:
         return
 
-    if label in fanart:
-        art = fanart[label]
-    elif path != "" and path.find("boxeedb://") == -1:
+    if path != "" and path.find("boxeedb://") == -1:
         art = path[0:path.rfind("/")+1] + "fanart.jpg"
     elif thumbnail.find("special://") == -1:
         art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
-#    else:
-#        db_path = xbmc.translatePath('special://profile/Database/')
-#        sql = ".timeout 1000000\n"
-#        if path.find("boxeedb://") == -1:
-#            # it must be a movie
-#            sql = sql + "SELECT strCover FROM video_files WHERE strTitle=\"" + label + "\";\n"
-#        else:
-#            # it must be a tv show
-#            sql = sql + "SELECT strCover FROM series WHERE strTitle=\"" + label + "\";\n"
-#
-#        common.file_put_contents("/tmp/sqlinject", sql)
-#        os.system('/bin/sh \'cat /tmp/sqlinject | /data/hack/bin/sqlite3 "' + db_path + '../../../Database/boxee_catalog.db" > /tmp/readsql\'')
-#        thumbnail = common.file_get_contents("/tmp/readsql")
-#        if "/" in thumbnail:
-#            art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
+    elif label in fanart:
+        art = fanart[label]
+    else:
+        db_path = xbmc.translatePath('special://profile/Database/') + "../../../Database/boxee_catalog.db"
+        conn = sqlite.connect(db_path)
+        c = conn.cursor()
+        if path.find("boxeedb://") == -1:
+            # it must be a movie
+            sql = "SELECT strCover FROM video_files WHERE strTitle=\"" + label + "\";"
+        else:
+            # it must be a tv show
+            sql =  "SELECT strCover FROM series WHERE strTitle=\"" + label + "\";"
 
+        data = c.execute(sql)
+        for row in data:
+            thumbnail = "%s" % row[0]
+            if "/" in thumbnail:
+                art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
+
+        c.close()
+        
     if art != "" and art != "fanart.jpg":
         fanart[label] = art
         fanart_changed = 1
-        item.SetProperty("fanart", art)
+        item.SetProperty("fanart", str(art))
         
 def get_window_id(special):
     if special == True:
