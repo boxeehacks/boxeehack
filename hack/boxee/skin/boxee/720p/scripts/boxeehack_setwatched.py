@@ -159,7 +159,8 @@ def set_watched(command):
 			# Make Boxee do some queries which in turn clears the
 			# caching of the current listitems
 
-			d = time.strftime("%m%d%H%M%Y.%S", time.gmtime(time.time() + 6000))
+			d = time.strftime("%m%d%H%M%Y.%S", time.localtime(time.time() + 10000))
+			common.file_put_contents("/tmp/timeup", d)
 			os.system("date \"%s\"" % d)
 			
 			time.sleep(2)
@@ -168,11 +169,12 @@ def set_watched(command):
 			if lst != "":
 				lst.Refresh()
 
-			time.sleep(1)
+			time.sleep(2)
 			
 			xbmc.executebuiltin("XBMC.ReplaceWindow(10483)")
 			
-			d = time.strftime("%m%d%H%M%Y.%S", time.gmtime(time.time() - 6000))
+			d = time.strftime("%m%d%H%M%Y.%S", time.localtime(time.time()))
+			common.file_put_contents("/tmp/timedown", d)
 			os.system("date \"%s\"" % d)
 
 			progress.close()
