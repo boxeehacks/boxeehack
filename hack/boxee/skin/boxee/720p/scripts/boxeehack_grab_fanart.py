@@ -117,8 +117,8 @@ def grab_random_fanart(controlNum, special):
         pass
     else:
         more = 1
-        while control != "" and more == 1:
-            art = fanart[fanart.keys()[randint(0, len(fanart))]]
+        while control != "" and more == 1 and len(fanart) > 0:
+            art = fanart[fanart.keys()[randint(0, len(fanart) - 1)]]
             if art != "":
                 art = "$COMMA".join(art.split(","))
             
