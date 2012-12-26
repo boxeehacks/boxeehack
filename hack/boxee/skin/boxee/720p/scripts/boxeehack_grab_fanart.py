@@ -85,60 +85,40 @@ def grab_fanart_for_item(item):
         fanart_changed = 1
         item.SetProperty("fanart", str(art))
         
-def get_window_id(special):
-    if special == True:
-        return xbmcgui.getCurrentWindowDialogId()
-    else:
-        return xbmcgui.getCurrentWindowId()
-
-def get_control(controlNum, special):
-    try:
-        control = mc.GetWindow(get_window_id(special)).GetControl(controlNum)
-    except:
-        control = ""
-    return control
-
 def grab_random_fanart(controlNum, special):
-    global fanart, is_running
+    global fanart
     
     get_fanart_list()
     
     # sometimes the list control isn't available yet onload
     # so add some checking to make sure
-    control = get_control(controlNum, special)
+    control = common.get_control(controlNum, special)
     count = 10
-    while control == "" and count > 0:
+    while control == "" and count > 0 and not common.get_abort_requested():
         time.sleep(0.25)
-        control = get_control(controlNum, special)
+        control = common.get_control(controlNum, special)
         count = count - 1
     
-    window = get_window_id(special)
+    window = common.get_window_id(special)
     if control == "":
         pass
     else:
         more = 1
-        while control != "" and more == 1 and len(fanart) > 0:
+        while control != "" and more == 1 and len(fanart) > 0 and not common.get_abort_requested():
             art = fanart[fanart.keys()[randint(0, len(fanart) - 1)]]
             if art != "":
                 art = "$COMMA".join(art.split(","))
             
             xbmc.executebuiltin("Skin.SetString(random-fanart,%s)" % art)
             count = 4 * 8
-            while count > 0 and more == 1:
-                if window != get_window_id(special):
+            while count > 0 and more == 1 and not common.get_abort_requested():
+                if window != common.get_window_id(special):
                     more = 0
                 time.sleep(0.25)
                 count = count - 1
             
-            control = get_control(controlNum, special)
+            control = common.get_control(controlNum, special)
 
-def get_list(listNum, special):
-    try:
-        lst = mc.GetWindow(get_window_id(special)).GetList(listNum)
-    except:
-        lst = ""
-    return lst
-    
 def grab_fanart_list(listNum, special):
     global fanart_changed
     
@@ -146,36 +126,42 @@ def grab_fanart_list(listNum, special):
     
     # sometimes the list control isn't available yet onload
     # so add some checking to make sure
-    lst = get_list(listNum, special)
+    lst = common.get_list(listNum, special)
     count = 10
-    while lst == "" and count > 0:
+    while lst == "" and count > 0 and not common.get_abort_requested():
         time.sleep(0.25)
-        lst = get_list(listNum, special)
+        lst = common.get_list(listNum, special)
         count = count - 1
-        
-    window = get_window_id(special)
+    
+    window = common.get_window_id(special)
     if lst == "":
         pass
     else:
-        items = lst.GetItems()
-        
         # as long as the list exists (while the window exists)
         # the list gets updated at regular intervals. otherwise
         # the fanart disappears when you change sort-orders or
         # select a genre
         # should have very little overhead because all the values
         # get cached in memory
-        while lst != "" and window == get_window_id(special):
+        numItems = 0
+        more = 1
+        while lst != "" and more == 1 and not common.get_abort_requested():
             items = lst.GetItems()
 
             # try and apply the stuff we already know about
-            for item in items:
-                grab_fanart_for_item(item)
-                
-            time.sleep(0.25)
+            if (len(items) > numItems):
+                for item in items:
+                    grab_fanart_for_item(item)
+
+                items = numItems
             
-            lst = get_list(listNum, special)
-        
+            if window == common.get_window_id(special):
+                more = 0
+                
+            time.sleep(1)
+ 
+            lst = common.get_list(listNum, special)
+            
             # store the fanart list for next time if the list
             # was modified
             if fanart_changed == 1:

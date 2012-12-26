@@ -4,8 +4,10 @@
 	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "defaults")</onload>
 	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_grab_fanart.py", "grab_fanart_list", 8200)</onload>
 	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_grab_fanart.py", "grab_random_fanart", 8250)</onload>
-	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_server.py")</onload>
+	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_server.py", "run_server")</onload>
 	<controls>
+		<control type="image" id="13337">
+		</control>
 		<include>Common_Background</include>
 		<control type="group">
 			<visible>StringCompare(Skin.String(featured-feed),about:blank)</visible>
