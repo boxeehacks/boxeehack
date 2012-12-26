@@ -114,8 +114,7 @@ def set_watched(command):
 		display_name = series
 		season_string = ""
 		if(len(seasons) == 1):
-			display_name = "Season %s" % (seasons[0])
-			season_string = " %s" % display_name
+			season_string = " Season %s" % (seasons[0])
 			use_season = seasons[0]
 
 		dialog = xbmcgui.Dialog()
