@@ -54,6 +54,7 @@ def grab_fanart_for_item(item):
     if path.find("http://") != -1:
         return
 
+    print art
     if path != "" and path.find("boxeedb://") == -1:
         art = path[0:path.rfind("/")+1] + "fanart.jpg"
     elif thumbnail.find("special://") == -1:
@@ -110,11 +111,11 @@ def grab_random_fanart(controlNum, special):
                 art = "$COMMA".join(art.split(","))
             
             xbmc.executebuiltin("Skin.SetString(random-fanart,%s)" % art)
-            count = 4 * 8
+            count = 8
             while count > 0 and more == 1 and not common.get_abort_requested():
                 if window != common.get_window_id(special):
                     more = 0
-                time.sleep(0.25)
+                time.sleep(1)
                 count = count - 1
             
             control = common.get_control(controlNum, special)
@@ -132,7 +133,7 @@ def grab_fanart_list(listNum, special):
         time.sleep(0.25)
         lst = common.get_list(listNum, special)
         count = count - 1
-    
+
     window = common.get_window_id(special)
     if lst == "":
         pass
@@ -145,8 +146,8 @@ def grab_fanart_list(listNum, special):
         # get cached in memory
         numItems = 0
         more = 1
+        items = lst.GetItems()
         while lst != "" and more == 1 and not common.get_abort_requested():
-            items = lst.GetItems()
 
             # try and apply the stuff we already know about
             if (len(items) > numItems):
@@ -155,17 +156,21 @@ def grab_fanart_list(listNum, special):
 
                 items = numItems
             
-            if window == common.get_window_id(special):
+            if window != common.get_window_id(special):
                 more = 0
                 
             time.sleep(1)
- 
-            lst = common.get_list(listNum, special)
             
             # store the fanart list for next time if the list
             # was modified
             if fanart_changed == 1:
                 store_fanart_list()
+
+            if not common.get_abort_requested():
+                control = common.get_control(listNum, special)
+                lst = common.get_list(listNum, special)
+                if lst != "":
+                    items = lst.GetItems()
 
 if (__name__ == "__main__"):
     command = sys.argv[1]

@@ -20,16 +20,16 @@ def run_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     #bind to our desired port (on any available address)
-    server_socket.bind(('', port))
+    try:
+        server_socket.bind(('', port))
+    except:
+        return
 
     #set to non-blocking operation
     server_socket.setblocking(0)
 
     #main loop for the threaded script
     while not common.get_abort_requested():
-        print "Waiting for a connection..."
-        #outputs[0].value_set(0.0)
-    
         #listen for incoming connection requests
         server_socket.listen(1)
     
@@ -41,8 +41,6 @@ def run_server():
         
             #make new connection non-blocking
             connection.setblocking(0)
-        
-            print "connected"
         
             #loop receiving data and calculate bit rate
             start = time.time()
@@ -68,7 +66,6 @@ def run_server():
                     timediff = time.time() - start
                     if timediff > 0.0:
                         bitrate = (data_bits/timediff)/1000000
-                    #outputs[0].value_set(bitrate)
             
                     data = "".join(data.split("GET /")).split(" HTTP/")[0]
                     data = urllib.unquote(data).decode("utf-8")
@@ -76,7 +73,7 @@ def run_server():
                     connection.send("HTTP/1.1 200 OK\nContent-type: text/html\n\n%s" % data)
                     connection.close()
                     conn_closed = 1
-                    
+            
                 #break if we have a timeout condition
                 else:
                     break
@@ -87,10 +84,8 @@ def run_server():
 
     #close the server on exit
     server_socket.close()
-    print "not running"
 
 if (__name__ == "__main__"):
     command = sys.argv[1]
 
     if command == "run_server": run_server()
-    if command == "abort_requested": set_abort_requested()
