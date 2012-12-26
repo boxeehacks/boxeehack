@@ -44,13 +44,12 @@ def focus_last_unwatched(listNum):
 	if lst == "":
 		pass
 	else:
-		time.sleep(0.1)
+		item = lst.GetItem(1)
 		items = lst.GetItems()
 		
 		more = 1
 		reverse = 0
 
-		item = items[1]
 		if item.GetSeason() == 1 and item.GetEpisode() == 1:
 			reverse = 1
 
@@ -78,8 +77,11 @@ def focus_last_unwatched(listNum):
 				
 				if watched == "1":
 					more = 0
-			
-		lst.SetFocusedItem(focus)
+
+		# make sure the list still exists
+		lst = get_list(listNum, False)
+		if lst != "":
+			lst.SetFocusedItem(focus)
 
 def set_watched(command):
 	lst = get_list(52, False)
@@ -126,7 +128,7 @@ def set_watched(command):
 			db_path = xbmc.translatePath('special://profile/Database/') + "./boxee_user_catalog.db"
 			conn = sqlite.connect(db_path, 100000)
 			c = conn.cursor()
-		
+			
 			for item in itemList:
 				episode = item.GetEpisode()
 				boxeeid = mc.GetInfoString("Container(52).ListItem("+str(info_count)+").Property(boxeeid)")
@@ -143,37 +145,26 @@ def set_watched(command):
 					# First make sure we don't get double values in the DB, so remove any old ones				
 					sql = "DELETE FROM watched WHERE strPath = \""+str(path).strip()+"\" or (strBoxeeId != \"\" AND strBoxeeId = \""+str(boxeeid).strip()+"\");"
 					c.execute(sql)
-					conn.commit()
 
 					if command == "watched":
 						sql = "INSERT INTO watched VALUES(null, \""+path+"\", \""+boxeeid+"\", 1, 0, -1.0);"
 						c.execute(sql)
-						conn.commit()
 
+			c.execute("REINDEX;")
+
+			conn.commit()
 			c.close()
 			conn.close()
-		
-			xbmc.executebuiltin("Container.Update")
-			xbmc.executebuiltin("Container.Refresh")
-			xbmc.executebuiltin("Window.Refresh")
+
+			lst = get_list(52, False)
+			if lst != "":
+				lst.Refresh()
+			
 			progress.close()
 
 			xbmc.executebuiltin("XBMC.ReplaceWindow(10483)")
 
-#			progress = xbmcgui.DialogProgress()
-#			progress.create('Updating episodes', 'Setting %s%s as %s' % (series, season_string, command))
-#
-#		for x in range(0, 10):
-#			time.sleep(1);
-#			xbmc.executebuiltin("Container.Update")
-#			xbmc.executebuiltin("Container.Refresh")
-#			xbmc.executebuiltin("Window.Refresh")
-#
-#		progress.close()
-#
-#		xbmc.executebuiltin("XBMC.ReplaceWindow(10483)")
-
-		xbmc.executebuiltin("Notification(,%s marked as %s...,2000)" % (display_name, command))
+			mc.ShowDialogNotification("%s marked as %s..." % (display_name, command))
 
 if (__name__ == "__main__"):
 	command = sys.argv[1]
