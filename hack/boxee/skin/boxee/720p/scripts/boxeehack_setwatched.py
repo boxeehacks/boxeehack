@@ -3,6 +3,7 @@ import os,sys
 import xbmc, xbmcgui, mc
 import subprocess
 import common
+import time
 
 from pysqlite2 import dbapi2 as sqlite
 
@@ -155,14 +156,27 @@ def set_watched(command):
 			conn.commit()
 			c.close()
 			conn.close()
+			
+			# Make Boxee do some queries which in turn clears the
+			# caching of the current listitems
 
+			d = time.strftime("%m%d%H%M%Y.%S", time.gmtime(time.time() + 6000))
+			os.system("date \"%s\"" % d)
+			
+			time.sleep(2)
+			
 			lst = get_list(52, False)
 			if lst != "":
 				lst.Refresh()
-			
-			progress.close()
 
+			time.sleep(1)
+			
 			xbmc.executebuiltin("XBMC.ReplaceWindow(10483)")
+			
+			d = time.strftime("%m%d%H%M%Y.%S", time.gmtime(time.time() - 6000))
+			os.system("date \"%s\"" % d)
+
+			progress.close()
 
 			mc.ShowDialogNotification("%s marked as %s..." % (display_name, command))
 
