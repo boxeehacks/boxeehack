@@ -78,6 +78,7 @@ def grab_fanart_for_item(item):
                 art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
 
         c.close()
+        conn.close()
         
     if art != "" and art != "fanart.jpg":
         fanart[label] = art
