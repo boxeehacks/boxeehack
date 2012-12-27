@@ -9,16 +9,6 @@ elif 'win32' in sys.platform:
 elif 'darwin' in sys.platform:
     sys.path.append(os.path.abspath("./external/OSX"))
 
-def get_abort_requested():
-    # this script forces an error when Boxee is shutting down
-    # causing the main script to fail, and in turn causing it
-    # to terminate properly
-    # unfortunately xbmc.abortRequest isn't supported on Boxee
-    # so that's why we're doing it this ugly way
-    win = mc.GetWindow(10000)
-    ctrl = win.GetControl(13337)
-    return False
-
 def get_window_id(special):
     if special == True:
         return xbmcgui.getCurrentWindowDialogId()

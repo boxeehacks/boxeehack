@@ -90,12 +90,14 @@ def grab_random_fanart(controlNum, special):
     global fanart
     
     get_fanart_list()
+    if len(fanart) == 0:
+        return
     
     # sometimes the list control isn't available yet onload
     # so add some checking to make sure
     control = common.get_control(controlNum, special)
     count = 10
-    while control == "" and count > 0 and not common.get_abort_requested():
+    while control == "" and count > 0:
         time.sleep(0.25)
         control = common.get_control(controlNum, special)
         count = count - 1
@@ -104,21 +106,21 @@ def grab_random_fanart(controlNum, special):
     if control == "":
         pass
     else:
-        more = 1
-        while control != "" and more == 1 and len(fanart) > 0 and not common.get_abort_requested():
+        while 1:
             art = fanart[fanart.keys()[randint(0, len(fanart) - 1)]]
             if art != "":
                 art = "$COMMA".join(art.split(","))
             
             xbmc.executebuiltin("Skin.SetString(random-fanart,%s)" % art)
             count = 8
-            while count > 0 and more == 1 and not common.get_abort_requested():
+            while count > 0:
                 if window != common.get_window_id(special):
-                    more = 0
+                    return
                 time.sleep(1)
                 count = count - 1
-            
-            control = common.get_control(controlNum, special)
+
+            if window != common.get_window_id(special):
+                return
 
 def grab_fanart_list(listNum, special):
     global fanart_changed
@@ -144,33 +146,35 @@ def grab_fanart_list(listNum, special):
         # select a genre
         # should have very little overhead because all the values
         # get cached in memory
-        numItems = 0
-        more = 1
-        items = lst.GetItems()
-        while lst != "" and more == 1 and not common.get_abort_requested():
+        focusedItem = ""
+        while 1:
 
-            # try and apply the stuff we already know about
-            if (len(items) > numItems):
-                for item in items:
-                    grab_fanart_for_item(item)
-
-                items = numItems
+            newFocusedItem = mc.GetInfoString("Container(%s).ListItem.Label" % listNum)
+            newFocusedItem = str(newFocusedItem)
             
-            if window != common.get_window_id(special):
-                more = 0
+            print newFocusedItem
+            if newFocusedItem != focusedItem and newFocusedItem != "":
+
+                lst = common.get_list(listNum, special)
+                if lst != "":
+                    items = lst.GetItems()
+                    if len(items) > 0:
+                        for item in items:
+                            grab_fanart_for_item(item)
+                        focusedItem = newFocusedItem
+                    
+                    del items
                 
-            time.sleep(1)
+            if window != common.get_window_id(special):
+                return
+            
+            time.sleep(0.25)
             
             # store the fanart list for next time if the list
             # was modified
             if fanart_changed == 1:
                 store_fanart_list()
 
-            if not common.get_abort_requested():
-                control = common.get_control(listNum, special)
-                lst = common.get_list(listNum, special)
-                if lst != "":
-                    items = lst.GetItems()
 
 if (__name__ == "__main__"):
     command = sys.argv[1]

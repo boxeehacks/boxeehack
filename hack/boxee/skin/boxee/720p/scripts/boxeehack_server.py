@@ -29,7 +29,7 @@ def run_server():
     server_socket.setblocking(0)
 
     #main loop for the threaded script
-    while not common.get_abort_requested():
+    while 1:
         #listen for incoming connection requests
         server_socket.listen(1)
     
@@ -47,7 +47,7 @@ def run_server():
             bitrate = 0.0
             data_bits = 0.0
             conn_closed = 0
-            while not common.get_abort_requested() and conn_closed == 0:
+            while conn_closed == 0:
                 #use select to wait for data on connection, timeout after 2 seconds
                 conn_rfds, conn_wfds, conn_xfds = select.select([connection], [], [connection], 2)
             
