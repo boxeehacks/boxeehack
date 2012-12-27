@@ -152,7 +152,6 @@ def grab_fanart_list(listNum, special):
             newFocusedItem = mc.GetInfoString("Container(%s).ListItem.Label" % listNum)
             newFocusedItem = str(newFocusedItem)
             
-            print newFocusedItem
             if newFocusedItem != focusedItem and newFocusedItem != "":
 
                 lst = common.get_list(listNum, special)
