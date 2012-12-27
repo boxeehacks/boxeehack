@@ -30,6 +30,7 @@ What does it do?
   - Reboot option
   - No more forced updates
   - Check for new versions
+  - Utorrent
 
 Requirements
 ------------
@@ -58,6 +59,17 @@ See: http://forums.boxee.tv/showthread.php?t=63248 for additional help and infor
 See: http://boxeeplus.com/ for other info.
 
 If for some reason the hack disappears (which is still an issue with this version), just go into Settings -> Network -> Servers again and enter "boxeebox; sh /data/hack/boot.sh". After another reboot the hack should work (again).
+
+Configuration
+-------------
+
+### Utorrent ###
+
+Boxeeplus has a built in utorrent server that has its own web interface:
+
+  * The utorrent web interface can be found at http://boxeebox:1050/gui/ (you might need to use the IP of the box, usually 10.0.1.5)
+	* Username/password is admin/admin
+	* Please check the configuration of utorrent first by clicking on the cogwheel at the top of the screen. Most importantly, you should check out the *Directories* section. By default, it will store torrents in /downloads on the BOXEE USB drive. You can set this to use a different drive, for example /media/MULTIMEDIA/utorrent/downloads. **ALWAYS** specify absolute paths. The utorrent server is alpha and is very sensitive to incorrect configuration and it would crash for no reason when I was using relative paths.
 
 Uninstall
 ---------
