@@ -131,7 +131,7 @@ def grab_fanart_list(listNum, special):
     # so add some checking to make sure
     lst = common.get_list(listNum, special)
     count = 10
-    while lst == "" and count > 0 and not common.get_abort_requested():
+    while lst == "" and count > 0:
         time.sleep(0.25)
         lst = common.get_list(listNum, special)
         count = count - 1
