@@ -67,16 +67,21 @@ def grab_fanart_for_item(item):
         c = conn.cursor()
         if path.find("boxeedb://") == -1:
             # it must be a movie
-            sql = "SELECT strCover FROM video_files WHERE strTitle=\"" + label + "\";"
+            sql = "SELECT strPath FROM video_files WHERE strTitle=\"" + label + "\";"
         else:
             # it must be a tv show
-            sql =  "SELECT strCover FROM series WHERE strTitle=\"" + label + "\";"
+            sql =  "SELECT strPath FROM video_files WHERE strSeriesId=\"local-" + label + "\";"
 
         data = c.execute(sql)
         for row in data:
             thumbnail = "%s" % row[0]
             if "/" in thumbnail:
                 art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
+
+            if "/Season " in art:
+                art = art[0:art.rfind("/Season ")+1] + "fanart.jpg"
+            if "/season " in art:
+                art = art[0:art.rfind("/season ")+1] + "fanart.jpg"
 
         c.close()
         conn.close()
