@@ -57,7 +57,7 @@ def grab_fanart_for_item(item):
     print art
     if path != "" and path.find("boxeedb://") == -1:
         art = path[0:path.rfind("/")+1] + "fanart.jpg"
-    elif thumbnail.find("special://") == -1:
+    elif thumbnail.find("special://") == -1 and thumbnail.find("http://") == -1:
         art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
     elif label in fanart:
         art = fanart[label]
