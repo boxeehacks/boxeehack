@@ -69,7 +69,7 @@ def run_server():
             
                     data = "".join(data.split("GET /")).split(" HTTP/")[0]
                     data = urllib.unquote(data).decode("utf-8")
-                    xbmc.executebuiltin("%s" % data)
+                    xbmc.executebuiltin(str("%s" % data).encode("ascii"))
                     connection.send("HTTP/1.1 200 OK\nContent-type: text/html\n\n%s" % data)
                     connection.close()
                     conn_closed = 1
