@@ -784,7 +784,7 @@
 
 			<!-- RSS VIDEOS -->
 			<control type="group">
-				<visible>[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(appid))</visible>
+				<visible>[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(app-localpath))</visible>
 				<control type="image">
 					<posx>0</posx>
 					<posy>0</posy>
@@ -1245,7 +1245,7 @@
 			<control type="image">
 				<visible>Control.IsVisible(6020) + !Container(6020).ListItem.IsLast + IntegerGreaterThan(Container(6020).NumItems,2)</visible>
 				<animation effect="slide" start="0,0" end="-202,34" time="0" condition="!Container(5000).ListItem.property(IsMovie) + !Container(5000).ListItem.property(IsMusic)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-202,34" time="0" condition="[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(appid))">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-202,34" time="0" condition="[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(app-localpath))">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,102" time="0" condition="[Container(5000).ListItem.property(IsMovie) + [!Container(5000).ListItem.property(IsRss) | !IsEmpty(Container(5000).ListItem.property(boxee-mediatype))] + !Container(5000).ListItem.property(IsTVShow) + !Container(5000).ListItem.property(IsMusic)] + !IsEmpty(container(5000).ListItem.Property(user_message))">Conditional</animation>
 				<posx>873</posx>
 				<posy>591</posy>
@@ -1260,7 +1260,7 @@
 				<visible>!stringcompare(skin.string(MediaAction),CastCrew) + !stringcompare(skin.string(MediaAction),Related)</visible>
 				<visible>!Control.IsVisible(6200)</visible>
 				<animation effect="slide" start="0,0" end="-136,36" time="0" condition="!Container(5000).ListItem.property(IsMovie) + !Container(5000).ListItem.property(IsMusic)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-136,36" time="0" condition="[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(appid))">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-136,36" time="0" condition="[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(app-localpath))">Conditional</animation>
 				<animation effect="slide" start="0,0" end="0,112" time="0" condition="Container(5000).ListItem.property(IsMovie) + !IsEmpty(container(5000).ListItem.Property(user_message))">Conditional</animation>
 				<posx>510</posx>
 				<posy>474</posy>
@@ -1406,7 +1406,7 @@
 							<texture srcborder="24" border="16">button-focused.png</texture>
 						</control>
 						<control type="image">
-							<visible>[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(appid))</visible>
+							<visible>[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(app-localpath))</visible>
 							<posx>12</posx>
 							<posy>0</posy>
 							<width>596</width>
@@ -1736,7 +1736,7 @@
 				<!-- MOVIE -->
 				<control type="list" id="6121">
 					<animation effect="slide" start="0,0" end="61,-18" condition="!Container(5000).ListItem.property(IsMovie) + !Container(5000).ListItem.property(IsMusic)">Conditional</animation>
-					<animation effect="slide" start="0,0" end="61,-18" condition="[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(appid))">Conditional</animation>
+					<animation effect="slide" start="0,0" end="61,-18" condition="[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(app-localpath))">Conditional</animation>
 					<visible>Container(5000).ListItem.property(IsMovie) + [!Container(5000).ListItem.property(IsRss) | !IsEmpty(Container(5000).ListItem.property(boxee-mediatype))] + !Container(5000).ListItem.property(IsTVShow) + !Container(5000).ListItem.property(IsMusic)</visible>
 					<posx>48</posx>
 					<posy>126</posy>
@@ -1825,8 +1825,8 @@
 				</control>
 				<control type="list" id="6122">
 					<animation effect="slide" start="0,0" end="61,-18" condition="!Container(5000).ListItem.property(IsMovie) + !Container(5000).ListItem.property(IsMusic)">Conditional</animation>
-					<animation effect="slide" start="0,0" end="61,-18" condition="[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(appid))">Conditional</animation>
-					<visible>[[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(appid))] | [!Container(5000).ListItem.property(IsMovie) + !Container(5000).ListItem.property(IsMusic) | [[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(appid))]]</visible>
+					<animation effect="slide" start="0,0" end="61,-18" condition="[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(app-localpath))">Conditional</animation>
+					<visible>[[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(app-localpath))] | [!Container(5000).ListItem.property(IsMovie) + !Container(5000).ListItem.property(IsMusic) | [[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(app-localpath))]]</visible>
 					<posx>48</posx>
 					<posy>126</posy>
 					<width>224</width>
@@ -1841,7 +1841,7 @@
 					<itemlayout height="60">
 						<!-- RSS VIDEOS -->
 						<control type="group">
-							<visible>[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(appid))</visible>
+							<visible>[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(app-localpath))</visible>
 							<control type="image">
 								<posx>181</posx>
 								<posy>8</posy>
@@ -1853,7 +1853,7 @@
 						</control>
 						<!-- EVERYTHING ELSE -->
 						<control type="group">
-							<visible>!Container(5000).ListItem.property(IsMovie) + !Container(5000).ListItem.property(IsMusic) | [[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(appid))]</visible>
+							<visible>!Container(5000).ListItem.property(IsMovie) + !Container(5000).ListItem.property(IsMusic) | [[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(app-localpath))]</visible>
 							<control type="image">
 								<posx>181</posx>
 								<posy>8</posy>
@@ -1867,7 +1867,7 @@
 					<focusedlayout height="60">
 						<!-- RSS VIDEOS -->
 						<control type="group">
-							<visible>[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(appid))</visible>
+							<visible>[Container(5000).ListItem.property(IsMovie) | Container(5000).ListItem.property(IsTVShow) |  Container(5000).ListItem.Property(isrss)] + !IsEmpty(container(5000).ListItem.Property(app-localpath))</visible>
 							<control type="image">
 								<visible>Control.HasFocus(6122)</visible>
 								<posx>0</posx>
