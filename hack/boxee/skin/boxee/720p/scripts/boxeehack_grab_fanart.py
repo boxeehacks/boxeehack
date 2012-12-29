@@ -55,6 +55,8 @@ def grab_fanart_for_item(item):
         return
 
     print art
+    if False:
+        pass
     if path != "" and path.find("boxeedb://") == -1:
         art = path[0:path.rfind("/")+1] + "fanart.jpg"
     elif thumbnail.find("special://") == -1 and thumbnail.find("http://") == -1:
@@ -70,7 +72,7 @@ def grab_fanart_for_item(item):
             sql = "SELECT strPath FROM video_files WHERE strTitle=\"" + label + "\";"
         else:
             # it must be a tv show
-            sql =  "SELECT strPath FROM video_files WHERE strSeriesId=\"local-" + label + "\";"
+            sql =  "SELECT strPath FROM video_files WHERE strShowTitle=\"" + label + "\";"
 
         data = c.execute(sql)
         for row in data:
