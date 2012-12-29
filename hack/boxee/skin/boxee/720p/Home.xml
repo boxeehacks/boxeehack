@@ -349,25 +349,81 @@
 						<onclick>-</onclick>
 					</item>
 					<item>
-						<visible>StringCompare(Skin.String(homeenabled-shows),1)</visible>
+						<visible>StringCompare(Skin.String(homeenabled-shows),1) + [IsEmpty(Skin.String(home-shows-replacement)) | StringCompare(Skin.String(home-shows-replacement),Built-in)]</visible>
 						<controlid>113</controlid>
 						<label>53912</label>
 						<thumb>icons/icon-home-shows.png</thumb>
 						<onclick>-</onclick>
 					</item>
 					<item>
-						<visible>StringCompare(Skin.String(homeenabled-movies),1)</visible>
+						<visible>StringCompare(Skin.String(homeenabled-shows),1) + StringCompare(Skin.String(home-shows-replacement),BBC iPlayer)</visible>
+						<controlid>123</controlid>
+						<thumb>../720p/resources/icons/icon-home-iplayer.png</thumb>
+						<label>53912</label>
+						<onclick>RunApp(app://iplayer/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-shows),1) + StringCompare(Skin.String(home-shows-replacement),Revision3)</visible>
+						<controlid>124</controlid>
+						<thumb>../720p/resources/icons/icon-home-revision3.png</thumb>
+						<label>53912</label>
+						<onclick>RunApp(app://revision3/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-shows),1) + StringCompare(Skin.String(home-shows-replacement),Crunchyroll)</visible>
+						<controlid>125</controlid>
+						<thumb>../720p/resources/icons/icon-home-crunchyroll.png</thumb>
+						<label>53912</label>
+						<onclick>RunApp(app://crunchyroll/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-movies),1) + [IsEmpty(Skin.String(home-movies-replacement)) | StringCompare(Skin.String(home-movies-replacement),Built-in)]</visible>
 						<controlid>115</controlid>
 						<thumb>icons/icon-home-movies.png</thumb>
 						<label>53913</label>
 						<onclick>-</onclick>
 					</item>
 					<item>
-						<visible>StringCompare(Skin.String(homeenabled-music),1)</visible>
+						<visible>StringCompare(Skin.String(homeenabled-movies),1) + StringCompare(Skin.String(home-movies-replacement),Netflix)</visible>
+						<controlid>126</controlid>
+						<thumb>../720p/resources/icons/icon-home-netflix.png</thumb>
+						<label>53913</label>
+						<onclick>RunApp(app://nrd/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-movies),1) + StringCompare(Skin.String(home-movies-replacement),Vudu)</visible>
+						<controlid>127</controlid>
+						<thumb>../720p/resources/icons/icon-home-vudu.png</thumb>
+						<label>53913</label>
+						<onclick>RunApp(app://vudu/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-movies),1) + StringCompare(Skin.String(home-movies-replacement),Navi-X)</visible>
+						<controlid>128</controlid>
+						<thumb>../720p/resources/icons/icon-home-navix.png</thumb>
+						<label>53913</label>
+						<onclick>RunApp(app://com.navix.stable/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-music),1) + [IsEmpty(Skin.String(home-music-replacement)) | StringCompare(Skin.String(home-music-replacement),Built-in)]</visible>
 						<controlid>122</controlid>
 						<thumb>../720p/resources/icons/icon-home-music.png</thumb>
 						<label>2</label>
 						<onclick>ActivateWindow(10484,boxeeui://music/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-music),1) + StringCompare(Skin.String(home-music-replacement),Spotify)</visible>
+						<controlid>129</controlid>
+						<thumb>../720p/resources/icons/icon-home-spotify.png</thumb>
+						<label>2</label>
+						<onclick>RunApp(app://spotify/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-music),1) + StringCompare(Skin.String(home-music-replacement),Grooveshark)</visible>
+						<controlid>130</controlid>
+						<thumb>../720p/resources/icons/icon-home-grooveshark.png</thumb>
+						<label>2</label>
+						<onclick>RunApp(app://tv.boxee.grooveshark/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-apps),1)</visible>
