@@ -29,7 +29,7 @@ def store_fanart_list():
     
     file = ""
     for show in fanart:
-        file = file + str(show).encode("ascii") + "=" + str(fanart[show]).encode("ascii") + "\n"
+        file = file + "%s=%s\n" % (show, fanart[show])
     
     common.file_put_contents("/data/etc/.fanart", file)
     fanart_changed = 0
@@ -40,7 +40,7 @@ def grab_fanart_for_item(item):
     if item.GetProperty("fanart") != "":
         return
 
-    label = (item.GetLabel()).decode("ascii")
+    label = (item.GetLabel()).encode('ascii', 'ignore')
 
     path = "%s" % item.GetPath()
     if "stack:" in path:
@@ -89,7 +89,7 @@ def grab_fanart_for_item(item):
         conn.close()
         
     if art != "" and art != "fanart.jpg":
-        fanart[label] = art
+        fanart[label] = art.encode('ascii', 'ignore')
         fanart_changed = 1
         item.SetProperty("fanart", str(art))
         
