@@ -29,7 +29,7 @@ def store_fanart_list():
     
     file = ""
     for show in fanart:
-        file = file + show + "=" + fanart[show] + "\n"
+        file = file + str(show).encode("ascii") + "=" + str(fanart[show]).encode("ascii") + "\n"
     
     common.file_put_contents("/data/etc/.fanart", file)
     fanart_changed = 0
