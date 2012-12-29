@@ -40,7 +40,7 @@ def grab_fanart_for_item(item):
     if item.GetProperty("fanart") != "":
         return
 
-    label = u"%s" % item.GetLabel()
+    label = (item.GetLabel()).decode("ascii")
 
     path = "%s" % item.GetPath()
     if "stack:" in path:
