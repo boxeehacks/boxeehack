@@ -416,14 +416,14 @@
 						<controlid>129</controlid>
 						<thumb>../720p/resources/icons/icon-home-spotify.png</thumb>
 						<label>2</label>
-						<onclick>RunApp(app://rungrooveshark/)</onclick>
+						<onclick>RunApp(app://runspotify/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-music),1) + StringCompare(Skin.String(home-music-replacement),Grooveshark)</visible>
 						<controlid>130</controlid>
 						<thumb>../720p/resources/icons/icon-home-grooveshark.png</thumb>
 						<label>2</label>
-						<onclick>RunApp(app://runspotify/)</onclick>
+						<onclick>RunApp(app://rungrooveshark/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-apps),1)</visible>
