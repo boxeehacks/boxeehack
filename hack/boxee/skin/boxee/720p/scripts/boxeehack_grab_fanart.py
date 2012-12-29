@@ -119,11 +119,11 @@ def grab_random_fanart(controlNum, special):
                 art = "$COMMA".join(art.split(","))
             
             xbmc.executebuiltin("Skin.SetString(random-fanart,%s)" % art)
-            count = 8
+            count = 4
             while count > 0:
                 if window != common.get_window_id(special):
                     return
-                time.sleep(1)
+                time.sleep(2)
                 count = count - 1
 
             if window != common.get_window_id(special):
@@ -174,7 +174,7 @@ def grab_fanart_list(listNum, special):
             if window != common.get_window_id(special):
                 return
             
-            time.sleep(0.25)
+            time.sleep(2)
             
             # store the fanart list for next time if the list
             # was modified
