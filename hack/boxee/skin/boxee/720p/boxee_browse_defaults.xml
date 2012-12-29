@@ -2811,7 +2811,7 @@
 		<texturenofocus>actionbuttons/button-action-scan-off.png</texturenofocus>
 		<textureclick>actionbuttons/button-action-scan-off.png</textureclick>
 		<include>ViewButton4</include>
-		<onleft>47</onleft>
+		<onleft>500</onleft>
 <!--		<onleft>9050</onleft> -->
 		<onright>8014</onright>
 		<ondown>9050</ondown>
