@@ -371,14 +371,14 @@
 						<controlid>1895</controlid>
 						<icon>../720p/resources/icons/icon-home-spotify.png</icon>
 						<label>2</label>
-						<onclick>RunApp(app://spotify/)</onclick>
+						<onclick>RunApp(app://runspotify/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-music),1) + StringCompare(Skin.String(home-music-replacement),Grooveshark)</visible>
 						<controlid>1896</controlid>
 						<icon>../720p/resources/icons/icon-home-grooveshark.png</icon>
 						<label>2</label>
-						<onclick>RunApp(app://tv.boxee.grooveshark/)</onclick>
+						<onclick>RunApp(app://rungrooveshark/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-apps),1)</visible>
