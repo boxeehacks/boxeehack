@@ -114,20 +114,19 @@ def grab_random_fanart(controlNum, special):
         pass
     else:
         while 1:
-            art = fanart[fanart.keys()[randint(0, len(fanart) - 1)]]
-            if art != "":
-                art = "$COMMA".join(art.split(","))
+            if xbmcgui.getCurrentWindowDialogId() == 9999:
+                art = fanart[fanart.keys()[randint(0, len(fanart) - 1)]]
+                if art != "":
+                    art = "$COMMA".join(art.split(","))
             
-            xbmc.executebuiltin("Skin.SetString(random-fanart,%s)" % art)
+                xbmc.executebuiltin("Skin.SetString(random-fanart,%s)" % art)
+
             count = 4
             while count > 0:
                 if window != common.get_window_id(special):
                     return
                 time.sleep(2)
                 count = count - 1
-
-            if window != common.get_window_id(special):
-                return
 
 def grab_fanart_list(listNum, special):
     global fanart_changed
@@ -156,20 +155,25 @@ def grab_fanart_list(listNum, special):
         focusedItem = ""
         while 1:
 
-            newFocusedItem = mc.GetInfoString("Container(%s).ListItem.Label" % listNum)
-            newFocusedItem = str(newFocusedItem)
+            # don't spend any time doing stuff if a dialog is open
+            # 9999 is the dialog number when no dialogs are open
+            # if special == True then the scanning is happening in
+            # a dialog so we DO continue processing
+            if xbmcgui.getCurrentWindowDialogId() == 9999 or special:
+                newFocusedItem = mc.GetInfoString("Container(%s).ListItem.Label" % listNum)
+                newFocusedItem = str(newFocusedItem)
             
-            if newFocusedItem != focusedItem and newFocusedItem != "":
+                if newFocusedItem != focusedItem and newFocusedItem != "":
 
-                lst = common.get_list(listNum, special)
-                if lst != "":
-                    items = lst.GetItems()
-                    if len(items) > 0:
-                        for item in items:
-                            grab_fanart_for_item(item)
-                        focusedItem = newFocusedItem
+                    lst = common.get_list(listNum, special)
+                    if lst != "":
+                        items = lst.GetItems()
+                        if len(items) > 0:
+                            for item in items:
+                                grab_fanart_for_item(item)
+                            focusedItem = newFocusedItem
                     
-                    del items
+                        del items
                 
             if window != common.get_window_id(special):
                 return
