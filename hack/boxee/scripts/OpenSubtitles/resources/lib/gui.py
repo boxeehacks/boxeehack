@@ -293,8 +293,8 @@ class GUI( xbmcgui.WindowXMLDialog ):
 	subtitles = []
 	q = Queue()
 	self.config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
-	basepath = os.path.dirname(__file__)
-	self.config.read(basepath + "/config.ini")
+	basepath = "/data/etc" # os.path.dirname(__file__)
+	self.config.read(basepath + "/.subtitles")
 		
 	config_plugins = self.config.get("DEFAULT", "plugins")
 	if(self.file_type == "tv"):

@@ -225,8 +225,8 @@ class GUI( xbmcgui.WindowXMLDialog ):
 
     def addToConfig(self, lang):
         config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
-        if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-            config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
+        if os.path.exists("/data/etc/.subtitles"):
+            config.read("/data/etc/.subtitles")
         else:
             self.close();
 
@@ -242,15 +242,15 @@ class GUI( xbmcgui.WindowXMLDialog ):
         if(new_value == ""):
             new_value = "All"
         config.set("DEFAULT", "lang", new_value)
-        if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-            configfile = open("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini", "w")
+        if os.path.exists("/data/etc/.subtitles"):
+            configfile = open("/data/etc/.subtitles", "w")
             config.write(configfile)
             configfile.close()
 
     def removeFromConfig(self, lang):
         config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
-        if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-            config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
+        if os.path.exists("/data/etc/.subtitles"):
+            config.read("/data/etc/.subtitles")
         else:
             self.close();
 
@@ -268,8 +268,8 @@ class GUI( xbmcgui.WindowXMLDialog ):
             new_value = "All"
         config.set("DEFAULT", "lang", new_value)
 
-        if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-            configfile = open("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini", "w")
+        if os.path.exists("/data/etc/.subtitles"):
+            configfile = open("/data/etc/.subtitles", "w")
             config.write(configfile)
             configfile.close()
 
@@ -285,8 +285,8 @@ class GUI( xbmcgui.WindowXMLDialog ):
         self.items = []
         config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
 
-        if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-            config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
+        if os.path.exists("/data/etc/.subtitles"):
+            config.read("/data/etc/.subtitles")
         else:
             self.close();
     
