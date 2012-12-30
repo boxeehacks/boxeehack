@@ -41,5 +41,5 @@ def file_get_contents(filename):
 # Write string back to a file
 def file_put_contents(filename, content):
     fp = open(filename, "w")
-    fp.write(content.encode('ascii', 'ignore'))
+    fp.write(content)
     fp.close()

@@ -14,14 +14,14 @@ def get_fanart_list():
     showlist = common.file_get_contents("/data/etc/.fanart")
     if showlist == "":
         return
-        
+    
     showlist = showlist.split("\n")
     fanart = {}
     for line in showlist:
         if "=" in line:
             line = line.split("=")
-            show = line[0]
-            art = line[1]
+            show = line[0].decode("utf-8")
+            art = line[1].decode("utf-8")
             fanart[show] = art
 
 def store_fanart_list():
@@ -29,9 +29,12 @@ def store_fanart_list():
     
     file = ""
     for show in fanart:
-        file = file + "%s=%s\n" % (show, fanart[show])
+        art = fanart[show]
+        
+        file = file + "%s=" % show
+        file = file + "%s\n" % art
     
-    common.file_put_contents("/data/etc/.fanart", file)
+    common.file_put_contents("/data/etc/.fanart", file.encode("utf-8"))
     fanart_changed = 0
     
 def grab_fanart_for_item(item):
@@ -40,7 +43,7 @@ def grab_fanart_for_item(item):
     if item.GetProperty("fanart") != "":
         return
 
-    label = (item.GetLabel()).encode('ascii', 'ignore')
+    label = item.GetLabel().decode("utf-8")
 
     path = "%s" % item.GetPath()
     if "stack:" in path:
@@ -54,7 +57,6 @@ def grab_fanart_for_item(item):
     if path.find("http://") != -1:
         return
 
-    print art
     if False:
         pass
     if path != "" and path.find("boxeedb://") == -1:
@@ -89,7 +91,7 @@ def grab_fanart_for_item(item):
         conn.close()
         
     if art != "" and art != "fanart.jpg":
-        fanart[label] = art.encode('ascii', 'ignore')
+        fanart[label] = art.decode("utf-8")
         fanart_changed = 1
         item.SetProperty("fanart", str(art))
         
