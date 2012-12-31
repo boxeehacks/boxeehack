@@ -32,6 +32,22 @@ def set_home_enabled_strings():
     for item in homeitems:
         xbmc.executebuiltin("Skin.SetString(homeenabled-%s,%s)" % (item, get_homeenabled(item)))
 
+def get_jump_to_last_unwatched_value():
+    jumpenabled = common.file_get_contents("/data/etc/.jump_to_unwatched_enabled")
+    if jumpenabled == "":
+        jumpenabled = "0"
+    return jumpenabled
+
+def toggle_jump_to_last_unwatched():
+    jumpenabled = get_jump_to_last_unwatched_value()
+    
+    if jumpenabled == "1":
+        jumpenabled = "0"
+    else:
+        jumpenabled = "1"
+
+    common.file_put_contents("/data/etc/.jump_to_unwatched_enabled", jumpenabled)
+    xbmc.executebuiltin("Skin.SetString(jump-to-unwatched,%s)" % jumpenabled)
 
 def get_homeenabled_value():
     homeenabled = common.file_get_contents("/data/etc/.home_enabled")
@@ -125,7 +141,7 @@ def get_subtitles_language_filter():
 def featured_next():
     replace = get_featured_feed_value()
     num = int(replace) + 1
-    if num > 3: num = 0
+    if num > 4: num = 0
 
     replace = "%s" % num
 
@@ -136,7 +152,7 @@ def featured_next():
 def featured_previous():
     replace = get_featured_feed_value()
     num = int(replace) - 1
-    if num < 0: num = 3
+    if num < 0: num = 4
 
     replace = "%s" % num
 
@@ -151,6 +167,7 @@ def get_featured_feed():
     if replace == "1": feed = "boxeedb://recent/?limit=15"
     if replace == "2": feed = "rss://vimeo.com/channels/staffpicks/videos/rss"
     if replace == "3": feed = "rss://gdata.youtube.com/feeds/api/standardfeeds/recently_featured?alt=rss"
+    if replace == "4": feed = "about:blank"
 
     return feed
 
@@ -161,6 +178,7 @@ def get_featured_name():
     if replace == "1": name = "Recently added"
     if replace == "2": name = "Vimeo staff picks"
     if replace == "3": name = "Youtube featured"
+    if replace == "4": name = "Fanart"
 
     return name
 
@@ -170,6 +188,7 @@ def get_featured_feed_value():
         replace = "0"
     return replace
 
+<<<<<<< HEAD
 # Hide / Show Music icon
 def showmusic_function():
     showmusic = common.file_get_contents("/data/etc/.showmusic_enabled")
@@ -194,6 +213,8 @@ def showvpn_function():
     xbmc.executebuiltin("Skin.SetString(showvpn,%s)" % showvpn)
     common.file_put_contents("/data/etc/.showvpn_enabled", showvpn)
     
+=======
+>>>>>>> upstream/development
 # Enable/disable the subtitle functionality
 def toggle_subtitles(mode, current):
     if mode == "all":
@@ -313,12 +334,12 @@ def check_new_version():
 
     dialog = xbmcgui.Dialog()
     if hasnew:
-        if dialog.yesno("BOXEE+ Version", "A new version of BOXEE+ is available. Upgrade to %s now?" % (version_remote)):
+        if dialog.yesno("BOXEE+HACKS Version", "A new version of BOXEE+ is available. Upgrade to %s now?" % (version_remote)):
             os.system("sh /data/hack/upgrade.sh")
     elif issame:
-        dialog.ok("BOXEE+ Version", "Your BOXEE+ version is up to date.")
+        dialog.ok("BOXEE+HACKS Version", "Your BOXEE+ version is up to date.")
     else:
-        dialog.ok("BOXEE+ Version", "Hi there Doc Brown. How's the future?")
+        dialog.ok("BOXEE+HACKS Version", "Hi there Doc Brown. How's the future?")
 
 if (__name__ == "__main__"):
     command = sys.argv[1]
@@ -330,7 +351,10 @@ if (__name__ == "__main__"):
     if command == "subtitles-provider": subtitle_provider("set", sys.argv[2], sys.argv[3])
     if command == "featured_next": featured_next()
     if command == "featured_previous": featured_previous()
-    if command == "showmusic": showmusic_function()
     if command == "homeenabled": toggle_homeenabled(sys.argv[2])
     if command == "browser-homepage": set_browser_homepage()
+<<<<<<< HEAD
     if command == "showvpn": showvpn_function()
+=======
+    if command == "toggle-jump-to-last-unwatched": toggle_jump_to_last_unwatched()
+>>>>>>> upstream/development

@@ -23,7 +23,7 @@
 				<width>925</width>
 				<font>font40b</font>
 				<align>left</align>
-				<label>[B]BOXEE+[/B]</label>
+				<label>[B]BOXEE+HACKS[/B]</label>
 			</control>
 		</control>
 		<!-- CATEGORIES -->
@@ -101,9 +101,15 @@
 				</control>
 				<control type="radiobutton" id="15">
 					<include>SettingsRadioButton</include>
+<<<<<<< HEAD
 					<label>VPN Shortcut</label>
 					<selected>StringCompare(Skin.String(showvpn),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "showvpn")</onclick>
+=======
+					<label>Jump to last unwatched TV Episode</label>
+					<selected>StringCompare(Skin.String(jump-to-unwatched),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "toggle-jump-to-last-unwatched")</onclick>
+>>>>>>> upstream/development
 				</control>
 				<control type="button" id="16">
 					<include>SettingsButton</include>
@@ -432,7 +438,7 @@
 						<height>500</height>
 						<include>SettingsLabelEntry</include>
 						<wrapmultiline>true</wrapmultiline>
-						<label>Chris Eybergen, JoHannes Hiller, Matthew Schreiber, Amin Bahadori, Michael Hawthorne, Korhan Tekin, Scooter, LLC, Jordi Llonch Esteve, Stephan Schill, Kevin Sartori, Helge Odland, Gabriel Tapia, Magnus Pettersson, Boris Kushkuley, Craig Havens</label>
+						<label>Chris Eybergen, JoHannes Hiller, Matthew Schreiber, Amin Bahadori, Michael Hawthorne, Korhan Tekin, Scooter, LLC, Jordi Llonch Esteve, Stephan Schill, Kevin Sartori, Helge Odland, Gabriel Tapia, Magnus Pettersson, Boris Kushkuley, Craig Havens, Jonas Ranerfors, Ole Hermann Melby, Stuart Cain, Ramon Hansman, Fredric Tvetberg, Lars Jaderfeldt, Einar Afiouni, Gregor Schinzel, Paul Silkiner</label>
 					</control>
 				</control>
 			</control>

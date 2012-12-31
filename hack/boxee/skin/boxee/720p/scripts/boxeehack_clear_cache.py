@@ -1,17 +1,15 @@
-import os
+import os,mc
 import xbmc, xbmcgui
 
 def fanart_function():
-    dialog = xbmcgui.Dialog()
-    if dialog.yesno("Clear fanart cache", "Are you sure you want to clear the fanart cache?"):
+    if mc.ShowDialogConfirm("Clear fanart cache", "Are you sure you want to clear the fanart cache?", "Cancel", "OK"):
         pass
 
 def thumbnail_function():
-    dialog = xbmcgui.Dialog()
-    os.system("rm /data/etc/.fanart")
-    if dialog.yesno("Clear thumbnail cache", "Are you sure you want to clear the thumbnail cache?"):
+    if mc.ShowDialogConfirm("Clear thumbnail cache", "Are you sure you want to clear the thumbnail cache?", "Cancel", "OK"):
+        os.system("rm /data/etc/.fanart")
         os.system("find /data/.boxee/UserData/profiles/*/Thumbnails/ -name \*.tbn | xargs rm")
-        xbmc.executebuiltin("Notification(,Clearing thumbnail cache,3000)")
+        mc.ShowDialogNotification("Clearing thumbnail cache")
 
 if (__name__ == "__main__"):
     section = sys.argv[1]
