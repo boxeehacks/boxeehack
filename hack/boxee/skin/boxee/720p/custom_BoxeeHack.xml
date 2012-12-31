@@ -106,6 +106,7 @@
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "toggle-jump-to-last-unwatched")</onclick>
 				</control>
 				<control type="radiobutton" id="16">
+					<include>SettingsRadioButton</include>
 					<label>VPN Shortcut</label>
 					<selected>StringCompare(Skin.String(showvpn),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "showvpn")</onclick>
