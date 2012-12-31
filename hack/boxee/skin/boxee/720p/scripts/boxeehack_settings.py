@@ -256,19 +256,6 @@ def get_featured_feed_value():
         replace = "0"
     return replace
 
-<<<<<<< HEAD
-# Hide / Show Music icon
-def showmusic_function():
-    showmusic = common.file_get_contents("/data/etc/.showmusic_enabled")
-
-    if showmusic == "1":
-        showmusic = "0"
-    else:
-        showmusic = "1"
-
-    xbmc.executebuiltin("Skin.SetString(showmusic,%s)" % showmusic)
-    common.file_put_contents("/data/etc/.showmusic_enabled", showmusic)
-
 # Hide / Show VPN Shortcut icon
 def showvpn_function():
     showvpn = common.file_get_contents("/data/etc/.showvpn_enabled")
@@ -280,9 +267,7 @@ def showvpn_function():
 
     xbmc.executebuiltin("Skin.SetString(showvpn,%s)" % showvpn)
     common.file_put_contents("/data/etc/.showvpn_enabled", showvpn)
-    
-=======
->>>>>>> upstream/development
+
 # Enable/disable the subtitle functionality
 def toggle_subtitles(mode, current):
     if mode == "all":
@@ -425,8 +410,5 @@ if (__name__ == "__main__"):
         if command == "homeenabled": toggle_homeenabled(sys.argv[2], "")
         
     if command == "browser-homepage": set_browser_homepage()
-<<<<<<< HEAD
-    if command == "showvpn": showvpn_function()
-=======
     if command == "toggle-jump-to-last-unwatched": toggle_jump_to_last_unwatched()
->>>>>>> upstream/development
+    if command == "showvpn": showvpn_function()
