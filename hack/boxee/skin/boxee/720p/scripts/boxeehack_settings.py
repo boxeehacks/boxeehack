@@ -17,6 +17,17 @@ def register_defaults():
     xbmc.executebuiltin("Skin.SetString(featured-name,%s)" % get_featured_name() )
     xbmc.executebuiltin("Skin.SetString(browser-homepage,%s)" % "".join(get_browser_homepage().split("http://")) )
 
+    if not os.path.exists("/data/etc/.subtitles"):
+        common.file_put_contents("/data/etc/.subtitles", """[DEFAULT]
+lang = All
+movieplugins = OpenSubtitles,Undertexter
+tvplugins = BierDopje,OpenSubtitles,Addic7ed,Subtitulos,SubsWiki,Undertexter
+plugins = BierDopje,OpenSubtitles,Subtitulos,SubsWiki,Addic7ed,Undertexter
+
+[BierDopje]
+key = C2FAFCBE34610608
+""")
+    
     set_home_enabled_strings()
 
     version_local = get_local_version()
@@ -24,13 +35,15 @@ def register_defaults():
         xbmc.executebuiltin("Skin.SetString(boxeeplus-version,%s)" % version_local )
 
 def get_home_enabled_default_list():
-    return "-,friends,watchlater,shows,movies,music,apps,files,web"
+    return "-,friends,watchlater,shows|Built-in,movies|Built-in,music|Built-in,apps,files,web"
     
 def set_home_enabled_strings():
     homeitems = get_home_enabled_default_list().split(",")
 
     for item in homeitems:
+        item = item.split("|")[0]
         xbmc.executebuiltin("Skin.SetString(homeenabled-%s,%s)" % (item, get_homeenabled(item)))
+        xbmc.executebuiltin("Skin.SetString(home-%s-replacement,%s)" % (item, get_homereplacement(item)))
 
 def get_jump_to_last_unwatched_value():
     jumpenabled = common.file_get_contents("/data/etc/.jump_to_unwatched_enabled")
@@ -55,21 +68,76 @@ def get_homeenabled_value():
         homeenabled = get_home_enabled_default_list()
     return homeenabled
 
+def get_homereplacement(section):
+    homeenabled = get_homeenabled_value().split(",")
+    
+    print "finding replacement for %s" % section
+    replacement = ""
+    for item in homeenabled:
+        item = item.split("|")
+        if item[0] == section:
+            if len(item) > 1:
+                replacement = item[1]
+            else:
+                replacement = "Built-in"
+                
+    if replacement == "":
+        replacement = "Off"
+                
+    return replacement
+    
 def get_homeenabled(section):
     homeenabled = get_homeenabled_value().split(",")
     
-    if section in homeenabled:
-        return "1"
-    else:
-        return "0"
+    for item in homeenabled:
+        item = item.split("|")
+        if item[0] == section:
+            return "1"
 
-def toggle_homeenabled(section):
+    return "0"
+
+def toggle_homeenabled(section, action):
     homeenabled = get_homeenabled_value().split(",")
+
+    if section in ["shows","movies","music"]:
+        if section == "shows":
+            types = ["Built-in", "BBC iPlayer", "Revision3", "Crunchyroll", "Off"]
+        if section == "movies":
+            types = ["Built-in", "Netflix", "Vudu", "Navi-X", "Off"]
+        if section == "music":
+            types = ["Built-in", "Spotify", "Grooveshark", "Off"]
+
+        replacement = get_homereplacement(section)
+        
+        for item in homeenabled:
+            itemname = item.split("|")[0]
+            if itemname == section:
+                homeenabled.remove(item)
+        
+        pos = types.index(replacement)
+        if action == "next":
+            pos = pos + 1
+        if action == "previous":
+            pos = pos - 1
+            
+        if pos >= len(types):
+            pos = 0
+        if pos < 0:
+            pos = len(types) - 1
+        
+        if types[pos] != "Off":
+            homeenabled.append("%s|%s" % (section, types[pos]))
     
-    if section in homeenabled:
-        homeenabled.remove(section)
     else:
-        homeenabled.append(section)
+        found = 0
+        for item in homeenabled:
+            itemname = item.split("|")[0]
+            if itemname == section:
+                homeenabled.remove(item)
+                found = 1
+    
+        if found == 0:
+            homeenabled.append(section)
 
     common.file_put_contents("/data/etc/.home_enabled", ",".join(homeenabled))
     set_home_enabled_strings()
@@ -130,8 +198,8 @@ def get_subtitles_enabled():
 
 def get_subtitles_language_filter():
     config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
-    if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-        config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
+    if os.path.exists("/data/etc/.subtitles"):
+        config.read("/data/etc/.subtitles")
     langs_config = config.get("DEFAULT", "lang")
     if(langs_config.strip() == "" or langs_config.strip() == "All"):
         return "0"
@@ -234,12 +302,12 @@ def toggle_subtitles(mode, current):
             xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,1)")
         else:
             config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
-            if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-                config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
+            if os.path.exists("/data/etc/.subtitles"):
+                config.read("/data/etc/.subtitles")
             config.set("DEFAULT", "lang", "All")
 
-            if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-                configfile = open("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini", "w")
+            if os.path.exists("/data/etc/.subtitles"):
+                configfile = open("/data/etc/.subtitles", "w")
                 config.write(configfile)
                 configfile.close()
 
@@ -249,8 +317,8 @@ def toggle_subtitles(mode, current):
 def subtitle_provider(method, section, provider=None):
     config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
 
-    if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-        config.read("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini")
+    if os.path.exists("/data/etc/.subtitles"):
+        config.read("/data/etc/.subtitles")
 
     plugins = config.get("DEFAULT", "plugins")	
     plugin_section = "default"
@@ -292,8 +360,8 @@ def subtitle_provider(method, section, provider=None):
             enabled_providers.remove(provider)
             xbmc.executebuiltin("Skin.SetString(subtitles-plugin-%s-%s,%s)" % (plugin_section, provider, 0))
         config.set("DEFAULT", config_section, ",".join(enabled_providers).strip(','))
-        if os.path.exists("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini"):
-            configfile = open("/data/hack/boxee/scripts/OpenSubtitles/resources/lib/config.ini", "w")
+        if os.path.exists("/data/etc/.subtitles"):
+            configfile = open("/data/etc/.subtitles", "w")
             config.write(configfile)
             configfile.close()
 
@@ -351,7 +419,11 @@ if (__name__ == "__main__"):
     if command == "subtitles-provider": subtitle_provider("set", sys.argv[2], sys.argv[3])
     if command == "featured_next": featured_next()
     if command == "featured_previous": featured_previous()
-    if command == "homeenabled": toggle_homeenabled(sys.argv[2])
+    if len(sys.argv) == 4:
+        if command == "homeenabled": toggle_homeenabled(sys.argv[2], sys.argv[3])
+    else:
+        if command == "homeenabled": toggle_homeenabled(sys.argv[2], "")
+        
     if command == "browser-homepage": set_browser_homepage()
 <<<<<<< HEAD
     if command == "showvpn": showvpn_function()

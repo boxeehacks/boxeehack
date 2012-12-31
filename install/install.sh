@@ -32,7 +32,7 @@ else
 
     # copy the hack folder, and clean up
     rm -Rf /data/hack
-    mv /download/boxeehack-master/hack /data/
+    cp -R /download/boxeehack-master/hack /data/
 
     rm -Rf /download/boxeehack-master
     rm /download/boxeehack.zip

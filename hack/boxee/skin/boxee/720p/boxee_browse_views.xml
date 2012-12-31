@@ -328,7 +328,7 @@
 				<ondown>-</ondown>
 				<onleft>Skin.Reset(BrowseMenuLevel2)</onleft>
 				<onleft>SetFocus(47)</onleft>
-				<onright>501</onright>
+				<onright>51</onright>
 				<orientation>vertical</orientation>
 				<scrolltime tween="sine" easing="out">200</scrolltime>
 				<focusposition>2</focusposition>
@@ -455,7 +455,7 @@
 				<ondown>-</ondown>
 				<onleft>Skin.Reset(BrowseMenuLevel3)</onleft>
 				<onleft>SetFocus(48)</onleft>
-				<onright>501</onright>
+				<onright>51</onright>
 				<orientation>vertical</orientation>
 				<scrolltime tween="sine" easing="out">200</scrolltime>
 				<focusposition>2</focusposition>
@@ -2284,7 +2284,7 @@
 	<include name="BrowseApplicationThumbView">
 		<include>Common_Background_Browse</include>
 		<control type="group" id="501">
-			<control type="panel" id="55">
+			<control type="panel" id="51">
 				<enable>true + !Window.Property(empty)</enable>
 				<visible>true + !Window.Property(loading)</visible>
 				<preloaditems>2</preloaditems>
@@ -2306,12 +2306,12 @@
 				</itemlayout>
 				<focusedlayout width="193" height="236">
 					<control type="group">
-						<visible>!Control.HasFocus(55)</visible>
+						<visible>!Control.HasFocus(51)</visible>
 						<include>BrowseSquareThumbUnfocusApps</include>
 						<include>BrowseSquareLabelUnfocusApps</include>
 					</control>
 					<control type="group">
-						<visible>Control.HasFocus(55)</visible>
+						<visible>Control.HasFocus(51)</visible>
 						<include>BrowseSquareThumbFocusApps</include>
 						<include>BrowseSquareLabelFocusApps</include>
 					</control>
@@ -2903,7 +2903,7 @@
 		Albums of an artists	 -	   Window.Property(albums-or-artists)=2
 		-->
 		<control type="group" id="501">
-			<control type="panel" id="53">
+			<control type="panel" id="51">
 				<enable>true + !Window.Property(empty)</enable>
 				<visible>stringcompare(Window.Property(albums-or-artists),1)</visible>
 				<preloaditems>2</preloaditems>
@@ -2924,12 +2924,12 @@
 				</itemlayout>
 				<focusedlayout width="192" height="236">
 					<control type="group">
-						<visible>!Control.HasFocus(53)</visible>
+						<visible>!Control.HasFocus(51)</visible>
 						<include>BrowseMusicThumbUnfocus</include>
 						<include>BrowseSquareLabelUnfocus</include>
 					</control>
 					<control type="group">
-						<visible>Control.HasFocus(53)</visible>
+						<visible>Control.HasFocus(51)</visible>
 						<include>BrowseMusicThumbFocus</include>
 						<include>BrowseSquareLabelFocus</include>
 					</control>
@@ -3159,13 +3159,13 @@
 			<visible>Control.HasFocus(50) | Control.HasFocus(51) | Control.HasFocus(55) | Control.HasFocus(59) | Control.HasFocus(53) | ControlGroup(8050).HasFocus</visible>
 			<control type="label" id="9019">
 				<include>PageTitlePropertiesFocused</include>
-				<visible>!IsEmpty(container(59).ListItem.Artist)</visible>
-				<label>[B]$INFO[container(59).ListItem.Album][/B]</label>
+				<visible>!IsEmpty(container(51).ListItem.Artist)</visible>
+				<label>[B]$INFO[container(51).ListItem.Album][/B]</label>
 			</control>
 			<control type="label">
-				<visible>!IsEmpty(container(59).ListItem.Album)</visible>
+				<visible>!IsEmpty(container(51).ListItem.Album)</visible>
 				<include>PageSubtitlePropertiesFocused</include>
-				<label>[B]$INFO[container(59).ListItem.Artist][/B]</label>
+				<label>[B]$INFO[container(51).ListItem.Artist][/B]</label>
 			</control>
 		</control>
 		<control type="group" id="9000">
@@ -3174,17 +3174,17 @@
 			<visible>!Control.HasFocus(50) + !Control.HasFocus(51) + !Control.HasFocus(55) + !Control.HasFocus(59) + !Control.HasFocus(53) + !ControlGroup(8050).HasFocus</visible>
 			<control type="label" id="9019">
 				<include>PageTitlePropertiesUnfocused</include>
-				<visible>!IsEmpty(container(59).ListItem.Artist)</visible>
-				<label>$INFO[container(59).ListItem.Album]</label>
+				<visible>!IsEmpty(container(51).ListItem.Artist)</visible>
+				<label>$INFO[container(51).ListItem.Album]</label>
 			</control>
 			<control type="label">
-				<visible>!IsEmpty(container(59).ListItem.Album)</visible>
+				<visible>!IsEmpty(container(51).ListItem.Album)</visible>
 				<include>PageSubtitlePropertiesUnfocused</include>
-				<label>[B]$INFO[container(59).ListItem.Artist][/B]</label>
+				<label>[B]$INFO[container(51).ListItem.Artist][/B]</label>
 			</control>
 		</control>
 		<control type="group" id="501">
-			<control type="fixedlist" id="59">
+			<control type="fixedlist" id="51">
 				<enable>true + !Window.Property(empty)</enable>
 				<preloaditems>2</preloaditems>
 				<posx>280</posx>
@@ -3209,7 +3209,7 @@
 				</itemlayout>
 				<focusedlayout height="60">
 					<control type="image">
-						<visible>Control.HasFocus(59)</visible>
+						<visible>Control.HasFocus(51)</visible>
 						<posx>0</posx>
 						<posy>4</posy>
 						<width>484</width>
@@ -3217,7 +3217,7 @@
 						<texture srcborder="24" border="16">button-focused.png</texture>
 					</control>
 					<control type="label">
-						<visible>!Control.HasFocus(59)</visible>
+						<visible>!Control.HasFocus(51)</visible>
 						<include>BrowseShortLineLabelProperties</include>
 						<label>$INFO[ListItem.TrackNumber,,. ]$INFO[ListItem.Label]</label>
 						<textcolor>lightgreyheidi</textcolor>
@@ -3225,7 +3225,7 @@
 						<scroll>true</scroll>
 					</control>
 					<control type="label">
-						<visible>Control.HasFocus(59)</visible>
+						<visible>Control.HasFocus(51)</visible>
 						<include>BrowseShortLineLabelProperties</include>
 						<label>$INFO[ListItem.TrackNumber,,. ]$INFO[ListItem.Label]</label>
 						<textcolor>whiteheidi</textcolor>
@@ -3236,7 +3236,7 @@
 			</control>
 		</control>
 		<control type="image">
-			<visible>Control.IsVisible(59)</visible>
+			<visible>Control.IsVisible(51)</visible>
 			<visible>true + !Window.Property(loading)</visible>
 			<visible>true + !Window.Property(empty)</visible>
 			<posx>783</posx>
@@ -3248,13 +3248,13 @@
 		<control type="group">
 			<visible>true + !Window.Property(loading)</visible>
 			<visible>true + !Window.Property(empty)</visible>
-			<visible>true + !container(59).scrolling</visible>
+			<visible>true + !container(51).scrolling</visible>
 			<animation effect="fade" start="0" end="100" time="200" tween="cubic" easing="inout" delay="50">Visible</animation>
 			<control type="image">
 				<visible>true + !Window.Property(loading)</visible>
-				<visible>Control.IsVisible(59)</visible>
-				<visible>!Control.IsEmpty(59)</visible>
-				<visible>!IsEmpty(Container(59).ListItem.Thumb)</visible>
+				<visible>Control.IsVisible(51)</visible>
+				<visible>!Control.IsEmpty(51)</visible>
+				<visible>!IsEmpty(Container(51).ListItem.Thumb)</visible>
 				<posx>820</posx>
 				<posy>120</posy>
 				<width>434</width>
@@ -3263,15 +3263,15 @@
 				<bordersize>7</bordersize>
 				<fadetime>200</fadetime>
 				<aspectratio>scale</aspectratio>
-				<texture blend="false">$INFO[Container(59).ListItem.Thumb]</texture>
+				<texture blend="false">$INFO[Container(51).ListItem.Thumb]</texture>
 				<aspectratio scalediffuse="false">scale</aspectratio>
 				<fadetime>200</fadetime>
 			</control>
 			<control type="image">
 				<visible>true + !Window.Property(loading)</visible>
-				<visible>Control.IsVisible(59)</visible>
-				<visible>!Control.IsEmpty(59)</visible>
-				<visible>IsEmpty(Container(59).ListItem.Thumb)</visible>
+				<visible>Control.IsVisible(51)</visible>
+				<visible>!Control.IsEmpty(51)</visible>
+				<visible>IsEmpty(Container(51).ListItem.Thumb)</visible>
 				<posx>820</posx>
 				<posy>120</posy>
 				<width>434</width>
@@ -3285,7 +3285,7 @@
 				<fadetime>200</fadetime>
 			</control>
 			<control type="grouplist">
-				<visible>Control.IsVisible(59)</visible>
+				<visible>Control.IsVisible(51)</visible>
 				<posx>828</posx>
 				<posy>557</posy>
 				<width>424</width>
@@ -3300,7 +3300,7 @@
 					<align>left</align>
 					<aligny>top</aligny>
 					<textcolor>whiteheidi</textcolor>
-					<label>[B]$INFO[Container(59).ListItem.Album,,[CR]][/B]</label>
+					<label>[B]$INFO[Container(51).ListItem.Album,,[CR]][/B]</label>
 					<wrapmultiline>false</wrapmultiline>
 				</control>
 				<control type="label">
@@ -3310,7 +3310,7 @@
 					<align>left</align>
 					<aligny>top</aligny>
 					<textcolor>lightgreyheidi</textcolor>
-					<label>[B]$INFO[Container(59).ListItem.Artist,$LOCALIZE[52160] ,[CR]][/B]</label>
+					<label>[B]$INFO[Container(51).ListItem.Artist,$LOCALIZE[52160] ,[CR]][/B]</label>
 					<wrapmultiline>false</wrapmultiline>
 				</control>
 				<control type="label">
@@ -3320,7 +3320,7 @@
 					<align>left</align>
 					<aligny>top</aligny>
 					<textcolor>lightgreyheidi</textcolor>
-					<label>$LOCALIZE[54035]:$INFO[Container(59).ListItem.Year, ,]</label>
+					<label>$LOCALIZE[54035]:$INFO[Container(51).ListItem.Year, ,]</label>
 					<!--Label should display exact release date-->
 					<wrapmultiline>false</wrapmultiline>
 				</control>
@@ -3331,7 +3331,7 @@
 					<align>left</align>
 					<aligny>top</aligny>
 					<textcolor>lightgreyheidi</textcolor>
-					<label>$INFO[Container(59).NumItems,, $LOCALIZE[182],,[CR]]</label>
+					<label>$INFO[Container(51).NumItems,, $LOCALIZE[182],,[CR]]</label>
 					<!--Label should also return the album's duration-->
 					<wrapmultiline>false</wrapmultiline>
 				</control>
@@ -3343,7 +3343,7 @@
 		<include>Common_Background_Browse</include>
 		<include>LogoTitleAndItemCountFiles</include>
 		<control type="group" id="501">
-			<control type="fixedlist" id="59">
+			<control type="fixedlist" id="51">
 				<preloaditems>2</preloaditems>
 				<posx>280</posx>
 				<posy>128</posy>
@@ -3458,7 +3458,7 @@
 				</itemlayout>
 				<focusedlayout height="60">
 					<control type="group">
-						<visible>!Control.HasFocus(59)</visible>
+						<visible>!Control.HasFocus(51)</visible>
 						<control type="image">
 							<visible>!ListItem.Property(isfolder) + !ListItem.Property(IsPhotos) + !ListItem.Property(IsMusic) + !ListItem.Property(IsVideo) + !ListItem.Property(IsSD) + !ListItem.Property(IsUSB) + !ListItem.Property(IsNetwork)</visible>
 							<include>BrowseLineSmallIconPropertiesUnfocus</include>
@@ -3559,7 +3559,7 @@
 						</control>
 					</control>
 					<control type="group">
-						<visible>Control.HasFocus(59)</visible>
+						<visible>Control.HasFocus(51)</visible>
 						<control type="image">
 							<posx>0</posx>
 							<posy>0</posy>

@@ -14,14 +14,14 @@ def get_fanart_list():
     showlist = common.file_get_contents("/data/etc/.fanart")
     if showlist == "":
         return
-        
+    
     showlist = showlist.split("\n")
     fanart = {}
     for line in showlist:
         if "=" in line:
             line = line.split("=")
-            show = line[0]
-            art = line[1]
+            show = line[0].decode("utf-8")
+            art = line[1].decode("utf-8")
             fanart[show] = art
 
 def store_fanart_list():
@@ -29,9 +29,12 @@ def store_fanart_list():
     
     file = ""
     for show in fanart:
-        file = file + show + "=" + fanart[show] + "\n"
+        art = fanart[show]
+        
+        file = file + "%s=" % show
+        file = file + "%s\n" % art
     
-    common.file_put_contents("/data/etc/.fanart", file)
+    common.file_put_contents("/data/etc/.fanart", file.encode("utf-8"))
     fanart_changed = 0
     
 def grab_fanart_for_item(item):
@@ -40,7 +43,7 @@ def grab_fanart_for_item(item):
     if item.GetProperty("fanart") != "":
         return
 
-    label = item.GetLabel()
+    label = item.GetLabel().decode("utf-8")
 
     path = "%s" % item.GetPath()
     if "stack:" in path:
@@ -54,7 +57,8 @@ def grab_fanart_for_item(item):
     if path.find("http://") != -1:
         return
 
-    print art
+    if False:
+        pass
     if path != "" and path.find("boxeedb://") == -1:
         art = path[0:path.rfind("/")+1] + "fanart.jpg"
     elif thumbnail.find("special://") == -1 and thumbnail.find("http://") == -1:
@@ -70,7 +74,7 @@ def grab_fanart_for_item(item):
             sql = "SELECT strPath FROM video_files WHERE strTitle=\"" + label + "\";"
         else:
             # it must be a tv show
-            sql =  "SELECT strPath FROM video_files WHERE strSeriesId=\"local-" + label + "\";"
+            sql =  "SELECT strPath FROM video_files WHERE strShowTitle=\"" + label + "\";"
 
         data = c.execute(sql)
         for row in data:
@@ -87,7 +91,7 @@ def grab_fanart_for_item(item):
         conn.close()
         
     if art != "" and art != "fanart.jpg":
-        fanart[label] = art
+        fanart[label] = art.decode("utf-8")
         fanart_changed = 1
         item.SetProperty("fanart", str(art))
         
@@ -112,20 +116,19 @@ def grab_random_fanart(controlNum, special):
         pass
     else:
         while 1:
-            art = fanart[fanart.keys()[randint(0, len(fanart) - 1)]]
-            if art != "":
-                art = "$COMMA".join(art.split(","))
+            if xbmcgui.getCurrentWindowDialogId() == 9999:
+                art = fanart[fanart.keys()[randint(0, len(fanart) - 1)]]
+                if art != "":
+                    art = "$COMMA".join(art.split(","))
             
-            xbmc.executebuiltin("Skin.SetString(random-fanart,%s)" % art)
-            count = 8
+                xbmc.executebuiltin("Skin.SetString(random-fanart,%s)" % art)
+
+            count = 4
             while count > 0:
                 if window != common.get_window_id(special):
                     return
-                time.sleep(1)
+                time.sleep(2)
                 count = count - 1
-
-            if window != common.get_window_id(special):
-                return
 
 def grab_fanart_list(listNum, special):
     global fanart_changed
@@ -154,25 +157,30 @@ def grab_fanart_list(listNum, special):
         focusedItem = ""
         while 1:
 
-            newFocusedItem = mc.GetInfoString("Container(%s).ListItem.Label" % listNum)
-            newFocusedItem = str(newFocusedItem)
+            # don't spend any time doing stuff if a dialog is open
+            # 9999 is the dialog number when no dialogs are open
+            # if special == True then the scanning is happening in
+            # a dialog so we DO continue processing
+            if xbmcgui.getCurrentWindowDialogId() == 9999 or special:
+                newFocusedItem = mc.GetInfoString("Container(%s).ListItem.Label" % listNum)
+                newFocusedItem = str(newFocusedItem)
             
-            if newFocusedItem != focusedItem and newFocusedItem != "":
+                if newFocusedItem != focusedItem and newFocusedItem != "":
 
-                lst = common.get_list(listNum, special)
-                if lst != "":
-                    items = lst.GetItems()
-                    if len(items) > 0:
-                        for item in items:
-                            grab_fanart_for_item(item)
-                        focusedItem = newFocusedItem
+                    lst = common.get_list(listNum, special)
+                    if lst != "":
+                        items = lst.GetItems()
+                        if len(items) > 0:
+                            for item in items:
+                                grab_fanart_for_item(item)
+                            focusedItem = newFocusedItem
                     
-                    del items
+                        del items
                 
             if window != common.get_window_id(special):
                 return
             
-            time.sleep(0.25)
+            time.sleep(2)
             
             # store the fanart list for next time if the list
             # was modified
