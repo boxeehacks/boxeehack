@@ -9,7 +9,7 @@ fanart_changed = 0
 
 from pysqlite2 import dbapi2 as sqlite
 
-def get_fanart_list():
+def get_fanart_list(exclude_blanks):
     global fanart
     showlist = common.file_get_contents("/data/etc/.fanart")
     if showlist == "":
@@ -22,7 +22,8 @@ def get_fanart_list():
             line = line.split("=")
             show = line[0].decode("utf-8")
             art = line[1].decode("utf-8")
-            fanart[show] = art
+            if art != "-" or exclude_blanks == False:
+                fanart[show] = art
 
 def store_fanart_list():
     global shows, fanart_changed
@@ -89,16 +90,20 @@ def grab_fanart_for_item(item):
 
         c.close()
         conn.close()
-        
+
+    if xbmc.getFileHash(art) == "0000000000000000":
+        art = "-"
+    
     if art != "" and art != "fanart.jpg":
         fanart[label] = art.decode("utf-8")
         fanart_changed = 1
-        item.SetProperty("fanart", str(art))
+        if art != "-":
+            item.SetProperty("fanart", str(art))
         
 def grab_random_fanart(controlNum, special):
     global fanart
     
-    get_fanart_list()
+    get_fanart_list(True)
     if len(fanart) == 0:
         return
     
@@ -118,6 +123,7 @@ def grab_random_fanart(controlNum, special):
         while 1:
             if xbmcgui.getCurrentWindowDialogId() == 9999:
                 art = fanart[fanart.keys()[randint(0, len(fanart) - 1)]]
+                
                 if art != "":
                     art = "$COMMA".join(art.split(","))
             
@@ -133,7 +139,7 @@ def grab_random_fanart(controlNum, special):
 def grab_fanart_list(listNum, special):
     global fanart_changed
     
-    get_fanart_list()
+    get_fanart_list(False)
     
     # sometimes the list control isn't available yet onload
     # so add some checking to make sure
