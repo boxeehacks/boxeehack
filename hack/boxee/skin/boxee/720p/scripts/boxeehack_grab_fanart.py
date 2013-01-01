@@ -98,7 +98,10 @@ def grab_fanart_for_item(item):
         fanart[label] = art.decode("utf-8")
         fanart_changed = 1
         if art != "-":
+            item.SetProperty("has-fanart", "1")
             item.SetProperty("fanart", str(art))
+        else:
+            item.SetProperty("has-fanart", "0")
         
 def grab_random_fanart(controlNum, special):
     global fanart
@@ -162,21 +165,27 @@ def grab_fanart_list(listNum, special):
         # get cached in memory
         focusedItem = ""
         while 1:
-
             # don't spend any time doing stuff if a dialog is open
             # 9999 is the dialog number when no dialogs are open
             # if special == True then the scanning is happening in
             # a dialog so we DO continue processing
             if xbmcgui.getCurrentWindowDialogId() == 9999 or special:
-                newFocusedItem = mc.GetInfoString("Container(%s).ListItem.Label" % listNum)
-                newFocusedItem = str(newFocusedItem)
+                theItem = mc.GetInfoString("Container(%s).ListItem.Label" % listNum)
+                theItem = str(theItem)
+                if theItem != "":
+                    newFocusedItem = theItem
+                else:
+                    newFocusedItem = focusedItem
             
-                if newFocusedItem != focusedItem and newFocusedItem != "":
+                if (newFocusedItem != focusedItem and newFocusedItem != "") or (newFocusedItem == "" and special):
 
                     lst = common.get_list(listNum, special)
                     if lst != "":
                         items = lst.GetItems()
                         if len(items) > 0:
+                            if newFocusedItem == "":
+                                newFocusedItem = items[0].GetLabel()
+                            
                             for item in items:
                                 grab_fanart_for_item(item)
                             focusedItem = newFocusedItem
