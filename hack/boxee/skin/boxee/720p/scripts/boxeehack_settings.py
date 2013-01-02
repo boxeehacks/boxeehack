@@ -66,12 +66,11 @@ def get_homeenabled_value():
     homeenabled = common.file_get_contents("/data/etc/.home_enabled")
     if homeenabled == "":
         homeenabled = get_home_enabled_default_list()
-    return homeenabled
+    return homeenabled.split("\n")[0]
 
 def get_homereplacement(section):
     homeenabled = get_homeenabled_value().split(",")
     
-    print "finding replacement for %s" % section
     replacement = ""
     for item in homeenabled:
         item = item.split("|")
@@ -89,9 +88,10 @@ def get_homereplacement(section):
 def get_homeenabled(section):
     homeenabled = get_homeenabled_value().split(",")
     
+    section = "%s" % section
     for item in homeenabled:
-        item = item.split("|")
-        if item[0] == section:
+        item = item.split("|")[0]
+        if item == section:
             return "1"
 
     return "0"
