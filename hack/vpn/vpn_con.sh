@@ -1,6 +1,7 @@
 #!/bin/sh
 #
 # Author: n3!
+#
 
 # Extracts VPN details from the guisettings.xml file and stores them into the following variables below.
 
