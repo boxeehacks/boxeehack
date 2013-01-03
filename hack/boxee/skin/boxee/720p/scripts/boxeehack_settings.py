@@ -35,7 +35,7 @@ key = C2FAFCBE34610608
         xbmc.executebuiltin("Skin.SetString(boxeeplus-version,%s)" % version_local )
 
 def get_home_enabled_default_list():
-    return "-,friends,watchlater,shows|Built-in,movies|Built-in,music|Built-in,apps,files,web"
+    return "-,friends,watchlater,shows|Built-in,movies|Built-in,music|Built-in,apps,files,web,bbc,revision3,crunchyroll,netflix,vudu,navix,spotify,grooveshark,navixr"
     
 def set_home_enabled_strings():
     homeitems = get_home_enabled_default_list().split(",")
@@ -101,11 +101,11 @@ def toggle_homeenabled(section, action):
 
     if section in ["shows","movies","music"]:
         if section == "shows":
-            types = ["Built-in", "BBC iPlayer", "Revision3", "Crunchyroll", "Off"]
+            types = ["Built-in", "BBC iPlayer", "Revision3", "Crunchyroll", "Pop-up", "Off"]
         if section == "movies":
-            types = ["Built-in", "Netflix", "Vudu", "Navi-X", "Off"]
+            types = ["Built-in", "Netflix", "Vudu", "Navi-X", "Pop-up", "Off"]
         if section == "music":
-            types = ["Built-in", "Spotify", "Grooveshark", "Off"]
+            types = ["Built-in", "Spotify", "Grooveshark", "Pop-up", "Off"]
 
         replacement = get_homereplacement(section)
         
@@ -381,7 +381,57 @@ def check_new_version():
         dialog.ok("BOXEE+HACKS Version", "Your BOXEE+ version is up to date.")
     else:
         dialog.ok("BOXEE+HACKS Version", "Hi there Doc Brown. How's the future?")
+def check_webserver():
+    tmp = file_get_contents("/data/etc/www")
+    
+    if tmp == "1":
+	tmp = "0"
+	xbmc.executebuiltin("Skin.SetString(www,%s)" % "Stopped" )
+    else:
+    	tmp = "1"
+	xbmc.executebuiltin("Skin.SetString(www,%s)" % "Running" )
+    
+    file_put_contents("/data/etc/www", tmp)
+    os.system("sh /data/hack/www.sh")
 
+def check_ftpserver():
+    tmp = file_get_contents("/data/etc/ftp")
+
+    if tmp == "1":
+	tmp = "0"
+	xbmc.executebuiltin("Skin.SetString(ftp,%s)" % "Stopped" )
+    else:
+    	tmp = "1"
+	xbmc.executebuiltin("Skin.SetString(ftp,%s)" % "Running" )
+    
+    file_put_contents("/data/etc/ftp", tmp)
+    os.system("sh /data/hack/ftp.sh")
+
+def check_telnetserver():
+    tmp = file_get_contents("/data/etc/telnet")
+
+    if tmp == "1":
+	tmp = "0"
+	xbmc.executebuiltin("Skin.SetString(telnets,%s)" % "Stopped" )
+    else:
+    	tmp = "1"
+	xbmc.executebuiltin("Skin.SetString(telnets,%s)" % "Running" )
+    
+    file_put_contents("/data/etc/telnet", tmp)
+    os.system("sh /data/hack/telnet.sh")
+
+def check_utorrentserver():
+    tmp = file_get_contents("/data/etc/utorrent")
+
+    if tmp == "1":
+	tmp = "0"
+	xbmc.executebuiltin("Skin.SetString(utorrent,%s)" % "Running" )
+    else:
+    	tmp = "1"
+	xbmc.executebuiltin("Skin.SetString(utorrent,%s)" % "Stopped" )
+    
+    file_put_contents("/data/etc/utorrent", tmp)
+    os.system("sh /data/hack/utorrent.sh")
 if (__name__ == "__main__"):
     command = sys.argv[1]
 
@@ -392,6 +442,10 @@ if (__name__ == "__main__"):
     if command == "subtitles-provider": subtitle_provider("set", sys.argv[2], sys.argv[3])
     if command == "featured_next": featured_next()
     if command == "featured_previous": featured_previous()
+    if command == "www": check_webserver()
+    if command == "ftp": check_ftpserver()
+    if command == "utorrent": check_utorrentserver()
+    if command == "telnets": check_telnetserver()
     if len(sys.argv) == 4:
         if command == "homeenabled": toggle_homeenabled(sys.argv[2], sys.argv[3])
     else:

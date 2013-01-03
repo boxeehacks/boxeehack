@@ -1,0 +1,16 @@
+	<app>
+		<id>com.navix.main</id>
+		<name>Navi-X Remix</name>
+		<version>4.076</version>
+		<description>Navi-X Remix. Access Navi-xtreme content from Boxee. See http://www.navixtreme.com.</description>
+		<thumb>http://navi-x-remix.googlecode.com/svn/trunk/thumb.png</thumb>
+		<repositoryid>org.navix</repositoryid>
+		<repository>http://navi-x-remix.googlecode.com/svn/trunk/</repository>
+		<media>video</media>
+		<copyright>Navi-X</copyright>
+		<email>navixboxee@gmail.com</email>
+		<type>skin</type>
+		<startWindow>default</startWindow>
+		<platform>all</platform>
+		<minversion>0.9.14</minversion>
+	</app>

@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<window type="dialog" id="15160">
+	<allowoverlay>yes</allowoverlay>
+	<defaultcontrol>91</defaultcontrol>	
+	<controls>
+		<control type="group" id="1000">
+				<posx>190</posx>
+				<posy>90</posy>
+				<control type="image">
+					<description>Background - TEXT</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<height>540</height>
+					<width>920</width>
+					<texture>backgrounds/background_show.png</texture>	
+				</control>
+				<control type="label">
+					<posx>60</posx>
+					<posy>50</posy>
+					<width>840</width>
+					<height>30</height>
+					<font>font20b</font>
+					<aligny>center</aligny>					
+					<align>left</align>
+					<info>Container(90).ListItem.Label</info>
+					<textcolor>ff222522</textcolor>					
+				</control>
+				<control type="textbox" id="92">
+					<description>Text Box - Description</description>
+					<info>Container(90).ListItem.property(custom:description)</info>   				
+					<posx>60</posx>
+					<posy>100</posy>
+					<width>800</width>
+					<height>400</height> 
+					<font>font18</font>
+					<align>justify</align>
+					<textcolor>ff222522</textcolor>
+					<pagecontrol>91</pagecontrol>
+					<onleft>91</onleft>
+					<onright>91</onright>
+					<onup>91</onup>
+					<ondown>91</ondown> 
+					<!--<autoscroll delay="3000" time="3000" repeat="10000">Control.HasFocus(90)</autoscroll>-->
+				</control>  
+				<control type="scrollbar" id="91">
+					<description>Scroll Bar Text Box</description>
+					<posx>880</posx>
+					<posy>100</posy>
+					<width>7</width>
+					<height>400</height> 
+					<onleft>91</onleft>
+					<onright>91</onright>
+					<onup>91</onup>
+					<ondown>91</ondown> 
+					<texturesliderbackground>colours/grey_transparant.png</texturesliderbackground>
+					<texturesliderbar>colours/black.png</texturesliderbar>
+					<texturesliderbarfocus>colours/black.png</texturesliderbarfocus>
+					<textureslidernib>-</textureslidernib>
+					<textureslidernibfocus>-</textureslidernibfocus>
+					<orientation>vertical</orientation>
+				</control> 
+				<control type="list" id="90">
+					<description>Demo List</description>
+					<posx>1</posx>
+					<posy>1</posy>
+					<width>1</width>
+					<height>1</height>						
+					<onup></onup>
+					<ondown></ondown>
+					<onleft></onleft>
+					<onright></onright>	      
+					<orientation>vertical</orientation>
+					<pagecontrol>25</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="1" height="1">
+					</itemlayout>
+					<focusedlayout width="1" height="1">	
+					</focusedlayout>		
+				</control>
+		</control>				
+	</controls>
+</window>

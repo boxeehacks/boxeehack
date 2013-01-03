@@ -239,7 +239,7 @@
 				</animation>
 				<posx>625</posx>
 				<posy>99</posy>
-				<width>1280</width>
+				<width>1135</width><!-- adjustment for good looks-->
 				<height>250</height>
 				<onleft>-</onleft>
 				<onright>-</onright>
@@ -356,10 +356,17 @@
 						<onclick>-</onclick>
 					</item>
 					<item>
-						<visible>StringCompare(Skin.String(homeenabled-shows),1) + StringCompare(Skin.String(home-shows-replacement),BBC iPlayer)</visible>
+						<visible>StringCompare(Skin.String(homeenabled-shows),1) + StringCompare(Skin.String(home-shows-replacement),BBC iPlayer) StringCompare(Skin.String(homeenabled-bbc),1)</visible>
 						<controlid>123</controlid>
 						<thumb>../720p/resources/icons/icon-home-iplayer.png</thumb>
 						<label>53912</label>
+						<onclick>RunApp(app://iplayer/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-bbc),1)</visible>
+						<controlid>134</controlid>
+						<thumb>../720p/resources/icons/icon-home-iplayer.png</thumb>
+						<label>BBC-iPlayer</label>
 						<onclick>RunApp(app://iplayer/)</onclick>
 					</item>
 					<item>
@@ -370,11 +377,32 @@
 						<onclick>RunApp(app://revision3/)</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(homeenabled-revision3),1)</visible>
+						<controlid>135</controlid>
+						<thumb>../720p/resources/icons/icon-home-revision3.png</thumb>
+						<label>Revision3</label>
+						<onclick>RunApp(app://revision3/)</onclick>
+					</item>
+					<item>
 						<visible>StringCompare(Skin.String(homeenabled-shows),1) + StringCompare(Skin.String(home-shows-replacement),Crunchyroll)</visible>
 						<controlid>125</controlid>
 						<thumb>../720p/resources/icons/icon-home-crunchyroll.png</thumb>
 						<label>53912</label>
 						<onclick>RunApp(app://crunchyroll/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-crunchyroll),1)</visible>
+						<controlid>136</controlid>
+						<thumb>../720p/resources/icons/icon-home-crunchyroll.png</thumb>
+						<label>Crunchyroll</label>
+						<onclick>RunApp(app://crunchyroll/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-shows),1) + StringCompare(Skin.String(home-shows-replacement),Pop-up)</visible>
+						<controlid>126</controlid>
+						<thumb>icons/icon-home-shows.png</thumb>
+						<label>53912</label>
+						<onclick>SetFocus(6700)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-movies),1) + [IsEmpty(Skin.String(home-movies-replacement)) | StringCompare(Skin.String(home-movies-replacement),Built-in)]</visible>
@@ -391,10 +419,24 @@
 						<onclick>RunApp(app://nrd/)</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(homeenabled-netflix),1)</visible>
+						<controlid>137</controlid>
+						<thumb>../720p/resources/icons/icon-home-netflix.png</thumb>
+						<label>Netflix</label>
+						<onclick>RunApp(app://nrd/)</onclick>
+					</item>
+					<item>
 						<visible>StringCompare(Skin.String(homeenabled-movies),1) + StringCompare(Skin.String(home-movies-replacement),Vudu)</visible>
 						<controlid>127</controlid>
 						<thumb>../720p/resources/icons/icon-home-vudu.png</thumb>
 						<label>53913</label>
+						<onclick>RunApp(app://vudu/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-vudu),1)</visible>
+						<controlid>138</controlid>
+						<thumb>../720p/resources/icons/icon-home-vudu.png</thumb>
+						<label>Vudu</label>
 						<onclick>RunApp(app://vudu/)</onclick>
 					</item>
 					<item>
@@ -403,6 +445,27 @@
 						<thumb>../720p/resources/icons/icon-home-navix.png</thumb>
 						<label>53913</label>
 						<onclick>RunApp(app://com.navix.stable/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-navix),1)</visible>
+						<controlid>139</controlid>
+						<thumb>../720p/resources/icons/icon-home-navix.png</thumb>
+						<label>Navi-X</label>
+						<onclick>RunApp(app://com.navix.stable/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-navixr),1)</visible>
+						<controlid>140</controlid>
+						<thumb>../720p/resources/icons/icon-home-navix.png</thumb>
+						<label>Navi-X-Remix</label>
+						<onclick>RunApp(app://com.navix.main/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-movies),1) + StringCompare(Skin.String(home-movies-replacement),Pop-up) +! Control.HasFocus(7610)</visible>
+						<controlid>132</controlid>
+						<thumb>icons/icon-home-movies.png</thumb>
+						<label>53913</label>
+						<onclick>SetFocus(6710)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-music),1) + [IsEmpty(Skin.String(home-music-replacement)) | StringCompare(Skin.String(home-music-replacement),Built-in)]</visible>
@@ -419,11 +482,32 @@
 						<onclick>RunApp(app://runspotify/)</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(homeenabled-spotify),1)</visible>
+						<controlid>141</controlid>
+						<thumb>../720p/resources/icons/icon-home-spotify.png</thumb>
+						<label>Spotify</label>
+						<onclick>RunApp(app://runspotify/)</onclick>
+					</item>
+					<item>
 						<visible>StringCompare(Skin.String(homeenabled-music),1) + StringCompare(Skin.String(home-music-replacement),Grooveshark)</visible>
 						<controlid>130</controlid>
 						<thumb>../720p/resources/icons/icon-home-grooveshark.png</thumb>
 						<label>2</label>
 						<onclick>RunApp(app://rungrooveshark/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-grooveshark),1)</visible>
+						<controlid>142</controlid>
+						<thumb>../720p/resources/icons/icon-home-grooveshark.png</thumb>
+						<label>Grooveshark</label>
+						<onclick>RunApp(app://rungrooveshark/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-music),1) + StringCompare(Skin.String(home-music-replacement),Pop-up)</visible>
+						<controlid>133</controlid>
+						<thumb>../720p/resources/icons/icon-home-music.png</thumb>
+						<label>2</label>
+						<onclick>SetFocus(6720)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-apps),1)</visible>
@@ -458,6 +542,371 @@
 					-->
 				</content>
 			</control>
+			<!-- Dropdown -->
+			<control type="wraplist" id="6710">
+      <description>selection wraplist container</description>
+      <posx>520</posx>
+      <posy>155</posy>
+      <width>250</width>
+      <height>200</height>
+      <visible allowhiddenfocus="true">Control.HasFocus(6710)</visible>
+      <onup>2</onup>
+      <ondown>3</ondown>
+      <onleft>7000</onleft>
+      <onright>7000</onright>
+      <viewtype label="3D list">list</viewtype>
+      <orientation>vertical</orientation>
+      <pagecontrol>25</pagecontrol>
+      <focusposition>3</focusposition>
+      <scrolltime tween="sine" easing="out">200</scrolltime>
+      <itemlayout width="250" height="29">
+		<control type="image">
+			<posx>5</posx>
+			<posy>3</posy>
+			<width>100</width>
+			<height>100</height>
+			<info>$INFO[ListItem.Thumb]</info>
+		</control>
+		<control type="label">
+			<posx>5</posx>
+			<posy>3</posy>
+			<width>430</width>
+			<height>24</height>
+			<font>font24bls</font>
+			<aligny>center</aligny>
+			<selectedcolor>whiteheidi</selectedcolor>
+			<align>left</align>
+			<info>$INFO[ListItem.Label]</info>
+		</control>
+		<control type="label">
+			<posx>475</posx>
+			<posy>3</posy>
+			<width>300</width>
+			<height>22</height>
+			<font>font13</font>
+			<aligny>center</aligny>
+			<selectedcolor>whiteheidi</selectedcolor>
+			<textcolor>grey</textcolor>
+			<align>right</align>
+			<info>ListItem.Label2</info>
+		</control>
+      </itemlayout>
+      <focusedlayout height="29" width="250">
+		<control type="image">
+			<width>485</width>
+			<height>100</height>
+			<posx>0</posx>
+			<posy>0</posy>
+			<visible>!Control.HasFocus(6710)</visible>
+			<texture>list-focus.png</texture>
+		</control>
+		<control type="image">
+			<posx>5</posx>
+			<posy>3</posy>
+			<width>100</width>
+			<height>100</height>
+			<info>ListItem.Icon</info>
+		</control>
+		<control type="label">
+			<posx>105</posx>
+			<posy>3</posy>
+			<width>430</width>
+			<height>24</height>
+			<font>font24bls</font>
+			<aligny>center</aligny>
+			<selectedcolor>whiteheidi</selectedcolor>
+			<align>left</align>
+			<info>ListItem.Label</info>
+		</control>
+		<control type="label">
+			<posx>475</posx>
+			<posy>3</posy>
+			<width>300</width>
+			<height>22</height>
+			<font>font13</font>
+			<aligny>center</aligny>
+			<selectedcolor>green</selectedcolor>
+			<textcolor>grey</textcolor>
+			<align>right</align>
+			<info>ListItem.Label2</info>
+		</control>
+      </focusedlayout>
+				<content>
+					
+					
+					<item>
+						<visible>Control.HasFocus(6710)</visible>
+						<controlid>115</controlid>
+						<thumb>icons/icon-home-movies.png</thumb>
+						<label>Movies</label>
+						<onclick>-</onclick>
+					</item>
+					<item>
+						<visible>Control.HasFocus(6710)</visible>
+						<controlid>126</controlid>
+						<thumb>../720p/resources/icons/icon-home-netflix.png</thumb>
+						<label>Netflix</label>
+						<onclick>RunApp(app://nrd/)</onclick>
+					</item>
+					<item>
+						<visible>Control.HasFocus(6710)</visible>
+						<controlid>127</controlid>
+						<thumb>../720p/resources/icons/icon-home-vudu.png</thumb>
+						<label>Vudu</label>
+						<onclick>RunApp(app://vudu/)</onclick>
+					</item>
+					<item>
+						<visible>Control.HasFocus(6710)</visible>
+						<controlid>128</controlid>
+						<thumb>../720p/resources/icons/icon-home-navix.png</thumb>
+						<label>Navi-X</label>
+						<onclick>RunApp(app://com.navix.stable/)</onclick>
+					</item>
+					<item>
+						<visible>Control.HasFocus(6710)</visible>
+						<controlid>132</controlid>
+						<thumb>../720p/resources/icons/icon-home-navix.png</thumb>
+						<label>Navi-X-Remix</label>
+						<onclick>RunApp(app://com.navix.main/)</onclick>
+					</item>
+					
+				</content>
+			</control>
+			<control type="wraplist" id="6720">
+      <description>selection wraplist container</description>
+      <posx>654</posx>
+      <posy>155</posy>
+      <width>250</width>
+      <height>200</height>
+      <visible allowhiddenfocus="true">Control.HasFocus(6720)</visible>
+      <onup>2</onup>
+      <ondown>3</ondown>
+      <onleft>7000</onleft>
+      <onright>7000</onright>
+      <viewtype label="3D list">list</viewtype>
+      <orientation>vertical</orientation>
+      <pagecontrol>25</pagecontrol>
+      <focusposition>3</focusposition>
+      <scrolltime tween="sine" easing="out">200</scrolltime>
+      <itemlayout width="250" height="29">
+		<control type="image">
+			<posx>5</posx>
+			<posy>3</posy>
+			<width>100</width>
+			<height>100</height>
+			<info>$INFO[ListItem.Thumb]</info>
+		</control>
+		<control type="label">
+			<posx>5</posx>
+			<posy>3</posy>
+			<width>430</width>
+			<height>24</height>
+			<font>font24bls</font>
+			<aligny>center</aligny>
+			<selectedcolor>whiteheidi</selectedcolor>
+			<align>left</align>
+			<info>$INFO[ListItem.Label]</info>
+		</control>
+		<control type="label">
+			<posx>475</posx>
+			<posy>3</posy>
+			<width>300</width>
+			<height>22</height>
+			<font>font13</font>
+			<aligny>center</aligny>
+			<selectedcolor>whiteheidi</selectedcolor>
+			<textcolor>grey</textcolor>
+			<align>right</align>
+			<info>ListItem.Label2</info>
+		</control>
+      </itemlayout>
+      <focusedlayout height="29" width="250">
+		<control type="image">
+			<width>485</width>
+			<height>100</height>
+			<posx>0</posx>
+			<posy>0</posy>
+			<visible>!Control.HasFocus(6720)</visible>
+			<texture>list-focus.png</texture>
+		</control>
+		<control type="image">
+			<posx>5</posx>
+			<posy>3</posy>
+			<width>100</width>
+			<height>100</height>
+			<info>ListItem.Icon</info>
+		</control>
+		<control type="label">
+			<posx>105</posx>
+			<posy>3</posy>
+			<width>430</width>
+			<height>24</height>
+			<font>font24bls</font>
+			<aligny>center</aligny>
+			<selectedcolor>whiteheidi</selectedcolor>
+			<align>left</align>
+			<info>ListItem.Label</info>
+		</control>
+		<control type="label">
+			<posx>475</posx>
+			<posy>3</posy>
+			<width>300</width>
+			<height>22</height>
+			<font>font13</font>
+			<aligny>center</aligny>
+			<selectedcolor>green</selectedcolor>
+			<textcolor>grey</textcolor>
+			<align>right</align>
+			<info>ListItem.Label2</info>
+		</control>
+      </focusedlayout>
+				<content>
+					
+					<item>
+						<visible>Control.HasFocus(6720)</visible>
+						<controlid>122</controlid>
+						<thumb>../720p/resources/icons/icon-home-music.png</thumb>
+						<label>Music</label>
+						<onclick>ActivateWindow(10484,boxeeui://music/)</onclick>
+					</item>
+					<item>
+						<visible>Control.HasFocus(6720)</visible>
+						<controlid>129</controlid>
+						<thumb>../720p/resources/icons/icon-home-spotify.png</thumb>
+						<label>Spotify</label>
+						<onclick>RunApp(app://runspotify/)</onclick>
+					</item>
+					<item>
+						<visible>Control.HasFocus(6720)</visible>
+						<controlid>130</controlid>
+						<thumb>../720p/resources/icons/icon-home-grooveshark.png</thumb>
+						<label>Grooveshark</label>
+						<onclick>RunApp(app://rungrooveshark/)</onclick>
+					</item>
+					
+				</content>
+			</control>
+			<control type="wraplist" id="6700">
+      <description>selection wraplist container</description>
+      <posx>384</posx>
+      <posy>155</posy>
+      <width>250</width>
+      <height>200</height>
+      <visible allowhiddenfocus="true">Control.HasFocus(6700)</visible>
+      <onup>2</onup>
+      <ondown>3</ondown>
+      <onleft>7000</onleft>
+      <onright>7000</onright>
+      <viewtype label="3D list">list</viewtype>
+      <orientation>vertical</orientation>
+      <pagecontrol>25</pagecontrol>
+      <focusposition>3</focusposition>
+      <scrolltime tween="sine" easing="out">200</scrolltime>
+      <itemlayout width="250" height="29">
+		<control type="image">
+			<posx>5</posx>
+			<posy>3</posy>
+			<width>100</width>
+			<height>100</height>
+			<info>$INFO[ListItem.Thumb]</info>
+		</control>
+		<control type="label">
+			<posx>5</posx>
+			<posy>3</posy>
+			<width>430</width>
+			<height>24</height>
+			<font>font24bls</font>
+			<aligny>center</aligny>
+			<selectedcolor>whiteheidi</selectedcolor>
+			<align>left</align>
+			<info>$INFO[ListItem.Label]</info>
+		</control>
+		<control type="label">
+			<posx>475</posx>
+			<posy>3</posy>
+			<width>300</width>
+			<height>22</height>
+			<font>font13</font>
+			<aligny>center</aligny>
+			<selectedcolor>whiteheidi</selectedcolor>
+			<textcolor>grey</textcolor>
+			<align>right</align>
+			<info>ListItem.Label2</info>
+		</control>
+      </itemlayout>
+      <focusedlayout height="29" width="250">
+		<control type="image">
+			<width>485</width>
+			<height>100</height>
+			<posx>0</posx>
+			<posy>0</posy>
+			<visible>!Control.HasFocus(6700)</visible>
+			<texture>list-focus.png</texture>
+		</control>
+		<control type="image">
+			<posx>5</posx>
+			<posy>3</posy>
+			<width>100</width>
+			<height>100</height>
+			<info>ListItem.Icon</info>
+		</control>
+		<control type="label">
+			<posx>105</posx>
+			<posy>3</posy>
+			<width>430</width>
+			<height>24</height>
+			<font>font24bls</font>
+			<aligny>center</aligny>
+			<selectedcolor>whiteheidi</selectedcolor>
+			<align>left</align>
+			<info>ListItem.Label</info>
+		</control>
+		<control type="label">
+			<posx>475</posx>
+			<posy>3</posy>
+			<width>300</width>
+			<height>22</height>
+			<font>font13</font>
+			<aligny>center</aligny>
+			<selectedcolor>green</selectedcolor>
+			<textcolor>grey</textcolor>
+			<align>right</align>
+			<info>ListItem.Label2</info>
+		</control>
+      </focusedlayout>
+	  <content>
+					<item>
+						<visible>Control.HasFocus(6700)</visible>
+						<controlid>113</controlid>
+						<label>Tv-shows</label>
+						<thumb>icons/icon-home-shows.png</thumb>
+						<onclick>-</onclick>
+					</item>
+					<item>
+						<visible>Control.HasFocus(6700)</visible>
+						<controlid>123</controlid>
+						<thumb>../720p/resources/icons/icon-home-iplayer.png</thumb>
+						<label>Iplayer</label>
+						<onclick>RunApp(app://iplayer/)</onclick>
+					</item>
+					<item>
+						<visible>Control.HasFocus(6700)</visible>
+						<controlid>124</controlid>
+						<thumb>../720p/resources/icons/icon-home-revision3.png</thumb>
+						<label>Revision3</label>
+						<onclick>RunApp(app://revision3/)</onclick>
+					</item>
+					<item>
+						<visible>Control.HasFocus(6700)</visible>
+						<controlid>125</controlid>
+						<thumb>../720p/resources/icons/icon-home-crunchyroll.png</thumb>
+						<label>Crunchyroll</label>
+						<onclick>RunApp(app://crunchyroll/)</onclick>
+					</item>
+	</content>
+</control>
+			
+			
 			<!-- Featured -->
 			<control type="group">
 				<visible>!StringCompare(Skin.String(featured-feed),about:blank)</visible>

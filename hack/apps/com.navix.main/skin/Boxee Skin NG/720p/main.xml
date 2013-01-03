@@ -1,0 +1,1095 @@
+<?xml version="1.0"?>
+<window type="window" id="15000">
+	<allowoverlay>yes</allowoverlay>
+	<defaultcontrol>60</defaultcontrol>	
+	<onload></onload>  
+	<controls>
+		<!-- SECTION: BACKGROUNDS -->
+		<control type="group" id="900">
+			<control type="image">
+				<description>Background - Main</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>720</height>
+				<width>1280</width>
+				<texture>backgrounds/background_main.png</texture>	
+				<animation effect="fade" time="100" start="0" end="100">WindowOpen</animation>
+			</control>
+		
+			<control type="group" id="901">
+				<visible>!StringCompare(Container(70).ListItem.property(custom:background),default)</visible>
+				<animation effect="fade" start="40" end="0" time="1000" condition="StringCompare(Container(70).ListItem.property(custom:background),)">Conditional</animation>
+				<animation effect="fade" start="0" end="40" time="2000" condition="!StringCompare(Container(70).ListItem.property(custom:background),)">Conditional</animation>
+				<control type="largeimage">
+					<description>Background - Playlist</description>
+					<posx>0</posx>
+					<posy>50</posy>
+					<height>720</height>
+					<width>1280</width>
+					<texture diffuse="backgrounds/background_mask.png">$INFO[Container(70).ListItem.property(custom:background)]</texture>	
+				</control>
+			</control>
+			
+			
+			
+			
+			
+			
+
+
+			
+			
+			<!-- SECTION: List Control -->
+			<control type="group" id="904">
+				<animation effect="slide" start="0,0" end="-55,0" time="200" tween="cubic" condition="ControlGroup(3000).HasFocus">conditional</animation>
+				<animation effect="slide" start="-55,0" end="0,0" time="200" tween="cubic" condition="!ControlGroup(3000).HasFocus">conditional</animation>
+				<control type="image">
+					<description>Arrow up</description>
+					<posx>130</posx>
+					<posy>220</posy>
+					<height>5</height>
+					<width>10</width>
+					<texture>arrowup.png</texture>	
+					<visible>Container(70).HasPrevious | Container(71).HasPrevious | Container(72).HasPrevious</visible>
+					<animation effect="zoom" time="500" center="auto" start="180" end="100" tween="cubic" easing="out">WindowOpen</animation>
+					<animation effect="fade" time="500" start="0" end="100">WindowOpen</animation>
+				</control>		
+				<control type="image">
+					<description>Arrow down</description>
+					<posx>130</posx>
+					<posy>680</posy>
+					<height>5</height>
+					<width>10</width>
+					<texture>arrowdown.png</texture>	
+					<visible>Container(70).HasNext | Container(71).HasNext | Container(72).HasNext | Container(75).HasNext</visible>
+					<animation effect="zoom" time="500" center="auto" start="180" end="100" tween="cubic" easing="out">WindowOpen</animation>
+					<animation effect="fade" time="500" start="0" end="100">WindowOpen</animation>
+				</control>
+				<control type="image">
+					<description>Arrow up</description>
+					<posx>130</posx>
+					<posy>320</posy>
+					<height>5</height>
+					<width>10</width>
+					<texture>arrowup.png</texture>	
+					<visible>Container(75).HasPrevious + ControlGroup(2004).HasFocus</visible>
+					<animation effect="zoom" time="500" center="auto" start="180" end="100" tween="cubic" easing="out">WindowOpen</animation>
+					<animation effect="fade" time="500" start="0" end="100">WindowOpen</animation>
+				</control>		
+			</control>
+		</control>
+		
+		
+		
+		
+		
+		
+		<!-- SECTION: TOP MAIN MENU -->
+		<control type="group" id="1001">
+			<visible>true</visible>	
+			<control type="image">
+				<description>Background - Menu</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>169</height>
+				<width>1280</width>
+				<texture>backgrounds/background_menu.png</texture>	
+			</control>			
+			<control type="label" id="20011">
+				<posx>50</posx>
+				<posy>30</posy>
+				<width>130</width>
+				<height>30</height>	
+				<font>font16b</font>
+				<aligny>center</aligny>					
+				<align>left</align>
+				<label></label>   
+				<textcolor>ff7b807b</textcolor>					
+			</control>
+			<control type="label">
+				<posx>50</posx>
+				<posy>55</posy>
+				<width>130</width>
+				<height>30</height>	
+				<font>font18b</font>
+				<aligny>center</aligny>					
+				<align>left</align>
+				<label>$INFO[System.Time]</label>   
+				<textcolor>ff7b807b</textcolor>					
+			</control>
+			<control type="wraplist" id="60">
+					<description>Menu List</description>
+					<focusposition>2</focusposition>
+					<posx>0</posx>
+					<posy>120</posy>
+					<width>1200</width>
+					<height>50</height>						
+					<onup>-</onup>
+					<ondown lang="python">
+<![CDATA[
+app.gui.FocusMain()
+]]>
+					</ondown>
+					<orientation>horizontal</orientation>
+					<scrolltime>400</scrolltime>
+					<offsetx>240</offsetx>
+					<itemlayout width="200" height="50">
+						<control type="image">
+							<visible>!StringCompare(ListItem.property(custom:active),)</visible>
+							<width>200</width>
+							<height>43</height>
+							<posx>-100</posx>
+							<posy>0</posy>				
+							<texture diffuse="fade.png">colours/darkgrey.png</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>2</posy>
+							<width>190</width>
+							<height>46</height>
+							<font>font26b</font>
+							<aligny>center</aligny>					
+							<align>center</align>
+							<info>ListItem.Label</info>
+							<textcolor>FFc9c9c9</textcolor>					
+						</control>
+					</itemlayout>
+					<focusedlayout width="200" height="50">		
+						<control type="image">
+							<visible>!StringCompare(ListItem.property(custom:active),)+!Control.HasFocus(60)</visible>
+							<width>200</width>
+							<height>43</height>
+							<posx>-100</posx>
+							<posy>0</posy>				
+							<texture diffuse="fade.png">colours/darkgrey.png</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>					
+						<control type="image">
+							<visible>ControlGroup(1001).HasFocus</visible>
+							<width>200</width>
+							<height>44</height>
+							<posx>-100</posx>
+							<posy>0</posy>					
+							<texture diffuse="fade.png">colours/lightgrey.png</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="image">
+							<visible>!StringCompare(ListItem.property(custom:active),)+ ControlGroup(1001).HasFocus</visible>
+							<width>200</width>
+							<height>2</height>
+							<posx>-100</posx>
+							<posy>42</posy>					
+							<texture diffuse="fade.png">colours/white.png</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>2</posy>
+							<width>190</width>
+							<height>46</height>
+							<font>font26b</font>
+							<aligny>center</aligny>					
+							<align>center</align>
+							<info>ListItem.Label</info>
+							<textcolor>FFFFFFFF</textcolor>					
+						</control>
+					</focusedlayout>
+					<content type="url" url="">
+						<onclick lang="python">
+<![CDATA[
+list = mc.GetWindow(15000).GetList(60).GetFocusedItem()
+app.action(selected=list, listid=60)
+]]>
+						</onclick>
+					</content>	
+			</control>
+
+		</control>	
+
+		
+		
+		<!-- SECTION: LISTS -->
+		<control type="group" id="2000">	
+				<posx>200</posx>
+				<posy>200</posy>	
+				<animation effect="fade" start="100" end="70" time="200" condition="!ControlGroup(2000).HasFocus + !ControlGroup(3000).HasFocus">conditional</animation>
+				<animation effect="fade" start="70" end="100" time="400" condition="ControlGroup(2000).HasFocus + ControlGroup(3000).HasFocus">conditional</animation>
+				
+				<animation effect="slide" start="0,0" end="-75,0" time="200" tween="cubic" condition="ControlGroup(3000).HasFocus">Conditional</animation>	
+				<animation effect="slide" start="-75,0" end="0,0" time="200" tween="cubic" condition="!ControlGroup(3000).HasFocus">Conditional</animation>
+				
+				<control type="group" id="20010">
+					<control type="label">
+						<visible>StringCompare(Container(70).ListItem.property(custom:view),thumbnails)</visible>	
+						<posx>950</posx>
+						<posy>470</posy>
+						<width>120</width>
+						<height>30</height>	
+						<font>font16b</font>
+						<aligny>center</aligny>					
+						<align>left</align>
+						<info>Container(70).ListItem.property(custom:total)</info>   
+						<textcolor>ff7b807b</textcolor>					
+					</control>
+					<control type="label">
+						<visible>StringCompare(Container(71).ListItem.property(custom:view),default) | StringCompare(Container(71).ListItem.property(custom:view),list)</visible>	
+						<posx>950</posx>
+						<posy>470</posy>
+						<width>120</width>
+						<height>30</height>	
+						<font>font16b</font>
+						<aligny>center</aligny>					
+						<align>left</align>
+						<info>Container(71).ListItem.property(custom:total)</info>   
+						<textcolor>ff7b807b</textcolor>					
+					</control>	
+					<control type="label">
+						<visible>StringCompare(Container(72).ListItem.property(custom:view),detail)</visible>	
+						<posx>950</posx>
+						<posy>470</posy>
+						<width>120</width>
+						<height>30</height>	
+						<font>font16b</font>
+						<aligny>center</aligny>					
+						<align>left</align>
+						<info>Container(72).ListItem.property(custom:total)</info>   
+						<textcolor>ff7b807b</textcolor>					
+					</control>	
+					<control type="label">
+						<visible>StringCompare(Container(75).ListItem.property(custom:view),search)</visible>	
+						<posx>950</posx>
+						<posy>470</posy>
+						<width>120</width>
+						<height>30</height>	
+						<font>font16b</font>
+						<aligny>center</aligny>					
+						<align>left</align>
+						<info>Container(75).ListItem.property(custom:total)</info>   
+						<textcolor>ff7b807b</textcolor>					
+					</control>						
+				</control>
+				<!-- SECTION: THUMB LIST -->
+				<control type="group" id="2001">
+					<visible>StringCompare(Container(70).ListItem.property(custom:view),thumbnails)</visible>							
+					<control type="panel" id="70">
+						<description>Main List - Big Thumb</description>
+						<posx>20</posx>
+						<posy>20</posy>
+						<width>880</width>
+						<height>500</height>						
+						<onup>1001</onup>
+						<ondown></ondown>
+						<onleft>31</onleft>
+						<onright lang="python">
+<![CDATA[
+focus = mc.GetWindow(15000).GetList(70).GetFocusedItem()
+app.playlist_info.show(focus)
+]]>
+						</onright>	      
+						<orientation>vertical</orientation>
+						<pagecontrol>31</pagecontrol>
+						<scrolltime>200</scrolltime>
+						<preloaditems>2</preloaditems>
+						<itemlayout width="210" height="200">
+							<control type="image">
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>200</width>
+								<height>150</height>
+								<texture>button_back.png</texture>
+							</control>
+							<control type="largeimage">
+								<posx>37</posx>
+								<posy>7</posy>
+								<width>135</width>
+								<height>135</height>
+								<info>ListItem.Thumb</info>
+							</control>
+							<control type="label">
+								<posx>15</posx>
+								<posy>150</posy>
+								<width>190</width>
+								<height>20</height>
+								<font>font18b</font>
+								<aligny>center</aligny>					
+								<align>left</align>
+								<info>ListItem.Label</info>
+								<textcolor>FFFFFFFF</textcolor>					
+							</control>
+							<control type="label">
+								<posx>15</posx>
+								<posy>165</posy>
+								<width>190</width>
+								<height>20</height>
+								<font>font16</font>
+								<aligny>center</aligny>					
+								<align>left</align>
+								<info>ListItem.property(custom:label2)</info>
+								<textcolor>FFFFFFFF</textcolor>					
+							</control>
+						</itemlayout>
+						<focusedlayout width="200" height="200">	
+							<control type="image">
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>200</width>
+								<height>150</height>
+								<texture>button_back_focus.png</texture>
+							</control>
+							<control type="largeimage">
+								<posx>37</posx>
+								<posy>7</posy>
+								<width>135</width>
+								<height>135</height>
+								<info>ListItem.Thumb</info>
+							</control>
+							<control type="label">
+								<posx>15</posx>
+								<posy>150</posy>
+								<width>190</width>
+								<height>20</height>
+								<font>font18b</font>
+								<aligny>center</aligny>					
+								<align>left</align>
+								<info>ListItem.Label</info>
+								<textcolor>FFFFFFFF</textcolor>					
+							</control>
+							<control type="label">
+								<posx>15</posx>
+								<posy>165</posy>
+								<width>190</width>
+								<height>20</height>
+								<font>font16</font>
+								<aligny>center</aligny>					
+								<align>left</align>
+								<info>ListItem.property(custom:label2)</info>
+								<textcolor>FFFFFFFF</textcolor>				
+							</control>
+						</focusedlayout>
+						<content type="url" url="">
+							<onclick lang="python">
+<![CDATA[
+list = mc.GetWindow(15000).GetList(70).GetFocusedItem()
+app.action(selected=list, listid=70)
+]]>
+							</onclick>
+						</content>	
+					</control>
+				</control>
+				
+				
+				
+				<!-- SECTION: DEFAULT LIST -->
+				<control type="group" id="2002">
+					<visible>StringCompare(Container(71).ListItem.property(custom:view),default) | StringCompare(Container(71).ListItem.property(custom:view),list)</visible>	
+		
+					<control type="list" id="71">
+						<description>Main List - List</description>
+						<posx>-10</posx>
+						<posy>20</posy>
+						<width>900</width>
+						<height>500</height>						
+						<onup>1001</onup>
+						<ondown></ondown>
+						<onleft>32</onleft>
+						<onright lang="python">
+<![CDATA[
+focus = mc.GetWindow(15000).GetList(71).GetFocusedItem()
+app.playlist_info.show(focus)
+]]>
+						</onright>	     
+						<orientation>vertical</orientation>
+						<pagecontrol>32</pagecontrol>
+						<scrolltime>200</scrolltime>
+						<preloaditems>2</preloaditems>
+						<itemlayout width="900" height="50">
+							<control type="largeimage">
+								<posx>0</posx>
+								<posy>2</posy>
+								<width>45</width>
+								<height>45</height>
+								<info>ListItem.property(custom:icon)</info>
+							</control>
+							<control type="image">
+								<posx>800</posx>
+								<posy>17</posy>
+								<width>88</width>
+								<height>16</height>
+								<texture>$INFO[ListItem.property(custom:rating)]</texture>
+							</control>
+							<control type="image">
+								<posx>740</posx>
+								<posy>9</posy>
+								<width>32</width>
+								<height>32</height>
+								<texture>$INFO[ListItem.property(custom:date)]</texture>
+							</control>
+							<control type="label">
+								<posx>70</posx>
+								<posy>15</posy>
+								<width>650</width>
+								<height>20</height>
+								<font>font18b</font>
+								<aligny>center</aligny>					
+								<align>left</align>
+								<info>ListItem.Label</info>
+								<textcolor>FFFFFFFF</textcolor>					
+							</control>
+						</itemlayout>
+						<focusedlayout width="900" height="50">	
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>900</width>
+								<height>50</height>
+								<texture>colours/medgrey.png</texture>
+								<aspectratio>stretch</aspectratio>
+							</control>
+							<control type="largeimage">
+								<posx>0</posx>
+								<posy>2</posy>
+								<width>45</width>
+								<height>45</height>
+								<info>ListItem.property(custom:icon)</info>
+							</control>
+							<control type="image">
+								<posx>800</posx>
+								<posy>17</posy>
+								<width>88</width>
+								<height>16</height>
+								<texture>$INFO[ListItem.property(custom:rating)]</texture>
+							</control>
+							<control type="image">
+								<posx>740</posx>
+								<posy>9</posy>
+								<width>32</width>
+								<height>32</height>
+								<texture>$INFO[ListItem.property(custom:date)]</texture>
+							</control>
+							<control type="label">
+								<posx>70</posx>
+								<posy>13</posy>
+								<width>650</width>
+								<height>22</height>
+								<font>font22b</font>
+								<aligny>center</aligny>					
+								<align>left</align>
+								<info>ListItem.Label</info>
+								<textcolor>FF000000</textcolor>					
+							</control>
+						</focusedlayout>
+						<content type="url" url="">
+							<onclick lang="python">
+<![CDATA[
+list = mc.GetWindow(15000).GetList(71).GetFocusedItem()
+app.action(selected=list, listid=71)
+]]>
+							</onclick>
+						</content>	
+					</control>
+				</control>
+				
+				
+				
+				
+				<!-- SECTION: DETAILED LIST -->
+				<control type="group" id="2003">
+					<visible>StringCompare(Container(72).ListItem.property(custom:view),detail)</visible>	
+
+					<control type="image">
+						<description>background - Thumb</description>
+						<posx>-50</posx>
+						<posy>0</posy>
+						<height>200</height>
+						<width>960</width>
+						<texture>colours/black_transparant.png</texture>	
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="list" id="72">
+						<description>Main List - Movie</description>
+						<posx>275</posx>
+						<posy>210</posy>
+						<width>600</width>
+						<height>300</height>						
+						<onup>1001</onup>
+						<ondown></ondown>
+						<onleft>33</onleft>
+						<onright lang="python">
+<![CDATA[
+focus = mc.GetWindow(15000).GetList(72).GetFocusedItem()
+app.playlist_info.show(focus)
+]]>
+						</onright>	  
+						<orientation>vertical</orientation>
+						<pagecontrol>33</pagecontrol>
+						<scrolltime>200</scrolltime>
+						<preloaditems>2</preloaditems>
+						<itemlayout width="600" height="50">
+							<control type="largeimage">
+								<posx>0</posx>
+								<posy>2</posy>
+								<width>45</width>
+								<height>45</height>
+								<info>ListItem.property(custom:icon)</info>
+							</control>
+							<control type="image">
+								<posx>500</posx>
+								<posy>17</posy>
+								<width>88</width>
+								<height>16</height>
+								<texture>$INFO[ListItem.property(custom:rating)]</texture>
+							</control>
+							<control type="image">
+								<posx>440</posx>
+								<posy>9</posy>
+								<width>32</width>
+								<height>32</height>
+								<texture>$INFO[ListItem.property(custom:date)]</texture>
+							</control>
+							<control type="label">
+								<posx>70</posx>
+								<posy>15</posy>
+								<width>350</width>
+								<height>20</height>
+								<font>font18b</font>
+								<aligny>center</aligny>					
+								<align>left</align>
+								<info>ListItem.Label</info>
+								<textcolor>FFFFFFFF</textcolor>					
+							</control>
+						</itemlayout>
+						<focusedlayout width="900" height="50">	
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>600</width>
+								<height>50</height>
+								<texture>colours/medgrey.png</texture>
+								<aspectratio>stretch</aspectratio>
+							</control>
+							<control type="largeimage">
+								<posx>0</posx>
+								<posy>2</posy>
+								<width>45</width>
+								<height>45</height>
+								<info>ListItem.property(custom:icon)</info>
+							</control>
+							<control type="image">
+								<posx>500</posx>
+								<posy>17</posy>
+								<width>88</width>
+								<height>16</height>
+								<texture>$INFO[ListItem.property(custom:rating)]</texture>
+							</control>
+							<control type="image">
+								<posx>440</posx>
+								<posy>9</posy>
+								<width>32</width>
+								<height>32</height>
+								<texture>$INFO[ListItem.property(custom:date)]</texture>
+							</control>
+							<control type="label">
+								<posx>70</posx>
+								<posy>13</posy>
+								<width>350</width>
+								<height>22</height>
+								<font>font22b</font>
+								<aligny>center</aligny>					
+								<align>left</align>
+								<info>ListItem.Label</info>
+								<textcolor>FF000000</textcolor>					
+							</control>
+						</focusedlayout>
+						<content type="url" url="">
+							<onclick lang="python">
+<![CDATA[
+list = mc.GetWindow(15000).GetList(72).GetFocusedItem()
+app.action(selected=list, listid=72)
+]]>
+							</onclick>
+						</content>	
+					</control>
+					<control type="image">
+						<description>Thumb back</description>
+						<posx>-30</posx>
+						<posy>10</posy>
+						<height>380</height>
+						<width>280</width>
+						<texture>colours/black.png</texture>
+						<aspectratio>stretch</aspectratio>						
+					</control>	
+					<control type="largeimage">
+						<description>Thumb Window</description>
+						<posx>-30</posx>
+						<posy>10</posy>
+						<height>380</height>
+						<width>280</width>
+						<texture>$INFO[Container(72).ListItem.Thumb]</texture>	
+					</control>	
+					<control type="label">
+						<posx>275</posx>
+						<posy>5</posy>
+						<width>600</width>
+						<height>25</height>	
+						<font>font20b</font>
+						<aligny>center</aligny>					
+						<align>left</align>
+						<info>Container(72).ListItem.Label</info>
+						<textcolor>FFFFFFFF</textcolor>					
+					</control>
+					<control type="textbox">
+						<description>Text Box - Description</description>
+						<info>Container(72).ListItem.Property(custom:description)</info>      
+						<posx>275</posx>
+						<posy>35</posy>
+						<width>600</width>
+						<height>150</height>	
+						<font>font18</font>
+						<align>justify</align> 
+						<textcolor>FFc1c1c1</textcolor>
+						<autoscroll delay="2500" time="3000" repeat="10000">Control.HasFocus(72)</autoscroll>
+					</control>  
+				</control>
+				
+				
+				
+				
+	
+				
+				<!-- SECTION: SEARCH -->
+				<control type="group" id="2004">
+					<visible>false</visible>	
+					<control type="button" id="20041">
+						<posx>-15</posx>
+						<posy>11</posy>
+						<width>910</width>
+						<height>89</height>
+						<onup>1001</onup>
+						<ondown>75</ondown>
+						<onleft lang="python">
+<![CDATA[
+app.search.dialog_options.show()
+]]>
+						</onleft>
+						<onright lang="python">
+<![CDATA[
+app.search.dialog_history.show()
+]]>
+						</onright>	 
+						<texturefocus>search/search_focus.png</texturefocus>
+						<texturenofocus>search/search_nofocus.png</texturenofocus>
+						<onclick lang="python">
+<![CDATA[
+search = mc.ShowDialogKeyboard("Search", mc.GetWindow(15000).GetButton(20041).GetLabel(), False)
+if len(search) > 2:
+	mc.GetWindow(15000).GetLabel(20043).SetLabel(search)
+	app.action(listid=75, action='search', query=search)
+]]>
+						</onclick>
+					</control>	
+					<control type="image">
+						<posx>-55</posx>
+						<posy>2</posy>
+						<width>113</width>
+						<height>113</height>
+						<texture>search/search_option_options.png</texture>
+					</control>	
+					<control type="image">
+						<posx>885</posx>
+						<posy>2</posy>
+						<width>113</width>
+						<height>113</height>
+						<texture>search/search_option_history.png</texture>
+					</control>	
+					<control type="label" id="20043">
+						<animation effect="fade" time="300">VisibleChange</animation>
+						<posx>65</posx>
+						<posy>35</posy>
+						<width>300</width>
+						<height>40</height>
+						<label></label>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>font28b</font>
+						<textcolor>ff000000</textcolor>
+					</control>
+					<control type="group" id="20044">
+						<visible>StringCompare(Container(75).ListItem.property(custom:view),search)</visible>	
+						<animation effect="fade" start="100" end="70" time="200" condition="!Control.HasFocus(75)+!ControlGroup(20044).HasFocus">conditional</animation>
+						<animation effect="fade" start="70" end="100" time="400" condition="Control.HasFocus(75)+ControlGroup(20044).HasFocus">conditional</animation>
+						<control type="list" id="75">
+							<description>Main List - Search</description>
+							<posx>-10</posx>
+							<posy>140</posy>
+							<width>900</width>
+							<height>380</height>						
+							<onup>20041</onup>
+							<ondown></ondown>
+							<onleft>34</onleft>
+							<onright>3000</onright>	      
+							<orientation>vertical</orientation>
+							<pagecontrol>34</pagecontrol>
+							<scrolltime>200</scrolltime>
+						
+							<itemlayout width="900" height="50">
+								<control type="largeimage">
+									<posx>0</posx>
+									<posy>2</posy>
+									<width>45</width>
+									<height>45</height>
+									<info>ListItem.property(custom:icon)</info>
+								</control>
+								<control type="image">
+									<posx>800</posx>
+									<posy>17</posy>
+									<width>88</width>
+									<height>16</height>
+									<texture>$INFO[ListItem.property(custom:rating)]</texture>
+								</control>
+								<control type="image">
+									<posx>740</posx>
+									<posy>9</posy>
+									<width>32</width>
+									<height>32</height>
+									<texture>$INFO[ListItem.property(custom:date)]</texture>
+								</control>
+								<control type="label">
+									<posx>70</posx>
+									<posy>15</posy>
+									<width>650</width>
+									<height>20</height>
+									<font>font18b</font>
+									<aligny>center</aligny>					
+									<align>left</align>
+									<info>ListItem.Label</info>
+									<textcolor>FFFFFFFF</textcolor>					
+								</control>
+							</itemlayout>
+							<focusedlayout width="900" height="50">	
+								<control type="image">
+									<posx>0</posx>
+									<posy>0</posy>
+									<width>900</width>
+									<height>50</height>
+									<texture>colours/medgrey.png</texture>
+									<aspectratio>stretch</aspectratio>
+								</control>
+								<control type="largeimage">
+									<posx>0</posx>
+									<posy>2</posy>
+									<width>45</width>
+									<height>45</height>
+									<info>ListItem.property(custom:icon)</info>
+								</control>
+								<control type="image">
+									<posx>800</posx>
+									<posy>17</posy>
+									<width>88</width>
+									<height>16</height>
+									<texture>$INFO[ListItem.property(custom:rating)]</texture>
+								</control>
+								<control type="image">
+									<posx>740</posx>
+									<posy>9</posy>
+									<width>32</width>
+									<height>32</height>
+									<texture>$INFO[ListItem.property(custom:date)]</texture>
+								</control>
+								<control type="label">
+									<posx>70</posx>
+									<posy>13</posy>
+									<width>650</width>
+									<height>22</height>
+									<font>font22b</font>
+									<aligny>center</aligny>					
+									<align>left</align>
+									<info>ListItem.Label</info>
+									<textcolor>FF000000</textcolor>					
+								</control>
+							</focusedlayout>
+							<content type="url" url="">
+								<onclick lang="python">
+<![CDATA[
+list = mc.GetWindow(15000).GetList(75).GetFocusedItem()
+app.action(selected=list, listid=75)
+]]>
+								</onclick>
+							</content>	
+						</control>
+					</control>	
+					
+										
+				</control>	
+				
+				<control type="scrollbar" id="31">
+						<visible>Control.IsVisible(2001)</visible>
+						<description>Scroll Bar Text Box</description>
+						<posx>-74</posx>
+						<posy>65</posy>
+						<width>19</width>
+						<height>380</height> 
+						<onleft>1001</onleft>
+						<onright>2001</onright>
+						<onup>30</onup>
+						<ondown>30</ondown> 
+						<textureslidernib>nib.png</textureslidernib>
+						<textureslidernibfocus>nib_focus.png</textureslidernibfocus>
+						<orientation>vertical</orientation>
+				</control> 
+				<control type="scrollbar" id="32">
+						<visible>Control.IsVisible(2002)</visible>
+						<description>Scroll Bar Text Box</description>
+						<posx>-74</posx>
+						<posy>65</posy>
+						<width>19</width>
+						<height>380</height> 
+						<onleft>1001</onleft>
+						<onright>2002</onright>
+						<onup>30</onup>
+						<ondown>30</ondown> 
+						<textureslidernib>nib.png</textureslidernib>
+						<textureslidernibfocus>nib_focus.png</textureslidernibfocus>
+						<orientation>vertical</orientation>
+				</control> 
+				<control type="scrollbar" id="33">
+						<visible>Control.IsVisible(2003)</visible>
+						<description>Scroll Bar Text Box</description>
+						<posx>-74</posx>
+						<posy>65</posy>
+						<width>19</width>
+						<height>380</height> 
+						<onleft>1001</onleft>
+						<onright>2003</onright>
+						<onup>30</onup>
+						<ondown>30</ondown> 
+						<textureslidernib>nib.png</textureslidernib>
+						<textureslidernibfocus>nib_focus.png</textureslidernibfocus>
+						<orientation>vertical</orientation>
+				</control> 
+				<control type="scrollbar" id="34">
+						<visible>Control.IsVisible(2004)</visible>
+						<description>Scroll Bar Text Box</description>
+						<posx>-74</posx>
+						<posy>165</posy>
+						<width>19</width>
+						<height>290</height> 
+						<onleft>1001</onleft>
+						<onright>20044</onright>
+						<onup>30</onup>
+						<ondown>30</ondown> 
+						<textureslidernib>nib.png</textureslidernib>
+						<textureslidernibfocus>nib_focus.png</textureslidernibfocus>
+						<orientation>vertical</orientation>
+				</control> 
+				
+		</control>	
+
+		
+		
+		
+		
+	<!-- SECTION: EXTRA MENU -->	
+	<control type="group" id="3000">
+			<posx>1272</posx>
+			<posy>169</posy>
+			
+			<animation effect="slide" start="0,0" end="-140,0" time="200" tween="cubic" condition="ControlGroup(3000).HasFocus">Conditional</animation>	
+			<animation effect="slide" start="-140,0" end="0,0" time="200" tween="cubic" condition="!ControlGroup(3000).HasFocus">Conditional</animation>	
+			<visible>[ControlGroup(2000).HasFocus | ControlGroup(3000).HasFocus] + !ControlGroup(2004).HasFocus</visible>
+			<control type="image">
+					<animation effect="fade" start="30" end="100" time="700" condition="!ControlGroup(3000).HasFocus">Conditional</animation>
+					<animation effect="fade" start="100" end="30" time="700" condition="ControlGroup(3000).HasFocus">Conditional</animation>
+					<description>Info Icon</description>
+					<posx>-28</posx>
+					<posy>200</posy>
+					<height>130</height>
+					<width>30</width>
+					<texture>icons/icon_info.png</texture>	
+			</control>
+			<control type="image">
+				<description>Background for menu</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>651</height>
+				<width>300</width>
+				<texture>backgrounds/background_extra.png</texture>				
+			</control>
+							
+
+			
+			<control type="label">
+				<posx>25</posx>
+				<posy>15</posy>
+				<width>250</width>
+				<height>25</height>
+				<font>font20b</font>
+				<aligny>center</aligny>					
+				<align>center</align>
+				<label>[B]PLAYLIST INFO[/B]</label>
+				<textcolor>ffffffff</textcolor>					
+			</control>
+			<control type="label">
+				<posx>25</posx>
+				<posy>45</posy>
+				<width>250</width>
+				<height>25</height>
+				<font>font18b</font>
+				<aligny>center</aligny>					
+				<align>center</align>
+				<info>Container(70).ListItem.property(custom:playlist.label)</info>
+				<textcolor>ffe4e4e4</textcolor>					
+			</control>
+			<control type="image">
+				<description>backdrop thumb</description>
+				<posx>30</posx>
+				<posy>77</posy>
+				<height>230</height>
+				<width>240</width>
+				<texture>colours/medgrey.png</texture>	
+			</control>
+			<control type="group">
+				<animation type="Conditional" condition="ControlGroup(3000).HasFocus + !StringCompare(Container(70).ListItem.property(custom:playlist.description),)">
+					<effect type="fade" start="100" end="0" time="500" delay="1000"/>
+				</animation>
+				<control type="largeimage">
+					<visible>!StringCompare(Container(70).ListItem.property(custom:playlist.thumb),)</visible>	
+					<description>Thumb Window</description>
+					<posx>50</posx>
+					<posy>92</posy>
+					<height>200</height>
+					<width>200</width>
+					<texture>$INFO[Container(70).ListItem.property(custom:playlist.thumb)]</texture>	
+					<aspectratio>keep</aspectratio>
+				</control>
+			</control>
+			<control type="group">
+				<animation type="Conditional" condition="ControlGroup(3000).HasFocus">
+					<effect type="fade" start="0" end="100" time="500" delay="1000"/>
+				</animation>
+				<visible>!StringCompare(Container(70).ListItem.property(custom:playlist.description),)</visible>	
+				<control type="textbox">
+					<description>Text Box - Description</description>
+					<info>Container(70).ListItem.property(custom:playlist.description)</info>   				
+					<posx>50</posx>
+					<posy>92</posy>
+					<width>200</width>
+					<height>200</height> 
+					<font>font16</font>
+					<align>justify</align>
+					<textcolor>ffe4e4e4</textcolor>
+					<autoscroll delay="4000" time="3000" repeat="10000">Control.HasFocus(30003)</autoscroll>
+				</control>  
+			</control> 
+			<control type="image">
+				<description>Line</description>
+				<posx>15</posx>
+				<posy>340</posy>
+				<width>255</width>
+				<height>80</height> 
+				<texture border="10">backgrounds/background_right.png</texture>	
+			</control>
+
+			<control type="list" id="30003">
+					<description>Options list</description>
+					<posx>20</posx>
+					<posy>350</posy>
+					<width>250</width>
+					<height>290</height>						
+					<onup></onup>
+					<ondown></ondown>
+					<onleft lang="python">
+<![CDATA[
+app.playlist_info.hide()
+]]>
+					</onleft>
+					<onright></onright>	      
+					<orientation>vertical</orientation>
+					<pagecontrol>25</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="250" height="35">
+						<control type="label">
+							<posx>20</posx>
+							<posy>5</posy>
+							<width>250</width>
+							<height>20</height>
+							<font>font20</font>
+							<aligny>center</aligny>					
+							<align>left</align>
+							<info>ListItem.Label</info>
+							<textcolor>ffe4e4e4</textcolor>					
+						</control>
+					</itemlayout>
+					<focusedlayout width="250" height="35">	
+						<control type="image">
+							<description>Thumb Window</description>
+							<posx>0</posx>
+							<posy>-4</posy>
+							<height>42</height>
+							<width>240</width>
+							<texture border="7">info_focus.png</texture>	
+						</control>	
+						<control type="label">
+							<posx>20</posx>
+							<posy>5</posy>
+							<width>250</width>
+							<height>20</height>
+							<font>font20</font>
+							<aligny>center</aligny>					
+							<align>left</align>
+							<info>ListItem.Label</info>
+							<textcolor>ffffffff</textcolor>					
+						</control>
+					</focusedlayout>
+					<content type="url" url="">
+						<onclick lang="python">
+<![CDATA[
+focus = mc.GetWindow(15000).GetList(30003).GetFocusedItem()
+app.playlist_info._exec(focus)
+]]>
+						</onclick>
+					</content>			
+			</control>
+			
+	</control>	
+		
+	<!-- SECTION: Download Progress -->	
+	<control type="group" id="4000">	
+		<posx>275</posx>
+		<posy>30</posy>
+		<visible>false</visible>
+		<control type="image" id="4001">
+			<description>progress image</description>
+			<posx>0</posx>
+			<posy>23</posy>
+			<height>2</height>
+			<width>275</width>
+			<texture></texture>	
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<control type="label" id="4005">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>325</width>
+			<height>20</height>
+			<font>font18b</font>
+			<aligny>center</aligny>					
+			<align>left</align>
+			<label></label>
+			<textcolor>ff7b807b</textcolor>					
+		</control>
+		<control type="label" id="4002">
+			<posx>0</posx>
+			<posy>25</posy>
+			<width>275</width>
+			<height>20</height>
+			<font>font16b</font>
+			<aligny>center</aligny>					
+			<align>left</align>
+			<label></label>
+			<textcolor>ff7b807b</textcolor>					
+		</control>		
+
+	</control>
+	</controls>
+</window>

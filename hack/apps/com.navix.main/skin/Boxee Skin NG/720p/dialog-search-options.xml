@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<window type="dialog" id="15150">
+	<allowoverlay>yes</allowoverlay>
+	<defaultcontrol>1000</defaultcontrol>	
+	<controls>
+				<control type="group" id="1000">	
+						<visible>true</visible>		
+						<posx>100</posx>
+						<posy>200</posy>							
+						<animation effect="fade" start="0" end="100" time="1000">WindowOpen</animation>
+						<animation effect="fade" start="100" end="0" time="500">WindowClose</animation>	
+						<control type="image">
+							<posx>-30</posx>
+							<posy>100</posy>
+							<width>600</width>
+							<height>380</height>
+							<texture border="10">backgrounds/background_option_menu.png</texture>
+						</control>
+						<control type="label">
+							<posx>150</posx>
+							<posy>140</posy>
+							<width>150</width>
+							<height>3</height>
+							<label>OPTIONS</label>
+							<align>right</align>
+							<aligny>center</aligny>
+							<font>font22b</font>
+							<textcolor>ff222522</textcolor>
+						</control>
+						<control type="group" id="1090">
+							<visible>!StringCompare(Control.GetLabel(90),)</visible>	
+							<control type="label">
+								<posx>150</posx>
+								<posy>170</posy>
+								<width>150</width>
+								<height>30</height>
+								<label>Genre:</label>
+								<align>right</align>
+								<aligny>center</aligny>
+								<font>font20b</font>
+								<textcolor>ff222522</textcolor>
+							</control>	
+							<control type="button" id="90">
+								<description>Genre</description>				
+								<posx>228</posx>
+								<posy>165</posy>
+								<width>250</width>
+								<height>40</height>	
+								<aligny>center</aligny>					
+								<align>center</align>
+								<texturefocus>backgrounds/background_option.png</texturefocus>
+								<texturenofocus></texturenofocus>
+								<textcolor>FF222522</textcolor>
+								<focusedcolor>FF000000</focusedcolor>
+								<label></label>
+								<font>font20b</font>
+								<onleft lang="python">
+<![CDATA[
+app.search.dialog_options.previous('genre')
+]]>	
+								</onleft>
+								<onright lang="python">
+<![CDATA[
+app.search.dialog_options.next('genre')
+]]>	
+								</onright>
+								<onup lang="python">
+<![CDATA[
+app.search.dialog_options.hide()
+]]>	
+								</onup>
+								<ondown>91</ondown>  
+							</control>
+						</control>
+						
+						<control type="group" id="1091">
+							<visible>!StringCompare(Control.GetLabel(91),)</visible>	
+							<control type="label">
+								<posx>150</posx>
+								<posy>220</posy>
+								<width>150</width>
+								<height>30</height>
+								<label>Sources:</label>
+								<align>right</align>
+								<aligny>center</aligny>
+								<font>font20b</font>
+								<textcolor>ff222522</textcolor>
+							</control>						
+							<control type="button" id="91">
+								<description>Genre</description>				
+								<posx>228</posx>
+								<posy>215</posy>
+								<width>250</width>
+								<height>40</height>	
+								<aligny>center</aligny>					
+								<align>center</align>
+								<texturefocus>backgrounds/background_option.png</texturefocus>
+								<texturenofocus></texturenofocus>
+								<textcolor>FF222522</textcolor>
+								<focusedcolor>FF000000</focusedcolor>
+								<label></label>
+								<font>font20b</font>
+								<onleft lang="python">
+<![CDATA[
+app.search.dialog_options.previous('source')
+]]>	
+								</onleft>
+								<onright lang="python">
+<![CDATA[
+app.search.dialog_options.next('source')
+]]>	
+								</onright>
+								<onup>90</onup>
+								<ondown>92</ondown>  
+							</control>
+						</control>
+						
+						<control type="group" id="1092">
+							<visible>!StringCompare(Control.GetLabel(92),)</visible>	
+							<control type="label">
+									<posx>150</posx>
+									<posy>270</posy>
+									<width>150</width>
+									<height>30</height>
+									<label>Exact phrase:</label>
+									<align>right</align>
+									<aligny>center</aligny>
+									<font>font18b</font>
+									<textcolor>ff222522</textcolor>
+							</control>						
+							<control type="button" id="92">
+								<description>phrase</description>				
+								<posx>228</posx>
+								<posy>265</posy>
+								<width>250</width>
+								<height>40</height>	
+								<aligny>center</aligny>					
+								<align>center</align>
+								<texturefocus>backgrounds/background_option.png</texturefocus>
+								<texturenofocus></texturenofocus>
+								<textcolor>FF222522</textcolor>
+								<focusedcolor>FF000000</focusedcolor>
+								<label></label>
+								<font>font20b</font>
+								<onleft lang="python">
+<![CDATA[
+app.search.dialog_options.previous('phrase')
+]]>	
+								</onleft>
+								<onright lang="python">
+<![CDATA[
+app.search.dialog_options.next('phrase')
+]]>	
+								</onright>
+								<onup>91</onup>
+								<ondown>93</ondown>  
+							</control>
+						</control>
+						
+						<control type="group" id="1093">
+							<visible>!StringCompare(Control.GetLabel(93),)</visible>		
+							<control type="label">
+								<posx>150</posx>
+								<posy>320</posy>
+								<width>150</width>
+								<height>30</height>
+								<label>Media Type:</label>
+								<align>right</align>
+								<aligny>center</aligny>
+								<font>font18b</font>
+								<textcolor>ff222522</textcolor>
+							</control>
+							<control type="button" id="93">
+								<description>type</description>				
+								<posx>228</posx>
+								<posy>315</posy>
+								<width>250</width>
+								<height>40</height>	
+								<aligny>center</aligny>					
+								<align>center</align>
+								<texturefocus>backgrounds/background_option.png</texturefocus>
+								<texturenofocus></texturenofocus>
+								<textcolor>FF222522</textcolor>
+								<focusedcolor>FF000000</focusedcolor>
+								<label></label>
+								<font>font20b</font>
+								<onleft lang="python">
+<![CDATA[
+app.search.dialog_options.previous('type')
+]]>	
+								</onleft>
+								<onright lang="python">
+<![CDATA[
+app.search.dialog_options.next('type')
+]]>	
+								</onright>
+								<onup>92</onup>
+								<ondown>94</ondown>  
+							</control>
+						</control>
+						
+						<control type="group" id="1094">
+							<visible>!StringCompare(Control.GetLabel(94),)</visible>	>
+							<control type="label">
+									<posx>150</posx>
+									<posy>370</posy>
+									<width>150</width>
+									<height>30</height>
+									<label>Search in:</label>
+									<align>right</align>
+									<aligny>center</aligny>
+									<font>font18b</font>
+									<textcolor>ff222522</textcolor>
+							</control>
+							<control type="button" id="94">
+								<description>mode</description>				
+								<posx>228</posx>
+								<posy>365</posy>
+								<width>250</width>
+								<height>40</height>	
+								<aligny>center</aligny>					
+								<align>center</align>
+								<texturefocus>backgrounds/background_option.png</texturefocus>
+								<texturenofocus></texturenofocus>
+								<textcolor>FF222522</textcolor>
+								<focusedcolor>FF000000</focusedcolor>
+								<label></label>
+								<font>font20b</font>
+								<onleft lang="python">
+<![CDATA[
+app.search.dialog_options.previous('mode')
+]]>	
+								</onleft>
+								<onright lang="python">
+<![CDATA[
+app.search.dialog_options.next('mode')
+]]>	
+								</onright>
+								<onup>93</onup>
+								<ondown>95</ondown>  
+							</control>
+						</control>
+						
+						<control type="group" id="1095">
+							<visible>!StringCompare(Control.GetLabel(95),)</visible>						
+							<control type="label">
+									<posx>150</posx>
+									<posy>420</posy>
+									<width>150</width>
+									<height>30</height>
+									<label>Filter Adult:</label>
+									<align>right</align>
+									<aligny>center</aligny>
+									<font>font18b</font>
+									<textcolor>ff222522</textcolor>
+							</control>
+							<control type="button" id="95">
+								<description>adult</description>				
+								<posx>228</posx>
+								<posy>415</posy>
+								<width>250</width>
+								<height>40</height>	
+								<aligny>center</aligny>					
+								<align>center</align>
+								<texturefocus>backgrounds/background_option.png</texturefocus>
+								<texturenofocus></texturenofocus>
+								<textcolor>FF222522</textcolor>
+								<focusedcolor>FF000000</focusedcolor>
+								<label></label>
+								<font>font20b</font>
+								<onleft lang="python">
+<![CDATA[
+app.search.dialog_options.previous('adult')
+]]>	
+								</onleft>
+								<onright lang="python">
+<![CDATA[
+app.search.dialog_options.next('adult')
+]]>	
+								</onright>
+								<onup>94</onup>
+								<ondown></ondown>  
+							</control>
+						</control>
+				</control>	
+	</controls>
+</window>

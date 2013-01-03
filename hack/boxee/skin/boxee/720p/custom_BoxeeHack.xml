@@ -69,6 +69,14 @@
 				</control>
 				<control type="togglebutton" id="400">
 					<include>SettingsCategoryToggleButton</include>
+					<onright>SetFocus(401)</onright>
+					<usealttexture>ControlGroup(401).HasFocus()</usealttexture>
+					<onclick>SetFocus(401)</onclick>
+					<onclick>SetFocus(402)</onclick>
+					<label>Services</label>
+				</control>
+				<control type="togglebutton" id="500">
+					<include>SettingsCategoryToggleButton</include>
 					<usealttexture>false</usealttexture>
 <!--					<onright>SetFocus(401)</onright>
 					<usealttexture>ControlGroup(401).HasFocus()</usealttexture>
@@ -335,6 +343,60 @@
 					<selected>StringCompare(Skin.String(homeenabled-web),1)</selected>
 					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "web")</onclick>
 				</control>
+				<control type="radiobutton" id="111">
+					<include>SettingsRadioButton</include>
+					<label>BBC iPlayer</label>
+					<selected>StringCompare(Skin.String(homeenabled-bbc),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "bbc")</onclick>
+				</control>
+				<control type="radiobutton" id="112">
+					<include>SettingsRadioButton</include>
+					<label>Revision3</label>
+					<selected>StringCompare(Skin.String(homeenabled-revision3),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "revision3")</onclick>
+				</control>
+				<control type="radiobutton" id="113">spotify,Grooveshark
+					<include>SettingsRadioButton</include>
+					<label>Crunchyroll</label>
+					<selected>StringCompare(Skin.String(homeenabled-crunchyroll),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "crunchyroll")</onclick>
+				</control>
+				<control type="radiobutton" id="114">
+					<include>SettingsRadioButton</include>
+					<label>Netflix</label>
+					<selected>StringCompare(Skin.String(homeenabled-netflix),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "netflix")</onclick>
+				</control>
+				<control type="radiobutton" id="115">
+					<include>SettingsRadioButton</include>
+					<label>Vudu</label>
+					<selected>StringCompare(Skin.String(homeenabled-vudu),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "vudu")</onclick>
+				</control>
+				<control type="radiobutton" id="116">
+					<include>SettingsRadioButton</include>
+					<label>Navi-x</label>
+					<selected>StringCompare(Skin.String(homeenabled-navix),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "navix")</onclick>
+				</control>
+				<control type="radiobutton" id="117">
+					<include>SettingsRadioButton</include>
+					<label>Navi-x-Remix</label>
+					<selected>StringCompare(Skin.String(homeenabled-navixr),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "navixr")</onclick>
+				</control>
+				<control type="radiobutton" id="118">
+					<include>SettingsRadioButton</include>
+					<label>Spotify</label>
+					<selected>StringCompare(Skin.String(homeenabled-spotify),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "spotify")</onclick>
+				</control>
+				<control type="radiobutton" id="119">
+					<include>SettingsRadioButton</include>
+					<label>Grooveshark</label>
+					<selected>StringCompare(Skin.String(homeenabled-grooveshark),1)</selected>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "homeenabled", "grooveshark")</onclick>
+				</control>
 			</control>
 			
 			<!-- SUBTITLES -->
@@ -498,10 +560,39 @@
 				</control>
 			</control>
 			
-			<!-- ABOUT -->
-			<control type="group" id="401">
+			<!-- Services -->
+			<control type="grouplist" id="401">
 				<include>SettingsCategoryArea</include>
 				<visible>ControlGroup(401).HasFocus() | Control.HasFocus(400)</visible>
+				<control type="button" id="402">
+					<include>SettingsButton</include>
+					<label>FTP-server</label>
+					<label2>$INFO[Skin.String(ftp)]</label2>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "ftp")</onclick>
+				</control>
+				<control type="button" id="403">
+					<include>SettingsButton</include>
+					<label>Telnet</label>
+					<label2>$INFO[Skin.String(telnets)]</label2>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "telnets")</onclick>
+				</control>
+				<control type="button" id="404">
+					<include>SettingsButton</include>
+					<label>uTorrent</label>
+					<label2>$INFO[Skin.String(utorrent)]</label2>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "utorrent")</onclick>
+				</control>
+				<control type="button" id="405">
+					<include>SettingsButton</include>
+					<label>Webserver</label>
+					<label2>$INFO[Skin.String(www)]</label2>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "www")</onclick>
+				</control>
+			</control>
+			<!-- ABOUT -->
+			<control type="group" id="501">
+				<include>SettingsCategoryArea</include>
+				<visible>ControlGroup(501).HasFocus() | Control.HasFocus(500)</visible>
 				<control type="grouplist">
 					<posx>20</posx>
 					<control type="label">

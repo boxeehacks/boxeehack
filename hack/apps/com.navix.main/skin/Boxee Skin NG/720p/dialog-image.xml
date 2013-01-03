@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<window type="dialog" id="15210">
+	<allowoverlay>yes</allowoverlay>
+	<defaultcontrol>90</defaultcontrol>	
+	<controls>
+		<control type="group" id="1000">
+				<control type="image">
+					<description>Background - Image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<height>720</height>
+					<width>1280</width>
+					<texture>colours/black_transparant.png</texture>	
+				</control>
+				<control type="largeimage">
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>1260</width>
+					<height>700</height>
+					<texture>$INFO[Container(90).ListItem.Thumb]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="list" id="90">
+					<description>Demo List</description>
+					<posx>1</posx>
+					<posy>1</posy>
+					<width>1</width>
+					<height>1</height>						
+					<onup></onup>
+					<ondown></ondown>
+					<onleft></onleft>
+					<onright></onright>	      
+					<orientation>vertical</orientation>
+					<pagecontrol>25</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="1" height="1">
+					</itemlayout>
+					<focusedlayout width="1" height="1">	
+					</focusedlayout>		
+				</control>
+		</control>				
+	</controls>
+</window>

@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<window type="dialog" id="15140">
+	<allowoverlay>yes</allowoverlay>
+	<defaultcontrol>90</defaultcontrol>	
+	<controls>
+			<control type="group" id="1000">	
+				<visible>true</visible>		
+				<posx>185</posx>
+				<posy>200</posy>							
+				<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>	
+				
+				
+				
+				<control type="image">
+							<animation effect="fade" start="0" end="90" time="1000">WindowOpen</animation>
+							<animation effect="fade" start="90" end="0" time="250">WindowClose</animation>	
+							<posx>0</posx>
+							<posy>100</posy>
+							<width>910</width>
+							<height>223</height>
+							<texture border="10">search/search_focus.png</texture>
+				</control>				
+				<control type="list" id="90">
+					<description>history</description>
+					<posx>0</posx>
+					<posy>106</posy>
+					<width>910</width>
+					<height>210</height>						
+					<onup lang="python">
+<![CDATA[
+app.search.dialog_history.hide()
+]]>	
+					</onup>
+					<ondown></ondown>    
+					<orientation>vertical</orientation>
+					<pagecontrol>25</pagecontrol>
+					<scrolltime>200</scrolltime>
+							
+					<itemlayout width="910" height="70">
+						<control type="label">
+							<posx>100</posx>
+							<posy>20</posy>
+							<width>700</width>
+							<height>30</height>
+							<font>font28b</font>
+							<aligny>center</aligny>					
+							<align>left</align>
+							<info>ListItem.Label</info>
+							<textcolor>ff4b504b</textcolor>					
+						</control>
+						<control type="image">
+							<posx>4</posx>
+							<posy>68</posy>
+							<width>900</width>
+							<height>2</height>
+							<texture>colours/medgrey.png</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout width="910" height="70">
+						<control type="image">
+							<posx>4</posx>
+							<posy>0</posy>
+							<width>900</width>
+							<height>68</height>
+							<texture>colours/lightgrey.png</texture>
+						</control>
+						<control type="image">
+							<posx>4</posx>
+							<posy>68</posy>
+							<width>900</width>
+							<height>2</height>
+							<texture>colours/medgrey.png</texture>
+						</control>
+						<control type="label">
+							<posx>100</posx>
+							<posy>20</posy>
+							<width>700</width>
+							<height>30</height>
+							<font>font28b</font>
+							<aligny>center</aligny>					
+							<align>left</align>
+							<info>ListItem.Label</info>
+							<textcolor>ff222522</textcolor>					
+						</control>
+					</focusedlayout>
+					<content type="url" url="">
+						<onclick lang="python">
+<![CDATA[
+app.search.dialog_history.hide()
+selected = mc.GetWindow(15140).GetList(90).GetFocusedItem()
+listitems = mc.GetWindow(15140).GetList(90).GetItems()
+search = listitems[selected].GetLabel()
+app.action(listid=75, action='search', query=search)
+]]>
+						
+						</onclick>
+					</content>	
+				</control>
+				<control type="image">	
+					<visible>Container(90).HasPrevious</visible>
+					<posx>860</posx>
+					<posy>125</posy>
+					<width>13</width>
+					<height>13</height>
+					<texture flipy="true">arrow.png</texture>
+				</control>
+				<control type="image">	
+					<visible>Container(90).HasNext</visible>
+					<posx>860</posx>
+					<posy>275</posy>
+					<width>13</width>
+					<height>13</height>
+					<texture>arrow.png</texture>
+				</control>
+			</control>
+	</controls>
+</window>

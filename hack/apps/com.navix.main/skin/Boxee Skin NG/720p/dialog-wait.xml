@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<window type="dialog" id="15100">
+	<useincludes>false</useincludes>
+	<allowoverlay>yes</allowoverlay>
+	<zorder>2</zorder>
+	<animation type="WindowClose" reversible="false" loop="false">
+		<effect type="fade" time="200" start="0" end="100" reversible="true" delay="0"/>
+	</animation>
+	<controls>
+		<control type="group" id="210">
+			<posx>590</posx>
+			<posy>310</posy>	
+			<control type="image" id="220">
+				<animation type="Conditional" reversible="false" condition="true" loop="true">
+					<effect type="rotate" start="0" end="360" time="700" center="50,50" loop="true" reversible="false" />
+				</animation>
+				<animation type="WindowOpen" reversible="true" loop="false">
+					<effect type="fade" time="300" reversible="true"/>
+				</animation>
+				<description>Background</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>100</height>
+				<width>100</width>
+				<texture>busy-spinner.png</texture>
+			</control>
+			<control type="image" id="230">
+				<animation type="Conditional" reversible="true" condition="!StringCompare(Control.GetLabel(300),)" loop="false">
+					<effect type="fade" time="1000" reversible="true" delay="0"/>
+				</animation>
+				<description>Background</description>
+				<posx>10</posx>
+				<posy>10</posy>
+				<height>80</height>
+				<width>80</width>
+				<texture>busy-center.png</texture>
+				<visible>!StringCompare(Control.GetLabel(300),)</visible>
+			</control>
+			<control type="label" id="300">
+				<animation type="Conditional" reversible="true" condition="!StringCompare(Control.GetLabel(300),)" loop="false">
+					<effect type="fade" time="1000" reversible="true" delay="0"/>
+				</animation>
+				<description>Progress label</description>
+				<width>100</width>			
+				<height>100</height>
+				<posx>0</posx>
+				<posy>0</posy>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>loading</label>
+				<font>font13</font>
+				<textcolor>FFFFFFFF</textcolor>
+				<visible>!StringCompare(Control.GetLabel(300),)</visible>
+			</control>
+		</control>		
+	</controls>
+</window>

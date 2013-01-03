@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<window type="dialog" id="15200">
+	<allowoverlay>yes</allowoverlay>
+	<defaultcontrol>100</defaultcontrol>	
+	<controls>
+		<control type="image">
+			<description>Background - settings</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<height>720</height>
+			<width>1280</width>
+			<texture>colours/grey_transparant.png</texture>	
+		</control>
+		<control type="group" id="1000">
+				<posx>190</posx>
+				<posy>90</posy>
+				<control type="image">
+					<description>Background - settings</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<height>540</height>
+					<width>350</width>
+					<texture>colours/black.png</texture>	
+				</control>
+				<control type="label">
+					<posx>60</posx>
+					<posy>40</posy>
+					<width>840</width>
+					<height>30</height>
+					<font>font24b</font>
+					<aligny>center</aligny>					
+					<align>left</align>
+					<info>Container(90).ListItem.property(custom:id)</info>
+					<textcolor>ffFFFFFF</textcolor>					
+				</control>
+				<control type="list" id="100">
+					<description>Main List</description>
+					<posx>60</posx>
+					<posy>100</posy>
+					<width>200</width>
+					<height>340</height>						
+					<onup>90</onup>
+					<ondown>90</ondown>
+					<onleft>90</onleft>
+					<onright>91</onright>	      
+					<orientation>vertical</orientation>
+					<pagecontrol>25</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="200" height="50">
+						<control type="label">
+							<visible>!StringCompare(ListItem.Label,)</visible>
+							<posx>15</posx>
+							<posy>7</posy>
+							<width>170</width>
+							<height>36</height>
+							<font>font20</font>
+							<aligny>center</aligny>					
+							<align>left</align>
+							<info>ListItem.Label</info>
+							<textcolor>ff888888</textcolor>					
+						</control>
+						<control type="image">
+							<visible>!StringCompare(ListItem.Thumb,)</visible>
+							<width>88</width>
+							<height>16</height>
+							<posx>25</posx>
+							<posy>14</posy>					
+							<info>ListItem.Thumb</info>
+						</control>
+					</itemlayout>
+					<focusedlayout width="200" height="50">	
+						<control type="image">
+							<visible>Control.HasFocus(90)</visible>
+							<width>200</width>
+							<height>50</height>
+							<posx>0</posx>
+							<posy>0</posy>					
+							<texture>colours/grey.png</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="image">
+							<visible>!StringCompare(ListItem.Thumb,)</visible>
+							<width>88</width>
+							<height>16</height>
+							<posx>25</posx>
+							<posy>14</posy>					
+							<info>ListItem.Thumb</info>
+						</control>
+						<control type="label">
+							<visible>!StringCompare(ListItem.Label,)</visible>
+							<posx>15</posx>
+							<posy>7</posy>
+							<width>170</width>
+							<height>36</height>
+							<font>font20</font>
+							<aligny>center</aligny>					
+							<align>left</align>
+							<info>ListItem.Label</info>
+							<textcolor>ffffffff</textcolor>					
+						</control>
+					</focusedlayout>
+					<content type="url" url="">
+						<onclick lang="python">
+<![CDATA[
+selected = mc.GetWindow(15200).GetList(100).GetFocusedItem()
+app.action(action='options', focus=selected, listid=100)
+]]>
+						</onclick>
+					</content>					
+				</control>						
+		</control>				
+	</controls>
+</window>

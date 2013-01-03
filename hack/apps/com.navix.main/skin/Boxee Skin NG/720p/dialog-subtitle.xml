@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<window type="dialog" id="15170">
+	<allowoverlay>no</allowoverlay>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	<animation type="WindowOpen" reversible="false">
+		<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
+		<effect type="fade" start="0" end="100" time="300" />
+	</animation>
+	<animation type="WindowClose" reversible="false">
+		<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+		<effect type="fade" start="100" end="0" time="300" />
+	</animation>
+	<controls>
+		<control type="button" id="8999">
+			<description>Fake button for mouse control</description>
+			<posx>1200</posx>
+			<posy>0</posy>
+			<width>265</width>
+			<height>720</height>
+			<label>-</label>
+			<font>-</font>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+			<visible>true</visible>
+		</control>
+		<control type="group" id="250">
+		<posx>-10</posx>
+        <posy>20</posy>
+		<animation type="Conditional" condition="Control.HasFocus(150)" reversible="true">
+			<effect type="slide" end="-60,0" time="400" />
+		</animation>
+		<control type="image">
+			<description>background image</description>
+			<posx>200</posx>
+			<posy>70</posy>
+			<height>540</height>
+			<width>920</width>
+			<texture border="20,20,20,20">backgrounds/background_show.png</texture>
+		</control>
+	<!-- ** Required ** Do not change <id>or<type>-->
+		<control type="group">
+			<posx>200</posx>
+			<posy>74</posy>
+			<control type="image" id="110">
+				<description>Service Logo</description>
+				<posx>20</posx>
+				<posy>18</posy>
+				<width>250</width>
+				<height>40</height>
+				<aspectratio>keep</aspectratio>
+			</control>		
+			<control type="label">
+				<description>XBMC Subtitles label</description>
+				<posx>250</posx>
+				<posy>28</posy>
+				<width>380</width>
+				<height>20</height>
+				<label>[B]NAVI-X SUBTITLES[/B]</label>
+				<font>font13</font>
+				<align>center</align>
+				<textcolor>ff222522</textcolor>
+			</control>
+			<control type="group" id="111">
+				<control type="grouplist">
+					<posx>525</posx>
+					<posy>16</posy>
+					<width>305</width>
+					<height>40</height>
+					<align>right</align>
+					<orientation>horizontal</orientation>
+					<itemgap>5</itemgap>
+					<control type="image">
+						<width>40</width>
+						<height>40</height>
+						<texture>icons/icon_info_sub.png</texture>
+					</control>
+					<control type="label">
+						<description>notification</description>
+						<width min="10" max="260">auto</width>
+						<height>40</height>
+						<font>font13</font>
+						<textcolor>ff222522</textcolor>
+						<label>Local subtitle available</label>
+						<aligny>center</aligny>
+						<wrapmultiline>true</wrapmultiline>
+					</control>
+				</control>
+			</control>
+			<control type="image">
+				<description>separator</description>
+				<posx>50</posx>
+				<posy>60</posy>
+				<width>780</width>
+				<height>1</height>
+				<texture>sub_focus.png</texture>
+				<colordiffuse>DDFFFFFF</colordiffuse>
+			</control>
+			<control type="label" id="100">
+				<description>textarea</description>
+				<posx>50</posx>
+				<posy>60</posy>
+				<width>780</width>
+				<height>40</height>
+				<font>font13</font>
+				<textcolor>ff222522</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="image">
+				<description>separator</description>
+				<posx>50</posx>
+				<posy>100</posy>
+				<width>780</width>
+				<height>1</height>
+				<texture>sub_focus.png</texture>
+				<colordiffuse>DDFFFFFF</colordiffuse>
+			</control>
+		</control>
+	<!-- ** Required ** Do not change <id>or<type>-->
+		<control type="list" id="120">
+			<posx>250</posx>
+			<posy>190</posy>
+			<width>790</width>
+			<height>370</height>
+			<onleft>120</onleft>
+			<onright>120</onright>
+			<onup>120</onup>
+			<ondown>120</ondown>
+			<viewtype label="535">list</viewtype>
+			<pagecontrol>121</pagecontrol>
+			<scrolltime>200</scrolltime>
+			<itemlayout width="780" height="36">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>780</width>
+					<height>38</height>
+					<texture>sub_nofocus.png</texture>
+				</control>
+				<control type="image">
+					<posx>5</posx>
+					<posy>11</posy>
+					<width>26</width>
+					<height>17</height>
+					<info>Listitem.Thumb</info>
+				</control>
+				<control type="label">
+					<posx>40</posx>
+					<posy>0</posy>
+					<width>90</width>
+					<height>38</height>
+					<font>font18</font>
+					<aligny>center</aligny>
+					<textcolor>ff222522</textcolor>
+					<selectedcolor>green</selectedcolor>
+					<align>left</align>
+					<info>ListItem.Label</info>
+				</control>
+				<control type="image">
+					<posx>135</posx>
+					<posy>13</posy>
+					<width>40</width>
+					<height>12</height>
+					<texture>icons/icon_sync.png</texture>
+					<visible>ListItem.property(custom:sync)</visible>
+				</control>
+				<control type="label">
+					<posx>180</posx>
+					<posy>0</posy>
+					<width>500</width>
+					<height>38</height>
+					<font>font18</font>
+					<aligny>center</aligny>
+					<textcolor>ff222522</textcolor>
+					<selectedcolor>green</selectedcolor>
+					<align>left</align>
+					<info>ListItem.property(custom:label2)</info>
+				</control>
+				<control type="image">
+					<posx>690</posx>
+					<posy>11</posy>
+					<width>90</width>
+					<height>17</height>
+					<texture>rating/rating$INFO[ListItem.property(custom:icon)].png</texture>
+				</control>
+			</itemlayout>
+			<focusedlayout width="790" height="36">
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>780</width>
+					<height>38</height>
+					<texture>sub_nofocus.png</texture>
+				</control>
+				<control type="image">
+					<posx>-10</posx>
+					<posy>0</posy>
+					<width>810</width>
+					<height>38</height>
+					<texture border="5">info_focus.png</texture>
+					<visible>Control.HasFocus(120)</visible>
+				</control>
+				<control type="image">
+					<posx>5</posx>
+					<posy>11</posy>
+					<width>26</width>
+					<height>17</height>
+					<info>Listitem.Thumb</info>
+				</control>
+				<control type="label">
+					<posx>40</posx>
+					<posy>0</posy>
+					<width>90</width>
+					<height>38</height>
+					<font>font18</font>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<selectedcolor>green</selectedcolor>
+					<align>left</align>
+					<info>ListItem.Label</info>
+				</control>
+				<control type="image">
+					<posx>135</posx>
+					<posy>13</posy>
+					<width>40</width>
+					<height>12</height>
+					<texture>icons/icon_sync.png</texture>
+					<visible>ListItem.property(custom:sync)</visible>
+					<colordiffuse>white</colordiffuse>
+				</control>
+				<control type="label">
+					<posx>180</posx>
+					<posy>0</posy>
+					<width>500</width>
+					<height>38</height>
+					<font>font18</font>
+					<aligny>center</aligny>
+					<textcolor>white</textcolor>
+					<selectedcolor>green</selectedcolor>
+					<align>left</align>
+					<info>ListItem.property(custom:label2)</info>
+				</control>
+				<control type="image">
+					<posx>690</posx>
+					<posy>11</posy>
+					<width>90</width>
+					<height>17</height>
+					<texture>rating/rating$INFO[ListItem.property(custom:icon)].png</texture>
+				</control>
+			</focusedlayout>
+					<content type="url" url="">
+						<onclick lang="python">
+<![CDATA[
+focus = mc.GetWindow(15170).GetList(120).GetFocusedItem()
+app.dialog_subtitle.Download_Subtitles(focus)
+]]>
+						</onclick>
+					</content>		
+		  </control>
+		</control>
+		
+  		<control type="spincontrol" id="121">
+			<description>Next page button</description>
+			<posx>990</posx>
+			<posy>575</posy>
+			<width>20</width>
+			<height>20</height>
+			<font>font13</font>
+			<align>right</align>
+			<subtype>page</subtype>
+			<textcolor>FFFFFFFF</textcolor>
+			<onleft>120</onleft>
+			<onright>120</onright>
+			<ondown>120</ondown>
+			<onup>120</onup>
+			<textoffsetx>0</textoffsetx>
+			<textureup>default-scroll-up.png</textureup>
+			<texturedown>default-scroll-down.png</texturedown>
+			<textureupfocus>default-scroll-up-focus.png</textureupfocus>
+			<texturedownfocus>default-scroll-down-focus.png</texturedownfocus>
+			<showonepage>false</showonepage>
+			<visible>Control.IsVisible(120)</visible>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<window type="dialog" id="15190">
+	<allowoverlay>yes</allowoverlay>
+	<defaultcontrol>90</defaultcontrol>	
+	<controls>
+		<control type="group" id="1000">
+				<posx>190</posx>
+				<posy>90</posy>
+				<control type="image">
+					<description>Background - settings</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<height>540</height>
+					<width>920</width>
+					<texture>backgrounds/background_show.png</texture>	
+				</control>
+				<control type="image">
+					<description>Background - settings</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<height>540</height>
+					<width>380</width>
+					<texture>backgrounds/background_settings.png</texture>	
+				</control>
+				<control type="label">
+					<posx>60</posx>
+					<posy>40</posy>
+					<width>400</width>
+					<height>30</height>
+					<font>font24b</font>
+					<aligny>center</aligny>					
+					<align>left</align>
+					<label>NAVI-X SETTINGS</label>
+					<textcolor>ff000000</textcolor>					
+				</control>
+				<control type="label" id="80">
+					<posx>700</posx>
+					<posy>475</posy>
+					<width>200</width>
+					<height>30</height>
+					<font>font14</font>
+					<aligny>center</aligny>					
+					<align>left</align>
+					<label></label>
+					<textcolor>ff3b3b3b</textcolor>					
+				</control>
+				<control type="list" id="90">
+					<description>Main List</description>
+					<posx>60</posx>
+					<posy>100</posy>
+					<width>200</width>
+					<height>340</height>						
+					<onup>90</onup>
+					<ondown>90</ondown>
+					<onleft>90</onleft>
+					<onright>91</onright>	      
+					<orientation>vertical</orientation>
+					<pagecontrol>25</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="200" height="50">
+						<control type="image">
+							<visible>!StringCompare(ListItem.property(custom:active),)</visible>
+							<width>200</width>
+							<height>50</height>
+							<posx>0</posx>
+							<posy>0</posy>				
+							<texture>colours/lightgrey.png</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="label">
+							<posx>15</posx>
+							<posy>7</posy>
+							<width>170</width>
+							<height>36</height>
+							<font>font20</font>
+							<aligny>center</aligny>					
+							<align>left</align>
+							<info>ListItem.Label</info>
+							<textcolor>ff222522</textcolor>					
+						</control>
+					</itemlayout>
+					<focusedlayout width="200" height="50">	
+						<control type="image">
+							<visible>Control.HasFocus(90)</visible>
+							<width>200</width>
+							<height>50</height>
+							<posx>0</posx>
+							<posy>0</posy>					
+							<texture>colours/grey_transparant.png</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="image">
+							<visible>!StringCompare(ListItem.property(custom:active),)</visible>
+							<width>200</width>
+							<height>50</height>
+							<posx>0</posx>
+							<posy>0</posy>				
+							<texture>colours/lightgrey.png</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="label">
+							<posx>15</posx>
+							<posy>7</posy>
+							<width>170</width>
+							<height>36</height>
+							<font>font20</font>
+							<aligny>center</aligny>					
+							<align>left</align>
+							<info>ListItem.Label</info>
+							<textcolor>ff000000</textcolor>					
+						</control>
+					</focusedlayout>
+					<content type="url" url="">
+						<onclick lang="python">
+<![CDATA[
+focus = mc.GetWindow(15190).GetList(90).GetFocusedItem()
+app.settings._exec(focus)
+]]>
+						</onclick>
+					</content>					
+				</control>				
+				<control type="list" id="91">
+					<description>Sub List</description>
+					<posx>375</posx>
+					<posy>100</posy>
+					<width>500</width>
+					<height>340</height>						
+					<onup>91</onup>
+					<ondown>91</ondown>
+					<onleft>90</onleft>
+					<onright>91</onright>	      
+					<orientation>vertical</orientation>
+					<pagecontrol>25</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="500" height="50">
+						<control type="label">
+							<posx>15</posx>
+							<posy>2</posy>
+							<width>490</width>
+							<height>46</height>
+							<font>font22</font>
+							<aligny>center</aligny>					
+							<align>left</align>
+							<info>ListItem.Label</info>
+							<textcolor>ff222522</textcolor>					
+						</control>
+					</itemlayout>
+					<focusedlayout width="500" height="50">	
+						<control type="image">
+							<visible>Control.HasFocus(91)</visible>
+							<width>500</width>
+							<height>50</height>
+							<posx>0</posx>
+							<posy>0</posy>					
+							<texture>colours/medgrey.png</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="label">
+							<posx>15</posx>
+							<posy>2</posy>
+							<width>490</width>
+							<height>46</height>
+							<font>font22</font>
+							<aligny>center</aligny>					
+							<align>left</align>
+							<info>ListItem.Label</info>
+							<textcolor>ff000000</textcolor>					
+						</control>
+					</focusedlayout>	
+					<content type="url" url="">
+						<onclick lang="python">
+<![CDATA[
+focus = mc.GetWindow(15190).GetList(91).GetFocusedItem()
+app.settings._execsub(focus)
+]]>
+						</onclick>
+					</content>					
+				</control>
+				
+		</control>				
+	</controls>
+</window>

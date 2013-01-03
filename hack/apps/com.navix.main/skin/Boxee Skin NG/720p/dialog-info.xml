@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<window type="dialog" id="15120">
+	<allowoverlay>yes</allowoverlay>
+	<defaultcontrol>90</defaultcontrol>	
+	<controls>
+		<control type="group" id="1002">
+				<posx>190</posx>
+				<posy>90</posy>
+				<control type="image">
+					<description>Background - Info</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<height>540</height>
+					<width>920</width>
+					<texture>backgrounds/background_show.png</texture>	
+				</control>
+		
+				<control type="image">
+					<description>background - Thumb</description>
+					<posx>50</posx>
+					<posy>45</posy>
+					<height>450</height>
+					<width>310</width>
+					<texture>colours/darkgrey_transparant.png</texture>	
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="largeimage" id="101">
+					<description>Thumb Window</description>
+					<posx>50</posx>
+					<posy>54</posy>
+					<height>432</height>
+					<width>310</width>
+					<texture>$INFO[Container(90).ListItem.property(custom:item.thumb)]</texture>	
+					<aspectratio>keep</aspectratio>
+				</control>	
+				<control type="label" id="102">
+					<posx>410</posx>
+					<posy>40</posy>
+					<width>430</width>
+					<height>30</height>
+					<font>font20b</font>
+					<aligny>center</aligny>					
+					<align>left</align>
+					<info>Container(90).ListItem.property(custom:item.name)</info>
+					<textcolor>ff222522</textcolor>					
+				</control>
+				<control type="textbox" id="103">
+					<description>Text Box - Description</description>
+					<info>Container(90).ListItem.property(custom:item.description)</info>   				
+					<posx>410</posx>
+					<posy>70</posy>
+					<width>430</width>
+					<height>170</height> 
+					<font>font18</font>
+					<align>justify</align>
+					<textcolor>ff222522</textcolor>
+					<autoscroll delay="3000" time="3000" repeat="10000">Control.HasFocus(90)</autoscroll>
+				</control>  
+				<control type="image">
+					<description>Line</description>
+					<posx>410</posx>
+					<posy>250</posy>
+					<width>430</width>
+					<height>2</height> 
+					<texture>colours/medgrey.png</texture>	
+				</control>
+				<control type="list" id="90">
+					<description>Options list</description>
+					<posx>510</posx>
+					<posy>270</posy>
+					<width>320</width>
+					<height>250</height>						
+					<onup></onup>
+					<ondown></ondown>
+					<onleft></onleft>
+					<onright>2000</onright>	      
+					<orientation>vertical</orientation>
+					<pagecontrol>25</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<itemlayout width="320" height="35">
+						<control type="label">
+							<posx>20</posx>
+							<posy>5</posy>
+							<width>280</width>
+							<height>20</height>
+							<font>font20</font>
+							<aligny>center</aligny>					
+							<align>left</align>
+							<info>ListItem.Label</info>
+							<textcolor>ff222522</textcolor>					
+							<selectedcolor>FF000000</selectedcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout width="320" height="35">	
+						<control type="image">
+							<description>Thumb Window</description>
+							<posx>0</posx>
+							<posy>-4</posy>
+							<height>42</height>
+							<width>320</width>
+							<texture border="5">info_focus.png</texture>	
+						</control>	
+						<control type="label">
+							<posx>20</posx>
+							<posy>5</posy>
+							<width>320</width>
+							<height>20</height>
+							<font>font20</font>
+							<aligny>center</aligny>					
+							<align>left</align>
+							<info>ListItem.Label</info>
+							<textcolor>ffffffff</textcolor>					
+							<selectedcolor>FF000000</selectedcolor>
+						</control>
+					</focusedlayout>
+					<content type="url" url="">
+						<onclick lang="python">
+<![CDATA[
+focus = mc.GetWindow(15120).GetList(90).GetFocusedItem()
+app.dialog_info._exec(focus)
+]]>
+						</onclick>
+					</content>			
+				</control>
+				<control type="image">
+					<description>backdrop</description>
+					<posx>488</posx>
+					<posy>260</posy>
+					<width>2</width>
+					<height>240</height>	
+					<texture>colours/medgrey.png</texture>	
+					<aspectratio>stretch</aspectratio>
+				</control>				
+				<control type="image">
+					<visible>!StringCompare(Container(90).ListItem.property(custom:unstable),)</visible>
+					<description>Unstable- Icon</description>
+					<posx>410</posx>
+					<posy>260</posy>
+					<width>72</width>
+					<height>56</height>	
+					<texture>icons/unstable.png</texture>	
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<visible>!StringCompare(Container(90).ListItem.property(custom:lowquality),)</visible>
+					<description>Low quality - Icon</description>
+					<posx>410</posx>
+					<posy>320</posy>
+					<width>72</width>
+					<height>56</height>	
+					<texture>icons/lowquality.png</texture>	
+					<aspectratio>stretch</aspectratio>
+				</control>	
+				<control type="image">
+					<visible>!StringCompare(Container(90).ListItem.property(custom:timelimit),)</visible>
+					<description>Time limit - Icon</description>
+					<posx>410</posx>
+					<posy>380</posy>
+					<width>72</width>
+					<height>56</height>	
+					<texture>icons/timelimit.png</texture>	
+					<aspectratio>stretch</aspectratio>
+				</control>	
+				
+				<control type="image">
+					<visible>!StringCompare(Container(90).ListItem.property(custom:subtitle),)</visible>
+					<description>subtitle - Icon</description>
+					<posx>410</posx>
+					<posy>440</posy>
+					<width>72</width>
+					<height>56</height>	
+					<texture>icons/subtitle.png</texture>	
+					<aspectratio>stretch</aspectratio>
+				</control>				
+
+				
+		</control>				
+	</controls>
+</window>

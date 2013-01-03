@@ -1,0 +1,66 @@
+{
+   "cache_url_clear": 60480, 
+   "cache_url_time": 3600, 
+   "debug": false, 
+   "bookmark": false, 
+   "language": "EN_us", 
+   "navi_cookie": "", 
+   "navi_favorite": "", 
+   "navi_id": "", 
+   "navi_pincode": 0, 
+   "navi_platform_options": {
+      "boxee": {
+         "browser": true
+      }, 
+      "xbmc": {
+         "browser": false
+      }
+   }, 
+   "navi_streaminfo": {
+      "66stage": [
+         "unstable"
+      ], 
+      "divxstage": [
+         "lowquality"
+      ], 
+      "megavideo ": [
+         "timelimit"
+      ], 
+      "mtv": [
+         "unstable"
+      ], 
+      "novamov": [
+         "unstable"
+      ], 
+      "veehd": [
+         "unstable"
+      ], 
+      "videofriender": [
+         "unstable"
+      ]
+   }, 
+   "navi_sub_version": 0, 
+   "navi_version": 4, 
+   "playback_blocklist": [], 
+   "playback_history": [], 
+   "playback_sub_lang_1": "English", 
+   "playback_sub_lang_2": "Dutch", 
+   "playback_sub_lang_3": "English", 
+   "plx_default_background": "default", 
+   "plx_default_player": "mplayer", 
+   "plx_default_playmode": "default", 
+   "plx_default_view": "default", 
+   "plx_lines_max": "3000", 
+   "search_history": [], 
+   "search_setting_adult": false, 
+   "search_setting_genre": "All", 
+   "search_setting_mode": "All", 
+   "search_setting_phrase": false, 
+   "search_setting_source": "Navi Xtreme", 
+   "search_setting_type": "All", 
+   "url_download_location": "not set", 
+   "url_max_bandwidth": 0, 
+   "url_navi_server": "http://www.navixtreme.com", 
+   "url_open_timeout": 60, 
+   "url_useragent": "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.4) Gecko/2008102920 Firefox/3.0.4"
+}
