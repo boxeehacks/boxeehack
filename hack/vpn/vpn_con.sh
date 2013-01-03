@@ -29,7 +29,7 @@ if [ "$status" = "" ]; then
 
 else
         dgw=`cat /data/hack/vpn/.gw`
-        killall pptp
+        killall pptp > /dev/null 2>&1
         route add default gw $dgw
         rm /tmp/vpn.up
 
