@@ -1,7 +1,9 @@
 <advancedsettings>
   <thumbsize>960</thumbsize>
   <thumbres>504</thumbres>
-  <cachemembuffersize>10485760</cachemembuffersize>
+  <network>
+    <cachemembuffersize>33554432</cachemembuffersize>
+  </network>
   <sorttokens>
     <token>The</token>
     <token>A</token>
