@@ -11,7 +11,7 @@ This project is an attempt at returning some of the missing features and opening
 What does it do?
 ----------------
 
-  - Root access telnet support (password is "secret")
+  - Root access ssh support (password is "secret")
   - FTP server
   - Music icon added to the main screen and menu
   - Fan Art on movie details page
@@ -70,7 +70,7 @@ If you want to completely uninstall you can run the uninstaller on your USB stic
 
 If you want to you can also uninstall manually:
 
-Log in to the boxee box over telnet with: telnet [your-boxee-ip] 2323
+Log in to the boxee box over ssh with: ssh [your-boxee-ip]
 Type in the password "secret"
 Edit the boxeehal.conf file in /data/etc/boxeehal.conf using either vi or nano and remove the hack from the password field (or use the earlier instructions to disable the hack, however without rebooting).
 Then remove the hack with: rm -Rf /data/hack

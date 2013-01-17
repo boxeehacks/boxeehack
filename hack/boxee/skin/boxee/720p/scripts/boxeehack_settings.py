@@ -27,7 +27,7 @@ plugins = BierDopje,OpenSubtitles,Subtitulos,SubsWiki,Addic7ed,Undertexter
 [BierDopje]
 key = C2FAFCBE34610608
 """)
-    
+
     set_home_enabled_strings()
 
     version_local = get_local_version()
@@ -36,7 +36,7 @@ key = C2FAFCBE34610608
 
 def get_home_enabled_default_list():
     return "-,friends,watchlater,shows|Built-in,movies|Built-in,music|Built-in,apps,files,web"
-    
+
 def set_home_enabled_strings():
     homeitems = get_home_enabled_default_list().split(",")
 
@@ -53,7 +53,7 @@ def get_jump_to_last_unwatched_value():
 
 def toggle_jump_to_last_unwatched():
     jumpenabled = get_jump_to_last_unwatched_value()
-    
+
     if jumpenabled == "1":
         jumpenabled = "0"
     else:
@@ -70,7 +70,7 @@ def get_homeenabled_value():
 
 def get_homereplacement(section):
     homeenabled = get_homeenabled_value().split(",")
-    
+    print "finding replacement for %s" % section
     replacement = ""
     for item in homeenabled:
         item = item.split("|")
@@ -79,16 +79,14 @@ def get_homereplacement(section):
                 replacement = item[1]
             else:
                 replacement = "Built-in"
-                
+
     if replacement == "":
         replacement = "Off"
-                
+
     return replacement
-    
+
 def get_homeenabled(section):
     homeenabled = get_homeenabled_value().split(",")
-    
-    section = "%s" % section
     for item in homeenabled:
         item = item.split("|")[0]
         if item == section:
@@ -108,26 +106,26 @@ def toggle_homeenabled(section, action):
             types = ["Built-in", "Spotify", "Grooveshark", "Off"]
 
         replacement = get_homereplacement(section)
-        
+
         for item in homeenabled:
             itemname = item.split("|")[0]
             if itemname == section:
                 homeenabled.remove(item)
-        
+
         pos = types.index(replacement)
         if action == "next":
             pos = pos + 1
         if action == "previous":
             pos = pos - 1
-            
+
         if pos >= len(types):
             pos = 0
         if pos < 0:
             pos = len(types) - 1
-        
+
         if types[pos] != "Off":
             homeenabled.append("%s|%s" % (section, types[pos]))
-    
+
     else:
         found = 0
         for item in homeenabled:
@@ -135,7 +133,7 @@ def toggle_homeenabled(section, action):
             if itemname == section:
                 homeenabled.remove(item)
                 found = 1
-    
+
         if found == 0:
             homeenabled.append(section)
 
@@ -171,23 +169,6 @@ def set_browser_homepage():
         os.system("sh /data/hack/apps.sh")
 
         xbmc.executebuiltin("Skin.SetString(browser-homepage,%s)" % "".join(get_browser_homepage().split("http://")) )
-
-# Set the password for the telnet functionality    
-def set_telnet_password():
-    passwd = common.file_get_contents("/data/etc/passwd")
-    kb = xbmc.Keyboard('default', 'heading', True)
-    kb.setDefault(passwd) # optional
-    kb.setHeading('Enter telnet password') # optional
-    kb.setHiddenInput(True) # optional
-    kb.doModal()
-    if kb.isConfirmed():
-        passwd = kb.getText()
-
-        if passwd == "":
-            dialog = xbmcgui.Dialog()
-            ok = dialog.ok('Telnet', 'The telnet password must not be empty.')
-        else:
-            common.file_put_contents("/data/etc/passwd", passwd)    
 
 # Determine whether subtitle functionality is enabled/enabled
 def get_subtitles_enabled():
@@ -293,7 +274,7 @@ def subtitle_provider(method, section, provider=None):
     if os.path.exists("/data/etc/.subtitles"):
         config.read("/data/etc/.subtitles")
 
-    plugins = config.get("DEFAULT", "plugins")	
+    plugins = config.get("DEFAULT", "plugins")
     plugin_section = "default"
     config_section = "plugins"
 
@@ -354,7 +335,7 @@ def get_local_version():
 def check_new_version():
     version_remote = get_remote_version()
     version_local = get_local_version()
-    
+
     version_remote_parts = version_remote.split(".")
     version_local_parts = version_local.split(".")
 
@@ -385,7 +366,6 @@ def check_new_version():
 if (__name__ == "__main__"):
     command = sys.argv[1]
 
-    if command == "telnet": set_telnet_password()
     if command == "subtitles": toggle_subtitles(sys.argv[2], sys.argv[3])
     if command == "version": check_new_version()
     if command == "defaults": register_defaults()
@@ -396,6 +376,6 @@ if (__name__ == "__main__"):
         if command == "homeenabled": toggle_homeenabled(sys.argv[2], sys.argv[3])
     else:
         if command == "homeenabled": toggle_homeenabled(sys.argv[2], "")
-        
+
     if command == "browser-homepage": set_browser_homepage()
     if command == "toggle-jump-to-last-unwatched": toggle_jump_to_last_unwatched()

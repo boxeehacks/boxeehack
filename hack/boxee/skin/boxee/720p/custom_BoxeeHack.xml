@@ -82,11 +82,6 @@
 			<control type="grouplist" id="11">
 				<include>SettingsCategoryArea</include>
 				<visible>ControlGroup(11).HasFocus() | Control.HasFocus(10)</visible>
-				<control type="button" id="12">
-					<include>SettingsButton</include>
-					<label>Set telnet password...</label>
-					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "telnet")</onclick>
-				</control>
 				<control type="button" id="13">
 					<include>SettingsButton</include>
 					<label>Browser homepage...</label>

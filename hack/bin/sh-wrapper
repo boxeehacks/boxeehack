@@ -1,0 +1,15 @@
+#!/bin/sh
+THEPATH=/data/hack/bin
+
+for f in /data/plugins/*;
+do
+    if [ -d ${f}/bin ];
+    then
+        THEPATH="${f}/bin:${THEPATH}";
+    fi;
+done;
+
+export PATH=${THEPATH}:${PATH};
+export LD_LIBRARY_PATH='.:/data/hack/lib:/opt/local/lib:/usr/local/lib:/usr/lib:/lib:/lib/gstreamer-0.10:/opt/local/lib/qt'
+export ENV='/data/etc/.profile';
+/bin/sh "$@"
