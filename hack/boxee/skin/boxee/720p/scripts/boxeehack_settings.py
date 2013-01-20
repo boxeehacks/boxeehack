@@ -99,7 +99,9 @@ def get_homeenabled(section):
 def toggle_homeenabled(section, action):
     homeenabled = get_homeenabled_value().split(",")
 
-    if section in ["shows","movies","music"]:
+    if section in ["friends","shows","movies","music"]:
+        if section == "friends":
+            types = ["Built-in", "Netflix", "Vudu", "Navi-X", "Spotify", "Grooveshark", "BBC iPlayer", "Revision3", "Crunchyroll", "Off"]
         if section == "shows":
             types = ["Built-in", "BBC iPlayer", "Revision3", "Crunchyroll", "Off"]
         if section == "movies":
