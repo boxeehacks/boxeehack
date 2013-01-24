@@ -85,8 +85,12 @@ def grab_fanart_for_item(item):
 
             if "/Season " in art:
                 art = art[0:art.rfind("/Season ")+1] + "fanart.jpg"
-            if "/season " in art:
+            elif "/season " in art:
                 art = art[0:art.rfind("/season ")+1] + "fanart.jpg"
+            elif "/Season_" in art:
+                art = art[0:art.rfind("/Season_")+1] + "fanart.jpg"
+            elif "/season_" in art:
+                art = art[0:art.rfind("/season_")+1] + "fanart.jpg"
 
         c.close()
         conn.close()
