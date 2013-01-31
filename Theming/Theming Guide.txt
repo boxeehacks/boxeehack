@@ -1,0 +1,58 @@
+Theming Guide:
+
+A theming system has been implimented into Boxee+
+
+The most memory efficiant way of theming is by packaging all artwork into Texture file. 
+This is called Texture.xbt
+
+To pack your images into a Texture you need to use the Texture Packer included here for windows and linux on x86. (I have compiled this myself, it seems to be slightly different to the standard xbmc TexturePacker)
+
+To simplfy theming in boxee plus it is necessary to swap images like for like. This means that adding additional overlays or images that are not already present is not possible. This is done to ensure that themes remain functional when Boxee+ is updated.
+
+There is a directory called 'media' in this directory is a copy of all the artwork currently used by the boxee box.
+
+If you with to make a theme, you should make a copy of this folder and follow these rules:
+
+ 	1. Ensure the images you are replacing are the same dimensions
+	2. Ensure the images have exactly the same name, case is VERY important.
+	3. Ensure that you put the images in the correct folder eg if you replacing backgrounds/background.jpg you should 		   place your new backgrounds.jpg in the directory 'backgrounds'.
+
+Making the Texture File:
+
+When you have made your changes you need to pack them into one file.
+You need to use the TexturePacker application to do this. Using these arguments:
+
+TexturePacker -input [path to your media foler] -output [path where you want to save Textures.xbt] -nocompress
+
+EG
+	TexturePacker.exe -input media/ -output Textures.xbt -nocompress
+
+The -nocompress argument is very important as the images do not render on the boxee box unless this is stated.
+
+
+skin.sh & splash.sh:
+Edit each of these files from the ExampleTheme as per the intructions in the files.
+
+
+Packaging your theme for distrobution:
+
+When you are ready to package you theme it should be in a directory structure like so:
+
+
+ExampleTheme
+|--|media
+|----|Textures.xbt
+|----|textures.xml
+|--|splash
+|----|Splash.jpg
+|----|Splash.png
+|-skin.sh
+|-splash.sh
+
+The Name of the Top directory will be the name of your theme.
+
+it is very important that you have completed the skin.sh and splash.sh steps.
+
+Then zip the entire folder, not the contents of the folder.
+
+Upload to a site of you choosing that allows direct downloads and share the URL.

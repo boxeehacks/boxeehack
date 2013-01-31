@@ -70,12 +70,24 @@
 				<control type="togglebutton" id="400">
 					<include>SettingsCategoryToggleButton</include>
 					<usealttexture>false</usealttexture>
+					<include>SettingsCategoryToggleButton</include>
+					<onright>SetFocus(401)</onright>
+					<usealttexture>ControlGroup(401).HasFocus()</usealttexture>
+					<onclick>SetFocus(401)</onclick>
+					<onclick>SetFocus(402)</onclick>
+					<label>Theme</label>
+				</control>
+				
+				<control type="togglebutton" id="500">
+					<include>SettingsCategoryToggleButton</include>
+					<usealttexture>false</usealttexture>
 <!--					<onright>SetFocus(401)</onright>
 					<usealttexture>ControlGroup(401).HasFocus()</usealttexture>
 					<onclick>SetFocus(401)</onclick>
 					<onclick>SetFocus(402)</onclick> -->
 					<label>About</label>
 				</control>
+				
 			</control>
 			
 			<!-- GENERAL -->
@@ -498,10 +510,75 @@
 				</control>
 			</control>
 			
-			<!-- ABOUT -->
-			<control type="group" id="401">
+			<!-- THEME -->
+			<control type="grouplist" id="401">
 				<include>SettingsCategoryArea</include>
 				<visible>ControlGroup(401).HasFocus() | Control.HasFocus(400)</visible>
+				<control type="group" id="402">
+					<width>850</width>
+					<height>56</height>
+					<control type="image">
+						<visible>ControlGroup(402).HasFocus()</visible>
+						<include>SettingsScrollBG</include>
+					</control>
+					<control type="label">
+						<visible>!ControlGroup(402).HasFocus()</visible>
+						<include>SettingsScrollLabelUnfocused</include>
+						<label>Theme</label>
+					</control>
+					<control type="label">
+						<visible>ControlGroup(402).HasFocus()</visible>
+						<include>SettingsScrollLabelFocused</include>
+						<label>Theme</label>
+					</control>
+					<control type="label">
+						<visible>!ControlGroup(402).HasFocus()</visible>
+						<include>SettingsScrollLabel2Unfocused</include>
+						<label>$INFO[Skin.String(theme-name)]</label>
+					</control>
+					<control type="label">
+						<visible>ControlGroup(402).HasFocus()</visible>
+						<include>SettingsScrollLabel2Focused</include>
+						<label>$INFO[Skin.String(theme-name)]</label>
+					</control>
+					<control type="button" id="40201">
+						<onup>-</onup>
+						<ondown>403</ondown>
+						<onright>40202</onright>
+						<onleft>1</onleft>
+						<include>SettingsScrollButtonUp</include>
+						<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_theme.py", "theme_next")</onclick>
+					</control>
+					<control type="button" id="40202">
+						<onup>-</onup>
+						<ondown>403</ondown>
+						<onright>-</onright>
+						<onleft>40201</onleft>
+						<include>SettingsScrollButtonDown</include>
+						<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_theme.py", "theme_previous")</onclick>
+					</control>
+					
+				</control>
+				<control type="button" id="403">
+					<include>SettingsButton</include>
+					<label>Apply Theme</label>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_theme.py", "theme_apply")</onclick>
+				</control>
+				<control type="button" id="404">
+					<include>SettingsButton</include>
+					<label>Download Theme</label>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_theme.py", "theme_get")</onclick>
+				</control>
+				<control type="button" id="405">
+					<include>SettingsButton</include>
+					<label>Delete Theme</label>
+					<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_theme.py", "theme_delete")</onclick>
+				</control>
+			</control>
+			<!-- ABOUT -->
+			<control type="group" id="501">
+				<include>SettingsCategoryArea</include>
+				<visible>ControlGroup(501).HasFocus() | Control.HasFocus(500)</visible>
 				<control type="grouplist">
 					<posx>20</posx>
 					<control type="label">
@@ -548,11 +625,10 @@
 						<height>500</height>
 						<include>SettingsLabelEntry</include>
 						<wrapmultiline>true</wrapmultiline>
-						<label>Chris Eybergen, JoHannes Hiller, Matthew Schreiber, Amin Bahadori, Michael Hawthorne, Korhan Tekin, Scooter, LLC, Jordi Llonch Esteve, Stephan Schill, Kevin Sartori, Helge Odland, Gabriel Tapia, Magnus Pettersson, Boris Kushkuley, Craig Havens, Jonas Ranerfors, Ole Hermann Melby, Stuart Cain, Ramon Hansman, Fredric Tvetberg, Lars Jaderfeldt, Einar Afiouni, Gregor Schinzel, Paul Silkiner, Carsten Kropp, Soufian Elamriti, Jan Martens, Pim Smeets, Gustavo Yenes Conde, Lars Karlsson, Nick Maynard, Elias Sørensen, Ole Hermann Melby, Mino Polverino, Scooter LLC, Victor Von Doom, Ross Neufeld, Mark Ashley, Dylan Michael, Raphael T Victorian, Jonathan Benson, Björn Nilsson, Jan-Bart de Vreede, Jan Ferme, Jeremy Huval, Samuel Berner, Mathias Klüft, Josiah Thomas, Chris Gildart, Paul Rodriguez II</label>
+						<label>Tom Kelly,Chris Eybergen, JoHannes Hiller, Matthew Schreiber, Amin Bahadori, Michael Hawthorne, Korhan Tekin, Scooter, LLC, Jordi Llonch Esteve, Stephan Schill, Kevin Sartori, Helge Odland, Gabriel Tapia, Magnus Pettersson, Boris Kushkuley, Craig Havens, Jonas Ranerfors, Ole Hermann Melby, Stuart Cain, Ramon Hansman, Fredric Tvetberg, Lars Jaderfeldt, Einar Afiouni, Gregor Schinzel, Paul Silkiner, Carsten Kropp, Soufian Elamriti, Jan Martens, Pim Smeets, Gustavo Yenes Conde, Lars Karlsson, Nick Maynard, Elias Sørensen, Ole Hermann Melby, Mino Polverino, Scooter LLC, Victor Von Doom, Ross Neufeld, Mark Ashley, Dylan Michael, Raphael T Victorian, Jonathan Benson, Björn Nilsson, Jan-Bart de Vreede, Jan Ferme, Jeremy Huval, Samuel Berner, Mathias Klüft, Josiah Thomas, Chris Gildart, Paul Rodriguez II</label>
 					</control>
 				</control>
 			</control>
 		</control>
 	</controls>
 </window>
-
