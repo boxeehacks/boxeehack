@@ -37,19 +37,16 @@ def focus_last_unwatched(listNum):
 	# so add some checking to make sure
 	lst = get_list(listNum, False)
 	prevLen = 0
-	count = 100
-	while lst == "" and count > 0:
+	count = 10
+	while count > 0:
 		time.sleep(0.1)
 		lst = get_list(listNum, False)
-		if prevLen == 0:
-			count = count - 1
-		else:
-			count = count - 10
-			
+		count = count - 1
+		
 		if lst != "":
 			newLen = len(lst.GetItems())
 			if newLen != prevLen:
-				count = 10
+				count = 5
 			prevLen = newLen
 	
 	if lst == "" or len(lst.GetItems()) <= 2:
