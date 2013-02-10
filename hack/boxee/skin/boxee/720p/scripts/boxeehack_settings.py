@@ -35,7 +35,7 @@ key = C2FAFCBE34610608
         xbmc.executebuiltin("Skin.SetString(boxeeplus-version,%s)" % version_local )
 
 def get_home_enabled_default_list():
-    return "-,friends,watchlater,shows|Built-in,movies|Built-in,music|Built-in,apps,files,web"
+    return "-,friends|Built-in,watchlater,shows|Built-in,movies|Built-in,music|Built-in,apps,files,web"
     
 def set_home_enabled_strings():
     homeitems = get_home_enabled_default_list().split(",")
@@ -99,7 +99,9 @@ def get_homeenabled(section):
 def toggle_homeenabled(section, action):
     homeenabled = get_homeenabled_value().split(",")
 
-    if section in ["shows","movies","music"]:
+    if section in ["friends","shows","movies","music"]:
+        if section == "friends":
+            types = ["Built-in", "Netflix", "Vudu", "Navi-X", "Spotify", "Grooveshark", "BBC iPlayer", "Revision3", "Crunchyroll", "Off"]
         if section == "shows":
             types = ["Built-in", "BBC iPlayer", "Revision3", "Crunchyroll", "Off"]
         if section == "movies":

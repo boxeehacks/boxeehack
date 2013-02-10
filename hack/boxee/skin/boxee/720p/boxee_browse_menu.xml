@@ -290,11 +290,67 @@
 						<onclick>-</onclick>
 					</item>
 					<item>
-						<visible>StringCompare(Skin.String(homeenabled-friends),1)</visible>
+						<visible>StringCompare(Skin.String(homeenabled-friends),1) + [IsEmpty(Skin.String(home-friends-replacement)) | StringCompare(Skin.String(home-friends-replacement),Built-in)]</visible>
 						<controlid>1832</controlid>
 						<label>53911</label>
 						<icon>icons/icon-home-friends.png</icon>
 						<onclick>-</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),BBC iPlayer)</visible>
+						<controlid>1897</controlid>
+						<icon>../720p/resources/icons/icon-home-iplayer.png</icon>
+						<label>53912</label>
+						<onclick>RunApp(app://iplayer/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Revision3)</visible>
+						<controlid>1898</controlid>
+						<icon>../720p/resources/icons/icon-home-revision3.png</icon>
+						<label>53912</label>
+						<onclick>RunApp(app://revision3/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Crunchyroll)</visible>
+						<controlid>1899</controlid>
+						<icon>../720p/resources/icons/icon-home-crunchyroll.png</icon>
+						<label>53912</label>
+						<onclick>RunApp(app://crunchyroll/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Netflix)</visible>
+						<controlid>1900</controlid>
+						<icon>../720p/resources/icons/icon-home-netflix.png</icon>
+						<label>53913</label>
+						<onclick>RunApp(app://nrd/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Vudu)</visible>
+						<controlid>1901</controlid>
+						<icon>../720p/resources/icons/icon-home-vudu.png</icon>
+						<label>53913</label>
+						<onclick>RunApp(app://vudu/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Navi-X)</visible>
+						<controlid>1902</controlid>
+						<icon>../720p/resources/icons/icon-home-navix.png</icon>
+						<label>53913</label>
+						<onclick>RunApp(app://com.navix.stable/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Spotify)</visible>
+						<controlid>1903</controlid>
+						<icon>../720p/resources/icons/icon-home-spotify.png</icon>
+						<label>2</label>
+						<onclick>RunApp(app://runspotify/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Grooveshark)</visible>
+						<controlid>1904</controlid>
+						<icon>../720p/resources/icons/icon-home-grooveshark.png</icon>
+						<label>2</label>
+						<onclick>RunApp(app://rungrooveshark/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-watchlater),1)</visible>
