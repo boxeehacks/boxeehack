@@ -60,12 +60,12 @@ def grab_fanart_for_item(item):
 
     if False:
         pass
-    if path != "" and path.find("boxeedb://") == -1:
-        art = path[0:path.rfind("/")+1] + "fanart.jpg"
-    elif thumbnail.find("special://") == -1 and thumbnail.find("http://") == -1:
-        art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
-    elif label in fanart:
-        art = fanart[label]
+#    if path != "" and path.find("boxeedb://") == -1:
+#        art = path[0:path.rfind("/")+1] + "fanart.jpg"
+#    elif thumbnail.find("special://") == -1 and thumbnail.find("http://") == -1:
+#        art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
+    if label in fanart:
+        art = fanart[label].encode("utf-8")
     else:
         db_path = xbmc.translatePath('special://profile/Database/') + "../../../Database/boxee_catalog.db"
         conn = sqlite.connect(db_path)
@@ -112,27 +112,25 @@ def grab_random_fanart(controlNum, special):
     
     # sometimes the list control isn't available yet onload
     # so add some checking to make sure
-    control = common.get_control(controlNum, special)
+    control = common.get_list(controlNum, special)
     count = 10
     while control == "" and count > 0:
         time.sleep(0.25)
-        control = common.get_control(controlNum, special)
+        control = common.get_list(controlNum, special)
         count = count - 1
     
     window = common.get_window_id(special)
     if control == "":
         pass
     else:
+        item = control.GetItem(0)
         while 1:
             if xbmcgui.getCurrentWindowDialogId() == 9999:
-                art = fanart[fanart.keys()[randint(0, len(fanart) - 1)]]
+                art = fanart[fanart.keys()[randint(0, len(fanart) - 1)]].encode("utf-8")
                 
-                if art != "":
-                    art = "$COMMA".join(art.split(","))
-            
-                xbmc.executebuiltin("Skin.SetString(random-fanart,%s)" % art)
+                item.SetProperty("fanart", str(art))
 
-            count = 4
+            count = 5
             while count > 0:
                 if window != common.get_window_id(special):
                     return

@@ -11,14 +11,39 @@
 		<include>Common_Background</include>
 		<control type="group">
 			<visible>StringCompare(Skin.String(featured-feed),about:blank)</visible>
-	        <control type="image" id="8250">
-	                <posx>0</posx>
-	                <posy>0</posy>
-	                <width>1280</width>
-	                <height>720</height>
-	                <aspectratio>scale</aspectratio>
-	                <texture background="true">$INFO[Skin.String(random-fanart)]</texture>
-	        </control>
+			<control type="list" id="8250">
+				      <description>My first list container</description>
+				      <posx>80</posx>
+				      <posy>60</posy>
+				      <width>250</width>
+				      <height>200</height>
+				      <visible>true</visible>
+				      <onup>2</onup>
+				      <ondown>3</ondown>
+				      <onleft>1</onleft>
+				      <onright>1</onright>
+				      <viewtype label="3D list">list</viewtype>
+				      <orientation>vertical</orientation>
+				      <pagecontrol>25</pagecontrol>
+				      <scrolltime tween="sine" easing="out">200</scrolltime>
+				      <itemlayout width="250" height="29">
+				      </itemlayout>
+				      <focusedlayout height="29" width="250">
+				      </focusedlayout>
+				<content>
+				  <item id="1">
+				    <label>Dummy Item</label>
+				  </item>
+				</content>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<aspectratio>scale</aspectratio>
+				<texture background="true">$INFO[Container(8250).ListItem(0).Property(custom:fanart)]</texture>
+			</control>
 			<control type="image">
 				<posx>0</posx>
 				<posy>-50</posy>
