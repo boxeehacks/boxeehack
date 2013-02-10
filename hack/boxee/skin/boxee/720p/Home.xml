@@ -370,56 +370,56 @@
 						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),BBC iPlayer)</visible>
 						<controlid>131</controlid>
 						<thumb>../720p/resources/icons/icon-home-iplayer.png</thumb>
-						<label>53912</label>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://iplayer/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Revision3)</visible>
 						<controlid>132</controlid>
 						<thumb>../720p/resources/icons/icon-home-revision3.png</thumb>
-						<label>53912</label>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://revision3/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Crunchyroll)</visible>
 						<controlid>133</controlid>
 						<thumb>../720p/resources/icons/icon-home-crunchyroll.png</thumb>
-						<label>53912</label>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://crunchyroll/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Netflix)</visible>
 						<controlid>134</controlid>
 						<thumb>../720p/resources/icons/icon-home-netflix.png</thumb>
-						<label>53913</label>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://nrd/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Vudu)</visible>
 						<controlid>135</controlid>
 						<thumb>../720p/resources/icons/icon-home-vudu.png</thumb>
-						<label>53913</label>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://vudu/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Navi-X)</visible>
 						<controlid>136</controlid>
 						<thumb>../720p/resources/icons/icon-home-navix.png</thumb>
-						<label>53913</label>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://com.navix.stable/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Spotify)</visible>
 						<controlid>137</controlid>
 						<thumb>../720p/resources/icons/icon-home-spotify.png</thumb>
-						<label>2</label>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://runspotify/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Grooveshark)</visible>
 						<controlid>138</controlid>
 						<thumb>../720p/resources/icons/icon-home-grooveshark.png</thumb>
-						<label>2</label>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://rungrooveshark/)</onclick>
 					</item>
 					<item>
