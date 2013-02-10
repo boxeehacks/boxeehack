@@ -384,6 +384,9 @@ def check_new_version():
     else:
         dialog.ok("BOXEE+HACKS Version", "Hi there Doc Brown. How's the future?")
 
+def shutdown():
+    os.system("poweroff")
+
 if (__name__ == "__main__"):
     command = sys.argv[1]
 
@@ -401,3 +404,5 @@ if (__name__ == "__main__"):
         
     if command == "browser-homepage": set_browser_homepage()
     if command == "toggle-jump-to-last-unwatched": toggle_jump_to_last_unwatched()
+
+    if command == "shutdown": shutdown()

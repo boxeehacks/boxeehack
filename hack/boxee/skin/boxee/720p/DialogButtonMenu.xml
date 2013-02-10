@@ -107,10 +107,10 @@
 						<onclick>XBMC.Quit()</onclick>
 						<thumb>icons/icon-shutdown-shutdown.png</thumb>
 					</item>
-					<item id="11">
+					<item id="17">
 						<!-- <visible>true + !boxee.newversionforce + --><visible>true + !system.platform.osx + !system.platform.windows</visible>
 						<label>54060</label>
-						<onclick>-</onclick>
+						<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "shutdown")</onclick>
 						<thumb>icons/icon-shutdown-shutdown.png</thumb>
 					</item>
 					<item id="16">
