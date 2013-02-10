@@ -60,11 +60,11 @@ def grab_fanart_for_item(item):
 
     if False:
         pass
-#    if path != "" and path.find("boxeedb://") == -1:
-#        art = path[0:path.rfind("/")+1] + "fanart.jpg"
-#    elif thumbnail.find("special://") == -1 and thumbnail.find("http://") == -1:
-#        art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
-    if label in fanart:
+    if path != "" and path.find("boxeedb://") == -1:
+        art = path[0:path.rfind("/")+1] + "fanart.jpg"
+    elif thumbnail.find("special://") == -1 and thumbnail.find("http://") == -1:
+        art = thumbnail[0:thumbnail.rfind("/")+1] + "fanart.jpg"
+    elif label in fanart:
         art = fanart[label].encode("utf-8")
     else:
         db_path = xbmc.translatePath('special://profile/Database/') + "../../../Database/boxee_catalog.db"
