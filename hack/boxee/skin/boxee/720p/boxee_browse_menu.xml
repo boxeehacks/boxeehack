@@ -444,6 +444,13 @@
 						<onclick>RunApp(app://rungrooveshark/)</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(homeenabled-music),1) + StringCompare(Skin.String(home-music-replacement),Pandora)</visible>
+						<controlid>1906</controlid>
+						<icon>../720p/resources/icons/icon-home-pandora.png</icon>
+						<label>2</label>
+						<onclick>RunApp(app://runpandora/)</onclick>
+					</item>
+					<item>
 						<visible>StringCompare(Skin.String(homeenabled-apps),1)</visible>
 						<controlid>1837</controlid>
 						<label>54048</label>
