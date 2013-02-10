@@ -48,7 +48,7 @@ def focus_last_unwatched(listNum):
 				count = 10
 			prevLen = newLen
 	
-	if lst == "":
+	if lst == "" or len(lst.GetItems()) == 1:
 		pass
 	else:
 		item = lst.GetItem(1)
