@@ -1,4 +1,4 @@
-import os,sys,mc,xbmcgui
+import os,sys,mc,xbmcgui,xbmc
 
 sys.path.append(os.path.abspath("./external"))
 
@@ -9,6 +9,10 @@ elif 'win32' in sys.platform:
 elif 'darwin' in sys.platform:
     sys.path.append(os.path.abspath("./external/OSX"))
 
+def set_string(theid, thestr):
+	if thestr != "":
+		xbmc.executebuiltin("Skin.SetString(%s,%s)" % (theid, thestr) )
+	
 def get_window_id(special):
     if special == True:
         return xbmcgui.getCurrentWindowDialogId()
