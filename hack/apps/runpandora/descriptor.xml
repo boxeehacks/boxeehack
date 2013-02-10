@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<app>
+    <id>runpandora</id>
+    <name>Pandora Runner</name>
+    <version>1.0</version>
+    <description>Dummy that forces to run pandora when it's already running in the background.</description>
+    <media>video</media>
+    <author>solitude</author>
+    <copyright>BOXEE+HACKS</copyright>
+    <email>boxee@utalk.nl</email>
+    <type>skin</type>
+    <startWindow>app</startWindow>
+    <platform>all</platform>
+    <minversion>0.9.11</minversion>
+    <is-persistent>false</is-persistent>
+    <thumb>http://boxeeplus.com/favicon.png</thumb>
+    <repository>http://boxeeplus.com/apps</repository>
+</app>
