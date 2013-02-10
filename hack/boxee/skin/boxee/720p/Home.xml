@@ -283,9 +283,9 @@
 					<control type="label">
 						<posx>89</posx>
 						<posy>114</posy>
-						<width>136</width>
+						<width>176</width>
 						<height>65</height>
-						<font>font24bls</font>
+						<font>font20bls</font>
 						<align>center</align>
 						<aligny>top</aligny>
 						<label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>
@@ -305,9 +305,9 @@
 						<control type="label">
 							<posx>89</posx>
 							<posy>114</posy>
-							<width>136</width>
+							<width>176</width>
 							<height>65</height>
-							<font>font24bls</font>
+							<font>font20bls</font>
 							<align>center</align>
 							<aligny>top</aligny>
 							<label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>
@@ -333,9 +333,9 @@
 						<control type="label">
 							<posx>89</posx>
 							<posy>114</posy>
-							<width>136</width>
+							<width>176</width>
 							<height>65</height>
-							<font>font24bls</font>
+							<font>font20bls</font>
 							<align>center</align>
 							<aligny>top</aligny>
 							<label>[B][UPPERCASE]$INFO[ListItem.Label][/UPPERCASE][/B]</label>
@@ -421,6 +421,13 @@
 						<thumb>../720p/resources/icons/icon-home-grooveshark.png</thumb>
 						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://rungrooveshark/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Pandora)</visible>
+						<controlid>139</controlid>
+						<thumb>../720p/resources/icons/icon-home-pandora.png</thumb>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
+						<onclick>RunApp(app://runpandora/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-watchlater),1)</visible>

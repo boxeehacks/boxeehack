@@ -101,13 +101,13 @@ def toggle_homeenabled(section, action):
 
     if section in ["friends","shows","movies","music"]:
         if section == "friends":
-            types = ["Built-in", "Netflix", "Vudu", "Navi-X", "Spotify", "Grooveshark", "BBC iPlayer", "Revision3", "Crunchyroll", "Off"]
+            types = ["Built-in", "Netflix", "Vudu", "Navi-X", "Spotify", "Grooveshark", "Pandora", "BBC iPlayer", "Revision3", "Crunchyroll", "Off"]
         if section == "shows":
             types = ["Built-in", "BBC iPlayer", "Revision3", "Crunchyroll", "Off"]
         if section == "movies":
             types = ["Built-in", "Netflix", "Vudu", "Navi-X", "Off"]
         if section == "music":
-            types = ["Built-in", "Spotify", "Grooveshark", "Off"]
+            types = ["Built-in", "Spotify", "Grooveshark", "Pandora", "Off"]
 
         replacement = get_homereplacement(section)
         

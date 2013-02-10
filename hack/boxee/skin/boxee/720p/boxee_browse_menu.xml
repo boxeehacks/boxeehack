@@ -194,7 +194,7 @@
 				<animation type="Conditional" condition="StringCompare(Skin.String(homeenabled-web),1)">
 					<effect type="slide" start="0" end="-59" time="200" delay="0"/>
 				</animation>
-				<posx>655</posx>
+				<posx>625</posx>
 				<posy>232</posy>
 				<width>1100</width>
 				<height>200</height>
@@ -206,7 +206,7 @@
 				<scrolltime tween="sine" easing="out">200</scrolltime>
 				<itemlayout width="118" height="95">
 					<control type="image">
-						<posx>8</posx>
+						<posx>38</posx>
 						<posy>8</posy>
 						<width>75</width>
 						<height>75</height>
@@ -214,11 +214,11 @@
 						<colordiffuse>mediumgreyheidi</colordiffuse>
 					</control>
 					<control type="label">
-						<posx>47</posx>
+						<posx>77</posx>
 						<posy>90</posy>
-						<width>118</width>
+						<width>168</width>
 						<height>60</height>
-						<font>font20bls</font>
+						<font>font18bls</font>
 						<textcolor>mediumgreyheidi</textcolor>
 						<align>center</align>
 						<aligny>top</aligny>
@@ -230,14 +230,14 @@
 					<control type="group">
 						<visible>Control.HasFocus(1823)</visible>
 						<control type="image">
-							<posx>0</posx>
+							<posx>30</posx>
 							<posy>0</posy>
 							<width>91</width>
 							<height>91</height>
 							<texture srcborder="24" border="16">button-focused.png</texture>
 						</control>
 						<control type="image">
-							<posx>8</posx>
+							<posx>38</posx>
 							<posy>8</posy>
 							<width>75</width>
 							<height>75</height>
@@ -245,22 +245,22 @@
 							<colordiffuse>whiteheidi</colordiffuse>
 						</control>
 						<control type="label">
-							<posx>47</posx>
+							<posx>77</posx>
 							<posy>90</posy>
-							<width>118</width>
+							<width>168</width>
 							<height>60</height>
-							<font>font20bls</font>
+							<font>font18bls</font>
 							<textcolor>whiteheidi</textcolor>
 							<align>center</align>
 							<aligny>top</aligny>
-							<wrapmultiline>true</wrapmultiline>
+							<wrapmultiline>false</wrapmultiline>
 							<label>[UPPERCASE][B]$INFO[ListItem.Label][/B][/UPPERCASE]</label>
 						</control>
 					</control>
 					<control type="group">
 						<visible>!Control.HasFocus(1823)</visible>
 						<control type="image">
-							<posx>8</posx>
+							<posx>38</posx>
 							<posy>8</posy>
 							<width>75</width>
 							<height>75</height>
@@ -268,11 +268,11 @@
 							<colordiffuse>mediumgreyheidi</colordiffuse>
 						</control>
 						<control type="label">
-							<posx>47</posx>
+							<posx>77</posx>
 							<posy>90</posy>
-							<width>118</width>
+							<width>168</width>
 							<height>60</height>
-							<font>font20bls</font>
+							<font>font18bls</font>
 							<textcolor>mediumgreyheidi</textcolor>
 							<align>center</align>
 							<aligny>top</aligny>
@@ -300,57 +300,64 @@
 						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),BBC iPlayer)</visible>
 						<controlid>1897</controlid>
 						<icon>../720p/resources/icons/icon-home-iplayer.png</icon>
-						<label>53912</label>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://iplayer/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Revision3)</visible>
 						<controlid>1898</controlid>
 						<icon>../720p/resources/icons/icon-home-revision3.png</icon>
-						<label>53912</label>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://revision3/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Crunchyroll)</visible>
 						<controlid>1899</controlid>
 						<icon>../720p/resources/icons/icon-home-crunchyroll.png</icon>
-						<label>53912</label>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://crunchyroll/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Netflix)</visible>
 						<controlid>1900</controlid>
 						<icon>../720p/resources/icons/icon-home-netflix.png</icon>
-						<label>53913</label>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://nrd/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Vudu)</visible>
 						<controlid>1901</controlid>
 						<icon>../720p/resources/icons/icon-home-vudu.png</icon>
-						<label>53913</label>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://vudu/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Navi-X)</visible>
 						<controlid>1902</controlid>
 						<icon>../720p/resources/icons/icon-home-navix.png</icon>
-						<label>53913</label>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://com.navix.stable/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Spotify)</visible>
 						<controlid>1903</controlid>
 						<icon>../720p/resources/icons/icon-home-spotify.png</icon>
-						<label>2</label>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://runspotify/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Grooveshark)</visible>
 						<controlid>1904</controlid>
 						<icon>../720p/resources/icons/icon-home-grooveshark.png</icon>
-						<label>2</label>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
 						<onclick>RunApp(app://rungrooveshark/)</onclick>
+					</item>
+					<item>
+						<visible>StringCompare(Skin.String(homeenabled-friends),1) + StringCompare(Skin.String(home-friends-replacement),Pandora)</visible>
+						<controlid>1905</controlid>
+						<icon>../720p/resources/icons/icon-home-pandora.png</icon>
+						<label>$INFO[Skin.String(home-friends-replacement)]</label>
+						<onclick>RunApp(app://runpandora/)</onclick>
 					</item>
 					<item>
 						<visible>StringCompare(Skin.String(homeenabled-watchlater),1)</visible>
