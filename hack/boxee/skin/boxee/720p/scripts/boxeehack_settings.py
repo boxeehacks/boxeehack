@@ -11,11 +11,11 @@ def register_defaults():
     subtitle_provider("get", "tv")
     subtitle_provider("get", "movie")
 
-    xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,%s)" % get_subtitles_language_filter() )
-    xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % get_subtitles_enabled() )
-    xbmc.executebuiltin("Skin.SetString(featured-feed,%s)" % get_featured_feed() )
-    xbmc.executebuiltin("Skin.SetString(featured-name,%s)" % get_featured_name() )
-    xbmc.executebuiltin("Skin.SetString(browser-homepage,%s)" % "".join(get_browser_homepage().split("http://")) )
+    common.set_string("subtitles-plugin-language", get_subtitles_language_filter() )
+    common.set_string("subtitles-plugin", get_subtitles_enabled() )
+    common.set_string("featured-feed", get_featured_feed() )
+    common.set_string("featured-name", get_featured_name() )
+    common.set_string("browser-homepage", "".join(get_browser_homepage().split("http://")) )
 
     if not os.path.exists("/data/etc/.subtitles"):
         common.file_put_contents("/data/etc/.subtitles", """[DEFAULT]
@@ -32,7 +32,7 @@ key = C2FAFCBE34610608
 
     version_local = get_local_version()
     if version_local != "":
-        xbmc.executebuiltin("Skin.SetString(boxeeplus-version,%s)" % version_local )
+        common.set_string("boxeeplus-version", version_local )
 
 def get_home_enabled_default_list():
     return "-,friends|Built-in,watchlater,shows|Built-in,movies|Built-in,music|Built-in,apps,files,web"
@@ -42,8 +42,8 @@ def set_home_enabled_strings():
 
     for item in homeitems:
         item = item.split("|")[0]
-        xbmc.executebuiltin("Skin.SetString(homeenabled-%s,%s)" % (item, get_homeenabled(item)))
-        xbmc.executebuiltin("Skin.SetString(home-%s-replacement,%s)" % (item, get_homereplacement(item)))
+        common.set_string("homeenabled-%s" % item, get_homeenabled(item))
+        common.set_string("home-%s-replacement" % item, get_homereplacement(item))
 
 def get_jump_to_last_unwatched_value():
     jumpenabled = common.file_get_contents("/data/etc/.jump_to_unwatched_enabled")
@@ -60,7 +60,7 @@ def toggle_jump_to_last_unwatched():
         jumpenabled = "1"
 
     common.file_put_contents("/data/etc/.jump_to_unwatched_enabled", jumpenabled)
-    xbmc.executebuiltin("Skin.SetString(jump-to-unwatched,%s)" % jumpenabled)
+    common.set_string("jump-to-unwatched", jumpenabled)
 
 def get_homeenabled_value():
     homeenabled = common.file_get_contents("/data/etc/.home_enabled")
@@ -101,13 +101,13 @@ def toggle_homeenabled(section, action):
 
     if section in ["friends","shows","movies","music"]:
         if section == "friends":
-            types = ["Built-in", "Netflix", "Vudu", "Navi-X", "Spotify", "Grooveshark", "BBC iPlayer", "Revision3", "Crunchyroll", "Off"]
+            types = ["Built-in", "Netflix", "Vudu", "Navi-X", "Spotify", "Grooveshark", "Pandora", "BBC iPlayer", "Revision3", "Crunchyroll", "Off"]
         if section == "shows":
             types = ["Built-in", "BBC iPlayer", "Revision3", "Crunchyroll", "Off"]
         if section == "movies":
             types = ["Built-in", "Netflix", "Vudu", "Navi-X", "Off"]
         if section == "music":
-            types = ["Built-in", "Spotify", "Grooveshark", "Off"]
+            types = ["Built-in", "Spotify", "Grooveshark", "Pandora", "Off"]
 
         replacement = get_homereplacement(section)
         
@@ -172,7 +172,7 @@ def set_browser_homepage():
 
         os.system("sh /data/hack/apps.sh")
 
-        xbmc.executebuiltin("Skin.SetString(browser-homepage,%s)" % "".join(get_browser_homepage().split("http://")) )
+        common.set_string("browser-homepage", "".join(get_browser_homepage().split("http://")) )
 
 # Set the password for the telnet functionality    
 def set_telnet_password():
@@ -216,8 +216,8 @@ def featured_next():
     replace = "%s" % num
 
     common.file_put_contents("/data/etc/.replace_featured_enabled", replace)
-    xbmc.executebuiltin("Skin.SetString(featured-feed,%s)" % get_featured_feed() )
-    xbmc.executebuiltin("Skin.SetString(featured-name,%s)" % get_featured_name() )
+    common.set_string("featured-feed", get_featured_feed() )
+    common.set_string("featured-name", get_featured_name() )
 
 def featured_previous():
     replace = get_featured_feed_value()
@@ -227,8 +227,8 @@ def featured_previous():
     replace = "%s" % num
 
     common.file_put_contents("/data/etc/.replace_featured_enabled", replace)
-    xbmc.executebuiltin("Skin.SetString(featured-feed,%s)" % get_featured_feed() )
-    xbmc.executebuiltin("Skin.SetString(featured-name,%s)" % get_featured_name() )
+    common.set_string("featured-feed", get_featured_feed() )
+    common.set_string("featured-name", get_featured_name() )
 
 def get_featured_feed():
     replace = get_featured_feed_value()
@@ -282,11 +282,11 @@ def toggle_subtitles(mode, current):
 
         common.file_put_contents("/data/etc/.subtitles_enabled", subtitles)
         os.system("sh /data/hack/subtitles.sh")
-        xbmc.executebuiltin("Skin.SetString(subtitles-plugin,%s)" % subtitles)
+        common.set_string("subtitles-plugin", subtitles)
 
     if mode == "language":
         if get_subtitles_language_filter() == "0" and current != "1":
-            xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,1)")
+            common.set_string("subtitles-plugin-language","1")
         else:
             config = ConfigParser.SafeConfigParser({"lang": "All", "plugins" : "BierDopje,OpenSubtitles", "tvplugins" : "BierDopje,OpenSubtitles", "movieplugins" : "OpenSubtitles" })
             if os.path.exists("/data/etc/.subtitles"):
@@ -298,7 +298,7 @@ def toggle_subtitles(mode, current):
                 config.write(configfile)
                 configfile.close()
 
-            xbmc.executebuiltin("Skin.SetString(subtitles-plugin-language,0)")
+            common.set_string("subtitles-plugin-language","0")
 
 # Edit the subtitle providers
 def subtitle_provider(method, section, provider=None):
@@ -333,7 +333,7 @@ def subtitle_provider(method, section, provider=None):
             result = 0
             if checkprovider in enabled_providers:
                 result = 1
-            xbmc.executebuiltin("Skin.SetString(subtitles-plugin-%s-%s,%s)" % (plugin_section, checkprovider, result))
+            common.set_string("subtitles-plugin-%s-%s" % (plugin_section, checkprovider), result)
 
     if method == "set":
         provider_status = 1
@@ -342,10 +342,10 @@ def subtitle_provider(method, section, provider=None):
 
         if provider_status == 1:
             enabled_providers.append(provider)
-            xbmc.executebuiltin("Skin.SetString(subtitles-plugin-%s-%s,%s)" % (plugin_section, provider, 1))
+            common.set_string("subtitles-plugin-%s-%s" % (plugin_section, provider), "1")
         else:
             enabled_providers.remove(provider)
-            xbmc.executebuiltin("Skin.SetString(subtitles-plugin-%s-%s,%s)" % (plugin_section, provider, 0))
+            common.set_string("subtitles-plugin-%s-%s" % (plugin_section, provider), "0")
         config.set("DEFAULT", config_section, ",".join(enabled_providers).strip(','))
         if os.path.exists("/data/etc/.subtitles"):
             configfile = open("/data/etc/.subtitles", "w")
@@ -396,6 +396,9 @@ def check_new_version():
     else:
         dialog.ok("BOXEE+HACKS Version", "Hi there Doc Brown. How's the future?")
 
+def shutdown():
+    os.system("poweroff")
+
 if (__name__ == "__main__"):
     command = sys.argv[1]
 
@@ -413,4 +416,9 @@ if (__name__ == "__main__"):
         
     if command == "browser-homepage": set_browser_homepage()
     if command == "toggle-jump-to-last-unwatched": toggle_jump_to_last_unwatched()
+<<<<<<< HEAD
     if command == "showvpn": showvpn_function()
+=======
+
+    if command == "shutdown": shutdown()
+>>>>>>> upstream/development

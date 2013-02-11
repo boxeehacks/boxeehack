@@ -36,21 +36,33 @@ def focus_last_unwatched(listNum):
 	# sometimes the list control isn't available yet onload
 	# so add some checking to make sure
 	lst = get_list(listNum, False)
+	prevLen = 0
 	count = 10
-	while lst == "" and count > 0:
+	while count > 0:
 		time.sleep(0.1)
 		lst = get_list(listNum, False)
 		count = count - 1
 		
-	if lst == "":
+		if lst != "":
+			newLen = len(lst.GetItems())
+			if newLen != prevLen:
+				count = 5
+			prevLen = newLen
+	
+	if lst == "" or len(lst.GetItems()) <= 2:
 		pass
 	else:
 		item = lst.GetItem(1)
 		items = lst.GetItems()
-		
+		lastItem = items[-1]
+
 		more = 1
 		reverse = 0
 
+		if item.GetSeason() < lastItem.GetSeason():
+			reverse = 1
+		if item.GetSeason() == lastItem.GetSeason() and item.GetEpisode() < lastItem.GetEpisode():
+			reverse = 1
 		if item.GetSeason() == 1 and item.GetEpisode() == 1:
 			reverse = 1
 

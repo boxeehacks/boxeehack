@@ -100,6 +100,13 @@
       <linespacing>0.875</linespacing>
     </font>
     <font>
+      <name>font18bls</name>
+      <filename>arial.ttf</filename>
+      <size>18</size>
+      <style>bold</style>
+      <linespacing>0.750</linespacing>
+    </font>
+    <font>
       <name>font19</name>
       <filename>arial.ttf</filename>
       <size>19</size>
