@@ -416,9 +416,5 @@ if (__name__ == "__main__"):
         
     if command == "browser-homepage": set_browser_homepage()
     if command == "toggle-jump-to-last-unwatched": toggle_jump_to_last_unwatched()
-<<<<<<< HEAD
     if command == "showvpn": showvpn_function()
-=======
-
     if command == "shutdown": shutdown()
->>>>>>> upstream/development
