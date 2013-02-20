@@ -32,6 +32,8 @@ def focus_last_unwatched(listNum):
 	jumpenabled = get_jump_to_last_unwatched_value()
 	if jumpenabled == "0":
 		return
+
+	mc.LogInfo("focus_last_unwatched() began")
 	
 	# sometimes the list control isn't available yet onload
 	# so add some checking to make sure
@@ -52,49 +54,64 @@ def focus_last_unwatched(listNum):
 	if lst == "" or len(lst.GetItems()) <= 2:
 		pass
 	else:
-		item = lst.GetItem(1)
+	
+		# If there is an item already selected when the list is loaded then it means
+		# that the player has just been dismissed after playing an item. In this case 
+		# there is no need to find the last unwatched, just honor the previous selection.
+		# This also fixes the issue whereby after finishing playback the top item gets 
+		# selected due to Boxee reporting it as watched, regardless of its actual status,
+		# until the list items are updated asynchronously (and slowly).
+		if lst.GetFocusedItem() != 1:
+			return
+					
 		items = lst.GetItems()
+		firstItem = items[1]
 		lastItem = items[-1]
 
-		more = 1
 		reverse = 0
 
-		if item.GetSeason() < lastItem.GetSeason():
+		if firstItem.GetSeason() < lastItem.GetSeason():
 			reverse = 1
-		if item.GetSeason() == lastItem.GetSeason() and item.GetEpisode() < lastItem.GetEpisode():
+		elif firstItem.GetSeason() == lastItem.GetSeason() and firstItem.GetEpisode() < lastItem.GetEpisode():
 			reverse = 1
-		if item.GetSeason() == 1 and item.GetEpisode() == 1:
+		elif firstItem.GetSeason() == 1 and firstItem.GetEpisode() == 1:
 			reverse = 1
-
+		
 		if reverse == 0:
-			info_count = 0
-			focus = info_count
-			for item in items:
-				watched = "%s" % mc.GetInfoString("Container(52).ListItem("+str(info_count)+").Property(watched)")
-				
-				info_count = info_count + 1
-				if watched == "0" and info_count > focus and more == 1:
-					focus = info_count
-				
-				if watched == "1":
-					more = 0
+			# newest items first
+			start = 0
+			end = len(items)
+			step = 1
 		else:
-			info_count = len(items) - 1
-			focus = info_count
-			for item in items:
-				watched = "%s" % mc.GetInfoString("Container(52).ListItem("+str(info_count)+").Property(watched)")
-				
-				if watched == "0" and info_count < focus and more == 1:
-					focus = info_count + 1
-				info_count = info_count - 1
-				
-				if watched == "1":
-					more = 0
-
+			# oldest items first
+			start = len(items) - 1
+			end = 0
+			step = -1
+			
+		focus = end
+		
+		for n in range(start, end, step):				
+			item = items[n]
+			
+			# skip items that are just list separators ('Season' labels)
+			if item.GetSeason() == -1 and item.GetEpisode() == -1:			
+				continue
+					
+			# Note: for whatever reason the indexes of 'items' and 'Container(52).ListItem' happen to be off by 1
+			# So: items[0] == Container(52).ListItem(-1), items[1] == Container(52).ListItem(0) and so on and so forth					
+			watched = mc.GetInfoString("Container(52).ListItem(" + str(n - 1) + ").Property(watched)")						
+						
+			if watched == "1":
+				# no need to look any further
+				break
+			else:
+				focus = n
+			
 		# make sure the list still exists
 		lst = get_list(listNum, False)
 		if lst != "":
-			lst.SetFocusedItem(focus)
+			mc.LogInfo("focus_last_unwatched() ended selecting list item with index #" + str(focus))
+			lst.SetFocusedItem(focus)	
 
 def set_watched(command):
 	lst = get_list(52, False)
