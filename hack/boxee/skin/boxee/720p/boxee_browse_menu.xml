@@ -475,9 +475,9 @@
 			</control>
 			
 			<control type="list" id="1824">
-				<posx>534</posx>
+				<posx>518</posx>
 				<posy>396</posy>
-				<width>212</width>
+				<width>265</width>
 				<height>56</height>
 				<itemgap>12</itemgap>
 				<scrolltime tween="sine" easing="out">200</scrolltime>
@@ -533,10 +533,14 @@
 						<onclick>ActivateWindow(10493)</onclick>
 					</item>
 					<item id="3">
+						<thumb>../720p/resources/icons/graphic-vpn.png</thumb>
+						<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_vpn.py", "vpn")</onclick>
+					</item>
+					<item id="4">
 						<thumb>mainmenu/graphic-icon-settings.png</thumb>
 						<onclick>ActivateWindow(Settings)</onclick>
 					</item>
-					<item id="4">
+					<item id="5">
 						<thumb>mainmenu/graphic-icon-exit.png</thumb>
 						<onclick>ActivateWindow(111)</onclick>
 					</item>
