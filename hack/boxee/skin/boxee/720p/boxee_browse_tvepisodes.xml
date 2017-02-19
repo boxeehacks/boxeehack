@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <window id="10483">
 	<onload>Skin.SetString(EpisodeViewMode,Episodes)</onload>
-	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_grab_fanart.py", "grab_fanart_list", 5000)</onload>
 	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_setwatched.py", "focus_last_unwatched", 52)</onload>
+	<onload>XBMC.RunScript("special://skin/720p/scripts/boxeehack_grab_fanart.py", "grab_fanart_list", 5000)</onload>
 	<defaultcontrol always="true">9050</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<controls>

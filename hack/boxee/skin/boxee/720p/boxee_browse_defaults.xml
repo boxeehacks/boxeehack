@@ -1103,6 +1103,12 @@
 		<width>64</width>
 		<height>64</height>
 	</include>
+	<include name="ViewButton5">
+		<posx>862</posx>
+		<posy>32</posy>
+		<width>64</width>
+		<height>64</height>
+	</include>
 	<!--<include name="AppsSwitchViews">
 		<control type="group" id="8000">
 			<visible>true + !Window.Property(Empty)</visible>
@@ -2532,7 +2538,7 @@
             <control type="button" id="8016">
                 <include>ViewButton3</include>
                 <onright>8015</onright>
-                <onleft>-</onleft>
+                <onleft>8017</onleft>
                 <ondown>52</ondown>
                 <font>font18b</font>
                 <align>left</align>
@@ -2543,6 +2549,22 @@
                 <texturefocus>../720p/resources/actionbuttons/button-action-unwatched-on.png</texturefocus>
                 <texturenofocus>../720p/resources/actionbuttons/button-action-unwatched-off.png</texturenofocus>
                 <onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_setwatched.py", "unwatched")</onclick>
+            </control>
+           <control type="button" id="8017">
+                <include>ViewButton4</include>
+                <onright>8016</onright>
+                <onleft>-</onleft>
+                <ondown>52</ondown>
+                <font>font18b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <focusedcolor>white</focusedcolor>
+                <textoffsetx>14</textoffsetx>
+                <texturefocus>../720p/resources/actionbuttons/button-action-random-on.png</texturefocus>
+                <texturenofocus>../720p/resources/actionbuttons/button-action-random-off.png</texturenofocus>
+                <onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_random_movie.py", "tvshows")</onclick>
+                <onclick>SetFocus(52)</onclick>
             </control>
 			<!--<control type="group" id="8000">
 				 Add to favorites
@@ -2609,6 +2631,7 @@
       <animation effect="slide" start="0,0" end="80,0" time="0" condition="!Control.IsVisible(8024)">Conditional</animation>
 			<control type="group">
 				<visible>true + !Window.Property(empty)</visible>
+				<include>RandomButtonMovies</include>
 				<include>RescanButtonMovies</include>
 				<include>SortDropDown</include>
 				<include>LibrarySwitchViews</include>
@@ -2793,6 +2816,24 @@
 			<texture fallback="browse/thumbnail-default-photo.png" blend="false">browse/thumbnail-default-photo.png</texture>
 		</control>
 	</include>
+	<include name="RandomButtonMovies">
+            <control type="button" id="8099">
+                <include>ViewButton5</include>
+                <onright>8004</onright>
+                <onleft>500</onleft>
+                <ondown>50</ondown>
+                <font>font18b</font>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <focusedcolor>white</focusedcolor>
+                <textoffsetx>14</textoffsetx>
+                <texturefocus>../720p/resources/actionbuttons/button-action-random-on.png</texturefocus>
+                <texturenofocus>../720p/resources/actionbuttons/button-action-random-off.png</texturenofocus>
+                <onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_random_movie.py", "movies")</onclick>
+                <onclick>SetFocus(50)</onclick>
+            </control>
+	</include>
 	<include name="RescanButtonMovies">
 		<control type="button" id="8004">
 			<visible>true + [[Window.IsVisible(10481) + window(10481).property(is-category-local)] | [Window.IsVisible(10480) + window(10480).property(is-category-local)]]</visible>
@@ -2811,7 +2852,7 @@
 		<texturenofocus>actionbuttons/button-action-scan-off.png</texturenofocus>
 		<textureclick>actionbuttons/button-action-scan-off.png</textureclick>
 		<include>ViewButton4</include>
-		<onleft>500</onleft>
+		<onleft>8099</onleft>
 <!--		<onleft>9050</onleft> -->
 		<onright>8014</onright>
 		<ondown>9050</ondown>

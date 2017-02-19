@@ -451,6 +451,13 @@
 						<onclick>RunApp(app://runpandora/)</onclick>
 					</item>
 					<item>
+						<visible>StringCompare(Skin.String(homeenabled-photos),1)</visible>
+						<controlid>1839</controlid>
+						<label>Photos</label>
+						<icon>../720p/resources/icons/icon-home-photos.png</icon>
+						<onclick>ActivateWindow(10491,boxeeui://photos/)</onclick>
+					</item>
+					<item>
 						<visible>StringCompare(Skin.String(homeenabled-apps),1)</visible>
 						<controlid>1837</controlid>
 						<label>54048</label>

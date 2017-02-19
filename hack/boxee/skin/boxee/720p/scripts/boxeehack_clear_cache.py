@@ -7,7 +7,7 @@ def fanart_function():
 
 def thumbnail_function():
     if mc.ShowDialogConfirm("Clear thumbnail cache", "Are you sure you want to clear the thumbnail cache?", "Cancel", "OK"):
-        os.system("rm /data/etc/.fanart")
+        os.system("rm %s" % xbmc.translatePath('special://profile/.fanart'))
         os.system("find /data/.boxee/UserData/profiles/*/Thumbnails/ -name \*.tbn | xargs rm")
         mc.ShowDialogNotification("Clearing thumbnail cache")
 

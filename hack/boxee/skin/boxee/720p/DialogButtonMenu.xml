@@ -116,7 +116,7 @@
 					<item id="16">
 						<!-- <visible>true + !boxee.newversionforce + --><visible>true + !system.platform.osx + !system.platform.windows</visible>
 						<label>13013</label>
-						<onclick>XBMC.Reboot()</onclick>
+						<onclick>XBMC.RunScript("special://skin/720p/scripts/boxeehack_settings.py", "reboot")</onclick>
 						<thumb>../720p/resources/icons/icon-shutdown-reboot.png</thumb>
 					</item>
 <!--					<item id="14">

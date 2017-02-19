@@ -1579,7 +1579,7 @@
 		<include>Common_Background_Browse_episodes</include>
 
 		<control type="group">
-		        <visible>true</visible><!-- | stringcompare(skin.string(EpisodeViewMode),Overview)</visible> -->
+				<visible>StringCompare(Skin.String(show-thumbnails),3)</visible>
 
 		        <control type="image">
 		                <posx>0</posx>

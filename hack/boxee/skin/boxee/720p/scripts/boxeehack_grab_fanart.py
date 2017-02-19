@@ -11,7 +11,7 @@ from pysqlite2 import dbapi2 as sqlite
 
 def get_fanart_list(exclude_blanks):
     global fanart
-    showlist = common.file_get_contents("/data/etc/.fanart")
+    showlist = common.file_get_contents(xbmc.translatePath('special://profile/.fanart'))
     if showlist == "":
         return
     
@@ -35,7 +35,7 @@ def store_fanart_list():
         file = file + "%s=" % show
         file = file + "%s\n" % art
     
-    common.file_put_contents("/data/etc/.fanart", file.encode("utf-8"))
+    common.file_put_contents(xbmc.translatePath('special://profile/.fanart'), file.encode("utf-8"))
     fanart_changed = 0
     
 def grab_fanart_for_item(item):
